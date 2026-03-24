@@ -28,8 +28,8 @@ export function LiveCounter({ className = "" }: LiveCounterProps) {
   return (
     <span className={className}>
       {count.toLocaleString('en-US', { 
-        minimumFractionDigits: 2, 
-        maximumFractionDigits: 2 
+        minimumFractionDigits: 0, 
+        maximumFractionDigits: 0 
       })}
     </span>
   );
