@@ -122,7 +122,7 @@ export default function HomePage() {
             </h1>
             
             <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Traditional water meters measure air bubbles as volume. The Smart Valve™ eliminates this, reducing metered consumption by <strong className="text-white">15% to 45%+</strong>. Small one-time installation fee. Pays for itself within the first few billing cycles.
+              Traditional water meters measure air bubbles as volume. The Smart Valve™ eliminates this, reducing metered consumption by <strong className="text-white">15% to 58%+</strong> based on verified client data. Small one-time installation fee. Pays for itself within the first few billing cycles.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
@@ -136,11 +136,11 @@ export default function HomePage() {
 
             <div className="grid grid-cols-2 gap-8 max-w-2xl mx-auto pt-8 border-t border-white/10">
               <div>
-                <div className="text-4xl sm:text-5xl font-bold text-white mb-1">45%+</div>
-                <div className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Max Savings Recorded</div>
+                <div className="text-4xl sm:text-5xl font-bold text-white mb-1">58.69%</div>
+                <div className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Peak Savings Recorded</div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl font-bold text-primary mb-1">15%</div>
+                <div className="text-4xl sm:text-5xl font-bold text-primary mb-1">≥15%</div>
                 <div className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Guaranteed Minimum</div>
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function HomePage() {
       <section className="bg-primary border-y border-blue-400/30">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 text-white font-semibold text-sm sm:text-base">
-            <div className="flex items-center gap-2"><ArrowRight className="w-5 h-5 opacity-80" /> Save up to 45%+</div>
+            <div className="flex items-center gap-2"><ArrowRight className="w-5 h-5 opacity-80" /> 58.69% Peak Savings Recorded</div>
             <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 opacity-80" /> 15% Savings Guaranteed</div>
             <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 opacity-80" /> NSF 61 & 372 Certified</div>
             <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> No Power Required</div>
@@ -238,10 +238,10 @@ export default function HomePage() {
               <h3 className="text-2xl font-bold text-white mb-4">Amazon YYZ3 Fulfillment Center</h3>
               <div className="text-4xl font-black text-primary mb-6 text-glow">Peak Savings: 58.69%</div>
               <ul className="space-y-3 text-gray-300">
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Up to 58.69% reduction recorded</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> ~44% average savings</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Q3-Q4 2024</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 58.69% peak single-quarter reduction</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 17% sustained average savings</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 6 consecutive quarters of verified data</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Zero operational disruption to facility</li>
               </ul>
             </motion.div>
 
@@ -262,6 +262,53 @@ export default function HomePage() {
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Zero operational disruption</li>
               </ul>
             </motion.div>
+          </div>
+
+          {/* Additional verified clients */}
+          <div className="grid sm:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                label: "Car Wash Chain",
+                name: "Caliber Car Wash",
+                stat: "23%",
+                sub: "Weighted avg across 5 GA/FL locations",
+                items: ["23% weighted average savings", "5 verified sites in Georgia & Florida", "Continuous high-volume water use", "Consistent results across all locations"]
+              },
+              {
+                label: "Luxury Hospitality",
+                name: "Four Seasons Fort Lauderdale",
+                stat: "$27K/yr",
+                sub: "Annual verified savings",
+                items: ["26% average water reduction", "$27,000 annual savings verified", "No impact to guest experience", "Zero maintenance required"]
+              },
+              {
+                label: "Mixed-Use Complex",
+                name: "Grand Central at Kennedy",
+                stat: "$50K/yr",
+                sub: "Tampa, FL — annual savings",
+                items: ["23% metered reduction", "$50,000 annual savings verified", "Large-scale multi-use property", "Exceeded minimum guarantee by 8%"]
+              }
+            ].map((c, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="bg-[#121B2E] border border-white/10 rounded-2xl p-6 relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full" />
+                <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-gray-300 mb-4">{c.label}</span>
+                <h3 className="text-lg font-bold text-white mb-2">{c.name}</h3>
+                <div className="text-3xl font-black text-primary mb-1">{c.stat}</div>
+                <div className="text-sm text-gray-500 mb-4">{c.sub}</div>
+                <ul className="space-y-2 text-sm text-gray-400">
+                  {c.items.map((item, j) => (
+                    <li key={j} className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
 
           <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 text-center max-w-4xl mx-auto">
@@ -495,8 +542,8 @@ function SavingsCalculator() {
   const [bill, setBill] = useState<number>(15000);
   
   const minSavings = bill * 0.15;
-  const maxSavings = bill * 0.45;
-  const annualAvg = bill * 12 * 0.19;
+  const maxSavings = bill * 0.26;
+  const annualAvg = bill * 12 * 0.20;
 
   const formatCurrency = (val: number) => {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
@@ -566,7 +613,7 @@ function SavingsCalculator() {
               Get Your Free Assessment &rarr;
             </button>
             <p className="mt-6 text-xs text-gray-500 max-w-lg">
-              *Based on verified results from 15+ commercial deployments. Minimum 15% savings guaranteed. Actual results may be higher based on line pressure and municipal infrastructure.
+              *Range based on verified client results: Amazon (17–58.69%), Caliber Car Wash (23%), Four Seasons (26%), Grand Central (23%). Minimum 15% savings guaranteed in writing. Peak results depend on line pressure and municipal infrastructure conditions.
             </p>
           </div>
         </div>
