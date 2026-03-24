@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
+import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
+import howItWorksSrc from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
 import { useQueryClient } from "@tanstack/react-query";
 import {
   useGetSummary,
@@ -32,7 +34,6 @@ import {
   Moon,
   Download,
   Printer,
-  Droplet,
   CheckCircle2,
   TrendingDown
 } from "lucide-react";
@@ -247,7 +248,7 @@ export default function Dashboard() {
         <div className="mb-6 flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
           <div className="pt-2">
             <div className="flex items-center gap-2 mb-1 text-[#0079F2]">
-              <Droplet className="w-6 h-6" />
+              <img src={logoSrc} alt="Perfect Water Valve logo" className="w-7 h-7 object-contain" />
               <span className="font-bold text-lg tracking-tight">Perfect Water Valve</span>
               <span className="text-sm border-l border-current pl-2 ml-1 opacity-80 font-medium">Guaranteed 15% Water Savings</span>
             </div>
@@ -558,6 +559,38 @@ export default function Dashboard() {
                   <p className="text-green-800/80 dark:text-green-200/80 text-sm leading-relaxed">
                     The Smart Valve installation at YYZ3 showed a dramatic 2.52 gal/min reduction in sustained water usage. This translated into peak monthly usage plummeting from an initial 1,107 m³ down to just 457.30 m³.
                   </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="mt-8 mb-8">
+          <div className="mb-4">
+            <h2 className="text-xl font-bold">How It Works</h2>
+            <p className="text-sm text-muted-foreground">Smart Valve installed on the customer's side of the meter — you only pay for water, not air</p>
+          </div>
+          <Card>
+            <CardContent className="p-6">
+              <img
+                src={howItWorksSrc}
+                alt="How the Smart Valve connects to the water system — before and after diagram"
+                className="w-full max-w-3xl mx-auto block rounded"
+                style={{ filter: isDark ? "brightness(0.9)" : "none" }}
+              />
+              <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm">
+                <div className="rounded-lg p-3" style={{ backgroundColor: isDark ? "rgba(0,121,242,0.15)" : "#EFF6FF" }}>
+                  <p className="font-semibold text-[#0079F2] mb-1">The Problem</p>
+                  <p className="text-muted-foreground">Standard meters register turbulent water with air bubbles — billing customers for compressed air, not just water.</p>
+                </div>
+                <div className="rounded-lg p-3" style={{ backgroundColor: isDark ? "rgba(0,145,24,0.15)" : "#F0FDF4" }}>
+                  <p className="font-semibold text-green-700 dark:text-green-400 mb-1">The Solution</p>
+                  <p className="text-muted-foreground">Smart Valve™ maintains city pressure upstream, eliminating air bubbles before the meter reads flow. You pay only for water.</p>
+                </div>
+                <div className="rounded-lg p-3" style={{ backgroundColor: isDark ? "rgba(0,121,242,0.15)" : "#EFF6FF" }}>
+                  <p className="font-semibold text-[#0079F2] mb-1">The Result</p>
+                  <p className="text-muted-foreground">Guaranteed ≥15% reduction in metered water consumption — verified across all commercial and industrial pilot sites.</p>
                 </div>
               </div>
             </CardContent>
