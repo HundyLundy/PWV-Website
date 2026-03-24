@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Droplet, ShieldCheck, Mail, Phone, Factory, Building2, Hotel, Car, ArrowUpRight, ChevronDown } from "lucide-react";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
@@ -90,8 +90,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 2. LIVE RUNNING TOTAL TICKER */}
-      <section className="relative py-24 border-y border-white/5 bg-black/40 backdrop-blur-md">
+      {/* 2a. LIVE GALLONS TRACKER — light blue / royal blue */}
+      <section className="relative py-24 border-y" style={{ backgroundColor: '#D4EDFF', borderColor: '#A8D4F5' }}>
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0 }}
@@ -99,16 +99,35 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <p className="text-primary font-bold uppercase tracking-[0.2em] mb-6 text-sm flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+            <p className="font-bold uppercase tracking-[0.2em] mb-6 text-sm flex items-center gap-3" style={{ color: '#1965B1' }}>
+              <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#1965B1' }} />
               Live Impact Tracker
             </p>
-            <div className="font-display text-6xl sm:text-8xl md:text-[10rem] font-bold text-white tracking-tighter tabular-nums leading-none mb-6">
-              <LiveCounter className="text-glow-white" />
+            <div className="font-display text-6xl sm:text-8xl md:text-[10rem] font-bold tracking-tighter tabular-nums leading-none mb-6" style={{ color: '#1965B1' }}>
+              <LiveCounter />
             </div>
-            <p className="text-xl md:text-3xl font-light text-muted-foreground">
+            <p className="text-xl md:text-3xl font-light" style={{ color: '#2E4A5A' }}>
               Gallons conserved since you arrived — metered, verified, EPA-recognized
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 2b. PERSONAL LOSS COUNTER — dark navy / red */}
+      <section className="relative py-24 border-b border-red-900/30" style={{ backgroundColor: '#060D1A' }}>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center"
+          >
+            <p className="font-bold uppercase tracking-[0.2em] mb-3 text-sm flex items-center gap-3" style={{ color: '#EF4444' }}>
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
+              Your Facility's Estimated Loss — Year to Date
+            </p>
+            <p className="text-white/50 text-sm mb-8 uppercase tracking-wider">Select your monthly water bill</p>
+            <LossCounter />
           </motion.div>
         </div>
       </section>
@@ -292,6 +311,75 @@ export default function Home() {
           </div>
         </div>
       </footer>
+    </div>
+  );
+}
+
+function LossCounter() {
+  const PRESETS = [
+    { label: "$5K / mo", value: 5000 },
+    { label: "$15K / mo", value: 15000 },
+    { label: "$30K / mo", value: 30000 },
+    { label: "$75K / mo", value: 75000 },
+  ];
+  const [bill, setBill] = useState(15000);
+  const [amount, setAmount] = useState(0);
+
+  useEffect(() => {
+    const SAVINGS_RATE = 0.192;
+    const ratePerMs = (bill * SAVINGS_RATE) / (30 * 24 * 3600 * 1000);
+
+    const jan1 = new Date(new Date().getFullYear(), 0, 1).getTime();
+    let frameId: number;
+
+    const update = () => {
+      const elapsed = Date.now() - jan1;
+      setAmount(elapsed * ratePerMs);
+      frameId = requestAnimationFrame(update);
+    };
+
+    frameId = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(frameId);
+  }, [bill]);
+
+  const formatted = amount.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  const perMonth = (bill * 0.192).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+  return (
+    <div className="w-full">
+      <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {PRESETS.map((p) => (
+          <button
+            key={p.value}
+            onClick={() => setBill(p.value)}
+            className={`px-5 py-2 rounded-full text-sm font-bold border transition-all ${
+              bill === p.value
+                ? 'border-red-500 text-white'
+                : 'border-white/20 text-white/50 hover:border-white/40 hover:text-white/80'
+            }`}
+            style={bill === p.value ? { backgroundColor: '#7f1d1d', borderColor: '#EF4444' } : {}}
+          >
+            {p.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="font-display text-5xl sm:text-7xl md:text-8xl font-bold tracking-tighter tabular-nums leading-none mb-6" style={{ color: '#EF4444' }}>
+        {formatted}
+      </div>
+
+      <p className="text-white/50 text-lg mt-4">
+        wasted this year — that's <span className="text-red-400 font-semibold">{perMonth}/month</span> going straight to the water authority
+      </p>
+      <p className="text-white/30 text-xs mt-3 uppercase tracking-widest">
+        Based on 19.2% avg savings rate · 32,000+ verified installs · 15% guaranteed minimum
+      </p>
     </div>
   );
 }
