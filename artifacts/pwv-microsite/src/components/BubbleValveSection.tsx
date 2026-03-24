@@ -107,35 +107,37 @@ export function BubbleValveSection() {
                 }}
               />
 
-              {/* Bubbles flowing left → valve */}
-              {BUBBLES.map((b) => (
-                <motion.div
-                  key={b.id}
-                  className="absolute"
-                  style={{
-                    left: `${b.lp}%`,
-                    top: `${b.tp}%`,
-                    width: b.w,
-                    height: b.h,
-                    borderRadius: "50%",
-                    background: `radial-gradient(circle at 30% 28%, rgba(210,235,255,${b.op * 0.55}), rgba(120,195,255,${b.op * 0.18}) 60%, transparent)`,
-                    border: `1px solid rgba(160,215,255,${b.op * 0.5})`,
-                    boxShadow: `inset 1px 1px 3px rgba(230,248,255,${b.op * 0.35})`,
-                  }}
-                  animate={{
-                    x: [0, 340],
-                    y: [0, -b.h * 0.5, b.h * 0.4, -b.h * 0.2, 0],
-                    opacity: [0, b.op, b.op, b.op * 0.5, 0],
-                  }}
-                  transition={{
-                    duration: b.dur,
-                    delay: b.delay,
-                    repeat: Infinity,
-                    ease: "linear",
-                    times: [0, 0.07, 0.65, 0.85, 1],
-                  }}
-                />
-              ))}
+              {/* Bubbles — clipped hard at 50% (the valve) via overflow:hidden wrapper */}
+              <div className="absolute top-0 left-0 bottom-0 overflow-hidden" style={{ width: "50%" }}>
+                {BUBBLES.map((b) => (
+                  <motion.div
+                    key={b.id}
+                    className="absolute"
+                    style={{
+                      left: `${b.lp * 2}%`,
+                      top: `${b.tp}%`,
+                      width: b.w,
+                      height: b.h,
+                      borderRadius: "50%",
+                      background: `radial-gradient(circle at 30% 28%, rgba(210,235,255,${b.op * 0.55}), rgba(120,195,255,${b.op * 0.18}) 60%, transparent)`,
+                      border: `1px solid rgba(160,215,255,${b.op * 0.5})`,
+                      boxShadow: `inset 1px 1px 3px rgba(230,248,255,${b.op * 0.35})`,
+                    }}
+                    animate={{
+                      x: [0, 600],
+                      y: [0, -b.h * 0.5, b.h * 0.4, -b.h * 0.2, 0],
+                      opacity: [0, b.op, b.op, b.op * 0.6, 0],
+                    }}
+                    transition={{
+                      duration: b.dur,
+                      delay: b.delay,
+                      repeat: Infinity,
+                      ease: "linear",
+                      times: [0, 0.07, 0.70, 0.88, 1],
+                    }}
+                  />
+                ))}
+              </div>
 
               {/* Water ripple stripes right side */}
               {[0, 1, 2].map((i) => (

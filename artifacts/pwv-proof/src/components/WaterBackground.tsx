@@ -1,19 +1,19 @@
 const DROPS = [
-  { id:0,  left:3,   size:11, dur:14, delay:0,   op:0.11 },
-  { id:1,  left:9,   size:7,  dur:10, delay:2.1, op:0.09 },
-  { id:2,  left:17,  size:15, dur:16, delay:0.8, op:0.13 },
-  { id:3,  left:24,  size:9,  dur:11, delay:3.5, op:0.09 },
-  { id:4,  left:31,  size:13, dur:14, delay:1.3, op:0.11 },
-  { id:5,  left:39,  size:8,  dur:9,  delay:4.2, op:0.08 },
-  { id:6,  left:46,  size:17, dur:17, delay:0.5, op:0.13 },
-  { id:7,  left:53,  size:10, dur:12, delay:2.8, op:0.09 },
-  { id:8,  left:60,  size:14, dur:15, delay:1.6, op:0.11 },
-  { id:9,  left:67,  size:7,  dur:10, delay:3.1, op:0.08 },
-  { id:10, left:74,  size:12, dur:13, delay:0.3, op:0.10 },
-  { id:11, left:81,  size:18, dur:18, delay:2.4, op:0.13 },
-  { id:12, left:88,  size:9,  dur:11, delay:4.8, op:0.09 },
-  { id:13, left:93,  size:11, dur:14, delay:1.0, op:0.10 },
-  { id:14, left:56,  size:6,  dur:8,  delay:5.5, op:0.08 },
+  { id:0,  left:3,   w:8,  h:12, dur:9,  delay:0,   op:0.12 },
+  { id:1,  left:9,   w:5,  h:8,  dur:7,  delay:1.8, op:0.09 },
+  { id:2,  left:17,  w:10, h:15, dur:11, delay:0.6, op:0.14 },
+  { id:3,  left:24,  w:6,  h:10, dur:8,  delay:3.2, op:0.10 },
+  { id:4,  left:31,  w:9,  h:13, dur:10, delay:1.0, op:0.12 },
+  { id:5,  left:39,  w:5,  h:8,  dur:6,  delay:4.0, op:0.08 },
+  { id:6,  left:46,  w:11, h:16, dur:12, delay:0.4, op:0.14 },
+  { id:7,  left:53,  w:7,  h:11, dur:9,  delay:2.5, op:0.11 },
+  { id:8,  left:60,  w:9,  h:14, dur:10, delay:1.3, op:0.13 },
+  { id:9,  left:67,  w:5,  h:8,  dur:7,  delay:2.8, op:0.09 },
+  { id:10, left:74,  w:8,  h:12, dur:9,  delay:0.2, op:0.11 },
+  { id:11, left:81,  w:12, h:18, dur:13, delay:2.1, op:0.14 },
+  { id:12, left:88,  w:6,  h:10, dur:8,  delay:4.5, op:0.10 },
+  { id:13, left:93,  w:8,  h:12, dur:10, delay:0.9, op:0.11 },
+  { id:14, left:56,  w:4,  h:7,  dur:6,  delay:5.2, op:0.08 },
 ];
 
 export function WaterBackground() {
@@ -24,16 +24,16 @@ export function WaterBackground() {
       style={{ isolation: "isolate" }}
     >
       <style>{`
-        @keyframes riseBubble {
-          0%   { transform: translateY(110vh); opacity: 0; }
-          8%   { opacity: 1; }
+        @keyframes dropletFall {
+          0%   { transform: translateY(-8vh); opacity: 0; }
+          6%   { opacity: 1; }
           88%  { opacity: 1; }
-          100% { transform: translateY(-15vh); opacity: 0; }
+          100% { transform: translateY(108vh); opacity: 0; }
         }
-        @keyframes driftX {
+        @keyframes dropSway {
           0%   { margin-left: 0px; }
-          25%  { margin-left: 14px; }
-          60%  { margin-left: -10px; }
+          30%  { margin-left: 6px; }
+          65%  { margin-left: -5px; }
           100% { margin-left: 0px; }
         }
       `}</style>
@@ -44,13 +44,14 @@ export function WaterBackground() {
             position: "absolute",
             top: 0,
             left: `${d.left}%`,
-            width: d.size,
-            height: d.size,
-            borderRadius: "50%",
+            width: d.w,
+            height: d.h,
             opacity: d.op,
-            background: `radial-gradient(circle at 32% 28%, rgba(200,235,255,0.85), rgba(80,180,255,0.35) 60%, transparent)`,
-            border: `1px solid rgba(140,210,255,0.6)`,
-            animation: `riseBubble ${d.dur}s ease-in ${d.delay}s infinite, driftX ${d.dur * 0.7}s ease-in-out ${d.delay}s infinite`,
+            /* teardrop: rounded fat bottom, tapered top */
+            borderRadius: `${d.w * 0.5}px ${d.w * 0.5}px ${d.w * 0.45}px ${d.w * 0.45}px / ${d.h * 0.35}px ${d.h * 0.35}px ${d.h * 0.65}px ${d.h * 0.65}px`,
+            background: `radial-gradient(ellipse at 38% 35%, rgba(180,230,255,0.9), rgba(60,170,230,0.5) 55%, rgba(30,140,200,0.2))`,
+            boxShadow: `inset 0 1px 2px rgba(220,245,255,0.5), 0 0 4px rgba(80,180,255,0.2)`,
+            animation: `dropletFall ${d.dur}s ease-in ${d.delay}s infinite, dropSway ${d.dur * 0.8}s ease-in-out ${d.delay}s infinite`,
             willChange: "transform, opacity",
           }}
         />
