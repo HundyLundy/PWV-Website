@@ -12,25 +12,25 @@ const NAV_LINKS = [
 const MORE_LINKS = [
   {
     label: "Case Studies & Proof",
-    href: "/pwv-proof/",
+    href: "/results/",
     desc: "M&V-verified results from Amazon, Four Seasons & more",
     icon: FileText,
   },
   {
     label: "Live Savings Counter",
-    href: "/pwv-impact/",
+    href: "/impact/",
     desc: "Watch cumulative water savings accumulate in real time",
     icon: Zap,
   },
   {
     label: "Get a Full Proposal",
-    href: "/pwv-microsite/",
+    href: "/savings/",
     desc: "ROI calculator + detailed product overview",
     icon: BarChart2,
   },
   {
     label: "Colorado Properties",
-    href: "/pwv-colorado/",
+    href: "/colorado/",
     desc: "Serving all of Colorado — contact Hunter Lundquist",
     icon: MapPin,
   },

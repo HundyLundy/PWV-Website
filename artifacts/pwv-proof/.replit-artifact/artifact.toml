@@ -1,5 +1,5 @@
 kind = "web"
-previewPath = "/pwv-proof/"
+previewPath = "/results/"
 title = "Perfect Water Valve — Proof Story"
 version = "1.0.0"
 id = "artifacts/pwv-proof"
@@ -11,7 +11,7 @@ version = "1.0.0"
 
 [[services]]
 name = "web"
-paths = [ "/pwv-proof/" ]
+paths = [ "/results/" ]
 localPort = 20144
 
 [services.development]
@@ -28,4 +28,4 @@ to = "/index.html"
 
 [services.env]
 PORT = "20144"
-BASE_PATH = "/pwv-proof/"
+BASE_PATH = "/results/"

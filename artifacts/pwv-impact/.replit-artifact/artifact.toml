@@ -1,5 +1,5 @@
 kind = "web"
-previewPath = "/pwv-impact/"
+previewPath = "/impact/"
 title = "Perfect Water Valve — Live Impact Counter"
 version = "1.0.0"
 id = "artifacts/pwv-impact"
@@ -11,7 +11,7 @@ version = "1.0.0"
 
 [[services]]
 name = "web"
-paths = [ "/pwv-impact/" ]
+paths = [ "/impact/" ]
 localPort = 25854
 
 [services.development]
@@ -28,4 +28,4 @@ to = "/index.html"
 
 [services.env]
 PORT = "25854"
-BASE_PATH = "/pwv-impact/"
+BASE_PATH = "/impact/"
