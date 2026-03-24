@@ -85,7 +85,7 @@ export default function Home() {
                 in Your Water.
               </motion.h1>
               <motion.p variants={fadeIn} className="text-lg lg:text-xl text-slate-300 leading-relaxed mb-10">
-                Guaranteed ≥15% reduction in metered water consumption — your meter stops counting air as volume, your bill drops, and the savings qualify as EPA-recognized water conservation. Operationally proven at scale.
+                Guaranteed ≥15% reduction in your water bill. Your meter stops counting air as volume — you stop overpaying. Verified M&V data. Operationally proven at scale.
               </motion.p>
               
               <motion.div variants={fadeIn} className="flex flex-wrap gap-4 mb-12">

@@ -54,7 +54,7 @@ export default function Home() {
             Stop Paying for <span className="text-primary text-glow-primary">Air</span> in Your Water.
           </h1>
           <p className="text-lg text-muted-foreground mb-16 max-w-2xl mx-auto">
-            Estimated impact across <strong className="text-white">~32,000 installations</strong> globally. Metered reductions are EPA-recognized water conservation — clients like Amazon have claimed federal water credits on this data.
+            Estimated savings across <strong className="text-white">~32,000 installations</strong> globally, based on a verified 19.2% average reduction in metered water billing.
           </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
@@ -219,7 +219,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to see your numbers?</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mb-10">
-            Join the industry leaders saving water, cutting bills, and earning EPA conservation credits. Request a free site assessment today.
+            Join the industry leaders cutting their water bills — guaranteed. Request a free site assessment today.
           </p>
           
           <button 
