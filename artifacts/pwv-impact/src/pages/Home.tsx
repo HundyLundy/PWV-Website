@@ -316,7 +316,7 @@ export default function Home() {
 }
 
 function LossCounter() {
-  const MIN = 1000;
+  const MIN = 5000;
   const MAX = 100000;
   const [bill, setBill] = useState(15000);
   const [amount, setAmount] = useState(0);
@@ -384,7 +384,7 @@ function LossCounter() {
 
       {/* Tick labels */}
       <div className="flex justify-between text-[10px] text-white/25 px-0 mb-10 uppercase tracking-wider">
-        <span>$1K</span>
+        <span>$5K</span>
         <span>$25K</span>
         <span>$50K</span>
         <span>$75K</span>
