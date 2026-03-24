@@ -5,8 +5,8 @@ import { LiveCounter } from "@/components/LiveCounter";
 
 // Hardcoded verified data as requested by implementation notes
 const HERO_STATS = [
-  { value: 28000000, label: "Gallons Saved Per Year", prefix: "", suffix: "+", decimals: 0 },
-  { value: 320000, label: "Saved Annually", prefix: "$", suffix: "+", decimals: 0 },
+  { value: 36.8, label: "Gallons Saved Per Year", prefix: "", suffix: "B+", decimals: 1 },
+  { value: 440, label: "Estimated Annual Savings", prefix: "$", suffix: "M+", decimals: 0 },
   { value: 19.2, label: "Average Reduction", prefix: "", suffix: "%", decimals: 1 }
 ];
 
@@ -53,7 +53,9 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight leading-[1.1]">
             Stop Paying for <span className="text-primary text-glow-primary">Air</span> in Your Water.
           </h1>
-          <p className="text-lg text-muted-foreground mb-16 max-w-xl mx-auto">Every gallon saved below is verified, documented, and guaranteed.</p>
+          <p className="text-lg text-muted-foreground mb-16 max-w-2xl mx-auto">
+            Estimated impact across <strong className="text-white">~32,000 installations</strong> globally, based on verified 19.2% average reduction. Per-client verified data below.
+          </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
             {HERO_STATS.map((stat, i) => (
