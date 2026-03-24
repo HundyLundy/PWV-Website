@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { ArrowDown, Droplets, CheckCircle, ArrowRight, Percent } from "lucide-react";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
@@ -78,8 +77,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <BubbleValveSection />
-
       {/* SECTION 2: THE PROBLEM */}
       <section className="w-full py-32 px-6 bg-secondary/30 border-y border-border relative overflow-hidden">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -103,90 +100,139 @@ export default function Home() {
             </motion.p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="relative h-[300px] w-full bg-background rounded-3xl border border-border p-8 flex items-center justify-center overflow-hidden box-glow"
+            className="relative h-[300px] w-full rounded-3xl border border-border overflow-hidden box-glow"
+            style={{ background: "linear-gradient(180deg,#08102A 0%,#050C1E 100%)" }}
           >
-            {/* Animated Pipe CSS Representation */}
-            <div className="absolute inset-0 flex items-center w-full px-8 opacity-60">
-              <div className="w-full h-24 bg-gradient-to-b from-slate-800 via-slate-900 to-black rounded-xl relative overflow-hidden flex items-center">
-                {/* Flowing Water Background */}
-                <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay"></div>
-                
-                {/* Air Bubbles (Left to right) */}
-                {[
-                  { size:18, top:20, dur:3.2, delay:0   },
-                  { size:10, top:65, dur:2.5, delay:0.8 },
-                  { size:22, top:38, dur:4.0, delay:1.5 },
-                  { size:8,  top:78, dur:2.2, delay:2.3 },
-                  { size:16, top:15, dur:3.7, delay:0.4 },
-                  { size:12, top:55, dur:3.0, delay:1.1 },
-                  { size:20, top:42, dur:3.5, delay:2.8 },
-                  { size:9,  top:28, dur:2.8, delay:1.7 },
-                ].map((b, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute rounded-full"
-                    style={{
-                      width: b.size,
-                      height: b.size,
-                      top: `${b.top}%`,
-                      background: `radial-gradient(circle at 30% 28%, rgba(210,235,255,0.55), rgba(120,195,255,0.18) 60%, transparent)`,
-                      border: "1px solid rgba(160,215,255,0.5)",
-                      boxShadow: "inset 1px 1px 3px rgba(230,248,255,0.35)",
-                    }}
-                    animate={{
-                      x: ["-60px", "160px"],
-                      y: [0, -b.size * 0.4, b.size * 0.3, 0],
-                      opacity: [0, 0.75, 0.75, 0],
-                    }}
-                    transition={{
-                      duration: b.dur,
-                      repeat: Infinity,
-                      delay: b.delay,
-                      ease: "linear",
-                    }}
-                  />
-                ))}
-
-                {/* The Smart Valve™ */}
-                <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1">
-                  <div className="relative">
-                    <div className="absolute inset-0 rounded-full bg-blue-500/30 blur-xl scale-150" />
-                    <motion.div className="absolute inset-0 rounded-full border border-blue-400/40"
-                      animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0.8, 0.4] }}
-                      transition={{ duration: 2.8, repeat: Infinity }}
-                    />
-                    <img src={smartValveSrc} alt="Smart Valve™"
-                      className="relative z-10 object-contain drop-shadow-[0_0_22px_rgba(0,140,255,0.8)]"
-                      style={{ height: 80, width: "auto" }}
-                    />
-                  </div>
-                </div>
-
-                {/* Pure Water (Right of valve) */}
-                <motion.div 
-                  className="absolute left-1/2 right-0 h-full bg-blue-500/10"
-                  animate={{ opacity: [0.5, 0.8, 0.5] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                />
-              </div>
-            </div>
-            
-            <div className="absolute top-4 left-4 z-10">
-              <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-slate-500 block mb-0.5">Before</span>
+            {/* Before / After labels */}
+            <div className="absolute top-4 left-5 z-20">
+              <span className="block text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-500 mb-0.5">Before</span>
               <span className="text-base font-bold">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air</span>
                 <span className="text-slate-400"> + </span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>
               </span>
             </div>
-            <div className="absolute top-4 right-4 z-10 text-right">
-              <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-teal-500/60 block mb-0.5">After</span>
-              <span className="text-base font-bold text-slate-300">100% </span><span className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>
+            <div className="absolute top-4 right-5 z-20 text-right">
+              <span className="block text-[10px] uppercase tracking-[0.22em] font-semibold text-teal-500/60 mb-0.5">After</span>
+              <span className="text-base font-bold text-slate-300">100% </span>
+              <span className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>
+            </div>
+
+            {/* Pipe */}
+            <div className="absolute inset-0 flex items-center px-6 py-14">
+              <div
+                className="w-full relative overflow-hidden"
+                style={{
+                  height: 120,
+                  borderRadius: 14,
+                  background: "linear-gradient(180deg,#111C38 0%,#0B1428 55%,#0E1832 100%)",
+                  boxShadow: "inset 0 2px 8px rgba(0,0,0,0.6), inset 0 -2px 8px rgba(0,0,0,0.4)",
+                }}
+              >
+                {/* Clean water glow right */}
+                <div className="absolute inset-0 pointer-events-none"
+                  style={{ background: "linear-gradient(90deg,transparent 0%,rgba(20,200,120,0.04) 52%,rgba(20,200,120,0.10) 100%)" }} />
+
+                {/* Bubbles — hard-clipped at 50% */}
+                <div className="absolute top-0 left-0 bottom-0 overflow-hidden" style={{ width: "50%" }}>
+                  {[
+                    { id:0,  w:18,h:14,lp:4,  tp:18,delay:0,    dur:1.9,op:0.55 },
+                    { id:1,  w:9, h:7, lp:16, tp:62,delay:0.25, dur:1.4,op:0.38 },
+                    { id:2,  w:14,h:11,lp:30, tp:35,delay:0.5,  dur:2.2,op:0.50 },
+                    { id:3,  w:7, h:6, lp:8,  tp:78,delay:0.75, dur:1.3,op:0.30 },
+                    { id:4,  w:20,h:16,lp:44, tp:22,delay:0.1,  dur:2.1,op:0.54 },
+                    { id:5,  w:10,h:8, lp:60, tp:58,delay:0.6,  dur:1.6,op:0.40 },
+                    { id:6,  w:16,h:13,lp:20, tp:80,delay:0.9,  dur:1.8,op:0.46 },
+                    { id:7,  w:8, h:6, lp:76, tp:40,delay:1.1,  dur:1.2,op:0.32 },
+                    { id:8,  w:17,h:14,lp:10, tp:50,delay:0.4,  dur:2.0,op:0.52 },
+                    { id:9,  w:12,h:10,lp:40, tp:68,delay:1.3,  dur:1.7,op:0.42 },
+                    { id:10, w:6, h:5, lp:56, tp:28,delay:0.2,  dur:1.1,op:0.27 },
+                    { id:11, w:22,h:18,lp:14, tp:44,delay:0.7,  dur:2.3,op:0.58 },
+                    { id:12, w:9, h:8, lp:70, tp:72,delay:1.2,  dur:1.5,op:0.35 },
+                    { id:13, w:16,h:13,lp:32, tp:14,delay:0.05, dur:1.9,op:0.48 },
+                    { id:14, w:7, h:6, lp:52, tp:55,delay:1.5,  dur:1.3,op:0.29 },
+                    { id:15, w:13,h:10,lp:80, tp:32,delay:0.55, dur:1.6,op:0.44 },
+                    { id:16, w:18,h:14,lp:4,  tp:86,delay:1.0,  dur:2.1,op:0.53 },
+                    { id:17, w:8, h:7, lp:48, tp:18,delay:0.35, dur:1.2,op:0.33 },
+                    { id:18, w:11,h:9, lp:66, tp:76,delay:1.7,  dur:1.7,op:0.41 },
+                    { id:19, w:15,h:12,lp:12, tp:58,delay:0.8,  dur:1.9,op:0.47 },
+                  ].map((b) => (
+                    <motion.div
+                      key={b.id}
+                      className="absolute"
+                      style={{
+                        left: `${b.lp}%`,
+                        top: `${b.tp}%`,
+                        width: b.w,
+                        height: b.h,
+                        borderRadius: "50%",
+                        background: `radial-gradient(circle at 30% 28%, rgba(210,235,255,${b.op * 0.55}), rgba(120,195,255,${b.op * 0.18}) 60%, transparent)`,
+                        border: `1px solid rgba(160,215,255,${b.op * 0.5})`,
+                        boxShadow: `inset 1px 1px 3px rgba(230,248,255,${b.op * 0.35})`,
+                      }}
+                      animate={{
+                        x: [0, 600],
+                        y: [0, -b.h * 0.5, b.h * 0.4, -b.h * 0.2, 0],
+                        opacity: [0, b.op, b.op, b.op * 0.6, 0],
+                      }}
+                      transition={{
+                        duration: b.dur,
+                        delay: b.delay,
+                        repeat: Infinity,
+                        ease: "linear",
+                        times: [0, 0.07, 0.70, 0.88, 1],
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Water ripple stripes right side */}
+                {[0, 1, 2].map((i) => (
+                  <motion.div key={`stripe-${i}`} className="absolute top-0 bottom-0"
+                    style={{ left: `${52 + i * 15}%`, right: 0, background: `linear-gradient(90deg,transparent,rgba(20,200,120,${0.05 + i * 0.03}))` }}
+                    animate={{ opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 2.5 + i * 0.8, repeat: Infinity, delay: i * 0.5 }}
+                  />
+                ))}
+
+                {/* Center divider */}
+                <div className="absolute top-0 bottom-0 w-px"
+                  style={{ left: "50%", background: "linear-gradient(180deg,transparent,rgba(80,200,160,0.35),transparent)" }} />
+              </div>
+            </div>
+
+            {/* Smart Valve — rotated 90° so flow passes through horizontally */}
+            <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+              <div className="flex flex-col items-center gap-1.5">
+                <div className="relative flex items-center justify-center">
+                  <div className="absolute rounded-full bg-blue-500/25 blur-2xl" style={{ width: 90, height: 90 }} />
+                  <motion.div className="absolute rounded-full border border-blue-400/30" style={{ width: 80, height: 80 }}
+                    animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.7, 0.4] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                  <motion.div className="absolute rounded-full border border-teal-300/15" style={{ width: 100, height: 100 }}
+                    animate={{ scale: [1, 1.05, 1], opacity: [0.2, 0.5, 0.2] }}
+                    transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                  />
+                  <img src={smartValveSrc} alt="Smart Valve™"
+                    className="relative z-10 object-contain drop-shadow-[0_0_26px_rgba(0,140,255,0.75)]"
+                    style={{ height: 84, width: "auto", filter: "brightness(1.05) saturate(1.15)", transform: "rotate(90deg)" }}
+                  />
+                </div>
+                <span className="text-[9px] font-bold uppercase tracking-[0.22em] text-blue-300/55">Smart Valve™</span>
+              </div>
+            </div>
+
+            {/* Bottom caption */}
+            <div className="absolute bottom-3 left-0 right-0 text-center z-20">
+              <p className="text-[10px] text-slate-600 uppercase tracking-widest">
+                Air purged upstream of meter — you pay only for water
+              </p>
             </div>
           </motion.div>
         </div>
