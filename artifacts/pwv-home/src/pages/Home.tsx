@@ -80,7 +80,7 @@ export default function Home() {
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section
         className="relative min-h-screen flex items-center justify-center px-4 pt-24 pb-20 overflow-hidden"
-        style={{ background: 'linear-gradient(170deg, #030912 0%, #060D1A 50%, #071628 100%)' }}
+        style={{ background: 'linear-gradient(160deg, #1B4A5C 0%, #3C6E7F 60%, #0374A7 100%)' }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,rgba(3,116,167,0.12),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(60,110,127,0.08),transparent_50%)]" />

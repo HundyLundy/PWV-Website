@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Droplets, CheckCircle, ArrowRight, Percent, ChevronDown } from "lucide-react";
+import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { cn } from "@/lib/utils";
@@ -438,6 +439,23 @@ export default function Home() {
           <div className="pt-16 space-y-2">
             <p className="text-lg font-medium text-white">(361) 585-1111 | support@PerfectWaterValve.com</p>
             <p className="text-sm uppercase tracking-widest font-semibold" style={{ color: '#DEC600' }}>Guaranteed &ge;15% water savings or we make it right.</p>
+            <div className="flex items-center justify-center gap-4 pt-4">
+              <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                style={{ backgroundColor: 'rgba(24,119,242,0.15)', border: '1px solid rgba(24,119,242,0.25)', color: '#4b96f3' }}>
+                <FaFacebook className="w-4 h-4" />
+              </a>
+              <a href="https://www.instagram.com/perfectwatervalve/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                style={{ backgroundColor: 'rgba(225,48,108,0.12)', border: '1px solid rgba(225,48,108,0.2)', color: '#e1306c' }}>
+                <FaInstagram className="w-4 h-4" />
+              </a>
+              <a href="https://www.linkedin.com/company/113022552" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                style={{ backgroundColor: 'rgba(10,102,194,0.14)', border: '1px solid rgba(10,102,194,0.22)', color: '#0a66c2' }}>
+                <FaLinkedinIn className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </motion.div>
       </section>

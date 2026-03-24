@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Droplet, ShieldCheck, Mail, Phone, Factory, Building2, Hotel, Car, ArrowUpRight, ChevronDown } from "lucide-react";
+import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { LiveCounter } from "@/components/LiveCounter";
@@ -307,7 +308,14 @@ export default function Home() {
 
           <div className="mt-20 pt-8 border-t border-white/5 w-full flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground/60">
             <p>© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</p>
-            <p className="uppercase tracking-widest text-xs">Official Partner: AWS / CWS</p>
+            <div className="flex items-center gap-5">
+              <p className="uppercase tracking-widest text-xs">Official Partner: AWS / CWS</p>
+              <div className="flex items-center gap-3">
+                <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-white transition-colors"><FaFacebook className="w-4 h-4" /></a>
+                <a href="https://www.instagram.com/perfectwatervalve/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-white transition-colors"><FaInstagram className="w-4 h-4" /></a>
+                <a href="https://www.linkedin.com/company/113022552" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white transition-colors"><FaLinkedinIn className="w-4 h-4" /></a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
