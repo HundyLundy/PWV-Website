@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
-import { ArrowRight, CheckCircle2, TrendingDown, Building2, ShieldCheck, Factory, Hotel, Truck, Store, MapPin, Droplet } from "lucide-react";
+import { ArrowRight, CheckCircle2, TrendingDown, Building2, ShieldCheck, Factory, Hotel, Truck, Store, MapPin, Droplet, ChevronDown } from "lucide-react";
 import { useGetSummary, useGetEnterpriseDeployments } from "@workspace/api-client-react";
 
 import howItWorksSrc from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
@@ -12,6 +13,7 @@ import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import ad1Src from "@assets/PWV_-_FINAL_Ad1_logo,water,sound_10sec_1774334086059.mp4";
 import ad2Src from "@assets/PWV_save_water_bill_ad_FINAL_1774334097077.mp4";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
+import { InlineROICalc } from "@/components/InlineROICalc";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -131,34 +133,39 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT: product image */}
+            {/* RIGHT: inline ROI calculator */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.15 }}
-              className="relative hidden lg:flex items-center justify-center"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="hidden lg:block"
             >
-              <div className="absolute inset-0 rounded-full blur-3xl opacity-30" style={{ background: 'radial-gradient(circle, #0374A7, #0030B5)' }} />
-              <img
-                src={smartValveSrc}
-                alt="Smart Valve Product"
-                className="relative z-10 w-full max-w-[420px] mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-              />
+              <InlineROICalc />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 2. TRUST BAR */}
-      <section className="bg-white py-5 border-y border-slate-200 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-          <div className="text-xs font-bold text-slate-400 uppercase tracking-widest shrink-0 mr-8">Trusted by</div>
-          <div className="flex-1 overflow-hidden relative">
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
-            <div className="flex gap-14 items-center w-max animate-marquee text-slate-400 font-semibold text-base grayscale opacity-50">
-              <span>Amazon</span> · <span>Four Seasons</span> · <span>St. Regis</span> · <span>Labatt Brewing</span> · <span>Guinness</span> · <span>Linamar</span> · <span>Starlight Investments</span> · <span>Akelius</span> · <span>Kerry Group</span>
-            </div>
+      {/* 2. CLIENT LOGO BAR */}
+      <section className="bg-white py-8 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Trusted by leading commercial operators</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            {[
+              { name: "Amazon", sub: "Fulfillment Centers" },
+              { name: "Four Seasons", sub: "Fort Lauderdale" },
+              { name: "St. Regis", sub: "Toronto" },
+              { name: "Caliber Car Wash", sub: "5-Site Network" },
+              { name: "Grand Central", sub: "Multifamily" },
+              { name: "Houstonian", sub: "Estates" },
+              { name: "Labatt", sub: "Brewing" },
+              { name: "Guinness", sub: "Production" },
+            ].map((c) => (
+              <div key={c.name} className="flex flex-col items-center text-center opacity-60 hover:opacity-100 transition-opacity">
+                <span className="font-headline font-bold text-slate-700 text-base tracking-tight leading-tight">{c.name}</span>
+                <span className="text-[10px] text-slate-400 uppercase tracking-widest">{c.sub}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -350,7 +357,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. CTA */}
+      {/* 8. FAQ + GEO */}
+      <section className="py-20 lg:py-28 bg-white" id="faq">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Common Questions</h2>
+            <p className="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto" style={{ fontWeight: 300 }}>
+              The Perfect Water Valve Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines, reducing metered water billing by 15% to 58%. It requires no electricity, no moving parts, and no ongoing maintenance.
+            </p>
+          </div>
+          <MicrositeFAQ />
+        </div>
+      </section>
+
+      {/* 9. CTA */}
       <section className="py-24 text-white text-center px-4" style={{ background: 'linear-gradient(135deg, #0374A7, #0030B5)' }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="font-headline text-4xl lg:text-5xl font-bold mb-5">See your number.</h2>
@@ -368,6 +388,34 @@ export default function Home() {
       </section>
 
       <Footer />
+    </div>
+  );
+}
+
+function MicrositeFAQ() {
+  const [open, setOpen] = useState<number | null>(null);
+  const faqs = [
+    { q: "How does the Smart Valve™ reduce my water bill?", a: "Municipal water systems trap air bubbles that travel through your pipes and register as volume on your meter. You're billed for every cubic foot — including the ones that were never liquid. The Smart Valve™ installs upstream of your meter and purges that air before it's counted. Your meter reads only actual water." },
+    { q: "Is the 15% reduction really guaranteed?", a: "Yes. It's in writing, in your contract. If your facility doesn't achieve at least 15% reduction in metered water consumption, we make it right. Every installation comes with this commitment." },
+    { q: "How long does installation take?", a: "Typically 2–4 hours. No disruption to your operations, no fixtures touched, no permits required in most jurisdictions. Our licensed technicians work around your schedule." },
+    { q: "Does it need electricity or ongoing maintenance?", a: "Neither. The Smart Valve™ is entirely passive — no power, no moving parts that wear out, no subscriptions or service visits. It works continuously once installed." },
+    { q: "What's the upfront cost?", a: "There's a one-time installation fee based on property size and line diameter. Most sites recover the full cost within 2–4 billing cycles through water savings alone. We'll show you the math before you commit." },
+    { q: "Does it affect water pressure or quality?", a: "No. Pressure and water quality are completely unaffected. The Smart Valve™ only changes what your meter counts — it removes phantom air volume, not actual water flow." },
+    { q: "What certifications does it have?", a: "NSF 61 and NSF 372 certified — the gold standard for drinking water system components in North America. Compatible with 99% of commercial water meters." },
+  ];
+  return (
+    <div className="space-y-3">
+      {faqs.map((faq, i) => (
+        <div key={i} className={`border rounded-2xl transition-all duration-200 ${open === i ? "border-[#0374A7]/30 bg-[#E8EFF7]" : "border-slate-100 bg-white hover:border-slate-200"}`}>
+          <button className="w-full flex items-center justify-between px-6 py-5 text-left gap-4" onClick={() => setOpen(open === i ? null : i)}>
+            <span className={`font-headline font-bold ${open === i ? "text-[#0030B5]" : "text-slate-800"}`}>{faq.q}</span>
+            <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-200 ${open === i ? "rotate-180 text-[#0374A7]" : "text-slate-400"}`} />
+          </button>
+          {open === i && (
+            <div className="px-6 pb-5 text-slate-600 leading-relaxed" style={{ fontWeight: 300 }}>{faq.a}</div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

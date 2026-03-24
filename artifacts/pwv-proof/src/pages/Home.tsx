@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Droplets, CheckCircle, ArrowRight, Percent } from "lucide-react";
+import { ArrowDown, Droplets, CheckCircle, ArrowRight, Percent, ChevronDown } from "lucide-react";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { cn } from "@/lib/utils";
@@ -328,6 +328,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CLIENT LOGO BAR */}
+      <section className="w-full py-10 px-6 border-y" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
+        <p className="text-center text-xs font-bold uppercase tracking-widest mb-6" style={{ color: '#4A7085' }}>Results verified at</p>
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 max-w-4xl mx-auto">
+          {[
+            { name: "Amazon", sub: "YYZ3 & YYZ4" },
+            { name: "Four Seasons", sub: "Fort Lauderdale · 26%" },
+            { name: "St. Regis", sub: "Toronto · $49K saved" },
+            { name: "Caliber Car Wash", sub: "5 sites · 23%" },
+            { name: "Grand Central", sub: "Kennedy · $50K/yr" },
+            { name: "Houstonian", sub: "Estates · 16%" },
+          ].map((c) => (
+            <div key={c.name} className="flex flex-col items-center text-center">
+              <span className="font-headline font-bold text-base tracking-tight" style={{ color: '#0A1F3A' }}>{c.name}</span>
+              <span className="text-[10px] uppercase tracking-widest" style={{ color: '#4A7085' }}>{c.sub}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* SECTION 5: BY THE NUMBERS */}
       <section className="w-full py-32 px-6" style={{ backgroundColor: '#3C6E7F' }}>
         <div className="max-w-6xl mx-auto">
@@ -365,6 +385,19 @@ export default function Home() {
             <IndustryBar name="Food & Beverage" value={19} range="19%" />
             <IndustryBar name="Logistics / Warehouse" value={17} range="16–17%" />
           </div>
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
+      <section className="w-full py-24 px-6" style={{ backgroundColor: '#E8EFF7' }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-3" style={{ color: '#0A1F3A' }}>Common Questions</h2>
+            <p className="text-base leading-relaxed" style={{ color: '#2E4A5A', fontWeight: 300 }}>
+              The Perfect Water Valve Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines, reducing metered water billing by 15% to 58%. NSF 61 and NSF 372 certified. No electricity. No moving parts.
+            </p>
+          </div>
+          <ProofFAQ />
         </div>
       </section>
 
@@ -479,6 +512,33 @@ function StatItem({ value, prefix, suffix, decimals, label }: any) {
       </div>
       <p className="text-lg uppercase tracking-wide font-medium text-white/70">{label}</p>
     </motion.div>
+  );
+}
+
+function ProofFAQ() {
+  const [open, setOpen] = useState<number | null>(null);
+  const faqs = [
+    { q: "What is the Perfect Water Valve Smart Valve™?", a: "The Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines, reducing metered water billing by 15% to 58%. It installs upstream of your meter, requires no electricity or moving parts, and is NSF 61 and NSF 372 certified." },
+    { q: "Who has used it and what were the results?", a: "Amazon YYZ3 (17% average, 58.69% peak). Four Seasons Fort Lauderdale (26%, $27,000/yr). St. Regis Toronto ($49,889 CAD in year one). Caliber Car Wash (23% across 5 sites in GA & FL). Grand Central at Kennedy ($50,000/yr saved). All results are M&V-verified." },
+    { q: "Is the 15% guarantee real?", a: "Yes. It is in your contract. Every installation includes a written guarantee of at least 15% reduction in metered water consumption. If your site does not reach 15%, we make it right at no cost to you." },
+    { q: "How long does installation take?", a: "Typically 2–4 hours. No disruption to operations, no fixtures touched, no downtime. Licensed technicians work around your schedule." },
+    { q: "Does it need electricity or maintenance?", a: "Neither. The Smart Valve™ is entirely passive — no power, no moving parts, no subscriptions or service calls. It works continuously from day one." },
+    { q: "How quickly does it pay back?", a: "Most facilities recover the full installation cost within 2–4 water billing cycles purely through reduced water bills. Year-one savings typically far exceed the one-time fee." },
+  ];
+  return (
+    <div className="space-y-3">
+      {faqs.map((faq, i) => (
+        <div key={i} className={`border rounded-2xl transition-all duration-200 ${open === i ? "border-[#0374A7]/40 bg-white" : "bg-white/70 border-[#C5D8E8] hover:border-[#0374A7]/30"}`}>
+          <button className="w-full flex items-center justify-between px-6 py-5 text-left gap-4" onClick={() => setOpen(open === i ? null : i)}>
+            <span className={`font-headline font-bold ${open === i ? "text-[#0030B5]" : "text-[#0A1F3A]"}`}>{faq.q}</span>
+            <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-200 ${open === i ? "rotate-180 text-[#0374A7]" : "text-[#4A7085]"}`} />
+          </button>
+          {open === i && (
+            <div className="px-6 pb-5 leading-relaxed" style={{ color: '#2E4A5A', fontWeight: 300 }}>{faq.a}</div>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }
 

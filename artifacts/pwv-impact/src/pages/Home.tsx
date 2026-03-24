@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Droplet, ShieldCheck, Mail, Phone, Factory, Building2, Hotel, Car, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { Droplet, ShieldCheck, Mail, Phone, Factory, Building2, Hotel, Car, ArrowUpRight, ChevronDown } from "lucide-react";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { LiveCounter } from "@/components/LiveCounter";
@@ -220,6 +221,39 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* LOGO BAR */}
+      <section className="py-12 px-6 border-y border-white/10 bg-black/30">
+        <p className="text-center text-xs font-bold uppercase tracking-widest text-muted-foreground/60 mb-8">Results verified at</p>
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 max-w-4xl mx-auto">
+          {[
+            { name: "Amazon", sub: "YYZ3 · 17% avg, 58.69% peak" },
+            { name: "Four Seasons", sub: "Fort Lauderdale · 26%" },
+            { name: "St. Regis", sub: "Toronto · $49K saved" },
+            { name: "Caliber Car Wash", sub: "5 sites · 23%" },
+            { name: "Grand Central", sub: "Kennedy · $50K/yr" },
+            { name: "Houstonian", sub: "Estates · 16%" },
+          ].map((c) => (
+            <div key={c.name} className="flex flex-col items-center text-center opacity-60 hover:opacity-100 transition-opacity">
+              <span className="font-bold text-white text-base tracking-tight">{c.name}</span>
+              <span className="text-[10px] text-muted-foreground uppercase tracking-widest">{c.sub}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
+      <section className="py-20 px-6 bg-black/20">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Common Questions</h2>
+            <p className="text-muted-foreground leading-relaxed" style={{ fontWeight: 300 }}>
+              The Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines, reducing metered water billing by 15% to 58%. NSF 61 and NSF 372 certified. No electricity. No moving parts. No ongoing maintenance.
+            </p>
+          </div>
+          <ImpactFAQ />
+        </div>
+      </section>
+
       {/* 6. CTA FOOTER */}
       <footer className="border-t border-white/10 pt-24 pb-12 px-6 bg-black/60 relative z-10">
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
@@ -256,6 +290,33 @@ export default function Home() {
           </div>
         </div>
       </footer>
+    </div>
+  );
+}
+
+function ImpactFAQ() {
+  const [open, setOpen] = useState<number | null>(null);
+  const faqs = [
+    { q: "What is the Smart Valve™ and how does it work?", a: "The Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines. Air bubbles in your pipes register as volume on your meter — you pay for every cubic foot, including the ones that were never liquid. The Smart Valve™ purges that air before it reaches the meter. Your meter reads only actual water." },
+    { q: "Is this savings really guaranteed?", a: "Yes. Every installation comes with a written guarantee of at least 15% reduction in metered water consumption. If your site does not hit 15%, we make it right — at no cost to you." },
+    { q: "How accurate is the live counter on this page?", a: "The counter estimates real-time gallons saved across ~32,000 installations globally, based on a 1-year sample of a small percentage of those installs. Results range from 15% to 58% per site. It uses the pilot cohort average as a baseline." },
+    { q: "Does it need electricity or maintenance?", a: "No. The Smart Valve™ is entirely passive — no power source, no moving parts that wear out, no service visits or subscriptions. It works continuously from installation day onward." },
+    { q: "What types of facilities use it?", a: "Hotels, resorts, Amazon fulfillment centers, car washes, multifamily buildings, breweries, food production facilities, industrial manufacturers, and municipal buildings. Any commercial property with a water meter can benefit." },
+    { q: "What certifications does it have?", a: "NSF 61 and NSF 372 certified — the gold standard for drinking water system components in the United States and Canada. Compatible with 99% of commercial water meters." },
+  ];
+  return (
+    <div className="space-y-3">
+      {faqs.map((faq, i) => (
+        <div key={i} className={`border rounded-2xl transition-all duration-200 ${open === i ? "border-primary/40 bg-primary/10" : "border-white/10 bg-white/5 hover:border-white/20"}`}>
+          <button className="w-full flex items-center justify-between px-6 py-5 text-left gap-4" onClick={() => setOpen(open === i ? null : i)}>
+            <span className={`font-bold text-base ${open === i ? "text-white" : "text-white/80"}`}>{faq.q}</span>
+            <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-200 ${open === i ? "rotate-180 text-primary" : "text-muted-foreground"}`} />
+          </button>
+          {open === i && (
+            <div className="px-6 pb-5 text-muted-foreground leading-relaxed" style={{ fontWeight: 300 }}>{faq.a}</div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
