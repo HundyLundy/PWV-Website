@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Droplet, ShieldCheck, Mail, Phone, Factory, Building2, Hotel, Car, ArrowUpRight } from "lucide-react";
+import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { LiveCounter } from "@/components/LiveCounter";
 
@@ -51,7 +52,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight leading-[1.1]">
-            Stop Paying for <span className="text-primary text-glow-primary">Air</span> in Your Water.
+            Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">Air</span> in Your Water.
           </h1>
           <p className="text-lg text-muted-foreground mb-16 max-w-2xl mx-auto">
             Estimated savings across <strong className="text-white">~32,000 installations</strong> globally, based on a verified 19.2% average reduction in metered water billing.
@@ -110,6 +111,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <BubbleValveSection />
 
       {/* 3. CLIENT IMPACT GRID */}
       <section className="py-32 relative z-10 px-6">

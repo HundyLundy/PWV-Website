@@ -9,8 +9,8 @@ import {
 // Asset Imports
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 import valveDiagram from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
-import blueprint from "@assets/PWV_-_image_blue-print_1774323165404.avif";
 import smartValve from "@assets/smart-valve1_1774325826879.avif";
+import { BubbleValveSection } from "@/components/BubbleValveSection";
 
 const REP_INFO = {
   name: "Hunter Lundquist",
@@ -209,14 +209,27 @@ export default function HomePage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="rounded-2xl overflow-hidden glass-panel p-2"
+              className="rounded-2xl glass-panel p-8 flex flex-col justify-center gap-5"
             >
-              <img src={blueprint} alt="Smart Valve blueprint" className="w-full h-auto rounded-xl opacity-80 mix-blend-screen" />
-              <p className="text-center text-sm text-gray-400 mt-3 pb-2">Engineering schematic</p>
+              {[
+                { label: "Certifications", value: "NSF 61 & NSF 372" },
+                { label: "Power Required", value: "None — fully passive" },
+                { label: "Meter Compatibility", value: "99% of commercial meters" },
+                { label: "Install Time", value: "2–4 hours, zero downtime" },
+                { label: "Guaranteed Minimum", value: "≥15% bill reduction" },
+                { label: "Maintenance", value: "None — no moving parts" },
+              ].map((spec) => (
+                <div key={spec.label} className="flex justify-between items-center border-b border-white/5 pb-4 last:border-0 last:pb-0">
+                  <span className="text-gray-400 text-sm">{spec.label}</span>
+                  <span className="text-white font-semibold text-sm text-right">{spec.value}</span>
+                </div>
+              ))}
             </motion.div>
           </div>
         </div>
       </section>
+
+      <BubbleValveSection />
 
       {/* CASE STUDIES */}
       <section id="case-studies" className="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">

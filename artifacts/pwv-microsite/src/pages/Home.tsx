@@ -11,6 +11,7 @@ import howItWorksSrc from "@assets/PWV_-_how_valve_works_image_1774323165404.png
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import ad1Src from "@assets/PWV_-_FINAL_Ad1_logo,water,sound_10sec_1774334086059.mp4";
 import ad2Src from "@assets/PWV_save_water_bill_ad_FINAL_1774334097077.mp4";
+import { BubbleValveSection } from "@/components/BubbleValveSection";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -273,6 +274,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <BubbleValveSection />
 
       {/* 5. CASE STUDIES */}
       <section id="case-studies" className="py-20 lg:py-32 bg-slate-950 text-white relative overflow-hidden">

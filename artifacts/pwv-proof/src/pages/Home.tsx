@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { ArrowDown, Droplets, CheckCircle, ArrowRight, Activity, Percent } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { cn } from "@/lib/utils";
@@ -42,7 +43,7 @@ export default function Home() {
             variants={fadeInUp}
             className="text-sm font-bold uppercase tracking-widest text-amber-400 mb-6"
           >
-            Stop Paying for Air in Your Water.
+            Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">Air</span> in Your Water.
           </motion.p>
           <motion.h1 
             variants={fadeInUp}
@@ -75,6 +76,8 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </section>
+
+      <BubbleValveSection />
 
       {/* SECTION 2: THE PROBLEM */}
       <section className="w-full py-32 px-6 bg-secondary/30 border-y border-border relative overflow-hidden">
