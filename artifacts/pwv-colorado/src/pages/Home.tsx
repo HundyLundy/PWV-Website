@@ -430,7 +430,7 @@ export default function HomePage() {
       <SavingsCalculator />
 
       {/* FAQ */}
-      <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0D1528] border-t border-white/5">
+      <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/10" style={{ background: 'linear-gradient(135deg, #0374A7 0%, #025d87 60%, #3C6E7F 100%)' }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
@@ -682,14 +682,14 @@ function FAQAccordion() {
       {faqs.map((faq, idx) => (
         <div 
           key={idx} 
-          className={`border rounded-xl transition-all duration-300 ${openIdx === idx ? 'bg-[#1A233A] border-primary/30' : 'bg-[#121B2E] border-white/5 hover:border-white/20'}`}
+          className={`border rounded-xl transition-all duration-300 backdrop-blur-sm ${openIdx === idx ? 'bg-white/20 border-white/50' : 'bg-white/10 border-white/20 hover:border-white/40'}`}
         >
           <button 
             className="w-full flex items-center justify-between p-6 text-left"
             onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
           >
-            <span className={`font-bold text-lg ${openIdx === idx ? 'text-white' : 'text-gray-300'}`}>{faq.q}</span>
-            <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${openIdx === idx ? 'rotate-180 text-primary' : 'text-gray-500'}`} />
+            <span className="font-bold text-lg text-white">{faq.q}</span>
+            <ChevronDown className={`w-5 h-5 transition-transform duration-300 shrink-0 ${openIdx === idx ? 'rotate-180 text-white' : 'text-white/70'}`} />
           </button>
           <AnimatePresence>
             {openIdx === idx && (
@@ -699,7 +699,7 @@ function FAQAccordion() {
                 exit={{ height: 0, opacity: 0 }}
                 className="overflow-hidden"
               >
-                <div className="p-6 pt-0 text-gray-400 leading-relaxed">
+                <div className="p-6 pt-0 text-white/80 leading-relaxed">
                   {faq.a}
                 </div>
               </motion.div>
