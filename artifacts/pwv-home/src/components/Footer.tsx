@@ -55,13 +55,30 @@ export function Footer() {
 
           <div className="flex flex-col sm:flex-row gap-12">
             <div>
-              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Navigation</h4>
+              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">This Page</h4>
               <ul className="space-y-2 text-sm text-slate-500">
                 {[
                   ["How It Works", "#how-it-works"],
                   ["Industries", "#industries"],
                   ["Client Results", "#clients"],
+                  ["FAQ", "#faq"],
                   ["Request Assessment", "#contact"],
+                ].map(([label, href]) => (
+                  <li key={label}>
+                    <a href={href} className="hover:text-white transition-colors">{label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Explore</h4>
+              <ul className="space-y-2 text-sm text-slate-500">
+                {[
+                  ["Case Studies & Proof", "/pwv-proof/"],
+                  ["Live Savings Counter", "/pwv-impact/"],
+                  ["Get a Full Proposal", "/pwv-microsite/"],
+                  ["Colorado Properties", "/pwv-colorado/"],
                 ].map(([label, href]) => (
                   <li key={label}>
                     <a href={href} className="hover:text-white transition-colors">{label}</a>
