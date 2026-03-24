@@ -117,8 +117,8 @@ export default function HomePage() {
             </div>
             
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-              Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">Air</span><br />
-              in Your Water.
+              Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air</span><br />
+              in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>.
             </h1>
             
             <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">

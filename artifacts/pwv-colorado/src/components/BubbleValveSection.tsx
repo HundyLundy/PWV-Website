@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 
+// AIR  = blue-400 → sky-300   (cool, airy blue)
+// WATER = teal-400 → emerald-300 (cool, liquid teal-green)
+const AIR_CLASS   = "text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300";
+const WATER_CLASS = "text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300";
+
 const BUBBLES = [
   { id:0,  w:22, h:18, lp:4,  tp:18, delay:0,    dur:4.2, op:0.55 },
   { id:1,  w:10, h:8,  lp:12, tp:62, delay:0.7,  dur:3.1, op:0.35 },
@@ -35,10 +40,9 @@ export function BubbleValveSection() {
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
             Stop Paying for{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
-              Air
-            </span>{" "}
-            in Your Water
+            <span className={AIR_CLASS}>Air</span>{" "}
+            in Your{" "}
+            <span className={WATER_CLASS}>Water</span>
           </h2>
         </div>
 
@@ -54,20 +58,28 @@ export function BubbleValveSection() {
           }}
         >
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(0,80,180,0.10),transparent_60%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(0,180,255,0.07),transparent_55%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(0,180,120,0.06),transparent_55%)]" />
 
+          {/* BEFORE label */}
           <div className="absolute top-5 left-6 z-20">
             <span className="block text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-500 mb-1">Before</span>
-            <span className="text-xl sm:text-2xl font-bold text-slate-300">Air + Water</span>
+            <div className="text-xl sm:text-2xl font-bold leading-tight">
+              <span className={AIR_CLASS}>Air</span>
+              <span className="text-slate-400"> + </span>
+              <span className={WATER_CLASS}>Water</span>
+            </div>
           </div>
 
+          {/* AFTER label */}
           <div className="absolute top-5 right-6 z-20 text-right">
-            <span className="block text-[10px] uppercase tracking-[0.22em] font-semibold text-blue-400/60 mb-1">After</span>
-            <span className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
-              100% Water
-            </span>
+            <span className="block text-[10px] uppercase tracking-[0.22em] font-semibold text-teal-500/60 mb-1">After</span>
+            <div className="text-xl sm:text-2xl font-bold leading-tight">
+              <span className="text-slate-300">100% </span>
+              <span className={WATER_CLASS}>Water</span>
+            </div>
           </div>
 
+          {/* Pipe */}
           <div className="absolute inset-0 flex items-center px-6 sm:px-10 py-16">
             <div
               className="w-full relative overflow-hidden"
@@ -78,13 +90,15 @@ export function BubbleValveSection() {
                 boxShadow: "inset 0 2px 8px rgba(0,0,0,0.6), inset 0 -2px 8px rgba(0,0,0,0.4)",
               }}
             >
+              {/* Clean water glow right side */}
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: "linear-gradient(90deg,transparent 0%,rgba(56,182,255,0.04) 52%,rgba(56,182,255,0.12) 100%)",
+                  background: "linear-gradient(90deg,transparent 0%,rgba(20,200,120,0.04) 52%,rgba(20,200,120,0.10) 100%)",
                 }}
               />
 
+              {/* Bubbles flowing left → valve */}
               {BUBBLES.map((b) => (
                 <motion.div
                   key={b.id}
@@ -113,6 +127,7 @@ export function BubbleValveSection() {
                 />
               ))}
 
+              {/* Water ripple stripes right side */}
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={`stripe-${i}`}
@@ -120,23 +135,25 @@ export function BubbleValveSection() {
                   style={{
                     left: `${52 + i * 15}%`,
                     right: 0,
-                    background: `linear-gradient(90deg,transparent,rgba(56,182,255,${0.06 + i * 0.04}))`,
+                    background: `linear-gradient(90deg,transparent,rgba(20,200,120,${0.05 + i * 0.03}))`,
                   }}
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2.5 + i * 0.8, repeat: Infinity, delay: i * 0.5 }}
                 />
               ))}
 
+              {/* Center divider */}
               <div
                 className="absolute top-0 bottom-0 w-px"
                 style={{
                   left: "50%",
-                  background: "linear-gradient(180deg,transparent,rgba(56,182,255,0.4),transparent)",
+                  background: "linear-gradient(180deg,transparent,rgba(80,200,160,0.35),transparent)",
                 }}
               />
             </div>
           </div>
 
+          {/* Smart Valve center */}
           <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
             <div className="flex flex-col items-center gap-2">
               <div className="relative flex items-center justify-center">
@@ -149,7 +166,7 @@ export function BubbleValveSection() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 />
                 <motion.div
-                  className="absolute rounded-full border border-blue-300/15"
+                  className="absolute rounded-full border border-teal-300/15"
                   style={{ width: 118, height: 118 }}
                   animate={{ scale: [1, 1.05, 1], opacity: [0.2, 0.5, 0.2] }}
                   transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
@@ -167,6 +184,7 @@ export function BubbleValveSection() {
             </div>
           </div>
 
+          {/* Bottom caption */}
           <div className="absolute bottom-4 left-0 right-0 text-center z-20">
             <p className="text-[11px] text-slate-600 uppercase tracking-widest">
               Air purged upstream of meter — you pay only for water

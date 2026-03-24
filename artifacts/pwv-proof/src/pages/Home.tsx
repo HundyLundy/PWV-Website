@@ -44,7 +44,7 @@ export default function Home() {
             variants={fadeInUp}
             className="text-sm font-bold uppercase tracking-widest text-amber-400 mb-6"
           >
-            Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">Air</span> in Your Water.
+            Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air</span> in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>.
           </motion.p>
           <motion.h1 
             variants={fadeInUp}
@@ -178,11 +178,15 @@ export default function Home() {
             
             <div className="absolute top-4 left-4 z-10">
               <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-slate-500 block mb-0.5">Before</span>
-              <span className="text-base font-bold text-slate-300">Air + Water</span>
+              <span className="text-base font-bold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air</span>
+                <span className="text-slate-400"> + </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>
+              </span>
             </div>
             <div className="absolute top-4 right-4 z-10 text-right">
-              <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-blue-400/60 block mb-0.5">After</span>
-              <span className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">100% Water</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-teal-500/60 block mb-0.5">After</span>
+              <span className="text-base font-bold text-slate-300">100% </span><span className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>
             </div>
           </motion.div>
         </div>

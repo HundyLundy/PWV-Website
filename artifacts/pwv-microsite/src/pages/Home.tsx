@@ -82,8 +82,8 @@ export default function Home() {
                 <ShieldCheck className="w-4 h-4" /> 100% Performance Guarantee
               </motion.div>
               <motion.h1 variants={fadeIn} className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6">
-                Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">Air</span><br/>
-                in Your Water.
+                Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air</span><br/>
+                in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>.
               </motion.h1>
               <motion.p variants={fadeIn} className="text-lg lg:text-xl text-slate-300 leading-relaxed mb-10">
                 Guaranteed ≥15% reduction in your water bill. Your meter stops counting air as volume — you stop overpaying. Verified M&V data. Operationally proven at scale.
@@ -157,37 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2.5 VIDEO ADS */}
-      <section className="py-20 bg-[#0A0F1E]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-sm font-bold uppercase tracking-widest text-blue-400 mb-3">See It In Action</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">Stop Paying for Air in Your Water.</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-900/20">
-              <video
-                src={ad1Src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-900/20">
-              <video
-                src={ad2Src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <BubbleValveSection />
 
       {/* 3. KEY PROOF STATS */}
       <section className="py-20 lg:py-32 bg-white">
@@ -275,8 +245,6 @@ export default function Home() {
         </div>
       </section>
 
-      <BubbleValveSection />
-
       {/* 5. CASE STUDIES */}
       <section id="case-studies" className="py-20 lg:py-32 bg-slate-950 text-white relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
@@ -354,6 +322,26 @@ export default function Home() {
                 </div>
               ))
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* 6.5 VIDEO ADS */}
+      <section className="py-20 bg-[#0A0F1E]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-bold uppercase tracking-widest text-blue-400 mb-3">See It In Action</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+              Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air</span> in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>.
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-900/20">
+              <video src={ad1Src} autoPlay muted loop playsInline className="w-full h-auto object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-900/20">
+              <video src={ad2Src} autoPlay muted loop playsInline className="w-full h-auto object-cover" />
+            </div>
           </div>
         </div>
       </section>
