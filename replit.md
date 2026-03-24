@@ -50,9 +50,27 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 
 ## Artifacts
 
-### `artifacts/pwv-dashboard` (`@workspace/pwv-dashboard`)
+### Perfect Water Valve Sales Toolkit (5 apps + 1 API)
 
-Perfect Water Valve Smart Valve sales dashboard. Data visualization app showing verified water savings data from the Amazon Canada pilot program (YYZ3 and YYZ4 fulfillment centers). Built with React + Vite + Recharts + TanStack Table. Data served from the shared API server at `/api/data/*`.
+Full-stack sales toolkit for Perfect Water Valve (PerfectWaterValve.com). Contact: (361) 585-1111 | support@PerfectWaterValve.com. Partner: AWS/CWS. Minimum guaranteed: ≥15% water savings.
+
+All data routes live in `artifacts/api-server/src/routes/data.ts`. Real verified customer data — never overwrite.
+
+### `artifacts/pwv-dashboard` (`@workspace/pwv-dashboard`) — `/pwv-dashboard/`
+
+Internal analytics dashboard. 4 tabs: Overview (KPI cards), Proof & Data (charts + Amazon site tables), Client Portfolio (customer cards), Case Studies (Caliber deep-dive + Savings by Industry + Enterprise Deployments). Built with React + Vite + Recharts + TanStack Table + Shadcn UI. IBM Plex Sans font, primary #0079F2, dot-grid background. Dark mode toggle.
+
+### `artifacts/pwv-microsite` (`@workspace/pwv-microsite`) — `/pwv-microsite/`
+
+Prospect-facing marketing website. Two routes: `/` (landing page with hero, animated counters, testimonials, enterprise grid) and `/proposal` (interactive ROI proposal calculator with industry-specific savings rates). Built with React + Vite + wouter routing.
+
+### `artifacts/pwv-impact` (`@workspace/pwv-impact`) — `/pwv-impact/`
+
+Live Water Savings Counter. Dramatic dark page for trade shows and social sharing. Features: animated counters (28M+ gallons/year, $320K+/yr, 19.2% avg), real-time running ticker (gallons accumulating since page load at ~0.89 gal/sec), glowing client impact cards, animated industry savings bars, ≥15% guarantee badge. Uses framer-motion. Always dark theme (#0A0F1E + #0079F2).
+
+### `artifacts/pwv-proof` (`@workspace/pwv-proof`) — `/pwv-proof/`
+
+Scroll-Driven Proof Story. Cinematic Apple-style storytelling page for skeptical prospects. Sections scroll-animate in using framer-motion whileInView: Opening hook, The Problem (air in pipes), The Guarantee, 5 client stories (Amazon, Caliber, St. Regis, Four Seasons, Grand Central), stats counter section, industry performance cards, CTA footer. Dark navy + warm gold/amber (#F59E0B) accent theme.
 
 ## Packages
 

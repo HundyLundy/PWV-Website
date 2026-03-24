@@ -1,0 +1,11 @@
+packages:
+  "framer-motion": "Required for complex scroll-driven animations and cinematic page transitions"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+  "lucide-react": "Icons for the UI"
+
+images: []
+
+notes:
+  - "No external API calls are made. All data is hardcoded as per instructions."
+  - "Using framer-motion heavily for the scroll-driven storytelling experience."
