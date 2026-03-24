@@ -5,7 +5,7 @@ import { LiveCounter } from "@/components/LiveCounter";
 
 // Hardcoded verified data as requested by implementation notes
 const HERO_STATS = [
-  { value: 36.8, label: "Phantom Gallons Off Bills / Year", prefix: "", suffix: "B+", decimals: 1 },
+  { value: 36.8, label: "Gallons Conserved Per Year", prefix: "", suffix: "B+", decimals: 1 },
   { value: 440, label: "Estimated Annual Savings", prefix: "$", suffix: "M+", decimals: 0 },
   { value: 19.2, label: "Average Reduction", prefix: "", suffix: "%", decimals: 1 }
 ];
@@ -54,7 +54,7 @@ export default function Home() {
             Stop Paying for <span className="text-primary text-glow-primary">Air</span> in Your Water.
           </h1>
           <p className="text-lg text-muted-foreground mb-16 max-w-2xl mx-auto">
-            Estimated impact across <strong className="text-white">~32,000 installations</strong> globally, based on verified 19.2% average reduction. Per-client verified data below.
+            Estimated impact across <strong className="text-white">~32,000 installations</strong> globally. Metered reductions are EPA-recognized water conservation — clients like Amazon have claimed federal water credits on this data.
           </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
@@ -105,7 +105,7 @@ export default function Home() {
               <LiveCounter className="text-glow-white" />
             </div>
             <p className="text-xl md:text-3xl font-light text-muted-foreground">
-              Air-billed gallons removed from your meter since you arrived
+              Gallons conserved since you arrived — metered, verified, EPA-recognized
             </p>
           </motion.div>
         </div>
@@ -219,7 +219,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to see your numbers?</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mb-10">
-            Join the industry leaders who've stopped paying for air. Request a free site assessment today.
+            Join the industry leaders saving water, cutting bills, and earning EPA conservation credits. Request a free site assessment today.
           </p>
           
           <button 
