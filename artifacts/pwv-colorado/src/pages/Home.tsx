@@ -165,11 +165,11 @@ export default function HomePage() {
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section id="how-it-works" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[#0D1528]">
+      <section id="how-it-works" className="py-24 px-4 sm:px-6 lg:px-8 relative" style={{ backgroundColor: '#E8EFF7' }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Precision Engineering. Zero Moving Parts.</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">Fully passive. NSF certified. Compatible with 99% of commercial meters — installed in under 4 hours.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0A1F3A' }}>Precision Engineering. Zero Moving Parts.</h2>
+            <p className="max-w-2xl mx-auto text-lg" style={{ color: '#4A7085' }}>Fully passive. NSF certified. Compatible with 99% of commercial meters — installed in under 4 hours.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
@@ -184,14 +184,14 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 }}
-                className="glass-panel rounded-2xl p-8 relative overflow-hidden group hover:border-primary/50 transition-colors"
+                className="bg-white rounded-2xl p-8 relative overflow-hidden group border border-[#C5D8E8] hover:border-[#0374A7]/40 transition-colors shadow-sm"
               >
-                <div className="text-7xl font-black text-white/5 absolute -top-4 -right-4 group-hover:text-primary/10 transition-colors">{step.num}</div>
-                <div className="w-12 h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center font-bold text-xl mb-6 relative z-10">
+                <div className="text-7xl font-black absolute -top-4 -right-4 transition-colors" style={{ color: '#0030B5', opacity: 0.05 }}>{step.num}</div>
+                <div className="w-12 h-12 bg-primary/15 text-primary rounded-full flex items-center justify-center font-bold text-xl mb-6 relative z-10">
                   {step.num}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3 relative z-10">{step.title}</h3>
-                <p className="text-gray-400 leading-relaxed relative z-10">{step.desc}</p>
+                <h3 className="text-xl font-bold mb-3 relative z-10" style={{ color: '#0A1F3A' }}>{step.title}</h3>
+                <p className="leading-relaxed relative z-10" style={{ color: '#4A7085' }}>{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -201,10 +201,10 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden glass-panel p-2 box-glow"
+              className="rounded-2xl overflow-hidden bg-white border border-[#C5D8E8] p-2 shadow-md"
             >
               <img src={valveDiagram} alt="Smart Valve installation diagram" className="w-full h-auto rounded-xl" />
-              <p className="text-center text-sm text-gray-400 mt-3 pb-2">Smart Valve™ installation flow</p>
+              <p className="text-center text-sm mt-3 pb-2" style={{ color: '#4A7085' }}>Smart Valve™ installation flow</p>
             </motion.div>
             
             <motion.div 
@@ -212,7 +212,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="rounded-2xl glass-panel p-8 flex flex-col justify-center gap-5"
+              className="rounded-2xl bg-white border border-[#C5D8E8] p-8 flex flex-col justify-center gap-5 shadow-sm"
             >
               {[
                 { label: "Certifications", value: "NSF 61 & NSF 372" },
@@ -222,9 +222,9 @@ export default function HomePage() {
                 { label: "Guaranteed Minimum", value: "≥15% bill reduction" },
                 { label: "Maintenance", value: "None — no moving parts" },
               ].map((spec) => (
-                <div key={spec.label} className="flex justify-between items-center border-b border-white/5 pb-4 last:border-0 last:pb-0">
-                  <span className="text-gray-400 text-sm">{spec.label}</span>
-                  <span className="text-white font-semibold text-sm text-right">{spec.value}</span>
+                <div key={spec.label} className="flex justify-between items-center border-b border-[#C5D8E8] pb-4 last:border-0 last:pb-0">
+                  <span className="text-sm" style={{ color: '#4A7085' }}>{spec.label}</span>
+                  <span className="font-semibold text-sm text-right" style={{ color: '#0A1F3A' }}>{spec.value}</span>
                 </div>
               ))}
             </motion.div>
@@ -336,11 +336,11 @@ export default function HomePage() {
       </section>
 
       {/* WHO WE SERVE */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0D1528] border-t border-white/5">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/10" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Who We Serve</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">Designed for properties spending at least $5,000/month on water.</p>
+            <p className="max-w-2xl mx-auto text-lg text-white/80">Designed for properties spending at least $5,000/month on water.</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -359,13 +359,13 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-[#1A233A] p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-colors flex flex-col items-center text-center"
+                className="bg-white/15 backdrop-blur-sm p-6 rounded-xl border border-white/25 hover:bg-white/25 hover:border-white/40 transition-all flex flex-col items-center text-center"
               >
-                <div className="w-14 h-14 bg-primary/20 text-primary rounded-full flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-white/20 text-white rounded-full flex items-center justify-center mb-4">
                   <item.icon className="w-7 h-7" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-400">{item.desc}</p>
+                <p className="text-sm text-white/75">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -373,7 +373,7 @@ export default function HomePage() {
       </section>
 
       {/* WHY COLORADO */}
-      <section id="why-colorado" className="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5 overflow-hidden">
+      <section id="why-colorado" className="py-24 px-4 sm:px-6 lg:px-8 border-t overflow-hidden" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div 
@@ -382,8 +382,8 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="order-2 lg:order-1 relative"
             >
-              <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full" />
-              <img src={smartValve} alt="Smart Valve Unit" className="relative z-10 w-full h-auto rounded-2xl box-glow border border-white/10" />
+              <div className="absolute inset-0 bg-primary/15 blur-[100px] rounded-full" />
+              <img src={smartValve} alt="Smart Valve Unit" className="relative z-10 w-full h-auto rounded-2xl shadow-xl border border-[#C5D8E8]" />
             </motion.div>
             
             <motion.div 
@@ -392,28 +392,28 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="order-1 lg:order-2"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Why Colorado Properties Need This</h2>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6" style={{ color: '#0A1F3A' }}>Why Colorado Properties Need This</h2>
+              <p className="text-lg mb-8 leading-relaxed" style={{ color: '#2E4A5A' }}>
                 Colorado's high-altitude municipal systems operate at elevated line pressures. Combined with aging infrastructure and rising utility rates from Denver Water, Colorado Springs Utilities, and other Front Range providers, commercial properties are paying for far more volume than they're actually using.
               </p>
               
               <div className="space-y-6 mb-10">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 border border-red-500/20">
+                  <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center shrink-0 border border-red-500/20">
                     <Activity className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold text-lg mb-1">Rising Utility Costs</h4>
-                    <p className="text-gray-400">Colorado utility rates have increased significantly year-over-year, shrinking property margins.</p>
+                    <h4 className="font-bold text-lg mb-1" style={{ color: '#0A1F3A' }}>Rising Utility Costs</h4>
+                    <p style={{ color: '#4A7085' }}>Colorado utility rates have increased significantly year-over-year, shrinking property margins.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-600 flex items-center justify-center shrink-0 border border-blue-500/20">
                     <Droplets className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold text-lg mb-1">High Pressure Surges</h4>
-                    <p className="text-gray-400">Mountain-fed systems create air entrainment conditions that are absolutely ideal for Smart Valve™ intervention.</p>
+                    <h4 className="font-bold text-lg mb-1" style={{ color: '#0A1F3A' }}>High Pressure Surges</h4>
+                    <p style={{ color: '#4A7085' }}>Mountain-fed systems create air entrainment conditions that are absolutely ideal for Smart Valve™ intervention.</p>
                   </div>
                 </div>
               </div>
