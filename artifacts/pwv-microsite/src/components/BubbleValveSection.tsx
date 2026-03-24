@@ -206,7 +206,107 @@ export function BubbleValveSection() {
           </div>
         </motion.div>
 
+        {/* ── INSTALLATION DIAGRAM ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-12"
+        >
+          <p className="text-center text-[10px] uppercase tracking-[0.25em] text-slate-500 mb-8">
+            Where It Installs · How It Works
+          </p>
+
+          {/* Flow diagram */}
+          <div className="flex items-stretch justify-center gap-0 flex-wrap sm:flex-nowrap">
+
+            {/* Node: Municipal Main */}
+            <DiagramNode
+              icon="🏙️"
+              label="Municipal Main"
+              sub="City supply enters your property under pressure — mixed with air"
+              color="#3b82f6"
+              accent
+            />
+
+            <PipeArrow />
+
+            {/* Node: Smart Valve™ — highlighted */}
+            <div className="flex flex-col items-center px-4 py-5 rounded-2xl border text-center relative z-10 min-w-[140px] sm:min-w-[160px]"
+              style={{ borderColor: '#0374A7', background: 'linear-gradient(160deg,#0C1E3C,#071428)', boxShadow: '0 0 28px rgba(3,116,167,0.30)' }}
+            >
+              <div className="w-9 h-9 rounded-full flex items-center justify-center mb-2 text-lg"
+                style={{ background: 'rgba(3,116,167,0.25)', border: '1px solid rgba(3,116,167,0.5)' }}>
+                <img src={smartValveSrc} alt="Smart Valve™" className="w-6 h-6 object-contain" style={{ transform: 'rotate(90deg)', filter: 'brightness(1.2) saturate(1.3)' }} />
+              </div>
+              <span className="text-[10px] uppercase tracking-widest font-bold mb-1" style={{ color: '#0374A7' }}>Smart Valve™</span>
+              <span className="text-white text-xs font-semibold leading-snug mb-1">Right After<br/>Main Shutoff</span>
+              <span className="text-slate-400 text-[10px] leading-snug">Air purged here — before it ever reaches your meter</span>
+            </div>
+
+            <PipeArrow clean />
+
+            {/* Node: Water Meter */}
+            <DiagramNode
+              icon="💧"
+              label="Water Meter"
+              sub="Now reads only water — every cubic foot billed is liquid"
+              color="#10b981"
+            />
+
+            <PipeArrow clean />
+
+            {/* Node: Your Facility */}
+            <DiagramNode
+              icon="🏢"
+              label="Your Facility"
+              sub="15–58% lower bill. Same pressure. Nothing changes for your operation."
+              color="#10b981"
+            />
+          </div>
+
+          {/* Three key facts */}
+          <div className="flex flex-wrap justify-center gap-6 mt-10">
+            {[
+              { icon: "⚡", text: "No electricity required" },
+              { icon: "⚙️", text: "No moving parts" },
+              { icon: "🏅", text: "NSF 61 & NSF 372 certified" },
+            ].map((f) => (
+              <div key={f.text} className="flex items-center gap-2 text-slate-400 text-xs">
+                <span>{f.icon}</span>
+                <span>{f.text}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
     </section>
+  );
+}
+
+function DiagramNode({ icon, label, sub, color, accent }: { icon: string; label: string; sub: string; color: string; accent?: boolean }) {
+  return (
+    <div className="flex flex-col items-center px-4 py-5 rounded-2xl border text-center min-w-[120px] sm:min-w-[140px]"
+      style={{ borderColor: accent ? color + '44' : '#ffffff11', background: accent ? 'rgba(59,130,246,0.06)' : 'rgba(255,255,255,0.02)' }}
+    >
+      <span className="text-2xl mb-2">{icon}</span>
+      <span className="text-white text-xs font-semibold leading-snug mb-1">{label}</span>
+      <span className="text-slate-500 text-[10px] leading-snug">{sub}</span>
+    </div>
+  );
+}
+
+function PipeArrow({ clean }: { clean?: boolean }) {
+  return (
+    <div className="flex items-center self-center mx-1 sm:mx-2 flex-shrink-0">
+      <div className="flex flex-col items-center gap-[2px]">
+        <div className="h-px w-8 sm:w-12" style={{ background: clean ? 'linear-gradient(90deg,#10b981,#10b98166)' : 'linear-gradient(90deg,#3b82f688,#3b82f6)' }} />
+        <svg width="8" height="8" viewBox="0 0 8 8" className="-ml-1">
+          <path d="M0 4h7M4 1l3 3-3 3" stroke={clean ? '#10b981' : '#3b82f6'} strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+    </div>
   );
 }
