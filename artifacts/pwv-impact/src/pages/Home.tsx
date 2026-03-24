@@ -316,60 +316,82 @@ export default function Home() {
 }
 
 function LossCounter() {
-  const PRESETS = [
-    { label: "$5K / mo", value: 5000 },
-    { label: "$15K / mo", value: 15000 },
-    { label: "$30K / mo", value: 30000 },
-    { label: "$75K / mo", value: 75000 },
-  ];
+  const MIN = 1000;
+  const MAX = 100000;
   const [bill, setBill] = useState(15000);
   const [amount, setAmount] = useState(0);
 
   useEffect(() => {
     const SAVINGS_RATE = 0.192;
     const ratePerMs = (bill * SAVINGS_RATE) / (30 * 24 * 3600 * 1000);
-
     const jan1 = new Date(new Date().getFullYear(), 0, 1).getTime();
     let frameId: number;
-
     const update = () => {
-      const elapsed = Date.now() - jan1;
-      setAmount(elapsed * ratePerMs);
+      setAmount((Date.now() - jan1) * ratePerMs);
       frameId = requestAnimationFrame(update);
     };
-
     frameId = requestAnimationFrame(update);
     return () => cancelAnimationFrame(frameId);
   }, [bill]);
 
+  const pct = ((bill - MIN) / (MAX - MIN)) * 100;
+
+  const fmtBill = (v: number) =>
+    v >= 1000 ? `$${(v / 1000).toFixed(v % 1000 === 0 ? 0 : 1)}K` : `$${v}`;
+
   const formatted = amount.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    style: 'currency', currency: 'USD',
+    minimumFractionDigits: 2, maximumFractionDigits: 2,
   });
 
-  const perMonth = (bill * 0.192).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  const perMonth = (bill * 0.192).toLocaleString('en-US', {
+    style: 'currency', currency: 'USD', maximumFractionDigits: 0,
+  });
 
   return (
-    <div className="w-full">
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
-        {PRESETS.map((p) => (
-          <button
-            key={p.value}
-            onClick={() => setBill(p.value)}
-            className={`px-5 py-2 rounded-full text-sm font-bold border transition-all ${
-              bill === p.value
-                ? 'border-red-500 text-white'
-                : 'border-white/20 text-white/50 hover:border-white/40 hover:text-white/80'
-            }`}
-            style={bill === p.value ? { backgroundColor: '#7f1d1d', borderColor: '#EF4444' } : {}}
-          >
-            {p.label}
-          </button>
-        ))}
+    <div className="w-full max-w-2xl mx-auto">
+
+      {/* Slider label */}
+      <div className="flex justify-between items-baseline mb-2 px-1">
+        <span className="text-white/40 text-xs uppercase tracking-widest">Monthly water bill</span>
+        <span className="text-white font-bold text-lg tabular-nums">{fmtBill(bill)} / mo</span>
       </div>
 
+      {/* Slider track */}
+      <div className="relative mb-2">
+        <div className="h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.08)' }}>
+          <div
+            className="h-2 rounded-full transition-all duration-75"
+            style={{ width: `${pct}%`, background: 'linear-gradient(90deg, #991b1b, #EF4444)' }}
+          />
+        </div>
+        <input
+          type="range"
+          min={MIN}
+          max={MAX}
+          step={1000}
+          value={bill}
+          onChange={(e) => setBill(Number(e.target.value))}
+          className="absolute inset-0 w-full opacity-0 cursor-pointer h-2"
+          style={{ height: '100%' }}
+        />
+        {/* Thumb */}
+        <div
+          className="absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-2 border-red-500 shadow-lg pointer-events-none transition-all duration-75"
+          style={{ left: `calc(${pct}% - 10px)`, background: '#0A0F1A', boxShadow: '0 0 12px rgba(239,68,68,0.6)' }}
+        />
+      </div>
+
+      {/* Tick labels */}
+      <div className="flex justify-between text-[10px] text-white/25 px-0 mb-10 uppercase tracking-wider">
+        <span>$1K</span>
+        <span>$25K</span>
+        <span>$50K</span>
+        <span>$75K</span>
+        <span>$100K</span>
+      </div>
+
+      {/* Counter */}
       <div className="font-display text-5xl sm:text-7xl md:text-8xl font-bold tracking-tighter tabular-nums leading-none mb-6" style={{ color: '#EF4444' }}>
         {formatted}
       </div>
