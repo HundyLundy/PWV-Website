@@ -49,6 +49,11 @@ export default function Home() {
               Verified Impact Data
             </span>
           </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight leading-[1.1]">
+            Stop Paying for <span className="text-primary text-glow-primary">Air</span> in Your Water.
+          </h1>
+          <p className="text-lg text-muted-foreground mb-16 max-w-xl mx-auto">Every gallon saved below is verified, documented, and guaranteed.</p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
             {HERO_STATS.map((stat, i) => (

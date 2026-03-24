@@ -38,6 +38,12 @@ export default function Home() {
             <span className="text-sm font-medium tracking-wide uppercase text-muted-foreground">The Smart Valve™</span>
           </motion.div>
           
+          <motion.p
+            variants={fadeInUp}
+            className="text-sm font-bold uppercase tracking-widest text-amber-400 mb-6"
+          >
+            Stop Paying for Air in Your Water.
+          </motion.p>
           <motion.h1 
             variants={fadeInUp}
             className="text-5xl sm:text-6xl md:text-8xl font-display font-semibold tracking-tight text-glow leading-[1.1]"

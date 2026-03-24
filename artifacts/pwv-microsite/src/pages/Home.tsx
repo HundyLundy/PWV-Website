@@ -9,6 +9,8 @@ import { useGetSummary, useGetEnterpriseDeployments } from "@workspace/api-clien
 
 import howItWorksSrc from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
+import ad1Src from "@assets/PWV_-_FINAL_Ad1_logo,water,sound_10sec_1774334086059.mp4";
+import ad2Src from "@assets/PWV_save_water_bill_ad_FINAL_1774334097077.mp4";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -79,10 +81,8 @@ export default function Home() {
                 <ShieldCheck className="w-4 h-4" /> 100% Performance Guarantee
               </motion.div>
               <motion.h1 variants={fadeIn} className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6">
-                The Smart Valve™ <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
-                  Stops Water Waste.
-                </span>
+                Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">Air</span><br/>
+                in Your Water.
               </motion.h1>
               <motion.p variants={fadeIn} className="text-lg lg:text-xl text-slate-300 leading-relaxed mb-10">
                 Guaranteed ≥15% water savings for commercial and industrial facilities. Verified through rigorous M&V data. Operationally proven at scale.
@@ -151,6 +151,38 @@ export default function Home() {
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10" />
             <div className="flex gap-16 items-center w-max animate-marquee text-slate-400 font-bold text-lg md:text-xl grayscale opacity-60">
               <span>Amazon</span> • <span>Four Seasons Hotels & Resorts</span> • <span>St. Regis</span> • <span>Labatt Brewing</span> • <span>Guinness</span> • <span>Linamar</span> • <span>Starlight Investments</span> • <span>Akelius</span> • <span>Kerry Group</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 VIDEO ADS */}
+      <section className="py-20 bg-[#0A0F1E]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-bold uppercase tracking-widest text-blue-400 mb-3">See It In Action</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">Stop Paying for Air in Your Water.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-900/20">
+              <video
+                src={ad1Src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-900/20">
+              <video
+                src={ad2Src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
