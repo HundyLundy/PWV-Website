@@ -44,9 +44,6 @@ export function BubbleValveSection() {
       <div className="max-w-5xl mx-auto">
 
         <div className="text-center mb-10">
-          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-blue-400/50 mb-3">
-            How the Smart Valve™ Works
-          </p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
             Stop Paying for{" "}
             <span className={AIR_CLASS}>Air</span>{" "}

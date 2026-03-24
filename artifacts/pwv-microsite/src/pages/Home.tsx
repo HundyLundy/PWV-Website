@@ -200,8 +200,8 @@ export default function Home() {
       <section className="py-20 lg:py-32 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">How Smart Valve™ Works</h2>
-            <p className="text-lg text-slate-600">Eliminating waste at the point of distribution without touching a single fixture.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">From Assessment to Guaranteed Savings</h2>
+            <p className="text-lg text-slate-600">Installed in under 2 hours. Zero downtime. Savings verified by independent M&V data.</p>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-12 items-center mb-16">
