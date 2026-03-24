@@ -1,6 +1,6 @@
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 import { Mail, Phone } from "lucide-react";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export function Footer() {
   return (
@@ -39,6 +39,16 @@ export function Footer() {
                 style={{ backgroundColor: 'rgba(225,48,108,0.12)', border: '1px solid rgba(225,48,108,0.2)', color: '#e1306c' }}
               >
                 <FaInstagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/113022552"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                style={{ backgroundColor: 'rgba(10,102,194,0.14)', border: '1px solid rgba(10,102,194,0.22)', color: '#0a66c2' }}
+              >
+                <FaLinkedinIn className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -102,6 +112,15 @@ export function Footer() {
                 aria-label="Instagram"
               >
                 <FaInstagram className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/113022552"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-400 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedinIn className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
