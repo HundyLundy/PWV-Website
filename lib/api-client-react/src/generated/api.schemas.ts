@@ -108,6 +108,12 @@ export interface CustomerCase {
   highlight: string;
   /** Single letter for avatar display */
   logoLetter: string;
+  /** Direct quote from the customer */
+  testimonial?: string;
+  /** Name and title of the person quoted */
+  testimonialAuthor?: string;
+  /** Optional currency/rate clarification (e.g. "CAD") */
+  currencyNote?: string;
 }
 
 export type CarwashSiteStatus =

@@ -640,6 +640,7 @@ export default function Dashboard() {
                   industrial: { bg: "bg-orange-100 dark:bg-orange-900/30", text: "text-orange-800 dark:text-orange-300", avatar: "bg-orange-600" },
                   retail: { bg: "bg-pink-100 dark:bg-pink-900/30", text: "text-pink-800 dark:text-pink-300", avatar: "bg-pink-600" },
                   municipal: { bg: "bg-teal-100 dark:bg-teal-900/30", text: "text-teal-800 dark:text-teal-300", avatar: "bg-teal-600" },
+                  automotive: { bg: "bg-cyan-100 dark:bg-cyan-900/30", text: "text-cyan-800 dark:text-cyan-300", avatar: "bg-cyan-600" },
                 };
                 const theme = colors[customer.industry.toLowerCase()] || { bg: "bg-gray-100 dark:bg-gray-800", text: "text-gray-800 dark:text-gray-300", avatar: "bg-gray-600" };
                 
@@ -685,9 +686,24 @@ export default function Dashboard() {
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-muted-foreground">Annual Cost Saved</span>
-                          <span className="font-medium text-green-600 dark:text-green-500">{formatCurrency(customer.annualCostSaved)}</span>
+                          <span className="font-medium text-green-600 dark:text-green-500">
+                            {formatCurrency(customer.annualCostSaved)}
+                            {customer.currencyNote && (
+                              <span className="ml-1 text-[10px] px-1 py-0 bg-muted text-muted-foreground rounded font-normal">{customer.currencyNote}</span>
+                            )}
+                          </span>
                         </div>
                       </div>
+
+                      {customer.testimonial && (
+                        <div className="mt-4 pt-3 border-t border-border">
+                          <div className="rounded-md p-3" style={{ borderLeft: "3px solid #0079F2", backgroundColor: isDark ? "rgba(0,121,242,0.08)" : "rgba(0,121,242,0.04)" }}>
+                            <span className="text-lg leading-none text-[#0079F2] font-serif select-none">"</span>
+                            <p className="text-xs italic text-muted-foreground mt-0.5 leading-relaxed">{customer.testimonial}</p>
+                            <p className="text-[11px] font-medium mt-2 text-foreground/70">— {customer.testimonialAuthor}</p>
+                          </div>
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 );

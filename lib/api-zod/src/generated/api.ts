@@ -116,6 +116,18 @@ export const GetCustomersResponseItem = zod.object({
     .string()
     .describe("A one-line headline about this customer's results"),
   logoLetter: zod.string().describe("Single letter for avatar display"),
+  testimonial: zod
+    .string()
+    .optional()
+    .describe("Direct quote from the customer"),
+  testimonialAuthor: zod
+    .string()
+    .optional()
+    .describe("Name and title of the person quoted"),
+  currencyNote: zod
+    .string()
+    .optional()
+    .describe('Optional currency\/rate clarification (e.g. \"CAD\")'),
 });
 export const GetCustomersResponse = zod.array(GetCustomersResponseItem);
 
