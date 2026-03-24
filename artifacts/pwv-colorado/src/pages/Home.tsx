@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  Building2, Home, Hotel, Cross, Droplets, Utensils, 
+  Building2, Home, Hotel, Cross, Droplets, Utensils, Flag,
   CheckCircle2, ChevronDown, ArrowRight, ShieldCheck, 
   ZapOff, Activity, Menu, X
 } from "lucide-react";
@@ -347,7 +347,8 @@ export default function HomePage() {
               { icon: Hotel, title: "Hotels & Hospitality", desc: "Invisible savings that never impact the guest experience." },
               { icon: Cross, title: "Hospitals & Medical", desc: "Reliable operation for demanding, high-volume facilities." },
               { icon: Droplets, title: "Car Washes", desc: "Massive ROI due to continuous high-volume water consumption." },
-              { icon: Utensils, title: "Restaurants & Food Service", desc: "Lower overhead costs in margin-tight operations." }
+              { icon: Utensils, title: "Restaurants & Food Service", desc: "Lower overhead costs in margin-tight operations." },
+              { icon: Flag, title: "Golf Courses & Country Clubs", desc: "Irrigation and clubhouse operations make golf one of the highest-ROI applications." }
             ].map((item, i) => (
               <motion.div 
                 key={i}

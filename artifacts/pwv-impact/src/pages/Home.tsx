@@ -173,7 +173,10 @@ export default function Home() {
       {/* 4. INDUSTRY SAVINGS BAR CHART */}
       <section className="py-24 bg-black/20 border-y border-white/5">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">Average Savings by Industry</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Average Savings by Industry</h2>
+          <p className="text-center text-sm text-muted-foreground/70 mb-12 uppercase tracking-widest">
+            Based on a verified sample of 19 commercial installations
+          </p>
           
           <div className="space-y-8">
             {INDUSTRIES.map((ind, i) => (

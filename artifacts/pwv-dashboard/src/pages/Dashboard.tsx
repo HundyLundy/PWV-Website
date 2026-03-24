@@ -121,7 +121,7 @@ function formatCurrency(value: number): string {
 
 export default function Dashboard() {
   const queryClient = useQueryClient();
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const [activeTab, setActiveTab] = useState("overview");
   
   // Data queries
@@ -251,73 +251,76 @@ export default function Dashboard() {
   });
 
   return (
-    <div className="min-h-screen pwv-page-bg px-5 py-4 pt-[32px] pb-[32px] pl-[24px] pr-[24px]">
-      <div className="max-w-[1400px] mx-auto">
-        
-        {/* Header */}
-        <div className="mb-6 flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
-          <div className="pt-2">
-            <div className="flex items-center gap-2 mb-1 text-[#0079F2]">
-              <img src={logoSrc} alt="Perfect Water Valve logo" className="w-7 h-7 object-contain" />
-              <span className="font-bold text-lg tracking-tight">Perfect Water Valve</span>
-              <span className="text-sm border-l border-current pl-2 ml-1 opacity-80 font-medium">Guaranteed 15% Water Savings</span>
+    <div className="min-h-screen pwv-page-bg pb-12">
+      {/* Top accent bar */}
+      <div className="h-1 w-full bg-gradient-to-r from-blue-600 via-sky-400 to-teal-400" />
+
+      {/* Navbar */}
+      <div className="sticky top-0 z-40 border-b border-white/8 bg-[#060A1A]/90 backdrop-blur-md px-6 py-4 print:hidden">
+        <div className="max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <img src={logoSrc} alt="Perfect Water Valve" className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(0,121,242,0.5)]" />
+            <div>
+              <span className="font-bold text-white text-lg tracking-tight leading-tight block">Perfect Water Valve</span>
+              <span className="text-xs text-blue-400/70 uppercase tracking-widest font-medium">Smart Valve™ Performance Dashboard</span>
             </div>
-            <h1 className="font-bold text-[32px] mt-2">Smart Valve Sales Dashboard</h1>
-            <p className="text-muted-foreground mt-1.5 text-[15px]">Amazon Canada Smart Valve Pilot — Verified Performance Data</p>
-            
-            {DATA_SOURCES.length > 0 && (
-              <div className="flex flex-wrap items-center gap-1.5 mt-3">
-                <span className="text-[12px] text-muted-foreground shrink-0">Data Sources:</span>
-                {DATA_SOURCES.map((source) => (
-                  <span
-                    key={source}
-                    className="text-[12px] font-bold rounded px-2 py-0.5 truncate print:!bg-[rgb(229,231,235)] print:!text-[rgb(75,85,99)]"
-                    title={source}
-                    style={{ maxWidth: "20ch", backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "rgb(229, 231, 235)", color: isDark ? "#c8c9cc" : "rgb(75, 85, 99)" }}
-                  >
-                    {source}
-                  </span>
-                ))}
-              </div>
-            )}
-            {lastRefreshed && <p className="text-[12px] text-muted-foreground mt-2">Last refresh: {lastRefreshed}</p>}
           </div>
 
-          <div className="flex items-center gap-3 pt-2 print:hidden">
+          <div className="flex items-center gap-2 print:hidden">
             <div className="relative" ref={dropdownRef}>
-              <div className="flex items-center rounded-[6px] overflow-hidden h-[26px] text-[12px] border border-transparent" style={{ backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#F0F1F2", color: isDark ? "#c8c9cc" : "#4b5563" }}>
-                <button onClick={handleRefresh} disabled={loading} className="flex items-center gap-1 px-2 h-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors disabled:opacity-50">
+              <div className="flex items-center rounded-lg overflow-hidden h-8 text-[12px] border border-white/10 bg-white/5 text-slate-300">
+                <button onClick={handleRefresh} disabled={loading} className="flex items-center gap-1.5 px-3 h-full hover:bg-white/10 transition-colors disabled:opacity-50">
                   <RefreshCw className={`w-3.5 h-3.5 ${isSpinning ? "animate-spin" : ""}`} />
                   Refresh
                 </button>
-                <div className="w-px h-4 shrink-0" style={{ backgroundColor: isDark ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.15)" }} />
-                <button onClick={() => setDropdownOpen((o) => !o)} className="flex items-center justify-center px-1.5 h-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                <div className="w-px h-4 shrink-0 bg-white/10" />
+                <button onClick={() => setDropdownOpen((o) => !o)} className="flex items-center justify-center px-2 h-full hover:bg-white/10 transition-colors">
                   <ChevronDown className="w-3.5 h-3.5" />
                 </button>
               </div>
               {dropdownOpen && (
-                <div className="absolute right-0 top-[30px] w-40 bg-popover border border-border rounded-md shadow-md z-50 py-1 text-sm">
+                <div className="absolute right-0 top-10 w-40 bg-[#0D1528] border border-white/10 rounded-lg shadow-xl z-50 py-1 text-sm">
                   {INTERVAL_OPTIONS.map((opt) => (
                     <button
                       key={opt.label}
-                      className="w-full text-left px-3 py-1.5 hover:bg-accent hover:text-accent-foreground flex items-center justify-between"
+                      className="w-full text-left px-3 py-1.5 text-slate-300 hover:bg-white/10 hover:text-white flex items-center justify-between transition-colors"
                       onClick={() => { setAutoRefreshMs(opt.ms); setDropdownOpen(false); }}
                     >
                       {opt.label}
-                      {autoRefreshMs === opt.ms && <Check className="w-4 h-4" />}
+                      {autoRefreshMs === opt.ms && <Check className="w-4 h-4 text-blue-400" />}
                     </button>
                   ))}
                 </div>
               )}
             </div>
-
-            <button onClick={() => window.print()} disabled={loading} className="flex items-center justify-center w-[26px] h-[26px] rounded-[6px] transition-colors disabled:opacity-50" style={{ backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#F0F1F2", color: isDark ? "#c8c9cc" : "#4b5563" }} aria-label="Export as PDF">
+            <button onClick={() => window.print()} disabled={loading} className="flex items-center justify-center w-8 h-8 rounded-lg border border-white/10 bg-white/5 text-slate-300 hover:bg-white/10 transition-colors disabled:opacity-50" aria-label="Print">
               <Printer className="w-3.5 h-3.5" />
             </button>
-            <button onClick={() => setIsDark((d) => !d)} className="flex items-center justify-center w-[26px] h-[26px] rounded-[6px] transition-colors" style={{ backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#F0F1F2", color: isDark ? "#c8c9cc" : "#4b5563" }} aria-label="Toggle dark mode">
-              {isDark ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
-            </button>
           </div>
+        </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-6 py-8">
+        {/* Page title block */}
+        <div className="mb-8">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-blue-400/60 mb-2">Verified Performance Data</p>
+              <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight">Smart Valve™ Sales Dashboard</h1>
+              <p className="text-slate-400 mt-2 text-base">Amazon Canada Pilot · Multi-Industry Portfolio · 19 Verified Commercial Installations</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {DATA_SOURCES.map((source) => (
+                <span key={source} className="text-[11px] font-semibold rounded-full px-3 py-1 bg-blue-500/15 text-blue-300 border border-blue-500/20">
+                  {source}
+                </span>
+              ))}
+              {lastRefreshed && (
+                <span className="text-[11px] text-slate-500 self-center">Updated {lastRefreshed}</span>
+              )}
+            </div>
+          </div>
+          <div className="mt-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -857,7 +860,7 @@ export default function Dashboard() {
           <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
             <div>
               <h2 className="text-xl font-bold">Savings by Industry</h2>
-              <p className="text-sm text-muted-foreground">Average verified reduction across facility types</p>
+              <p className="text-sm text-muted-foreground">Average verified reduction across facility types · <span className="italic">based on 19 verified commercial installations</span></p>
             </div>
             {!loading && industryComparison.length > 0 && (
               <CSVLink data={industryComparison} filename="industry-savings.csv" className="print:hidden flex items-center justify-center w-[26px] h-[26px] rounded-[6px] transition-colors hover:opacity-80" style={{ backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#F0F1F2", color: isDark ? "#c8c9cc" : "#4b5563" }} aria-label="Export chart data as CSV">

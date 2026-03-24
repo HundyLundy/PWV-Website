@@ -343,6 +343,9 @@ export default function Home() {
             <StatItem value={320} prefix="$" suffix="K+" label="Estimated annual savings generated" />
             <StatItem value={15} prefix="&ge;" suffix="%" label="Minimum guaranteed savings" />
           </motion.div>
+          <p className="text-center text-xs text-muted-foreground/50 mt-8 uppercase tracking-widest">
+            Averages derived from 19 verified commercial pilot installations · 32,000+ total global deployments
+          </p>
         </div>
       </section>
 
@@ -352,6 +355,7 @@ export default function Home() {
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-display font-semibold">Every Industry. Every Time.</h2>
             <p className="text-muted-foreground text-lg">Consistent performance across completely different water profiles.</p>
+            <p className="text-sm text-muted-foreground/50 uppercase tracking-widest pt-2">Based on 19 verified commercial installations · 32,000+ total global deployments</p>
           </div>
 
           <div className="space-y-8">
