@@ -55,7 +55,7 @@ export default function Home() {
             Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air</span> in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>.
           </h1>
           <p className="text-lg text-muted-foreground mb-16 max-w-2xl mx-auto">
-            Estimated savings across <strong className="text-white">~32,000 installations</strong> globally, based on a verified 19.2% average reduction in metered water billing.
+            Estimated savings across <strong className="text-white">~32,000 installations</strong> globally, based on an early-pilot average reduction of 19.2% in metered water billing — with results ranging from 15% to 58%.
           </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
@@ -175,7 +175,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Average Savings by Industry</h2>
           <p className="text-center text-sm text-muted-foreground/70 mb-12 uppercase tracking-widest">
-            Based on a verified sample of 19 commercial installations
+            From a small early pilot sample · savings range 15%–58% · 15% is the guaranteed minimum
           </p>
           
           <div className="space-y-8">

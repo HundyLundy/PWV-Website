@@ -307,7 +307,7 @@ export default function Dashboard() {
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-blue-400/60 mb-2">Verified Performance Data</p>
               <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight">Smart Valve™ Sales Dashboard</h1>
-              <p className="text-slate-400 mt-2 text-base">Amazon Canada Pilot · Multi-Industry Portfolio · 19 Verified Commercial Installations</p>
+              <p className="text-slate-400 mt-2 text-base">Amazon Canada Pilot · Multi-Industry Portfolio · Early Commercial Pilot Cohort</p>
             </div>
             <div className="flex flex-wrap gap-2">
               {DATA_SOURCES.map((source) => (
@@ -860,7 +860,7 @@ export default function Dashboard() {
           <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
             <div>
               <h2 className="text-xl font-bold">Savings by Industry</h2>
-              <p className="text-sm text-muted-foreground">Average verified reduction across facility types · <span className="italic">based on 19 verified commercial installations</span></p>
+              <p className="text-sm text-muted-foreground">Average reduction across facility types · <span className="italic">from early pilot cohort · range 15%–58% · 15% is the guaranteed floor</span></p>
             </div>
             {!loading && industryComparison.length > 0 && (
               <CSVLink data={industryComparison} filename="industry-savings.csv" className="print:hidden flex items-center justify-center w-[26px] h-[26px] rounded-[6px] transition-colors hover:opacity-80" style={{ backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#F0F1F2", color: isDark ? "#c8c9cc" : "#4b5563" }} aria-label="Export chart data as CSV">

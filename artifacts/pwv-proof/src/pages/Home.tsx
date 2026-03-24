@@ -57,7 +57,7 @@ export default function Home() {
             variants={fadeInUp}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed"
           >
-            The Smart Valve™ does exactly that — verified across 15+ commercial deployments. No estimates. Just guaranteed reduction.
+            The Smart Valve™ does exactly that — delivering 15% to 58% reductions in metered water billing across real commercial sites. Small early sample. Consistent results. Guaranteed floor of 15%.
           </motion.p>
         </motion.div>
 
@@ -339,12 +339,12 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center"
           >
             <StatItem value={19.2} suffix="%" decimals={1} label="Average savings across all sites" />
-            <StatItem value={15} suffix="+" label="Commercial sites verified" />
+            <StatItem value={58} suffix="%" label="Peak single-site reduction documented" />
             <StatItem value={320} prefix="$" suffix="K+" label="Estimated annual savings generated" />
             <StatItem value={15} prefix="&ge;" suffix="%" label="Minimum guaranteed savings" />
           </motion.div>
           <p className="text-center text-xs text-muted-foreground/50 mt-8 uppercase tracking-widest">
-            Averages derived from 19 verified commercial pilot installations · 32,000+ total global deployments
+            From a small sample of early commercial pilots · real M&V data, not estimates · results vary; 15% is the contractual floor
           </p>
         </div>
       </section>
@@ -355,7 +355,7 @@ export default function Home() {
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-display font-semibold">Every Industry. Every Time.</h2>
             <p className="text-muted-foreground text-lg">Consistent performance across completely different water profiles.</p>
-            <p className="text-sm text-muted-foreground/50 uppercase tracking-widest pt-2">Based on 19 verified commercial installations · 32,000+ total global deployments</p>
+            <p className="text-sm text-muted-foreground/50 uppercase tracking-widest pt-2">Early pilot data · savings range 15%–58% · 15% is the guaranteed minimum</p>
           </div>
 
           <div className="space-y-8">
