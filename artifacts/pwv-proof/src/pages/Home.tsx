@@ -57,7 +57,7 @@ export default function Home() {
             variants={fadeInUp}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed"
           >
-            The Smart Valve™ does exactly that — delivering 15% to 58% reductions in metered water billing across real commercial sites. Small early sample. Consistent results. Guaranteed floor of 15%.
+            The Smart Valve™ does exactly that — delivering 15% to 58% reductions in metered water billing. Based on a 1-year sample of a small percentage of the 32,000+ installs. Guaranteed floor of 15%.
           </motion.p>
         </motion.div>
 
@@ -344,7 +344,7 @@ export default function Home() {
             <StatItem value={15} prefix="&ge;" suffix="%" label="Minimum guaranteed savings" />
           </motion.div>
           <p className="text-center text-xs text-muted-foreground/50 mt-8 uppercase tracking-widest">
-            From a small sample of early commercial pilots · real M&V data, not estimates · results vary; 15% is the contractual floor
+            1-year sample of a small percentage of 32,000+ installs · results vary; 15% is the contractual floor
           </p>
         </div>
       </section>
@@ -355,7 +355,7 @@ export default function Home() {
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-display font-semibold">Every Industry. Every Time.</h2>
             <p className="text-muted-foreground text-lg">Consistent performance across completely different water profiles.</p>
-            <p className="text-sm text-muted-foreground/50 uppercase tracking-widest pt-2">Early pilot data · savings range 15%–58% · 15% is the guaranteed minimum</p>
+            <p className="text-sm text-muted-foreground/50 uppercase tracking-widest pt-2">1-year sample · small percentage of 32,000+ installs · 15% guaranteed minimum</p>
           </div>
 
           <div className="space-y-8">
