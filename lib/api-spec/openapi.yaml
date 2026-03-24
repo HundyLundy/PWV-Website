@@ -122,6 +122,21 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/CarwashSite"
+  /data/enterprise-deployments:
+    get:
+      operationId: getEnterpriseDeployments
+      tags: [data]
+      summary: Get enterprise deployment showcase
+      description: Named enterprise clients across industries
+      responses:
+        "200":
+          description: Enterprise deployments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EnterpriseDeployment"
   /data/industry-comparison:
     get:
       operationId: getIndustryComparison
@@ -290,7 +305,7 @@ components:
           type: string
         industry:
           type: string
-          enum: [logistics, hospitality, commercial, industrial, retail, municipal, automotive]
+          enum: [logistics, hospitality, commercial, industrial, retail, municipal, automotive, food-beverage, real-estate]
         location:
           type: string
         installDate:
@@ -376,6 +391,38 @@ components:
         - annualWaterSavedM3
         - annualCostSaved
         - status
+    EnterpriseDeployment:
+      type: object
+      properties:
+        id:
+          type: string
+        clientName:
+          type: string
+        industry:
+          type: string
+          enum: [logistics, hospitality, commercial, industrial, food-beverage, real-estate, automotive]
+        region:
+          type: string
+        deploymentScope:
+          type: string
+          description: e.g. "Full Network Rollout", "Global Partnership", "Underway"
+        highlight:
+          type: string
+          description: One-line key takeaway
+        status:
+          type: string
+          enum: [active, rolling-out, global-partnership, verified]
+        logoLetter:
+          type: string
+      required:
+        - id
+        - clientName
+        - industry
+        - region
+        - deploymentScope
+        - highlight
+        - status
+        - logoLetter
     IndustryComparison:
       type: object
       properties:

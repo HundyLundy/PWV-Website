@@ -81,6 +81,8 @@ export const CustomerCaseIndustry = {
   retail: "retail",
   municipal: "municipal",
   automotive: "automotive",
+  "food-beverage": "food-beverage",
+  "real-estate": "real-estate",
 } as const;
 
 export type CustomerCaseStatus =
@@ -139,6 +141,42 @@ export interface CarwashSite {
   status: CarwashSiteStatus;
   /** M&V analyst note about this site */
   note?: string;
+}
+
+export type EnterpriseDeploymentIndustry =
+  (typeof EnterpriseDeploymentIndustry)[keyof typeof EnterpriseDeploymentIndustry];
+
+export const EnterpriseDeploymentIndustry = {
+  logistics: "logistics",
+  hospitality: "hospitality",
+  commercial: "commercial",
+  industrial: "industrial",
+  "food-beverage": "food-beverage",
+  "real-estate": "real-estate",
+  automotive: "automotive",
+} as const;
+
+export type EnterpriseDeploymentStatus =
+  (typeof EnterpriseDeploymentStatus)[keyof typeof EnterpriseDeploymentStatus];
+
+export const EnterpriseDeploymentStatus = {
+  active: "active",
+  "rolling-out": "rolling-out",
+  "global-partnership": "global-partnership",
+  verified: "verified",
+} as const;
+
+export interface EnterpriseDeployment {
+  id: string;
+  clientName: string;
+  industry: EnterpriseDeploymentIndustry;
+  region: string;
+  /** e.g. "Full Network Rollout", "Global Partnership", "Underway" */
+  deploymentScope: string;
+  /** One-line key takeaway */
+  highlight: string;
+  status: EnterpriseDeploymentStatus;
+  logoLetter: string;
 }
 
 export interface IndustryComparison {

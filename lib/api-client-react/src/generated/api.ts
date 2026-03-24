@@ -17,6 +17,7 @@ import type {
   CarwashSite,
   CostSavingProjection,
   CustomerCase,
+  EnterpriseDeployment,
   HealthStatus,
   IndustryComparison,
   QuarterlySaving,
@@ -620,6 +621,83 @@ export function useGetCarwashSites<
   request?: SecondParameter<typeof customFetch>;
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getGetCarwashSitesQueryOptions(options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+/**
+ * Named enterprise clients across industries
+ * @summary Get enterprise deployment showcase
+ */
+export const getGetEnterpriseDeploymentsUrl = () => {
+  return `/api/data/enterprise-deployments`;
+};
+
+export const getEnterpriseDeployments = async (
+  options?: RequestInit,
+): Promise<EnterpriseDeployment[]> => {
+  return customFetch<EnterpriseDeployment[]>(getGetEnterpriseDeploymentsUrl(), {
+    ...options,
+    method: "GET",
+  });
+};
+
+export const getGetEnterpriseDeploymentsQueryKey = () => {
+  return [`/api/data/enterprise-deployments`] as const;
+};
+
+export const getGetEnterpriseDeploymentsQueryOptions = <
+  TData = Awaited<ReturnType<typeof getEnterpriseDeployments>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getEnterpriseDeployments>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+
+  const queryKey =
+    queryOptions?.queryKey ?? getGetEnterpriseDeploymentsQueryKey();
+
+  const queryFn: QueryFunction<
+    Awaited<ReturnType<typeof getEnterpriseDeployments>>
+  > = ({ signal }) => getEnterpriseDeployments({ signal, ...requestOptions });
+
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof getEnterpriseDeployments>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey };
+};
+
+export type GetEnterpriseDeploymentsQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getEnterpriseDeployments>>
+>;
+export type GetEnterpriseDeploymentsQueryError = ErrorType<unknown>;
+
+/**
+ * @summary Get enterprise deployment showcase
+ */
+
+export function useGetEnterpriseDeployments<
+  TData = Awaited<ReturnType<typeof getEnterpriseDeployments>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getEnterpriseDeployments>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getGetEnterpriseDeploymentsQueryOptions(options);
 
   const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
     queryKey: QueryKey;

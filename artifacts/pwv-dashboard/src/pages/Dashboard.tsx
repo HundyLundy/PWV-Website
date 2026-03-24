@@ -11,6 +11,7 @@ import {
   useGetCustomers,
   useGetIndustryComparison,
   useGetCarwashSites,
+  useGetEnterpriseDeployments,
 } from "@workspace/api-client-react";
 import { CSVLink } from "react-csv";
 import {
@@ -130,6 +131,7 @@ export default function Dashboard() {
   const customersQuery = useGetCustomers();
   const industryComparisonQuery = useGetIndustryComparison();
   const carwashSitesQuery = useGetCarwashSites();
+  const enterpriseDeploymentsQuery = useGetEnterpriseDeployments();
 
   const loading = summaryQuery.isLoading || summaryQuery.isFetching || 
                   quarterlySavingsQuery.isLoading || quarterlySavingsQuery.isFetching ||
@@ -138,7 +140,8 @@ export default function Dashboard() {
                   costSavingsQuery.isLoading || costSavingsQuery.isFetching ||
                   customersQuery.isLoading || customersQuery.isFetching ||
                   industryComparisonQuery.isLoading || industryComparisonQuery.isFetching ||
-                  carwashSitesQuery.isLoading || carwashSitesQuery.isFetching;
+                  carwashSitesQuery.isLoading || carwashSitesQuery.isFetching ||
+                  enterpriseDeploymentsQuery.isLoading || enterpriseDeploymentsQuery.isFetching;
 
   const [isSpinning, setIsSpinning] = useState(false);
   useEffect(() => {
@@ -205,6 +208,7 @@ export default function Dashboard() {
   const customers = customersQuery.data || [];
   const industryComparison = industryComparisonQuery.data || [];
   const carwashSites = carwashSitesQuery.data || [];
+  const enterpriseDeployments = enterpriseDeploymentsQuery.data || [];
 
   // Table Setup
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -641,6 +645,8 @@ export default function Dashboard() {
                   retail: { bg: "bg-pink-100 dark:bg-pink-900/30", text: "text-pink-800 dark:text-pink-300", avatar: "bg-pink-600" },
                   municipal: { bg: "bg-teal-100 dark:bg-teal-900/30", text: "text-teal-800 dark:text-teal-300", avatar: "bg-teal-600" },
                   automotive: { bg: "bg-cyan-100 dark:bg-cyan-900/30", text: "text-cyan-800 dark:text-cyan-300", avatar: "bg-cyan-600" },
+                  "food-beverage": { bg: "bg-amber-100 dark:bg-amber-900/30", text: "text-amber-800 dark:text-amber-300", avatar: "bg-amber-600" },
+                  "real-estate": { bg: "bg-indigo-100 dark:bg-indigo-900/30", text: "text-indigo-800 dark:text-indigo-300", avatar: "bg-indigo-600" },
                 };
                 const theme = colors[customer.industry.toLowerCase()] || { bg: "bg-gray-100 dark:bg-gray-800", text: "text-gray-800 dark:text-gray-300", avatar: "bg-gray-600" };
                 
@@ -883,6 +889,80 @@ export default function Dashboard() {
                 </Card>
               ))}
             </div>
+          )}
+        </div>
+
+        {/* Enterprise Deployments Section */}
+        <div className="mt-8 mb-6">
+          <div className="mb-4">
+            <h2 className="text-xl font-bold">Enterprise Deployments</h2>
+            <p className="text-sm text-muted-foreground">Smart Valve™ is institutionally adopted, operationally proven, and financially underwriteable at scale — 32,000+ businesses served across North America</p>
+          </div>
+
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[...Array(8)].map((_, i) => (
+                <Card key={i}><CardContent className="p-5"><Skeleton className="h-32 w-full" /></CardContent></Card>
+              ))}
+            </div>
+          ) : (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {enterpriseDeployments.map((deployment) => {
+                  const colors: Record<string, { bg: string, text: string, avatar: string }> = {
+                    logistics: { bg: "bg-blue-100 dark:bg-blue-900/30", text: "text-blue-800 dark:text-blue-300", avatar: "bg-blue-600" },
+                    hospitality: { bg: "bg-purple-100 dark:bg-purple-900/30", text: "text-purple-800 dark:text-purple-300", avatar: "bg-purple-600" },
+                    commercial: { bg: "bg-green-100 dark:bg-green-900/30", text: "text-green-800 dark:text-green-300", avatar: "bg-green-600" },
+                    industrial: { bg: "bg-orange-100 dark:bg-orange-900/30", text: "text-orange-800 dark:text-orange-300", avatar: "bg-orange-600" },
+                    retail: { bg: "bg-pink-100 dark:bg-pink-900/30", text: "text-pink-800 dark:text-pink-300", avatar: "bg-pink-600" },
+                    municipal: { bg: "bg-teal-100 dark:bg-teal-900/30", text: "text-teal-800 dark:text-teal-300", avatar: "bg-teal-600" },
+                    automotive: { bg: "bg-cyan-100 dark:bg-cyan-900/30", text: "text-cyan-800 dark:text-cyan-300", avatar: "bg-cyan-600" },
+                    "food-beverage": { bg: "bg-amber-100 dark:bg-amber-900/30", text: "text-amber-800 dark:text-amber-300", avatar: "bg-amber-600" },
+                    "real-estate": { bg: "bg-indigo-100 dark:bg-indigo-900/30", text: "text-indigo-800 dark:text-indigo-300", avatar: "bg-indigo-600" },
+                  };
+                  const theme = colors[deployment.industry.toLowerCase()] || { bg: "bg-gray-100 dark:bg-gray-800", text: "text-gray-800 dark:text-gray-300", avatar: "bg-gray-600" };
+                  
+                  const scopeColors: Record<string, string> = {
+                    "Full Network Rollout": "border-green-200 text-green-700 dark:border-green-800 dark:text-green-400",
+                    "Global Partnership": "border-purple-200 text-purple-700 dark:border-purple-800 dark:text-purple-400",
+                    "Global Rollout Underway": "border-orange-200 text-orange-700 dark:border-orange-800 dark:text-orange-400",
+                    "Toronto-Wide Rollout": "border-blue-200 text-blue-700 dark:border-blue-800 dark:text-blue-400",
+                    "Active Deployment": "border-blue-200 text-blue-700 dark:border-blue-800 dark:text-blue-400",
+                    "Verified Deployment": "border-green-200 text-green-700 dark:border-green-800 dark:text-green-400",
+                  };
+                  const scopeClass = scopeColors[deployment.deploymentScope] || "border-gray-200 text-gray-700 dark:border-gray-800 dark:text-gray-400";
+
+                  return (
+                    <Card key={deployment.id} className="flex flex-col h-full">
+                      <CardContent className="p-5 flex flex-col flex-1">
+                        <div className="flex items-start gap-3 mb-3">
+                          <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg shrink-0 ${theme.avatar}`}>
+                            {deployment.logoLetter}
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="font-semibold text-base leading-tight truncate" title={deployment.clientName}>{deployment.clientName}</h3>
+                            <p className="text-xs text-muted-foreground mt-0.5 truncate" title={deployment.region}>{deployment.region}</p>
+                          </div>
+                        </div>
+                        
+                        <div className="mb-3">
+                          <Badge variant="outline" className={`mb-2 font-medium ${scopeClass}`}>
+                            {deployment.deploymentScope}
+                          </Badge>
+                        </div>
+                        
+                        <div className="mt-auto">
+                          <p className="text-xs italic text-muted-foreground line-clamp-2 leading-relaxed" title={deployment.highlight}>"{deployment.highlight}"</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+              <p className="text-xs text-muted-foreground italic text-center mt-4">
+                Partner: American Water Savings Inc. · 65+ years in commodity management · Serving 32,000+ commercial and industrial facilities
+              </p>
+            </>
           )}
         </div>
 

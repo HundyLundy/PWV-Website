@@ -103,6 +103,8 @@ export const GetCustomersResponseItem = zod.object({
     "retail",
     "municipal",
     "automotive",
+    "food-beverage",
+    "real-estate",
   ]),
   location: zod.string(),
   installDate: zod.string(),
@@ -151,6 +153,36 @@ export const GetCarwashSitesResponseItem = zod.object({
   note: zod.string().optional().describe("M&V analyst note about this site"),
 });
 export const GetCarwashSitesResponse = zod.array(GetCarwashSitesResponseItem);
+
+/**
+ * Named enterprise clients across industries
+ * @summary Get enterprise deployment showcase
+ */
+export const GetEnterpriseDeploymentsResponseItem = zod.object({
+  id: zod.string(),
+  clientName: zod.string(),
+  industry: zod.enum([
+    "logistics",
+    "hospitality",
+    "commercial",
+    "industrial",
+    "food-beverage",
+    "real-estate",
+    "automotive",
+  ]),
+  region: zod.string(),
+  deploymentScope: zod
+    .string()
+    .describe(
+      'e.g. \"Full Network Rollout\", \"Global Partnership\", \"Underway\"',
+    ),
+  highlight: zod.string().describe("One-line key takeaway"),
+  status: zod.enum(["active", "rolling-out", "global-partnership", "verified"]),
+  logoLetter: zod.string(),
+});
+export const GetEnterpriseDeploymentsResponse = zod.array(
+  GetEnterpriseDeploymentsResponseItem,
+);
 
 /**
  * Returns average savings percentage and water usage benchmarks by industry type

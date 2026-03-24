@@ -17,4 +17,6 @@ export const CustomerCaseIndustry = {
   retail: "retail",
   municipal: "municipal",
   automotive: "automotive",
+  "food-beverage": "food-beverage",
+  "real-estate": "real-estate",
 } as const;

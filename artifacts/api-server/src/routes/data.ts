@@ -8,13 +8,14 @@ import {
   GetCustomersResponse,
   GetIndustryComparisonResponse,
   GetCarwashSitesResponse,
+  GetEnterpriseDeploymentsResponse,
 } from "@workspace/api-zod";
 
 const router: IRouter = Router();
 
 router.get("/summary", (_req, res): void => {
   const data = GetSummaryResponse.parse({
-    portfolioAvgSavings: 16.5,
+    portfolioAvgSavings: 19,
     guaranteedMinSavings: 15,
     yzz3AvgSavings: 17,
     yzz4AvgSavings: 16,
@@ -24,8 +25,8 @@ router.get("/summary", (_req, res): void => {
     yzz4PeakMonthlyUsageAfter: 3249.96,
     gpmReductionYzz3: 2.52,
     costPerCubicMeter: 3.0,
-    totalCustomers: 7,
-    totalIndustriesServed: 5,
+    totalCustomers: 11,
+    totalIndustriesServed: 6,
   });
   res.json(data);
 });
@@ -168,6 +169,42 @@ router.get("/customers", (_req, res): void => {
       currencyNote: "CAD",
     },
     {
+      id: "four-seasons-ftl",
+      clientName: "Four Seasons Fort Lauderdale",
+      industry: "hospitality",
+      location: "Fort Lauderdale, FL",
+      installDate: "2025",
+      avgSavingsPct: 26,
+      peakSavingsPct: 56,
+      monthlyUsageM3: 2100,
+      annualWaterSavedM3: 6552,
+      annualCostSaved: 27000,
+      status: "verified",
+      highlight: "26% daily water reduction, 56% peak savings in October — $27,000 avoided annually",
+      logoLetter: "F",
+      testimonial: "The Smart Valve pilot at Four Seasons Fort Lauderdale has demonstrated significant, verifiable water and cost reductions, positioning it as a proven solution to deploy across the brand's portfolio.",
+      testimonialAuthor: "American Water Savings Inc. — Four Seasons Pilot Report, 2026",
+      currencyNote: "USD",
+    },
+    {
+      id: "grand-central-kennedy",
+      clientName: "Grand Central at Kennedy",
+      industry: "real-estate",
+      location: "Tampa, FL",
+      installDate: "2022",
+      avgSavingsPct: 23,
+      peakSavingsPct: 23,
+      monthlyUsageM3: 1668,
+      annualWaterSavedM3: 4605,
+      annualCostSaved: 50000,
+      status: "verified",
+      highlight: "$50,000/year savings — water & sewer down from $240K to $190K with twin 6\" Smart Valves",
+      logoLetter: "G",
+      testimonial: "In two years since installed, our savings on water and sewer charge are averaging 23%... We are reducing our line item for water and sewer charges by $50,000 (from $240,000 to $190,000).",
+      testimonialAuthor: "Bob Pack, General Manager, Grand Central at Kennedy Tampa, FL",
+      currencyNote: "USD",
+    },
+    {
       id: "hotel-chain",
       clientName: "Boutique Hotel Portfolio",
       industry: "hospitality",
@@ -181,6 +218,24 @@ router.get("/customers", (_req, res): void => {
       status: "active",
       highlight: "16% reduction across multiple properties — immediate ROI within 5 months",
       logoLetter: "H",
+    },
+    {
+      id: "houstonian-estates",
+      clientName: "Houstonian Estates",
+      industry: "real-estate",
+      location: "Houston, TX",
+      installDate: "2023",
+      avgSavingsPct: 16,
+      peakSavingsPct: 16,
+      monthlyUsageM3: 2840,
+      annualWaterSavedM3: 5450,
+      annualCostSaved: 16350,
+      status: "verified",
+      highlight: "16% savings — 6,000 gallons/day at 13M+ gallon/year high-rise condominium",
+      logoLetter: "H",
+      testimonial: "Saved us a considerable amount of money, approximately 6,000 gallons per day or 16%. When you are looking at over 13 million gallons a year, that's a lot of water saved... I would recommend it to anybody who has an office building, high rise condominium, hotel.",
+      testimonialAuthor: "Doug Horn, General Manager, Houstonian Estates",
+      currencyNote: "USD",
     },
     {
       id: "forest-charlton",
@@ -212,15 +267,29 @@ router.get("/customers", (_req, res): void => {
       highlight: "High-usage industrial sites see the fastest payback — under 4 months",
       logoLetter: "I",
     },
+    {
+      id: "dashin-dye",
+      clientName: "Dashin Dye Manufacturing",
+      industry: "industrial",
+      location: "Cerritos, CA",
+      installDate: "2023",
+      avgSavingsPct: 15,
+      peakSavingsPct: 15,
+      monthlyUsageM3: 800,
+      annualWaterSavedM3: 1440,
+      annualCostSaved: 5000,
+      status: "verified",
+      highlight: "Over $5,000 savings in first month alone — highly recommended by facility president",
+      logoLetter: "D",
+      testimonial: "We saved over $5,000 in our first month after installing the SMART VALVE! We highly recommend it to anyone who wants to save money.",
+      testimonialAuthor: "President, Dashin Dye Manufacturing, Cerritos, CA",
+      currencyNote: "USD",
+    },
   ]);
   res.json(data);
 });
 
 router.get("/carwash-sites", (_req, res): void => {
-  // Caliber Car Wash — M&V verified results across 5 Georgia/Florida sites
-  // Portfolio weighted average: 23% | Savings figures based on M&V analyst report
-  // Water usage volumes are estimated from typical car wash consumption profiles
-  // Per-site savings percentages derived from analyst narrative (Flagler Beach 13% stated)
   const data = GetCarwashSitesResponse.parse([
     {
       id: "mableton",
@@ -291,13 +360,121 @@ router.get("/carwash-sites", (_req, res): void => {
   res.json(data);
 });
 
+router.get("/enterprise-deployments", (_req, res): void => {
+  // Named enterprise clients — sourced from American Water Savings Customer Showcase document
+  const data = GetEnterpriseDeploymentsResponse.parse([
+    {
+      id: "amazon-network",
+      clientName: "Amazon",
+      industry: "logistics",
+      region: "Canada & USA",
+      deploymentScope: "Full Network Rollout",
+      highlight: "National-scale deployment across fulfillment, sortation, and robotics sites — proven at extreme scale in mission-critical, automation-heavy facilities.",
+      status: "active",
+      logoLetter: "A",
+    },
+    {
+      id: "linamar",
+      clientName: "Linamar",
+      industry: "industrial",
+      region: "Canada, USA & Mexico",
+      deploymentScope: "Global Rollout Underway",
+      highlight: "Automotive and industrial manufacturing campuses — multi-country standardization under a single technical framework.",
+      status: "rolling-out",
+      logoLetter: "L",
+    },
+    {
+      id: "four-seasons-global",
+      clientName: "Four Seasons Hotels & Resorts",
+      industry: "hospitality",
+      region: "Global Portfolio",
+      deploymentScope: "Global Partnership",
+      highlight: "Portfolio-wide engagement across flagship properties — institutional validation following pilot and performance review. Endorsed by one of the world's most risk-averse luxury operators.",
+      status: "global-partnership",
+      logoLetter: "F",
+    },
+    {
+      id: "st-regis-showcase",
+      clientName: "St. Regis Hotel & Residences",
+      industry: "hospitality",
+      region: "Toronto, Ontario",
+      deploymentScope: "Verified Deployment",
+      highlight: "Luxury hotel and residential tower — $49,889 CAD year-over-year savings, 20%+ water cost reduction. Marriott-approved.",
+      status: "verified",
+      logoLetter: "S",
+    },
+    {
+      id: "labatt",
+      clientName: "Labatt Brewing Company",
+      industry: "food-beverage",
+      region: "Canada",
+      deploymentScope: "Full Deployment",
+      highlight: "Large-scale brewing and bottling operations — deployed to stabilize flow and reduce non-revenue water in process-critical environments.",
+      status: "active",
+      logoLetter: "L",
+    },
+    {
+      id: "guinness",
+      clientName: "Guinness",
+      industry: "food-beverage",
+      region: "Global",
+      deploymentScope: "Verified Deployment",
+      highlight: "High-volume brewing operations with tight tolerances around pressure, flow, and metering accuracy. Acceptance within globally recognized beverage manufacturing.",
+      status: "verified",
+      logoLetter: "G",
+    },
+    {
+      id: "kerry-group",
+      clientName: "Kerry Group",
+      industry: "food-beverage",
+      region: "Canada",
+      deploymentScope: "Active Deployment",
+      highlight: "Ingredient manufacturing and processing facilities — deployed within global food ingredient supply chains with emphasis on operational efficiency.",
+      status: "active",
+      logoLetter: "K",
+    },
+    {
+      id: "commercial-bakeries",
+      clientName: "Commercial Bakeries Inc.",
+      industry: "food-beverage",
+      region: "Canada",
+      deploymentScope: "Active Deployment",
+      highlight: "Industrial baking facilities with cyclical, high-demand water loads — proven in variable-load food production facilities.",
+      status: "active",
+      logoLetter: "C",
+    },
+    {
+      id: "starlight-investments",
+      clientName: "Starlight Investments",
+      industry: "real-estate",
+      region: "Canada",
+      deploymentScope: "Full Network Rollout",
+      highlight: "Large multi-residential portfolio — standardized deployment across assets demonstrates portfolio-level scalability and repeatability.",
+      status: "active",
+      logoLetter: "S",
+    },
+    {
+      id: "akelius",
+      clientName: "Akelius",
+      industry: "real-estate",
+      region: "Toronto, Ontario",
+      deploymentScope: "Toronto-Wide Rollout",
+      highlight: "Dense urban multi-residential assets — focus on infrastructure protection and utility normalization across large-scale urban residential portfolios.",
+      status: "active",
+      logoLetter: "A",
+    },
+  ]);
+  res.json(data);
+});
+
 router.get("/industry-comparison", (_req, res): void => {
   const data = GetIndustryComparisonResponse.parse([
     { industry: "Automotive (Car Wash)", avgSavingsPct: 23, avgMonthlyUsageM3: 215, avgAnnualSavings: 1872, customerCount: 5, icon: "🚗" },
+    { industry: "Hospitality & Hotels", avgSavingsPct: 22, avgMonthlyUsageM3: 3275, avgAnnualSavings: 27000, customerCount: 4, icon: "🏨" },
     { industry: "Logistics & Fulfillment", avgSavingsPct: 16.5, avgMonthlyUsageM3: 2025, avgAnnualSavings: 11812, customerCount: 2, icon: "📦" },
-    { industry: "Hospitality & Hotels", avgSavingsPct: 17, avgMonthlyUsageM3: 975, avgAnnualSavings: 6048, customerCount: 2, icon: "🏨" },
-    { industry: "Commercial", avgSavingsPct: 15, avgMonthlyUsageM3: 420, avgAnnualSavings: 2268, customerCount: 1, icon: "🏢" },
-    { industry: "Industrial", avgSavingsPct: 17, avgMonthlyUsageM3: 5000, avgAnnualSavings: 30600, customerCount: 1, icon: "🏭" },
+    { industry: "Real Estate", avgSavingsPct: 21, avgMonthlyUsageM3: 2254, avgAnnualSavings: 33175, customerCount: 4, icon: "🏢" },
+    { industry: "Food & Beverage", avgSavingsPct: 17, avgMonthlyUsageM3: 4500, avgAnnualSavings: 20000, customerCount: 4, icon: "🍺" },
+    { industry: "Industrial", avgSavingsPct: 17, avgMonthlyUsageM3: 5000, avgAnnualSavings: 30600, customerCount: 2, icon: "🏭" },
   ]);
   res.json(data);
 });
