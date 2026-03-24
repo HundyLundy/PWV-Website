@@ -46,11 +46,16 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center z-10 w-full max-w-6xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 border-primary/30">
-            <Droplet className="w-4 h-4 text-primary animate-pulse" />
-            <span className="text-sm font-semibold tracking-wider uppercase text-primary-foreground/80">
-              Verified Impact Data
-            </span>
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-primary/30">
+              <Droplet className="w-4 h-4 text-primary animate-pulse" />
+              <span className="text-sm font-semibold tracking-wider uppercase text-primary-foreground/80">
+                Verified Impact Data
+              </span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm uppercase tracking-wider text-white" style={{ background: 'rgba(3,116,167,0.35)', border: '1px solid rgba(3,116,167,0.5)' }}>
+              Official AWS Partner
+            </div>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight leading-[1.1]">

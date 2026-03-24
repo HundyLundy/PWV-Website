@@ -35,9 +35,14 @@ export default function Home() {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border">
-            <Droplets className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium tracking-wide uppercase text-muted-foreground">The Smart Valve™</span>
+          <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-3">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border">
+              <Droplets className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium tracking-wide uppercase text-muted-foreground">The Smart Valve™</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm uppercase tracking-wider text-white" style={{ background: 'rgba(3,116,167,0.3)', border: '1px solid rgba(3,116,167,0.5)' }}>
+              Official AWS Partner
+            </div>
           </motion.div>
           
           <motion.p

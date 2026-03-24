@@ -116,8 +116,13 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-blue-300 mb-8 backdrop-blur-sm">
-              <span className="text-lg">🏔️</span> Serving All of Colorado
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-blue-300 backdrop-blur-sm">
+                <span className="text-lg">🏔️</span> Serving All of Colorado
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider text-white" style={{ background: 'rgba(3,116,167,0.4)', border: '1px solid rgba(3,116,167,0.6)' }}>
+                Official AWS Partner
+              </div>
             </div>
             
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">

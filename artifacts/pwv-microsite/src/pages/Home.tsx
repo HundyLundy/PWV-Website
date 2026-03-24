@@ -77,9 +77,14 @@ export default function Home() {
             {/* LEFT: stat bomb + copy */}
             <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
               <motion.div variants={fadeIn}>
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0374A7]/30 bg-white text-[#0374A7] text-xs font-semibold uppercase tracking-widest mb-6">
-                  <ShieldCheck className="w-3 h-3" /> Independent M&V · Verified · Guaranteed
-                </span>
+                <div className="flex flex-wrap items-center gap-2 mb-6">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0374A7]/30 bg-white text-[#0374A7] text-xs font-semibold uppercase tracking-widest">
+                    <ShieldCheck className="w-3 h-3" /> Independent M&V · Verified · Guaranteed
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-white" style={{ background: '#0374A7' }}>
+                    Official AWS Partner
+                  </span>
+                </div>
               </motion.div>
 
               {/* THE NUMBER */}

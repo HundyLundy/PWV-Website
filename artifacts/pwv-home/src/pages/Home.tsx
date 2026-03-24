@@ -129,6 +129,7 @@ export default function Home() {
                 { icon: <ShieldCheck className="w-4 h-4 text-green-400" />, text: "15% minimum guaranteed" },
                 { icon: <Droplet className="w-4 h-4 text-blue-400" />, text: "NSF 61 & 372 certified" },
                 { icon: <Building2 className="w-4 h-4 text-slate-400" />, text: "No electricity · no moving parts" },
+                { icon: <ShieldCheck className="w-4 h-4 text-sky-400" />, text: "Official AWS Partner" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2 text-sm text-slate-400">
                   {item.icon}
