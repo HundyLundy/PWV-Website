@@ -1,0 +1,27 @@
+Build a React + Vite marketing landing page for Perfect Water Valve (perfectwatervalve.com). The page targets commercial property owners in Colorado who spend at least $5,000/month on water bills. The rep is Hunter Lundquist, phone 720-937-3004, email Hunter@perfectsynergysolutions.com.
+
+Design: Dark navy/slate color scheme with a bright blue primary color. Clean, modern, professional. Use Tailwind CSS and shadcn/ui components.
+
+Navbar: Two-tier header. Top blue bar shows: Hunter Lundquist | 720-937-3004 | Hunter@perfectsynergysolutions.com. Main white bar has: logo left, small nav links center (How It Works, Savings, Why Colorado, FAQ), phone + "See How Much You'll Save" button right.
+
+Hero section: Full-screen background with a dark overlay. Headline: "Stop Paying for Air in Your Water." Subheadline explains that traditional water meters measure air bubbles as volume, the Smart Valve™ eliminates this saving up to 45%+, with a small one-time installation fee that pays for itself within the first few billing cycles. Two buttons: "See How Much You'll Save" (scrolls to contact form) and "See How It Works." Below buttons show two stats: 45%+ Max Savings and 15% Guaranteed Minimum. Badge reads "Serving All of Colorado."
+
+Trust bar: Full-width blue bar with 5 icons/stats: Save up to 45%+ | 15% Savings Guaranteed | NSF 61 & 372 Certified | No Power Required | 99% Meter Compatible.
+
+How It Works section: Three cards in a row: 1. Professional Install 2. Precision Calibration 3. Instant Savings. Below the cards show a blueprint-style diagram image (user will upload).
+
+Case Study section: Dark background. Title: "Proven at Scale: Amazon Fulfillment Centers." Two cards showing Amazon YYZ3 (up to 58.69% reduction, ~44% average, Q3-Q4 2024) and Amazon YYZ4 (16% average, exceeds 15% guarantee, Q3 2024-Q4 2025). Engineering conclusion quote at the bottom.
+
+Who We Serve section: Six cards for: Office Buildings, Multi-Family, Hotels, Hospitals & Medical, Car Washes, Restaurants. Subtitle says "designed for properties spending at least $5,000/month on water."
+
+Why Colorado Properties Need This section: Dark background, two-column layout. Left side has an image of the Smart Valve with a water splash. Right side has heading, body copy about Colorado's high mountain pressure and rising utility rates, two bullet points (Rising Utility Costs, High Pressure Surges), and a CTA button "Get a Colorado Assessment."
+
+Savings Calculator section: Slider from $5,000 to $100,000/month. Shows estimated monthly savings (15%-45% range) and annual savings. Fine print about guaranteed minimum.
+
+FAQ section: Accordion with 6-8 common questions about how the valve works, savings guarantees, installation process, compatibility, etc.
+
+Contact/Form section: Two-column. Left side has heading "Find Out How Much You'll Save," a highlighted box explaining the cost model (small one-time install fee, no monthly fees, pays for itself in a few billing cycles), and three checkpoints (Zero Obligation, Local Colorado Experts, 15% Savings Guaranteed). Right side embeds a HubSpot form: portal ID 244877209, form ID c354a660-f465-466c-a016-2b33bddab522, region na2. Add this script to index.html: <script src="https://js-na2.hsforms.net/forms/embed/244877209.js" defer></script> and use a div with class "hs-form-frame" and data attributes data-region="na2" data-form-id and data-portal-id.
+
+Footer: Dark background. Logo left with tagline. Quick links column. Service areas column (Denver Metro, Colorado Springs, Boulder & Fort Collins, Aurora & Lakewood, All of Colorado). Contact column with Hunter Lundquist, 720-937-3004, Hunter@perfectsynergysolutions.com, "Serving All of Colorado."
+
+I will upload the logo, favicon, product images, and a short background video once the structure is built.

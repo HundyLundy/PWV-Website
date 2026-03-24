@@ -1,0 +1,6 @@
+packages:
+  "framer-motion": "Used for cinematic scroll animations and reveals"
+  "lucide-react": "Used for interface icons across the landing page"
+notes:
+  - "HubSpot form script is injected via a useEffect in the Contact section to ensure it loads properly in the React lifecycle."
+  - "All images are loaded using the @assets alias resolving to ../../attached_assets as requested."
