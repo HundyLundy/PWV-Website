@@ -48,6 +48,7 @@ import {
   type SortingState,
 } from "@tanstack/react-table";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const CHART_COLORS = {
   blue: "#0079F2",
@@ -121,6 +122,7 @@ function formatCurrency(value: number): string {
 export default function Dashboard() {
   const queryClient = useQueryClient();
   const [isDark, setIsDark] = useState(false);
+  const [activeTab, setActiveTab] = useState("overview");
   
   // Data queries
   const summaryQuery = useGetSummary();
@@ -318,6 +320,17 @@ export default function Dashboard() {
           </div>
         </div>
 
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <div className="mb-6 border-b" style={{ borderColor: isDark ? "rgba(255,255,255,0.1)" : "#e5e5e5" }}>
+            <TabsList className="w-full justify-start rounded-none h-auto p-0 bg-transparent flex flex-wrap gap-6">
+              <TabsTrigger value="overview" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0079F2] data-[state=active]:border-b-2 data-[state=active]:border-[#0079F2] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Overview</TabsTrigger>
+              <TabsTrigger value="proof-data" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0079F2] data-[state=active]:border-b-2 data-[state=active]:border-[#0079F2] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Proof & Data</TabsTrigger>
+              <TabsTrigger value="case-studies" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0079F2] data-[state=active]:border-b-2 data-[state=active]:border-[#0079F2] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Case Studies</TabsTrigger>
+              <TabsTrigger value="client-portfolio" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0079F2] data-[state=active]:border-b-2 data-[state=active]:border-[#0079F2] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Client Portfolio</TabsTrigger>
+            </TabsList>
+          </div>
+
+          <TabsContent value="overview" className="mt-0 outline-none">
         {/* KPI Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <Card>
@@ -373,7 +386,9 @@ export default function Dashboard() {
             </CardContent>
           </Card>
         </div>
+        </TabsContent>
 
+        <TabsContent value="proof-data" className="mt-0 outline-none">
         {/* Charts Row 1 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
           <Card>
@@ -538,6 +553,7 @@ export default function Dashboard() {
             )}
           </CardContent>
         </Card>
+        </TabsContent>
 
         {/* Key Findings Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -605,6 +621,7 @@ export default function Dashboard() {
           </Card>
         </div>
 
+        <TabsContent value="client-portfolio" className="mt-0 outline-none">
         {/* Customer Portfolio Section */}
         <div className="mt-8 mb-6">
           <div className="mb-4">
@@ -717,7 +734,9 @@ export default function Dashboard() {
             </div>
           )}
         </div>
+        </TabsContent>
 
+        <TabsContent value="case-studies" className="mt-0 outline-none">
         {/* Caliber Car Wash Section */}
         <div className="mt-8 mb-6">
           <div className="mb-4 flex items-center gap-3">
@@ -833,7 +852,6 @@ export default function Dashboard() {
             </CardContent>
           </Card>
         </div>
-
         {/* Savings by Industry Section */}
         <div className="mt-8 mb-6">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
@@ -965,7 +983,9 @@ export default function Dashboard() {
             </>
           )}
         </div>
+        </TabsContent>
 
+        </Tabs>
       </div>
     </div>
   );
