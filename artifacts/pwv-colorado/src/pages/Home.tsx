@@ -51,7 +51,7 @@ export default function HomePage() {
               </div>
               <div className="leading-tight hidden sm:block" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
                 <span className="text-xl text-white">Perfect Water</span><br/>
-                <span className="text-sm" style={{ color: '#DEC600' }}>Valve — Colorado</span>
+                <span className="text-xl" style={{ color: '#DEC600' }}>Valve — Colorado</span>
               </div>
             </div>
 
