@@ -16,7 +16,7 @@ export function Footer() {
               Serving 32,000+ commercial and industrial facilities across North America. The Smart Valve™ is NSF 61 & 372 certified — no electricity, no moving parts, guaranteed results.
             </p>
             <div className="text-xs text-slate-600 uppercase tracking-wider mb-6">
-              Partner: American Water Savings (AWS) · CWS
+              Partner: American Water Savings (AWS) · Canadian Water Savings (CWS)
             </div>
 
             <div className="flex items-center gap-3">

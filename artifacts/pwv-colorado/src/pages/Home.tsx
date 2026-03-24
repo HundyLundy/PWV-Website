@@ -511,6 +511,7 @@ export default function HomePage() {
               </div>
               <p className="text-gray-400 font-medium mb-2">Guaranteed ≥15% Water Bill Reduction</p>
               <p className="text-gray-500 text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4"/> NSF 61 & 372 Certified</p>
+              <p className="text-gray-600 text-xs mt-2">Partner: American Water Savings (AWS) · Canadian Water Savings (CWS)</p>
             </div>
             
             <div>

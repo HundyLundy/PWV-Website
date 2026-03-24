@@ -182,7 +182,7 @@ export default function Home() {
               { label: "NSF 372 Certified", sub: "Lead-free materials" },
               { label: "32,000+ Installations", sub: "North America" },
               { label: "15% Minimum Guaranteed", sub: "In writing, every site" },
-              { label: "AWS / CWS Partner", sub: "American Water Savings" },
+              { label: "AWS / CWS Partner", sub: "American Water Savings · Canadian Water Savings" },
             ].map((item) => (
               <div key={item.label} className="text-center px-4">
                 <div className="text-sm font-bold" style={{ color: '#0374A7' }}>{item.label}</div>

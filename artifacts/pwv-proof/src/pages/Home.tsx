@@ -259,7 +259,7 @@ export default function Home() {
           </p>
           <div className="pt-8" style={{ borderTop: '1px solid #B0C5D5' }}>
             <p className="text-sm uppercase tracking-widest" style={{ color: '#4A7085' }}>
-              Distributed exclusively through America's Water Solutions (AWS) & Commercial Water Solutions (CWS)
+              Distributed exclusively through American Water Savings (AWS) & Canadian Water Savings (CWS)
             </p>
           </div>
         </motion.div>

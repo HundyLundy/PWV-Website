@@ -16,7 +16,7 @@ export function Footer() {
             Serving 32,000+ commercial and industrial facilities across North America. Guaranteed minimum 15% water savings through precision M&V verified technology.
           </p>
           <div className="flex items-center gap-2 text-sm text-slate-500 font-medium mb-5">
-            Partner: <span className="text-white">American Water Savings Inc. (AWS) | CWS</span>
+            Partner: <span className="text-white">American Water Savings (AWS) | Canadian Water Savings (CWS)</span>
           </div>
           <div className="flex items-center gap-3">
             <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" aria-label="Facebook"

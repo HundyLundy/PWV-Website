@@ -981,7 +981,7 @@ export default function Dashboard() {
                 })}
               </div>
               <p className="text-xs text-muted-foreground italic text-center mt-4">
-                Partner: American Water Savings Inc. · 65+ years in commodity management · Serving 32,000+ commercial and industrial facilities
+                Partner: American Water Savings (AWS) · Canadian Water Savings (CWS) · Serving 32,000+ commercial and industrial facilities
               </p>
             </>
           )}
