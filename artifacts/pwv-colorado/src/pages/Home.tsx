@@ -117,7 +117,7 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-blue-300 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-white backdrop-blur-sm">
                 <span className="text-lg">🏔️</span> Serving All of Colorado
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider text-white" style={{ background: 'rgba(3,116,167,0.4)', border: '1px solid rgba(3,116,167,0.6)' }}>
@@ -130,7 +130,7 @@ export default function HomePage() {
               in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>.
             </h1>
             
-            <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
               Traditional water meters measure air bubbles as volume. The Smart Valve™ eliminates this, reducing metered consumption by <strong className="text-white">15% to 58%+</strong> based on verified client data. Small one-time installation fee. Pays for itself within the first few billing cycles.
             </p>
 
@@ -146,11 +146,11 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-8 max-w-2xl mx-auto pt-8 border-t border-white/10">
               <div>
                 <div className="text-4xl sm:text-5xl font-bold text-white mb-1">58.69%</div>
-                <div className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Peak Savings Recorded</div>
+                <div className="text-sm text-white/75 uppercase tracking-wider font-semibold">Peak Savings Recorded</div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl font-bold text-primary mb-1">≥15%</div>
-                <div className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Guaranteed Minimum</div>
+                <div className="text-4xl sm:text-5xl font-bold text-white mb-1">≥15%</div>
+                <div className="text-sm text-white/75 uppercase tracking-wider font-semibold">Guaranteed Minimum</div>
               </div>
             </div>
           </motion.div>

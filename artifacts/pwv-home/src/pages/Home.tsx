@@ -92,7 +92,7 @@ export default function Home() {
           >
             <motion.div variants={fadeUp} className="flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-green-400/80">32,000+ verified installations</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-green-300">32,000+ verified installations</span>
             </motion.div>
 
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl font-headline font-bold text-white leading-[1.05] mb-6">
@@ -102,7 +102,7 @@ export default function Home() {
               You're Paying for It.
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl" style={{ fontWeight: 300 }}>
+            <motion.p variants={fadeUp} className="text-lg text-white/90 leading-relaxed mb-8 max-w-xl" style={{ fontWeight: 300 }}>
               Municipal water lines trap air bubbles that register as volume on your meter. The Smart Valve™ purges that air before it reaches your meter — reducing your bill 15–58%, guaranteed in writing.
             </motion.p>
 
@@ -128,10 +128,10 @@ export default function Home() {
               {[
                 { icon: <ShieldCheck className="w-4 h-4 text-green-400" />, text: "15% minimum guaranteed" },
                 { icon: <Droplet className="w-4 h-4 text-blue-400" />, text: "NSF 61 & 372 certified" },
-                { icon: <Building2 className="w-4 h-4 text-slate-400" />, text: "No electricity · no moving parts" },
+                { icon: <Building2 className="w-4 h-4 text-white/70" />, text: "No electricity · no moving parts" },
                 { icon: <ShieldCheck className="w-4 h-4 text-sky-400" />, text: "Official AWS Partner" },
               ].map((item) => (
-                <div key={item.text} className="flex items-center gap-2 text-sm text-slate-400">
+                <div key={item.text} className="flex items-center gap-2 text-sm text-white/80">
                   {item.icon}
                   <span>{item.text}</span>
                 </div>
