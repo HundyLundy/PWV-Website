@@ -1,5 +1,5 @@
 kind = "data-app"
-previewPath = "/"
+previewPath = "/pwv-dashboard/"
 title = "Perfect Water Valve Dashboard"
 version = "1.0.0"
 id = "artifacts/pwv-dashboard"
@@ -11,7 +11,7 @@ version = "1.0.0"
 
 [[services]]
 name = "web"
-paths = [ "/" ]
+paths = [ "/pwv-dashboard/" ]
 localPort = 23733
 
 [services.development]
@@ -28,4 +28,4 @@ to = "/index.html"
 
 [services.env]
 PORT = "23733"
-BASE_PATH = "/"
+BASE_PATH = "/pwv-dashboard/"
