@@ -41,7 +41,7 @@ export default function Home() {
           
           <motion.p
             variants={fadeInUp}
-            className="text-sm font-bold uppercase tracking-widest text-amber-400 mb-6"
+            className="text-sm font-bold uppercase tracking-widest text-primary mb-6"
           >
             Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air</span> in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>.
           </motion.p>

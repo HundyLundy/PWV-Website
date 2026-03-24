@@ -51,7 +51,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const CHART_COLORS = {
-  blue: "#0079F2",
+  blue: "#0374A7",
   purple: "#795EFF",
   green: "#009118",
   red: "#A60808",
@@ -259,7 +259,7 @@ export default function Dashboard() {
       <div className="sticky top-0 z-40 border-b border-white/8 bg-[#060A1A]/90 backdrop-blur-md px-6 py-4 print:hidden">
         <div className="max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <img src={logoSrc} alt="Perfect Water Valve" className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(0,121,242,0.5)]" />
+            <img src={logoSrc} alt="Perfect Water Valve" className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(3,116,167,0.5)]" />
             <div>
               <span className="font-bold text-white text-lg tracking-tight leading-tight block">Perfect Water Valve</span>
               <span className="text-xs text-blue-400/70 uppercase tracking-widest font-medium">Smart Valve™ Performance Dashboard</span>
@@ -326,10 +326,10 @@ export default function Dashboard() {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <div className="mb-6 border-b" style={{ borderColor: isDark ? "rgba(255,255,255,0.1)" : "#e5e5e5" }}>
             <TabsList className="w-full justify-start rounded-none h-auto p-0 bg-transparent flex flex-wrap gap-6">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0079F2] data-[state=active]:border-b-2 data-[state=active]:border-[#0079F2] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Overview</TabsTrigger>
-              <TabsTrigger value="proof-data" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0079F2] data-[state=active]:border-b-2 data-[state=active]:border-[#0079F2] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Proof & Data</TabsTrigger>
-              <TabsTrigger value="case-studies" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0079F2] data-[state=active]:border-b-2 data-[state=active]:border-[#0079F2] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Case Studies</TabsTrigger>
-              <TabsTrigger value="client-portfolio" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0079F2] data-[state=active]:border-b-2 data-[state=active]:border-[#0079F2] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Client Portfolio</TabsTrigger>
+              <TabsTrigger value="overview" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0374A7] data-[state=active]:border-b-2 data-[state=active]:border-[#0374A7] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Overview</TabsTrigger>
+              <TabsTrigger value="proof-data" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0374A7] data-[state=active]:border-b-2 data-[state=active]:border-[#0374A7] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Proof & Data</TabsTrigger>
+              <TabsTrigger value="case-studies" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0374A7] data-[state=active]:border-b-2 data-[state=active]:border-[#0374A7] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Case Studies</TabsTrigger>
+              <TabsTrigger value="client-portfolio" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-[#0374A7] data-[state=active]:border-b-2 data-[state=active]:border-[#0374A7] rounded-none px-0 py-3 font-medium text-sm text-muted-foreground transition-none">Client Portfolio</TabsTrigger>
             </TabsList>
           </div>
 
@@ -607,16 +607,16 @@ export default function Dashboard() {
                 style={{ filter: isDark ? "brightness(0.9)" : "none" }}
               />
               <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-sm">
-                <div className="rounded-lg p-3" style={{ backgroundColor: isDark ? "rgba(0,121,242,0.15)" : "#EFF6FF" }}>
-                  <p className="font-semibold text-[#0079F2] mb-1">The Problem</p>
+                <div className="rounded-lg p-3" style={{ backgroundColor: isDark ? "rgba(3,116,167,0.15)" : "#EFF6FF" }}>
+                  <p className="font-semibold text-[#0374A7] mb-1">The Problem</p>
                   <p className="text-muted-foreground">Standard meters register turbulent water with air bubbles — billing customers for compressed air, not just water.</p>
                 </div>
                 <div className="rounded-lg p-3" style={{ backgroundColor: isDark ? "rgba(0,145,24,0.15)" : "#F0FDF4" }}>
                   <p className="font-semibold text-green-700 dark:text-green-400 mb-1">The Solution</p>
                   <p className="text-muted-foreground">Smart Valve™ maintains city pressure upstream, eliminating air bubbles before the meter reads flow. You pay only for water.</p>
                 </div>
-                <div className="rounded-lg p-3" style={{ backgroundColor: isDark ? "rgba(0,121,242,0.15)" : "#EFF6FF" }}>
-                  <p className="font-semibold text-[#0079F2] mb-1">The Result</p>
+                <div className="rounded-lg p-3" style={{ backgroundColor: isDark ? "rgba(3,116,167,0.15)" : "#EFF6FF" }}>
+                  <p className="font-semibold text-[#0374A7] mb-1">The Result</p>
                   <p className="text-muted-foreground">Guaranteed ≥15% reduction in metered water consumption — verified across all commercial and industrial pilot sites.</p>
                 </div>
               </div>
@@ -723,8 +723,8 @@ export default function Dashboard() {
 
                       {customer.testimonial && (
                         <div className="mt-4 pt-3 border-t border-border">
-                          <div className="rounded-md p-3" style={{ borderLeft: "3px solid #0079F2", backgroundColor: isDark ? "rgba(0,121,242,0.08)" : "rgba(0,121,242,0.04)" }}>
-                            <span className="text-lg leading-none text-[#0079F2] font-serif select-none">"</span>
+                          <div className="rounded-md p-3" style={{ borderLeft: "3px solid #0374A7", backgroundColor: isDark ? "rgba(3,116,167,0.08)" : "rgba(3,116,167,0.04)" }}>
+                            <span className="text-lg leading-none text-[#0374A7] font-serif select-none">"</span>
                             <p className="text-xs italic text-muted-foreground mt-0.5 leading-relaxed">{customer.testimonial}</p>
                             <p className="text-[11px] font-medium mt-2 text-foreground/70">— {customer.testimonialAuthor}</p>
                           </div>

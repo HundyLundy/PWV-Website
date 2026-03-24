@@ -97,7 +97,8 @@
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
   --popover-border: 214 32% 91%;
-  --primary: 211 100% 47%;
+  /* PWV Primary #0374A7 */
+  --primary: 197 96% 33%;
   --primary-foreground: 0 0% 100%;
   --secondary: 210 40% 94%;
   --secondary-foreground: 222 47% 11%;
@@ -115,9 +116,16 @@
   --chart-4: 0 91% 34%;
   --chart-5: 330 81% 60%;
 
-  --app-font-sans: 'IBM Plex Sans', sans-serif;
+  --app-font-sans: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif;
+  --app-font-headline: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
   --app-font-serif: Georgia, serif;
   --app-font-mono: Menlo, monospace;
+  /* Brand palette */
+  --pwv-deep: #0030B5;
+  --pwv-teal: #3C6E7F;
+  --sister-blue: #1965B1;
+  --sister-yellow: #DEC600;
+  --brand-bg: #E8EFF7;
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00); /*replace with H S L */
   --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00); /*replace with H S L */
@@ -189,7 +197,8 @@
   --popover: 222 47% 11%;
   --popover-foreground: 210 40% 96%;
   --popover-border: 217 32% 18%;
-  --primary: 211 100% 55%;
+  /* PWV Primary dark variant */
+  --primary: 197 96% 43%;
   --primary-foreground: 0 0% 100%;
   --secondary: 217 32% 18%;
   --secondary-foreground: 210 40% 96%;
@@ -226,24 +235,43 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-headline {
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  }
+  .bg-brand {
+    background-color: #E8EFF7;
+  }
+  .text-pwv-deep {
+    color: #0030B5;
+  }
+  .text-sister-yellow {
+    color: #DEC600;
+  }
 }
 
 /* ── PWV Dashboard Background ─────────────────────────────────── */
 .pwv-page-bg {
   background-color: hsl(210 20% 98%);
   background-image:
-    radial-gradient(ellipse 60% 40% at 8% 8%, rgba(0, 121, 242, 0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 35% at 92% 90%, rgba(8, 145, 178, 0.06) 0%, transparent 65%),
-    radial-gradient(circle 1px at 1px 1px, rgba(0, 121, 242, 0.13) 1px, transparent 0);
+    radial-gradient(ellipse 60% 40% at 8% 8%, rgba(3, 116, 167, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 35% at 92% 90%, rgba(60, 110, 127, 0.06) 0%, transparent 65%),
+    radial-gradient(circle 1px at 1px 1px, rgba(3, 116, 167, 0.12) 1px, transparent 0);
   background-size: auto, auto, 26px 26px;
 }
 
 .dark .pwv-page-bg {
   background-color: hsl(222 47% 7%);
   background-image:
-    radial-gradient(ellipse 60% 40% at 8% 8%, rgba(0, 121, 242, 0.13) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 35% at 92% 90%, rgba(8, 145, 178, 0.11) 0%, transparent 65%),
-    radial-gradient(circle 1px at 1px 1px, rgba(0, 121, 242, 0.22) 1px, transparent 0);
+    radial-gradient(ellipse 60% 40% at 8% 8%, rgba(3, 116, 167, 0.13) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 35% at 92% 90%, rgba(60, 110, 127, 0.10) 0%, transparent 65%),
+    radial-gradient(circle 1px at 1px 1px, rgba(3, 116, 167, 0.20) 1px, transparent 0);
   background-size: auto, auto, 26px 26px;
 }
 

@@ -46,9 +46,12 @@ export default function HomePage() {
         <div className="bg-[#0A0F1E]/90 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto h-20 flex items-center justify-between">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
-              <img src={logo} alt="Perfect Water Valve" className="h-10 w-10 object-contain" />
-              <div className="font-bold text-xl leading-tight hidden sm:block">
-                Perfect Water<br/><span className="text-primary">Valve</span>
+              <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5">
+                <img src={logo} alt="Perfect Water Valve" className="h-full w-full object-contain" />
+              </div>
+              <div className="leading-tight hidden sm:block" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
+                <span className="text-xl text-white">Perfect Water</span><br/>
+                <span className="text-sm" style={{ color: '#DEC600' }}>Valve — Colorado</span>
               </div>
             </div>
 
@@ -586,7 +589,7 @@ function SavingsCalculator() {
               onChange={(e) => setBill(Number(e.target.value))}
               className="w-full h-3 bg-[#1A233A] rounded-lg appearance-none cursor-pointer accent-primary"
               style={{
-                background: `linear-gradient(to right, #0079F2 0%, #0079F2 ${(bill - 5000) / (100000 - 5000) * 100}%, #1A233A ${(bill - 5000) / (100000 - 5000) * 100}%, #1A233A 100%)`
+                background: `linear-gradient(to right, #0374A7 0%, #0374A7 ${(bill - 5000) / (100000 - 5000) * 100}%, #1A233A ${(bill - 5000) / (100000 - 5000) * 100}%, #1A233A 100%)`
               }}
             />
             <div className="flex justify-between mt-3 text-sm text-gray-500 font-medium">

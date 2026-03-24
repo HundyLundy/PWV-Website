@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+/* Poppins (headlines) + Nunito Sans (body) loaded via index.html */
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -37,6 +37,7 @@
 
   --font-sans: var(--app-font-sans);
   --font-display: var(--app-font-display);
+  --font-headline: var(--app-font-display);
 }
 
 :root {
@@ -56,12 +57,12 @@
   --popover-foreground: 210 40% 98%;
   --popover-border: 217 32% 17%;
 
-  /* Perfect Water Valve Electric Blue */
-  --primary: 210 100% 47%; /* #0079F2 */
+  /* PWV Primary #0374A7 */
+  --primary: 197 96% 33%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary/Teal accent */
-  --secondary: 192 91% 36%;
+  /* PWV Deep Blue #0030B5 */
+  --secondary: 225 100% 35%;
   --secondary-foreground: 0 0% 100%;
 
   --muted: 217 32% 15%;
@@ -73,8 +74,14 @@
   --destructive: 0 62.8% 50.6%;
   --destructive-foreground: 210 40% 98%;
 
-  --app-font-sans: 'Plus Jakarta Sans', sans-serif;
-  --app-font-display: 'Manrope', sans-serif;
+  --app-font-sans: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif;
+  --app-font-display: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  /* Brand palette */
+  --pwv-deep: #0030B5;
+  --pwv-teal: #3C6E7F;
+  --sister-blue: #1965B1;
+  --sister-yellow: #DEC600;
+  --brand-bg: #E8EFF7;
 }
 
 @layer base {
@@ -108,6 +115,18 @@
   }
   .box-glow-primary {
     box-shadow: 0 0 30px -10px hsl(var(--primary) / 0.4), inset 0 0 20px -10px hsl(var(--primary) / 0.2);
+  }
+  .font-headline {
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  }
+  .bg-brand {
+    background-color: var(--brand-bg);
+  }
+  .text-pwv-deep {
+    color: var(--pwv-deep);
+  }
+  .text-sister-yellow {
+    color: var(--sister-yellow);
   }
   .glass-panel {
     @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
