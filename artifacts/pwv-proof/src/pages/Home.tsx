@@ -375,7 +375,7 @@ export default function Home() {
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-display font-semibold">Every Industry. Every Time.</h2>
             <p className="text-muted-foreground text-lg">Consistent performance across completely different water profiles.</p>
-            <p className="text-sm text-muted-foreground/50 uppercase tracking-widest pt-2">1-year sample · small percentage of 32,000+ installs · 15% guaranteed minimum</p>
+            <p className="text-sm text-muted-foreground/50 uppercase tracking-widest pt-2">1-year sample · 32,000+ installs</p>
           </div>
 
           <div className="space-y-8">
@@ -542,24 +542,25 @@ function ProofFAQ() {
   );
 }
 
+const INDUSTRY_MAX = 24; // Luxury Hospitality is highest at 24%
+
 function IndustryBar({ name, value, range }: { name: string, value: number, range: string }) {
   return (
-    <div className="space-y-3">
-      <div className="flex justify-between items-end">
+    <div className="space-y-2">
+      <div className="flex justify-between items-center">
         <span className="text-xl font-medium">{name}</span>
         <span className="text-xl font-bold text-primary">{range}</span>
       </div>
-      <div className="h-3 w-full bg-secondary rounded-full overflow-hidden">
-        <motion.div 
-          initial={{ width: 0 }}
-          whileInView={{ width: `${(value / 30) * 100}%` }} // Normalizing roughly to max 30% for visual scale
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-          className="h-full bg-gradient-to-r from-primary/50 to-primary rounded-full relative"
-        >
-          <div className="absolute top-0 right-0 bottom-0 w-8 bg-white/20 blur-[4px]" />
-        </motion.div>
-      </div>
+      <motion.div 
+        initial={{ width: 0 }}
+        whileInView={{ width: `${(value / INDUSTRY_MAX) * 100}%` }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+        className="h-3 rounded-full relative overflow-hidden"
+        style={{ background: 'linear-gradient(90deg, #025888, #0374A7, #3C6E7F)' }}
+      >
+        <div className="absolute top-0 right-0 bottom-0 w-8 bg-white/20 blur-[4px]" />
+      </motion.div>
     </div>
   );
 }

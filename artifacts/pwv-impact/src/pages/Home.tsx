@@ -116,7 +116,7 @@ export default function Home() {
       <BubbleValveSection />
 
       {/* 3. CLIENT IMPACT GRID */}
-      <section className="py-32 relative z-10 px-6">
+      <section className="py-32 relative z-10 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -172,33 +172,35 @@ export default function Home() {
       </section>
 
       {/* 4. INDUSTRY SAVINGS BAR CHART */}
-      <section className="py-24 bg-black/20 border-y border-white/5">
+      <section className="py-24 border-y" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Average Savings by Industry</h2>
-          <p className="text-center text-sm text-muted-foreground/70 mb-12 uppercase tracking-widest">
-            1-year sample of a small percentage of 32,000+ installs · savings range 15%–58% · 15% guaranteed minimum
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center" style={{ color: '#0A1F3A' }}>Average Savings by Industry</h2>
+          <p className="text-center text-xs mb-12 uppercase tracking-widest" style={{ color: '#4A7085' }}>
+            1-year sample · 32,000+ installs
           </p>
           
-          <div className="space-y-8">
-            {INDUSTRIES.map((ind, i) => (
-              <div key={i} className="relative">
-                <div className="flex justify-between text-sm font-semibold uppercase tracking-wider mb-3">
-                  <span className="text-white">{ind.name}</span>
-                  <span className="text-primary">{ind.value}%</span>
-                </div>
-                <div className="h-4 w-full bg-white/5 rounded-full overflow-hidden">
+          <div className="space-y-6">
+            {INDUSTRIES.map((ind, i) => {
+              const maxVal = Math.max(...INDUSTRIES.map(x => x.value));
+              return (
+                <div key={i}>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-bold uppercase tracking-wider" style={{ color: '#0A1F3A' }}>{ind.name}</span>
+                    <span className="text-sm font-bold ml-4" style={{ color: '#0374A7' }}>{ind.value}%</span>
+                  </div>
                   <motion.div
                     initial={{ width: 0 }}
-                    whileInView={{ width: `${ind.value}%` }}
+                    whileInView={{ width: `${(ind.value / maxVal) * 100}%` }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 1.5, delay: i * 0.1, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-primary/50 to-primary relative"
+                    className="h-4 rounded-full relative overflow-hidden"
+                    style={{ background: 'linear-gradient(90deg, #025888, #0374A7, #3C6E7F)' }}
                   >
-                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.4)_50%,transparent_100%)] w-[200%] animate-marquee-slow" />
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.3)_50%,transparent_100%)] w-[200%] animate-marquee-slow" />
                   </motion.div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -222,8 +224,8 @@ export default function Home() {
       </section>
 
       {/* LOGO BAR */}
-      <section className="py-12 px-6 border-y border-white/10 bg-black/30">
-        <p className="text-center text-xs font-bold uppercase tracking-widest text-muted-foreground/60 mb-8">Results verified at</p>
+      <section className="py-12 px-6 border-y" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
+        <p className="text-center text-xs font-bold uppercase tracking-widest mb-8" style={{ color: '#4A7085' }}>Results verified at</p>
         <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 max-w-4xl mx-auto">
           {[
             { name: "Amazon", sub: "YYZ3 · 17% avg, 58.69% peak" },
@@ -233,20 +235,20 @@ export default function Home() {
             { name: "Grand Central", sub: "Kennedy · $50K/yr" },
             { name: "Houstonian", sub: "Estates · 16%" },
           ].map((c) => (
-            <div key={c.name} className="flex flex-col items-center text-center opacity-60 hover:opacity-100 transition-opacity">
-              <span className="font-bold text-white text-base tracking-tight">{c.name}</span>
-              <span className="text-[10px] text-muted-foreground uppercase tracking-widest">{c.sub}</span>
+            <div key={c.name} className="flex flex-col items-center text-center">
+              <span className="font-bold text-base tracking-tight" style={{ color: '#0A1F3A' }}>{c.name}</span>
+              <span className="text-[10px] uppercase tracking-widest" style={{ color: '#4A7085' }}>{c.sub}</span>
             </div>
           ))}
         </div>
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-20 px-6 bg-black/20">
+      <section className="py-20 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 60%, #3C6E7F 100%)' }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Common Questions</h2>
-            <p className="text-muted-foreground leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-white/80 leading-relaxed" style={{ fontWeight: 300 }}>
               The Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines, reducing metered water billing by 15% to 58%. NSF 61 and NSF 372 certified. No electricity. No moving parts. No ongoing maintenance.
             </p>
           </div>
