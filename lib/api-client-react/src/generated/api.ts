@@ -14,6 +14,7 @@ import type {
 } from "@tanstack/react-query";
 
 import type {
+  CarwashSite,
   CostSavingProjection,
   CustomerCase,
   HealthStatus,
@@ -543,6 +544,82 @@ export function useGetCustomers<
   request?: SecondParameter<typeof customFetch>;
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getGetCustomersQueryOptions(options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+/**
+ * Returns per-site M&V results for the Caliber Car Wash portfolio
+ * @summary Get Caliber Car Wash site breakdown
+ */
+export const getGetCarwashSitesUrl = () => {
+  return `/api/data/carwash-sites`;
+};
+
+export const getCarwashSites = async (
+  options?: RequestInit,
+): Promise<CarwashSite[]> => {
+  return customFetch<CarwashSite[]>(getGetCarwashSitesUrl(), {
+    ...options,
+    method: "GET",
+  });
+};
+
+export const getGetCarwashSitesQueryKey = () => {
+  return [`/api/data/carwash-sites`] as const;
+};
+
+export const getGetCarwashSitesQueryOptions = <
+  TData = Awaited<ReturnType<typeof getCarwashSites>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getCarwashSites>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+
+  const queryKey = queryOptions?.queryKey ?? getGetCarwashSitesQueryKey();
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getCarwashSites>>> = ({
+    signal,
+  }) => getCarwashSites({ signal, ...requestOptions });
+
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof getCarwashSites>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey };
+};
+
+export type GetCarwashSitesQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getCarwashSites>>
+>;
+export type GetCarwashSitesQueryError = ErrorType<unknown>;
+
+/**
+ * @summary Get Caliber Car Wash site breakdown
+ */
+
+export function useGetCarwashSites<
+  TData = Awaited<ReturnType<typeof getCarwashSites>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getCarwashSites>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getGetCarwashSitesQueryOptions(options);
 
   const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
     queryKey: QueryKey;

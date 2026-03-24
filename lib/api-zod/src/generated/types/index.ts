@@ -6,6 +6,8 @@
  * OpenAPI spec version: 0.1.0
  */
 
+export * from "./carwashSite";
+export * from "./carwashSiteStatus";
 export * from "./costSavingProjection";
 export * from "./customerCase";
 export * from "./customerCaseIndustry";

@@ -102,6 +102,7 @@ export const GetCustomersResponseItem = zod.object({
     "industrial",
     "retail",
     "municipal",
+    "automotive",
   ]),
   location: zod.string(),
   installDate: zod.string(),
@@ -117,6 +118,27 @@ export const GetCustomersResponseItem = zod.object({
   logoLetter: zod.string().describe("Single letter for avatar display"),
 });
 export const GetCustomersResponse = zod.array(GetCustomersResponseItem);
+
+/**
+ * Returns per-site M&V results for the Caliber Car Wash portfolio
+ * @summary Get Caliber Car Wash site breakdown
+ */
+export const GetCarwashSitesResponseItem = zod.object({
+  id: zod.string(),
+  siteName: zod.string(),
+  address: zod.string(),
+  installDate: zod.string(),
+  savingsPct: zod
+    .number()
+    .describe("Average savings percentage from M&V analysis"),
+  monthlyUsageBeforeM3: zod.number(),
+  monthlyUsageAfterM3: zod.number(),
+  annualWaterSavedM3: zod.number(),
+  annualCostSaved: zod.number(),
+  status: zod.enum(["verified", "active", "limited-data"]),
+  note: zod.string().optional().describe("M&V analyst note about this site"),
+});
+export const GetCarwashSitesResponse = zod.array(GetCarwashSitesResponseItem);
 
 /**
  * Returns average savings percentage and water usage benchmarks by industry type

@@ -16,4 +16,5 @@ export const CustomerCaseIndustry = {
   industrial: "industrial",
   retail: "retail",
   municipal: "municipal",
+  automotive: "automotive",
 } as const;

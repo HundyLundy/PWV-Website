@@ -80,6 +80,7 @@ export const CustomerCaseIndustry = {
   industrial: "industrial",
   retail: "retail",
   municipal: "municipal",
+  automotive: "automotive",
 } as const;
 
 export type CustomerCaseStatus =
@@ -107,6 +108,31 @@ export interface CustomerCase {
   highlight: string;
   /** Single letter for avatar display */
   logoLetter: string;
+}
+
+export type CarwashSiteStatus =
+  (typeof CarwashSiteStatus)[keyof typeof CarwashSiteStatus];
+
+export const CarwashSiteStatus = {
+  verified: "verified",
+  active: "active",
+  "limited-data": "limited-data",
+} as const;
+
+export interface CarwashSite {
+  id: string;
+  siteName: string;
+  address: string;
+  installDate: string;
+  /** Average savings percentage from M&V analysis */
+  savingsPct: number;
+  monthlyUsageBeforeM3: number;
+  monthlyUsageAfterM3: number;
+  annualWaterSavedM3: number;
+  annualCostSaved: number;
+  status: CarwashSiteStatus;
+  /** M&V analyst note about this site */
+  note?: string;
 }
 
 export interface IndustryComparison {

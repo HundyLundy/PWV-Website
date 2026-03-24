@@ -107,6 +107,21 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/CustomerCase"
+  /data/carwash-sites:
+    get:
+      operationId: getCarwashSites
+      tags: [data]
+      summary: Get Caliber Car Wash site breakdown
+      description: Returns per-site M&V results for the Caliber Car Wash portfolio
+      responses:
+        "200":
+          description: Carwash site data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CarwashSite"
   /data/industry-comparison:
     get:
       operationId: getIndustryComparison
@@ -275,7 +290,7 @@ components:
           type: string
         industry:
           type: string
-          enum: [logistics, hospitality, commercial, industrial, retail, municipal]
+          enum: [logistics, hospitality, commercial, industrial, retail, municipal, automotive]
         location:
           type: string
         installDate:
@@ -313,6 +328,45 @@ components:
         - status
         - highlight
         - logoLetter
+    CarwashSite:
+      type: object
+      properties:
+        id:
+          type: string
+        siteName:
+          type: string
+        address:
+          type: string
+        installDate:
+          type: string
+        savingsPct:
+          type: number
+          description: Average savings percentage from M&V analysis
+        monthlyUsageBeforeM3:
+          type: number
+        monthlyUsageAfterM3:
+          type: number
+        annualWaterSavedM3:
+          type: number
+        annualCostSaved:
+          type: number
+        status:
+          type: string
+          enum: [verified, active, limited-data]
+        note:
+          type: string
+          description: M&V analyst note about this site
+      required:
+        - id
+        - siteName
+        - address
+        - installDate
+        - savingsPct
+        - monthlyUsageBeforeM3
+        - monthlyUsageAfterM3
+        - annualWaterSavedM3
+        - annualCostSaved
+        - status
     IndustryComparison:
       type: object
       properties:

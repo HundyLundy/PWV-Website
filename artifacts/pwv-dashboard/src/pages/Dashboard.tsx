@@ -10,6 +10,7 @@ import {
   useGetCostSavings,
   useGetCustomers,
   useGetIndustryComparison,
+  useGetCarwashSites,
 } from "@workspace/api-client-react";
 import { CSVLink } from "react-csv";
 import {
@@ -128,6 +129,7 @@ export default function Dashboard() {
   const costSavingsQuery = useGetCostSavings();
   const customersQuery = useGetCustomers();
   const industryComparisonQuery = useGetIndustryComparison();
+  const carwashSitesQuery = useGetCarwashSites();
 
   const loading = summaryQuery.isLoading || summaryQuery.isFetching || 
                   quarterlySavingsQuery.isLoading || quarterlySavingsQuery.isFetching ||
@@ -135,7 +137,8 @@ export default function Dashboard() {
                   sitesQuery.isLoading || sitesQuery.isFetching ||
                   costSavingsQuery.isLoading || costSavingsQuery.isFetching ||
                   customersQuery.isLoading || customersQuery.isFetching ||
-                  industryComparisonQuery.isLoading || industryComparisonQuery.isFetching;
+                  industryComparisonQuery.isLoading || industryComparisonQuery.isFetching ||
+                  carwashSitesQuery.isLoading || carwashSitesQuery.isFetching;
 
   const [isSpinning, setIsSpinning] = useState(false);
   useEffect(() => {
@@ -201,6 +204,7 @@ export default function Dashboard() {
   const summary = summaryQuery.data;
   const customers = customersQuery.data || [];
   const industryComparison = industryComparisonQuery.data || [];
+  const carwashSites = carwashSitesQuery.data || [];
 
   // Table Setup
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -690,6 +694,122 @@ export default function Dashboard() {
               })}
             </div>
           )}
+        </div>
+
+        {/* Caliber Car Wash Section */}
+        <div className="mt-8 mb-6">
+          <div className="mb-4 flex items-center gap-3">
+            <div>
+              <div className="flex items-center gap-2">
+                <h2 className="text-xl font-bold">Caliber Car Wash — Case Study Spotlight</h2>
+                <Badge variant="default" className="bg-[#0891b2] hover:bg-[#0891b2]/90 text-white border-transparent">New</Badge>
+              </div>
+              <p className="text-sm text-muted-foreground mt-1">M&V verified results across 5-site Southeast USA portfolio · Weighted average: 23% savings</p>
+            </div>
+          </div>
+
+          <Card className="mb-4 border-[#0891b2]/20 dark:border-[#0891b2]/30 bg-gradient-to-r from-transparent to-[#0891b2]/5 dark:to-[#0891b2]/10">
+            <CardContent className="p-5">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 divide-x divide-border/50">
+                <div className="px-2">
+                  <p className="text-xs font-medium text-muted-foreground mb-1">Active Portfolio</p>
+                  <p className="text-2xl font-bold text-[#0891b2]">5 Sites</p>
+                </div>
+                <div className="px-4">
+                  <p className="text-xs font-medium text-muted-foreground mb-1">Weighted Avg Savings</p>
+                  <p className="text-2xl font-bold text-[#0891b2]">23%</p>
+                </div>
+                <div className="px-4">
+                  <p className="text-xs font-medium text-muted-foreground mb-1">Est. Annual Water Saved</p>
+                  <p className="text-2xl font-bold text-[#0891b2]">4,120 m³</p>
+                </div>
+                <div className="px-4">
+                  <p className="text-xs font-medium text-muted-foreground mb-1">Est. Annual Cost Saved</p>
+                  <p className="text-2xl font-bold text-[#0891b2]">$12,360</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-0 overflow-x-auto">
+              <Table>
+                <TableHeader className="bg-muted/50">
+                  <TableRow>
+                    <TableHead className="h-11 px-5 text-xs font-medium">Site</TableHead>
+                    <TableHead className="h-11 px-5 text-xs font-medium">Install Date</TableHead>
+                    <TableHead className="h-11 px-5 text-xs font-medium">Savings</TableHead>
+                    <TableHead className="h-11 px-5 text-xs font-medium text-right">Monthly Usage (m³)</TableHead>
+                    <TableHead className="h-11 px-5 text-xs font-medium text-right">Ann. Cost Saved</TableHead>
+                    <TableHead className="h-11 px-5 text-xs font-medium">Status</TableHead>
+                    <TableHead className="h-11 px-5 text-xs font-medium">Note</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {loading ? (
+                    [...Array(5)].map((_, i) => (
+                      <TableRow key={i}>
+                        <TableCell className="px-5"><Skeleton className="h-8 w-32" /></TableCell>
+                        <TableCell className="px-5"><Skeleton className="h-4 w-20" /></TableCell>
+                        <TableCell className="px-5"><Skeleton className="h-6 w-12" /></TableCell>
+                        <TableCell className="px-5"><Skeleton className="h-4 w-24 ml-auto" /></TableCell>
+                        <TableCell className="px-5"><Skeleton className="h-4 w-20 ml-auto" /></TableCell>
+                        <TableCell className="px-5"><Skeleton className="h-6 w-20" /></TableCell>
+                        <TableCell className="px-5"><Skeleton className="h-4 w-32" /></TableCell>
+                      </TableRow>
+                    ))
+                  ) : (
+                    carwashSites.map((site) => (
+                      <TableRow key={site.id} className="h-14">
+                        <TableCell className="px-5 py-3">
+                          <div className="font-medium text-sm">{site.siteName}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{site.address}</div>
+                        </TableCell>
+                        <TableCell className="px-5 py-3 text-sm">{site.installDate}</TableCell>
+                        <TableCell className="px-5 py-3">
+                          <Badge variant="secondary" className={
+                            site.savingsPct >= 20 ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400" :
+                            site.savingsPct >= 15 ? "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400" :
+                            "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400"
+                          }>
+                            {site.savingsPct}%
+                          </Badge>
+                        </TableCell>
+                        <TableCell className="px-5 py-3 text-sm">
+                          <div className="flex items-center justify-end gap-2">
+                            <span className="text-muted-foreground">{site.monthlyUsageBeforeM3}</span>
+                            <span className="text-muted-foreground/50">→</span>
+                            <span className="font-medium">{site.monthlyUsageAfterM3}</span>
+                          </div>
+                        </TableCell>
+                        <TableCell className="px-5 py-3 text-sm font-medium text-green-600 dark:text-green-500 text-right">
+                          {formatCurrency(site.annualCostSaved)}
+                        </TableCell>
+                        <TableCell className="px-5 py-3">
+                          <Badge variant="outline" className={
+                            site.status === "verified" ? "bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800" :
+                            site.status === "limited-data" ? "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-900/20 dark:text-amber-400 dark:border-amber-800" :
+                            "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-800"
+                          }>
+                            {site.status === "limited-data" ? "Limited Data" : site.status.charAt(0).toUpperCase() + site.status.slice(1)}
+                          </Badge>
+                        </TableCell>
+                        <TableCell className="px-5 py-3">
+                          {site.note ? (
+                            <span className="text-xs italic text-muted-foreground max-w-[150px] truncate inline-block align-bottom" title={site.note}>
+                              {site.note}
+                            </span>
+                          ) : (
+                            <span className="text-muted-foreground/50">-</span>
+                          )}
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  )}
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Savings by Industry Section */}
