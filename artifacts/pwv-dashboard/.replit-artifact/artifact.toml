@@ -1,0 +1,31 @@
+kind = "data-app"
+previewPath = "/"
+title = "Perfect Water Valve Dashboard"
+version = "1.0.0"
+id = "artifacts/pwv-dashboard"
+router = "path"
+
+[[integratedSkills]]
+name = "data-visualization"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23733
+
+[services.development]
+run = "pnpm --filter @workspace/pwv-dashboard run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/pwv-dashboard", "run", "build" ]
+publicDir = "artifacts/pwv-dashboard/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23733"
+BASE_PATH = "/"

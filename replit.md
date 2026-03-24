@@ -48,6 +48,12 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## Artifacts
+
+### `artifacts/pwv-dashboard` (`@workspace/pwv-dashboard`)
+
+Perfect Water Valve Smart Valve sales dashboard. Data visualization app showing verified water savings data from the Amazon Canada pilot program (YYZ3 and YYZ4 fulfillment centers). Built with React + Vite + Recharts + TanStack Table. Data served from the shared API server at `/api/data/*`.
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)

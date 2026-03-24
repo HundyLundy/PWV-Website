@@ -1,15 +1,16 @@
 openapi: 3.1.0
 info:
-  # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: Perfect Water Valve Sales Dashboard API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: data
+    description: Dashboard data endpoints
 paths:
   /healthz:
     get:
@@ -24,6 +25,79 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /data/summary:
+    get:
+      operationId: getSummary
+      tags: [data]
+      summary: Get dashboard KPI summary
+      description: Returns top-level KPI metrics for the Smart Valve performance
+      responses:
+        "200":
+          description: Summary KPIs
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SummaryData"
+  /data/quarterly:
+    get:
+      operationId: getQuarterlySavings
+      tags: [data]
+      summary: Get quarterly savings by site
+      description: Returns quarterly water savings percentages for each site
+      responses:
+        "200":
+          description: Quarterly savings data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/QuarterlySaving"
+  /data/water-usage:
+    get:
+      operationId: getWaterUsage
+      tags: [data]
+      summary: Get monthly water usage comparison
+      description: Returns before/after water usage data per site
+      responses:
+        "200":
+          description: Water usage comparison
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/WaterUsageEntry"
+  /data/sites:
+    get:
+      operationId: getSites
+      tags: [data]
+      summary: Get site details
+      description: Returns detailed performance data per site
+      responses:
+        "200":
+          description: Site details
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SiteDetail"
+  /data/cost-savings:
+    get:
+      operationId: getCostSavings
+      tags: [data]
+      summary: Get projected cost savings
+      description: Returns projected annual cost savings at various facility sizes
+      responses:
+        "200":
+          description: Cost savings projections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CostSavingProjection"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +107,157 @@ components:
           type: string
       required:
         - status
-
+    SummaryData:
+      type: object
+      properties:
+        portfolioAvgSavings:
+          type: number
+          description: Average savings across all pilot sites (%)
+        guaranteedMinSavings:
+          type: number
+          description: Guaranteed minimum savings per installation (%)
+        yzz3AvgSavings:
+          type: number
+          description: Average savings at YYZ3 site (%)
+        yzz4AvgSavings:
+          type: number
+          description: Average savings at YYZ4 site (%)
+        yzz3PeakMonthlyUsageBefore:
+          type: number
+          description: YYZ3 peak monthly usage before Smart Valve (m³)
+        yzz3PeakMonthlyUsageAfter:
+          type: number
+          description: YYZ3 peak monthly usage after Smart Valve (m³)
+        yzz4PeakMonthlyUsageBefore:
+          type: number
+          description: YYZ4 peak monthly usage before Smart Valve (m³)
+        yzz4PeakMonthlyUsageAfter:
+          type: number
+          description: YYZ4 peak monthly usage after Smart Valve (m³)
+        gpmReductionYzz3:
+          type: number
+          description: Gallons per minute reduction at YYZ3
+        costPerCubicMeter:
+          type: number
+          description: Assumed cost per cubic meter for savings calculation (USD)
+      required:
+        - portfolioAvgSavings
+        - guaranteedMinSavings
+        - yzz3AvgSavings
+        - yzz4AvgSavings
+        - yzz3PeakMonthlyUsageBefore
+        - yzz3PeakMonthlyUsageAfter
+        - yzz4PeakMonthlyUsageBefore
+        - yzz4PeakMonthlyUsageAfter
+        - gpmReductionYzz3
+        - costPerCubicMeter
+    QuarterlySaving:
+      type: object
+      properties:
+        period:
+          type: string
+          description: Quarter label (e.g. "Jul-Sep 2024")
+        yzz3:
+          type: number
+          description: YYZ3 savings percentage (positive = savings, negative = increase)
+        yzz4:
+          type: number
+          description: YYZ4 savings percentage (positive = savings, negative = increase)
+      required:
+        - period
+        - yzz3
+        - yzz4
+    WaterUsageEntry:
+      type: object
+      properties:
+        site:
+          type: string
+          description: Site name
+        period:
+          type: string
+          description: Time period label
+        usageBefore:
+          type: number
+          description: Water usage before Smart Valve installation (m³)
+        usageAfter:
+          type: number
+          description: Water usage after Smart Valve installation (m³)
+        savingsM3:
+          type: number
+          description: Water saved (m³)
+        savingsPct:
+          type: number
+          description: Savings as percentage
+      required:
+        - site
+        - period
+        - usageBefore
+        - usageAfter
+        - savingsM3
+        - savingsPct
+    SiteDetail:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        address:
+          type: string
+        installDate:
+          type: string
+        avgSavings:
+          type: number
+        totalQuarters:
+          type: integer
+        quartersWithSavings:
+          type: integer
+        peakSavings:
+          type: number
+        avgGpmBefore:
+          type: number
+        avgGpmAfter:
+          type: number
+        status:
+          type: string
+          enum: [active, reinstalled]
+      required:
+        - id
+        - name
+        - address
+        - installDate
+        - avgSavings
+        - totalQuarters
+        - quartersWithSavings
+        - peakSavings
+        - avgGpmBefore
+        - avgGpmAfter
+        - status
+    CostSavingProjection:
+      type: object
+      properties:
+        facilityType:
+          type: string
+          description: Type/size of facility
+        monthlyUsageM3:
+          type: number
+          description: Estimated monthly water usage (m³)
+        annualSavingsAtMin:
+          type: number
+          description: Annual savings at 15% minimum (USD)
+        annualSavingsAtAvg:
+          type: number
+          description: Annual savings at 16.5% average (USD)
+        annualWaterSavedM3:
+          type: number
+          description: Annual water saved in m³
+        paybackMonths:
+          type: number
+          description: Estimated payback period in months
+      required:
+        - facilityType
+        - monthlyUsageM3
+        - annualSavingsAtMin
+        - annualSavingsAtAvg
+        - annualWaterSavedM3
+        - paybackMonths
