@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import HomePage from "@/pages/Home";
 import NotFound from "@/pages/not-found";
+import { WaterBackground } from "@/components/WaterBackground";
 
 const queryClient = new QueryClient();
 
@@ -17,12 +18,11 @@ function Router() {
 }
 
 function App() {
-  // Use replace to handle potential trailing slashes in base path
   const base = import.meta.env.BASE_URL ? import.meta.env.BASE_URL.replace(/\/$/, "") : "";
-  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <WaterBackground />
         <WouterRouter base={base}>
           <Router />
         </WouterRouter>

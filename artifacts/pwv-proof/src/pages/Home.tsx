@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
-import { ArrowDown, Droplets, CheckCircle, ArrowRight, Activity, Percent } from "lucide-react";
+import { ArrowDown, Droplets, CheckCircle, ArrowRight, Percent } from "lucide-react";
+import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { cn } from "@/lib/utils";
 
@@ -116,28 +117,54 @@ export default function Home() {
                 <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay"></div>
                 
                 {/* Air Bubbles (Left to right) */}
-                {[...Array(8)].map((_, i) => (
+                {[
+                  { size:18, top:20, dur:3.2, delay:0   },
+                  { size:10, top:65, dur:2.5, delay:0.8 },
+                  { size:22, top:38, dur:4.0, delay:1.5 },
+                  { size:8,  top:78, dur:2.2, delay:2.3 },
+                  { size:16, top:15, dur:3.7, delay:0.4 },
+                  { size:12, top:55, dur:3.0, delay:1.1 },
+                  { size:20, top:42, dur:3.5, delay:2.8 },
+                  { size:9,  top:28, dur:2.8, delay:1.7 },
+                ].map((b, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-4 h-4 bg-white/40 rounded-full blur-[1px]"
-                    style={{ top: `${20 + Math.random() * 60}%` }}
+                    className="absolute rounded-full"
+                    style={{
+                      width: b.size,
+                      height: b.size,
+                      top: `${b.top}%`,
+                      background: `radial-gradient(circle at 30% 28%, rgba(210,235,255,0.55), rgba(120,195,255,0.18) 60%, transparent)`,
+                      border: "1px solid rgba(160,215,255,0.5)",
+                      boxShadow: "inset 1px 1px 3px rgba(230,248,255,0.35)",
+                    }}
                     animate={{
-                      x: ['-50px', '200px'],
-                      opacity: [0, 0.8, 0],
-                      scale: [1, 1.5, 0]
+                      x: ["-60px", "160px"],
+                      y: [0, -b.size * 0.4, b.size * 0.3, 0],
+                      opacity: [0, 0.75, 0.75, 0],
                     }}
                     transition={{
-                      duration: 2 + Math.random() * 2,
+                      duration: b.dur,
                       repeat: Infinity,
-                      delay: Math.random() * 2,
-                      ease: "linear"
+                      delay: b.delay,
+                      ease: "linear",
                     }}
                   />
                 ))}
 
-                {/* The Smart Valve representation */}
-                <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-16 h-32 bg-primary rounded-md border border-amber-300/30 z-10 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.4)]">
-                   <Activity className="w-6 h-6 text-background" />
+                {/* The Smart Valve™ */}
+                <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1">
+                  <div className="relative">
+                    <div className="absolute inset-0 rounded-full bg-blue-500/30 blur-xl scale-150" />
+                    <motion.div className="absolute inset-0 rounded-full border border-blue-400/40"
+                      animate={{ scale: [1, 1.12, 1], opacity: [0.4, 0.8, 0.4] }}
+                      transition={{ duration: 2.8, repeat: Infinity }}
+                    />
+                    <img src={smartValveSrc} alt="Smart Valve™"
+                      className="relative z-10 object-contain drop-shadow-[0_0_22px_rgba(0,140,255,0.8)]"
+                      style={{ height: 80, width: "auto" }}
+                    />
+                  </div>
                 </div>
 
                 {/* Pure Water (Right of valve) */}
@@ -149,8 +176,14 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="absolute top-4 left-4 text-xs font-mono text-muted-foreground uppercase tracking-wider">Before: Air + Water</div>
-            <div className="absolute top-4 right-4 text-xs font-mono text-primary uppercase tracking-wider">After: 100% Water</div>
+            <div className="absolute top-4 left-4 z-10">
+              <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-slate-500 block mb-0.5">Before</span>
+              <span className="text-base font-bold text-slate-300">Air + Water</span>
+            </div>
+            <div className="absolute top-4 right-4 z-10 text-right">
+              <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-blue-400/60 block mb-0.5">After</span>
+              <span className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">100% Water</span>
+            </div>
           </motion.div>
         </div>
       </section>

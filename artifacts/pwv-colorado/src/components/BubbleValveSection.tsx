@@ -1,159 +1,179 @@
-import { useEffect, useRef } from "react";
-import valveImg from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
+import { motion } from "framer-motion";
+import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 
-interface Bubble {
-  x: number;
-  y: number;
-  r: number;
-  vx: number;
-  vy: number;
-  opacity: number;
-  phase: number;
-}
+const BUBBLES = [
+  { id:0,  w:22, h:18, lp:4,  tp:18, delay:0,    dur:4.2, op:0.55 },
+  { id:1,  w:10, h:8,  lp:12, tp:62, delay:0.7,  dur:3.1, op:0.35 },
+  { id:2,  w:16, h:14, lp:20, tp:38, delay:1.4,  dur:5.0, op:0.48 },
+  { id:3,  w:8,  h:6,  lp:7,  tp:75, delay:2.1,  dur:2.8, op:0.28 },
+  { id:4,  w:24, h:20, lp:28, tp:22, delay:0.3,  dur:4.7, op:0.52 },
+  { id:5,  w:12, h:10, lp:35, tp:55, delay:1.8,  dur:3.5, op:0.38 },
+  { id:6,  w:18, h:15, lp:15, tp:82, delay:0.9,  dur:4.0, op:0.44 },
+  { id:7,  w:9,  h:7,  lp:40, tp:40, delay:2.6,  dur:2.6, op:0.30 },
+  { id:8,  w:20, h:16, lp:6,  tp:50, delay:1.1,  dur:4.5, op:0.50 },
+  { id:9,  w:14, h:11, lp:23, tp:68, delay:3.2,  dur:3.8, op:0.40 },
+  { id:10, w:7,  h:6,  lp:30, tp:28, delay:0.5,  dur:2.4, op:0.25 },
+  { id:11, w:26, h:22, lp:10, tp:45, delay:1.6,  dur:5.2, op:0.58 },
+  { id:12, w:11, h:9,  lp:38, tp:72, delay:2.9,  dur:3.3, op:0.33 },
+  { id:13, w:19, h:16, lp:18, tp:12, delay:0.2,  dur:4.3, op:0.47 },
+  { id:14, w:8,  h:7,  lp:32, tp:58, delay:3.8,  dur:2.9, op:0.27 },
+  { id:15, w:15, h:12, lp:43, tp:35, delay:1.3,  dur:3.6, op:0.42 },
+  { id:16, w:21, h:17, lp:2,  tp:88, delay:2.4,  dur:4.8, op:0.53 },
+  { id:17, w:9,  h:8,  lp:27, tp:20, delay:0.8,  dur:2.7, op:0.31 },
+  { id:18, w:13, h:11, lp:36, tp:80, delay:4.1,  dur:3.9, op:0.39 },
+  { id:19, w:17, h:14, lp:8,  tp:60, delay:1.9,  dur:4.1, op:0.46 },
+];
 
 export function BubbleValveSection() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const container = containerRef.current;
-    if (!canvas || !container) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animId: number;
-    const bubbles: Bubble[] = [];
-    const N = 40;
-
-    function resize() {
-      canvas.width = container.clientWidth;
-      canvas.height = container.clientHeight;
-    }
-    const ro = new ResizeObserver(resize);
-    ro.observe(container);
-    resize();
-
-    function mkBubble(): Bubble {
-      const w = canvas.width;
-      const h = canvas.height;
-      return {
-        x: Math.random() * w * 0.38,
-        y: Math.random() * h,
-        r: 3 + Math.random() * 9,
-        vx: 0.28 + Math.random() * 0.65,
-        vy: (Math.random() - 0.5) * 0.25,
-        opacity: 0.2 + Math.random() * 0.55,
-        phase: Math.random() * Math.PI * 2,
-      };
-    }
-
-    for (let i = 0; i < N; i++) bubbles.push(mkBubble());
-
-    function draw(t: number) {
-      const w = canvas.width;
-      const h = canvas.height;
-      ctx.clearRect(0, 0, w, h);
-
-      const midX = w * 0.5;
-      const fadeZone = w * 0.13;
-
-      for (let i = bubbles.length - 1; i >= 0; i--) {
-        const b = bubbles[i];
-        b.x += b.vx;
-        b.y += b.vy + Math.sin(t * 0.0009 + b.phase) * 0.18;
-
-        const dist = midX - b.x;
-        let alpha = b.opacity;
-        if (dist < fadeZone) alpha = b.opacity * Math.max(0, dist / fadeZone);
-
-        if (alpha > 0.005) {
-          ctx.beginPath();
-          ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(120,190,255,${alpha * 0.85})`;
-          ctx.lineWidth = 1.2;
-          ctx.stroke();
-          ctx.fillStyle = `rgba(180,220,255,${alpha * 0.07})`;
-          ctx.fill();
-          ctx.beginPath();
-          ctx.arc(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.22, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(230,245,255,${alpha * 0.5})`;
-          ctx.fill();
-        }
-
-        if (b.x > midX || alpha <= 0.005) {
-          bubbles.splice(i, 1);
-          bubbles.push(mkBubble());
-        }
-      }
-
-      for (let i = 0; i < 5; i++) {
-        const baseY = (h / 6) * (i + 1);
-        const wave = Math.sin(t * 0.0007 + i * 1.3) * 5;
-        ctx.beginPath();
-        ctx.moveTo(midX + 20, baseY + wave);
-        ctx.bezierCurveTo(
-          w * 0.67, baseY + wave + 7,
-          w * 0.82, baseY + wave - 7,
-          w * 0.97, baseY + wave
-        );
-        ctx.strokeStyle = `rgba(56,182,255,${0.07 + i * 0.012})`;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-      }
-
-      animId = requestAnimationFrame(draw);
-    }
-
-    animId = requestAnimationFrame(draw);
-    return () => {
-      cancelAnimationFrame(animId);
-      ro.disconnect();
-    };
-  }, []);
-
   return (
-    <section className="bg-[#07091A] py-10 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-5">
-          <p className="text-[11px] font-bold uppercase tracking-widest text-blue-400/70">
-            The Smart Valve™ — How It Works
+    <section className="bg-[#060A1A] py-16 sm:py-20 px-4 overflow-hidden">
+      <div className="max-w-5xl mx-auto">
+
+        <div className="text-center mb-10">
+          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-blue-400/50 mb-3">
+            How the Smart Valve™ Works
           </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
+            Stop Paying for{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
+              Air
+            </span>{" "}
+            in Your Water
+          </h2>
         </div>
-        <div
-          ref={containerRef}
-          className="relative h-52 sm:h-64 md:h-72 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-900/30"
-          style={{ background: "linear-gradient(135deg,#07091A 0%,#0A1628 100%)" }}
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative rounded-3xl overflow-hidden border border-white/8"
+          style={{
+            background: "linear-gradient(180deg,#08102A 0%,#050C1E 100%)",
+            minHeight: 340,
+          }}
         >
-          <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(0,80,180,0.10),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(0,180,255,0.07),transparent_55%)]" />
 
-          <div className="absolute top-4 left-5 text-[10px] font-semibold uppercase tracking-widest text-blue-300/50">
-            Air + Water
+          <div className="absolute top-5 left-6 z-20">
+            <span className="block text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-500 mb-1">Before</span>
+            <span className="text-xl sm:text-2xl font-bold text-slate-300">Air + Water</span>
           </div>
-          <div className="absolute top-4 right-5 text-[10px] font-semibold uppercase tracking-widest text-blue-400/50">
-            Water Only
+
+          <div className="absolute top-5 right-6 z-20 text-right">
+            <span className="block text-[10px] uppercase tracking-[0.22em] font-semibold text-blue-400/60 mb-1">After</span>
+            <span className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
+              100% Water
+            </span>
           </div>
 
-          <div className="absolute inset-y-0 left-1/2 -translate-x-px w-px bg-gradient-to-b from-transparent via-blue-500/40 to-transparent" />
-
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="relative flex flex-col items-center">
-              <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full" />
-              <img
-                src={valveImg}
-                alt="Smart Valve™"
-                className="relative z-10 h-20 sm:h-28 md:h-32 w-auto object-contain drop-shadow-[0_0_22px_rgba(0,121,242,0.65)]"
+          <div className="absolute inset-0 flex items-center px-6 sm:px-10 py-16">
+            <div
+              className="w-full relative overflow-hidden"
+              style={{
+                height: 140,
+                borderRadius: 16,
+                background: "linear-gradient(180deg,#111C38 0%,#0B1428 55%,#0E1832 100%)",
+                boxShadow: "inset 0 2px 8px rgba(0,0,0,0.6), inset 0 -2px 8px rgba(0,0,0,0.4)",
+              }}
+            >
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: "linear-gradient(90deg,transparent 0%,rgba(56,182,255,0.04) 52%,rgba(56,182,255,0.12) 100%)",
+                }}
               />
-              <span className="relative z-10 mt-1 text-[9px] font-bold uppercase tracking-widest text-blue-300/60">
+
+              {BUBBLES.map((b) => (
+                <motion.div
+                  key={b.id}
+                  className="absolute"
+                  style={{
+                    left: `${b.lp}%`,
+                    top: `${b.tp}%`,
+                    width: b.w,
+                    height: b.h,
+                    borderRadius: "50%",
+                    background: `radial-gradient(circle at 30% 28%, rgba(210,235,255,${b.op * 0.55}), rgba(120,195,255,${b.op * 0.18}) 60%, transparent)`,
+                    border: `1px solid rgba(160,215,255,${b.op * 0.5})`,
+                    boxShadow: `inset 1px 1px 3px rgba(230,248,255,${b.op * 0.35})`,
+                  }}
+                  animate={{
+                    x: ["0%", "120%", "260%"],
+                    y: [0, b.h * -0.6, b.h * 0.4, 0],
+                    opacity: [0, b.op, b.op, b.op * 0.4, 0],
+                  }}
+                  transition={{
+                    duration: b.dur,
+                    delay: b.delay,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                />
+              ))}
+
+              {[0, 1, 2].map((i) => (
+                <motion.div
+                  key={`stripe-${i}`}
+                  className="absolute top-0 bottom-0"
+                  style={{
+                    left: `${52 + i * 15}%`,
+                    right: 0,
+                    background: `linear-gradient(90deg,transparent,rgba(56,182,255,${0.06 + i * 0.04}))`,
+                  }}
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2.5 + i * 0.8, repeat: Infinity, delay: i * 0.5 }}
+                />
+              ))}
+
+              <div
+                className="absolute top-0 bottom-0 w-px"
+                style={{
+                  left: "50%",
+                  background: "linear-gradient(180deg,transparent,rgba(56,182,255,0.4),transparent)",
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+            <div className="flex flex-col items-center gap-2">
+              <div className="relative flex items-center justify-center">
+                <div className="absolute rounded-full bg-blue-500/25 blur-2xl"
+                  style={{ width: 110, height: 110 }} />
+                <motion.div
+                  className="absolute rounded-full border border-blue-400/30"
+                  style={{ width: 95, height: 95 }}
+                  animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.7, 0.4] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                  className="absolute rounded-full border border-blue-300/15"
+                  style={{ width: 118, height: 118 }}
+                  animate={{ scale: [1, 1.05, 1], opacity: [0.2, 0.5, 0.2] }}
+                  transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                />
+                <img
+                  src={smartValveSrc}
+                  alt="Smart Valve™"
+                  className="relative z-10 object-contain drop-shadow-[0_0_30px_rgba(0,140,255,0.75)]"
+                  style={{ height: 100, width: "auto", filter: "brightness(1.05) saturate(1.15)" }}
+                />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-blue-300/60">
                 Smart Valve™
               </span>
             </div>
           </div>
 
-          <div className="absolute bottom-3 left-0 right-0 text-center text-[10px] text-gray-600 uppercase tracking-wider">
-            Air exits before the meter reads — you only pay for water
+          <div className="absolute bottom-4 left-0 right-0 text-center z-20">
+            <p className="text-[11px] text-slate-600 uppercase tracking-widest">
+              Air purged upstream of meter — you pay only for water
+            </p>
           </div>
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
