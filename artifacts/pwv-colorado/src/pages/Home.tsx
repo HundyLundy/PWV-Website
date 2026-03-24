@@ -130,7 +130,7 @@ export default function HomePage() {
                 See How Much You'll Save <ArrowRight className="w-5 h-5" />
               </button>
               <button onClick={() => scrollTo('how-it-works')} className="w-full sm:w-auto bg-transparent border-2 border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-full font-bold text-lg transition-all">
-                See How It Works
+                View Specs &amp; Install
               </button>
             </div>
 
@@ -165,8 +165,8 @@ export default function HomePage() {
       <section id="how-it-works" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[#0D1528]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">How the Smart Valve™ Works</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">A brilliant mechanical solution to a costly infrastructure problem.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Precision Engineering. Zero Moving Parts.</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">Fully passive. NSF certified. Compatible with 99% of commercial meters — installed in under 4 hours.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
