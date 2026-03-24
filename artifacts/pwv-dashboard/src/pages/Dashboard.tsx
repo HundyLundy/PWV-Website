@@ -916,7 +916,7 @@ export default function Dashboard() {
         {/* Enterprise Deployments Section */}
         <div className="mt-8 mb-6">
           <div className="mb-4">
-            <h2 className="text-xl font-bold">Enterprise Deployments</h2>
+            <h2 className="text-xl font-bold">First-Year Verified Deployments</h2>
             <p className="text-sm text-muted-foreground">Smart Valve™ is institutionally adopted, operationally proven, and financially underwriteable at scale — 32,000+ businesses served across North America</p>
           </div>
 

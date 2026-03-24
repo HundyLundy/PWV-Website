@@ -149,8 +149,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16 md:text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Enterprise Deployments</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Real numbers from our most demanding commercial partners.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">First-Year Verified Results</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">These are the clients whose installations have completed a full year of independent M&V data collection — the first to have audited case studies published. Additional results are on the way as more sites reach their one-year mark.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
