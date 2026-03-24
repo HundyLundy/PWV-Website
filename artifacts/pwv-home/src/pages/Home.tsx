@@ -374,6 +374,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── FAQ ─────────────────────────────────────────────── */}
+      <HomeFAQ />
+
       {/* ─── CONTACT FORM ───────────────────────────────────── */}
       <section id="contact" className="py-24 px-6" style={{ backgroundColor: '#E8EFF7' }}>
         <div className="max-w-2xl mx-auto">
@@ -478,5 +481,95 @@ export default function Home() {
 
       <Footer />
     </div>
+  );
+}
+
+function HomeFAQ() {
+  const [open, setOpen] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: "What is air entrapment in commercial water systems?",
+      a: "Air entrapment occurs when pressurized municipal water pushes trapped air pockets through supply lines into a building's plumbing. Standard water meters cannot distinguish air from water — those air pockets are billed as metered volume. Studies indicate that 15%–40% of a typical commercial water bill may represent air rather than actual water consumed.",
+    },
+    {
+      q: "How does the Smart Valve™ reduce a commercial water bill?",
+      a: "The Smart Valve™ installs between the municipal main and your water meter. It passively releases entrapped air from the pressurized supply line before that air reaches the meter. Only actual water volume is then counted — resulting in 15% to 58% lower metered readings with no change in actual water availability.",
+    },
+    {
+      q: "Is the 15% minimum savings really guaranteed in writing?",
+      a: "Yes. Every installation includes a written contract guaranteeing a minimum 15% reduction in metered water consumption. If the facility does not achieve 15% savings after a full measurement cycle, Perfect Water Valve makes it right at no additional cost.",
+    },
+    {
+      q: "What is Measurement and Verification (M&V) in water savings?",
+      a: "M&V is a structured, independent process that compares a facility's water billing before and after a conservation measure, controlling for occupancy, season, and other variables. It is the industry standard for confirming that reported savings are real and attributable to the installed device — not coincidental. All published Perfect Water Valve case study results are independently M&V-verified.",
+    },
+    {
+      q: "Is the Smart Valve™ the same as a check valve or pressure reducer?",
+      a: "No. Check valves prevent backflow; pressure reducers lower line pressure. Neither addresses air entrapment or reduces metered billing. The Smart Valve™ is a purpose-built air elimination device that targets the specific mechanism — entrapped air registering as volume on your meter — that inflates commercial water bills.",
+    },
+    {
+      q: "Does the Smart Valve™ require electricity or ongoing maintenance?",
+      a: "No. The Smart Valve™ is entirely passive. It has no moving parts, requires no electricity, no software, and no service contracts. It is NSF 61 and NSF 372 certified for drinking water system components.",
+    },
+    {
+      q: "What types of commercial facilities benefit most?",
+      a: "Any commercial or industrial facility billed on metered municipal water can benefit. Verified results span luxury hospitality (Four Seasons, St. Regis), logistics and fulfillment (Amazon), real estate and multifamily (Houstonian Estates, Grand Central at Kennedy), and automotive (Caliber Car Wash). Higher monthly water bills produce larger absolute dollar savings.",
+    },
+  ];
+
+  return (
+    <section id="faq" className="py-24 px-6" style={{ backgroundColor: '#F4F8FC' }}>
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-3 block" style={{ color: '#0374A7' }}>
+            Common Questions
+          </span>
+          <h2 className="text-3xl md:text-4xl font-headline font-bold leading-tight" style={{ color: '#0A1F3A' }}>
+            Everything You Need to Know
+          </h2>
+          <p className="mt-4 text-base leading-relaxed" style={{ color: '#4A7085' }}>
+            Clear, factual answers about how the Smart Valve™ works, what to expect, and why it's different.
+          </p>
+        </div>
+
+        <div className="divide-y" style={{ borderColor: '#D5E3EE' }}>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <button
+                className="w-full flex items-start justify-between gap-4 py-5 text-left"
+                onClick={() => setOpen(open === i ? null : i)}
+                aria-expanded={open === i}
+              >
+                <span
+                  className="font-semibold text-base leading-snug"
+                  style={{ color: open === i ? '#0374A7' : '#0A1F3A' }}
+                >
+                  {faq.q}
+                </span>
+                <span
+                  className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center border transition-colors"
+                  style={{
+                    borderColor: open === i ? '#0374A7' : '#B0C8D8',
+                    background: open === i ? '#0374A7' : 'transparent',
+                    color: open === i ? '#fff' : '#4A7085',
+                  }}
+                >
+                  {open === i ? '−' : '+'}
+                </span>
+              </button>
+              {open === i && (
+                <div
+                  className="pb-6 text-sm leading-relaxed"
+                  style={{ color: '#2E4A5A', fontWeight: 300 }}
+                >
+                  {faq.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
