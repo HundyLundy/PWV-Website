@@ -329,7 +329,7 @@ export default function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Building2, title: "Office Buildings", desc: "Significant cooling tower and domestic domestic water savings." },
+              { icon: Building2, title: "Office Buildings", desc: "Significant reduction in water bills from cooling towers and domestic lines." },
               { icon: Home, title: "Multi-Family Residential", desc: "Protect NOI against rising municipal utility rates." },
               { icon: Hotel, title: "Hotels & Hospitality", desc: "Invisible savings that never impact the guest experience." },
               { icon: Cross, title: "Hospitals & Medical", desc: "Reliable operation for demanding, high-volume facilities." },
@@ -435,7 +435,7 @@ export default function HomePage() {
               
               <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-r-xl mb-8">
                 <p className="text-blue-50 text-lg font-medium">
-                  Small one-time installation fee. No monthly fees, no subscription. Pays for itself within the first few billing cycles through your water savings.
+                  Small one-time installation fee. No monthly fees, no subscription. Pays for itself within the first few billing cycles through your water bill savings.
                 </p>
               </div>
 
@@ -491,7 +491,7 @@ export default function HomePage() {
                   Perfect Water<br/><span className="text-primary">Valve</span>
                 </div>
               </div>
-              <p className="text-gray-400 font-medium mb-2">Guaranteed ≥15% Water Savings</p>
+              <p className="text-gray-400 font-medium mb-2">Guaranteed ≥15% Water Bill Reduction</p>
               <p className="text-gray-500 text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4"/> NSF 61 & 372 Certified</p>
             </div>
             

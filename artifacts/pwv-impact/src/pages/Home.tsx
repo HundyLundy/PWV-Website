@@ -5,7 +5,7 @@ import { LiveCounter } from "@/components/LiveCounter";
 
 // Hardcoded verified data as requested by implementation notes
 const HERO_STATS = [
-  { value: 36.8, label: "Gallons Saved Per Year", prefix: "", suffix: "B+", decimals: 1 },
+  { value: 36.8, label: "Phantom Gallons Off Bills / Year", prefix: "", suffix: "B+", decimals: 1 },
   { value: 440, label: "Estimated Annual Savings", prefix: "$", suffix: "M+", decimals: 0 },
   { value: 19.2, label: "Average Reduction", prefix: "", suffix: "%", decimals: 1 }
 ];
@@ -105,7 +105,7 @@ export default function Home() {
               <LiveCounter className="text-glow-white" />
             </div>
             <p className="text-xl md:text-3xl font-light text-muted-foreground">
-              Gallons saved since you loaded this page
+              Air-billed gallons removed from your meter since you arrived
             </p>
           </motion.div>
         </div>
@@ -219,7 +219,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to see your numbers?</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mb-10">
-            Join the industry leaders saving millions of gallons. Request a free site assessment today.
+            Join the industry leaders who've stopped paying for air. Request a free site assessment today.
           </p>
           
           <button 

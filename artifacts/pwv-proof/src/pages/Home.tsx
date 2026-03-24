@@ -165,7 +165,7 @@ export default function Home() {
             <CheckCircle className="w-16 h-16 text-primary" />
           </div>
           <h2 className="text-4xl md:text-6xl font-display font-bold">
-            &ge;15% Guaranteed Water Savings
+            &ge;15% Guaranteed Water Bill Reduction
           </h2>
           <p className="text-xl md:text-3xl text-muted-foreground font-light leading-snug">
             Not a projection. Not an estimate. A guarantee. Every Smart Valve™ installation is backed by a minimum 15% reduction in metered water consumption — <span className="text-foreground font-medium">or we make it right.</span>
