@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 2: THE PROBLEM */}
-      <section className="w-full py-32 px-6 bg-secondary/30 border-y border-border relative overflow-hidden">
+      <section className="w-full py-32 px-6 relative overflow-hidden" style={{ backgroundColor: '#0374A7' }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial="hidden"
@@ -91,7 +91,7 @@ export default function Home() {
               Water meters lie. <br/>
               <span className="text-muted-foreground">You're paying for air.</span>
             </motion.h2>
-            <motion.div variants={fadeInUp} className="w-12 h-1 bg-primary rounded-full" />
+            <motion.div variants={fadeInUp} className="w-12 h-1 bg-white/60 rounded-full" />
             <motion.p variants={fadeInUp} className="text-lg text-muted-foreground leading-relaxed">
               Municipal water systems trap air in pipes. Your meter measures volume, counting that air as water. You pay for every cubic foot — even the ones that were never liquid.
             </motion.p>
@@ -239,7 +239,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: THE GUARANTEE */}
-      <section className="w-full py-32 px-6 flex justify-center items-center">
+      <section className="w-full py-32 px-6 flex justify-center items-center" style={{ backgroundColor: '#E8EFF7' }}>
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -247,17 +247,17 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl text-center space-y-10"
         >
-          <div className="inline-flex items-center justify-center p-6 rounded-full bg-primary/10 border border-primary/30 mb-4 box-glow">
-            <CheckCircle className="w-16 h-16 text-primary" />
+          <div className="inline-flex items-center justify-center p-6 rounded-full border mb-4" style={{ backgroundColor: 'rgba(3,116,167,0.1)', borderColor: 'rgba(3,116,167,0.3)' }}>
+            <CheckCircle className="w-16 h-16" style={{ color: '#0374A7' }} />
           </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold">
+          <h2 className="text-4xl md:text-6xl font-display font-bold" style={{ color: '#0A1F3A' }}>
             &ge;15% Guaranteed Water Bill Reduction
           </h2>
-          <p className="text-xl md:text-3xl text-muted-foreground font-light leading-snug">
-            Not a projection. Not an estimate. A guarantee. Every Smart Valve™ installation is backed by a minimum 15% reduction in metered water consumption — <span className="text-foreground font-medium">or we make it right.</span>
+          <p className="text-xl md:text-3xl font-light leading-snug" style={{ color: '#2E4A5A' }}>
+            Not a projection. Not an estimate. A guarantee. Every Smart Valve™ installation is backed by a minimum 15% reduction in metered water consumption — <span className="font-semibold" style={{ color: '#0A1F3A' }}>or we make it right.</span>
           </p>
-          <div className="pt-8 border-t border-border/50">
-            <p className="text-sm text-muted-foreground uppercase tracking-widest">
+          <div className="pt-8" style={{ borderTop: '1px solid #B0C5D5' }}>
+            <p className="text-sm uppercase tracking-widest" style={{ color: '#4A7085' }}>
               Distributed exclusively through America's Water Solutions (AWS) & Commercial Water Solutions (CWS)
             </p>
           </div>
@@ -329,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 5: BY THE NUMBERS */}
-      <section className="w-full py-32 px-6 bg-secondary/50 border-y border-border">
+      <section className="w-full py-32 px-6" style={{ backgroundColor: '#3C6E7F' }}>
         <div className="max-w-6xl mx-auto">
           <motion.div 
             initial="hidden"
@@ -369,9 +369,8 @@ export default function Home() {
       </section>
 
       {/* SECTION 7: CLOSING CTA */}
-      <section className="w-full py-32 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5"></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <section className="w-full py-32 px-6 relative overflow-hidden" style={{ backgroundColor: '#0374A7' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
         
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
@@ -380,30 +379,32 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center space-y-10 relative z-10"
         >
-          <h2 className="text-5xl md:text-7xl font-display font-bold text-glow">Ready to see your numbers?</h2>
-          <p className="text-2xl text-muted-foreground font-light">
+          <h2 className="text-5xl md:text-7xl font-display font-bold text-white" style={{ textShadow: '0 0 60px rgba(255,255,255,0.2)' }}>Ready to see your numbers?</h2>
+          <p className="text-2xl font-light text-white/80">
             Get a free site assessment and see exactly how much your facility can save.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
             <a 
               href="tel:3615851111" 
-              className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_30px_rgba(245,158,11,0.3)] flex items-center gap-2"
+              className="px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 shadow-lg"
+              style={{ backgroundColor: '#DEC600', color: '#0A1F3A' }}
             >
               Schedule Assessment
               <ArrowRight className="w-5 h-5" />
             </a>
             <a 
               href="mailto:support@PerfectWaterValve.com"
-              className="px-8 py-4 rounded-full bg-secondary border border-border text-foreground font-semibold text-lg hover:bg-secondary/80 hover:border-primary/50 transition-all duration-300"
+              className="px-8 py-4 rounded-full font-semibold text-lg text-white transition-all duration-300 hover:bg-white/10"
+              style={{ border: '1px solid rgba(255,255,255,0.45)' }}
             >
               Email Us
             </a>
           </div>
 
           <div className="pt-16 space-y-2">
-            <p className="text-lg font-medium">(361) 585-1111 | support@PerfectWaterValve.com</p>
-            <p className="text-primary text-sm uppercase tracking-widest font-semibold">Guaranteed &ge;15% water savings or we make it right.</p>
+            <p className="text-lg font-medium text-white">(361) 585-1111 | support@PerfectWaterValve.com</p>
+            <p className="text-sm uppercase tracking-widest font-semibold" style={{ color: '#DEC600' }}>Guaranteed &ge;15% water savings or we make it right.</p>
           </div>
         </motion.div>
       </section>
@@ -473,10 +474,10 @@ function ClientCard({ align, category, title, subtitle, stat1, stat2, quote }: a
 function StatItem({ value, prefix, suffix, decimals, label }: any) {
   return (
     <motion.div variants={fadeInUp} className="space-y-4">
-      <div className="text-5xl md:text-7xl font-display font-bold text-primary text-glow">
+      <div className="text-5xl md:text-7xl font-display font-bold text-white" style={{ textShadow: '0 0 40px rgba(255,255,255,0.3)' }}>
         <AnimatedCounter value={value} prefix={prefix} suffix={suffix} decimals={decimals} />
       </div>
-      <p className="text-lg text-muted-foreground uppercase tracking-wide font-medium">{label}</p>
+      <p className="text-lg uppercase tracking-wide font-medium text-white/70">{label}</p>
     </motion.div>
   );
 }
