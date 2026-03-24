@@ -7,24 +7,16 @@
  */
 
 export interface SummaryData {
-  /** Average savings across all pilot sites (%) */
   portfolioAvgSavings: number;
-  /** Guaranteed minimum savings per installation (%) */
   guaranteedMinSavings: number;
-  /** Average savings at YYZ3 site (%) */
   yzz3AvgSavings: number;
-  /** Average savings at YYZ4 site (%) */
   yzz4AvgSavings: number;
-  /** YYZ3 peak monthly usage before Smart Valve (m³) */
   yzz3PeakMonthlyUsageBefore: number;
-  /** YYZ3 peak monthly usage after Smart Valve (m³) */
   yzz3PeakMonthlyUsageAfter: number;
-  /** YYZ4 peak monthly usage before Smart Valve (m³) */
   yzz4PeakMonthlyUsageBefore: number;
-  /** YYZ4 peak monthly usage after Smart Valve (m³) */
   yzz4PeakMonthlyUsageAfter: number;
-  /** Gallons per minute reduction at YYZ3 */
   gpmReductionYzz3: number;
-  /** Assumed cost per cubic meter for savings calculation (USD) */
   costPerCubicMeter: number;
+  totalCustomers: number;
+  totalIndustriesServed: number;
 }

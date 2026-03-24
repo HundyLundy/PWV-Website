@@ -6,6 +6,8 @@ import {
   useGetWaterUsage,
   useGetSites,
   useGetCostSavings,
+  useGetCustomers,
+  useGetIndustryComparison,
 } from "@workspace/api-client-react";
 import { CSVLink } from "react-csv";
 import {
@@ -17,6 +19,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  ReferenceLine,
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -122,12 +125,16 @@ export default function Dashboard() {
   const waterUsageQuery = useGetWaterUsage();
   const sitesQuery = useGetSites();
   const costSavingsQuery = useGetCostSavings();
+  const customersQuery = useGetCustomers();
+  const industryComparisonQuery = useGetIndustryComparison();
 
   const loading = summaryQuery.isLoading || summaryQuery.isFetching || 
                   quarterlySavingsQuery.isLoading || quarterlySavingsQuery.isFetching ||
                   waterUsageQuery.isLoading || waterUsageQuery.isFetching ||
                   sitesQuery.isLoading || sitesQuery.isFetching ||
-                  costSavingsQuery.isLoading || costSavingsQuery.isFetching;
+                  costSavingsQuery.isLoading || costSavingsQuery.isFetching ||
+                  customersQuery.isLoading || customersQuery.isFetching ||
+                  industryComparisonQuery.isLoading || industryComparisonQuery.isFetching;
 
   const [isSpinning, setIsSpinning] = useState(false);
   useEffect(() => {
@@ -191,6 +198,8 @@ export default function Dashboard() {
   const sites = sitesQuery.data || [];
   const costSavings = costSavingsQuery.data || [];
   const summary = summaryQuery.data;
+  const customers = customersQuery.data || [];
+  const industryComparison = industryComparisonQuery.data || [];
 
   // Table Setup
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -553,6 +562,159 @@ export default function Dashboard() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Customer Portfolio Section */}
+        <div className="mt-8 mb-6">
+          <div className="mb-4">
+            <h2 className="text-xl font-bold">Customer Portfolio</h2>
+            <p className="text-sm text-muted-foreground">Smart Valve results across industries</p>
+          </div>
+          
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[...Array(3)].map((_, i) => (
+                <Card key={i}>
+                  <CardContent className="p-5">
+                    <div className="flex items-center gap-4 mb-4">
+                      <Skeleton className="w-12 h-12 rounded-full" />
+                      <div className="space-y-2 flex-1">
+                        <Skeleton className="h-5 w-2/3" />
+                        <Skeleton className="h-4 w-1/2" />
+                      </div>
+                    </div>
+                    <Skeleton className="h-4 w-full mb-4" />
+                    <div className="space-y-2">
+                      <Skeleton className="h-4 w-full" />
+                      <Skeleton className="h-4 w-full" />
+                      <Skeleton className="h-4 w-full" />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {customers.map((customer) => {
+                const colors: Record<string, { bg: string, text: string, avatar: string }> = {
+                  logistics: { bg: "bg-blue-100 dark:bg-blue-900/30", text: "text-blue-800 dark:text-blue-300", avatar: "bg-blue-600" },
+                  hospitality: { bg: "bg-purple-100 dark:bg-purple-900/30", text: "text-purple-800 dark:text-purple-300", avatar: "bg-purple-600" },
+                  commercial: { bg: "bg-green-100 dark:bg-green-900/30", text: "text-green-800 dark:text-green-300", avatar: "bg-green-600" },
+                  industrial: { bg: "bg-orange-100 dark:bg-orange-900/30", text: "text-orange-800 dark:text-orange-300", avatar: "bg-orange-600" },
+                  retail: { bg: "bg-pink-100 dark:bg-pink-900/30", text: "text-pink-800 dark:text-pink-300", avatar: "bg-pink-600" },
+                  municipal: { bg: "bg-teal-100 dark:bg-teal-900/30", text: "text-teal-800 dark:text-teal-300", avatar: "bg-teal-600" },
+                };
+                const theme = colors[customer.industry.toLowerCase()] || { bg: "bg-gray-100 dark:bg-gray-800", text: "text-gray-800 dark:text-gray-300", avatar: "bg-gray-600" };
+                
+                const statusColors: Record<string, string> = {
+                  verified: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
+                  active: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
+                  projected: "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-400"
+                };
+
+                return (
+                  <Card key={customer.id}>
+                    <CardContent className="p-5">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg shrink-0 ${theme.avatar}`}>
+                            {customer.logoLetter}
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-base leading-tight">{customer.clientName}</h3>
+                            <p className="text-xs text-muted-foreground mt-0.5">{customer.location}</p>
+                          </div>
+                        </div>
+                        <Badge variant="secondary" className={statusColors[customer.status] || ""}>
+                          {customer.status.charAt(0).toUpperCase() + customer.status.slice(1)}
+                        </Badge>
+                      </div>
+                      
+                      <div className="mb-4">
+                        <Badge variant="outline" className={`mb-2 border-transparent ${theme.bg} ${theme.text}`}>
+                          {customer.industry.charAt(0).toUpperCase() + customer.industry.slice(1)}
+                        </Badge>
+                        <p className="text-sm italic text-muted-foreground">"{customer.highlight}"</p>
+                      </div>
+
+                      <div className="space-y-2 text-sm border-t border-border pt-3">
+                        <div className="flex justify-between items-center">
+                          <span className="text-muted-foreground">Avg Savings</span>
+                          <span className="font-medium">{customer.avgSavingsPct}%</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-muted-foreground">Peak Savings</span>
+                          <span className="font-medium">{customer.peakSavingsPct}%</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-muted-foreground">Annual Cost Saved</span>
+                          <span className="font-medium text-green-600 dark:text-green-500">{formatCurrency(customer.annualCostSaved)}</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* Savings by Industry Section */}
+        <div className="mt-8 mb-6">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 className="text-xl font-bold">Savings by Industry</h2>
+              <p className="text-sm text-muted-foreground">Average verified reduction across facility types</p>
+            </div>
+            {!loading && industryComparison.length > 0 && (
+              <CSVLink data={industryComparison} filename="industry-savings.csv" className="print:hidden flex items-center justify-center w-[26px] h-[26px] rounded-[6px] transition-colors hover:opacity-80" style={{ backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#F0F1F2", color: isDark ? "#c8c9cc" : "#4b5563" }} aria-label="Export chart data as CSV">
+                <Download className="w-3.5 h-3.5" />
+              </CSVLink>
+            )}
+          </div>
+
+          <Card className="mb-4">
+            <CardContent className="p-5">
+              {loading ? (
+                <Skeleton className="w-full h-[300px]" />
+              ) : (
+                <ResponsiveContainer width="100%" height={300} debounce={0}>
+                  <BarChart data={industryComparison} layout="vertical" margin={{ top: 10, right: 30, left: 10, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke={gridColor} horizontal={true} vertical={false} />
+                    <XAxis type="number" tickFormatter={(v) => `${v}%`} tick={{ fontSize: 12, fill: tickColor }} stroke={tickColor} axisLine={false} tickLine={false} />
+                    <YAxis dataKey="industry" type="category" tick={{ fontSize: 12, fill: tickColor }} stroke={tickColor} axisLine={false} tickLine={false} width={100} />
+                    <Tooltip content={<CustomTooltip />} cursor={{ fill: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' }} isAnimationActive={false} />
+                    <Legend content={<CustomLegend />} wrapperStyle={{ paddingTop: "20px" }} />
+                    <ReferenceLine x={15} stroke="#9ca3af" strokeDasharray="3 3" label={{ position: 'top', value: 'Guaranteed Min. (15%)', fill: tickColor, fontSize: 12 }} />
+                    <Bar dataKey="avgSavingsPct" name="Avg Savings (%)" fill={CHART_COLORS.blue} fillOpacity={0.85} activeBar={{ fillOpacity: 1 }} radius={[0, 3, 3, 0]} isAnimationActive={false} barSize={32} />
+                  </BarChart>
+                </ResponsiveContainer>
+              )}
+            </CardContent>
+          </Card>
+
+          {loading ? (
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {[...Array(4)].map((_, i) => (
+                <Card key={i}><CardContent className="p-4"><Skeleton className="h-12 w-full" /></CardContent></Card>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {industryComparison.map((ind) => (
+                <Card key={ind.industry}>
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <div className="text-2xl shrink-0">{ind.icon}</div>
+                    <div className="overflow-hidden">
+                      <p className="text-xs font-medium text-muted-foreground truncate">{ind.industry}</p>
+                      <p className="text-sm font-bold truncate text-green-600 dark:text-green-500">{formatCurrency(ind.avgAnnualSavings)}/yr</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{ind.customerCount} sites</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
 
       </div>

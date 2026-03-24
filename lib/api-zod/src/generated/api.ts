@@ -8,7 +8,6 @@
 import * as zod from "zod";
 
 /**
- * Returns server health status
  * @summary Health check
  */
 export const HealthCheckResponse = zod.object({
@@ -16,79 +15,49 @@ export const HealthCheckResponse = zod.object({
 });
 
 /**
- * Returns top-level KPI metrics for the Smart Valve performance
  * @summary Get dashboard KPI summary
  */
 export const GetSummaryResponse = zod.object({
-  portfolioAvgSavings: zod
-    .number()
-    .describe("Average savings across all pilot sites (%)"),
-  guaranteedMinSavings: zod
-    .number()
-    .describe("Guaranteed minimum savings per installation (%)"),
-  yzz3AvgSavings: zod.number().describe("Average savings at YYZ3 site (%)"),
-  yzz4AvgSavings: zod.number().describe("Average savings at YYZ4 site (%)"),
-  yzz3PeakMonthlyUsageBefore: zod
-    .number()
-    .describe("YYZ3 peak monthly usage before Smart Valve (m³)"),
-  yzz3PeakMonthlyUsageAfter: zod
-    .number()
-    .describe("YYZ3 peak monthly usage after Smart Valve (m³)"),
-  yzz4PeakMonthlyUsageBefore: zod
-    .number()
-    .describe("YYZ4 peak monthly usage before Smart Valve (m³)"),
-  yzz4PeakMonthlyUsageAfter: zod
-    .number()
-    .describe("YYZ4 peak monthly usage after Smart Valve (m³)"),
-  gpmReductionYzz3: zod
-    .number()
-    .describe("Gallons per minute reduction at YYZ3"),
-  costPerCubicMeter: zod
-    .number()
-    .describe("Assumed cost per cubic meter for savings calculation (USD)"),
+  portfolioAvgSavings: zod.number(),
+  guaranteedMinSavings: zod.number(),
+  yzz3AvgSavings: zod.number(),
+  yzz4AvgSavings: zod.number(),
+  yzz3PeakMonthlyUsageBefore: zod.number(),
+  yzz3PeakMonthlyUsageAfter: zod.number(),
+  yzz4PeakMonthlyUsageBefore: zod.number(),
+  yzz4PeakMonthlyUsageAfter: zod.number(),
+  gpmReductionYzz3: zod.number(),
+  costPerCubicMeter: zod.number(),
+  totalCustomers: zod.number(),
+  totalIndustriesServed: zod.number(),
 });
 
 /**
- * Returns quarterly water savings percentages for each site
  * @summary Get quarterly savings by site
  */
 export const GetQuarterlySavingsResponseItem = zod.object({
-  period: zod.string().describe('Quarter label (e.g. \"Jul-Sep 2024\")'),
-  yzz3: zod
-    .number()
-    .describe(
-      "YYZ3 savings percentage (positive = savings, negative = increase)",
-    ),
-  yzz4: zod
-    .number()
-    .describe(
-      "YYZ4 savings percentage (positive = savings, negative = increase)",
-    ),
+  period: zod.string(),
+  yzz3: zod.number(),
+  yzz4: zod.number(),
 });
 export const GetQuarterlySavingsResponse = zod.array(
   GetQuarterlySavingsResponseItem,
 );
 
 /**
- * Returns before/after water usage data per site
  * @summary Get monthly water usage comparison
  */
 export const GetWaterUsageResponseItem = zod.object({
-  site: zod.string().describe("Site name"),
-  period: zod.string().describe("Time period label"),
-  usageBefore: zod
-    .number()
-    .describe("Water usage before Smart Valve installation (m³)"),
-  usageAfter: zod
-    .number()
-    .describe("Water usage after Smart Valve installation (m³)"),
-  savingsM3: zod.number().describe("Water saved (m³)"),
-  savingsPct: zod.number().describe("Savings as percentage"),
+  site: zod.string(),
+  period: zod.string(),
+  usageBefore: zod.number(),
+  usageAfter: zod.number(),
+  savingsM3: zod.number(),
+  savingsPct: zod.number(),
 });
 export const GetWaterUsageResponse = zod.array(GetWaterUsageResponseItem);
 
 /**
- * Returns detailed performance data per site
  * @summary Get site details
  */
 export const GetSitesResponseItem = zod.object({
@@ -107,19 +76,60 @@ export const GetSitesResponseItem = zod.object({
 export const GetSitesResponse = zod.array(GetSitesResponseItem);
 
 /**
- * Returns projected annual cost savings at various facility sizes
  * @summary Get projected cost savings
  */
 export const GetCostSavingsResponseItem = zod.object({
-  facilityType: zod.string().describe("Type\/size of facility"),
-  monthlyUsageM3: zod.number().describe("Estimated monthly water usage (m³)"),
-  annualSavingsAtMin: zod
-    .number()
-    .describe("Annual savings at 15% minimum (USD)"),
-  annualSavingsAtAvg: zod
-    .number()
-    .describe("Annual savings at 16.5% average (USD)"),
-  annualWaterSavedM3: zod.number().describe("Annual water saved in m³"),
-  paybackMonths: zod.number().describe("Estimated payback period in months"),
+  facilityType: zod.string(),
+  monthlyUsageM3: zod.number(),
+  annualSavingsAtMin: zod.number(),
+  annualSavingsAtAvg: zod.number(),
+  annualWaterSavedM3: zod.number(),
+  paybackMonths: zod.number(),
 });
 export const GetCostSavingsResponse = zod.array(GetCostSavingsResponseItem);
+
+/**
+ * Returns all customer case studies across industries
+ * @summary Get customer portfolio
+ */
+export const GetCustomersResponseItem = zod.object({
+  id: zod.string(),
+  clientName: zod.string(),
+  industry: zod.enum([
+    "logistics",
+    "hospitality",
+    "commercial",
+    "industrial",
+    "retail",
+    "municipal",
+  ]),
+  location: zod.string(),
+  installDate: zod.string(),
+  avgSavingsPct: zod.number(),
+  peakSavingsPct: zod.number(),
+  monthlyUsageM3: zod.number(),
+  annualWaterSavedM3: zod.number(),
+  annualCostSaved: zod.number(),
+  status: zod.enum(["verified", "projected", "active"]),
+  highlight: zod
+    .string()
+    .describe("A one-line headline about this customer's results"),
+  logoLetter: zod.string().describe("Single letter for avatar display"),
+});
+export const GetCustomersResponse = zod.array(GetCustomersResponseItem);
+
+/**
+ * Returns average savings percentage and water usage benchmarks by industry type
+ * @summary Get savings by industry
+ */
+export const GetIndustryComparisonResponseItem = zod.object({
+  industry: zod.string(),
+  avgSavingsPct: zod.number(),
+  avgMonthlyUsageM3: zod.number(),
+  avgAnnualSavings: zod.number(),
+  customerCount: zod.number(),
+  icon: zod.string().describe("Emoji icon for the industry"),
+});
+export const GetIndustryComparisonResponse = zod.array(
+  GetIndustryComparisonResponseItem,
+);

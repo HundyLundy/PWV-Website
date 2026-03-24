@@ -15,7 +15,9 @@ import type {
 
 import type {
   CostSavingProjection,
+  CustomerCase,
   HealthStatus,
+  IndustryComparison,
   QuarterlySaving,
   SiteDetail,
   SummaryData,
@@ -32,7 +34,6 @@ type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
 type SecondParameter<T extends (...args: never) => unknown> = Parameters<T>[1];
 
 /**
- * Returns server health status
  * @summary Health check
  */
 export const getHealthCheckUrl = () => {
@@ -108,7 +109,6 @@ export function useHealthCheck<
 }
 
 /**
- * Returns top-level KPI metrics for the Smart Valve performance
  * @summary Get dashboard KPI summary
  */
 export const getGetSummaryUrl = () => {
@@ -184,7 +184,6 @@ export function useGetSummary<
 }
 
 /**
- * Returns quarterly water savings percentages for each site
  * @summary Get quarterly savings by site
  */
 export const getGetQuarterlySavingsUrl = () => {
@@ -260,7 +259,6 @@ export function useGetQuarterlySavings<
 }
 
 /**
- * Returns before/after water usage data per site
  * @summary Get monthly water usage comparison
  */
 export const getGetWaterUsageUrl = () => {
@@ -336,7 +334,6 @@ export function useGetWaterUsage<
 }
 
 /**
- * Returns detailed performance data per site
  * @summary Get site details
  */
 export const getGetSitesUrl = () => {
@@ -404,7 +401,6 @@ export function useGetSites<
 }
 
 /**
- * Returns projected annual cost savings at various facility sizes
  * @summary Get projected cost savings
  */
 export const getGetCostSavingsUrl = () => {
@@ -471,6 +467,158 @@ export function useGetCostSavings<
   request?: SecondParameter<typeof customFetch>;
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getGetCostSavingsQueryOptions(options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+/**
+ * Returns all customer case studies across industries
+ * @summary Get customer portfolio
+ */
+export const getGetCustomersUrl = () => {
+  return `/api/data/customers`;
+};
+
+export const getCustomers = async (
+  options?: RequestInit,
+): Promise<CustomerCase[]> => {
+  return customFetch<CustomerCase[]>(getGetCustomersUrl(), {
+    ...options,
+    method: "GET",
+  });
+};
+
+export const getGetCustomersQueryKey = () => {
+  return [`/api/data/customers`] as const;
+};
+
+export const getGetCustomersQueryOptions = <
+  TData = Awaited<ReturnType<typeof getCustomers>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getCustomers>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+
+  const queryKey = queryOptions?.queryKey ?? getGetCustomersQueryKey();
+
+  const queryFn: QueryFunction<Awaited<ReturnType<typeof getCustomers>>> = ({
+    signal,
+  }) => getCustomers({ signal, ...requestOptions });
+
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof getCustomers>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey };
+};
+
+export type GetCustomersQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getCustomers>>
+>;
+export type GetCustomersQueryError = ErrorType<unknown>;
+
+/**
+ * @summary Get customer portfolio
+ */
+
+export function useGetCustomers<
+  TData = Awaited<ReturnType<typeof getCustomers>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getCustomers>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getGetCustomersQueryOptions(options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+/**
+ * Returns average savings percentage and water usage benchmarks by industry type
+ * @summary Get savings by industry
+ */
+export const getGetIndustryComparisonUrl = () => {
+  return `/api/data/industry-comparison`;
+};
+
+export const getIndustryComparison = async (
+  options?: RequestInit,
+): Promise<IndustryComparison[]> => {
+  return customFetch<IndustryComparison[]>(getGetIndustryComparisonUrl(), {
+    ...options,
+    method: "GET",
+  });
+};
+
+export const getGetIndustryComparisonQueryKey = () => {
+  return [`/api/data/industry-comparison`] as const;
+};
+
+export const getGetIndustryComparisonQueryOptions = <
+  TData = Awaited<ReturnType<typeof getIndustryComparison>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getIndustryComparison>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+
+  const queryKey = queryOptions?.queryKey ?? getGetIndustryComparisonQueryKey();
+
+  const queryFn: QueryFunction<
+    Awaited<ReturnType<typeof getIndustryComparison>>
+  > = ({ signal }) => getIndustryComparison({ signal, ...requestOptions });
+
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof getIndustryComparison>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey };
+};
+
+export type GetIndustryComparisonQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getIndustryComparison>>
+>;
+export type GetIndustryComparisonQueryError = ErrorType<unknown>;
+
+/**
+ * @summary Get savings by industry
+ */
+
+export function useGetIndustryComparison<
+  TData = Awaited<ReturnType<typeof getIndustryComparison>>,
+  TError = ErrorType<unknown>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getIndustryComparison>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getGetIndustryComparisonQueryOptions(options);
 
   const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
     queryKey: QueryKey;

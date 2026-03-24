@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "-0lEsaavEbiLjTJsy1vQo"
+uri = "file://.agents/outputs/pwv-smart-valve-analysis.md"
+type = "text"
+title = "Smart Valve Performance Analysis Report"

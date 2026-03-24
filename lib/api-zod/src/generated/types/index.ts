@@ -7,7 +7,11 @@
  */
 
 export * from "./costSavingProjection";
+export * from "./customerCase";
+export * from "./customerCaseIndustry";
+export * from "./customerCaseStatus";
 export * from "./healthStatus";
+export * from "./industryComparison";
 export * from "./quarterlySaving";
 export * from "./siteDetail";
 export * from "./siteDetailStatus";

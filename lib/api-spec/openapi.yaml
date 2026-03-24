@@ -17,7 +17,6 @@ paths:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -30,7 +29,6 @@ paths:
       operationId: getSummary
       tags: [data]
       summary: Get dashboard KPI summary
-      description: Returns top-level KPI metrics for the Smart Valve performance
       responses:
         "200":
           description: Summary KPIs
@@ -43,7 +41,6 @@ paths:
       operationId: getQuarterlySavings
       tags: [data]
       summary: Get quarterly savings by site
-      description: Returns quarterly water savings percentages for each site
       responses:
         "200":
           description: Quarterly savings data
@@ -58,7 +55,6 @@ paths:
       operationId: getWaterUsage
       tags: [data]
       summary: Get monthly water usage comparison
-      description: Returns before/after water usage data per site
       responses:
         "200":
           description: Water usage comparison
@@ -73,7 +69,6 @@ paths:
       operationId: getSites
       tags: [data]
       summary: Get site details
-      description: Returns detailed performance data per site
       responses:
         "200":
           description: Site details
@@ -88,7 +83,6 @@ paths:
       operationId: getCostSavings
       tags: [data]
       summary: Get projected cost savings
-      description: Returns projected annual cost savings at various facility sizes
       responses:
         "200":
           description: Cost savings projections
@@ -98,6 +92,36 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/CostSavingProjection"
+  /data/customers:
+    get:
+      operationId: getCustomers
+      tags: [data]
+      summary: Get customer portfolio
+      description: Returns all customer case studies across industries
+      responses:
+        "200":
+          description: Customer portfolio
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CustomerCase"
+  /data/industry-comparison:
+    get:
+      operationId: getIndustryComparison
+      tags: [data]
+      summary: Get savings by industry
+      description: Returns average savings percentage and water usage benchmarks by industry type
+      responses:
+        "200":
+          description: Industry comparison data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/IndustryComparison"
 components:
   schemas:
     HealthStatus:
@@ -112,34 +136,28 @@ components:
       properties:
         portfolioAvgSavings:
           type: number
-          description: Average savings across all pilot sites (%)
         guaranteedMinSavings:
           type: number
-          description: Guaranteed minimum savings per installation (%)
         yzz3AvgSavings:
           type: number
-          description: Average savings at YYZ3 site (%)
         yzz4AvgSavings:
           type: number
-          description: Average savings at YYZ4 site (%)
         yzz3PeakMonthlyUsageBefore:
           type: number
-          description: YYZ3 peak monthly usage before Smart Valve (m³)
         yzz3PeakMonthlyUsageAfter:
           type: number
-          description: YYZ3 peak monthly usage after Smart Valve (m³)
         yzz4PeakMonthlyUsageBefore:
           type: number
-          description: YYZ4 peak monthly usage before Smart Valve (m³)
         yzz4PeakMonthlyUsageAfter:
           type: number
-          description: YYZ4 peak monthly usage after Smart Valve (m³)
         gpmReductionYzz3:
           type: number
-          description: Gallons per minute reduction at YYZ3
         costPerCubicMeter:
           type: number
-          description: Assumed cost per cubic meter for savings calculation (USD)
+        totalCustomers:
+          type: integer
+        totalIndustriesServed:
+          type: integer
       required:
         - portfolioAvgSavings
         - guaranteedMinSavings
@@ -151,18 +169,17 @@ components:
         - yzz4PeakMonthlyUsageAfter
         - gpmReductionYzz3
         - costPerCubicMeter
+        - totalCustomers
+        - totalIndustriesServed
     QuarterlySaving:
       type: object
       properties:
         period:
           type: string
-          description: Quarter label (e.g. "Jul-Sep 2024")
         yzz3:
           type: number
-          description: YYZ3 savings percentage (positive = savings, negative = increase)
         yzz4:
           type: number
-          description: YYZ4 savings percentage (positive = savings, negative = increase)
       required:
         - period
         - yzz3
@@ -172,22 +189,16 @@ components:
       properties:
         site:
           type: string
-          description: Site name
         period:
           type: string
-          description: Time period label
         usageBefore:
           type: number
-          description: Water usage before Smart Valve installation (m³)
         usageAfter:
           type: number
-          description: Water usage after Smart Valve installation (m³)
         savingsM3:
           type: number
-          description: Water saved (m³)
         savingsPct:
           type: number
-          description: Savings as percentage
       required:
         - site
         - period
@@ -238,22 +249,16 @@ components:
       properties:
         facilityType:
           type: string
-          description: Type/size of facility
         monthlyUsageM3:
           type: number
-          description: Estimated monthly water usage (m³)
         annualSavingsAtMin:
           type: number
-          description: Annual savings at 15% minimum (USD)
         annualSavingsAtAvg:
           type: number
-          description: Annual savings at 16.5% average (USD)
         annualWaterSavedM3:
           type: number
-          description: Annual water saved in m³
         paybackMonths:
           type: number
-          description: Estimated payback period in months
       required:
         - facilityType
         - monthlyUsageM3
@@ -261,3 +266,73 @@ components:
         - annualSavingsAtAvg
         - annualWaterSavedM3
         - paybackMonths
+    CustomerCase:
+      type: object
+      properties:
+        id:
+          type: string
+        clientName:
+          type: string
+        industry:
+          type: string
+          enum: [logistics, hospitality, commercial, industrial, retail, municipal]
+        location:
+          type: string
+        installDate:
+          type: string
+        avgSavingsPct:
+          type: number
+        peakSavingsPct:
+          type: number
+        monthlyUsageM3:
+          type: number
+        annualWaterSavedM3:
+          type: number
+        annualCostSaved:
+          type: number
+        status:
+          type: string
+          enum: [verified, projected, active]
+        highlight:
+          type: string
+          description: A one-line headline about this customer's results
+        logoLetter:
+          type: string
+          description: Single letter for avatar display
+      required:
+        - id
+        - clientName
+        - industry
+        - location
+        - installDate
+        - avgSavingsPct
+        - peakSavingsPct
+        - monthlyUsageM3
+        - annualWaterSavedM3
+        - annualCostSaved
+        - status
+        - highlight
+        - logoLetter
+    IndustryComparison:
+      type: object
+      properties:
+        industry:
+          type: string
+        avgSavingsPct:
+          type: number
+        avgMonthlyUsageM3:
+          type: number
+        avgAnnualSavings:
+          type: number
+        customerCount:
+          type: integer
+        icon:
+          type: string
+          description: Emoji icon for the industry
+      required:
+        - industry
+        - avgSavingsPct
+        - avgMonthlyUsageM3
+        - avgAnnualSavings
+        - customerCount
+        - icon

@@ -7,10 +7,7 @@
  */
 
 export interface QuarterlySaving {
-  /** Quarter label (e.g. "Jul-Sep 2024") */
   period: string;
-  /** YYZ3 savings percentage (positive = savings, negative = increase) */
   yzz3: number;
-  /** YYZ4 savings percentage (positive = savings, negative = increase) */
   yzz4: number;
 }

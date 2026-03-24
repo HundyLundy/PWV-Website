@@ -10,49 +10,32 @@ export interface HealthStatus {
 }
 
 export interface SummaryData {
-  /** Average savings across all pilot sites (%) */
   portfolioAvgSavings: number;
-  /** Guaranteed minimum savings per installation (%) */
   guaranteedMinSavings: number;
-  /** Average savings at YYZ3 site (%) */
   yzz3AvgSavings: number;
-  /** Average savings at YYZ4 site (%) */
   yzz4AvgSavings: number;
-  /** YYZ3 peak monthly usage before Smart Valve (m³) */
   yzz3PeakMonthlyUsageBefore: number;
-  /** YYZ3 peak monthly usage after Smart Valve (m³) */
   yzz3PeakMonthlyUsageAfter: number;
-  /** YYZ4 peak monthly usage before Smart Valve (m³) */
   yzz4PeakMonthlyUsageBefore: number;
-  /** YYZ4 peak monthly usage after Smart Valve (m³) */
   yzz4PeakMonthlyUsageAfter: number;
-  /** Gallons per minute reduction at YYZ3 */
   gpmReductionYzz3: number;
-  /** Assumed cost per cubic meter for savings calculation (USD) */
   costPerCubicMeter: number;
+  totalCustomers: number;
+  totalIndustriesServed: number;
 }
 
 export interface QuarterlySaving {
-  /** Quarter label (e.g. "Jul-Sep 2024") */
   period: string;
-  /** YYZ3 savings percentage (positive = savings, negative = increase) */
   yzz3: number;
-  /** YYZ4 savings percentage (positive = savings, negative = increase) */
   yzz4: number;
 }
 
 export interface WaterUsageEntry {
-  /** Site name */
   site: string;
-  /** Time period label */
   period: string;
-  /** Water usage before Smart Valve installation (m³) */
   usageBefore: number;
-  /** Water usage after Smart Valve installation (m³) */
   usageAfter: number;
-  /** Water saved (m³) */
   savingsM3: number;
-  /** Savings as percentage */
   savingsPct: number;
 }
 
@@ -79,16 +62,59 @@ export interface SiteDetail {
 }
 
 export interface CostSavingProjection {
-  /** Type/size of facility */
   facilityType: string;
-  /** Estimated monthly water usage (m³) */
   monthlyUsageM3: number;
-  /** Annual savings at 15% minimum (USD) */
   annualSavingsAtMin: number;
-  /** Annual savings at 16.5% average (USD) */
   annualSavingsAtAvg: number;
-  /** Annual water saved in m³ */
   annualWaterSavedM3: number;
-  /** Estimated payback period in months */
   paybackMonths: number;
+}
+
+export type CustomerCaseIndustry =
+  (typeof CustomerCaseIndustry)[keyof typeof CustomerCaseIndustry];
+
+export const CustomerCaseIndustry = {
+  logistics: "logistics",
+  hospitality: "hospitality",
+  commercial: "commercial",
+  industrial: "industrial",
+  retail: "retail",
+  municipal: "municipal",
+} as const;
+
+export type CustomerCaseStatus =
+  (typeof CustomerCaseStatus)[keyof typeof CustomerCaseStatus];
+
+export const CustomerCaseStatus = {
+  verified: "verified",
+  projected: "projected",
+  active: "active",
+} as const;
+
+export interface CustomerCase {
+  id: string;
+  clientName: string;
+  industry: CustomerCaseIndustry;
+  location: string;
+  installDate: string;
+  avgSavingsPct: number;
+  peakSavingsPct: number;
+  monthlyUsageM3: number;
+  annualWaterSavedM3: number;
+  annualCostSaved: number;
+  status: CustomerCaseStatus;
+  /** A one-line headline about this customer's results */
+  highlight: string;
+  /** Single letter for avatar display */
+  logoLetter: string;
+}
+
+export interface IndustryComparison {
+  industry: string;
+  avgSavingsPct: number;
+  avgMonthlyUsageM3: number;
+  avgAnnualSavings: number;
+  customerCount: number;
+  /** Emoji icon for the industry */
+  icon: string;
 }

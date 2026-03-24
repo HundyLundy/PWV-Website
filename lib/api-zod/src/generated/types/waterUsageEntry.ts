@@ -7,16 +7,10 @@
  */
 
 export interface WaterUsageEntry {
-  /** Site name */
   site: string;
-  /** Time period label */
   period: string;
-  /** Water usage before Smart Valve installation (m³) */
   usageBefore: number;
-  /** Water usage after Smart Valve installation (m³) */
   usageAfter: number;
-  /** Water saved (m³) */
   savingsM3: number;
-  /** Savings as percentage */
   savingsPct: number;
 }
