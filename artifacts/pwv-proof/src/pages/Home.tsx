@@ -4,6 +4,7 @@ import { ArrowDown, Droplets, CheckCircle, ArrowRight, Percent, ChevronDown } fr
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { Navbar } from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 
 // --- ANIMATION VARIANTS ---
@@ -23,7 +24,8 @@ const staggerContainer = {
 export default function Home() {
   return (
     <div className="min-h-screen w-full flex flex-col items-center selection:bg-primary/30">
-      
+      <Navbar />
+
       {/* SECTION 1: OPENING HOOK */}
       <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
         {/* Cinematic background elements */}

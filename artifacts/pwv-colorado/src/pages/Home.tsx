@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   Building2, Home, Hotel, Cross, Droplets, Utensils, Flag,
   CheckCircle2, ChevronDown, ArrowRight, ShieldCheck, 
-  ZapOff, Activity, Menu, X
+  ZapOff, Activity
 } from "lucide-react";
+import { Navbar } from "@/components/Navbar";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 // Asset Imports
@@ -20,10 +21,7 @@ const REP_INFO = {
 };
 
 export default function HomePage() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const scrollTo = (id: string) => {
-    setIsMobileMenuOpen(false);
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -32,76 +30,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* TWO-TIER NAVBAR */}
-      <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
-        {/* Top Tier */}
-        <div className="bg-primary py-1.5 px-4 text-xs font-medium text-center text-white flex justify-center items-center gap-2 flex-wrap">
-          <span>{REP_INFO.name}</span>
-          <span className="hidden sm:inline opacity-60">|</span>
-          <a href={`tel:${REP_INFO.phone.replace(/-/g, '')}`} className="hover:underline">{REP_INFO.phone}</a>
-          <span className="hidden sm:inline opacity-60">|</span>
-          <a href={`mailto:${REP_INFO.email}`} className="hover:underline hidden sm:inline">{REP_INFO.email}</a>
-        </div>
-        
-        {/* Main Nav */}
-        <div className="bg-[#0A0F1E]/90 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto h-20 flex items-center justify-between">
-            <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
-              <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5">
-                <img src={logo} alt="Perfect Water Valve" className="h-full w-full object-contain" />
-              </div>
-              <div className="leading-tight hidden sm:block" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
-                <span className="text-xl text-white">Perfect Water</span><br/>
-                <span className="text-xl" style={{ color: '#DEC600' }}>Valve — Colorado</span>
-              </div>
-            </div>
-
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-              <button onClick={() => scrollTo('how-it-works')} className="hover:text-white transition-colors">How It Works</button>
-              <button onClick={() => scrollTo('savings-calc')} className="hover:text-white transition-colors">Savings</button>
-              <button onClick={() => scrollTo('why-colorado')} className="hover:text-white transition-colors">Why Colorado</button>
-              <button onClick={() => scrollTo('faq')} className="hover:text-white transition-colors">FAQ</button>
-            </nav>
-
-            <div className="hidden md:flex items-center gap-6">
-              <a href={`tel:${REP_INFO.phone.replace(/-/g, '')}`} className="font-semibold text-gray-200 hover:text-white">
-                {REP_INFO.phone}
-              </a>
-              <button onClick={() => scrollTo('contact')} className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-primary/25 transition-all hover:scale-105 active:scale-95">
-                See How Much You'll Save
-              </button>
-            </div>
-
-            {/* Mobile Toggle */}
-            <button className="md:hidden text-white p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              {isMobileMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
-        
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div 
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="md:hidden bg-[#0A0F1E] border-b border-white/10 overflow-hidden"
-            >
-              <div className="p-4 flex flex-col gap-4">
-                <button onClick={() => scrollTo('how-it-works')} className="text-left py-2 font-medium">How It Works</button>
-                <button onClick={() => scrollTo('savings-calc')} className="text-left py-2 font-medium">Savings</button>
-                <button onClick={() => scrollTo('why-colorado')} className="text-left py-2 font-medium">Why Colorado</button>
-                <button onClick={() => scrollTo('faq')} className="text-left py-2 font-medium">FAQ</button>
-                <button onClick={() => scrollTo('contact')} className="bg-primary text-white py-3 rounded-lg font-bold mt-2">
-                  See How Much You'll Save
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      <Navbar onScrollTo={scrollTo} />
 
       {/* HERO SECTION */}
       <section className="relative pt-40 pb-24 lg:pt-56 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">

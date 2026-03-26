@@ -1,18 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
-import { Menu, X, ChevronDown, Home, FileText, Zap, MapPin, Phone } from "lucide-react";
+import { Menu, X, ChevronDown, Home, Zap, BarChart2, MapPin, Phone } from "lucide-react";
 
 const SECTION_LINKS = [
-  { label: "ROI Calculator", href: "#calculator" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Results", href: "#results" },
+  { label: "Amazon Results", href: "#amazon" },
+  { label: "Hospitality", href: "#hospitality" },
+  { label: "All Clients", href: "#clients" },
   { label: "FAQ", href: "#faq" },
 ];
 
 const EXPLORE_LINKS = [
   { label: "Official Website", href: "/", desc: "Main homepage & full overview", icon: Home },
-  { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
-  { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings accumulate in real time", icon: Zap },
+  { label: "Live Savings Counter", href: "/impact/", desc: "Watch water savings accumulate in real time", icon: Zap },
+  { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
   { label: "Colorado Properties", href: "/colorado/", desc: "Serving all of Colorado — Hunter Lundquist", icon: MapPin },
 ];
 
@@ -66,7 +66,7 @@ export function Navbar() {
               Perfect Water Valve
             </div>
             <div className="text-xs font-medium mt-0.5" style={{ color: '#0374A7' }}>
-              Guaranteed 15% Savings
+              Verified Results
             </div>
           </div>
         </a>
@@ -132,13 +132,13 @@ export function Navbar() {
             <Phone className="w-3.5 h-3.5" />
             (361) 585-1111
           </a>
-          <button
-            onClick={() => scrollTo("#calculator")}
+          <a
+            href="/"
             className="px-5 py-2.5 rounded-full text-white text-sm font-semibold transition-all hover:-translate-y-0.5"
             style={{ background: '#0374A7', boxShadow: '0 4px 14px rgba(3,116,167,0.3)' }}
           >
-            Calculate ROI
-          </button>
+            Request Assessment
+          </a>
         </nav>
 
         {/* Hamburger */}
@@ -183,13 +183,14 @@ export function Navbar() {
               );
             })}
           </div>
-          <button
-            onClick={() => { scrollTo("#calculator"); setMenuOpen(false); }}
+          <a
+            href="/"
             className="mt-3 px-5 py-3 rounded-full text-white text-sm font-semibold text-center"
             style={{ background: '#0374A7' }}
+            onClick={() => setMenuOpen(false)}
           >
-            Calculate ROI
-          </button>
+            Request Assessment
+          </a>
           <a href="tel:3615851111" className="text-sm text-center mt-2" style={{ color: '#94B4C4' }}>(361) 585-1111</a>
         </div>
       )}

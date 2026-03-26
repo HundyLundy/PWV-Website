@@ -5,6 +5,7 @@ import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { LiveCounter } from "@/components/LiveCounter";
+import { Navbar } from "@/components/Navbar";
 
 // Hardcoded verified data as requested by implementation notes
 const HERO_STATS = [
@@ -33,7 +34,8 @@ const INDUSTRIES = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-hidden relative">
-      
+      <Navbar />
+
       {/* Decorative ambient lights */}
       <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       <div className="fixed bottom-[-20%] right-[-10%] w-[40%] h-[60%] rounded-full bg-secondary/10 blur-[150px] pointer-events-none" />
