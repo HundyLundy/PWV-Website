@@ -76,22 +76,31 @@ const COMPARISON = [
 ];
 
 export default function Home() {
-  const [form, setForm] = useState({ name: "", company: "", bill: "", message: "" });
+  const [form, setForm] = useState({ name: "", company: "", email: "", bill: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/REPLACE_WITH_YOUR_WEBHOOK_ID/webhook-trigger/REPLACE_WITH_YOUR_TRIGGER_ID";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`PWV Assessment Request — ${form.company}`);
-    const body = encodeURIComponent(
-      `Hi Hunter,\n\nA new assessment request came in from PerfectWaterValve.com:\n\n` +
-      `Name: ${form.name}\n` +
-      `Company / Facility: ${form.company}\n` +
-      `Monthly Water Bill: ${form.bill || "Not provided"}\n` +
-      `Message: ${form.message || "None"}\n\n` +
-      `Please follow up at your earliest convenience.`
-    );
-    window.location.href = `mailto:Hunter@perfectsynergysolutions.com?subject=${subject}&body=${body}`;
+    try {
+      await fetch(GHL_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          monthly_water_bill: form.bill,
+          message: form.message,
+          source: "PerfectWaterValve.com — Homepage",
+        }),
+      });
+    } catch (err) {
+      console.error("GHL webhook error:", err);
+    }
     setSubmitted(true);
+    setForm({ name: "", company: "", email: "", bill: "", message: "" });
   };
 
   return (
@@ -424,6 +433,9 @@ export default function Home() {
               <p className="text-base" style={{ color: '#4A7085', fontWeight: 300 }}>
                 Tell us about your facility and we'll calculate your estimated savings before the first site visit. No obligation.
               </p>
+              <p className="text-sm font-semibold mt-2" style={{ color: '#E53E3E' }}>
+                ⚡ Assessments are limited — we only take on 3 new sites per month.
+              </p>
             </motion.div>
 
             {submitted ? (
@@ -466,6 +478,19 @@ export default function Home() {
                       placeholder="Acme Hotel Group"
                     />
                   </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: '#4A7085' }}>Email Address</label>
+                  <input
+                    required
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border text-sm outline-none focus:ring-2 transition-all"
+                    style={{ borderColor: '#C5D8E8', color: '#0A1F3A' }}
+                    placeholder="jane@acmehotelgroup.com"
+                  />
                 </div>
 
                 <div>
