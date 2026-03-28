@@ -655,23 +655,32 @@ function FAQAccordion() {
 }
 
 function HubspotForm() {
-  const [form, setForm] = useState({ name: "", company: "", phone: "", bill: "", message: "" });
+  const [form, setForm] = useState({ name: "", company: "", phone: "", bill: "", message: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/pwv-contact";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Colorado Assessment Request — ${form.company}`);
-    const body = encodeURIComponent(
-      `Hi Hunter,\n\nNew Colorado assessment request from your landing page:\n\n` +
-      `Name: ${form.name}\n` +
-      `Company / Facility: ${form.company}\n` +
-      `Phone: ${form.phone || "Not provided"}\n` +
-      `Monthly Water Bill: ${form.bill || "Not provided"}\n` +
-      `Message: ${form.message || "None"}\n\n` +
-      `Please follow up at your earliest convenience.`
-    );
-    window.location.href = `mailto:Hunter@perfectsynergysolutions.com?subject=${subject}&body=${body}`;
+    try {
+      await fetch(GHL_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          company: form.company,
+          phone: form.phone || "",
+          email: form.email || "",
+          monthly_water_bill: form.bill,
+          message: form.message,
+          source: "perfectwatervalve.com/colorado - Contact Form",
+        }),
+      });
+    } catch (err) {
+      console.error("GHL webhook error:", err);
+    }
     setSubmitted(true);
+    setForm({ name: "", company: "", phone: "", bill: "", message: "", email: "" });
   };
 
   const inputCls = "w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-blue-400 transition-all placeholder:text-gray-400";
