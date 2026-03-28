@@ -3,9 +3,8 @@ import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 import { Menu, X, ChevronDown, Home, Zap, BarChart2, MapPin, Phone } from "lucide-react";
 
 const SECTION_LINKS = [
-  { label: "Amazon Results", href: "#amazon" },
-  { label: "Hospitality", href: "#hospitality" },
-  { label: "All Clients", href: "#clients" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "Verified Clients", href: "#clients" },
   { label: "FAQ", href: "#faq" },
 ];
 

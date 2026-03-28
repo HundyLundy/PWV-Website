@@ -655,48 +655,85 @@ function FAQAccordion() {
 }
 
 function HubspotForm() {
-  useEffect(() => {
-    // Prevent multiple script injections in React StrictMode
-    if (document.querySelector('script[src="https://js-na2.hsforms.net/forms/embed/244877209.js"]')) {
-      return;
-    }
+  const [form, setForm] = useState({ name: "", company: "", phone: "", bill: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
 
-    const script = document.createElement('script');
-    script.src = 'https://js-na2.hsforms.net/forms/embed/244877209.js';
-    script.defer = true;
-    
-    script.onload = () => {
-      if (window.hbspt) {
-        window.hbspt.forms.create({
-          region: "na2",
-          portalId: "244877209",
-          formId: "c354a660-f465-466c-a016-2b33bddab522",
-          target: '#hubspot-form-container'
-        });
-      }
-    };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Colorado Assessment Request — ${form.company}`);
+    const body = encodeURIComponent(
+      `Hi Hunter,\n\nNew Colorado assessment request from your landing page:\n\n` +
+      `Name: ${form.name}\n` +
+      `Company / Facility: ${form.company}\n` +
+      `Phone: ${form.phone || "Not provided"}\n` +
+      `Monthly Water Bill: ${form.bill || "Not provided"}\n` +
+      `Message: ${form.message || "None"}\n\n` +
+      `Please follow up at your earliest convenience.`
+    );
+    window.location.href = `mailto:Hunter@perfectsynergysolutions.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  };
 
-    document.body.appendChild(script);
+  const inputCls = "w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 outline-none focus:ring-2 focus:ring-blue-400 transition-all placeholder:text-gray-400";
+  const labelCls = "block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5";
 
-    return () => {
-      // Cleanup not strictly necessary for landing page, but good practice
-    };
-  }, []);
+  if (submitted) {
+    return (
+      <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
+        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+          <CheckCircle2 className="w-8 h-8 text-green-600" />
+        </div>
+        <h3 className="text-xl font-bold text-gray-900">Request Sent!</h3>
+        <p className="text-gray-500 text-sm max-w-sm">
+          Hunter will follow up with you shortly. You can also reach him directly at{" "}
+          <a href="tel:7209373004" className="text-blue-600 font-medium hover:underline">720-937-3004</a>.
+        </p>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      <div id="hubspot-form-container">
-        {/* The form will render inside this div */}
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label className={labelCls}>Your Name</label>
+          <input required value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
+            className={inputCls} placeholder="Jane Smith" />
+        </div>
+        <div>
+          <label className={labelCls}>Company / Facility</label>
+          <input required value={form.company} onChange={e => setForm({ ...form, company: e.target.value })}
+            className={inputCls} placeholder="Acme Hotel Group" />
+        </div>
       </div>
-      {/* Fallback frame just in case the JS API above fails but the script loads */}
-      <div className="hs-form-frame hidden" data-region="na2" data-form-id="c354a660-f465-466c-a016-2b33bddab522" data-portal-id="244877209"></div>
-    </div>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label className={labelCls}>Phone Number</label>
+          <input value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })}
+            className={inputCls} placeholder="(720) 555-0100" type="tel" />
+        </div>
+        <div>
+          <label className={labelCls}>Monthly Water Bill</label>
+          <input value={form.bill} onChange={e => setForm({ ...form, bill: e.target.value })}
+            className={inputCls} placeholder="e.g. $8,000 / month" />
+        </div>
+      </div>
+      <div>
+        <label className={labelCls}>Message (optional)</label>
+        <textarea value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
+          rows={3} className={`${inputCls} resize-none`}
+          placeholder="Number of locations, industry, any questions..." />
+      </div>
+      <button
+        type="submit"
+        className="w-full py-3.5 rounded-xl text-white font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg"
+        style={{ background: '#0374A7', boxShadow: '0 4px 16px rgba(3,116,167,0.3)' }}
+      >
+        Schedule My Free Assessment →
+      </button>
+      <p className="text-xs text-center text-gray-400 pt-1">
+        No obligation. Hunter will personally follow up within one business day.
+      </p>
+    </form>
   );
-}
-
-// Ensure global type for hbspt exists
-declare global {
-  interface Window {
-    hbspt: any;
-  }
 }

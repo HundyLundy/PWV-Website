@@ -3,9 +3,9 @@ import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 import { Menu, X, ChevronDown, Home, FileText, Zap, MapPin, Phone } from "lucide-react";
 
 const SECTION_LINKS = [
-  { label: "ROI Calculator", href: "#calculator" },
+  { label: "ROI Calculator", href: "#roi-calc" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Results", href: "#results" },
+  { label: "Results", href: "#case-studies" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -133,7 +133,7 @@ export function Navbar() {
             (361) 585-1111
           </a>
           <button
-            onClick={() => scrollTo("#calculator")}
+            onClick={() => scrollTo("#roi-calc")}
             className="px-5 py-2.5 rounded-full text-white text-sm font-semibold transition-all hover:-translate-y-0.5"
             style={{ background: '#0374A7', boxShadow: '0 4px 14px rgba(3,116,167,0.3)' }}
           >
@@ -184,7 +184,7 @@ export function Navbar() {
             })}
           </div>
           <button
-            onClick={() => { scrollTo("#calculator"); setMenuOpen(false); }}
+            onClick={() => { scrollTo("#roi-calc"); setMenuOpen(false); }}
             className="mt-3 px-5 py-3 rounded-full text-white text-sm font-semibold text-center"
             style={{ background: '#0374A7' }}
           >

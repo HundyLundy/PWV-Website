@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "wouter";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -67,7 +66,7 @@ export default function Home() {
       <Navbar />
 
       {/* 1. HERO — EDITORIAL STAT-LEAD */}
-      <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 overflow-hidden" style={{ background: 'var(--brand-bg)' }}>
+      <section id="roi-calc" className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 overflow-hidden" style={{ background: 'var(--brand-bg)' }}>
         {/* 4px accent bar across the top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0374A7] via-[#0030B5] to-[#3C6E7F]" />
 
@@ -108,13 +107,14 @@ export default function Home() {
               </motion.p>
 
               <motion.div variants={fadeIn} className="flex flex-wrap gap-4 mb-8">
-                <Link
-                  href="/proposal"
-                  className="flex items-center gap-2 px-8 py-4 rounded-full text-white font-bold text-lg shadow-lg hover:-translate-y-1 transition-all"
+                <a
+                  href="#roi-calc"
+                  onClick={e => { e.preventDefault(); document.getElementById('roi-calc')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="flex items-center gap-2 px-8 py-4 rounded-full text-white font-bold text-lg shadow-lg hover:-translate-y-1 transition-all cursor-pointer"
                   style={{ background: '#0374A7', boxShadow: '0 8px 24px rgba(3,116,167,0.28)' }}
                 >
                   Calculate My Savings <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
                 <button
                   onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
                   className="flex items-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-bold text-lg transition-all"
@@ -382,13 +382,14 @@ export default function Home() {
           <p className="text-xl mb-10 leading-relaxed" style={{ color: 'rgba(232,239,247,0.85)', fontWeight: 300 }}>
             Tell us your industry and square footage. We'll pull the M&V data from comparable sites and show you what you'd likely save — no commitment, no sales pitch.
           </p>
-          <Link
-            href="/proposal"
-            className="inline-flex items-center gap-2 px-10 py-5 rounded-full font-bold text-lg shadow-2xl hover:-translate-y-1 transition-all"
+          <a
+            href="#roi-calc"
+            onClick={e => { e.preventDefault(); document.getElementById('roi-calc')?.scrollIntoView({ behavior: 'smooth' }); }}
+            className="inline-flex items-center gap-2 px-10 py-5 rounded-full font-bold text-lg shadow-2xl hover:-translate-y-1 transition-all cursor-pointer"
             style={{ background: '#ffffff', color: '#0030B5' }}
           >
             Get My Savings Estimate <ArrowRight className="w-5 h-5" />
-          </Link>
+          </a>
         </div>
       </section>
 

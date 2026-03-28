@@ -70,6 +70,16 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`PWV Assessment Request — ${form.company}`);
+    const body = encodeURIComponent(
+      `Hi Hunter,\n\nA new assessment request came in from PerfectWaterValve.com:\n\n` +
+      `Name: ${form.name}\n` +
+      `Company / Facility: ${form.company}\n` +
+      `Monthly Water Bill: ${form.bill || "Not provided"}\n` +
+      `Message: ${form.message || "None"}\n\n` +
+      `Please follow up at your earliest convenience.`
+    );
+    window.location.href = `mailto:Hunter@perfectsynergysolutions.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 

@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
       {/* 2a. LIVE GALLONS TRACKER — light blue / royal blue */}
-      <section className="relative py-24 border-y" style={{ backgroundColor: '#D4EDFF', borderColor: '#A8D4F5' }}>
+      <section id="counter" className="relative py-24 border-y" style={{ backgroundColor: '#D4EDFF', borderColor: '#A8D4F5' }}>
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0 }}
@@ -143,7 +143,7 @@ export default function Home() {
       <BubbleValveSection />
 
       {/* 3. CLIENT IMPACT GRID */}
-      <section className="py-32 relative z-10 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)' }}>
+      <section id="clients" className="py-32 relative z-10 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -271,7 +271,7 @@ export default function Home() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-20 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 60%, #3C6E7F 100%)' }}>
+      <section id="faq" className="py-20 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 60%, #3C6E7F 100%)' }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Common Questions</h2>

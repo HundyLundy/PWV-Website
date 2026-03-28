@@ -273,7 +273,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 4: CLIENT STORIES */}
-      <section className="w-full py-20 overflow-hidden relative">
+      <section id="case-studies" className="w-full py-20 overflow-hidden relative">
         {/* Vertical timeline line */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border to-transparent hidden md:block" />
 
@@ -337,7 +337,7 @@ export default function Home() {
       </section>
 
       {/* CLIENT LOGO BAR */}
-      <section className="w-full py-10 px-6 border-y" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
+      <section id="clients" className="w-full py-10 px-6 border-y" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
         <p className="text-center text-xs font-bold uppercase tracking-widest mb-6" style={{ color: '#4A7085' }}>Results verified at</p>
         <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 max-w-4xl mx-auto">
           {[
@@ -397,7 +397,7 @@ export default function Home() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="w-full py-24 px-6" style={{ backgroundColor: '#E8EFF7' }}>
+      <section id="faq" className="w-full py-24 px-6" style={{ backgroundColor: '#E8EFF7' }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-display font-semibold mb-3" style={{ color: '#0A1F3A' }}>Common Questions</h2>
