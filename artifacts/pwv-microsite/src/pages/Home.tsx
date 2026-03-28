@@ -26,34 +26,44 @@ const staggerContainer = {
 
 const TESTIMONIALS = [
   {
-    logo: "A", industry: "Logistics", color: "bg-blue-100 text-blue-700",
-    quote: "17% consistent savings across 6 quarters of M&V data. 58.69% peak reduction recorded.",
-    author: "Amazon Facilities Team", client: "Amazon YYZ3"
+    logo: "A", industry: "Logistics / Fulfillment", color: "bg-blue-100 text-blue-700",
+    quote: "Two M&V methodologies — both verified. YOY peak: 58.69% at YYZ3. Normalized portfolio average: 16.5% across YYZ3 & YYZ4 over six consecutive quarters.",
+    author: "Amazon Facilities Team", client: "Amazon YYZ3 & YYZ4"
   },
   {
-    logo: "S", industry: "Hospitality", color: "bg-purple-100 text-purple-700",
-    quote: "$49,889 CAD annual savings. 20%+ reduction verified.",
-    author: "Priyan Jayetileke, Property Manager", client: "St. Regis Toronto"
+    logo: "S", industry: "Luxury Hospitality · Marriott", color: "bg-purple-100 text-purple-700",
+    quote: "Year-over-year savings of $49,889 CAD, representing 20%+ in water-cost reduction.",
+    author: "Priyan Jayetileke, Chief Engineer", client: "The St. Regis Toronto"
   },
   {
-    logo: "F", industry: "Hospitality", color: "bg-indigo-100 text-indigo-700",
-    quote: "26% daily average savings, 56% peak reduction in October. $27,000/yr in avoided costs.",
+    logo: "1", industry: "Luxury Hospitality", color: "bg-teal-100 text-teal-700",
+    quote: "15% average water reduction over 12 months. 177 → 150 m³/day. $3,491/month savings verified by formal report.",
+    author: "1 Hotel Toronto Facilities", client: "1 Hotel Toronto"
+  },
+  {
+    logo: "F", industry: "Luxury Hospitality", color: "bg-indigo-100 text-indigo-700",
+    quote: "26% daily average savings, 56% peak reduction in October. $27,000/yr in avoided costs. Formal M&V December 2025.",
     author: "Four Seasons Engineering", client: "Four Seasons Fort Lauderdale"
   },
   {
-    logo: "G", industry: "Real Estate", color: "bg-emerald-100 text-emerald-700",
-    quote: "$50,000/yr savings. Bill dropped from $240K to $190K annually.",
-    author: "Bob Pack, GM", client: "Grand Central at Kennedy"
+    logo: "G", industry: "Real Estate · Tampa FL", color: "bg-emerald-100 text-emerald-700",
+    quote: "In two years since installed, our savings on water and sewer charge are averaging 23%... We are reducing our line item for water and sewer charges by $50,000.",
+    author: "Bob Pack, General Manager", client: "Grand Central at Kennedy"
   },
   {
-    logo: "H", industry: "Real Estate", color: "bg-teal-100 text-teal-700",
-    quote: "16% reduction in metered water consumption on a 13M+ gallon/year building — about 6,000 gallons/day.",
-    author: "Doug Horn, GM", client: "Houstonian Estates"
+    logo: "H", industry: "Multifamily Real Estate", color: "bg-amber-100 text-amber-700",
+    quote: "16% reduction in metered water consumption on a 13M+ gallon/year building — about 6,000 gallons saved per day.",
+    author: "Doug Horn, General Manager", client: "Houstonian Estates"
   },
   {
-    logo: "C", industry: "Automotive", color: "bg-amber-100 text-amber-700",
-    quote: "23% weighted average across 5 locations. M&V verified over 3+ quarters.",
+    logo: "C", industry: "Automotive", color: "bg-red-100 text-red-700",
+    quote: "23% weighted average across 5 locations in Georgia and Florida. M&V verified over 3+ quarters.",
     author: "Caliber Operations", client: "Caliber Car Wash"
+  },
+  {
+    logo: "FC", industry: "Multi-Residential Portfolio · Toronto", color: "bg-green-100 text-green-700",
+    quote: "IPMVP Option B verified at 95% confidence. 100 Forest: 20.0% (p<0.01). 123 Charlton: 17.0% (p<0.01). Combined annual savings: CA $17,200.",
+    author: "Canadian Water Savings M&V Report", client: "Forest & Charlton (100 Forest / 123 Charlton Ave)"
   }
 ];
 
@@ -154,23 +164,32 @@ export default function Home() {
       {/* 2. CLIENT LOGO BAR */}
       <section className="bg-white py-8 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Trusted by leading commercial operators</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+          <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Verified Results — 21 Documented Installations</p>
+          <p className="text-center text-[10px] text-slate-300 uppercase tracking-widest mb-6">19 include formal M&V data</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
             {[
-              { name: "Amazon", sub: "Fulfillment Centers" },
-              { name: "Four Seasons", sub: "Fort Lauderdale" },
-              { name: "St. Regis", sub: "Toronto" },
-              { name: "Caliber Car Wash", sub: "5-Site Network" },
-              { name: "Grand Central", sub: "Multifamily" },
-              { name: "Houstonian", sub: "Estates" },
-              { name: "Labatt", sub: "Brewing" },
-              { name: "Guinness", sub: "Production" },
+              { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },
+              { name: "Four Seasons", sub: "Fort Lauderdale · 26%" },
+              { name: "St. Regis", sub: "Toronto · $49,889 CAD" },
+              { name: "1 Hotel", sub: "Toronto · 15% avg" },
+              { name: "Caliber Car Wash", sub: "5-Site Network · 23%" },
+              { name: "Grand Central", sub: "Kennedy · $50K/yr" },
+              { name: "Houstonian", sub: "Estates · 16%" },
+              { name: "Forest & Charlton", sub: "Toronto · 17–20%" },
             ].map((c) => (
-              <div key={c.name} className="flex flex-col items-center text-center opacity-60 hover:opacity-100 transition-opacity">
+              <div key={c.name} className="flex flex-col items-center text-center opacity-70 hover:opacity-100 transition-opacity">
                 <span className="font-headline font-bold text-slate-700 text-base tracking-tight leading-tight">{c.name}</span>
                 <span className="text-[10px] text-slate-400 uppercase tracking-widest">{c.sub}</span>
               </div>
             ))}
+          </div>
+          <div className="border-t border-slate-100 pt-5">
+            <p className="text-center text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-4">Also Deployed At (No Stats Published)</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 opacity-40">
+              {["Linamar", "Labatt Brewing", "Guinness", "Commercial Bakeries", "Kerry Group", "Starlight Investments", "Akelius"].map((name) => (
+                <span key={name} className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{name}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -182,15 +201,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="font-headline text-3xl lg:text-4xl font-bold text-slate-900 mb-4">The numbers don't need spin.</h2>
-            <p className="text-lg text-slate-500" style={{ fontWeight: 300 }}>Every site is measured before and after. 1-year sample of a small percentage of 32,000+ installs. Savings range: 15% to 58%.</p>
+            <p className="text-lg text-slate-500" style={{ fontWeight: 300 }}>21 documented installations. 19 include verified M&V data. Range: 12.5%–58.69%. Guaranteed floor of 15%.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: "Avg. Water Savings", value: summary?.portfolioAvgSavings || 23, suffix: "%", desc: "Across 19 M&V-verified sites", icon: TrendingDown },
+              { label: "Documented Installations", value: 21, suffix: "", desc: "19 include formal M&V data", icon: TrendingDown },
               { label: "Guaranteed Minimum", value: summary?.guaranteedMinSavings || 15, suffix: "%", desc: "In writing. In your contract.", icon: ShieldCheck },
               { label: "Active Deployments", value: summary?.activeSites || 32000, suffix: "+", desc: "Sites across North America", icon: Building2 },
-              { label: "Typical Annual Value", value: 50, prefix: "Up to $", suffix: "K", desc: "Saved per year, per location", icon: CheckCircle2 },
+              { label: "Top Annual Savings", value: 50, prefix: "Up to $", suffix: "K", desc: "Saved per year, per location", icon: CheckCircle2 },
             ].map((stat, i) => (
               <motion.div
                 key={i}

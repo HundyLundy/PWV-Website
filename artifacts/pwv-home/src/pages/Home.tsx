@@ -12,45 +12,56 @@ const fadeUp = {
 };
 
 const INDUSTRIES = [
-  { name: "Automotive (Car Wash)", value: 23, range: "18–28%" },
-  { name: "Luxury Hospitality", value: 24, range: "20–58%" },
-  { name: "Real Estate / Multifamily", value: 19, range: "16–26%" },
-  { name: "Healthcare / Labs", value: 20, range: "15–25%" },
-  { name: "Logistics / Warehousing", value: 17, range: "15–22%" },
-  { name: "Food Service / Industrial", value: 16, range: "15–20%" },
+  { name: "Commercial Office", value: 36, range: "33%–39%", note: "Texas portfolio — 2 sites verified" },
+  { name: "Automotive (Car Wash)", value: 23, range: "23%", note: "Caliber Car Wash — 5 sites, M&V verified" },
+  { name: "Luxury Hospitality", value: 22, range: "15%–26%", note: "1 Hotel 15%, St. Regis 20%+, Four Seasons 26%" },
+  { name: "Multifamily / Apartments", value: 21, range: "12.5%–30%", note: "Forest & Charlton 17–20%, NJ portfolio range" },
+  { name: "Condominiums", value: 20, range: "16%–23%", note: "Multiple verified Canadian sites" },
+  { name: "Logistics / Fulfillment", value: 17, range: "16.5% avg / 58.69% peak", note: "Amazon YYZ3 & YYZ4 — dual M&V methodology" },
+  { name: "Healthcare / Medical", value: 19, range: "19%", note: "RWJ Barnabas — based on 1 study" },
 ];
-const INDUSTRY_MAX = 24;
+const INDUSTRY_MAX = 39;
 
 const CLIENTS = [
   {
     initial: "A", name: "Amazon YYZ3 & YYZ4", industry: "Logistics / Fulfillment",
     color: "#1a365d", accent: "#3182CE",
-    stat: "17% avg · 58.69% peak", detail: "6 quarters of M&V data. 17% consistent average savings across 8.5M+ sq ft."
+    stat: "16.5% avg · 58.69% YOY peak", detail: "Two M&V reports, two methodologies. YOY comparison shows 58.69% peak at YYZ3. Per-employee normalized avg: 16.5% across both sites, six consecutive quarters."
   },
   {
     initial: "F", name: "Four Seasons Fort Lauderdale", industry: "Luxury Hospitality",
     color: "#1a2f1a", accent: "#38A169",
-    stat: "$27,000/yr · 26% avg", detail: "26% daily average, 56% peak in October. Third-party M&V verified."
+    stat: "$27,000/yr · 26% avg", detail: "26% daily average. Third-party M&V verified. Formal M&V report December 2025."
   },
   {
-    initial: "S", name: "St. Regis Toronto", industry: "Luxury Hospitality",
+    initial: "S", name: "The St. Regis Toronto", industry: "Luxury Hospitality · Marriott",
     color: "#2d1b4e", accent: "#805AD5",
-    stat: "$49,889 CAD/yr", detail: "20%+ verified reduction. ROI achieved within first 6 months of installation."
+    stat: "$49,889 CAD/yr · 20%+", detail: "Chief Engineer Priyan Jayetileke confirmed. Formal report. Marriott-approved implementation."
   },
   {
-    initial: "G", name: "Grand Central at Kennedy", industry: "Real Estate",
+    initial: "1", name: "1 Hotel Toronto", industry: "Luxury Hospitality",
+    color: "#1a3028", accent: "#319795",
+    stat: "15% avg · $3,491/mo", detail: "177 → 150 m³/day average. 12-month formal report. Range: 1%–27% month-to-month."
+  },
+  {
+    initial: "G", name: "Grand Central at Kennedy", industry: "Real Estate · Tampa FL",
     color: "#1a2f2f", accent: "#319795",
-    stat: "$50,000/yr · 23% avg", detail: "Annual water bill dropped from $240K to $190K. GM Bob Pack verified."
+    stat: "$50,000/yr · 23% avg", detail: "Annual water bill: $240K → $190K. GM Bob Pack verified over 2-year period."
   },
   {
     initial: "H", name: "Houstonian Estates", industry: "Multifamily Real Estate",
     color: "#2d2415", accent: "#D69E2E",
-    stat: "16% · 6,000 gal/day", detail: "13M+ gallon/year property. 6,000 gallons saved daily. GM Doug Horn verified."
+    stat: "16% · ~6,000 gal/day", detail: "13M+ gallon/year property. Doug Horn, GM verified. Self-reported testimonial."
   },
   {
     initial: "C", name: "Caliber Car Wash", industry: "Automotive",
     color: "#2d1515", accent: "#E53E3E",
-    stat: "23% weighted avg · 5 sites", detail: "M&V verified across 5 GA & FL locations over 3+ quarters of data."
+    stat: "23% weighted avg · 5 sites", detail: "M&V verified across 5 GA & FL locations over 3+ quarters. Formal M&V March 2026."
+  },
+  {
+    initial: "F", name: "Forest & Charlton (100 Forest / 123 Charlton)", industry: "Multi-Residential Portfolio · Toronto",
+    color: "#1a2a1a", accent: "#38A169",
+    stat: "17–20% (IPMVP Option B)", detail: "CA $17,200 combined annual savings. Paired t-test at 95% confidence. Payback < 3 years."
   },
 ];
 
@@ -231,9 +242,12 @@ export default function Home() {
             <div className="space-y-8">
               {INDUSTRIES.map((ind, i) => (
                 <motion.div key={ind.name} variants={fadeUp} className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-base font-semibold" style={{ color: '#0A1F3A' }}>{ind.name}</span>
-                    <span className="text-base font-bold" style={{ color: '#0374A7' }}>{ind.range}</span>
+                  <div className="flex justify-between items-start gap-4">
+                    <div>
+                      <span className="text-base font-semibold" style={{ color: '#0A1F3A' }}>{ind.name}</span>
+                      {ind.note && <span className="block text-xs mt-0.5" style={{ color: '#6A8A9A' }}>{ind.note}</span>}
+                    </div>
+                    <span className="text-base font-bold whitespace-nowrap" style={{ color: '#0374A7' }}>{ind.range}</span>
                   </div>
                   <motion.div
                     initial={{ width: 0 }}
@@ -254,9 +268,9 @@ export default function Home() {
       <section id="clients" className="py-28 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">Real Clients. Audited Results.</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">21 Documented Installations. Real Results.</h2>
             <p className="text-white/60 text-base" style={{ fontWeight: 300 }}>
-              Every number below comes from third-party M&V (Measurement & Verification) reports — not estimates.
+              19 of 21 sites include formal M&V (Measurement & Verification) data. Range: 12.5%–58.69%.
             </p>
           </motion.div>
 
@@ -286,6 +300,18 @@ export default function Home() {
                 <div className="text-2xl font-bold text-white mb-2">{c.stat}</div>
                 <p className="text-white/50 text-xs leading-relaxed">{c.detail}</p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── ENTERPRISE LOGO WALL ───────────────────────────── */}
+      <section className="py-10 px-6 border-b" style={{ backgroundColor: '#F4F8FC', borderColor: '#C5D8E8' }}>
+        <div className="max-w-6xl mx-auto">
+          <p className="text-center text-[10px] font-bold uppercase tracking-widest mb-4" style={{ color: '#A0B5C5' }}>Enterprise Partners (No Public Stats)</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 opacity-50">
+            {["Linamar", "Labatt Brewing", "Guinness", "Commercial Bakeries", "Kerry Group", "Starlight Investments", "Akelius"].map((name) => (
+              <span key={name} className="text-xs font-bold uppercase tracking-wider" style={{ color: '#4A7085' }}>{name}</span>
             ))}
           </div>
         </div>
@@ -524,7 +550,7 @@ function HomeFAQ() {
     },
     {
       q: "What types of commercial facilities benefit most?",
-      a: "Any commercial or industrial facility billed on metered municipal water can benefit. Verified results span luxury hospitality (Four Seasons, St. Regis), logistics and fulfillment (Amazon), real estate and multifamily (Houstonian Estates, Grand Central at Kennedy), and automotive (Caliber Car Wash). Higher monthly water bills produce larger absolute dollar savings.",
+      a: "Any commercial or industrial facility billed on metered municipal water can benefit. Verified results span luxury hospitality (Four Seasons Fort Lauderdale 26%, St. Regis Toronto $49,889 CAD, 1 Hotel Toronto 15%), logistics and fulfillment (Amazon YYZ3 & YYZ4 — 16.5% avg / 58.69% YOY peak), multifamily and condominiums (Forest & Charlton Toronto 17–20% IPMVP verified, Grand Central at Kennedy $50K/yr), and automotive (Caliber Car Wash 23% across 5 sites). Commercial office buildings in Texas saw 33%–39% bill reductions. Higher monthly water bills produce larger absolute dollar savings.",
     },
   ];
 

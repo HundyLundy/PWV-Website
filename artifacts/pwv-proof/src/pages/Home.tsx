@@ -65,7 +65,7 @@ export default function Home() {
             variants={fadeInUp}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed"
           >
-            The Smart Valve™ does exactly that — delivering 15% to 58% reductions in metered water billing. Based on a 1-year sample of a small percentage of the 32,000+ installs. Guaranteed floor of 15%.
+            The Smart Valve™ does exactly that — delivering 15% to 58.69% reductions in metered water billing. Across 21 documented installations, including 19 with verified M&V data. Range: 12.5%–58.69%. Guaranteed floor of 15%.
           </motion.p>
         </motion.div>
 
@@ -272,6 +272,43 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* TEXAS CALLOUT */}
+      <section className="w-full py-12 px-6" style={{ backgroundColor: '#0374A7' }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="rounded-2xl border border-white/20 p-8" style={{ background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(8px)' }}>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-white" style={{ background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.3)' }}>
+                Texas Results — Verified
+              </span>
+              <span className="text-xs text-white/60 uppercase tracking-widest">Source: smartwatervalvetexas.com</span>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <p className="text-white/60 text-xs uppercase tracking-widest font-semibold">Houston Office Building #1</p>
+                <p className="text-white font-semibold">180,000 SF · 10 Stories</p>
+                <div className="flex flex-wrap gap-4 pt-1">
+                  <div><span className="text-2xl font-bold text-white">39%</span><span className="text-white/60 text-sm ml-1">bill reduction</span></div>
+                  <div><span className="text-2xl font-bold text-white">37%</span><span className="text-white/60 text-sm ml-1">usage reduction</span></div>
+                </div>
+                <p className="text-white/60 text-xs">Payback under 12 months</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-white/60 text-xs uppercase tracking-widest font-semibold">Houston Office Building #2 (11811 North Frwy)</p>
+                <p className="text-white font-semibold">156,000 SF · 9 Stories</p>
+                <div className="flex flex-wrap gap-4 pt-1">
+                  <div><span className="text-2xl font-bold text-white">33%</span><span className="text-white/60 text-sm ml-1">bill reduction</span></div>
+                  <div><span className="text-2xl font-bold text-white">38%</span><span className="text-white/60 text-sm ml-1">usage reduction</span></div>
+                </div>
+                <blockquote className="text-white/80 text-xs italic border-l-2 border-white/30 pl-3 mt-2">
+                  "We intend to begin adding Smart Water Valves throughout our portfolio."<br/>
+                  <span className="not-italic text-white/50">— Mark Malone, Director of Engineering, Houston Hartman REIT</span>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 4: CLIENT STORIES */}
       <section id="case-studies" className="w-full py-20 overflow-hidden relative">
         {/* Vertical timeline line */}
@@ -282,12 +319,13 @@ export default function Home() {
           {/* Card A */}
           <ClientCard 
             align="left"
-            category="Logistics"
-            title="Amazon YYZ3 Fulfillment Center"
-            subtitle="The World's Largest Retailer Trusts the Smart Valve™"
-            stat1={{ label: "Average Savings", value: "17%" }}
-            stat2={{ label: "Peak Savings", value: "58.69%" }}
-            quote="Amazon's rigorous operational standards require measurable, repeatable results. The Smart Valve™ delivered across six consecutive quarters."
+            category="Logistics / Fulfillment"
+            title="Amazon YYZ3 & YYZ4 Fulfillment Centres"
+            subtitle="The World's Largest Retailer — Two Methodologies, Both Verified"
+            stat1={{ label: "YOY Peak (YYZ3)", value: "58.69%" }}
+            stat2={{ label: "Portfolio Avg (normalized)", value: "16.5%" }}
+            quote="Amazon's rigorous operational standards require measurable, repeatable results. YOY comparison shows 58.69% peak reduction at YYZ3. Per-employee normalized analysis across both sites shows 16.5% portfolio average — six consecutive quarters."
+            caveat="Two M&V reports with different methodologies. Both accurate — different measurement approaches. Formal PDFs available."
           />
 
           {/* Card B */}
@@ -304,12 +342,14 @@ export default function Home() {
           {/* Card C */}
           <ClientCard 
             align="left"
-            category="Luxury Hospitality"
-            title="St. Regis Toronto"
-            subtitle="$49,889 CAD Saved in Year One"
-            stat1={{ label: "Total Reduction", value: "20%+" }}
-            stat2={{ label: "Application", value: "Luxury Hotel" }}
-            quote="Luxury properties can't afford equipment that disrupts guest experience. The Smart Valve™ installs invisibly and saves invisibly — except on the utility bill."
+            category="Luxury Hospitality · Marriott International"
+            title="The St. Regis Toronto"
+            subtitle="$49,889 CAD Saved Annually — Chief Engineer Confirmed"
+            stat1={{ label: "Annual Savings", value: "$49,889 CAD" }}
+            stat2={{ label: "Water Cost Reduction", value: "20%+" }}
+            quote="Year-over-year savings of $49,889, representing 20%+ in water-cost reduction."
+            quoteAttribution="Priyan Jayetileke, Chief Engineer, The St. Regis Toronto"
+            caveat="Formal report. Chief Engineer confirmed. Marriott-approved implementation. Installation completed in under one hour. Formal PDF available."
           />
 
           {/* Card D */}
@@ -330,29 +370,77 @@ export default function Home() {
             title="Grand Central at Kennedy"
             subtitle="$50,000/Year — Saving at Scale"
             stat1={{ label: "Total Reduction", value: "23%" }}
-            stat2={{ label: "Application", value: "Multifamily Complex" }}
-            quote="Large multifamily properties have the most to gain. At Grand Central, $50,000 in annual savings translates directly to NOI improvement."
+            stat2={{ label: "Annual Reduction", value: "$50,000/yr" }}
+            quote="In two years since installed, our savings on water and sewer charge are averaging 23%... We are reducing our line item for water and sewer charges by $50,000."
+            quoteAttribution="Bob Pack, General Manager, Grand Central at Kennedy, Tampa FL"
+            caveat={'Self-reported testimonial over 2-year period. Two 6" Smart Valves installed.'}
+          />
+
+          {/* Card F */}
+          <ClientCard 
+            align="right"
+            category="Multi-Residential Portfolio · Toronto, ON"
+            title="100 Forest Ave & 123 Charlton Ave"
+            subtitle="17–20% Verified at 95% Confidence — IPMVP Option B"
+            stat1={{ label: "100 Forest Ave", value: "20.0% (p<0.01)" }}
+            stat2={{ label: "123 Charlton Ave", value: "17.0% (p<0.01)" }}
+            quote="Formal M&V report using IPMVP Option B — Retrofit Isolation methodology. Paired t-test confirmed at 95% confidence. Combined annual savings: CA $17,200. Simple payback under 3 years."
+            caveat="Canadian Water Savings M&V Report, 2025. Formal PDF available."
+          />
+
+          {/* Card G */}
+          <ClientCard 
+            align="left"
+            category="Luxury Hotel · Toronto, ON"
+            title="1 Hotel Toronto"
+            subtitle="15% Average Savings — $3,491/Month Verified Over 12 Months"
+            stat1={{ label: "Average Reduction", value: "15%" }}
+            stat2={{ label: "Monthly Savings", value: "$3,491/mo" }}
+            quote={'177 → 150 m³/day average. 4" Smart Valve installed September 2024. Month-to-month range: 1%–27%. Twelve-month formal report.'}
+            caveat="Perfect Water Valve 12-Month Water Savings Report. Formal PDF available. Out of respect for the client, please do not attempt to make contact without obtaining permission."
           />
         </div>
       </section>
 
-      {/* CLIENT LOGO BAR */}
+      {/* CLIENT LOGO BAR — verified results */}
       <section id="clients" className="w-full py-10 px-6 border-y" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
-        <p className="text-center text-xs font-bold uppercase tracking-widest mb-6" style={{ color: '#4A7085' }}>Results verified at</p>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 max-w-4xl mx-auto">
+        <p className="text-center text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#4A7085' }}>Verified M&V Results</p>
+        <p className="text-center text-[10px] uppercase tracking-widest mb-6" style={{ color: '#A0B5C5' }}>19 of 21 documented installations include verified savings data</p>
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 max-w-5xl mx-auto mb-8">
           {[
-            { name: "Amazon", sub: "YYZ3 & YYZ4" },
+            { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },
             { name: "Four Seasons", sub: "Fort Lauderdale · 26%" },
-            { name: "St. Regis", sub: "Toronto · $49K saved" },
+            { name: "St. Regis", sub: "Toronto · $49,889 CAD" },
+            { name: "1 Hotel", sub: "Toronto · 15% avg" },
             { name: "Caliber Car Wash", sub: "5 sites · 23%" },
             { name: "Grand Central", sub: "Kennedy · $50K/yr" },
             { name: "Houstonian", sub: "Estates · 16%" },
+            { name: "Forest & Charlton", sub: "Toronto · 17–20%" },
           ].map((c) => (
             <div key={c.name} className="flex flex-col items-center text-center">
               <span className="font-headline font-bold text-base tracking-tight" style={{ color: '#0A1F3A' }}>{c.name}</span>
               <span className="text-[10px] uppercase tracking-widest" style={{ color: '#4A7085' }}>{c.sub}</span>
             </div>
           ))}
+        </div>
+        <div className="border-t pt-6" style={{ borderColor: '#C5D8E8' }}>
+          <p className="text-center text-[10px] font-bold uppercase tracking-widest mb-4" style={{ color: '#A0B5C5' }}>Trusted By Enterprise Partners (No Stats Published)</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 max-w-5xl mx-auto opacity-60">
+            {["Linamar", "Labatt Brewing", "Guinness", "Commercial Bakeries", "Kerry Group (CA)", "Starlight Investments", "Akelius"].map((name) => (
+              <span key={name} className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#4A7085' }}>{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DISCLAIMER */}
+      <section className="w-full py-6 px-6" style={{ backgroundColor: '#F4F8FC', borderBottom: '1px solid #C5D8E8' }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[11px] leading-relaxed" style={{ color: '#6A8A9A' }}>
+            Results are based on verified M&V reports, third-party analyses, and customer testimonials. Individual savings vary based on property type, size, water pressure, usage patterns, and local utility rates.{" "}
+            <strong>Formal M&V reports available for:</strong> Amazon (YYZ3/YYZ4), 1 Hotel Toronto, St. Regis Toronto, Four Seasons Fort Lauderdale, Forest & Charlton (100 Forest / 123 Charlton Ave), and Caliber Car Wash portfolio (5 sites).{" "}
+            Houstonian Estates and Grand Central at Kennedy results are self-reported customer testimonials. No formal M&V report has been published for these properties.
+          </p>
         </div>
       </section>
 
@@ -366,13 +454,13 @@ export default function Home() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center"
           >
-            <StatItem value={19.2} suffix="%" decimals={1} label="Average savings across all sites" />
-            <StatItem value={58} suffix="%" label="Peak single-site reduction documented" />
-            <StatItem value={320} prefix="$" suffix="K+" label="Estimated annual savings generated" />
+            <StatItem value={21} suffix="" label="Documented installations" />
+            <StatItem value={58.69} suffix="%" decimals={2} label="Peak reduction — Amazon YYZ3 (YOY)" />
+            <StatItem value={49889} prefix="$" suffix=" CAD" label="St. Regis Toronto annual savings" />
             <StatItem value={15} prefix="&ge;" suffix="%" label="Minimum guaranteed savings" />
           </motion.div>
           <p className="text-center text-xs text-muted-foreground/50 mt-8 uppercase tracking-widest">
-            1-year sample of a small percentage of 32,000+ installs · results vary; 15% is the contractual floor
+            21 documented installations · 19 include verified M&V data · range: 12.5%–58.69% · 15% is the contractual floor
           </p>
         </div>
       </section>
@@ -387,11 +475,13 @@ export default function Home() {
           </div>
 
           <div className="space-y-8">
-            <IndustryBar name="Automotive (Car Wash)" value={23} range="23%" />
-            <IndustryBar name="Luxury Hospitality" value={24} range="22–26%" />
-            <IndustryBar name="Multifamily Real Estate" value={20} range="16–23%" />
-            <IndustryBar name="Food & Beverage" value={19} range="19%" />
-            <IndustryBar name="Logistics / Warehouse" value={17} range="16–17%" />
+            <IndustryBar name="Commercial Office" value={36} range="33%–39%" note="TX only" />
+            <IndustryBar name="Automotive (Car Wash)" value={23} range="23%" note="Caliber, 5 sites, M&V verified" />
+            <IndustryBar name="Luxury Hospitality" value={22} range="15%–26%" note="1 Hotel 15%, Four Seasons 26%" />
+            <IndustryBar name="Multifamily / Apartments" value={21} range="12.5%–30%" note="Forest & Charlton to Park Ave NJ" />
+            <IndustryBar name="Condominiums" value={20} range="16%–23%" note="Chateau Tower to Grand Central" />
+            <IndustryBar name="Logistics / Fulfillment" value={17} range="16.5% avg / 58.69% peak" note="Amazon — two methodologies" />
+            <IndustryBar name="Healthcare / Medical" value={19} range="19%" note="Based on 1 study — RWJ Barnabas NJ" />
           </div>
         </div>
       </section>
@@ -473,7 +563,7 @@ export default function Home() {
 
 // --- HELPER COMPONENTS ---
 
-function ClientCard({ align, category, title, subtitle, stat1, stat2, quote }: any) {
+function ClientCard({ align, category, title, subtitle, stat1, stat2, quote, quoteAttribution, caveat }: any) {
   const isLeft = align === "left";
   
   return (
@@ -514,13 +604,26 @@ function ClientCard({ align, category, title, subtitle, stat1, stat2, quote }: a
           </div>
         </div>
 
-        <blockquote className={cn(
-          "text-lg text-muted-foreground italic border-primary relative",
-          isLeft ? "md:border-r-4 md:pr-6" : "md:border-l-4 md:pl-6",
-          "border-l-4 pl-6 md:border-l-0" // Mobile always left bordered
-        )}>
-          "{quote}"
-        </blockquote>
+        <div>
+          <blockquote className={cn(
+            "text-lg text-muted-foreground italic border-primary relative",
+            isLeft ? "md:border-r-4 md:pr-6" : "md:border-l-4 md:pl-6",
+            "border-l-4 pl-6 md:border-l-0"
+          )}>
+            "{quote}"
+          </blockquote>
+          {quoteAttribution && (
+            <p className={cn("text-xs text-muted-foreground/60 mt-2", isLeft ? "md:text-right" : "md:text-left")}>
+              — {quoteAttribution}
+            </p>
+          )}
+        </div>
+
+        {caveat && (
+          <p className={cn("text-[11px] text-muted-foreground/40 uppercase tracking-wide leading-snug", isLeft ? "md:text-right" : "md:text-left")}>
+            {caveat}
+          </p>
+        )}
       </motion.div>
 
       {/* Empty space for the other side of the timeline */}
@@ -544,7 +647,7 @@ function ProofFAQ() {
   const [open, setOpen] = useState<number | null>(null);
   const faqs = [
     { q: "What is the Perfect Water Valve Smart Valve™?", a: "The Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines, reducing metered water billing by 15% to 58%. It installs upstream of your meter, requires no electricity or moving parts, and is NSF 61 and NSF 372 certified." },
-    { q: "Who has used it and what were the results?", a: "Amazon YYZ3 (17% average, 58.69% peak). Four Seasons Fort Lauderdale (26%, $27,000/yr). St. Regis Toronto ($49,889 CAD in year one). Caliber Car Wash (23% across 5 sites in GA & FL). Grand Central at Kennedy ($50,000/yr saved). All results are M&V-verified." },
+    { q: "Who has used it and what were the results?", a: "21 documented installations with 19 verified M&V results. Key examples: Amazon YYZ3 & YYZ4 (16.5% normalized avg / 58.69% YOY peak). Four Seasons Fort Lauderdale (26%, $27,000/yr). The St. Regis Toronto ($49,889 CAD/yr — Chief Engineer Priyan Jayetileke confirmed). 1 Hotel Toronto (15% avg, $3,491/mo, 12-month formal report). Caliber Car Wash (23% across 5 GA & FL sites). Grand Central at Kennedy ($50,000/yr). Forest & Charlton — 100 Forest & 123 Charlton Ave Toronto (17–20%, IPMVP Option B, CA $17,200 combined). Texas: Houston office buildings 33–39% bill reduction. Results in formal PDF reports are available for most sites." },
     { q: "Is the 15% guarantee real?", a: "Yes. It is in your contract. Every installation includes a written guarantee of at least 15% reduction in metered water consumption. If your site does not reach 15%, we make it right at no cost to you." },
     { q: "How long does installation take?", a: "Typically 2–4 hours. No disruption to operations, no fixtures touched, no downtime. Licensed technicians work around your schedule." },
     { q: "Does it need electricity or maintenance?", a: "Neither. The Smart Valve™ is entirely passive — no power, no moving parts, no subscriptions or service calls. It works continuously from day one." },
@@ -567,14 +670,17 @@ function ProofFAQ() {
   );
 }
 
-const INDUSTRY_MAX = 24; // Luxury Hospitality is highest at 24%
+const INDUSTRY_MAX = 39; // Commercial Office is highest at 39%
 
-function IndustryBar({ name, value, range }: { name: string, value: number, range: string }) {
+function IndustryBar({ name, value, range, note }: { name: string, value: number, range: string, note?: string }) {
   return (
     <div className="space-y-2">
-      <div className="flex justify-between items-center">
-        <span className="text-xl font-medium">{name}</span>
-        <span className="text-xl font-bold text-primary">{range}</span>
+      <div className="flex justify-between items-start gap-4">
+        <div>
+          <span className="text-xl font-medium">{name}</span>
+          {note && <span className="block text-xs text-muted-foreground/60 mt-0.5">{note}</span>}
+        </div>
+        <span className="text-xl font-bold text-primary whitespace-nowrap">{range}</span>
       </div>
       <motion.div 
         initial={{ width: 0 }}
