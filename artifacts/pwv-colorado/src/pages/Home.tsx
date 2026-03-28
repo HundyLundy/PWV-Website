@@ -728,6 +728,11 @@ function HubspotForm() {
         </div>
       </div>
       <div>
+        <label className={labelCls}>Email Address</label>
+        <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
+          className={inputCls} placeholder="jane@acmehotelgroup.com" />
+      </div>
+      <div>
         <label className={labelCls}>Message (optional)</label>
         <textarea value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
           rows={3} className={`${inputCls} resize-none`}
