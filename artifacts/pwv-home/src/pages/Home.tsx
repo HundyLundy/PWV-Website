@@ -90,7 +90,7 @@ export default function Home() {
         body: JSON.stringify({
           name: form.name,
           company: form.company,
-          email: form.email,
+          email: form.email || "",
           monthly_water_bill: form.bill,
           message: form.message,
           source: "PerfectWaterValve.com — Homepage",
