@@ -93,7 +93,7 @@ export default function Home() {
           email: form.email || "",
           monthly_water_bill: form.bill,
           message: form.message,
-          source: "PerfectWaterValve.com — Homepage",
+          source: "perfectwatervalve.com - Contact Form",
         }),
       });
     } catch (err) {
