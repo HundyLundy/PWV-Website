@@ -1,0 +1,48 @@
+
+2. Create file: `artifacts/pwv-home/src/pages/ProposalPage.tsx`
+
+This is a detailed proposal/sales page. Sections:
+
+**Hero:**
+- Headline: "The Perfect Water Valve Proposal"
+- Subheadline: "Everything you need to make a confident decision. No pressure, no gimmicks — just the numbers."
+
+**Section 1 — The Problem:**
+- "Commercial water costs are rising 5–8% per year. Most property managers don't know exactly how much they're wasting — or that there's a proven, non-invasive fix."
+
+**Section 2 — The Solution (Smart Valve™):**
+- What it is: "The AWS Smart Valve™ is a patented water pressure optimization device installed on your main water line. It takes 4–6 hours to install. Zero operational changes required."
+- How it works: 3 bullet points — Optimizes water pressure at the point of entry | Eliminates micro-bursts that waste water | Maintains full water pressure and flow for all fixtures
+- Guarantee: "Every installation comes with a written performance guarantee. If you don't save at least 15%, we refund the difference."
+
+**Section 3 — Investment & ROI:**
+- Typical installation cost: $18,000–$45,000 depending on property size
+- Typical annual savings: $14,000–$55,000
+- Average payback: 9–16 months
+- 10-year ROI: 400–900%
+
+**Section 4 — The Process:**
+- Step 1: Free Water Audit (1 hour, on-site)
+- Step 2: Custom Savings Projection (delivered within 48 hours)
+- Step 3: Installation (4–6 hours, no disruption)
+- Step 4: Monthly Savings Reports
+
+**Section 5 — FAQ:**
+- Q: Do we need to shut down operations during installation? A: No. Installation takes 4–6 hours and requires only a brief water shutoff.
+- Q: What if we don't hit the guaranteed savings? A: We refund the difference. It's in writing.
+- Q: Is this a lease or a purchase? A: Purchase. You own the valve. No ongoing fees.
+- Q: How long does the valve last? A: 20+ year lifespan with no maintenance required.
+
+**Final CTA:**
+- "Ready to see your numbers? Schedule a free audit and we'll deliver a custom proposal within 48 hours."
+- Button: "Schedule My Free Audit" (links to /#contact)
+
+---
+
+### AFTER BUILDING ALL 5 PAGES:
+
+1. Make sure ALL 5 routes are registered in `artifacts/pwv-home/src/App.tsx`
+2. Run `cd artifacts/pwv-home && npm run build` to confirm the build succeeds with no errors
+3. Report back with confirmation that all 5 routes are in the router and the build passed
+
+Do not push to GitHub yet — the user will do that manually.
