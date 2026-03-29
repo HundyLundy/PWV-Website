@@ -1,0 +1,10 @@
+packages:
+  "framer-motion": "For cinematic scroll reveals, number animations, and progress bars"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility for merging tailwind classes safely"
+  "@hookform/resolvers": "Included for potential form integrations if needed"
+
+notes:
+  - Building a single-page Live Water Savings Counter.
+  - Data is heavily hardcoded as requested by implementation notes to guarantee exact display values (verified data).
+  - Uses framer-motion for all the dramatic number counting and scroll reveals.

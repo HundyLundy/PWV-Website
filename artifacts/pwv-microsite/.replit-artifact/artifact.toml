@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/savings/"
+title = "Perfect Water Valve — Prospect Microsite"
+version = "1.0.0"
+id = "artifacts/pwv-microsite"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/savings/" ]
+localPort = 23223
+
+[services.development]
+run = "pnpm --filter @workspace/pwv-microsite run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/pwv-microsite", "run", "build" ]
+publicDir = "artifacts/pwv-microsite/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23223"
+BASE_PATH = "/savings/"
