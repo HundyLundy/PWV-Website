@@ -79,26 +79,20 @@ export default function Home() {
   const [form, setForm] = useState({ name: "", company: "", email: "", bill: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/Upp1pos3mL7UjdCVKsJp";
+  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/pwv-contact";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const nameParts = form.name.trim().split(" ");
-    const firstName = nameParts[0] || "";
-    const lastName = nameParts.slice(1).join(" ") || "";
     try {
       await fetch(GHL_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          firstName,
-          lastName,
           name: form.name,
           company: form.company,
           email: form.email || "",
           monthly_water_bill: form.bill,
           message: form.message,
-          division: "Perfect Water",
           source: "perfectwatervalve.com - Contact Form",
         }),
       });
@@ -453,7 +447,7 @@ export default function Home() {
                 <CheckCircle2 className="w-12 h-12 mx-auto mb-4" style={{ color: '#0374A7' }} />
                 <h3 className="text-xl font-bold mb-2" style={{ color: '#0A1F3A' }}>We'll be in touch shortly</h3>
                 <p className="text-sm" style={{ color: '#4A7085' }}>
-                  Expect a call or email within one business day. In the meantime, feel free to reach us directly at (720) 937-3004.
+                  Expect a call or email within one business day. In the meantime, feel free to reach us directly at (361) 585-1111.
                 </p>
               </motion.div>
             ) : (
@@ -531,13 +525,13 @@ export default function Home() {
                 </button>
 
                 <div className="flex flex-wrap justify-center gap-6 pt-2">
-                  <a href="tel:7209373004" className="flex items-center gap-2 text-sm transition-colors hover:opacity-80" style={{ color: '#4A7085' }}>
+                  <a href="tel:3615851111" className="flex items-center gap-2 text-sm transition-colors hover:opacity-80" style={{ color: '#4A7085' }}>
                     <Phone className="w-4 h-4" />
-                    (720) 937-3004
+                    (361) 585-1111
                   </a>
-                  <a href="mailto:info@perfectwatervalve.com" className="flex items-center gap-2 text-sm transition-colors hover:opacity-80" style={{ color: '#4A7085' }}>
+                  <a href="mailto:support@PerfectWaterValve.com" className="flex items-center gap-2 text-sm transition-colors hover:opacity-80" style={{ color: '#4A7085' }}>
                     <Mail className="w-4 h-4" />
-                    info@perfectwatervalve.com
+                    support@PerfectWaterValve.com
                   </a>
                 </div>
               </motion.form>

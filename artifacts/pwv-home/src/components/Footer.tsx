@@ -90,17 +90,17 @@ export function Footer() {
             <div>
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
               <div className="flex flex-col gap-3">
-                <a href="tel:7209373004" className="flex items-center gap-3 hover:text-white transition-colors text-sm">
+                <a href="tel:3615851111" className="flex items-center gap-3 hover:text-white transition-colors text-sm">
                   <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-3.5 h-3.5 text-blue-400" />
                   </div>
-                  (720) 937-3004
+                  (361) 585-1111
                 </a>
-                <a href="mailto:info@perfectwatervalve.com" className="flex items-center gap-3 hover:text-white transition-colors text-sm">
+                <a href="mailto:support@PerfectWaterValve.com" className="flex items-center gap-3 hover:text-white transition-colors text-sm">
                   <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
                     <Mail className="w-3.5 h-3.5 text-blue-400" />
                   </div>
-                  info@perfectwatervalve.com
+                  support@PerfectWaterValve.com
                 </a>
               </div>
             </div>

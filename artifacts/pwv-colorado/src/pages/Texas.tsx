@@ -15,8 +15,8 @@ import { BubbleValveSection } from "@/components/BubbleValveSection";
 
 const REP_INFO = {
   name: "Perfect Water Valve",
-  phone: "(720) 937-3004",
-  email: "info@perfectwatervalve.com"
+  phone: "(361) 585-1111",
+  email: "support@PerfectWaterValve.com"
 };
 
 export default function TexasPage() {
@@ -688,7 +688,7 @@ function TexasForm() {
         <h3 className="text-xl font-bold text-gray-900">Request Sent!</h3>
         <p className="text-gray-500 text-sm max-w-sm">
           Our Texas team will follow up with you shortly. You can also reach us directly at{" "}
-          <a href="tel:7209373004" className="text-blue-600 font-medium hover:underline">(720) 937-3004</a>.
+          <a href="tel:3615851111" className="text-blue-600 font-medium hover:underline">(361) 585-1111</a>.
         </p>
       </div>
     );
