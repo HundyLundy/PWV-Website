@@ -30,8 +30,14 @@ const MORE_LINKS = [
   },
   {
     label: "Colorado Properties",
-    href: "/colorado/",
+    href: "/locations/colorado",
     desc: "Serving all of Colorado — contact Hunter Lundquist",
+    icon: MapPin,
+  },
+  {
+    label: "Texas Properties",
+    href: "/locations/texas",
+    desc: "Serving Houston, DFW, Austin & San Antonio",
     icon: MapPin,
   },
 ];

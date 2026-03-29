@@ -13,7 +13,8 @@ const EXPLORE_LINKS = [
   { label: "Official Website", href: "/", desc: "Main homepage & full overview", icon: Home },
   { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
   { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings accumulate in real time", icon: Zap },
-  { label: "Colorado Properties", href: "/colorado/", desc: "Serving all of Colorado — Hunter Lundquist", icon: MapPin },
+  { label: "Colorado Properties", href: "/locations/colorado", desc: "Serving all of Colorado — Hunter Lundquist", icon: MapPin },
+  { label: "Texas Properties", href: "/locations/texas", desc: "Serving Houston, DFW, Austin & San Antonio", icon: MapPin },
 ];
 
 export function Navbar() {

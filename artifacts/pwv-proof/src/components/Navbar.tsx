@@ -12,7 +12,8 @@ const EXPLORE_LINKS = [
   { label: "Official Website", href: "/", desc: "Main homepage & full overview", icon: Home },
   { label: "Live Savings Counter", href: "/impact/", desc: "Watch water savings accumulate in real time", icon: Zap },
   { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
-  { label: "Colorado Properties", href: "/colorado/", desc: "Serving all of Colorado — Hunter Lundquist", icon: MapPin },
+  { label: "Colorado Properties", href: "/locations/colorado", desc: "Serving all of Colorado — Hunter Lundquist", icon: MapPin },
+  { label: "Texas Properties", href: "/locations/texas", desc: "Serving Houston, DFW, Austin & San Antonio", icon: MapPin },
 ];
 
 export function Navbar() {
