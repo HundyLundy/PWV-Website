@@ -12,31 +12,31 @@ const NAV_LINKS = [
 const MORE_LINKS = [
   {
     label: "Case Studies & Proof",
-    href: "/results/",
+    href: "/case-studies",
     desc: "M&V-verified results from Amazon, Four Seasons & more",
     icon: FileText,
   },
   {
-    label: "Live Savings Counter",
-    href: "/impact/",
-    desc: "Watch cumulative water savings accumulate in real time",
+    label: "Savings Calculator",
+    href: "/calculator",
+    desc: "See your estimated annual savings in real time",
     icon: Zap,
   },
   {
     label: "Get a Full Proposal",
-    href: "/savings/",
+    href: "/proposal",
     desc: "ROI calculator + detailed product overview",
     icon: BarChart2,
   },
   {
     label: "Colorado Properties",
-    href: "/locations/colorado",
+    href: "/colorado",
     desc: "Serving all of Colorado — contact Hunter Lundquist",
     icon: MapPin,
   },
   {
     label: "Texas Market",
-    href: "/locations/texas",
+    href: "/texas",
     desc: "Commercial water savings data specific to Texas properties",
     icon: MapPin,
   },
