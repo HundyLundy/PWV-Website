@@ -126,10 +126,10 @@ export default function Home() {
             </motion.div>
 
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl font-headline font-bold text-white leading-[1.05] mb-6">
-              Your Meter Is Counting{" "}
+              Your Water Meter is Counting{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air.</span>
               <br />
-              You're Paying for It.
+              You're paying for it.
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-lg text-white/90 leading-relaxed mb-8 max-w-xl" style={{ fontWeight: 300 }}>
