@@ -50,11 +50,27 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 
 ## Artifacts
 
-### Perfect Water Valve Sales Toolkit (5 apps + 1 API)
+### Perfect Water Valve Sales Toolkit (6 apps + 1 API)
 
-Full-stack sales toolkit for Perfect Water Valve (PerfectWaterValve.com). Contact: (361) 585-1111 | support@PerfectWaterValve.com. Partner: AWS/CWS. Minimum guaranteed: ≥15% water savings.
+Full-stack sales toolkit for Perfect Water Valve (PerfectWaterValve.com). Contact: 720-937-3004 | info@perfectwatervalve.com. Partner: AWS (American Water Savings) · CWS (Canadian Water Savings). Minimum guaranteed: ≥15% water savings.
 
 All data routes live in `artifacts/api-server/src/routes/data.ts`. Real verified customer data — never overwrite.
+
+GHL Webhook: `https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/pwv-contact`
+
+Colorado Rep: Hunter Lundquist | 720-937-3004 | info@perfectwatervalve.com
+
+Social: FB `https://www.facebook.com/profile.php?id=61583769211912` | IG `https://www.instagram.com/perfectwatervalve/` | LI `https://www.linkedin.com/company/113022552`
+
+Color palette: `#0374A7` primary · `#3C6E7F` teal · `#1B4A5C` dark teal · `#E8EFF7` light bg · `#0A1F3A` dark navy · `#DEC600` gold
+
+### `artifacts/pwv-colorado` (`@workspace/pwv-colorado`) — `/locations/`
+
+Location + Industry pages app. Serves 17 location pages (`/locations/colorado`, `/locations/texas`, ... `/locations/uk`) and 5 industry pages (`/locations/industries/data-centers`, `/locations/industries/hotels`, `/locations/industries/car-washes`, `/locations/industries/multifamily`, `/locations/industries/hospitals`). Default route (`/`) renders the Colorado page. National overview at `/locations/usa`. Built with React + Vite + wouter. Shared `LocationTemplate.tsx` component drives all 15+ state pages via `LocationConfig` object. Navbar has Locations + Industries dropdowns.
+
+### `artifacts/pwv-home` (`@workspace/pwv-home`) — `/`
+
+Official PerfectWaterValve.com homepage. Built with React + Vite.
 
 ### `artifacts/pwv-dashboard` (`@workspace/pwv-dashboard`) — `/pwv-dashboard/`
 
