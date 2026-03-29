@@ -29,7 +29,7 @@ export default function TexasPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Navbar onScrollTo={scrollTo} />
+      <Navbar onScrollTo={scrollTo} page="texas" />
 
       {/* HERO SECTION */}
       <section className="relative pt-40 pb-24 lg:pt-56 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
