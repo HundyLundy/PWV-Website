@@ -101,7 +101,7 @@ export function Navbar() {
           <div className="relative" ref={moreRef}>
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="flex items-center gap-1.5 text-sm font-bold text-[#38bdf8] hover:text-white border border-[#38bdf8]/50 hover:border-[#38bdf8] bg-[#38bdf8]/10 hover:bg-[#38bdf8]/20 px-3.5 py-1.5 rounded-full transition-all duration-200 tracking-wide"
+              className="flex items-center gap-1 px-4 py-1.5 rounded-full border border-cyan-400/60 text-cyan-300 text-sm font-semibold tracking-wide hover:bg-cyan-400/10 hover:border-cyan-300 transition-all duration-200"
             >
               ✦ Explore
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`} />

@@ -1,0 +1,124 @@
+I need you to make 3 specific fixes to this site. Do NOT change any other code. Do NOT change any styling, colors, layout, or content. Only make the changes listed below.
+
+
+
+
+FIX 1 — Add a vercel.json file to fix all 404 routing errors
+
+The site is a React SPA (single-page app). When Vercel serves a direct URL like /colorado, /case-studies, /proposal, or /texas, it looks for a physical file at that path and returns 404 because there is no file — the routing is handled by React in the browser. The fix is a vercel.json config file that tells Vercel to always serve index.html for any route.
+
+Create a new file at the root of the project called vercel.json with exactly this content:
+
+JSON
+
+
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+
+
+
+That's it for Fix 1. This will fix Colorado, Texas, Case Studies, Get a Proposal, and every other route that currently 404s.
+
+
+
+
+FIX 2 — Style the "Explore" button in the navbar to look premium
+
+Find the Navbar component (likely in client/src/components/Navbar.tsx or similar). Find the "Explore" button/dropdown trigger. Replace its current plain styling with this exact Tailwind class string:
+
+Plain Text
+
+
+className="flex items-center gap-1 px-4 py-1.5 rounded-full border border-cyan-400/60 text-cyan-300 text-sm font-semibold tracking-wide hover:bg-cyan-400/10 hover:border-cyan-300 transition-all duration-200"
+
+
+
+Keep the dropdown arrow/chevron icon that's already there. Only change the className on the button element itself.
+
+
+
+
+FIX 3 — Add Colorado and Texas as real pages (if they don't exist yet)
+
+Check if there are already route definitions for /colorado and /texas in the router (likely App.tsx or main.tsx).
+
+If those routes already exist — Fix 1 above will solve the 404 automatically. No code change needed here.
+
+If those routes do NOT exist — Add them now. In the router file, add two new routes:
+
+TSX
+
+
+<Route path="/colorado" component={ColoradoPage} />
+<Route path="/texas" component={TexasPage} />
+
+
+
+Then create two simple page files:
+
+client/src/pages/ColoradoPage.tsx:
+
+TSX
+
+
+import { Link } from "wouter";
+
+export default function ColoradoPage() {
+  return (
+    <div className="min-h-screen bg-[#0a1628] text-white flex flex-col items-center justify-center px-6 py-24">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+        Colorado Commercial Water Savings
+      </h1>
+      <p className="text-lg text-slate-300 max-w-2xl text-center mb-8">
+        Perfect Water Valve is the exclusive Denver-area partner for AWS Smart Valve™ installations. 
+        Colorado commercial properties — hotels, multi-family, office buildings, car washes — 
+        are saving 15–58% on water bills, guaranteed in writing.
+      </p>
+      <Link href="/#contact">
+        <a className="px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-white font-bold rounded-lg transition-colors">
+          Request a Free Colorado Assessment
+        </a>
+      </Link>
+    </div>
+  );
+}
+
+
+
+client/src/pages/TexasPage.tsx:
+
+TSX
+
+
+import { Link } from "wouter";
+
+export default function TexasPage() {
+  return (
+    <div className="min-h-screen bg-[#0a1628] text-white flex flex-col items-center justify-center px-6 py-24">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+        Texas Commercial Water Savings
+      </h1>
+      <p className="text-lg text-slate-300 max-w-2xl text-center mb-8">
+        Texas commercial properties are among the highest water consumers in the country. 
+        The Smart Valve™ delivers a guaranteed 15% minimum reduction — or it's removed at our expense. 
+        No risk. No upfront cost. Just verified savings.
+      </p>
+      <Link href="/#contact">
+        <a className="px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-white font-bold rounded-lg transition-colors">
+          Request a Free Texas Assessment
+        </a>
+      </Link>
+    </div>
+  );
+}
+
+
+
+
+
+
+After making all 3 fixes, republish the app. Do not change anything else.
+
