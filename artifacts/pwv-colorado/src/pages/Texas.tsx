@@ -165,6 +165,60 @@ export default function TexasPage() {
         </div>
       </section>
 
+      {/* WHY TEXAS */}
+      <section id="why-texas" className="py-24 px-4 sm:px-6 lg:px-8 border-t overflow-hidden" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1 relative"
+            >
+              <div className="absolute inset-0 bg-primary/15 blur-[100px] rounded-full" />
+              <img src={smartValve} alt="Smart Valve Unit" className="relative z-10 w-full h-auto rounded-2xl shadow-xl border border-[#C5D8E8]" />
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2"
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6" style={{ color: '#0A1F3A' }}>Why Texas Properties Need This</h2>
+              <p className="text-lg mb-8 leading-relaxed" style={{ color: '#2E4A5A' }}>
+                Texas commercial properties face some of the highest water bills in the country. Between extreme summer heat driving cooling tower consumption, aging municipal infrastructure across Houston, Dallas, San Antonio, and Austin, and utility rates that continue climbing year over year — properties are paying for far more volume than they're actually using.
+              </p>
+              
+              <div className="space-y-6 mb-10">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center shrink-0 border border-red-500/20">
+                    <Activity className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-1" style={{ color: '#0A1F3A' }}>Rising Utility Costs</h4>
+                    <p style={{ color: '#4A7085' }}>Texas utility rates from SAWS, City of Austin, Dallas Water Utilities, and LCRA have increased significantly, shrinking commercial property margins.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-600 flex items-center justify-center shrink-0 border border-blue-500/20">
+                    <Droplets className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg mb-1" style={{ color: '#0A1F3A' }}>High-Demand Infrastructure</h4>
+                    <p style={{ color: '#4A7085' }}>Texas municipal systems experience pressure fluctuations from extreme heat and high-demand periods — ideal conditions for Smart Valve™ air elimination.</p>
+                  </div>
+                </div>
+              </div>
+
+              <button onClick={() => scrollTo('contact')} className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/25 transition-all hover:-translate-y-1 flex items-center gap-2">
+                Get a Texas Assessment <ArrowRight className="w-5 h-5" />
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <BubbleValveSection />
 
       {/* CASE STUDIES */}
@@ -300,60 +354,6 @@ export default function TexasPage() {
                 <p className="text-sm text-white/75">{item.desc}</p>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY TEXAS */}
-      <section id="why-texas" className="py-24 px-4 sm:px-6 lg:px-8 border-t overflow-hidden" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-2 lg:order-1 relative"
-            >
-              <div className="absolute inset-0 bg-primary/15 blur-[100px] rounded-full" />
-              <img src={smartValve} alt="Smart Valve Unit" className="relative z-10 w-full h-auto rounded-2xl shadow-xl border border-[#C5D8E8]" />
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-1 lg:order-2"
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6" style={{ color: '#0A1F3A' }}>Why Texas Properties Need This</h2>
-              <p className="text-lg mb-8 leading-relaxed" style={{ color: '#2E4A5A' }}>
-                Texas commercial properties face some of the highest water bills in the country. Between extreme summer heat driving cooling tower consumption, aging municipal infrastructure across Houston, Dallas, San Antonio, and Austin, and utility rates that continue climbing year over year — properties are paying for far more volume than they're actually using.
-              </p>
-              
-              <div className="space-y-6 mb-10">
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center shrink-0 border border-red-500/20">
-                    <Activity className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1" style={{ color: '#0A1F3A' }}>Rising Utility Costs</h4>
-                    <p style={{ color: '#4A7085' }}>Texas utility rates from SAWS, City of Austin, Dallas Water Utilities, and LCRA have increased significantly, shrinking commercial property margins.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-600 flex items-center justify-center shrink-0 border border-blue-500/20">
-                    <Droplets className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1" style={{ color: '#0A1F3A' }}>High-Demand Infrastructure</h4>
-                    <p style={{ color: '#4A7085' }}>Texas municipal systems experience pressure fluctuations from extreme heat and high-demand periods — ideal conditions for Smart Valve™ air elimination.</p>
-                  </div>
-                </div>
-              </div>
-
-              <button onClick={() => scrollTo('contact')} className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/25 transition-all hover:-translate-y-1 flex items-center gap-2">
-                Get a Texas Assessment <ArrowRight className="w-5 h-5" />
-              </button>
-            </motion.div>
           </div>
         </div>
       </section>

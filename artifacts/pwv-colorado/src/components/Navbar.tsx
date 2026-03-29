@@ -86,8 +86,8 @@ export function Navbar({ onScrollTo, page = "colorado" }: { onScrollTo: (id: str
               <img src={logoSrc} alt="Perfect Water Valve" className="h-full w-full object-contain" />
             </div>
             <div className="leading-tight hidden sm:block" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
-              <span className="text-lg text-white">Perfect Water</span><br />
-              <span className="text-lg" style={{ color: "#DEC600" }}>Valve — {stateLabel}</span>
+              <span className="text-lg text-white">PWV</span><br />
+              <span className="text-lg" style={{ color: "#DEC600" }}>{stateLabel}</span>
             </div>
           </button>
 
