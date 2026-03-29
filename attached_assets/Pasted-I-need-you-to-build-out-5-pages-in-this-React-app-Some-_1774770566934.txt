@@ -1,0 +1,59 @@
+I need you to build out 5 pages in this React app. Some routes are missing from the router entirely, some have stub pages with no content. Do all of this in one task.
+
+The app uses React + Wouter for routing. The main router is in `artifacts/pwv-home/src/App.tsx`. All page files live in `artifacts/pwv-home/src/pages/`. The design is dark navy (#0a1628 background), white text, cyan (#06b6d4) accents. Match the existing homepage style exactly.
+
+---
+
+### PAGE 1: /colorado — Colorado Properties (STUB EXISTS — REPLACE CONTENT)
+
+File: `artifacts/pwv-home/src/pages/ColoradoPage.tsx`
+
+Replace the entire file with a full page containing these sections:
+
+**Hero Section:**
+- Headline: "Colorado Commercial Water Savings"
+- Subheadline: "Perfect Water Valve is the exclusive Denver-area partner for AWS Smart Valve™. Colorado properties are saving 15–58% on water bills — guaranteed in writing."
+- CTA button: "Request a Free Colorado Assessment" (links to /#contact)
+
+**Property Types We Serve (4 cards in a grid):**
+1. Hotels & Hospitality — "Denver-area hotels averaging 31% water savings. ROI in 8–14 months."
+2. Multi-Family / Apartments — "HOAs and apartment complexes saving $18,000–$45,000/year."
+3. Car Washes — "High-volume car wash operations seeing 40–58% reduction in water consumption."
+4. Office Buildings — "Commercial office parks reducing water costs by 15–28% with zero operational changes."
+
+**Why Colorado Section:**
+- "Colorado's water rates have increased 34% over the last 5 years. Denver Water's tiered pricing means high-volume commercial users pay a premium. The Smart Valve™ pays for itself faster here than almost anywhere in the country."
+- Stat callouts: Denver Water Rate Increase: +34% (5yr) | Avg Commercial ROI: 11 months | Properties Served in CO: 40+
+
+**CTA Section:**
+- "Get your free Colorado water audit. We'll show you exactly how much you'll save before you spend a dollar."
+- Button: "Schedule Free Colorado Audit" (links to /#contact)
+
+---
+
+### PAGE 2: /texas — Texas Market (STUB EXISTS — REPLACE CONTENT)
+
+File: `artifacts/pwv-home/src/pages/TexasPage.tsx`
+
+Replace the entire file with a full page containing these sections:
+
+**Hero Section:**
+- Headline: "Texas Commercial Water Savings"
+- Subheadline: "Perfect Water Valve is expanding into the Texas market. Texas commercial properties — hotels, multi-family, car washes — are prime candidates for 15–58% water savings with the AWS Smart Valve™."
+- CTA button: "Get on the Texas Waitlist" (links to /#contact)
+
+**Texas Market Opportunity Section:**
+- "Texas is one of the fastest-growing commercial real estate markets in the country. Water costs are rising in Dallas, Houston, Austin, and San Antonio. We're bringing the same guaranteed savings model that's working in Colorado to Texas."
+- Stat callouts: TX Water Rate Growth: +28% (5yr) | Target Markets: Dallas, Houston, Austin, San Antonio | Expected Launch: Q3 2026
+
+**Property Types (same 4 cards as Colorado but Texas-specific language)**
+
+**Early Access Section:**
+- "We're accepting early-access clients in Texas now. Get on the list and lock in preferred pricing before the public launch."
+- Button: "Join Texas Early Access" (links to /#contact)
+
+---
+
+### PAGE 3: /case-studies — Case Studies (ROUTE MISSING — CREATE FROM SCRATCH)
+
+1. Add the route to `artifacts/pwv-home/src/App.tsx`:
