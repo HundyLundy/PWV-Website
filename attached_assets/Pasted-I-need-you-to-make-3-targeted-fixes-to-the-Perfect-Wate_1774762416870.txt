@@ -1,0 +1,102 @@
+I need you to make 3 targeted fixes to the Perfect Water Valve site. Do NOT change any visual design, layout, colors, GHL webhook URL, division value, FAQ content, or SEO tags. Execute all tasks in one pass.
+
+
+
+
+TASK 1: Replace all phone numbers site-wide
+
+Find and replace every instance of (361 ) 585-1111 with (720) 937-3004 across all files.
+
+Also find and replace every instance of 3615851111 (the tel: href version) with 7209373004.
+
+Files to check:
+
+•
+src/components/Navbar.tsx
+
+•
+src/components/Footer.tsx
+
+•
+src/pages/Home.tsx
+
+•
+src/pages/Colorado.tsx
+
+•
+src/pages/Texas.tsx
+
+
+
+
+TASK 2: Replace all email addresses site-wide
+
+Find and replace every instance of support@PerfectWaterValve.com with info@perfectwatervalve.com across all files.
+
+Also update any mailto:support@PerfectWaterValve.com href to mailto:info@perfectwatervalve.com.
+
+Files to check:
+
+•
+src/components/Footer.tsx
+
+•
+src/pages/Home.tsx
+
+•
+src/pages/Colorado.tsx
+
+•
+src/pages/Texas.tsx
+
+
+
+
+TASK 3: Fix the favicon in index.html
+
+In index.html, find these two lines:
+
+HTML
+
+
+<link rel="icon" type="image/webp" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663472539814/GxoDAExZd2kvfcYKk9SXrS/favicon_4f4942d6.webp" />
+<link rel="apple-touch-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663472539814/GxoDAExZd2kvfcYKk9SXrS/favicon_4f4942d6.webp" />
+
+
+
+Replace them with:
+
+HTML
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/favicon.png" />
+
+
+
+Then create a file at public/favicon.svg with this content — a water droplet icon in the brand blue color:
+
+Plain Text
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M50 10 C50 10 20 45 20 62 C20 79 34 90 50 90 C66 90 80 79 80 62 C80 45 50 10 50 10Z" fill="url(#dropGrad )"/>
+  <ellipse cx="38" cy="55" rx="6" ry="10" fill="white" opacity="0.3" transform="rotate(-20 38 55)"/>
+</svg>
+
+
+
+
+
+
+FINAL STEP
+
+Save, build, and republish. Confirm each task done in summary. Do NOT change any other content, styling, GHL webhook, or SEO tags.
+
