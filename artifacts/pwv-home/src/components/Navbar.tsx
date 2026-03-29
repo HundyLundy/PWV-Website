@@ -30,8 +30,14 @@ const MORE_LINKS = [
   },
   {
     label: "Colorado Properties",
-    href: "/colorado/",
+    href: "/locations/colorado",
     desc: "Serving all of Colorado — contact Hunter Lundquist",
+    icon: MapPin,
+  },
+  {
+    label: "Texas Market",
+    href: "/locations/texas",
+    desc: "Commercial water savings data specific to Texas properties",
     icon: MapPin,
   },
 ];
@@ -95,9 +101,9 @@ export function Navbar() {
           <div className="relative" ref={moreRef}>
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="flex items-center gap-1 text-sm font-medium text-white/70 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-sm font-bold text-[#38bdf8] hover:text-white border border-[#38bdf8]/50 hover:border-[#38bdf8] bg-[#38bdf8]/10 hover:bg-[#38bdf8]/20 px-3.5 py-1.5 rounded-full transition-all duration-200 tracking-wide"
             >
-              Explore
+              ✦ Explore
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`} />
             </button>
 

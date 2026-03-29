@@ -79,20 +79,26 @@ export default function Home() {
   const [form, setForm] = useState({ name: "", company: "", email: "", bill: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/pwv-contact";
+  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/Upp1pos3mL7UjdCVKsJp";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const nameParts = form.name.trim().split(" ");
+    const firstName = nameParts[0] || "";
+    const lastName = nameParts.slice(1).join(" ") || "";
     try {
       await fetch(GHL_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          firstName,
+          lastName,
           name: form.name,
           company: form.company,
           email: form.email || "",
           monthly_water_bill: form.bill,
           message: form.message,
+          division: "Perfect Water",
           source: "perfectwatervalve.com - Contact Form",
         }),
       });
