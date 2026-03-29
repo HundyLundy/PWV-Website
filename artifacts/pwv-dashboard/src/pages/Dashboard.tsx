@@ -262,7 +262,7 @@ export default function Dashboard() {
             <img src={logoSrc} alt="Perfect Water Valve" className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(3,116,167,0.5)]" />
             <div>
               <span className="font-bold text-white text-lg tracking-tight leading-tight block">Perfect Water Valve</span>
-              <span className="text-xs text-blue-400/70 uppercase tracking-widest font-medium">Smart Valve™ Performance Dashboard</span>
+              <span className="text-xs text-blue-400/70 uppercase tracking-widest font-medium">Smart Valve™ Information Sheet</span>
             </div>
           </div>
 
@@ -306,7 +306,7 @@ export default function Dashboard() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-blue-400/60 mb-2">Verified Performance Data</p>
-              <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight">Smart Valve™ Sales Dashboard</h1>
+              <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight">Smart Valve™ Information Sheet</h1>
               <p className="text-slate-400 mt-2 text-base">Amazon Canada Pilot · Multi-Industry Portfolio · Early Commercial Pilot Cohort</p>
             </div>
             <div className="flex flex-wrap gap-2">

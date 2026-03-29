@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
-import { Menu, X, ChevronDown, Home, Zap, BarChart2, MapPin, Phone } from "lucide-react";
+import { Menu, X, ChevronDown, Home, Zap, BarChart2, MapPin, Phone, BookOpen } from "lucide-react";
 
 const SECTION_LINKS = [
   { label: "Case Studies", href: "#case-studies" },
@@ -14,6 +14,7 @@ const EXPLORE_LINKS = [
   { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
   { label: "Colorado Properties", href: "/locations/colorado", desc: "Serving all of Colorado — Hunter Lundquist", icon: MapPin },
   { label: "Texas Properties", href: "/locations/texas", desc: "Serving Houston, DFW, Austin & San Antonio", icon: MapPin },
+  { label: "Smart Valve™ Info Sheet", href: "/pwv-dashboard/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
 ];
 
 export function Navbar() {

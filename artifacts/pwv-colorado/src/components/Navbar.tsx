@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Home, FileText, Zap, BarChart2, MapPin } from "lucide-react";
+import { Menu, X, ChevronDown, Home, FileText, Zap, BarChart2, MapPin, BookOpen } from "lucide-react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 type Page = "colorado" | "texas";
@@ -38,6 +38,7 @@ const EXPLORE_LINKS = [
   { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
   { label: "Colorado", href: "/locations/colorado", desc: "Local Colorado rep & utility savings programs", icon: MapPin },
   { label: "Texas", href: "/locations/texas", desc: "SAWS, Austin, Dallas & Houston utility savings", icon: MapPin },
+  { label: "Smart Valve™ Info Sheet", href: "/pwv-dashboard/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
 ];
 
 export function Navbar({ onScrollTo, page = "colorado" }: { onScrollTo: (id: string) => void; page?: Page }) {

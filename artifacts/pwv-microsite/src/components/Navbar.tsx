@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
-import { Menu, X, ChevronDown, Home, FileText, Zap, MapPin, Phone } from "lucide-react";
+import { Menu, X, ChevronDown, Home, FileText, Zap, MapPin, Phone, BookOpen } from "lucide-react";
 
 const SECTION_LINKS = [
   { label: "ROI Calculator", href: "#roi-calc" },
@@ -15,6 +15,7 @@ const EXPLORE_LINKS = [
   { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings accumulate in real time", icon: Zap },
   { label: "Colorado Properties", href: "/locations/colorado", desc: "Serving all of Colorado — Hunter Lundquist", icon: MapPin },
   { label: "Texas Properties", href: "/locations/texas", desc: "Serving Houston, DFW, Austin & San Antonio", icon: MapPin },
+  { label: "Smart Valve™ Info Sheet", href: "/pwv-dashboard/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
 ];
 
 export function Navbar() {

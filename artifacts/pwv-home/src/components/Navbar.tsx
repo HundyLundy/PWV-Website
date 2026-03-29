@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
-import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "How It Works", href: "#how-it-works" },
@@ -39,6 +39,12 @@ const MORE_LINKS = [
     href: "/locations/texas",
     desc: "Serving Houston, DFW, Austin & San Antonio",
     icon: MapPin,
+  },
+  {
+    label: "Smart Valve™ Info Sheet",
+    href: "/pwv-dashboard/",
+    desc: "Verified performance data, case studies & product specs",
+    icon: BookOpen,
   },
 ];
 
