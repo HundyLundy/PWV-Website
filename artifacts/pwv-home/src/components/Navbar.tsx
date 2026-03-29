@@ -153,11 +153,11 @@ export function Navbar() {
           </div>
 
           <a
-            href="tel:3615851111"
+            href="tel:7209373004"
             className="hidden lg:flex items-center gap-1.5 text-sm text-white/50 hover:text-white/80 transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />
-            (361) 585-1111
+            (720) 937-3004
           </a>
           <a
             href="#contact"
@@ -217,7 +217,7 @@ export function Navbar() {
           >
             Request Assessment
           </a>
-          <a href="tel:3615851111" className="text-sm text-white/40 text-center mt-2">(361) 585-1111</a>
+          <a href="tel:7209373004" className="text-sm text-white/40 text-center mt-2">(720) 937-3004</a>
         </div>
       )}
     </header>

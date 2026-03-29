@@ -447,7 +447,7 @@ export default function Home() {
                 <CheckCircle2 className="w-12 h-12 mx-auto mb-4" style={{ color: '#0374A7' }} />
                 <h3 className="text-xl font-bold mb-2" style={{ color: '#0A1F3A' }}>We'll be in touch shortly</h3>
                 <p className="text-sm" style={{ color: '#4A7085' }}>
-                  Expect a call or email within one business day. In the meantime, feel free to reach us directly at (361) 585-1111.
+                  Expect a call or email within one business day. In the meantime, feel free to reach us directly at (720) 937-3004.
                 </p>
               </motion.div>
             ) : (
@@ -525,13 +525,13 @@ export default function Home() {
                 </button>
 
                 <div className="flex flex-wrap justify-center gap-6 pt-2">
-                  <a href="tel:3615851111" className="flex items-center gap-2 text-sm transition-colors hover:opacity-80" style={{ color: '#4A7085' }}>
+                  <a href="tel:7209373004" className="flex items-center gap-2 text-sm transition-colors hover:opacity-80" style={{ color: '#4A7085' }}>
                     <Phone className="w-4 h-4" />
-                    (361) 585-1111
+                    (720) 937-3004
                   </a>
-                  <a href="mailto:support@PerfectWaterValve.com" className="flex items-center gap-2 text-sm transition-colors hover:opacity-80" style={{ color: '#4A7085' }}>
+                  <a href="mailto:info@perfectwatervalve.com" className="flex items-center gap-2 text-sm transition-colors hover:opacity-80" style={{ color: '#4A7085' }}>
                     <Mail className="w-4 h-4" />
-                    support@PerfectWaterValve.com
+                    info@perfectwatervalve.com
                   </a>
                 </div>
               </motion.form>
