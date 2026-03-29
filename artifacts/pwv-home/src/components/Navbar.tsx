@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
+import logoSrc from "@assets/PWV_logo_larger_design_1774767065422.png";
 import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin } from "lucide-react";
 
 const NAV_LINKS = [
