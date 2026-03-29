@@ -16,8 +16,12 @@ function Router() {
       <Route path="/locations/colorado/" component={HomePage} />
       <Route path="/locations/texas" component={TexasPage} />
       <Route path="/locations/texas/" component={TexasPage} />
+      <Route path="/locations/" component={HomePage} />
+      <Route path="/locations" component={HomePage} />
       <Route path="/colorado" component={HomePage} />
+      <Route path="/colorado/" component={HomePage} />
       <Route path="/texas" component={TexasPage} />
+      <Route path="/texas/" component={TexasPage} />
       <Route path="/" component={HomePage} />
       <Route component={NotFound} />
     </Switch>
