@@ -77,7 +77,7 @@ export function Footer() {
                 {[
                   ["Case Studies & Proof", "/results/"],
                   ["Locations", "/locations/usa"],
-                  ["Industries", "/locations/industries/data-centers"],
+                  ["Industries", "/industries/data-centers"],
                   ["Live Savings Counter", "/impact/"],
                   ["Get a Full Proposal", "/savings/"],
                   ["Smart Valve™ Info Sheet", "/pwv-dashboard/"],

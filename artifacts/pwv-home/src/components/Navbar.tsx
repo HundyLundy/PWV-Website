@@ -32,17 +32,17 @@ const LOCATIONS = [
 ];
 
 const INDUSTRIES = [
-  { label: "Data Centers", href: "/locations/industries/data-centers", emoji: "🖥️" },
-  { label: "Hotels & Hospitality", href: "/locations/industries/hotels", emoji: "🏨" },
-  { label: "Car Washes", href: "/locations/industries/car-washes", emoji: "🚗" },
-  { label: "Multifamily", href: "/locations/industries/multifamily", emoji: "🏢" },
-  { label: "Hospitals & Healthcare", href: "/locations/industries/hospitals", emoji: "🏥" },
+  { label: "Data Centers", href: "/industries/data-centers", emoji: "🖥️" },
+  { label: "Hotels & Hospitality", href: "/industries/hotels", emoji: "🏨" },
+  { label: "Car Washes", href: "/industries/car-washes", emoji: "🚗" },
+  { label: "Multifamily", href: "/industries/multifamily", emoji: "🏢" },
+  { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥" },
 ];
 
 const EXPLORE_LINKS = [
   { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
   { label: "Locations", href: "/locations/usa", desc: "Serving businesses across the US and worldwide", icon: MapPin },
-  { label: "Industries", href: "/locations/industries/data-centers", desc: "Data centers, hotels, car washes & more", icon: Building2 },
+  { label: "Industries", href: "/industries/data-centers", desc: "Data centers, hotels, car washes & more", icon: Building2 },
   { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings accumulate in real time", icon: Zap },
   { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
   { label: "Smart Valve™ Info Sheet", href: "/pwv-dashboard/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
@@ -54,7 +54,7 @@ const dropdownBase = {
   backdropFilter: "blur(20px)",
 };
 
-export function Navbar() {
+export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
