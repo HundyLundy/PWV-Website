@@ -24,7 +24,7 @@ const STATES = [
   { name: "Nebraska", path: "/locations/nebraska", emoji: "🌽", badge: "Omaha +9% · Food Processing Specialists" },
   { name: "Kansas", path: "/locations/kansas", emoji: "🌾", badge: "Wichita +8% · Aviation Manufacturing" },
   { name: "New Mexico", path: "/locations/new-mexico", emoji: "🌶️", badge: "Albuquerque +9% · Rio Grande Crisis" },
-  { name: "United Kingdom", path: "/locations/uk", emoji: "🇬🇧", badge: "Ofwat PR24 · United Utilities +47% by 2030" },
+  { name: "Worldwide", path: "/locations/uk", emoji: "🌍", badge: "UK · Canada · Australia · Global Markets" },
 ];
 
 const INDUSTRIES = [
