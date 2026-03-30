@@ -79,7 +79,7 @@ export default function Home() {
   const [form, setForm] = useState({ name: "", company: "", email: "", bill: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/pwv-contact";
+  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/UGsHBE8loaRDT9dGBqgp";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
