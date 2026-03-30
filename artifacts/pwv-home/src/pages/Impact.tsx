@@ -273,9 +273,9 @@ export default function Home() {
           <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full" />
           <div className="relative box-glow-primary rounded-full w-72 h-72 sm:w-96 sm:h-96 flex flex-col items-center justify-center p-8 text-center border border-primary/50 bg-background/50 backdrop-blur-xl">
             <ShieldCheck className="w-16 h-16 text-primary mb-6" />
-            <h2 className="font-display text-4xl sm:text-5xl font-bold mb-2" style={{ color: '#0A1F3A' }}>≥15%</h2>
-            <p className="text-xl sm:text-2xl font-semibold mb-2" style={{ color: '#0A1F3A' }}>Guaranteed</p>
-            <p className="text-sm uppercase tracking-widest max-w-[200px]" style={{ color: '#2E4A5A' }}>Water Volume Reduction</p>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold mb-2 text-white">≥15%</h2>
+            <p className="text-xl sm:text-2xl font-semibold mb-2 text-white">Guaranteed</p>
+            <p className="text-sm uppercase tracking-widest max-w-[200px] text-white/70">Water Volume Reduction</p>
           </div>
         </motion.div>
       </section>

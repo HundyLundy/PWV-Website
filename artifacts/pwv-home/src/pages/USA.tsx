@@ -10,7 +10,7 @@ const STATES = [
   { name: "Colorado", path: "/locations/colorado", emoji: "🏔️", badge: "Priority Market · Denver Water Rebate 50%" },
   { name: "Texas", path: "/locations/texas", emoji: "🌵", badge: "SAWS +32.7% by 2029 · Dallas $100K Rebate" },
   { name: "California", path: "/locations/california", emoji: "☀️", badge: "Highest US Water Rates · +30.3% by 2029" },
-  { name: "Arizona", path: "/locations/arizona", emoji: "🌵", badge: "Colorado River Shortage · SRP Rebate $450K" },
+  { name: "Arizona", path: "/locations/arizona", emoji: "🌄", badge: "Colorado River Shortage · SRP Rebate $450K" },
   { name: "Nevada", path: "/locations/nevada", emoji: "🎰", badge: "Lake Mead Crisis · SNWA Binding Targets" },
   { name: "New York", path: "/locations/new-york", emoji: "🗽", badge: "NYC DEP +8% · Dual Water + Sewer Savings" },
   { name: "Florida", path: "/locations/florida", emoji: "🌴", badge: "Miami +7.3% · Tampa $50K Verified Savings" },
