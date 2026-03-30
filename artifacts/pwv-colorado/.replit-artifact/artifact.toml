@@ -1,5 +1,5 @@
 kind = "web"
-previewPath = "/locations/"
+previewPath = "/legacy-colorado/"
 title = "Perfect Water Valve — Colorado Landing Page"
 version = "1.0.0"
 id = "artifacts/pwv-colorado"
@@ -11,7 +11,7 @@ version = "1.0.0"
 
 [[services]]
 name = "web"
-paths = [ "/locations/" ]
+paths = [ "/legacy-colorado/" ]
 localPort = 21781
 
 [services.development]
@@ -28,4 +28,4 @@ to = "/index.html"
 
 [services.env]
 PORT = "21781"
-BASE_PATH = "/locations/"
+BASE_PATH = "/legacy-colorado/"

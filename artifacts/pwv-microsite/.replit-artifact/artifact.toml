@@ -1,5 +1,5 @@
 kind = "web"
-previewPath = "/savings/"
+previewPath = "/legacy-microsite/"
 title = "Perfect Water Valve — Prospect Microsite"
 version = "1.0.0"
 id = "artifacts/pwv-microsite"
@@ -11,7 +11,7 @@ version = "1.0.0"
 
 [[services]]
 name = "web"
-paths = [ "/savings/" ]
+paths = [ "/legacy-microsite/" ]
 localPort = 23223
 
 [services.development]
@@ -28,4 +28,4 @@ to = "/index.html"
 
 [services.env]
 PORT = "23223"
-BASE_PATH = "/savings/"
+BASE_PATH = "/legacy-microsite/"
