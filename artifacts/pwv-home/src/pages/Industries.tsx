@@ -47,12 +47,11 @@ export default function IndustriesHub() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
 
-      {/* HERO */}
-      <section className="relative pt-40 pb-4 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(160deg, #0A1F3A 0%, #0374A7 60%, #3C6E7F 100%)" }} />
+      {/* HERO + INDUSTRY CARDS (unified) */}
+      <section className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: "linear-gradient(160deg, #0A1F3A 0%, #0374A7 60%, #0A1F3A 100%)" }}>
         <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-sky-500/15 rounded-full blur-[100px] pointer-events-none" />
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-white backdrop-blur-sm mb-8">
               <span>💧</span> Industry-Specific Water Savings
             </div>
@@ -66,15 +65,9 @@ export default function IndustriesHub() {
               Click your industry to see case studies, local rebates, and guaranteed savings data.
             </p>
             <p className="text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
-              The Perfect Water Valve Smart Valve™ is NSF 61 & 372 certified — no electricity, no moving parts, and every installation carries a written guarantee of ≥15% water bill reduction.
+              NSF 61 & 372 certified — no electricity, no moving parts, and every installation carries a written guarantee of ≥15% water bill reduction.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* INDUSTRY CARDS */}
-      <section className="pt-6 pb-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0A1F3A' }}>
-        <div className="max-w-7xl mx-auto">
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {INDUSTRIES.map((ind, i) => (
