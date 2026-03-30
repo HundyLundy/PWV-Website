@@ -41,7 +41,7 @@ export default function Home() {
       <div className="fixed bottom-[-20%] right-[-10%] w-[40%] h-[60%] rounded-full bg-secondary/10 blur-[150px] pointer-events-none" />
 
       {/* 1. HERO TICKER SECTION */}
-      <section className="relative pt-32 pb-24 px-6 sm:px-12 flex flex-col items-center justify-center min-h-[90vh]">
+      <section className="relative pt-32 pb-24 px-6 sm:px-12 flex flex-col items-center justify-center min-h-[90vh]" style={{ background: '#E8EFF7' }}>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,22 +49,22 @@ export default function Home() {
           className="text-center z-10 w-full max-w-6xl mx-auto"
         >
           <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-primary/30">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/30">
               <Droplet className="w-4 h-4 text-primary animate-pulse" />
-              <span className="text-sm font-semibold tracking-wider uppercase text-primary-foreground/80">
+              <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: '#0374A7' }}>
                 Verified Impact Data
               </span>
             </div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm uppercase tracking-wider text-white" style={{ background: 'rgba(3,116,167,0.35)', border: '1px solid rgba(3,116,167,0.5)' }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm uppercase tracking-wider text-white" style={{ background: '#0374A7' }}>
               Official AWS Partner
             </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight leading-[1.1]">
-            Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Air</span> in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-300">Water</span>.
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-[1.1]" style={{ color: '#0A1F3A' }}>
+            Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">Air</span> in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">Water</span>.
           </h1>
-          <p className="text-lg text-muted-foreground mb-16 max-w-2xl mx-auto">
-            Estimated savings across <strong className="text-white">~32,000 installations</strong> globally — based on a 1-year sample of a small percentage of those installs, with results ranging from 15% to 58%.
+          <p className="text-lg mb-16 max-w-2xl mx-auto" style={{ color: '#2E4A5A' }}>
+            Estimated savings across <strong style={{ color: '#0A1F3A' }}>~32,000 installations</strong> globally — based on a 1-year sample of a small percentage of those installs, with results ranging from 15% to 58%.
           </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
@@ -76,8 +76,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: i * 0.2 }}
                 className="flex flex-col items-center relative group"
               >
-                <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-bold text-white text-glow-primary tracking-tighter tabular-nums mb-4">
+                <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-bold tracking-tighter tabular-nums mb-4" style={{ color: '#0A1F3A' }}>
                   <AnimatedNumber 
                     value={stat.value} 
                     prefix={stat.prefix} 
@@ -85,14 +84,14 @@ export default function Home() {
                     decimals={stat.decimals} 
                   />
                 </h2>
-                <p className="text-lg md:text-xl font-medium text-muted-foreground uppercase tracking-widest">
+                <p className="text-lg md:text-xl font-medium uppercase tracking-widest" style={{ color: '#3C6E7F' }}>
                   {stat.label}
                 </p>
               </motion.div>
             ))}
           </div>
 
-          <p className="text-muted-foreground/60 text-sm max-w-md mx-auto uppercase tracking-widest mt-8">
+          <p className="text-sm max-w-md mx-auto uppercase tracking-widest mt-8" style={{ color: '#4A7085' }}>
             Across 15+ verified Smart Valve™ commercial & industrial deployments
           </p>
         </motion.div>
@@ -133,7 +132,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2b. PERSONAL LOSS COUNTER — dark navy / red */}
+      {/* 2b. MONTHLY SAVINGS CALCULATOR — light bg / green */}
+      <section className="relative py-24 border-b" style={{ background: '#E8EFF7', borderColor: '#C5D8E8' }}>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center"
+          >
+            <p className="font-bold uppercase tracking-[0.2em] mb-3 text-sm flex items-center gap-3" style={{ color: '#059669' }}>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+              What Could You Save?
+            </p>
+            <p className="mb-8 uppercase tracking-wider text-sm" style={{ color: '#2E4A5A' }}>Select your monthly water bill</p>
+            <SavingsCalc />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 2c. PERSONAL LOSS COUNTER — dark navy / red */}
       <section className="relative py-24 border-b border-red-900/30" style={{ backgroundColor: '#060D1A' }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
@@ -299,7 +317,7 @@ export default function Home() {
       <footer className="border-t border-white/10 pt-24 pb-12 px-6 relative z-10" style={{ background: '#060D1A' }}>
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to see your numbers?</h2>
-          <p className="text-xl text-white/70 max-w-2xl mb-10">
+          <p className="text-xl text-white font-semibold max-w-2xl mb-10">
             Join the industry leaders cutting their water bills — guaranteed. Request a free site assessment today.
           </p>
           
@@ -311,28 +329,28 @@ export default function Home() {
           </button>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl border-t border-white/10 pt-12">
-            <a href="tel:7209373004" className="flex items-center justify-center gap-3 text-muted-foreground hover:text-primary transition-colors group">
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+            <a href="tel:7209373004" className="flex items-center justify-center gap-3 text-white hover:text-primary transition-colors group">
+              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <Phone className="w-5 h-5" />
               </div>
               <span className="font-display text-xl">(720) 937-3004</span>
             </a>
-            <a href="mailto:info@perfectwatervalve.com" className="flex items-center justify-center gap-3 text-muted-foreground hover:text-primary transition-colors group">
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+            <a href="mailto:info@perfectwatervalve.com" className="flex items-center justify-center gap-3 text-white hover:text-primary transition-colors group">
+              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <Mail className="w-5 h-5" />
               </div>
               <span className="text-lg">info@perfectwatervalve.com</span>
             </a>
           </div>
 
-          <div className="mt-20 pt-8 border-t border-white/5 w-full flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground/60">
+          <div className="mt-20 pt-8 border-t border-white/20 w-full flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
             <p>© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</p>
             <div className="flex items-center gap-5">
-              <p className="uppercase tracking-widest text-xs">Partner: American Water Savings (AWS) · Canadian Water Savings (CWS)</p>
+              <p className="uppercase tracking-widest text-xs text-white/80">Partner: American Water Savings (AWS) · Canadian Water Savings (CWS)</p>
               <div className="flex items-center gap-3">
-                <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-white transition-colors"><FaFacebook className="w-4 h-4" /></a>
-                <a href="https://www.instagram.com/perfectwatervalve/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-white transition-colors"><FaInstagram className="w-4 h-4" /></a>
-                <a href="https://www.linkedin.com/company/113022552" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white transition-colors"><FaLinkedinIn className="w-4 h-4" /></a>
+                <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-primary transition-colors"><FaFacebook className="w-4 h-4" /></a>
+                <a href="https://www.instagram.com/perfectwatervalve/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white hover:text-primary transition-colors"><FaInstagram className="w-4 h-4" /></a>
+                <a href="https://www.linkedin.com/company/113022552" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-primary transition-colors"><FaLinkedinIn className="w-4 h-4" /></a>
               </div>
             </div>
           </div>
@@ -359,6 +377,74 @@ function DollarCounter() {
     <span>
       {dollars.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 })}
     </span>
+  );
+}
+
+function SavingsCalc() {
+  const MIN = 5000;
+  const MAX = 100000;
+  const [bill, setBill] = useState(15000);
+  const rate = 0.192;
+
+  const monthlySavings = bill * rate;
+  const annualSavings = monthlySavings * 12;
+  const pct = ((bill - MIN) / (MAX - MIN)) * 100;
+
+  const fmtBill = (v: number) =>
+    v >= 1000 ? `$${(v / 1000).toFixed(v % 1000 === 0 ? 0 : 1)}K` : `$${v}`;
+
+  const fmtDollar = (v: number) =>
+    v.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+  return (
+    <div className="w-full max-w-2xl mx-auto">
+      <div className="flex justify-between items-baseline mb-2 px-1">
+        <span className="text-xs uppercase tracking-widest" style={{ color: '#4A7085' }}>Monthly water bill</span>
+        <span className="font-bold text-lg tabular-nums" style={{ color: '#0A1F3A' }}>{fmtBill(bill)} / mo</span>
+      </div>
+
+      <div className="relative mb-2">
+        <div className="h-2 rounded-full" style={{ background: 'rgba(0,0,0,0.08)' }}>
+          <div
+            className="h-2 rounded-full transition-all duration-75"
+            style={{ width: `${pct}%`, background: 'linear-gradient(90deg, #059669, #10B981)' }}
+          />
+        </div>
+        <input
+          type="range"
+          min={MIN}
+          max={MAX}
+          step={1000}
+          value={bill}
+          onChange={(e) => setBill(Number(e.target.value))}
+          className="absolute inset-0 w-full opacity-0 cursor-pointer h-2"
+          style={{ height: '100%' }}
+        />
+        <div
+          className="absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-2 border-emerald-500 shadow-lg pointer-events-none transition-all duration-75"
+          style={{ left: `calc(${pct}% - 10px)`, background: '#fff', boxShadow: '0 0 12px rgba(16,185,129,0.5)' }}
+        />
+      </div>
+
+      <div className="flex justify-between text-[10px] px-0 mb-10 uppercase tracking-wider" style={{ color: '#4A7085' }}>
+        <span>$5K</span><span>$25K</span><span>$50K</span><span>$75K</span><span>$100K</span>
+      </div>
+
+      <div className="grid grid-cols-2 gap-6 mb-4">
+        <div className="rounded-2xl p-6 text-center" style={{ background: '#D1FAE5', border: '1px solid #6EE7B7' }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#059669' }}>Monthly Savings</p>
+          <p className="font-display text-3xl sm:text-4xl font-bold tabular-nums" style={{ color: '#065F46' }}>{fmtDollar(monthlySavings)}</p>
+        </div>
+        <div className="rounded-2xl p-6 text-center" style={{ background: '#D1FAE5', border: '1px solid #6EE7B7' }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#059669' }}>Annual Savings</p>
+          <p className="font-display text-3xl sm:text-4xl font-bold tabular-nums" style={{ color: '#065F46' }}>{fmtDollar(annualSavings)}</p>
+        </div>
+      </div>
+
+      <p className="text-xs mt-3 uppercase tracking-widest" style={{ color: '#4A7085' }}>
+        Based on 19.2% avg savings rate · 15% guaranteed minimum · 32,000+ verified installs
+      </p>
+    </div>
   );
 }
 

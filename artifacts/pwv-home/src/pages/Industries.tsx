@@ -65,20 +65,15 @@ export default function IndustriesHub() {
             <p className="text-lg sm:text-xl text-white/90 mb-4 max-w-3xl mx-auto leading-relaxed">
               Click your industry to see case studies, local rebates, and guaranteed savings data.
             </p>
-            <p className="text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
               The Perfect Water Valve Smart Valve™ is NSF 61 & 372 certified — no electricity, no moving parts, and every installation carries a written guarantee of ≥15% water bill reduction.
             </p>
-            <div className="grid grid-cols-3 gap-6 max-w-xl mx-auto pt-8 border-t border-white/10">
-              <div><div className="text-4xl font-bold text-white mb-1">5</div><div className="text-xs text-white/70 uppercase tracking-wider">Industries</div></div>
-              <div><div className="text-4xl font-bold text-white mb-1">≥15%</div><div className="text-xs text-white/70 uppercase tracking-wider">Guaranteed</div></div>
-              <div><div className="text-4xl font-bold text-white mb-1">58.69%</div><div className="text-xs text-white/70 uppercase tracking-wider">Peak Savings</div></div>
-            </div>
           </motion.div>
         </div>
       </section>
 
       {/* INDUSTRY CARDS */}
-      <section className="pt-6 pb-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
+      <section className="pt-6 pb-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0A1F3A' }}>
         <div className="max-w-7xl mx-auto">
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

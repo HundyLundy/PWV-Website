@@ -1,0 +1,13 @@
+A few clarifications on the fixes in progress:
+1. /savings — Flash then disappear (critical)
+The page briefly renders then goes blank. Root cause: Savings.tsx still has import { useGetSummary, useGetEnterpriseDeployments } from "@workspace/api-client-react" on line 8, AND the component still calls useGetSummary() and useGetEnterpriseDeployments() inside the function body. That package does not exist in the static build — it crashes silently after the first render frame. Remove both imports AND both hook calls completely. Replace summary?.portfolioAvgSavings with the hardcoded value 23. Replace the deployments data with the TESTIMONIALS array already defined in the same file.
+2. /pwv-dashboard — Route it into the main site
+Don't try to fix the 404 — instead, add a new route in App.tsx: <Route path="/infosheet" component={InfoSheet} /> and create a simple InfoSheet.tsx page that matches the site design. It can be a one-pager with the PWV logo, a headline like "Smart Valve™ Product Information Sheet", and a download button or embedded PDF viewer. This replaces the broken /pwv-dashboard/ route entirely.
+3. /impact — Header contrast
+The hero section background is too close in color to the text. Change the hero section background to #E8EFF7 (light blue-gray) and make all headline text #0A1F3A (dark navy). This gives maximum contrast without changing the color scheme.
+4. Industries page — Remove the stats bar, collapse the gap
+Delete the entire 5 Industries / ≥15% / 58.69% stats row at the bottom of the hero section. Then set the card grid section background to the same dark navy as the hero (#0A1F3A) so there is zero visual gap between the headline and the cards.
+5. /impact — Monthly savings calculator placement
+The new "What Could You Save?" calculator must go directly above the existing red "Your Facility's Estimated Loss Year-to-Date" section — not inside it. Default monthly bill input: $15,000. Both calculators should be visible on screen at the same time when scrolled to that section.
+6. /impact — Bottom section readability
+The "Ready to see your numbers?" CTA section — change all body text and the trust badge labels to text-white. Add font-semibold to the subtitle. The background can stay as-is; just make the words white and legible.

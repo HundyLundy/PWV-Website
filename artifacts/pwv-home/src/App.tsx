@@ -31,6 +31,9 @@ import KansasPage from "@/pages/Kansas";
 import NewMexicoPage from "@/pages/NewMexico";
 import UKPage from "@/pages/UnitedKingdom";
 
+// Info sheet
+import InfoSheet from "@/pages/InfoSheet";
+
 // Industry pages
 import IndustriesHub from "@/pages/Industries";
 import DataCentersPage from "@/pages/industries/DataCenters";
@@ -46,6 +49,10 @@ function Router() {
     <Switch>
       {/* Home */}
       <Route path="/" component={Home} />
+
+      {/* Info sheet */}
+      <Route path="/infosheet" component={InfoSheet} />
+      <Route path="/infosheet/" component={InfoSheet} />
 
       {/* Core pages */}
       <Route path="/results" component={Results} />
