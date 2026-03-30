@@ -94,9 +94,9 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
     <header
       className="fixed top-0 w-full z-50 transition-all duration-300"
       style={{
-        background: scrolled ? "rgba(6,10,26,0.94)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
+        background: scrolled ? "rgba(6,10,26,0.97)" : "rgba(28,52,66,0.93)",
+        backdropFilter: "blur(14px)",
+        borderBottom: "1px solid rgba(255,255,255,0.07)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
