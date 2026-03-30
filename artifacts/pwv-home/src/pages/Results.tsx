@@ -407,43 +407,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* TEXAS CALLOUT (moved with guarantee) */}
-      <section className="w-full py-12 px-6" style={{ backgroundColor: '#0374A7' }}>
-        <div className="max-w-4xl mx-auto">
-          <div className="rounded-2xl border border-white/20 p-8" style={{ background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(8px)' }}>
-            <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-white" style={{ background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.3)' }}>
-                Texas Results — Verified
-              </span>
-              <span className="text-xs text-white/60 uppercase tracking-widest">Source: smartwatervalvetexas.com</span>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-8">
-              <div className="space-y-2">
-                <p className="text-white/60 text-xs uppercase tracking-widest font-semibold">Houston Office Building #1</p>
-                <p className="text-white font-semibold">180,000 SF · 10 Stories</p>
-                <div className="flex flex-wrap gap-4 pt-1">
-                  <div><span className="text-2xl font-bold text-white">39%</span><span className="text-white/60 text-sm ml-1">bill reduction</span></div>
-                  <div><span className="text-2xl font-bold text-white">37%</span><span className="text-white/60 text-sm ml-1">usage reduction</span></div>
-                </div>
-                <p className="text-white/60 text-xs">Payback under 12 months</p>
-              </div>
-              <div className="space-y-2">
-                <p className="text-white/60 text-xs uppercase tracking-widest font-semibold">Houston Office Building #2 (11811 North Frwy)</p>
-                <p className="text-white font-semibold">156,000 SF · 9 Stories</p>
-                <div className="flex flex-wrap gap-4 pt-1">
-                  <div><span className="text-2xl font-bold text-white">33%</span><span className="text-white/60 text-sm ml-1">bill reduction</span></div>
-                  <div><span className="text-2xl font-bold text-white">38%</span><span className="text-white/60 text-sm ml-1">usage reduction</span></div>
-                </div>
-                <blockquote className="text-white/80 text-xs italic border-l-2 border-white/30 pl-3 mt-2">
-                  "We intend to begin adding Smart Water Valves throughout our portfolio."<br/>
-                  <span className="not-italic text-white/50">— Mark Malone, Director of Engineering, Houston Hartman REIT</span>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 5: BY THE NUMBERS */}
       <section className="w-full py-32 px-6" style={{ backgroundColor: '#3C6E7F' }}>
         <div className="max-w-6xl mx-auto">

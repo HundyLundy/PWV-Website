@@ -169,6 +169,39 @@ export default function TexasNewPage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Real Results Across Every Industry</h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">All results independently verified via M&amp;V. AWS, CWS, and Smart Valve™ certified.</p>
           </div>
+
+          {/* TEXAS-SPECIFIC VERIFIED RESULTS */}
+          <div className="rounded-2xl border border-primary/30 p-8 mb-12" style={{ background: 'rgba(3,116,167,0.12)', backdropFilter: 'blur(8px)' }}>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-white" style={{ background: '#0374A7', border: '1px solid rgba(255,255,255,0.2)' }}>
+                Texas Results — Verified
+              </span>
+              <span className="text-xs text-gray-400 uppercase tracking-widest">Source: smartwatervalvetexas.com</span>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold">Houston Office Building #1</p>
+                <p className="text-white font-semibold">180,000 SF · 10 Stories</p>
+                <div className="flex flex-wrap gap-4 pt-1">
+                  <div><span className="text-2xl font-bold text-primary">39%</span><span className="text-gray-400 text-sm ml-1">bill reduction</span></div>
+                  <div><span className="text-2xl font-bold text-primary">37%</span><span className="text-gray-400 text-sm ml-1">usage reduction</span></div>
+                </div>
+                <p className="text-gray-500 text-xs">Payback under 12 months</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold">Houston Office Building #2 · 11811 North Frwy</p>
+                <p className="text-white font-semibold">156,000 SF · 9 Stories</p>
+                <div className="flex flex-wrap gap-4 pt-1">
+                  <div><span className="text-2xl font-bold text-primary">33%</span><span className="text-gray-400 text-sm ml-1">bill reduction</span></div>
+                  <div><span className="text-2xl font-bold text-primary">38%</span><span className="text-gray-400 text-sm ml-1">usage reduction</span></div>
+                </div>
+                <blockquote className="text-gray-300 text-xs italic border-l-2 border-primary/40 pl-3 mt-2">
+                  "We intend to begin adding Smart Water Valves throughout our portfolio."<br/>
+                  <span className="not-italic text-gray-500">— Mark Malone, Director of Engineering, Houston Hartman REIT</span>
+                </blockquote>
+              </div>
+            </div>
+          </div>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="bg-[#121B2E] border border-white/10 rounded-2xl p-8 lg:p-10 relative overflow-hidden">
