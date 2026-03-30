@@ -10,7 +10,7 @@ const REP = {
 };
 
 const LOCATIONS = [
-  { label: "All Locations (USA + UK)", href: "/locations/usa", emoji: "🌎" },
+  { label: "All Locations (US & Worldwide)", href: "/locations/usa", emoji: "🌎" },
   { label: "Colorado", href: "/locations/colorado", emoji: "🏔️" },
   { label: "Texas", href: "/locations/texas", emoji: "🌵" },
   { label: "California", href: "/locations/california", emoji: "☀️" },
@@ -31,39 +31,39 @@ const LOCATIONS = [
 ];
 
 const INDUSTRIES = [
-  { label: "Data Centers", href: "/locations/industries/data-centers", emoji: "🖥️", desc: "Amazon YYZ3 — 58.69% peak verified" },
-  { label: "Hotels & Hospitality", href: "/locations/industries/hotels", emoji: "🏨", desc: "Four Seasons — $27K/yr verified" },
-  { label: "Car Washes", href: "/locations/industries/car-washes", emoji: "🚗", desc: "Caliber — 23% avg, 5 sites, $38.4K/yr" },
-  { label: "Multifamily", href: "/locations/industries/multifamily", emoji: "🏢", desc: "Grand Central Tampa — $50K/yr" },
-  { label: "Hospitals & Healthcare", href: "/locations/industries/hospitals", emoji: "🏥", desc: "NSF 61 & 372 certified — zero clinical risk" },
+  { label: "Data Centers", href: "/locations/industries/data-centers", emoji: "🖥️" },
+  { label: "Hotels & Hospitality", href: "/locations/industries/hotels", emoji: "🏨" },
+  { label: "Car Washes", href: "/locations/industries/car-washes", emoji: "🚗" },
+  { label: "Multifamily", href: "/locations/industries/multifamily", emoji: "🏢" },
+  { label: "Hospitals & Healthcare", href: "/locations/industries/hospitals", emoji: "🏥" },
 ];
 
 const EXPLORE_LINKS = [
   { label: "Official Website", href: "/", desc: "Main homepage & full overview", icon: Home },
   { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
+  { label: "Locations", href: "/locations/usa", desc: "Serving businesses across the US and worldwide", icon: MapPin },
+  { label: "Industries", href: "/locations/industries/data-centers", desc: "Data centers, hotels, car washes & more", icon: Building2 },
   { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings in real time", icon: Zap },
   { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
   { label: "Smart Valve™ Info Sheet", href: "/pwv-dashboard/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
 ];
 
+const dropdownBase = {
+  background: "rgba(10,15,35,0.97)",
+  border: "1px solid rgba(255,255,255,0.1)",
+  backdropFilter: "blur(20px)",
+};
+
 export function Navbar({ onScrollTo }: { onScrollTo: (id: string) => void; page?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [locOpen, setLocOpen] = useState(false);
-  const [indOpen, setIndOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
-  const locRef = useRef<HTMLDivElement>(null);
-  const indRef = useRef<HTMLDivElement>(null);
+  const [mobileLocOpen, setMobileLocOpen] = useState(false);
+  const [mobileIndOpen, setMobileIndOpen] = useState(false);
   const exploreRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = (id: string) => {
     setMobileOpen(false);
     onScrollTo(id);
-  };
-
-  const dropdownBase = {
-    background: "rgba(10,15,35,0.97)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    backdropFilter: "blur(20px)",
   };
 
   return (
@@ -79,85 +79,31 @@ export function Navbar({ onScrollTo }: { onScrollTo: (id: string) => void; page?
 
       {/* Main nav */}
       <div className="bg-[#0A0F1E]/92 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto h-16 flex items-center justify-between">
 
           {/* Brand */}
-          <a href="/locations/colorado" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
-            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5">
+          <a href="/locations/colorado" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
+            <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5">
               <img src={logoSrc} alt="Perfect Water Valve" className="h-full w-full object-contain" />
             </div>
-            <div className="leading-tight hidden sm:block" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
-              <span className="text-lg text-white">Perfect Water</span><br />
-              <span className="text-lg" style={{ color: "#DEC600" }}>Valve™</span>
+            <div className="hidden sm:block">
+              <div className="font-semibold text-[15px] leading-none tracking-tight text-white">Perfect Water Valve</div>
+              <div className="text-[11px] font-medium mt-0.5" style={{ color: "#5BBFE0" }}>Guaranteed 15% Savings</div>
             </div>
           </a>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-300">
-
-            {/* Locations dropdown */}
-            <div className="relative" ref={locRef}>
-              <button onClick={() => { setLocOpen(!locOpen); setIndOpen(false); setExploreOpen(false); }}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg transition-all ${locOpen ? "text-white bg-white/8" : "hover:text-white hover:bg-white/5"}`}>
-                <MapPin className="w-4 h-4" />
-                Locations
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${locOpen ? "rotate-180" : ""}`} />
-              </button>
-              <AnimatePresence>
-                {locOpen && (
-                  <motion.div initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6, scale: 0.97 }} transition={{ duration: 0.15 }}
-                    className="absolute left-0 top-full mt-2 w-64 rounded-2xl shadow-2xl overflow-hidden" style={dropdownBase}
-                    onMouseLeave={() => setLocOpen(false)}>
-                    <div className="p-2 max-h-96 overflow-y-auto">
-                      {LOCATIONS.map((loc) => (
-                        <a key={loc.href} href={loc.href} onClick={() => setLocOpen(false)}
-                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/6 transition-colors group">
-                          <span className="text-base">{loc.emoji}</span>
-                          <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">{loc.label}</span>
-                        </a>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Industries dropdown */}
-            <div className="relative" ref={indRef}>
-              <button onClick={() => { setIndOpen(!indOpen); setLocOpen(false); setExploreOpen(false); }}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg transition-all ${indOpen ? "text-white bg-white/8" : "hover:text-white hover:bg-white/5"}`}>
-                <Building2 className="w-4 h-4" />
-                Industries
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${indOpen ? "rotate-180" : ""}`} />
-              </button>
-              <AnimatePresence>
-                {indOpen && (
-                  <motion.div initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6, scale: 0.97 }} transition={{ duration: 0.15 }}
-                    className="absolute left-0 top-full mt-2 w-72 rounded-2xl shadow-2xl overflow-hidden" style={dropdownBase}
-                    onMouseLeave={() => setIndOpen(false)}>
-                    <div className="p-2">
-                      {INDUSTRIES.map((ind) => (
-                        <a key={ind.href} href={ind.href} onClick={() => setIndOpen(false)}
-                          className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-white/6 transition-colors group">
-                          <span className="text-xl shrink-0">{ind.emoji}</span>
-                          <div>
-                            <div className="text-sm font-semibold text-white/90 group-hover:text-white transition-colors">{ind.label}</div>
-                            <div className="text-xs text-white/40 mt-0.5">{ind.desc}</div>
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
             {/* Explore dropdown */}
             <div className="relative" ref={exploreRef}>
-              <button onClick={() => { setExploreOpen(!exploreOpen); setLocOpen(false); setIndOpen(false); }}
-                className="flex items-center gap-1.5 text-white px-4 py-1.5 rounded-full text-sm font-semibold transition-all hover:bg-[rgba(3,116,167,0.25)]"
-                style={{ border: "1.5px solid rgba(3,116,167,0.75)", background: exploreOpen ? "rgba(3,116,167,0.25)" : "rgba(3,116,167,0.12)" }}>
-                <span style={{ color: "#5BBFE0", fontSize: "10px" }}>✦</span>
+              <button
+                onClick={() => setExploreOpen(!exploreOpen)}
+                className="flex items-center gap-1.5 text-sm font-bold transition-all px-4 py-1.5 rounded-full border"
+                style={{
+                  color: '#5BBFE0',
+                  borderColor: exploreOpen ? 'rgba(91,191,224,0.7)' : 'rgba(91,191,224,0.45)',
+                  background: exploreOpen ? 'rgba(91,191,224,0.16)' : 'rgba(91,191,224,0.08)',
+                }}>
                 Explore
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${exploreOpen ? "rotate-180" : ""}`} />
               </button>
@@ -172,7 +118,8 @@ export function Navbar({ onScrollTo }: { onScrollTo: (id: string) => void; page?
                         return (
                           <a key={link.href} href={link.href} onClick={() => setExploreOpen(false)}
                             className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
-                            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                              style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
                               <Icon className="w-4 h-4" style={{ color: "#5BBFE0" }} />
                             </div>
                             <div>
@@ -192,9 +139,9 @@ export function Navbar({ onScrollTo }: { onScrollTo: (id: string) => void; page?
           {/* Desktop right */}
           <div className="hidden md:flex items-center gap-5">
             <a href={`tel:${REP.phone.replace(/-/g, "")}`} className="text-sm font-semibold text-gray-300 hover:text-white transition-colors">{REP.phone}</a>
-            <button onClick={() => handleScroll("contact")} className="text-white px-6 py-2.5 rounded-full font-bold shadow-lg transition-all hover:scale-105 active:scale-95"
+            <button onClick={() => handleScroll("contact")} className="text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg transition-all hover:-translate-y-0.5"
               style={{ background: "#0374A7", boxShadow: "0 4px 16px rgba(3,116,167,0.3)" }}>
-              See Your Savings
+              Request Assessment
             </button>
           </div>
 
@@ -213,11 +160,11 @@ export function Navbar({ onScrollTo }: { onScrollTo: (id: string) => void; page?
             <div className="p-4 flex flex-col gap-1">
               {/* Locations accordion */}
               <div>
-                <button onClick={() => setLocOpen(!locOpen)} className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
+                <button onClick={() => setMobileLocOpen(!mobileLocOpen)} className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
                   <span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Locations</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${locOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileLocOpen ? "rotate-180" : ""}`} />
                 </button>
-                {locOpen && (
+                {mobileLocOpen && (
                   <div className="pl-4 py-2 flex flex-col gap-1">
                     {LOCATIONS.map((loc) => (
                       <a key={loc.href} href={loc.href} className="flex items-center gap-2 py-1.5 text-white/60 hover:text-white text-sm">
@@ -229,11 +176,11 @@ export function Navbar({ onScrollTo }: { onScrollTo: (id: string) => void; page?
               </div>
               {/* Industries accordion */}
               <div>
-                <button onClick={() => setIndOpen(!indOpen)} className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
+                <button onClick={() => setMobileIndOpen(!mobileIndOpen)} className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
                   <span className="flex items-center gap-2"><Building2 className="w-4 h-4" /> Industries</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${indOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileIndOpen ? "rotate-180" : ""}`} />
                 </button>
-                {indOpen && (
+                {mobileIndOpen && (
                   <div className="pl-4 py-2 flex flex-col gap-1">
                     {INDUSTRIES.map((ind) => (
                       <a key={ind.href} href={ind.href} className="flex items-center gap-2 py-1.5 text-white/60 hover:text-white text-sm">
@@ -256,8 +203,8 @@ export function Navbar({ onScrollTo }: { onScrollTo: (id: string) => void; page?
                   );
                 })}
               </div>
-              <button onClick={() => handleScroll("contact")} className="mt-3 py-3 rounded-full text-white font-bold text-center" style={{ background: "#0374A7" }}>
-                See Your Savings
+              <button onClick={() => handleScroll("contact")} className="mt-3 py-3 rounded-full text-white font-semibold text-center text-sm" style={{ background: "#0374A7" }}>
+                Request Assessment
               </button>
               <a href={`tel:${REP.phone.replace(/-/g, "")}`} className="text-sm text-white/40 text-center mt-2">{REP.phone}</a>
             </div>

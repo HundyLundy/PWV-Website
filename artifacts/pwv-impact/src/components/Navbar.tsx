@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
-import { Menu, X, ChevronDown, Home, FileText, BarChart2, MapPin, Phone, BookOpen } from "lucide-react";
+import { Menu, X, ChevronDown, Home, FileText, BarChart2, MapPin, Phone, BookOpen, Building2 } from "lucide-react";
 
 const SECTION_LINKS = [
   { label: "Live Counter", href: "#counter" },
@@ -11,9 +11,9 @@ const SECTION_LINKS = [
 const EXPLORE_LINKS = [
   { label: "Official Website", href: "/", desc: "Main homepage & full overview", icon: Home },
   { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
+  { label: "Locations", href: "/locations/usa", desc: "Serving businesses across the US and worldwide", icon: MapPin },
+  { label: "Industries", href: "/locations/industries/data-centers", desc: "Data centers, hotels, car washes & more", icon: Building2 },
   { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
-  { label: "Colorado Properties", href: "/locations/colorado", desc: "Serving all of Colorado — Hunter Lundquist", icon: MapPin },
-  { label: "Texas Properties", href: "/locations/texas", desc: "Serving Houston, DFW, Austin & San Antonio", icon: MapPin },
   { label: "Smart Valve™ Info Sheet", href: "/pwv-dashboard/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
 ];
 
@@ -54,17 +54,17 @@ export function Navbar() {
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "1px solid transparent",
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center p-1.5 border border-white/20 bg-white/10">
+        <a href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center p-1.5 border border-white/20 bg-white/10">
             <img src={logoSrc} alt="Perfect Water Valve" className="w-full h-full object-contain" />
           </div>
           <div>
-            <div className="font-headline font-semibold text-lg leading-none tracking-tight text-white">
+            <div className="font-headline font-semibold text-[15px] leading-none tracking-tight text-white">
               Perfect Water Valve
             </div>
-            <div className="text-xs font-medium mt-0.5" style={{ color: '#5BBFE0' }}>
+            <div className="text-[11px] font-medium mt-0.5" style={{ color: '#5BBFE0' }}>
               Live Impact Counter
             </div>
           </div>
@@ -86,7 +86,12 @@ export function Navbar() {
           <div className="relative" ref={exploreRef}>
             <button
               onClick={() => setExploreOpen(!exploreOpen)}
-              className="flex items-center gap-1 text-sm font-medium text-white/70 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-sm font-bold transition-all px-4 py-1.5 rounded-full border"
+              style={{
+                color: '#5BBFE0',
+                borderColor: exploreOpen ? 'rgba(91,191,224,0.7)' : 'rgba(91,191,224,0.45)',
+                background: exploreOpen ? 'rgba(91,191,224,0.16)' : 'rgba(91,191,224,0.08)',
+              }}
             >
               Explore
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${exploreOpen ? "rotate-180" : ""}`} />
@@ -122,13 +127,13 @@ export function Navbar() {
             )}
           </div>
 
-          <a href="tel:3615851111" className="hidden lg:flex items-center gap-1.5 text-sm text-white/50 hover:text-white/80 transition-colors">
+          <a href="tel:7209373004" className="hidden lg:flex items-center gap-1.5 text-sm text-white/50 hover:text-white/80 transition-colors">
             <Phone className="w-3.5 h-3.5" />
-            (361) 585-1111
+            (720) 937-3004
           </a>
           <a
-            href="/"
-            className="px-5 py-2.5 rounded-full text-white text-sm font-semibold transition-all hover:-translate-y-0.5"
+            href="#contact"
+            className="px-5 py-2 rounded-full text-white text-sm font-semibold transition-all hover:-translate-y-0.5"
             style={{ background: '#0374A7', boxShadow: '0 4px 16px rgba(3,116,167,0.35)' }}
           >
             Request Assessment
@@ -175,14 +180,14 @@ export function Navbar() {
             })}
           </div>
           <a
-            href="/"
+            href="#contact"
             className="mt-3 px-5 py-3 rounded-full text-white text-sm font-semibold text-center"
             style={{ background: '#0374A7' }}
             onClick={() => setMenuOpen(false)}
           >
             Request Assessment
           </a>
-          <a href="tel:3615851111" className="text-sm text-white/40 text-center mt-2">(361) 585-1111</a>
+          <a href="tel:7209373004" className="text-sm text-white/40 text-center mt-2">(720) 937-3004</a>
         </div>
       )}
     </header>

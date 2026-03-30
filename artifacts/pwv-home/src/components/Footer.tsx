@@ -76,9 +76,11 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-slate-500">
                 {[
                   ["Case Studies & Proof", "/results/"],
+                  ["Locations", "/locations/usa"],
+                  ["Industries", "/locations/industries/data-centers"],
                   ["Live Savings Counter", "/impact/"],
                   ["Get a Full Proposal", "/savings/"],
-                  ["Colorado Properties", "/colorado/"],
+                  ["Smart Valve™ Info Sheet", "/pwv-dashboard/"],
                 ].map(([label, href]) => (
                   <li key={label}>
                     <a href={href} className="hover:text-white transition-colors">{label}</a>

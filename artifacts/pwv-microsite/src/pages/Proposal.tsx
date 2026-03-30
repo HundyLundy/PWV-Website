@@ -213,13 +213,13 @@ export default function Proposal() {
                   Ready to lock in these savings? Contact us for a precise site assessment.
                 </p>
                 <a 
-                  href="tel:3615851111" 
+                  href="tel:7209373004" 
                   className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-lg shadow-lg hover:-translate-y-1 transition-all print:hidden"
                 >
-                  <Phone className="w-5 h-5" /> (361) 585-1111
+                  <Phone className="w-5 h-5" /> (720) 937-3004
                 </a>
                 <div className="hidden print:block font-bold text-xl text-primary text-center">
-                  Call: (361) 585-1111 | support@PerfectWaterValve.com
+                  Call: (720) 937-3004 | info@perfectwatervalve.com
                 </div>
               </div>
             </div>

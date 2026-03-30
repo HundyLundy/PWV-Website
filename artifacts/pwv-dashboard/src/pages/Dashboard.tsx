@@ -58,12 +58,12 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const EXPLORE_LINKS = [
-  { label: "Homepage", href: "/", desc: "Return to perfectwatervalve.com", icon: ExternalLink },
+  { label: "Official Website", href: "/", desc: "Return to perfectwatervalve.com", icon: ExternalLink },
   { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
-  { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings in real time", icon: Zap },
-  { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
   { label: "Locations", href: "/locations/usa", desc: "All 17 state + UK service areas", icon: MapPin },
   { label: "Industries", href: "/locations/industries/data-centers", desc: "Data centers, hotels, car washes & more", icon: Building2 },
+  { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings in real time", icon: Zap },
+  { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
 ];
 
 const CHART_COLORS = {

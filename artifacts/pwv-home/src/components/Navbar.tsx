@@ -11,7 +11,7 @@ const NAV_LINKS = [
 ];
 
 const LOCATIONS = [
-  { label: "All Locations (USA + UK)", href: "/locations/usa", emoji: "🌎" },
+  { label: "All Locations (US & Worldwide)", href: "/locations/usa", emoji: "🌎" },
   { label: "Colorado", href: "/locations/colorado", emoji: "🏔️" },
   { label: "Texas", href: "/locations/texas", emoji: "🌵" },
   { label: "California", href: "/locations/california", emoji: "☀️" },
@@ -32,15 +32,17 @@ const LOCATIONS = [
 ];
 
 const INDUSTRIES = [
-  { label: "Data Centers", href: "/locations/industries/data-centers", emoji: "🖥️", desc: "Amazon YYZ3 — 58.69% peak verified" },
-  { label: "Hotels & Hospitality", href: "/locations/industries/hotels", emoji: "🏨", desc: "Four Seasons — $27K/yr verified" },
-  { label: "Car Washes", href: "/locations/industries/car-washes", emoji: "🚗", desc: "Caliber — 23% avg, 5 sites, $38.4K/yr" },
-  { label: "Multifamily", href: "/locations/industries/multifamily", emoji: "🏢", desc: "Grand Central Tampa — $50K/yr" },
-  { label: "Hospitals & Healthcare", href: "/locations/industries/hospitals", emoji: "🏥", desc: "NSF 61 & 372 certified — zero clinical risk" },
+  { label: "Data Centers", href: "/locations/industries/data-centers", emoji: "🖥️" },
+  { label: "Hotels & Hospitality", href: "/locations/industries/hotels", emoji: "🏨" },
+  { label: "Car Washes", href: "/locations/industries/car-washes", emoji: "🚗" },
+  { label: "Multifamily", href: "/locations/industries/multifamily", emoji: "🏢" },
+  { label: "Hospitals & Healthcare", href: "/locations/industries/hospitals", emoji: "🏥" },
 ];
 
 const EXPLORE_LINKS = [
   { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
+  { label: "Locations", href: "/locations/usa", desc: "Serving businesses across the US and worldwide", icon: MapPin },
+  { label: "Industries", href: "/locations/industries/data-centers", desc: "Data centers, hotels, car washes & more", icon: Building2 },
   { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings accumulate in real time", icon: Zap },
   { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
   { label: "Smart Valve™ Info Sheet", href: "/pwv-dashboard/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
@@ -55,11 +57,7 @@ const dropdownBase = {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [locOpen, setLocOpen] = useState(false);
-  const [indOpen, setIndOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
-  const locRef = useRef<HTMLDivElement>(null);
-  const indRef = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
   const [mobileLocOpen, setMobileLocOpen] = useState(false);
   const [mobileIndOpen, setMobileIndOpen] = useState(false);
@@ -70,7 +68,15 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  const closeAll = () => { setLocOpen(false); setIndOpen(false); setExploreOpen(false); };
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (exploreRef.current && !exploreRef.current.contains(e.target as Node)) {
+        setExploreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
 
   return (
     <header
@@ -81,16 +87,16 @@ export function Navbar() {
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center p-1.5 border border-white/20 bg-white/10">
+        <a href="#" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center p-1.5 border border-white/20 bg-white/10">
             <img src={logoSrc} alt="Perfect Water Valve" className="w-full h-full object-contain drop-shadow-sm" />
           </div>
           <div>
-            <div className="font-headline font-semibold text-lg leading-none tracking-tight text-white">Perfect Water Valve</div>
-            <div className="text-xs font-medium mt-0.5" style={{ color: '#5BBFE0' }}>Guaranteed 15% Savings</div>
+            <div className="font-headline font-semibold text-[15px] leading-none tracking-tight text-white">Perfect Water Valve</div>
+            <div className="text-[11px] font-medium mt-0.5" style={{ color: '#5BBFE0' }}>Guaranteed 15% Savings</div>
           </div>
         </a>
 
@@ -103,66 +109,10 @@ export function Navbar() {
             </a>
           ))}
 
-          {/* Locations dropdown */}
-          <div className="relative" ref={locRef}>
-            <button onClick={() => { setLocOpen(!locOpen); setIndOpen(false); setExploreOpen(false); }}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all ${locOpen ? "text-white bg-white/8" : "text-white/70 hover:text-white hover:bg-white/5"}`}>
-              <MapPin className="w-3.5 h-3.5" />
-              Locations
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${locOpen ? "rotate-180" : ""}`} />
-            </button>
-            <AnimatePresence>
-              {locOpen && (
-                <motion.div initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6, scale: 0.97 }} transition={{ duration: 0.15 }}
-                  className="absolute left-0 top-full mt-2 w-64 rounded-2xl shadow-2xl overflow-hidden" style={dropdownBase}
-                  onMouseLeave={() => setLocOpen(false)}>
-                  <div className="p-2 max-h-96 overflow-y-auto">
-                    {LOCATIONS.map((loc) => (
-                      <a key={loc.href} href={loc.href} onClick={closeAll}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/6 transition-colors group">
-                        <span className="text-base">{loc.emoji}</span>
-                        <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">{loc.label}</span>
-                      </a>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Industries dropdown */}
-          <div className="relative" ref={indRef}>
-            <button onClick={() => { setIndOpen(!indOpen); setLocOpen(false); setExploreOpen(false); }}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all ${indOpen ? "text-white bg-white/8" : "text-white/70 hover:text-white hover:bg-white/5"}`}>
-              <Building2 className="w-3.5 h-3.5" />
-              Industries
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${indOpen ? "rotate-180" : ""}`} />
-            </button>
-            <AnimatePresence>
-              {indOpen && (
-                <motion.div initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6, scale: 0.97 }} transition={{ duration: 0.15 }}
-                  className="absolute left-0 top-full mt-2 w-72 rounded-2xl shadow-2xl overflow-hidden" style={dropdownBase}
-                  onMouseLeave={() => setIndOpen(false)}>
-                  <div className="p-2">
-                    {INDUSTRIES.map((ind) => (
-                      <a key={ind.href} href={ind.href} onClick={closeAll}
-                        className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-white/6 transition-colors group">
-                        <span className="text-xl shrink-0">{ind.emoji}</span>
-                        <div>
-                          <div className="text-sm font-semibold text-white/90 group-hover:text-white transition-colors">{ind.label}</div>
-                          <div className="text-xs text-white/40 mt-0.5">{ind.desc}</div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
           {/* Explore dropdown */}
           <div className="relative" ref={exploreRef}>
-            <button onClick={() => { setExploreOpen(!exploreOpen); setLocOpen(false); setIndOpen(false); }}
+            <button
+              onClick={() => setExploreOpen(!exploreOpen)}
               className="flex items-center gap-1.5 text-sm font-bold transition-all px-4 py-1.5 rounded-full border"
               style={{
                 color: '#5BBFE0',
@@ -181,7 +131,7 @@ export function Navbar() {
                     {EXPLORE_LINKS.map((link) => {
                       const Icon = link.icon;
                       return (
-                        <a key={link.href} href={link.href} onClick={closeAll}
+                        <a key={link.href} href={link.href} onClick={() => setExploreOpen(false)}
                           className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
                           <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
                             style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
@@ -209,7 +159,7 @@ export function Navbar() {
             (720) 937-3004
           </a>
           <a href="#contact"
-            className="px-5 py-2.5 rounded-full text-white text-sm font-semibold transition-all hover:-translate-y-0.5"
+            className="px-5 py-2 rounded-full text-white text-sm font-semibold transition-all hover:-translate-y-0.5"
             style={{ background: '#0374A7', boxShadow: '0 4px 16px rgba(3,116,167,0.35)' }}>
             Request Assessment
           </a>

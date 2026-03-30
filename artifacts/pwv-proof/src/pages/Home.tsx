@@ -517,7 +517,7 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
             <a 
-              href="tel:3615851111" 
+              href="tel:7209373004" 
               className="px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 shadow-lg"
               style={{ backgroundColor: '#DEC600', color: '#0A1F3A' }}
             >
@@ -525,7 +525,7 @@ export default function Home() {
               <ArrowRight className="w-5 h-5" />
             </a>
             <a 
-              href="mailto:support@PerfectWaterValve.com"
+              href="mailto:info@perfectwatervalve.com"
               className="px-8 py-4 rounded-full font-semibold text-lg text-white transition-all duration-300 hover:bg-white/10"
               style={{ border: '1px solid rgba(255,255,255,0.45)' }}
             >
@@ -534,7 +534,7 @@ export default function Home() {
           </div>
 
           <div className="pt-16 space-y-2">
-            <p className="text-lg font-medium text-white">(361) 585-1111 | support@PerfectWaterValve.com</p>
+            <p className="text-lg font-medium text-white">(720) 937-3004 | info@perfectwatervalve.com</p>
             <p className="text-sm uppercase tracking-widest font-semibold" style={{ color: '#DEC600' }}>Guaranteed &ge;15% water savings or we make it right.</p>
             <div className="flex items-center justify-center gap-4 pt-4">
               <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" aria-label="Facebook"

@@ -292,24 +292,24 @@ export default function Home() {
           </p>
           
           <button 
-            onClick={() => window.location.href = 'mailto:support@PerfectWaterValve.com'}
+            onClick={() => window.location.href = 'mailto:info@perfectwatervalve.com'}
             className="px-10 py-5 rounded-full font-bold text-lg bg-white text-black hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,121,242,0.5)] mb-16 hover:-translate-y-1"
           >
             Request Assessment
           </button>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl border-t border-white/10 pt-12">
-            <a href="tel:3615851111" className="flex items-center justify-center gap-3 text-muted-foreground hover:text-primary transition-colors group">
+            <a href="tel:7209373004" className="flex items-center justify-center gap-3 text-muted-foreground hover:text-primary transition-colors group">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <Phone className="w-5 h-5" />
               </div>
-              <span className="font-display text-xl">(361) 585-1111</span>
+              <span className="font-display text-xl">(720) 937-3004</span>
             </a>
-            <a href="mailto:support@PerfectWaterValve.com" className="flex items-center justify-center gap-3 text-muted-foreground hover:text-primary transition-colors group">
+            <a href="mailto:info@perfectwatervalve.com" className="flex items-center justify-center gap-3 text-muted-foreground hover:text-primary transition-colors group">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <Mail className="w-5 h-5" />
               </div>
-              <span className="text-lg">support@PerfectWaterValve.com</span>
+              <span className="text-lg">info@perfectwatervalve.com</span>
             </a>
           </div>
 
