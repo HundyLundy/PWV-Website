@@ -80,11 +80,6 @@ export default function IndustriesHub() {
       {/* INDUSTRY CARDS */}
       <section className="pt-6 pb-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-primary mb-3">Select Your Industry</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">High-Volume Industries We Serve</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">Each industry page includes sector-specific case studies, ROI analysis, utility rebate data, and real installation results.</p>
-          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {INDUSTRIES.map((ind, i) => (
