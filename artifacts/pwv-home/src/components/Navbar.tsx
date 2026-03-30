@@ -50,8 +50,8 @@ const EXPLORE_SECTIONS = [
   {
     heading: "Explore",
     links: [
-      { label: "Locations", href: "/locations/usa", desc: "17 US states + worldwide coverage", icon: MapPin },
-      { label: "Industries", href: "/industries", desc: "Data centers, hotels, car washes & more", icon: Building2 },
+      { label: "Locations", href: "/locations/usa", desc: ["US State Coverage", "Installed Worldwide"], icon: MapPin },
+      { label: "Industries", href: "/industries", desc: "Hotels · Hospitals · Carwash · Data · Multifamily", icon: Building2 },
       { label: "Live Savings Counter", href: "/impact/", desc: "Real-time cumulative water savings", icon: Zap },
       { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
     ],
@@ -157,7 +157,10 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                                 </div>
                                 <div>
                                   <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{link.label}</div>
-                                  <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{link.desc}</div>
+                                  {Array.isArray(link.desc)
+                                    ? <div className="mt-0.5">{link.desc.map((line, li) => <div key={li} className="text-[11px] leading-snug" style={{ color: 'rgba(255,255,255,0.45)' }}>{line}</div>)}</div>
+                                    : <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{link.desc}</div>
+                                  }
                                 </div>
                               </a>
                             );
