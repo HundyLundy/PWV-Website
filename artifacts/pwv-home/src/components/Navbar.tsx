@@ -45,7 +45,7 @@ const EXPLORE_LINKS = [
   { label: "Industries", href: "/industries", desc: "Data centers, hotels, car washes & more", icon: Building2 },
   { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings accumulate in real time", icon: Zap },
   { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
-  { label: "Smart Valve™ Info Sheet", href: "/pwv-dashboard/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
+  { label: "Smart Valve™ Info Sheet", href: "/infosheet/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
 ];
 
 const dropdownBase = {

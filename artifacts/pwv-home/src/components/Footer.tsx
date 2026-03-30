@@ -80,7 +80,7 @@ export function Footer() {
                   ["Industries", "/industries/data-centers"],
                   ["Live Savings Counter", "/impact/"],
                   ["Get a Full Proposal", "/savings/"],
-                  ["Smart Valve™ Info Sheet", "/pwv-dashboard/"],
+                  ["Smart Valve™ Info Sheet", "/infosheet/"],
                 ].map(([label, href]) => (
                   <li key={label}>
                     <a href={href} className="hover:text-white transition-colors">{label}</a>
