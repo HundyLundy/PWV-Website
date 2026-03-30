@@ -166,10 +166,6 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                       </div>
                     ))}
                   </div>
-                  <div className="border-t px-4 py-3 flex items-center justify-between" style={{ borderColor: 'rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.02)' }}>
-                    <span className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.3)' }}>Perfect Water Valve · perfectwatervalve.com</span>
-                    <a href="tel:7209373004" className="text-[11px] font-semibold hover:text-white transition-colors" style={{ color: '#5BBFE0' }}>(720) 937-3004</a>
-                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
