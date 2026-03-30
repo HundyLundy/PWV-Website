@@ -107,7 +107,20 @@ export function Navbar() {
           <div className="relative" ref={moreRef}>
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="flex items-center gap-1 text-sm font-medium text-white/70 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-sm font-bold transition-all px-4 py-1.5 rounded-full border"
+              style={{
+                color: '#5BBFE0',
+                borderColor: 'rgba(91,191,224,0.45)',
+                background: 'rgba(91,191,224,0.08)',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'rgba(91,191,224,0.16)';
+                (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(91,191,224,0.7)';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'rgba(91,191,224,0.08)';
+                (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(91,191,224,0.45)';
+              }}
             >
               Explore
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`} />
