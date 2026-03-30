@@ -48,7 +48,7 @@ export default function IndustriesHub() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-40 pb-4 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(160deg, #0A1F3A 0%, #0374A7 60%, #3C6E7F 100%)" }} />
         <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-sky-500/15 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-4xl mx-auto relative z-10 text-center">
@@ -78,7 +78,7 @@ export default function IndustriesHub() {
       </section>
 
       {/* INDUSTRY CARDS */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
+      <section className="pt-6 pb-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-primary mb-3">Select Your Industry</p>

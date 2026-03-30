@@ -109,7 +109,7 @@ export default function Home() {
           >
             <p className="font-bold uppercase tracking-[0.2em] mb-6 text-sm flex items-center gap-3" style={{ color: '#1965B1' }}>
               <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#1965B1' }} />
-              Live Impact Tracker
+              Water Savings Counter
             </p>
             <div className="font-display text-6xl sm:text-8xl md:text-[10rem] font-bold tracking-tighter tabular-nums leading-none mb-6" style={{ color: '#1965B1' }}>
               <LiveCounter />
@@ -117,6 +117,18 @@ export default function Home() {
             <p className="text-xl md:text-3xl font-light" style={{ color: '#2E4A5A' }}>
               Gallons conserved since you arrived — metered, verified, EPA-recognized
             </p>
+            <div className="mt-8 pt-8 border-t" style={{ borderColor: '#A8D4F5' }}>
+              <p className="font-bold uppercase tracking-[0.2em] mb-4 text-sm flex items-center justify-center gap-3" style={{ color: '#0374A7' }}>
+                <span className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: '#0374A7' }} />
+                Estimated Dollars Saved
+              </p>
+              <div className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter tabular-nums leading-none mb-3" style={{ color: '#025888' }}>
+                <DollarCounter />
+              </div>
+              <p className="text-base md:text-lg font-light" style={{ color: '#2E4A5A' }}>
+                At $0.004 / gallon — US commercial average water rate
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -284,10 +296,10 @@ export default function Home() {
       </section>
 
       {/* 6. CTA FOOTER */}
-      <footer className="border-t border-white/10 pt-24 pb-12 px-6 bg-black/60 relative z-10">
+      <footer className="border-t border-white/10 pt-24 pb-12 px-6 relative z-10" style={{ background: '#060D1A' }}>
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to see your numbers?</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mb-10">
+          <p className="text-xl text-white/70 max-w-2xl mb-10">
             Join the industry leaders cutting their water bills — guaranteed. Request a free site assessment today.
           </p>
           
@@ -327,6 +339,26 @@ export default function Home() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function DollarCounter() {
+  const [dollars, setDollars] = useState(0);
+  useEffect(() => {
+    const start = Date.now();
+    const ratePerMs = (1167 / 1000) * 0.004;
+    let frameId: number;
+    const update = () => {
+      setDollars((Date.now() - start) * ratePerMs);
+      frameId = requestAnimationFrame(update);
+    };
+    frameId = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(frameId);
+  }, []);
+  return (
+    <span>
+      {dollars.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+    </span>
   );
 }
 

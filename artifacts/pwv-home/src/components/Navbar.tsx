@@ -90,7 +90,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
+        <a href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center p-1.5 border border-white/20 bg-white/10">
             <img src={logoSrc} alt="Perfect Water Valve" className="w-full h-full object-contain drop-shadow-sm" />
           </div>

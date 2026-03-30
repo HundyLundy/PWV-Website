@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { ArrowRight, CheckCircle2, TrendingDown, Building2, ShieldCheck, Factory, Hotel, Truck, Store, MapPin, Droplet, ChevronDown } from "lucide-react";
-import { useGetSummary, useGetEnterpriseDeployments } from "@workspace/api-client-react";
+
 
 import howItWorksSrc from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
@@ -68,8 +68,15 @@ const TESTIMONIALS = [
 ];
 
 export default function Home() {
-  const { data: summary } = useGetSummary();
-  const { data: deployments } = useGetEnterpriseDeployments();
+  const summary = { totalGallonsSaved: 36800000000, totalSitesSaved: 32000, averageReduction: 19.2, portfolioAvgSavings: 23, guaranteedMinSavings: 15, activeSites: 32000 };
+  const deployments = [
+    { id: 1, logoLetter: "A", clientName: "Amazon", deploymentScope: "Logistics · YYZ3 & YYZ4" },
+    { id: 2, logoLetter: "C", clientName: "Caliber Car Wash", deploymentScope: "Automotive · 5 GA/FL sites" },
+    { id: 3, logoLetter: "S", clientName: "St. Regis Toronto", deploymentScope: "Hospitality · $49K CAD saved" },
+    { id: 4, logoLetter: "F", clientName: "Four Seasons FTL", deploymentScope: "Hospitality · 26% avg savings" },
+    { id: 5, logoLetter: "G", clientName: "Grand Central Tampa", deploymentScope: "Real Estate · $50K/yr savings" },
+    { id: 6, logoLetter: "H", clientName: "Houstonian Estates", deploymentScope: "Multifamily · 16% reduction" },
+  ];
 
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20 selection:text-primary">

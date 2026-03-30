@@ -1,0 +1,30 @@
+Please make the following fixes. Do not change any page content, verified data, case study numbers, or the homepage <title>/<meta description> tags. Work within the existing structure only.
+1. INDUSTRIES PAGE — Move industry cards into the hero section
+In artifacts/pwv-home/src/pages/Industries.tsx:
+The 5 industry cards (Data Centers, Hotels & Hospitality, Car Washes, Multifamily Residential, Hospitals & Healthcare) are currently sitting far below the hero section, separated by a large gap.
+Remove the large vertical gap / padding between the hero headline "High Volume Industries That Overpay for Water Every Month" and the industry card grid.
+Either: (a) reduce the hero section min-height or padding-bottom so the cards appear immediately below the headline, OR (b) move the card grid inside the hero section container so they render as part of it.
+Goal: user should see the headline AND at least the top of the industry cards without scrolling.
+2. IMPACT PAGE — Rename the tracker + add monthly savings counter
+In artifacts/pwv-home/src/pages/Impact.tsx:
+a) Rename the tracker: The section currently labeled "Live Impact Tracker" (the big gallons counter in the light blue section, id="counter") should be renamed to "Water Savings Counter". Update the label text that reads "Live Impact Tracker" to "Water Savings Counter". Do not change the counter logic or any data.
+b) Add a monthly savings counter: Directly below the gallons counter number and its subtitle ("Gallons conserved since you arrived — metered, verified, EPA-recognized"), add a second live counter that shows estimated dollars saved since page load. Use the same LiveCounter component logic or create a parallel calculation: if the gallons counter ticks up at rate X gallons/second, the dollar counter should tick up at rate X × $0.004 per gallon (the US commercial average water rate). Display it as: $[amount] estimated saved since you arrived. Style it in the same light blue section, slightly smaller than the gallons counter — use text-3xl or text-4xl, color #1965B1. Place it between the gallons counter subtitle and the bottom of the light blue section. Do NOT place it in or near the red loss calculator section.
+c) Fix the bottom section contrast: The bottom CTA section (the one with the brownish/gray background containing "Ready to see your numbers?" and the "Request Assessment" button) has very poor text contrast — the subtitle text is nearly invisible. Change the background of that section to the site's standard dark navy (#060D1A or bg-background) and ensure all text in it is white or light gray (text-white / text-white/70). Do not change the headline text or CTA button text.
+3. FIX /savings PAGE — Complete blank white screen
+artifacts/pwv-home/src/pages/Savings.tsx is importing useGetSummary and useGetEnterpriseDeployments from @workspace/api-client-react. This package does not exist in the deployed static site and is causing the entire page to crash silently, resulting in a blank white screen.
+Fix: Remove both imports and replace the hook calls with hardcoded fallback data. Use these exact values:
+summary: { totalGallonsSaved: 36800000000, totalSitesSaved: 32000, averageReduction: 19.2 }
+deployments: use the same CLIENTS array already defined in Impact.tsx (Amazon, Caliber Car Wash, St. Regis Toronto, Four Seasons FTL, Grand Central Tampa, Houstonian Estates)
+Do not change any other logic, layout, or content in Savings.tsx.
+4. FIX /pwv-dashboard and info sheet — Showing raw dev 404, not PWV 404
+The routes /pwv-dashboard/ and any info sheet URL are hitting the raw Replit dev 404 ("Did you forget to add the page to the router?") instead of the branded PWV 404 page we just built.
+Fix: In artifacts/pwv-home/src/App.tsx, confirm the catch-all route <Route component={NotFound} /> is the absolute last route in the <Switch> block with no path prop. If it has a path prop or is not last, fix it. This ensures ALL unmatched routes fall through to the branded 404.
+5. NAVBAR — Logo and site name must always link to homepage
+In artifacts/pwv-home/src/components/Navbar.tsx:
+The PWV logo image and the "Perfect Water Valve" text in the header must both be wrapped in a link to / (homepage).
+If they are already in a <Link to="/"> or <a href="/">, confirm it and leave it alone.
+If either one is NOT linked, wrap it in <Link to="/"> using the wouter Link component.
+6. AFTER ALL CHANGES
+Run pnpm run build inside artifacts/pwv-home and confirm zero errors
+Push to GitHub main branch
+In your summary confirm: (a) /savings loads without blank screen, (b) /pwv-dashboard now shows the branded 404, (c) monthly dollar counter is visible on /impact, (d) industry cards are visible without scrolling on /industries
