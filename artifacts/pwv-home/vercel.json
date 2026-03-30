@@ -1,4 +1,7 @@
 {
+  "buildCommand": "cd ../.. && pnpm install && pnpm --filter @workspace/pwv-home run build",
+  "installCommand": "echo skip",
+  "outputDirectory": "dist/public",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
