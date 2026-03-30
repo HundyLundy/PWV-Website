@@ -1,0 +1,29 @@
+Please make the following final pre-launch fixes. Do not change the visual design, color scheme, or any page content unless specifically instructed below. Work within the existing structure only.
+RULE HIERARCHY — read this before touching anything:
+SEO migration rules come first. The homepage <title> and <meta description> in index.html are intentionally preserved from the previous Wix site. Do not change them under any circumstances.
+All facts, case study numbers, and real data are sacred. Do not alter any verified statistics or savings figures to make copy sound better.
+Marketing improvements (copy, CTAs, framing) are welcome only where they do not conflict with rules 1 or 2.
+1. SITEMAP — CRITICAL
+The current sitemap.xml only has 6 URLs. Replace it entirely. The file lives at artifacts/pwv-home/public/sitemap.xml. Use https://www.perfectwatervalve.com as the base URL. Include every route below:
+/ — /results/ — /impact/ — /savings/ — /smart-valve/ — /locations/usa — /locations/colorado — /locations/texas — /locations/california — /locations/arizona — /locations/nevada — /locations/new-york — /locations/florida — /locations/washington — /locations/oregon — /locations/illinois — /locations/utah — /locations/idaho — /locations/montana — /locations/nebraska — /locations/kansas — /locations/new-mexico — /locations/uk — /industries — /industries/data-centers — /industries/hotels — /industries/car-washes — /industries/multifamily — /industries/hospitals
+Set <lastmod> to 2026-03-30. Set <changefreq> to monthly. Set <priority> to 1.0 for the homepage, 0.9 for /locations/colorado and /industries, and 0.8 for all other pages.
+2. FAVICON — CRITICAL
+The current favicon at artifacts/pwv-home/public/favicon.png is 44.9 MB. This is killing page load speed on every page. Fix it one of two ways — whichever you can do:
+Option A: Resize favicon.png to exactly 32x32 pixels, keeping the same filename. File must be under 50KB.
+Option B: If you cannot resize it, create a clean 32x32 blue water drop as favicon.svg and update the <link rel="icon"> tag in index.html to point to it.
+3. BRANDED 404 PAGE
+The current not-found.tsx is a bare dev placeholder that says "Did you forget to add the page to the router?" — this is visible to real users and needs to be replaced. Build a proper branded page that matches the site's dark navy/blue design. Include:
+The PWV logo (use the same logo import already in Navbar.tsx )
+Headline: "Page Not Found"
+Subheading: "This page doesn't exist — but your water savings do."
+One CTA button: "Back to Homepage" linking to /
+The <Navbar /> and <Footer /> components
+4. DO NOT TOUCH — PROTECTED
+The <title> tag in index.html
+The <meta name="description"> tag in index.html
+Any existing page content, routes, case study numbers, or savings figures
+The homepage hero, color scheme, or fonts
+5. AFTER ALL CHANGES
+Run pnpm run build inside artifacts/pwv-home and confirm it succeeds with no errors
+Push all changes to GitHub main branch
+In your summary, confirm: total URL count in the new sitemap, favicon file size after the fix, and that the 404 page is live"
