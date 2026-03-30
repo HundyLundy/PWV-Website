@@ -32,7 +32,6 @@ const CLIENTS = [
   { name: "Amazon YYZ3 & YYZ4", result: "16.5% avg / 58.69% peak", industry: "Logistics" },
   { name: "Four Seasons Fort Lauderdale", result: "26% avg / 56% peak", industry: "Hospitality" },
   { name: "St. Regis Toronto", result: "$49,889 CAD / year", industry: "Hospitality" },
-  { name: "1 Hotel Toronto", result: "15% avg · $3,491/mo", industry: "Hospitality" },
   { name: "Grand Central at Kennedy", result: "23% avg · ~$50K/yr", industry: "Real Estate" },
   { name: "Houstonian Estates", result: "16% · 6,000 gal/day", industry: "Multifamily" },
   { name: "Caliber Car Wash (5 sites)", result: "23% weighted avg", industry: "Automotive" },

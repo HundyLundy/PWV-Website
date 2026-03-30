@@ -36,11 +36,6 @@ const TESTIMONIALS = [
     author: "Priyan Jayetileke, Chief Engineer", client: "The St. Regis Toronto"
   },
   {
-    logo: "1", industry: "Luxury Hospitality", color: "bg-teal-100 text-teal-700",
-    quote: "15% average water reduction over 12 months. 177 → 150 m³/day. $3,491/month savings verified by formal report.",
-    author: "1 Hotel Toronto Facilities", client: "1 Hotel Toronto"
-  },
-  {
     logo: "F", industry: "Luxury Hospitality", color: "bg-indigo-100 text-indigo-700",
     quote: "26% daily average savings, 56% peak reduction in October. $27,000/yr in avoided costs. Formal M&V December 2025.",
     author: "Four Seasons Engineering", client: "Four Seasons Fort Lauderdale"
@@ -178,7 +173,6 @@ export default function Home() {
               { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },
               { name: "Four Seasons", sub: "Fort Lauderdale · 26%" },
               { name: "St. Regis", sub: "Toronto · $49,889 CAD" },
-              { name: "1 Hotel", sub: "Toronto · 15% avg" },
               { name: "Caliber Car Wash", sub: "5-Site Network · 23%" },
               { name: "Grand Central", sub: "Kennedy · $50K/yr" },
               { name: "Houstonian", sub: "Estates · 16%" },
@@ -208,7 +202,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="font-headline text-3xl lg:text-4xl font-bold text-slate-900 mb-4">The numbers don't need spin.</h2>
-            <p className="text-lg text-slate-500" style={{ fontWeight: 300 }}>21 documented installations. 19 include verified M&V data. Range: 12.5%–58.69%. Guaranteed floor of 15%.</p>
+            <p className="text-lg text-slate-500" style={{ fontWeight: 300 }}>21 documented installations. 19 include verified M&V data. Range: 15%–58.69%. Guaranteed floor of 15%.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

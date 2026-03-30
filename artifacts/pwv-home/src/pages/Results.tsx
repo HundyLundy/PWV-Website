@@ -66,7 +66,7 @@ export default function Home() {
             variants={fadeInUp}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed"
           >
-            The Smart Valve™ does exactly that — delivering 15% to 58.69% reductions in metered water billing. Across 21 documented installations, including 19 with verified M&V data. Range: 12.5%–58.69%. Guaranteed floor of 15%.
+            The Smart Valve™ does exactly that — delivering 15% to 58.69% reductions in metered water billing. Across 21 documented installations, including 19 with verified M&V data. Range: 15%–58.69%. Guaranteed floor of 15%.
           </motion.p>
         </motion.div>
 
@@ -326,17 +326,6 @@ export default function Home() {
             caveat="Canadian Water Savings M&V Report, 2025. Formal PDF available."
           />
 
-          {/* Card G */}
-          <ClientCard 
-            align="left"
-            category="Luxury Hotel · Toronto, ON"
-            title="1 Hotel Toronto"
-            subtitle="15% Average Savings — $3,491/Month Verified Over 12 Months"
-            stat1={{ label: "Average Reduction", value: "15%" }}
-            stat2={{ label: "Monthly Savings", value: "$3,491/mo" }}
-            quote={'177 → 150 m³/day average. 4" Smart Valve installed September 2024. Month-to-month range: 1%–27%. Twelve-month formal report.'}
-            caveat="Perfect Water Valve 12-Month Water Savings Report. Formal PDF available. Out of respect for the client, please do not attempt to make contact without obtaining permission."
-          />
         </div>
       </section>
 
@@ -349,7 +338,6 @@ export default function Home() {
             { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },
             { name: "Four Seasons", sub: "Fort Lauderdale · 26%" },
             { name: "St. Regis", sub: "Toronto · $49,889 CAD" },
-            { name: "1 Hotel", sub: "Toronto · 15% avg" },
             { name: "Caliber Car Wash", sub: "5 sites · 23%" },
             { name: "Grand Central", sub: "Kennedy · $50K/yr" },
             { name: "Houstonian", sub: "Estates · 16%" },
@@ -376,7 +364,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <p className="text-[11px] leading-relaxed" style={{ color: '#6A8A9A' }}>
             Results are based on verified M&V reports, third-party analyses, and customer testimonials. Individual savings vary based on property type, size, water pressure, usage patterns, and local utility rates.{" "}
-            <strong>Formal M&V reports available for:</strong> Amazon (YYZ3/YYZ4), 1 Hotel Toronto, St. Regis Toronto, Four Seasons Fort Lauderdale, Forest & Charlton (100 Forest / 123 Charlton Ave), and Caliber Car Wash portfolio (5 sites).{" "}
+            <strong>Formal M&V reports available for:</strong> Amazon (YYZ3/YYZ4), St. Regis Toronto, Four Seasons Fort Lauderdale, Forest & Charlton (100 Forest / 123 Charlton Ave), and Caliber Car Wash portfolio (5 sites).{" "}
             Houstonian Estates and Grand Central at Kennedy results are self-reported customer testimonials. No formal M&V report has been published for these properties.
           </p>
         </div>
@@ -424,7 +412,7 @@ export default function Home() {
             <StatItem value={15} prefix="&ge;" suffix="%" label="Minimum guaranteed savings" />
           </motion.div>
           <p className="text-center text-xs text-muted-foreground/50 mt-8 uppercase tracking-widest">
-            21 documented installations · 19 include verified M&V data · range: 12.5%–58.69% · 15% is the contractual floor
+            21 documented installations · 19 include verified M&V data · range: 15%–58.69% · 15% is the contractual floor
           </p>
         </div>
       </section>
@@ -441,8 +429,8 @@ export default function Home() {
           <div className="space-y-8">
             <IndustryBar name="Commercial Office" value={36} range="33%–39%" note="TX only" />
             <IndustryBar name="Automotive (Car Wash)" value={23} range="23%" note="Caliber, 5 sites, M&V verified" />
-            <IndustryBar name="Luxury Hospitality" value={22} range="15%–26%" note="1 Hotel 15%, Four Seasons 26%" />
-            <IndustryBar name="Multifamily / Apartments" value={21} range="12.5%–30%" note="Forest & Charlton to Park Ave NJ" />
+            <IndustryBar name="Luxury Hospitality" value={22} range="20%–26%" note="St. Regis 20%+, Four Seasons 26%" />
+            <IndustryBar name="Multifamily / Apartments" value={21} range="15%–30%" note="Forest & Charlton to Park Ave NJ" />
             <IndustryBar name="Condominiums" value={20} range="16%–23%" note="Chateau Tower to Grand Central" />
             <IndustryBar name="Logistics / Fulfillment" value={17} range="16.5% avg / 58.69% peak" note="Amazon — two methodologies" />
             <IndustryBar name="Healthcare / Medical" value={19} range="19%" note="Based on 1 study — RWJ Barnabas NJ" />
@@ -612,7 +600,7 @@ function ProofFAQ() {
   const [open, setOpen] = useState<number | null>(null);
   const faqs = [
     { q: "What is the Perfect Water Valve Smart Valve™?", a: "The Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines, reducing metered water billing by 15% to 58%. It installs upstream of your meter, requires no electricity or moving parts, and is NSF 61 and NSF 372 certified." },
-    { q: "Who has used it and what were the results?", a: "21 documented installations with 19 verified M&V results. Key examples: Amazon YYZ3 & YYZ4 (16.5% normalized avg / 58.69% YOY peak). Four Seasons Fort Lauderdale (26%, $27,000/yr). The St. Regis Toronto ($49,889 CAD/yr — Chief Engineer Priyan Jayetileke confirmed). 1 Hotel Toronto (15% avg, $3,491/mo, 12-month formal report). Caliber Car Wash (23% across 5 GA & FL sites). Grand Central at Kennedy ($50,000/yr). Forest & Charlton — 100 Forest & 123 Charlton Ave Toronto (17–20%, IPMVP Option B, CA $17,200 combined). Texas: Houston office buildings 33–39% bill reduction. Results in formal PDF reports are available for most sites." },
+    { q: "Who has used it and what were the results?", a: "21 documented installations with 19 verified M&V results. Key examples: Amazon YYZ3 & YYZ4 (16.5% normalized avg / 58.69% YOY peak). Four Seasons Fort Lauderdale (26%, $27,000/yr). The St. Regis Toronto ($49,889 CAD/yr — Chief Engineer Priyan Jayetileke confirmed). Caliber Car Wash (23% across 5 GA & FL sites). Grand Central at Kennedy ($50,000/yr). Forest & Charlton — 100 Forest & 123 Charlton Ave Toronto (17–20%, IPMVP Option B, CA $17,200 combined). Texas: Houston office buildings 33–39% bill reduction. Results in formal PDF reports are available for most sites." },
     { q: "Is the 15% guarantee real?", a: "Yes. It is in your contract. Every installation includes a written guarantee of at least 15% reduction in metered water consumption. If your site does not reach 15%, we make it right at no cost to you." },
     { q: "How long does installation take?", a: "Typically 2–4 hours. No disruption to operations, no fixtures touched, no downtime. Licensed technicians work around your schedule." },
     { q: "Does it need electricity or maintenance?", a: "Neither. The Smart Valve™ is entirely passive — no power, no moving parts, no subscriptions or service calls. It works continuously from day one." },

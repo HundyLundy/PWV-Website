@@ -14,8 +14,8 @@ const fadeUp = {
 const INDUSTRIES = [
   { name: "Commercial Office", value: 36, range: "33%–39%", note: "Texas portfolio — 2 sites verified" },
   { name: "Automotive (Car Wash)", value: 23, range: "23%", note: "Caliber Car Wash — 5 sites, M&V verified" },
-  { name: "Luxury Hospitality", value: 22, range: "15%–26%", note: "1 Hotel 15%, St. Regis 20%+, Four Seasons 26%" },
-  { name: "Multifamily / Apartments", value: 21, range: "12.5%–30%", note: "Forest & Charlton 17–20%, NJ portfolio range" },
+  { name: "Luxury Hospitality", value: 22, range: "20%–26%", note: "St. Regis 20%+, Four Seasons 26%" },
+  { name: "Multifamily / Apartments", value: 21, range: "15%–30%", note: "Forest & Charlton 17–20%, NJ portfolio range" },
   { name: "Condominiums", value: 20, range: "16%–23%", note: "Multiple verified Canadian sites" },
   { name: "Logistics / Fulfillment", value: 17, range: "16.5% avg / 58.69% peak", note: "Amazon YYZ3 & YYZ4 — dual M&V methodology" },
   { name: "Healthcare / Medical", value: 19, range: "19%", note: "RWJ Barnabas — based on 1 study" },
@@ -37,11 +37,6 @@ const CLIENTS = [
     initial: "S", name: "The St. Regis Toronto", industry: "Luxury Hospitality · Marriott",
     color: "#2d1b4e", accent: "#805AD5",
     stat: "$49,889 CAD/yr · 20%+", detail: "Chief Engineer Priyan Jayetileke confirmed. Formal report. Marriott-approved implementation."
-  },
-  {
-    initial: "1", name: "1 Hotel Toronto", industry: "Luxury Hospitality",
-    color: "#1a3028", accent: "#319795",
-    stat: "15% avg · $3,491/mo", detail: "177 → 150 m³/day average. 12-month formal report. Range: 1%–27% month-to-month."
   },
   {
     initial: "G", name: "Grand Central at Kennedy", industry: "Real Estate · Tampa FL",
@@ -289,7 +284,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">21 Documented Installations. Real Results.</h2>
             <p className="text-white/60 text-base" style={{ fontWeight: 300 }}>
-              19 of 21 sites include formal M&V (Measurement & Verification) data. Range: 12.5%–58.69%.
+              19 of 21 sites include formal M&V (Measurement & Verification) data. Range: 15%–58.69%.
             </p>
           </motion.div>
 
@@ -585,7 +580,7 @@ function HomeFAQ() {
     },
     {
       q: "What types of commercial facilities benefit most?",
-      a: "Any commercial or industrial facility billed on metered municipal water can benefit. Verified results span luxury hospitality (Four Seasons Fort Lauderdale 26%, St. Regis Toronto $49,889 CAD, 1 Hotel Toronto 15%), logistics and fulfillment (Amazon YYZ3 & YYZ4 — 16.5% avg / 58.69% YOY peak), multifamily and condominiums (Forest & Charlton Toronto 17–20% IPMVP verified, Grand Central at Kennedy $50K/yr), and automotive (Caliber Car Wash 23% across 5 sites). Commercial office buildings in Texas saw 33%–39% bill reductions. Higher monthly water bills produce larger absolute dollar savings.",
+      a: "Any commercial or industrial facility billed on metered municipal water can benefit. Verified results span luxury hospitality (Four Seasons Fort Lauderdale 26%, St. Regis Toronto $49,889 CAD), logistics and fulfillment (Amazon YYZ3 & YYZ4 — 16.5% avg / 58.69% YOY peak), multifamily and condominiums (Forest & Charlton Toronto 17–20% IPMVP verified, Grand Central at Kennedy $50K/yr), and automotive (Caliber Car Wash 23% across 5 sites). Commercial office buildings in Texas saw 33%–39% bill reductions. Higher monthly water bills produce larger absolute dollar savings.",
     },
   ];
 

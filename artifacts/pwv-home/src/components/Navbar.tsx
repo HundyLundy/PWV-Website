@@ -15,7 +15,7 @@ const LOCATIONS = [
   { label: "Colorado", href: "/locations/colorado", emoji: "🏔️" },
   { label: "Texas", href: "/locations/texas", emoji: "🌵" },
   { label: "California", href: "/locations/california", emoji: "☀️" },
-  { label: "Arizona", href: "/locations/arizona", emoji: "🌵" },
+  { label: "Arizona", href: "/locations/arizona", emoji: "🌄" },
   { label: "Nevada", href: "/locations/nevada", emoji: "🎰" },
   { label: "New York", href: "/locations/new-york", emoji: "🗽" },
   { label: "Florida", href: "/locations/florida", emoji: "🌴" },
@@ -200,7 +200,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
         {menuOpen && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
             className="md:hidden border-t border-white/10 overflow-hidden" style={{ background: "#0A0F1E" }}>
-            <div className="p-4 flex flex-col gap-1">
+            <div className="p-4 flex flex-col gap-1 overflow-y-auto max-h-[80vh]">
               {NAV_LINKS.map((l) => (
                 <a key={l.label} href={l.href}
                   className="text-base font-medium text-white/70 hover:text-white transition-colors py-2.5 border-b border-white/5"
