@@ -37,8 +37,15 @@ import {
   Download,
   Printer,
   CheckCircle2,
-  TrendingDown
+  TrendingDown,
+  ExternalLink,
+  FileText,
+  Zap,
+  BarChart2,
+  MapPin,
+  Building2,
 } from "lucide-react";
+
 import {
   useReactTable,
   getCoreRowModel,
@@ -49,6 +56,15 @@ import {
 } from "@tanstack/react-table";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const EXPLORE_LINKS = [
+  { label: "Homepage", href: "/", desc: "Return to perfectwatervalve.com", icon: ExternalLink },
+  { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
+  { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings in real time", icon: Zap },
+  { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
+  { label: "Locations", href: "/locations/usa", desc: "All 17 state + UK service areas", icon: MapPin },
+  { label: "Industries", href: "/locations/industries/data-centers", desc: "Data centers, hotels, car washes & more", icon: Building2 },
+];
 
 const CHART_COLORS = {
   blue: "#0374A7",
@@ -122,7 +138,7 @@ function formatCurrency(value: number): string {
 export default function Dashboard() {
   const queryClient = useQueryClient();
   const [isDark, setIsDark] = useState(true);
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("proof-data");
   
   // Data queries
   const summaryQuery = useGetSummary();
@@ -164,10 +180,17 @@ export default function Dashboard() {
   const [autoRefreshMs, setAutoRefreshMs] = useState<number>(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Explore dropdown
+  const [exploreOpen, setExploreOpen] = useState(false);
+  const exploreRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setDropdownOpen(false);
+      }
+      if (exploreRef.current && !exploreRef.current.contains(e.target as Node)) {
+        setExploreOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -258,15 +281,48 @@ export default function Dashboard() {
       {/* Navbar */}
       <div className="sticky top-0 z-40 border-b border-white/8 bg-[#060A1A]/90 backdrop-blur-md px-6 py-4 print:hidden">
         <div className="max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <img src={logoSrc} alt="Perfect Water Valve" className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(3,116,167,0.5)]" />
+          <a href="/" className="flex items-center gap-3 group no-underline">
+            <img src={logoSrc} alt="Perfect Water Valve" className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(3,116,167,0.5)] group-hover:drop-shadow-[0_0_12px_rgba(3,116,167,0.8)] transition-all" />
             <div>
-              <span className="font-bold text-white text-lg tracking-tight leading-tight block">Perfect Water Valve</span>
+              <span className="font-bold text-white text-lg tracking-tight leading-tight block group-hover:text-blue-300 transition-colors">Perfect Water Valve</span>
               <span className="text-xs text-blue-400/70 uppercase tracking-widest font-medium">Smart Valve™ Information Sheet</span>
             </div>
-          </div>
+          </a>
 
           <div className="flex items-center gap-2 print:hidden">
+            {/* Explore dropdown */}
+            <div className="relative" ref={exploreRef}>
+              <button
+                onClick={() => setExploreOpen((o) => !o)}
+                className="flex items-center gap-1.5 h-8 px-3 rounded-lg text-[12px] font-semibold border border-[#3C6E7F]/60 text-[#5BBFE0] hover:bg-[#3C6E7F]/20 transition-colors"
+              >
+                Explore
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${exploreOpen ? "rotate-180" : ""}`} />
+              </button>
+              {exploreOpen && (
+                <div className="absolute right-0 top-10 w-72 bg-[#0D1528] border border-white/10 rounded-xl shadow-2xl z-50 py-2">
+                  {EXPLORE_LINKS.map((link) => {
+                    const Icon = link.icon;
+                    return (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="flex items-start gap-3 px-4 py-2.5 text-slate-300 hover:bg-white/8 hover:text-white transition-colors no-underline group"
+                        onClick={() => setExploreOpen(false)}
+                      >
+                        <Icon className="w-4 h-4 mt-0.5 shrink-0 text-[#5BBFE0] group-hover:text-white transition-colors" />
+                        <div>
+                          <div className="text-sm font-medium leading-tight">{link.label}</div>
+                          <div className="text-[11px] text-slate-500 mt-0.5 leading-tight">{link.desc}</div>
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {/* Refresh with auto-interval */}
             <div className="relative" ref={dropdownRef}>
               <div className="flex items-center rounded-lg overflow-hidden h-8 text-[12px] border border-white/10 bg-white/5 text-slate-300">
                 <button onClick={handleRefresh} disabled={loading} className="flex items-center gap-1.5 px-3 h-full hover:bg-white/10 transition-colors disabled:opacity-50">
@@ -990,6 +1046,54 @@ export default function Dashboard() {
 
         </Tabs>
       </div>
+
+      {/* Footer */}
+      <footer className="border-t border-white/8 mt-4 print:hidden" style={{ backgroundColor: "#040810" }}>
+        <div className="max-w-[1400px] mx-auto px-6 py-8">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+            {/* Brand */}
+            <div className="flex items-center gap-3">
+              <img src={logoSrc} alt="Perfect Water Valve" className="w-8 h-8 object-contain opacity-80" />
+              <div>
+                <p className="font-bold text-white text-sm">Perfect Water Valve</p>
+                <p className="text-[11px] text-slate-500 mt-0.5">Smart Valve™ · Guaranteed ≥15% Water Savings</p>
+              </div>
+            </div>
+
+            {/* Quick links */}
+            <div className="flex flex-wrap gap-x-8 gap-y-4 text-sm">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-slate-500 mb-2">Explore</p>
+                <div className="flex flex-col gap-1.5">
+                  <a href="/" className="text-slate-400 hover:text-white transition-colors no-underline">Homepage</a>
+                  <a href="/results/" className="text-slate-400 hover:text-white transition-colors no-underline">Case Studies</a>
+                  <a href="/impact/" className="text-slate-400 hover:text-white transition-colors no-underline">Live Impact Counter</a>
+                  <a href="/savings/" className="text-slate-400 hover:text-white transition-colors no-underline">Get a Proposal</a>
+                </div>
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-slate-500 mb-2">Contact</p>
+                <div className="flex flex-col gap-1.5">
+                  <a href="mailto:info@perfectwatervalve.com" className="text-slate-400 hover:text-white transition-colors no-underline">info@perfectwatervalve.com</a>
+                  <a href="tel:7209373004" className="text-slate-400 hover:text-white transition-colors no-underline">(720) 937-3004</a>
+                </div>
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-slate-500 mb-2">Partners</p>
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-slate-400">American Water Savings (AWS)</span>
+                  <span className="text-slate-400">Canadian Water Savings (CWS)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p className="text-[11px] text-slate-600">© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</p>
+            <p className="text-[11px] text-slate-600">Data sourced from M&V-verified pilot programs · Amazon Canada · Caliber Car Wash · Four Seasons Hotels</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
