@@ -51,7 +51,7 @@ const EXPLORE_SECTIONS = [
     heading: "Explore",
     links: [
       { label: "Locations", href: "/locations/usa", desc: ["US State Coverage", "Installed Worldwide"], icon: MapPin },
-      { label: "Industries", href: "/industries", desc: "Hotels · Hospitals · Carwash · Data · Multifamily", icon: Building2 },
+      { label: "Industries", href: "/industries", desc: "Data Centers · Hotels · Hospitals · Car Wash · Multifamily", icon: Building2 },
       { label: "Live Savings Counter", href: "/impact/", desc: "Real-time cumulative water savings", icon: Zap },
       { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
     ],
