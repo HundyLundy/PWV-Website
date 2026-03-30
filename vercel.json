@@ -1,0 +1,8 @@
+{
+  "buildCommand": "pnpm --filter @workspace/pwv-home run build",
+  "outputDirectory": "artifacts/pwv-home/dist/public",
+  "installCommand": "pnpm install",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
