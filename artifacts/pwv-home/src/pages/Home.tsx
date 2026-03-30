@@ -84,7 +84,7 @@ export default function Home() {
     }
   }, []);
 
-  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/UGsHBE8loaRDT9dGBqgp";
+  const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/FpCGhOJrf32qB7JtGKCM";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
