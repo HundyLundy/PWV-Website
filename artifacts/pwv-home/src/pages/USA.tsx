@@ -52,7 +52,7 @@ export default function USA() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
               Smart Valve™ Commercial Water Savings —{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">
-                Every US State + United Kingdom
+                Every US State + Worldwide
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -73,8 +73,9 @@ export default function USA() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-primary mb-3">Service Areas</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Select Your State</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Each state page includes current rate data, available utility rebates, and local market analysis for commercial water savings.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">States With Significant Water Issues</h2>
+            <p className="text-slate-300 max-w-2xl mx-auto mb-3">These states face the most severe water costs, rate increases, and conservation mandates in the country. Click your state to see local rates, rebates, and real savings data for Smart Valve™ installations.</p>
+            <p className="text-slate-500 max-w-2xl mx-auto text-sm">Each page includes current utility rate data, available rebates, and verified M&V savings from real commercial installations in that market.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {STATES.map((state, i) => (
@@ -146,10 +147,10 @@ export default function USA() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Get Your Free Assessment?</h2>
           <p className="text-gray-400 mb-8">Not sure which state page to start with? Contact us directly. We serve all US markets and the UK through our AWS and CWS partner network.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <a href={`tel:${CONTACT.phone.replace(/-/g, "")}`} className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+            <a href={`tel:${CONTACT.phone.replace(/-/g, "")}`} className="px-8 py-4 rounded-full font-bold text-lg text-white transition-all hover:-translate-y-1 flex items-center justify-center gap-2" style={{ background: "#0374A7", boxShadow: "0 4px 20px rgba(3,116,167,0.35)" }}>
               Call {CONTACT.phone}
             </a>
-            <a href={`mailto:${CONTACT.email}`} className="bg-transparent border-2 border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2">
+            <a href={`mailto:${CONTACT.email}`} className="border-2 border-white/25 hover:border-white/45 hover:bg-white/5 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2">
               {CONTACT.email}
             </a>
           </div>

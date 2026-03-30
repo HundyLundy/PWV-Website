@@ -42,7 +42,7 @@ const INDUSTRIES = [
 const EXPLORE_LINKS = [
   { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
   { label: "Locations", href: "/locations/usa", desc: "Serving businesses across the US and worldwide", icon: MapPin },
-  { label: "Industries", href: "/industries/data-centers", desc: "Data centers, hotels, car washes & more", icon: Building2 },
+  { label: "Industries", href: "/industries", desc: "Data centers, hotels, car washes & more", icon: Building2 },
   { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings accumulate in real time", icon: Zap },
   { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
   { label: "Smart Valve™ Info Sheet", href: "/pwv-dashboard/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },

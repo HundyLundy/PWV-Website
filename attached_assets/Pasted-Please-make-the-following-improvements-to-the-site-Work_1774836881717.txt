@@ -1,0 +1,22 @@
+Please make the following improvements to the site. Work within the existing structure, do not rebuild or redesign.
+1. Locations Landing Page (/locations/usa)
+Change the headline/scope from 'United States & United Kingdom' to 'Every US State + Worldwide'
+Remove the 'Select Your State' dropdown or label — replace it with a section heading that says: 'States With Significant Water Issues'
+Under that heading, show all 17 state cards/links we have pages for. These are the states we cover because they have documented water scarcity, rate hike, or conservation mandate issues — that's why they're highlighted
+Fix any white-text-on-white-background readability issues on this page, especially the 'Ready to get your free estimate' CTA at the bottom — make sure it has sufficient contrast
+Add a short intro paragraph above the state list that says something like: 'These states face the most severe water costs, rate increases, and conservation mandates in the country. Click your state to see local rates, rebates, and real savings data for Smart Valve™ installations.'
+2. Industries Landing Page (/industries)
+Create a new /industries landing page (if it doesn't already exist) that serves as a hub page
+The page should have a headline like: 'High-Volume Industries That Overpay for Water Every Month'
+Below the headline, show 5 industry cards in a horizontal row (or 2-row grid on mobile): Data Centers, Hotels, Car Washes, Multifamily, Hospitals
+Each card should have: an icon or relevant image, the industry name, and a one-line teaser (e.g., 'Data Centers use up to 5M gallons/day — Smart Valve cuts that by 15–58%')
+Each card links to its respective industry page (/industries/data-centers, etc.)
+Add a subheading under the main headline: 'Click your industry to see case studies, local rebates, and guaranteed savings data.'
+Register /industries as a route in App.tsx pointing to this new landing page
+3. Industries Navbar Link
+Update the Industries dropdown in the Navbar so that clicking 'Industries' (the top-level label) navigates to /industries (the new hub page), not directly to /industries/data-centers
+The dropdown items (Data Centers, Hotels, Car Washes, Multifamily, Hospitals) should still link to their individual pages
+4. Global Readability Audit
+Do a pass across all pages and fix any instances of white text on white/light backgrounds or dark text on dark backgrounds
+Pay special attention to CTA buttons and footer sections
+After completing all tasks: save, build, and push to GitHub. Confirm each task is done in your summary.

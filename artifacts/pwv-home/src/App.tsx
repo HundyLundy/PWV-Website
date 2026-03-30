@@ -32,6 +32,7 @@ import NewMexicoPage from "@/pages/NewMexico";
 import UKPage from "@/pages/UnitedKingdom";
 
 // Industry pages
+import IndustriesHub from "@/pages/Industries";
 import DataCentersPage from "@/pages/industries/DataCenters";
 import HotelsPage from "@/pages/industries/Hotels";
 import CarWashesPage from "@/pages/industries/CarWashes";
@@ -91,6 +92,10 @@ function Router() {
       <Route path="/locations/new-mexico/" component={NewMexicoPage} />
       <Route path="/locations/uk" component={UKPage} />
       <Route path="/locations/uk/" component={UKPage} />
+
+      {/* Industries hub */}
+      <Route path="/industries" component={IndustriesHub} />
+      <Route path="/industries/" component={IndustriesHub} />
 
       {/* Industry pages */}
       <Route path="/industries/data-centers" component={DataCentersPage} />
