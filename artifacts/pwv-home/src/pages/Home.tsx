@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, Phone, Mail, ArrowDown, ShieldCheck, Droplet, Building2, Factory, Hotel, Car, ChevronRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -78,6 +78,16 @@ const COMPARISON = [
 export default function Home() {
   const [form, setForm] = useState({ name: "", company: "", email: "", bill: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+      }
+    }
+  }, []);
 
   const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/UGsHBE8loaRDT9dGBqgp";
 

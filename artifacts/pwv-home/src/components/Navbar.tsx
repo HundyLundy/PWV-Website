@@ -4,10 +4,10 @@ import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const NAV_LINKS = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Clients", href: "#clients" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Clients", href: "/#clients" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const LOCATIONS = [
@@ -182,7 +182,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
             <Phone className="w-3.5 h-3.5" />
             (720) 937-3004
           </a>
-          <a href="#contact"
+          <a href="/#contact"
             className="px-5 py-2 rounded-full text-white text-sm font-semibold transition-all hover:-translate-y-0.5"
             style={{ background: '#0374A7', boxShadow: '0 4px 16px rgba(3,116,167,0.35)' }}>
             Request Assessment
@@ -262,7 +262,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                 })}
               </div>
 
-              <a href="#contact"
+              <a href="/#contact"
                 className="mt-3 px-5 py-3 rounded-full text-white text-sm font-semibold text-center"
                 style={{ background: '#0374A7' }}
                 onClick={() => setMenuOpen(false)}>
