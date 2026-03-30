@@ -39,14 +39,26 @@ const INDUSTRIES = [
   { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥" },
 ];
 
-const EXPLORE_LINKS = [
-  { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
-  { label: "Locations", href: "/locations/usa", desc: "Serving businesses across the US and worldwide", icon: MapPin },
-  { label: "Industries", href: "/industries", desc: "Data centers, hotels, car washes & more", icon: Building2 },
-  { label: "Live Savings Counter", href: "/impact/", desc: "Watch cumulative water savings accumulate in real time", icon: Zap },
-  { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
-  { label: "Smart Valve™ Info Sheet", href: "/infosheet/", desc: "Verified performance data, case studies & product specs", icon: BookOpen },
+const EXPLORE_SECTIONS = [
+  {
+    heading: "Data & Proof",
+    links: [
+      { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
+      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", desc: "Full product specs, charts & verified performance data", icon: BookOpen },
+    ],
+  },
+  {
+    heading: "Explore",
+    links: [
+      { label: "Locations", href: "/locations/usa", desc: "17 US states + worldwide coverage", icon: MapPin },
+      { label: "Industries", href: "/industries", desc: "Data centers, hotels, car washes & more", icon: Building2 },
+      { label: "Live Savings Counter", href: "/impact/", desc: "Real-time cumulative water savings", icon: Zap },
+      { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
+    ],
+  },
 ];
+
+const EXPLORE_LINKS = EXPLORE_SECTIONS.flatMap(s => s.links);
 
 const dropdownBase = {
   background: "rgba(10,15,35,0.97)",
@@ -125,25 +137,38 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
             <AnimatePresence>
               {exploreOpen && (
                 <motion.div initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6, scale: 0.97 }} transition={{ duration: 0.15 }}
-                  className="absolute right-0 top-full mt-3 w-72 rounded-2xl shadow-2xl overflow-hidden" style={dropdownBase}
+                  className="absolute right-0 top-full mt-3 rounded-2xl shadow-2xl overflow-hidden" style={{ ...dropdownBase, width: '520px' }}
                   onMouseLeave={() => setExploreOpen(false)}>
-                  <div className="p-2">
-                    {EXPLORE_LINKS.map((link) => {
-                      const Icon = link.icon;
-                      return (
-                        <a key={link.href} href={link.href} onClick={() => setExploreOpen(false)}
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
-                          <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                            <Icon className="w-4 h-4" style={{ color: '#5BBFE0' }} />
-                          </div>
-                          <div>
-                            <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{link.label}</div>
-                            <div className="text-xs text-white/45 mt-0.5 leading-relaxed">{link.desc}</div>
-                          </div>
-                        </a>
-                      );
-                    })}
+                  <div className="p-4 space-y-3">
+                    {EXPLORE_SECTIONS.map((section) => (
+                      <div key={section.heading}>
+                        <div className="text-[9px] font-bold uppercase tracking-[0.22em] px-1 mb-2" style={{ color: 'rgba(91,191,224,0.55)' }}>
+                          {section.heading}
+                        </div>
+                        <div className="grid grid-cols-2 gap-1">
+                          {section.links.map((link) => {
+                            const Icon = link.icon;
+                            return (
+                              <a key={link.href} href={link.href} onClick={() => setExploreOpen(false)}
+                                className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
+                                <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                                  style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                                  <Icon className="w-4 h-4" style={{ color: '#5BBFE0' }} />
+                                </div>
+                                <div>
+                                  <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{link.label}</div>
+                                  <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{link.desc}</div>
+                                </div>
+                              </a>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="border-t px-4 py-3 flex items-center justify-between" style={{ borderColor: 'rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.02)' }}>
+                    <span className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.3)' }}>Perfect Water Valve · perfectwatervalve.com</span>
+                    <a href="tel:7209373004" className="text-[11px] font-semibold hover:text-white transition-colors" style={{ color: '#5BBFE0' }}>(720) 937-3004</a>
                   </div>
                 </motion.div>
               )}

@@ -5,7 +5,7 @@ import {
   CheckCircle2, ChevronDown, ArrowRight, ShieldCheck, ZapOff, Activity
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { Footer } from "@/components/Footer";
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 import valveDiagram from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
@@ -298,57 +298,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-[#05080F] border-t border-white/10 pt-16 pb-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <img src={logo} alt="PWV" className="w-10 h-10" />
-                <div className="font-bold text-xl leading-tight text-white">Perfect Water<br /><span className="text-primary">Valve</span></div>
-              </div>
-              <p className="text-gray-400 font-medium mb-2">Guaranteed ≥15% Water Bill Reduction</p>
-              <p className="text-gray-500 text-sm flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> NSF 61 &amp; 372 Certified</p>
-              <p className="text-gray-600 text-xs mt-2">Partner: American Water Savings (AWS) · Canadian Water Savings (CWS)</p>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-6">Quick Links</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="/" className="hover:text-primary transition-colors">Official Website</a></li>
-                <li><a href="/results/" className="hover:text-primary transition-colors">Case Studies &amp; Proof</a></li>
-                <li><a href="/savings/" className="hover:text-primary transition-colors">ROI Calculator</a></li>
-                <li><a href="/impact/" className="hover:text-primary transition-colors">Live Savings Counter</a></li>
-                <li><a href="/locations/usa" className="hover:text-primary transition-colors">All State Pages</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-6">{config.state} Markets</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                {config.markets.map(city => <li key={city}>{city}</li>)}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold mb-6">Contact</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href={`tel:${CONTACT.phone.replace(/-/g, "")}`} className="hover:text-primary transition-colors">{CONTACT.phone}</a></li>
-                <li><a href={`mailto:${CONTACT.email}`} className="hover:text-primary transition-colors break-all">{CONTACT.email}</a></li>
-                <li className="pt-4"><a href="/" className="text-primary hover:underline text-sm">← PerfectWaterValve.com</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <div>© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</div>
-            <div className="flex items-center gap-5">
-              <a href="https://perfectwatervalve.com" className="hover:text-white transition-colors">PerfectWaterValve.com</a>
-              <div className="flex items-center gap-3">
-                <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><FaFacebook className="w-4 h-4" /></a>
-                <a href="https://www.instagram.com/perfectwatervalve/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><FaInstagram className="w-4 h-4" /></a>
-                <a href="https://www.linkedin.com/company/113022552" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><FaLinkedinIn className="w-4 h-4" /></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { cn } from "@/lib/utils";
 
 // --- ANIMATION VARIANTS ---
@@ -520,6 +521,7 @@ export default function Home() {
         </motion.div>
       </section>
 
+      <Footer />
     </div>
   );
 }

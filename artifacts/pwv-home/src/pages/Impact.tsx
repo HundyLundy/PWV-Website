@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Droplet, ShieldCheck, Mail, Phone, Factory, Building2, Hotel, Car, ArrowUpRight, ChevronDown } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { Footer } from "@/components/Footer";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { LiveCounter } from "@/components/LiveCounter";
@@ -182,7 +182,7 @@ export default function Home() {
             className="mb-16 md:text-center"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">First-Year Verified Results</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">These are the clients whose installations have completed a full year of independent M&V data collection — the first to have audited case studies published. Additional results are on the way as more sites reach their one-year mark.</p>
+            <p className="text-xl max-w-2xl mx-auto" style={{ color: '#E8EFF7' }}>These are the clients whose installations have completed a full year of independent M&V data collection — the first to have audited case studies published. Additional results are on the way as more sites reach their one-year mark.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -273,9 +273,9 @@ export default function Home() {
           <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full" />
           <div className="relative box-glow-primary rounded-full w-72 h-72 sm:w-96 sm:h-96 flex flex-col items-center justify-center p-8 text-center border border-primary/50 bg-background/50 backdrop-blur-xl">
             <ShieldCheck className="w-16 h-16 text-primary mb-6" />
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-2">≥15%</h2>
-            <p className="text-xl sm:text-2xl font-semibold text-white/90 mb-2">Guaranteed</p>
-            <p className="text-sm text-muted-foreground uppercase tracking-widest max-w-[200px]">Water Volume Reduction</p>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold mb-2" style={{ color: '#0A1F3A' }}>≥15%</h2>
+            <p className="text-xl sm:text-2xl font-semibold mb-2" style={{ color: '#0A1F3A' }}>Guaranteed</p>
+            <p className="text-sm uppercase tracking-widest max-w-[200px]" style={{ color: '#2E4A5A' }}>Water Volume Reduction</p>
           </div>
         </motion.div>
       </section>
@@ -343,19 +343,10 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="mt-20 pt-8 border-t border-white/20 w-full flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
-            <p>© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</p>
-            <div className="flex items-center gap-5">
-              <p className="uppercase tracking-widest text-xs text-white/80">Partner: American Water Savings (AWS) · Canadian Water Savings (CWS)</p>
-              <div className="flex items-center gap-3">
-                <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-primary transition-colors"><FaFacebook className="w-4 h-4" /></a>
-                <a href="https://www.instagram.com/perfectwatervalve/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white hover:text-primary transition-colors"><FaInstagram className="w-4 h-4" /></a>
-                <a href="https://www.linkedin.com/company/113022552" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-primary transition-colors"><FaLinkedinIn className="w-4 h-4" /></a>
-              </div>
-            </div>
-          </div>
         </div>
       </footer>
+
+      <Footer />
     </div>
   );
 }

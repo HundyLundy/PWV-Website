@@ -2,8 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ShieldCheck, MapPin } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
+import { Footer } from "@/components/Footer";
 
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
 
@@ -47,7 +46,7 @@ export default function USA() {
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-white backdrop-blur-sm mb-8">
-              <span>🇺🇸</span> Nationwide + UK Coverage
+              <span>🇺🇸</span> USA + Worldwide Coverage
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
               Smart Valve™ Commercial Water Savings —{" "}
@@ -72,10 +71,10 @@ export default function USA() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-primary mb-3">Service Areas</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">States With Significant Water Issues</h2>
-            <p className="text-slate-300 max-w-2xl mx-auto mb-3">These states face the most severe water costs, rate increases, and conservation mandates in the country. Click your state to see local rates, rebates, and real savings data for Smart Valve™ installations.</p>
-            <p className="text-slate-500 max-w-2xl mx-auto text-sm">Each page includes current utility rate data, available rebates, and verified M&V savings from real commercial installations in that market.</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-3" style={{ color: '#0374A7' }}>Service Areas</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0374A7' }}>States With Significant Water Issues</h2>
+            <p className="max-w-2xl mx-auto mb-3" style={{ color: '#0A1F3A' }}>These states face the most severe water costs, rate increases, and conservation mandates in the country. Click your state to see local rates, rebates, and real savings data for Smart Valve™ installations.</p>
+            <p className="max-w-2xl mx-auto text-sm" style={{ color: '#2E4A5A' }}>Each page includes current utility rate data, available rebates, and verified M&V savings from real commercial installations in that market.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {STATES.map((state, i) => (
@@ -144,48 +143,25 @@ export default function USA() {
       {/* CONTACT CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Get Your Free Assessment?</h2>
-          <p className="text-gray-400 mb-8">Not sure which state page to start with? Contact us directly. We serve all US markets and the UK through our AWS and CWS partner network.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0374A7' }}>Ready to Get Your Free Assessment?</h2>
+          <p className="mb-8" style={{ color: '#2E4A5A' }}>Not sure which state page to start with? Contact us directly. We serve all US markets and worldwide through our AWS and CWS partner network.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a href={`tel:${CONTACT.phone.replace(/-/g, "")}`} className="px-8 py-4 rounded-full font-bold text-lg text-white transition-all hover:-translate-y-1 flex items-center justify-center gap-2" style={{ background: "#0374A7", boxShadow: "0 4px 20px rgba(3,116,167,0.35)" }}>
               Call {CONTACT.phone}
             </a>
-            <a href={`mailto:${CONTACT.email}`} className="border-2 border-white/25 hover:border-white/45 hover:bg-white/5 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2">
+            <a href={`mailto:${CONTACT.email}`} className="border-2 px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5" style={{ borderColor: '#0374A7', color: '#0374A7' }}>
               {CONTACT.email}
             </a>
           </div>
-          <div className="flex items-center justify-center gap-6 text-gray-400 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm" style={{ color: '#2E4A5A' }}>
             <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary" /> Zero Obligation</div>
             <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> 15% Guaranteed in Writing</div>
-            <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" /> All US Markets + UK</div>
+            <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" /> All US Markets + Worldwide</div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-[#05080F] border-t border-white/10 pt-12 pb-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="PWV" className="w-10 h-10" />
-              <div className="font-bold text-xl leading-tight text-white">Perfect Water<br /><span className="text-primary">Valve</span></div>
-            </div>
-            <div className="flex items-center gap-3">
-              <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><FaFacebook className="w-5 h-5" /></a>
-              <a href="https://www.instagram.com/perfectwatervalve/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><FaInstagram className="w-5 h-5" /></a>
-              <a href="https://www.linkedin.com/company/113022552" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><FaLinkedinIn className="w-5 h-5" /></a>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <div>© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</div>
-            <div className="flex items-center gap-4">
-              <a href="/" className="hover:text-white transition-colors">PerfectWaterValve.com</a>
-              <span>·</span>
-              <span>Partner: American Water Savings (AWS) · Canadian Water Savings (CWS)</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
