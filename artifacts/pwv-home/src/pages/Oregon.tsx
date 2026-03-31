@@ -5,6 +5,7 @@ const config = {
   emoji: "🌿",
   headline: "Portland's Water Bureau Is Raising Rates 4.5% in 2026 — Smart Valve™ Cuts Your Bill 15–58%",
   subheadline: "Portland Water Bureau approved a 4.5% rate increase for 2026. Oregon's commercial water use efficiency requirements are expanding. Smart Valve™ delivers guaranteed reductions — proven at Amazon, Four Seasons, and Caliber Car Wash.",
+  urgencyBadge: "Portland Water Bureau +4.5% in 2026 — Oregon Commercial Efficiency Requirements Expanding",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },
     { value: "≥15%", label: "Guaranteed Min" },

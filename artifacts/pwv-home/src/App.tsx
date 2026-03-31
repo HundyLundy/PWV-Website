@@ -84,6 +84,11 @@ import ColoradoSpringsPage from "@/pages/ColoradoSprings";
 import AuroraPage from "@/pages/Aurora";
 import FortCollinsPage from "@/pages/FortCollins";
 import LakewoodPage from "@/pages/Lakewood";
+import BoulderPage from "@/pages/Boulder";
+import PuebloPage from "@/pages/Pueblo";
+import LovelandPage from "@/pages/Loveland";
+import GreeleyPage from "@/pages/Greeley";
+import ArvadaPage from "@/pages/Arvada";
 
 // International pages
 import EuropePage from "@/pages/Europe";
@@ -242,6 +247,16 @@ function Router() {
       <Route path="/locations/colorado/fort-collins/" component={FortCollinsPage} />
       <Route path="/locations/colorado/lakewood" component={LakewoodPage} />
       <Route path="/locations/colorado/lakewood/" component={LakewoodPage} />
+      <Route path="/locations/colorado/boulder" component={BoulderPage} />
+      <Route path="/locations/colorado/boulder/" component={BoulderPage} />
+      <Route path="/locations/colorado/pueblo" component={PuebloPage} />
+      <Route path="/locations/colorado/pueblo/" component={PuebloPage} />
+      <Route path="/locations/colorado/loveland" component={LovelandPage} />
+      <Route path="/locations/colorado/loveland/" component={LovelandPage} />
+      <Route path="/locations/colorado/greeley" component={GreeleyPage} />
+      <Route path="/locations/colorado/greeley/" component={GreeleyPage} />
+      <Route path="/locations/colorado/arvada" component={ArvadaPage} />
+      <Route path="/locations/colorado/arvada/" component={ArvadaPage} />
 
       {/* International pages */}
       <Route path="/locations/europe" component={EuropePage} />

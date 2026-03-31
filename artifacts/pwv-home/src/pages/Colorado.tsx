@@ -103,7 +103,7 @@ export default function ColoradoPage() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 text-white font-semibold text-sm sm:text-base">
             <div className="flex items-center gap-2"><ArrowRight className="w-5 h-5 opacity-80" /> 58.69% Peak Savings Recorded</div>
-            <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 opacity-80" /> 15% Savings Guaranteed in Writing</div>
+            <a href="/results" className="flex items-center gap-2 hover:text-white/80 transition-colors underline-offset-2 hover:underline"><ShieldCheck className="w-5 h-5 opacity-80" /> 15% Savings Guaranteed in Writing</a>
             <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 opacity-80" /> NSF 61 &amp; 372 Certified</div>
             <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> No Power Required</div>
             <div className="flex items-center gap-2"><Activity className="w-5 h-5 opacity-80" /> 99% Meter Compatible</div>
@@ -122,6 +122,11 @@ export default function ColoradoPage() {
               { name: "Aurora", slug: "colorado/aurora", emoji: "🌅" },
               { name: "Fort Collins", slug: "colorado/fort-collins", emoji: "🎓" },
               { name: "Lakewood", slug: "colorado/lakewood", emoji: "🌲" },
+              { name: "Boulder", slug: "colorado/boulder", emoji: "🌿" },
+              { name: "Pueblo", slug: "colorado/pueblo", emoji: "🏭" },
+              { name: "Loveland", slug: "colorado/loveland", emoji: "🏔️" },
+              { name: "Greeley", slug: "colorado/greeley", emoji: "🌾" },
+              { name: "Arvada", slug: "colorado/arvada", emoji: "🏘️" },
             ].map((city) => (
               <a
                 key={city.slug}
@@ -443,8 +448,19 @@ export default function ColoradoPage() {
             <div>
               <h4 className="text-white font-bold mb-6">Colorado Markets</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                {["Denver", "Colorado Springs", "Boulder", "Fort Collins", "Aurora", "Lakewood", "Pueblo", "Loveland", "Greeley", "Arvada"].map(city => (
-                  <li key={city}>{city}</li>
+                {[
+                  { name: "Denver", slug: "denver" },
+                  { name: "Colorado Springs", slug: "colorado-springs" },
+                  { name: "Boulder", slug: "boulder" },
+                  { name: "Fort Collins", slug: "fort-collins" },
+                  { name: "Aurora", slug: "aurora" },
+                  { name: "Lakewood", slug: "lakewood" },
+                  { name: "Pueblo", slug: "pueblo" },
+                  { name: "Loveland", slug: "loveland" },
+                  { name: "Greeley", slug: "greeley" },
+                  { name: "Arvada", slug: "arvada" },
+                ].map(city => (
+                  <li key={city.slug}><a href={`/locations/colorado/${city.slug}`} className="hover:text-primary transition-colors">{city.name}</a></li>
                 ))}
               </ul>
             </div>

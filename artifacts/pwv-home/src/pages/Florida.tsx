@@ -5,6 +5,7 @@ const config = {
   emoji: "🌴",
   headline: "Florida Commercial Water Rates Are Rising 6–8% Annually — And the State Has No Income Tax to Buffer You",
   subheadline: "Miami-Dade raised commercial rates 7.3% in 2025. Tampa Bay Water increased 6.8%. Florida utilities are investing billions in seawater desalination and aquifer recharge — and commercial customers pay for every dollar. Smart Valve™ cuts your bill 15–58%.",
+  urgencyBadge: "Miami-Dade +7.3% · Tampa Bay Water +6.8% in 2025 — Desalination Investment Driving Continued Rate Increases",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },
     { value: "≥15%", label: "Guaranteed Min" },

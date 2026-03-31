@@ -5,6 +5,7 @@ const config = {
   emoji: "🥔",
   headline: "Boise Is One of the Fastest-Growing Cities in America — Water Infrastructure Can't Keep Up",
   subheadline: "Boise's population grew 16% in 5 years. Boise City raised commercial water rates 7% in 2025. Snake River Plain aquifer levels are declining. Idaho Falls increased 6.5%. Smart Valve™ helps Idaho commercial properties cut costs 15–58%.",
+  urgencyBadge: "Boise City Water +7% · Idaho Falls +6.5% in 2025 — Snake River Plain Aquifer Declining",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },
     { value: "≥15%", label: "Guaranteed Min" },

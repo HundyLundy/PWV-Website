@@ -5,6 +5,7 @@ const config = {
   emoji: "🦌",
   headline: "Billings and Missoula Are Seeing 5–6% Annual Commercial Water Rate Increases — Smart Valve™ Delivers 15–58% in Savings",
   subheadline: "Montana's water infrastructure is aging while population grows rapidly in its major metros. Billings raised commercial rates 5.8% in 2025. Missoula increased 6.2%. Mountain-fed systems create ideal air entrapment conditions for Smart Valve™ results.",
+  urgencyBadge: "Billings +5.8% · Missoula +6.2% in 2025 — Aging Infrastructure + Rapid Population Growth",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },
     { value: "≥15%", label: "Guaranteed Min" },

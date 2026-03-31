@@ -37,6 +37,8 @@ export interface LocationConfig {
   seoDescription?: string;
   seoCanonical?: string;
   showDataCenterSection?: boolean;
+  alsoServing?: { name: string; slug: string }[];
+  alsoServingHeading?: string;
 }
 
 const COLOR_MAP: Record<string, string> = {
@@ -114,18 +116,50 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
     return () => { document.title = prevTitle; };
   }, [config.seoTitle, config.seoDescription, config.seoCanonical, config.state]);
 
-  const NEARBY_STATES = [
-    { name: "California", slug: "california" }, { name: "Texas", slug: "texas" },
-    { name: "Florida", slug: "florida" }, { name: "New York", slug: "new-york" },
-    { name: "Illinois", slug: "illinois" }, { name: "Pennsylvania", slug: "pennsylvania" },
-    { name: "Ohio", slug: "ohio" }, { name: "Georgia", slug: "georgia" },
-    { name: "North Carolina", slug: "north-carolina" }, { name: "Michigan", slug: "michigan" },
-    { name: "New Jersey", slug: "new-jersey" }, { name: "Virginia", slug: "virginia" },
-    { name: "Washington", slug: "washington" }, { name: "Arizona", slug: "arizona" },
-    { name: "Colorado", slug: "colorado" }, { name: "Tennessee", slug: "tennessee" },
-    { name: "Indiana", slug: "indiana" }, { name: "Maryland", slug: "maryland" },
-    { name: "Minnesota", slug: "minnesota" }, { name: "Massachusetts", slug: "massachusetts" },
-  ].filter(s => s.name !== config.state).slice(0, 18);
+  const REGIONAL_GROUPS: { name: string; slug: string }[][] = [
+    [
+      { name: "Florida", slug: "florida" }, { name: "Georgia", slug: "georgia" },
+      { name: "South Carolina", slug: "south-carolina" }, { name: "North Carolina", slug: "north-carolina" },
+      { name: "Tennessee", slug: "tennessee" }, { name: "Alabama", slug: "alabama" },
+      { name: "Mississippi", slug: "mississippi" }, { name: "Virginia", slug: "virginia" },
+      { name: "West Virginia", slug: "west-virginia" },
+    ],
+    [
+      { name: "New York", slug: "new-york" }, { name: "New Jersey", slug: "new-jersey" },
+      { name: "Pennsylvania", slug: "pennsylvania" }, { name: "Connecticut", slug: "connecticut" },
+      { name: "Massachusetts", slug: "massachusetts" }, { name: "Rhode Island", slug: "rhode-island" },
+      { name: "Vermont", slug: "vermont" }, { name: "New Hampshire", slug: "new-hampshire" },
+      { name: "Maine", slug: "maine" }, { name: "Delaware", slug: "delaware" },
+      { name: "Maryland", slug: "maryland" },
+    ],
+    [
+      { name: "Ohio", slug: "ohio" }, { name: "Indiana", slug: "indiana" },
+      { name: "Illinois", slug: "illinois" }, { name: "Michigan", slug: "michigan" },
+      { name: "Wisconsin", slug: "wisconsin" }, { name: "Minnesota", slug: "minnesota" },
+      { name: "Iowa", slug: "iowa" }, { name: "Missouri", slug: "missouri" },
+      { name: "Kansas", slug: "kansas" }, { name: "Nebraska", slug: "nebraska" },
+      { name: "North Dakota", slug: "north-dakota" }, { name: "South Dakota", slug: "south-dakota" },
+    ],
+    [
+      { name: "Texas", slug: "texas" }, { name: "Arizona", slug: "arizona" },
+      { name: "New Mexico", slug: "new-mexico" }, { name: "Oklahoma", slug: "oklahoma" },
+      { name: "Arkansas", slug: "arkansas" }, { name: "Louisiana", slug: "louisiana" },
+    ],
+    [
+      { name: "Colorado", slug: "colorado" }, { name: "Utah", slug: "utah" },
+      { name: "Nevada", slug: "nevada" }, { name: "Wyoming", slug: "wyoming" },
+      { name: "Montana", slug: "montana" }, { name: "Idaho", slug: "idaho" },
+    ],
+    [
+      { name: "California", slug: "california" }, { name: "Oregon", slug: "oregon" },
+      { name: "Washington", slug: "washington" }, { name: "Alaska", slug: "alaska" },
+      { name: "Hawaii", slug: "hawaii" },
+    ],
+  ];
+  const regionalGroup = REGIONAL_GROUPS.find(g => g.some(s => s.name === config.state));
+  const NEARBY_STATES = (regionalGroup ?? REGIONAL_GROUPS[0])
+    .filter(s => s.name !== config.state)
+    .slice(0, 12);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -173,7 +207,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 text-white font-semibold text-sm sm:text-base">
             <div className="flex items-center gap-2"><ArrowRight className="w-5 h-5 opacity-80" /> 58.69% Peak Savings Recorded</div>
-            <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 opacity-80" /> 15% Savings Guaranteed in Writing</div>
+            <a href="/results" className="flex items-center gap-2 hover:text-white/80 transition-colors underline-offset-2 hover:underline"><ShieldCheck className="w-5 h-5 opacity-80" /> 15% Savings Guaranteed in Writing</a>
             <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 opacity-80" /> NSF 61 &amp; 372 Certified</div>
             <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> No Power Required</div>
             <div className="flex items-center gap-2"><Activity className="w-5 h-5 opacity-80" /> 99% Meter Compatible</div>
@@ -376,10 +410,12 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0374A7' }}>Also Serving</p>
-            <h3 className="text-xl font-bold" style={{ color: '#0A1F3A' }}>Smart Valve™ Installations Near {config.state}</h3>
+            <h3 className="text-xl font-bold" style={{ color: '#0A1F3A' }}>
+              {config.alsoServingHeading ?? `Smart Valve™ Installations Near ${config.state}`}
+            </h3>
           </div>
           <div className="flex flex-wrap gap-2 justify-center">
-            {NEARBY_STATES.map((s) => (
+            {(config.alsoServing ?? NEARBY_STATES).map((s) => (
               <a
                 key={s.slug}
                 href={`/locations/${s.slug}`}
@@ -389,8 +425,15 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
                 {s.name}
               </a>
             ))}
-            <a href="/locations/europe" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(60,110,127,0.05)', borderColor: '#3C6E7F', color: '#3C6E7F' }}>Europe</a>
-            <a href="/" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>View All 50 States →</a>
+            {!config.alsoServing && (
+              <>
+                <a href="/locations/europe" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(60,110,127,0.05)', borderColor: '#3C6E7F', color: '#3C6E7F' }}>Europe</a>
+                <a href="/locations/usa" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>View All 50 States →</a>
+              </>
+            )}
+            {config.alsoServing && (
+              <a href="/locations/colorado" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>← Colorado State Page</a>
+            )}
           </div>
         </div>
       </section>

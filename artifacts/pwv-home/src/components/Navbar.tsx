@@ -20,6 +20,11 @@ const LOCATIONS = [
   { label: "Aurora", href: "/locations/colorado/aurora", emoji: "🌅" },
   { label: "Fort Collins", href: "/locations/colorado/fort-collins", emoji: "🎓" },
   { label: "Lakewood", href: "/locations/colorado/lakewood", emoji: "🌲" },
+  { label: "Boulder", href: "/locations/colorado/boulder", emoji: "🌿" },
+  { label: "Pueblo", href: "/locations/colorado/pueblo", emoji: "🏭" },
+  { label: "Loveland", href: "/locations/colorado/loveland", emoji: "🏔️" },
+  { label: "Greeley", href: "/locations/colorado/greeley", emoji: "🌾" },
+  { label: "Arvada", href: "/locations/colorado/arvada", emoji: "🏘️" },
   // — US States —
   { label: "Alabama", href: "/locations/alabama", emoji: "🌾" },
   { label: "Alaska", href: "/locations/alaska", emoji: "❄️" },

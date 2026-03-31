@@ -5,6 +5,7 @@ const config = {
   emoji: "🗽",
   headline: "New York City Commercial Water Rates Increased 8% in 2025 — With More Planned. Smart Valve™ Cuts Your Bill 15–58%.",
   subheadline: "NYC DEP increased commercial water and sewer rates by 8% for FY2025 and has proposed further annual increases through 2028. NY has mandatory Commercial Building Water Conservation requirements for large properties. Smart Valve™ is fully compliant and delivers guaranteed savings.",
+  urgencyBadge: "NYC DEP +8% FY2025 — Annual Increases Proposed Through 2028. Mandatory Commercial Building Conservation Active.",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },
     { value: "≥15%", label: "Guaranteed Min" },
