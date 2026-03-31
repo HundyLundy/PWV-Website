@@ -451,14 +451,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Data Centers hub -->
-  <url>
-    <loc>https://www.perfectwatervalve.com/industries/data-centers</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Blog -->
   <url>
     <loc>https://www.perfectwatervalve.com/blog</loc>
