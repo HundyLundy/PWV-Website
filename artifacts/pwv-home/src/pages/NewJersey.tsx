@@ -36,6 +36,7 @@ const config = {
     { title: "Proven NJ Results", desc: "Grand Central at Kennedy — $50K/yr verified" },
   ],
   source: "perfectwatervalve.com/locations/new-jersey",
+  showDataCenterSection: true,
   seoTitle: "New Jersey Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in New Jersey. Veolia proposing 9.82% annual increase. NJ American Water multiple hikes. $50K/yr verified NJ case study. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/new-jersey",

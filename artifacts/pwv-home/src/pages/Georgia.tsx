@@ -36,6 +36,7 @@ const config = {
     { title: "Data Center Expertise", desc: "Amazon YYZ3 — 58.69% peak verified" },
   ],
   source: "perfectwatervalve.com/locations/georgia",
+  showDataCenterSection: true,
   seoTitle: "Georgia Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Georgia. Atlanta data center demand straining water supply. Gwinnett County rates rising. Amazon YYZ3 benchmark verified. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/georgia",

@@ -36,6 +36,7 @@ const config = {
     { title: "Data Center Expertise", desc: "Amazon YYZ3 — 58.69% peak verified" },
   ],
   source: "perfectwatervalve.com/locations/minnesota",
+  showDataCenterSection: true,
   seoTitle: "Minnesota Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Minnesota. 4% commercial rate increase 2025. Data center demand driving permit pressure. Guaranteed savings in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/minnesota",

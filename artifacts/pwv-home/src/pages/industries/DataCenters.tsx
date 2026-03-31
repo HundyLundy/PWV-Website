@@ -1,45 +1,82 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ChevronDown, ArrowRight, ShieldCheck, ZapOff, Activity, Building2, Server, Thermometer, DollarSign } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import { CheckCircle2, ArrowRight, ShieldCheck, ZapOff, Activity, Building2, Server, Thermometer, DollarSign } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
-import valveDiagram from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
 
-const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/pwv-contact";
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Data Center Commercial Water Savings — Smart Valve™",
+  "serviceType": "Commercial Water Savings",
+  "areaServed": "United States",
+  "url": "https://www.perfectwatervalve.com/industries/data-centers",
+  "description": "Smart Valve™ cuts data center cooling water bills 15–58%, guaranteed. Amazon YYZ3 hit 58.69% peak savings. NSF 61 & 372 certified, no electricity, no maintenance.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Perfect Water Valve",
+    "url": "https://www.perfectwatervalve.com",
+    "telephone": "+17209373004",
+    "email": "info@perfectwatervalve.com"
+  }
+};
+
+const colorMap: Record<string, string> = {
+  red: "bg-red-500/10 text-red-500 border-red-500/20",
+  orange: "bg-orange-500/10 text-orange-500 border-orange-500/20",
+  blue: "bg-blue-500/10 text-blue-600 border-blue-500/20",
+  yellow: "bg-yellow-500/10 text-yellow-600 border-yellow-500/20",
+  teal: "bg-teal-500/10 text-teal-600 border-teal-500/20",
+  green: "bg-green-500/10 text-green-600 border-green-500/20",
+};
 
 export default function DataCenters() {
   const scrollTo = (id: string) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }); };
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <title>Data Center Water Savings | Smart Valve™ Cuts Cooling Bills 15–58% | Perfect Water Valve</title>
+        <meta name="description" content="Data centers use 1–5M gallons/day for cooling. Smart Valve™ cuts that bill 15–58%, guaranteed. Amazon YYZ3 hit 58.69% peak savings. No electricity, no maintenance, NSF certified." />
+        <link rel="canonical" href="https://www.perfectwatervalve.com/industries/data-centers" />
+        <meta property="og:title" content="Data Center Water Savings | Smart Valve™ Cuts Cooling Bills 15–58% | Perfect Water Valve" />
+        <meta property="og:description" content="Data centers use 1–5M gallons/day for cooling. Smart Valve™ cuts that bill 15–58%, guaranteed. Amazon YYZ3 hit 58.69% peak savings. No electricity, no maintenance, NSF certified." />
+        <meta property="og:url" content="https://www.perfectwatervalve.com/industries/data-centers" />
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+      </Helmet>
+
+      <StickyAssessmentCTA />
       <Navbar onScrollTo={scrollTo} />
 
       {/* HERO */}
-      <section className="relative pt-40 pb-24 lg:pt-56 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-40 pb-20 lg:pt-56 lg:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(160deg, #1B4A5C 0%, #3C6E7F 55%, #0374A7 100%)" }} />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-white backdrop-blur-sm">
-                <span>🖥️</span> Data Center Water Savings
+                🖥️ Data Center Water Savings
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold uppercase text-white" style={{ background: "rgba(3,116,167,0.4)", border: "1px solid rgba(3,116,167,0.6)" }}>
                 Amazon YYZ3 — 58.69% Peak Verified
               </div>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-              Data Centers Pay More for Water Than Almost Any Commercial Property —{" "}
+              Data Centers: The Highest Water-Use Commercial Facility —{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">
-                Smart Valve™ Cuts Cooling Water Bills 15–58%
+                And the Highest Smart Valve™ ROI
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Cooling towers are the largest water consumer in any data center. The Smart Valve™ reduces your metered cooling water consumption by a guaranteed 15% minimum — with Amazon YYZ3 achieving 58.69% peak savings. No power required. No downtime. No operational impact.
+              The average hyperscale data center uses 1–5 million gallons of water per day for cooling. Smart Valve™ installs on the main supply line and cuts that bill 15–58%, guaranteed. Amazon YYZ3 hit 58.69% peak savings over 6 consecutive quarters.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button onClick={() => scrollTo("contact")} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary/25 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
                 Get a Free Data Center Assessment <ArrowRight className="w-5 h-5" />
               </button>
@@ -64,6 +101,58 @@ export default function DataCenters() {
         </div>
       </section>
 
+      {/* TWO PROMINENT SUB-PAGE MODULES */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background border-b border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-primary/70 mb-8">Explore the Full Picture</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Module 1 */}
+            <motion.a
+              href="/industries/data-centers/cooling-water-costs"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-primary/50 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-40 h-40 bg-primary/8 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-blue-500/10 text-blue-400 border-blue-500/20 shrink-0">
+                <Thermometer className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">Module 1</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors leading-snug">
+                How Data Centers Use Water and Where the Waste Happens
+              </h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">
+                Cooling water costs, metered waste, evaporation loss, and why air entrapment inflates every gallon billed to your facility.
+              </p>
+              <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                Explore Cooling Water Costs <ArrowRight className="w-4 h-4" />
+              </span>
+            </motion.a>
+
+            {/* Module 2 */}
+            <motion.a
+              href="/industries/data-centers/hyperscale-roi"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-[#DEC600]/40 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-40 h-40 bg-[#DEC600]/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-yellow-500/10 text-yellow-500 border-yellow-500/20 shrink-0">
+                <DollarSign className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-[#DEC600]/70 mb-2">Module 2</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors leading-snug">
+                Multi-Site ROI Model and the Amazon YYZ3 Benchmark
+              </h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">
+                Enterprise deployment model, multi-site ROI projections, and the full Amazon YYZ3 case study. Built for VPs of Infrastructure and CFOs.
+              </p>
+              <span className="inline-flex items-center gap-2 text-[#DEC600] font-semibold text-sm group-hover:gap-3 transition-all">
+                See the ROI Model <ArrowRight className="w-4 h-4" />
+              </span>
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       {/* WHY DATA CENTERS */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 border-t overflow-hidden" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
         <div className="max-w-7xl mx-auto">
@@ -74,23 +163,20 @@ export default function DataCenters() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Thermometer, color: "red", title: "Cooling Towers — Highest Water Use", body: "Evaporative cooling towers, which are standard in large data centers, consume enormous volumes of water. This water passes through your meter and is billed at commercial rates — air entrapment inflates every gallon billed." },
+              { icon: Thermometer, color: "red", title: "Cooling Towers — Highest Water Use", body: "Evaporative cooling towers consume enormous volumes of water. This water passes through your meter and is billed at commercial rates — air entrapment inflates every gallon billed." },
               { icon: DollarSign, color: "yellow", title: "AI Workloads Increasing Water Use", body: "AI inference and training workloads generate significantly more heat than traditional compute workloads — increasing cooling water demand. The water cost trajectory for AI-intensive facilities is steeply upward." },
               { icon: Activity, color: "orange", title: "ESG Water Metrics Under Scrutiny", body: "Data center operators face growing pressure from investors, customers, and regulators to reduce water consumption intensity (WUE). Smart Valve™ directly reduces metered consumption and improves WUE metrics." },
-              { icon: Server, color: "blue", title: "Municipal Rate Pressure in Tech Hubs", body: "Data center markets like Denver, Seattle, Phoenix, Dallas, and Northern Virginia are all experiencing commercial rate increases. Each percentage point increase compounds across millions of gallons of consumption." },
+              { icon: Server, color: "blue", title: "Municipal Rate Pressure in Tech Hubs", body: "Data center markets like Denver, Seattle, Phoenix, Dallas, and Northern Virginia are all experiencing commercial rate increases. Each percentage point compounds across millions of gallons of consumption." },
               { icon: Building2, color: "teal", title: "Zero Operational Risk", body: "The Smart Valve™ is fully passive — no moving parts, no power required, no maintenance. Installation takes 2–4 hours with zero disruption to data center operations. No downtime, no outage risk." },
               { icon: ShieldCheck, color: "green", title: "M&V Documentation for ESG Reporting", body: "Smart Valve™ installations include Measurement & Verification (M&V) documentation that satisfies ESG water reduction reporting requirements for investors, sustainability auditors, and regulatory bodies." }
-            ].map((item, i) => {
-              const colorMap: Record<string, string> = { red: "bg-red-500/10 text-red-500 border-red-500/20", orange: "bg-orange-500/10 text-orange-500 border-orange-500/20", blue: "bg-blue-500/10 text-blue-600 border-blue-500/20", yellow: "bg-yellow-500/10 text-yellow-600 border-yellow-500/20", teal: "bg-teal-500/10 text-teal-600 border-teal-500/20", green: "bg-green-500/10 text-green-600 border-green-500/20" };
-              return (
-                <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-2xl p-8 border border-[#C5D8E8] shadow-sm hover:border-[#0374A7]/40 transition-colors">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-5 border ${colorMap[item.color]}`}><item.icon className="w-6 h-6" /></div>
-                  <h3 className="text-lg font-bold mb-3" style={{ color: "#0A1F3A" }}>{item.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#4A7085" }}>{item.body}</p>
-                </motion.div>
-              );
-            })}
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="bg-white rounded-2xl p-8 border border-[#C5D8E8] shadow-sm hover:border-[#0374A7]/40 transition-colors">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-5 border ${colorMap[item.color]}`}><item.icon className="w-6 h-6" /></div>
+                <h3 className="text-lg font-bold mb-3" style={{ color: "#0A1F3A" }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#4A7085" }}>{item.body}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -106,14 +192,14 @@ export default function DataCenters() {
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="bg-[#121B2E] border border-white/10 rounded-2xl p-8 lg:p-10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full" />
-              <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-gray-300 mb-6">Logistics & Fulfillment Data Center</span>
+              <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-gray-300 mb-6">Logistics &amp; Fulfillment Data Center</span>
               <h3 className="text-2xl font-bold text-white mb-4">Amazon YYZ3 Fulfillment Center</h3>
               <div className="text-5xl font-black text-primary mb-6">58.69%</div>
               <p className="text-gray-300 mb-6">Peak single-quarter savings — the highest verified Smart Valve™ result in our entire client portfolio. 6 consecutive quarters of independently verified data.</p>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 58.69% peak single-quarter water bill reduction</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 17% sustained average savings across all quarters</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 6 consecutive quarters of AWS M&amp;V verified data</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 6 consecutive quarters of M&amp;V verified data</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Zero operational disruption to facility at any point</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Installation completed in under 4 hours</li>
               </ul>
@@ -121,7 +207,7 @@ export default function DataCenters() {
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="bg-[#121B2E] border border-white/10 rounded-2xl p-8 lg:p-10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full" />
-              <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-gray-300 mb-6">Logistics & Fulfillment Data Center</span>
+              <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-gray-300 mb-6">Logistics &amp; Fulfillment Data Center</span>
               <h3 className="text-2xl font-bold text-white mb-4">Amazon YYZ4 Fulfillment Center</h3>
               <div className="text-5xl font-black text-primary mb-6">16% Avg</div>
               <p className="text-gray-300 mb-6">Consistent performance exceeding the guaranteed minimum — tracked Q3 2024 through Q4 2025.</p>
@@ -140,6 +226,51 @@ export default function DataCenters() {
         </div>
       </section>
 
+      {/* STATE REGULATORY PRESSURE */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5" style={{ backgroundColor: "#E8EFF7" }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-primary mb-3">Data Center Water Pressure by State</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0A1F3A" }}>Regulatory Pressure Is Highest in the Fastest-Growing Data Center Markets</h2>
+            <p className="max-w-2xl mx-auto text-base" style={{ color: "#4A7085" }}>Rate increases and water restrictions are concentrated precisely where data center density is highest. If your facility operates in any of these states, the cost pressure is compounding.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {[
+              { state: "Iowa", slug: "iowa", stat: "+45%", note: "Iowa-American Water rate increase. Hyperscale data center demand is straining municipal supply statewide." },
+              { state: "Pennsylvania", slug: "pennsylvania", stat: "+50%", note: "Aqua Pennsylvania approved 50% rate hike. Northern Virginia spillover is pushing data center expansion into PA markets." },
+              { state: "Virginia", slug: "virginia", stat: "Rising", note: "Northern Virginia is the world's largest data center market. NOVEC and Dominion rate increases compound at hyperscale volumes." },
+              { state: "Texas", slug: "texas", stat: "Drought", note: "ERCOT grid constraints and drought conditions are creating dual pressure on Texas data center water cost and availability." },
+              { state: "Georgia", slug: "georgia", stat: "+12%+", note: "Atlanta data center market is the Southeast's fastest-growing. Georgia Power and utility rate cases show consistent upward trajectory." },
+            ].map(({ state, slug, stat, note }) => (
+              <motion.a key={slug} href={`/locations/${slug}`} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                className="bg-white border border-[#C5D8E8] rounded-xl p-5 hover:border-[#0374A7]/50 hover:shadow-md transition-all group flex flex-col">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold text-base group-hover:text-primary transition-colors" style={{ color: "#0A1F3A" }}>{state}</span>
+                  <span className="text-sm font-black text-red-500">{stat}</span>
+                </div>
+                <p className="text-xs leading-relaxed flex-1" style={{ color: "#4A7085" }}>{note}</p>
+                <span className="text-xs text-primary font-semibold mt-3 group-hover:underline">View {state} page →</span>
+              </motion.a>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-500 mb-4">Also serving data centers in:</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                ["Ohio", "/locations/ohio"], ["Indiana", "/locations/indiana"], ["Minnesota", "/locations/minnesota"],
+                ["New Jersey", "/locations/new-jersey"], ["North Carolina", "/locations/north-carolina"],
+                ["Colorado", "/locations/colorado"], ["Denver", "/locations/colorado/denver"]
+              ].map(([label, href]) => (
+                <a key={label} href={href} className="px-3 py-1.5 rounded-lg text-sm border transition-all hover:-translate-y-0.5"
+                  style={{ backgroundColor: "white", borderColor: "#C5D8E8", color: "#2E4A5A" }}>
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/10" style={{ background: "linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)" }}>
         <div className="max-w-3xl mx-auto text-center">
@@ -149,21 +280,19 @@ export default function DataCenters() {
             <a href={`tel:${CONTACT.phone.replace(/-/g, "")}`} className="bg-white text-primary font-bold px-8 py-4 rounded-full transition-all hover:-translate-y-1 text-lg">{CONTACT.phone}</a>
             <a href={`mailto:${CONTACT.email}`} className="bg-transparent border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full transition-all hover:bg-white/10 text-lg">{CONTACT.email}</a>
           </div>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-8">
+            <a href="/industries/data-centers/cooling-water-costs" className="bg-white/10 border border-white/20 text-white rounded-xl p-4 hover:bg-white/20 transition-all text-sm font-semibold">
+              → Cooling Water Costs Deep Dive
+            </a>
+            <a href="/industries/data-centers/hyperscale-roi" className="bg-white/10 border border-white/20 text-white rounded-xl p-4 hover:bg-white/20 transition-all text-sm font-semibold">
+              → Hyperscale ROI Model
+            </a>
+          </div>
           <p className="text-white/60 text-sm">Partner: American Water Savings (AWS) · Canadian Water Savings (CWS) · Smart Valve™</p>
         </div>
       </section>
 
-      <footer className="bg-[#05080F] border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <div className="flex items-center gap-3"><img src={logo} alt="PWV" className="w-8 h-8" /><span>© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</span></div>
-          <div className="flex items-center gap-4">
-            <a href="/" className="hover:text-white transition-colors">PerfectWaterValve.com</a>
-            <a href="https://www.facebook.com/profile.php?id=61583769211912" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaFacebook className="w-4 h-4" /></a>
-            <a href="https://www.instagram.com/perfectwatervalve/" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaInstagram className="w-4 h-4" /></a>
-            <a href="https://www.linkedin.com/company/113022552" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaLinkedinIn className="w-4 h-4" /></a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

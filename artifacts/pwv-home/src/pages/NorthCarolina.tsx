@@ -36,6 +36,7 @@ const config = {
     { title: "Conservation Compliance", desc: "Helps meet active drought mandate thresholds" },
   ],
   source: "perfectwatervalve.com/locations/north-carolina",
+  showDataCenterSection: true,
   seoTitle: "North Carolina Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in North Carolina. Active drought with conservation mandates. Fayetteville PWC raising rates. Guaranteed savings in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/north-carolina",

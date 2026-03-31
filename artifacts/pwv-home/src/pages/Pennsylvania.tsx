@@ -36,6 +36,7 @@ const config = {
     { title: "Act Now", desc: "Aqua PA's 50% increase is already active" },
   ],
   source: "perfectwatervalve.com/locations/pennsylvania",
+  showDataCenterSection: true,
   seoTitle: "Pennsylvania Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Pennsylvania. Aqua PA up 50% January 2025. PA American Water proposing 14.6%. Data centers straining supply. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/pennsylvania",

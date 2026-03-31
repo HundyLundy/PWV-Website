@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2 } from "lucide-react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
@@ -113,13 +114,34 @@ const dropdownBase = {
   backdropFilter: "blur(20px)",
 };
 
+const DC_LINKS_HUB = [
+  { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
+  { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
+];
+const DC_LINKS_COOLING = [
+  { label: "Data Centers", href: "/industries/data-centers" },
+  { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
+];
+const DC_LINKS_HYPERSCALE = [
+  { label: "Data Centers", href: "/industries/data-centers" },
+  { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
+];
+
 export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {}) {
+  const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
   const exploreRef = useRef<HTMLDivElement>(null);
   const [mobileLocOpen, setMobileLocOpen] = useState(false);
   const [mobileIndOpen, setMobileIndOpen] = useState(false);
+
+  const isDCHub = location === "/industries/data-centers" || location === "/industries/data-centers/";
+  const isDCCooling = location.startsWith("/industries/data-centers/cooling-water-costs");
+  const isDCHyperscale = location.startsWith("/industries/data-centers/hyperscale-roi");
+  const isDataCenterSection = isDCHub || isDCCooling || isDCHyperscale;
+  const contextualLinks = isDCHub ? DC_LINKS_HUB : isDCCooling ? DC_LINKS_COOLING : isDCHyperscale ? DC_LINKS_HYPERSCALE : null;
+  const activeNavLinks = contextualLinks ?? NAV_LINKS;
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -161,7 +183,10 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1 text-sm font-medium text-gray-300">
-          {NAV_LINKS.map((l) => (
+          {isDataCenterSection && (
+            <span className="text-xs font-bold uppercase tracking-widest text-primary/60 px-2 mr-1">Data Centers:</span>
+          )}
+          {activeNavLinks.map((l) => (
             <a key={l.label} href={l.href}
               className="px-3 py-2 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors">
               {l.label}
@@ -248,7 +273,10 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
             className="md:hidden border-t border-white/10 overflow-hidden" style={{ background: "#0A0F1E" }}>
             <div className="p-4 flex flex-col gap-1 overflow-y-auto max-h-[80vh]">
-              {NAV_LINKS.map((l) => (
+              {isDataCenterSection && (
+                <div className="text-xs font-bold uppercase tracking-widest text-primary/60 py-1 px-1 mb-1">Data Centers</div>
+              )}
+              {activeNavLinks.map((l) => (
                 <a key={l.label} href={l.href}
                   className="text-base font-medium text-white/70 hover:text-white transition-colors py-2.5 border-b border-white/5"
                   onClick={() => setMenuOpen(false)}>

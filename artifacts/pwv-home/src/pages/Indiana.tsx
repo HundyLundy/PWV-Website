@@ -36,6 +36,7 @@ const config = {
     { title: "Act Before Next Hike", desc: "Rate increases are already in progress" },
   ],
   source: "perfectwatervalve.com/locations/indiana",
+  showDataCenterSection: true,
   seoTitle: "Indiana Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Indiana. Bloomington up 46–50% in 2025. Anderson facing 85.5% by 2027. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/indiana",

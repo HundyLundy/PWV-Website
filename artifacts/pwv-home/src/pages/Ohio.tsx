@@ -36,6 +36,7 @@ const config = {
     { title: "Act Before Next Hike", desc: "Multi-year rate schedules already approved" },
   ],
   source: "perfectwatervalve.com/locations/ohio",
+  showDataCenterSection: true,
   seoTitle: "Ohio Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Ohio. Tallmadge up 10% then 15%/yr through 2028. Columbus up 7%. Aqua Ohio 10–12% proposed. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/ohio",

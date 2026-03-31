@@ -36,6 +36,7 @@ const config = {
     { title: "Data Center Expertise", desc: "Amazon YYZ3 — 58.69% peak verified" },
   ],
   source: "perfectwatervalve.com/locations/iowa",
+  showDataCenterSection: true,
   seoTitle: "Iowa Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Iowa. Iowa-American Water up 45%. Data center boom straining supply. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/iowa",

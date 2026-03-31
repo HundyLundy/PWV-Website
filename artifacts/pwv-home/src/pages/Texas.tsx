@@ -277,6 +277,49 @@ export default function TexasNewPage() {
       {/* SAVINGS CALCULATOR */}
       <StateCalculator scrollTo={scrollTo} stateLabel="Texas" footerNote="*Calculations based on verified M&V data. SAWS rates increasing 32.7% by 2029 — savings compound as your baseline cost rises." />
 
+      {/* DATA CENTER RESOURCES */}
+      <section className="py-14 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-background">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary/70 mb-2">Data Center Resources</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              Texas Is a Major Data Center Market — Here's What Operators Need to Know
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
+              Data centers are among the highest-ROI Smart Valve™ applications. Amazon YYZ3 hit 58.69% peak savings over 6 quarters. Texas facilities have direct access to the same technology and the same guarantee.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-5">
+            <a href="/industries/data-centers/cooling-water-costs"
+              className="group bg-[#121B2E] border border-white/10 rounded-2xl p-6 hover:border-primary/40 hover:bg-[#1A2540] transition-all flex flex-col">
+              <div className="text-xs font-bold uppercase tracking-widest text-primary/60 mb-2">Deep Dive</div>
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">
+                How Data Centers Use Water — and Where the Waste Happens
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                Cooling tower makeup water, condenser systems, metered waste. Understand the cost drivers before evaluating any solution.
+              </p>
+              <span className="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                Explore Cooling Water Costs <ArrowRight className="w-4 h-4" />
+              </span>
+            </a>
+            <a href="/industries/data-centers/hyperscale-roi"
+              className="group bg-[#121B2E] border border-white/10 rounded-2xl p-6 hover:border-yellow-500/30 hover:bg-[#1A2540] transition-all flex flex-col">
+              <div className="text-xs font-bold uppercase tracking-widest text-yellow-500/60 mb-2">ROI Model</div>
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
+                Multi-Site ROI Model and the Amazon YYZ3 Benchmark
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                Enterprise deployment framework, projected savings at multiple consumption tiers, and the full 58.69% case study. Built for VPs and CFOs.
+              </p>
+              <span className="text-yellow-500 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                See the ROI Model <ArrowRight className="w-4 h-4" />
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/10" style={{ background: "linear-gradient(135deg, #0374A7 0%, #025d87 60%, #3C6E7F 100%)" }}>
         <div className="max-w-3xl mx-auto">

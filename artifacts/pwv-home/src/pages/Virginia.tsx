@@ -36,6 +36,7 @@ const config = {
     { title: "Data Center Expertise", desc: "Amazon YYZ3 — 58.69% peak verified" },
   ],
   source: "perfectwatervalve.com/locations/virginia",
+  showDataCenterSection: true,
   seoTitle: "Virginia Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Virginia. Northern Virginia data centers use 1.7B gal/day. VA American Water up 3.72%. Permit restrictions growing. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/virginia",
