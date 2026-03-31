@@ -39,6 +39,8 @@ export default function ColoradoPage() {
   };
 
   useEffect(() => {
+    const prevTitle = document.title;
+    document.title = "Colorado Commercial Water Savings | Smart Valve™ | Perfect Water Valve";
     const existing = document.getElementById("colorado-faq-jsonld");
     if (existing) existing.remove();
     const script = document.createElement("script");
@@ -46,7 +48,10 @@ export default function ColoradoPage() {
     script.type = "application/ld+json";
     script.textContent = JSON.stringify(COLORADO_FAQ_SCHEMA);
     document.head.appendChild(script);
-    return () => { const s = document.getElementById("colorado-faq-jsonld"); if (s) s.remove(); };
+    return () => {
+      document.title = prevTitle;
+      const s = document.getElementById("colorado-faq-jsonld"); if (s) s.remove();
+    };
   }, []);
 
   return (
