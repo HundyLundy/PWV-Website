@@ -6,6 +6,7 @@ import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 const NAV_LINKS = [
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Clients", href: "/#clients" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
 ];

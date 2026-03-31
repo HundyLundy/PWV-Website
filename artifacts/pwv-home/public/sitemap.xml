@@ -451,4 +451,42 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://www.perfectwatervalve.com/blog</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/blog/commercial-water-rates-rising-2025</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/blog/amazon-yyz3-case-study</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/blog/denver-water-rebate-guide</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/blog/hotel-water-savings-guide</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/blog/what-is-smart-valve</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

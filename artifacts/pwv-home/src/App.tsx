@@ -6,6 +6,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 
+// Blog
+import BlogPage from "@/pages/Blog";
+import WaterRates2025 from "@/pages/blog/WaterRates2025";
+import AmazonYYZ3 from "@/pages/blog/AmazonYYZ3";
+import DenverRebate from "@/pages/blog/DenverRebate";
+import HotelWaterSavings from "@/pages/blog/HotelWaterSavings";
+import WhatIsSmartValve from "@/pages/blog/WhatIsSmartValve";
+
 // Core pages
 import Results from "@/pages/Results";
 import Impact from "@/pages/Impact";
@@ -262,6 +270,15 @@ function Router() {
       <Route path="/industries/data-centers/cooling-water-costs/" component={DataCenterCoolingCostsPage} />
       <Route path="/industries/data-centers/hyperscale-roi" component={HyperscaleROIPage} />
       <Route path="/industries/data-centers/hyperscale-roi/" component={HyperscaleROIPage} />
+
+      {/* Blog */}
+      <Route path="/blog" component={BlogPage} />
+      <Route path="/blog/" component={BlogPage} />
+      <Route path="/blog/commercial-water-rates-rising-2025" component={WaterRates2025} />
+      <Route path="/blog/amazon-yyz3-case-study" component={AmazonYYZ3} />
+      <Route path="/blog/denver-water-rebate-guide" component={DenverRebate} />
+      <Route path="/blog/hotel-water-savings-guide" component={HotelWaterSavings} />
+      <Route path="/blog/what-is-smart-valve" component={WhatIsSmartValve} />
 
       {/* Fallback */}
       <Route component={NotFound} />

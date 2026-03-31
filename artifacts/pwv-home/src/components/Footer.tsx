@@ -75,6 +75,7 @@ export function Footer() {
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Explore</h4>
               <ul className="space-y-2 text-sm text-slate-500">
                 {[
+                  ["Blog", "/blog"],
                   ["Case Studies & Proof", "/results/"],
                   ["Locations", "/locations/usa"],
                   ["Industries", "/industries"],
