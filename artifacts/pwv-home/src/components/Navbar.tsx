@@ -180,7 +180,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
           className="flex items-center gap-3 hover:opacity-95 transition-opacity rounded-xl px-2.5 py-1.5"
           style={{ background: 'rgba(3,116,167,0.18)', border: '1px solid rgba(91,191,224,0.25)' }}
         >
-          <div className="w-11 h-11 rounded-xl flex items-center justify-center p-1.5 border border-white/25 bg-white/15 shadow-sm">
+          <div className="w-11 h-11 rounded-xl flex items-center justify-center p-1.5 shadow-sm" style={{ background: '#EEF6FB', border: '1px solid rgba(3,116,167,0.3)' }}>
             <img src={logoSrc} alt="Perfect Water Valve" className="w-full h-full object-contain drop-shadow" />
           </div>
           <div>
