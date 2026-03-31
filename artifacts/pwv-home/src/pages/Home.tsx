@@ -316,10 +316,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { to: 32000, suffix: "+", label: "Verified Installations", decimals: 0 },
-              { to: 15, suffix: "%", label: "Minimum Guaranteed Savings", decimals: 0 },
-              { to: 58.69, suffix: "%", label: "Peak Savings Recorded", decimals: 2 },
-              { to: 21, suffix: "", label: "Published Case Studies", decimals: 0 },
+              { to: 32000, suffix: "+", label: "Verified Installations", decimals: 0, sub: "(all customers)" },
+              { to: 15, suffix: "%", label: "Minimum Guaranteed Savings", decimals: 0, sub: "(all customers)" },
+              { to: 58.69, suffix: "%", label: "Peak Savings Recorded", decimals: 2, sub: "(Amazon YYZ3 fulfillment center)" },
+              { to: 21, suffix: "", label: "Published Case Studies", decimals: 0, sub: "(M&V verified)" },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -332,6 +332,7 @@ export default function Home() {
                   <AnimatedCounter to={stat.to} suffix={stat.suffix} decimals={stat.decimals} />
                 </div>
                 <div className="text-sm text-white/50 uppercase tracking-wider font-medium">{stat.label}</div>
+                <div className="text-xs text-white/30 mt-1">{stat.sub}</div>
               </motion.div>
             ))}
           </div>
@@ -595,13 +596,14 @@ export default function Home() {
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-8 mb-12">
               {[
-                { counter: <AnimatedCounter to={15} suffix="%" />, label: "Guaranteed minimum savings" },
-                { counter: <AnimatedCounter to={58.69} suffix="%" decimals={2} />, label: "Peak recorded reduction" },
-                { counter: <AnimatedCounter to={0} prefix="$" />, label: "Cost if guarantee not met" },
+                { counter: <AnimatedCounter to={15} suffix="%" />, label: "Guaranteed minimum savings", sub: "(all customers)" },
+                { counter: <AnimatedCounter to={58.69} suffix="%" decimals={2} />, label: "Peak recorded reduction", sub: "(Amazon YYZ3 fulfillment center)" },
+                { counter: <AnimatedCounter to={0} prefix="$" />, label: "Cost if guarantee not met", sub: "(guarantee terms apply)" },
               ].map((s, i) => (
                 <div key={i} className="text-center">
                   <div className="text-4xl md:text-5xl font-bold font-headline" style={{ color: '#0374A7' }}>{s.counter}</div>
                   <div className="text-sm text-white/40 mt-1">{s.label}</div>
+                  <div className="text-xs text-white/25 mt-0.5">{s.sub}</div>
                 </div>
               ))}
             </motion.div>
