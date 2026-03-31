@@ -35,10 +35,10 @@ const config = {
     { title: "15% Guaranteed in Writing", desc: "Every installation, no exceptions" },
     { title: "2–4 Hour Install", desc: "Zero operational disruption" },
   ],
-  source: "perfectwatervalve.com/locations/denver",
+  source: "perfectwatervalve.com/locations/colorado/denver",
   seoTitle: "Denver Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Denver. Denver Water up 6% in 2025 with more increases through 2027. Drought driving conservation mandates. Guaranteed in writing.",
-  seoCanonical: "https://www.perfectwatervalve.com/locations/denver",
+  seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/denver",
 };
 
 export default function Denver() {

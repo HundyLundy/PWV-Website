@@ -222,16 +222,16 @@ function Router() {
       <Route path="/locations/wyoming/" component={WyomingPage} />
 
       {/* Colorado city pages */}
-      <Route path="/locations/denver" component={DenverPage} />
-      <Route path="/locations/denver/" component={DenverPage} />
-      <Route path="/locations/colorado-springs" component={ColoradoSpringsPage} />
-      <Route path="/locations/colorado-springs/" component={ColoradoSpringsPage} />
-      <Route path="/locations/aurora" component={AuroraPage} />
-      <Route path="/locations/aurora/" component={AuroraPage} />
-      <Route path="/locations/fort-collins" component={FortCollinsPage} />
-      <Route path="/locations/fort-collins/" component={FortCollinsPage} />
-      <Route path="/locations/lakewood" component={LakewoodPage} />
-      <Route path="/locations/lakewood/" component={LakewoodPage} />
+      <Route path="/locations/colorado/denver" component={DenverPage} />
+      <Route path="/locations/colorado/denver/" component={DenverPage} />
+      <Route path="/locations/colorado/colorado-springs" component={ColoradoSpringsPage} />
+      <Route path="/locations/colorado/colorado-springs/" component={ColoradoSpringsPage} />
+      <Route path="/locations/colorado/aurora" component={AuroraPage} />
+      <Route path="/locations/colorado/aurora/" component={AuroraPage} />
+      <Route path="/locations/colorado/fort-collins" component={FortCollinsPage} />
+      <Route path="/locations/colorado/fort-collins/" component={FortCollinsPage} />
+      <Route path="/locations/colorado/lakewood" component={LakewoodPage} />
+      <Route path="/locations/colorado/lakewood/" component={LakewoodPage} />
 
       {/* International pages */}
       <Route path="/locations/europe" component={EuropePage} />

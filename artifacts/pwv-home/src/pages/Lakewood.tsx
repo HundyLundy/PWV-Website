@@ -35,10 +35,10 @@ const config = {
     { title: "15% Guaranteed in Writing", desc: "Every installation, no exceptions" },
     { title: "2–4 Hour Install", desc: "Zero operational disruption" },
   ],
-  source: "perfectwatervalve.com/locations/lakewood",
+  source: "perfectwatervalve.com/locations/colorado/lakewood",
   seoTitle: "Lakewood CO Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Lakewood, CO. Denver Water up 6%. Colorado drought conservation mandates active. Jefferson County commercial properties. Guaranteed in writing.",
-  seoCanonical: "https://www.perfectwatervalve.com/locations/lakewood",
+  seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/lakewood",
 };
 
 export default function Lakewood() {

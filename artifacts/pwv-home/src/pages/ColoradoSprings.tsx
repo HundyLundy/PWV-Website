@@ -35,10 +35,10 @@ const config = {
     { title: "15% Guaranteed in Writing", desc: "Every installation, no exceptions" },
     { title: "Conservation Compliance", desc: "Helps meet active mandate thresholds" },
   ],
-  source: "perfectwatervalve.com/locations/colorado-springs",
+  source: "perfectwatervalve.com/locations/colorado/colorado-springs",
   seoTitle: "Colorado Springs Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Colorado Springs. Severe drought conditions in 2025. Colorado Springs Utilities raising rates. Conservation mandates active. Guaranteed in writing.",
-  seoCanonical: "https://www.perfectwatervalve.com/locations/colorado-springs",
+  seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/colorado-springs",
 };
 
 export default function ColoradoSprings() {

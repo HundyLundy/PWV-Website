@@ -35,10 +35,10 @@ const config = {
     { title: "15% Guaranteed in Writing", desc: "Every installation, no exceptions" },
     { title: "2–4 Hour Install", desc: "Zero operational disruption" },
   ],
-  source: "perfectwatervalve.com/locations/aurora",
+  source: "perfectwatervalve.com/locations/colorado/aurora",
   seoTitle: "Aurora CO Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Aurora, CO. Aurora Water raising rates. Colorado drought reducing reservoir levels. Conservation mandates active. Guaranteed savings in writing.",
-  seoCanonical: "https://www.perfectwatervalve.com/locations/aurora",
+  seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/aurora",
 };
 
 export default function Aurora() {

@@ -35,10 +35,10 @@ const config = {
     { title: "15% Guaranteed in Writing", desc: "Every installation, no exceptions" },
     { title: "2–4 Hour Install", desc: "Zero operational disruption" },
   ],
-  source: "perfectwatervalve.com/locations/fort-collins",
+  source: "perfectwatervalve.com/locations/colorado/fort-collins",
   seoTitle: "Fort Collins Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Fort Collins, CO. Poudre River drought stress. Fort Collins Utilities raising rates. CSU and tech sector high-volume users. Guaranteed in writing.",
-  seoCanonical: "https://www.perfectwatervalve.com/locations/fort-collins",
+  seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/fort-collins",
 };
 
 export default function FortCollins() {

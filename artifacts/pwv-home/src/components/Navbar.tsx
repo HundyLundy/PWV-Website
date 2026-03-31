@@ -13,11 +13,11 @@ const NAV_LINKS = [
 const LOCATIONS = [
   { label: "All Locations (US & Worldwide)", href: "/locations/usa", emoji: "🌎" },
   // — Colorado Cities —
-  { label: "Denver", href: "/locations/denver", emoji: "🏔️" },
-  { label: "Colorado Springs", href: "/locations/colorado-springs", emoji: "⛰️" },
-  { label: "Aurora", href: "/locations/aurora", emoji: "🌅" },
-  { label: "Fort Collins", href: "/locations/fort-collins", emoji: "🎓" },
-  { label: "Lakewood", href: "/locations/lakewood", emoji: "🌲" },
+  { label: "Denver", href: "/locations/colorado/denver", emoji: "🏔️" },
+  { label: "Colorado Springs", href: "/locations/colorado/colorado-springs", emoji: "⛰️" },
+  { label: "Aurora", href: "/locations/colorado/aurora", emoji: "🌅" },
+  { label: "Fort Collins", href: "/locations/colorado/fort-collins", emoji: "🎓" },
+  { label: "Lakewood", href: "/locations/colorado/lakewood", emoji: "🌲" },
   // — US States —
   { label: "Alabama", href: "/locations/alabama", emoji: "🌾" },
   { label: "Alaska", href: "/locations/alaska", emoji: "❄️" },

@@ -496,9 +496,9 @@ export default function Home() {
                 {s.name}
               </a>
             ))}
-            <a href="/locations/denver" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Denver CO</a>
-            <a href="/locations/aurora" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Aurora CO</a>
-            <a href="/locations/colorado-springs" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Colorado Springs CO</a>
+            <a href="/locations/colorado/denver" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Denver CO</a>
+            <a href="/locations/colorado/aurora" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Aurora CO</a>
+            <a href="/locations/colorado/colorado-springs" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Colorado Springs CO</a>
             <a href="/locations/europe" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(60,110,127,0.05)', borderColor: '#3C6E7F', color: '#3C6E7F' }}>Europe</a>
             <a href="/locations/asia" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(60,110,127,0.05)', borderColor: '#3C6E7F', color: '#3C6E7F' }}>Asia-Pacific</a>
           </motion.div>
