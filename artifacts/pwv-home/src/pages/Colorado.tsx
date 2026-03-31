@@ -298,7 +298,7 @@ export default function ColoradoPage() {
               <h3 className="text-2xl font-bold text-white mb-4">Amazon YYZ3 Fulfillment Center</h3>
               <div className="text-4xl font-black text-primary mb-6">Peak Savings: 58.69%</div>
               <ul className="space-y-3 text-gray-300">
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 58.69% peak single-quarter reduction</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Peak reduction — M&V verified, 6 consecutive quarters</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 17% sustained average savings</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 6 consecutive quarters of verified data</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Zero operational disruption — directly applicable to Denver data centers</li>
@@ -574,7 +574,7 @@ function FAQAccordion() {
   const faqs = [
     { q: "What is the water situation in Colorado for commercial properties?", a: "Colorado commercial property owners face rising water rates from Denver Water, Colorado Springs Utilities, and Aurora Water — Smart Valve™ cuts metered bills 15–58% and qualifies for Denver Water rebates covering up to 50% of installation costs." },
     { q: "Does the Denver Water rebate apply to Smart Valve™ installations?", a: "Yes. Denver Water's Custom Commercial Water Efficiency Rebate covers up to 50% of material costs (capped at $10,000 per controlling entity per year) for projects that demonstrate sustained water use reduction. Smart Valve™ installations qualify for pre-approval. Applications are first-come, first-served and the annual budget runs out — contact us now to secure your spot." },
-    { q: "How does Smart Valve™ reduce metered water consumption?", a: "Smart Valve™ installs on the main commercial water supply line in under 4 hours and reduces your metered water bill by 15–58%, guaranteed in writing. It requires no electricity, has no moving parts, and needs no maintenance — ever." },
+    { q: "How does Smart Valve™ reduce metered water consumption?", a: "Smart Valve™ installs on the main commercial water supply line in under 4 hours and reduces your metered water bill by a minimum of 15%, guaranteed in writing. It requires no electricity, has no moving parts, and needs no maintenance — ever." },
     { q: "Is the 15% savings guarantee in writing?", a: "Yes. Every installation comes with a written guarantee of at least 15% reduction in metered water consumption. If your Colorado facility doesn't achieve 15% savings, we make it right at no additional cost." },
     { q: "How do I get a Colorado water savings assessment?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com. We review your current water bills, calculate projected savings, confirm Denver Water rebate eligibility, and provide a written guarantee before installation." },
   ];

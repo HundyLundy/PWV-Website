@@ -73,7 +73,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 const DEFAULT_CASE_STUDIES = [
-  { label: "Data Center / Logistics", name: "Amazon YYZ3 Fulfillment Center", stat: "58.69% Peak", sub: "17% avg — 6 verified quarters", items: ["58.69% peak single-quarter reduction", "17% sustained average savings", "6 consecutive verified quarters", "Zero operational disruption"] },
+  { label: "Data Center / Logistics", name: "Amazon YYZ3 Fulfillment Center", stat: "58.69% Peak", sub: "17% avg — 6 verified quarters", items: ["Peak reduction — M&V verified", "17% sustained average savings", "6 consecutive verified quarters", "Zero operational disruption"] },
   { label: "Luxury Hospitality", name: "Four Seasons Fort Lauderdale", stat: "$27K/yr", sub: "26% average savings", items: ["26% water reduction", "$27,000 annual savings verified", "Zero guest impact", "No maintenance required"] },
   { label: "Car Wash Chain", name: "Caliber Car Wash (5 Sites)", stat: "23% Avg", sub: "$38,400/yr verified", items: ["23% weighted average savings", "5 verified sites", "High-volume continuous use", "Consistent results across all locations"] },
   { label: "Mixed-Use Complex", name: "Grand Central at Kennedy", stat: "$50K/yr", sub: "Tampa, FL — 23% reduction", items: ["23% metered reduction", "$50,000 annual savings", "Large multi-use property", "Exceeded guarantee by 8%"] },
@@ -362,7 +362,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
                 {config.state} Is a Major Data Center Market — Here's What Operators Need to Know
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
-                Data centers are among the highest-ROI Smart Valve™ applications. Amazon YYZ3 hit 58.69% peak savings over 6 quarters. {config.state} facilities have direct access to the same technology and the same guarantee.
+                Data centers are among the highest-ROI Smart Valve™ applications — among the highest savings documented across any industry. {config.state} facilities have direct access to the same technology and the same guarantee.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-5">
@@ -386,7 +386,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
                   Multi-Site ROI Model and the Amazon YYZ3 Benchmark
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
-                  Enterprise deployment framework, projected savings at multiple consumption tiers, and the full 58.69% case study. Built for VPs and CFOs.
+                  Enterprise deployment framework, projected savings at multiple consumption tiers, and the full Amazon YYZ3 case study. Built for VPs and CFOs.
                 </p>
                 <span className="text-yellow-500 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
                   See the ROI Model <ArrowRight className="w-4 h-4" />

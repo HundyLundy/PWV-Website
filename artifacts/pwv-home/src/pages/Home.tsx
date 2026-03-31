@@ -316,7 +316,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { to: 32000, suffix: "+", label: "Verified Installations", decimals: 0, sub: "(all customers)" },
+              { to: 32000, suffix: "+", label: "Verified Installations", decimals: 0, sub: null },
               { to: 15, suffix: "%", label: "Minimum Guaranteed Savings", decimals: 0, sub: "(all customers)" },
               { to: 58.69, suffix: "%", label: "Peak Savings Recorded", decimals: 2, sub: "(Amazon YYZ3 fulfillment center)" },
               { to: 21, suffix: "", label: "Published Case Studies", decimals: 0, sub: "(M&V verified)" },
@@ -332,7 +332,7 @@ export default function Home() {
                   <AnimatedCounter to={stat.to} suffix={stat.suffix} decimals={stat.decimals} />
                 </div>
                 <div className="text-sm text-white/50 uppercase tracking-wider font-medium">{stat.label}</div>
-                <div className="text-xs text-white/30 mt-1">{stat.sub}</div>
+                {stat.sub && <div className="text-xs text-white/30 mt-1">{stat.sub}</div>}
               </motion.div>
             ))}
           </div>
