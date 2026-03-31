@@ -345,7 +345,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
                 {s.name}
               </a>
             ))}
-            <a href="/locations/denver-co" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Denver CO</a>
+            <a href="/locations/denver" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Denver CO</a>
             <a href="/locations/europe" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(60,110,127,0.05)', borderColor: '#3C6E7F', color: '#3C6E7F' }}>Europe</a>
             <a href="/" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>View All 50 States →</a>
           </div>
