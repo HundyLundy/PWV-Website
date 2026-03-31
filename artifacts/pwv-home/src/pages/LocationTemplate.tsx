@@ -405,38 +405,37 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
         </div>
       </section>
 
-      {/* RELATED LOCATIONS */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: '#F4F8FC', borderColor: '#C5D8E8' }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0374A7' }}>Also Serving</p>
-            <h3 className="text-xl font-bold" style={{ color: '#0A1F3A' }}>
-              {config.alsoServingHeading ?? `Smart Valve™ Installations Near ${config.state}`}
-            </h3>
-          </div>
-          <div className="flex flex-wrap gap-2 justify-center">
-            {(config.alsoServing ?? NEARBY_STATES).map((s) => (
-              <a
-                key={s.slug}
-                href={`/locations/${s.slug}`}
-                className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm"
-                style={{ backgroundColor: 'white', borderColor: '#C5D8E8', color: '#2E4A5A' }}
-              >
-                {s.name}
-              </a>
-            ))}
-            {!config.alsoServing && (
-              <>
-                <a href="/locations/europe" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(60,110,127,0.05)', borderColor: '#3C6E7F', color: '#3C6E7F' }}>Europe</a>
-                <a href="/locations/usa" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>View All 50 States →</a>
-              </>
-            )}
-            {config.alsoServing && (
+      {/* RELATED LOCATIONS
+           Rule: Only render this section when config.alsoServing is defined.
+           This section should only appear on pages that link to deeper, more specific pages
+           (e.g. Colorado city pages linking to other CO cities). Do NOT render it on
+           state-level pages that only link laterally to other state pages — that adds no
+           navigation value and distracts from the contact form. */}
+      {config.alsoServing && (
+        <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: '#F4F8FC', borderColor: '#C5D8E8' }}>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0374A7' }}>Also Serving</p>
+              <h3 className="text-xl font-bold" style={{ color: '#0A1F3A' }}>
+                {config.alsoServingHeading ?? `Smart Valve™ Installations Near ${config.state}`}
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {config.alsoServing.map((s) => (
+                <a
+                  key={s.slug}
+                  href={`/locations/${s.slug}`}
+                  className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm"
+                  style={{ backgroundColor: 'white', borderColor: '#C5D8E8', color: '#2E4A5A' }}
+                >
+                  {s.name}
+                </a>
+              ))}
               <a href="/locations/colorado" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>← Colorado State Page</a>
-            )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CONTACT */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">

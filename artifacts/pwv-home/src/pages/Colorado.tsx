@@ -41,6 +41,15 @@ export default function ColoradoPage() {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "Colorado Commercial Water Savings | Smart Valve™ | Perfect Water Valve";
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const prevDesc = metaDesc?.getAttribute("content") ?? "";
+    metaDesc?.setAttribute("content", "Colorado commercial properties face rising water rates from Denver Water, Colorado Springs Utilities, and Aurora Water. Smart Valve™ cuts your metered bill 15–58%, guaranteed. Denver Water rebate covers up to 50% of installation costs.");
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const prevOgTitle = ogTitle?.getAttribute("content") ?? "";
+    ogTitle?.setAttribute("content", "Colorado Commercial Water Savings | Smart Valve™ | Perfect Water Valve");
+
     const existing = document.getElementById("colorado-faq-jsonld");
     if (existing) existing.remove();
     const script = document.createElement("script");
@@ -48,8 +57,11 @@ export default function ColoradoPage() {
     script.type = "application/ld+json";
     script.textContent = JSON.stringify(COLORADO_FAQ_SCHEMA);
     document.head.appendChild(script);
+
     return () => {
       document.title = prevTitle;
+      metaDesc?.setAttribute("content", prevDesc);
+      ogTitle?.setAttribute("content", prevOgTitle);
       const s = document.getElementById("colorado-faq-jsonld"); if (s) s.remove();
     };
   }, []);
