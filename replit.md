@@ -1,3 +1,19 @@
+# Perfect Water Valve — Project Notes
+
+## PWV Home (`artifacts/pwv-home`)
+- **69 total page files** across state, city, international, industry pages
+- **ContactForm component**: `src/components/ContactForm.tsx` — named default export, takes `source?: string` prop, uses GHL webhook `FpCGhOJrf32qB7JtGKCM`
+- **Navbar/Footer**: both are named exports `{ Navbar }` / `{ Footer }` — always import as named, never default
+- **LocationTemplate**: handles its own inline contact form with GHL webhook `pwv-contact` slug
+- **State pages (34 new)**: Alabama → Wyoming — all use `LocationTemplate`
+- **CO cities (5)**: Denver, Colorado Springs, Aurora, Fort Collins, Lakewood — all use `LocationTemplate`
+- **International**: Europe (`/locations/europe`), Asia (`/locations/asia`) — custom full-page builds
+- **DC sub-pages**: `/industries/data-centers/cooling-water-costs`, `/industries/data-centers/hyperscale-roi`
+- **Sitemap**: `public/sitemap.xml` — fully updated with all 80+ URLs, lastmod 2026-03-31
+- **No China anywhere** on the site
+
+---
+
 # Workspace
 
 ## Overview

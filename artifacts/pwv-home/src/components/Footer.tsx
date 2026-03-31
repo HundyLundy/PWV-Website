@@ -77,10 +77,36 @@ export function Footer() {
                 {[
                   ["Case Studies & Proof", "/results/"],
                   ["Locations", "/locations/usa"],
-                  ["Industries", "/industries/data-centers"],
+                  ["Industries", "/industries"],
+                  ["Data Centers", "/industries/data-centers"],
+                  ["Hyperscale ROI", "/industries/data-centers/hyperscale-roi"],
                   ["Live Savings Counter", "/impact/"],
                   ["Get a Full Proposal", "/savings/"],
                   ["Smart Valve™ Info Sheet", "/infosheet/"],
+                ].map(([label, href]) => (
+                  <li key={label}>
+                    <a href={href} className="hover:text-white transition-colors">{label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Locations</h4>
+              <ul className="space-y-2 text-sm text-slate-500">
+                {[
+                  ["Colorado", "/locations/colorado"],
+                  ["Texas", "/locations/texas"],
+                  ["California", "/locations/california"],
+                  ["Virginia", "/locations/virginia"],
+                  ["Pennsylvania", "/locations/pennsylvania"],
+                  ["Indiana", "/locations/indiana"],
+                  ["Ohio", "/locations/ohio"],
+                  ["Missouri", "/locations/missouri"],
+                  ["Delaware", "/locations/delaware"],
+                  ["Europe", "/locations/europe"],
+                  ["Asia-Pacific", "/locations/asia"],
+                  ["All Locations →", "/locations/usa"],
                 ].map(([label, href]) => (
                   <li key={label}>
                     <a href={href} className="hover:text-white transition-colors">{label}</a>

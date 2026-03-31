@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Building2, Home, Hotel, Cross, Droplets, Utensils, Flag,
@@ -30,6 +30,9 @@ export interface LocationConfig {
   contactBody: string;
   contactBullets: { title: string; desc: string }[];
   source: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoCanonical?: string;
 }
 
 const COLOR_MAP: Record<string, string> = {
@@ -64,6 +67,34 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const prevTitle = document.title;
+    const title = config.seoTitle || `${config.state} Commercial Water Savings | Smart Valve™ | Perfect Water Valve`;
+    const desc = config.seoDescription || `Smart Valve™ cuts commercial water bills 15–58% in ${config.state}. Guaranteed in writing. NSF certified. No power, no moving parts. Free assessment available.`;
+    const canonical = config.seoCanonical || `https://www.perfectwatervalve.com/locations/${config.state.toLowerCase().replace(/\s+/g, "-")}`;
+    document.title = title;
+    const setMeta = (name: string, content: string, attr = "name") => {
+      let el = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", content);
+    };
+    const setLink = (rel: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"]`);
+      if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); document.head.appendChild(el); }
+      el.setAttribute("href", href);
+    };
+    setMeta("description", desc);
+    setLink("canonical", canonical);
+    setMeta("og:title", title, "property");
+    setMeta("og:description", desc, "property");
+    setMeta("og:url", canonical, "property");
+    setMeta("og:image", "https://www.perfectwatervalve.com/favicon.png", "property");
+    let jsonLd = document.getElementById("page-jsonld");
+    if (!jsonLd) { jsonLd = document.createElement("script"); jsonLd.setAttribute("type", "application/ld+json"); jsonLd.id = "page-jsonld"; document.head.appendChild(jsonLd); }
+    jsonLd.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "Service", "name": `Smart Valve™ — ${config.state} Commercial Water Savings`, "url": canonical, "description": desc, "provider": { "@type": "Organization", "name": "Perfect Water Valve", "url": "https://www.perfectwatervalve.com", "telephone": "+17209373004", "email": "info@perfectwatervalve.com" }, "areaServed": config.state, "serviceType": "Commercial Water Savings" });
+    return () => { document.title = prevTitle; };
+  }, [config.seoTitle, config.seoDescription, config.seoCanonical, config.state]);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -234,21 +265,21 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Building2, title: "Office Buildings", desc: "Cooling towers and domestic water lines." },
-              { icon: Home, title: "Multi-Family Residential", desc: "Protect NOI against rising utility rates." },
-              { icon: Hotel, title: "Hotels & Hospitality", desc: "Invisible savings, zero guest impact." },
-              { icon: Cross, title: "Hospitals & Healthcare", desc: "High-volume facilities see the largest savings." },
-              { icon: Droplets, title: "Car Washes", desc: "Water is the #1 variable cost. Smart Valve™ cuts it immediately." },
-              { icon: Building2, title: "Data Centers", desc: "Cooling water dominates operating costs." },
-              { icon: Utensils, title: "Restaurants", desc: "Lower overhead in margin-tight food service." },
-              { icon: Flag, title: "Golf Courses", desc: "Irrigation and clubhouse — highest ROI application." }
+              { icon: Building2, title: "Office Buildings", desc: "Cooling towers and domestic water lines.", href: "/industries" },
+              { icon: Home, title: "Multi-Family Residential", desc: "Protect NOI against rising utility rates.", href: "/industries/multifamily" },
+              { icon: Hotel, title: "Hotels & Hospitality", desc: "Invisible savings, zero guest impact.", href: "/industries/hotels" },
+              { icon: Cross, title: "Hospitals & Healthcare", desc: "High-volume facilities see the largest savings.", href: "/industries/hospitals" },
+              { icon: Droplets, title: "Car Washes", desc: "Water is the #1 variable cost. Smart Valve™ cuts it immediately.", href: "/industries/car-washes" },
+              { icon: Building2, title: "Data Centers", desc: "Cooling water dominates operating costs.", href: "/industries/data-centers" },
+              { icon: Utensils, title: "Restaurants", desc: "Lower overhead in margin-tight food service.", href: "/industries" },
+              { icon: Flag, title: "Golf Courses", desc: "Irrigation and clubhouse — highest ROI application.", href: "/industries" }
             ].map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="bg-white/15 backdrop-blur-sm p-6 rounded-xl border border-white/25 hover:bg-white/25 transition-all flex flex-col items-center text-center">
+              <motion.a key={i} href={item.href} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="bg-white/15 backdrop-blur-sm p-6 rounded-xl border border-white/25 hover:bg-white/25 transition-all flex flex-col items-center text-center no-underline">
                 <div className="w-14 h-14 bg-white/20 text-white rounded-full flex items-center justify-center mb-4"><item.icon className="w-7 h-7" /></div>
                 <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
                 <p className="text-sm text-white/75">{item.desc}</p>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
