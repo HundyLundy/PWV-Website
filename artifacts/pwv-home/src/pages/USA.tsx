@@ -1,29 +1,89 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, ShieldCheck, MapPin } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, MapPin, Globe } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
 
-const STATES = [
+const FEATURED_STATES = [
   { name: "Colorado", path: "/locations/colorado", emoji: "🏔️", badge: "Priority Market · Denver Water Rebate 50%" },
   { name: "Texas", path: "/locations/texas", emoji: "🌵", badge: "SAWS +32.7% by 2029 · Dallas $100K Rebate" },
   { name: "California", path: "/locations/california", emoji: "☀️", badge: "Highest US Water Rates · +30.3% by 2029" },
   { name: "Arizona", path: "/locations/arizona", emoji: "🌄", badge: "Colorado River Shortage · SRP Rebate $450K" },
   { name: "Nevada", path: "/locations/nevada", emoji: "🎰", badge: "Lake Mead Crisis · SNWA Binding Targets" },
-  { name: "New York", path: "/locations/new-york", emoji: "🗽", badge: "NYC DEP +8% · Dual Water + Sewer Savings" },
   { name: "Florida", path: "/locations/florida", emoji: "🌴", badge: "Miami +7.3% · Tampa $50K Verified Savings" },
-  { name: "Washington", path: "/locations/washington", emoji: "🌲", badge: "Seattle SPU +5.7% · Tech Data Centers" },
-  { name: "Oregon", path: "/locations/oregon", emoji: "🌿", badge: "Portland +4.5% · Conservation Compliance" },
+  { name: "New York", path: "/locations/new-york", emoji: "🗽", badge: "NYC DEP +8% · Dual Water + Sewer Savings" },
   { name: "Illinois", path: "/locations/illinois", emoji: "🏙️", badge: "Chicago +16% (3yr) · Water + Sewer Savings" },
-  { name: "Utah", path: "/locations/utah", emoji: "🏜️", badge: "SLC +8% · Great Salt Lake Crisis" },
-  { name: "Idaho", path: "/locations/idaho", emoji: "🥔", badge: "Boise +7% · Mountain West Expert" },
-  { name: "Montana", path: "/locations/montana", emoji: "🦌", badge: "Billings +5.8% · First Mover Market" },
-  { name: "Nebraska", path: "/locations/nebraska", emoji: "🌽", badge: "Omaha +9% · Food Processing Specialists" },
-  { name: "Kansas", path: "/locations/kansas", emoji: "🌾", badge: "Wichita +8% · Aviation Manufacturing" },
-  { name: "New Mexico", path: "/locations/new-mexico", emoji: "🌶️", badge: "Albuquerque +9% · Rio Grande Crisis" },
-  { name: "Worldwide", path: "/locations/uk", emoji: "🌍", badge: "UK · Canada · Australia · Global Markets" },
+  { name: "Washington", path: "/locations/washington", emoji: "🌲", badge: "Seattle SPU +5.7% · Tech Data Centers" },
+  { name: "Virginia", path: "/locations/virginia", emoji: "🏛️", badge: "Northern VA Data Centers · 1.7B gal/day cooling" },
+];
+
+const ALL_STATES = [
+  { name: "Alabama", slug: "alabama", emoji: "🌾" },
+  { name: "Alaska", slug: "alaska", emoji: "❄️" },
+  { name: "Arizona", slug: "arizona", emoji: "🌄" },
+  { name: "Arkansas", slug: "arkansas", emoji: "🌿" },
+  { name: "California", slug: "california", emoji: "☀️" },
+  { name: "Colorado", slug: "colorado", emoji: "🏔️" },
+  { name: "Connecticut", slug: "connecticut", emoji: "🏛️" },
+  { name: "Delaware", slug: "delaware", emoji: "🦅" },
+  { name: "Florida", slug: "florida", emoji: "🌴" },
+  { name: "Georgia", slug: "georgia", emoji: "🍑" },
+  { name: "Hawaii", slug: "hawaii", emoji: "🌺" },
+  { name: "Idaho", slug: "idaho", emoji: "🥔" },
+  { name: "Illinois", slug: "illinois", emoji: "🏙️" },
+  { name: "Indiana", slug: "indiana", emoji: "🏎️" },
+  { name: "Iowa", slug: "iowa", emoji: "🌽" },
+  { name: "Kansas", slug: "kansas", emoji: "🌾" },
+  { name: "Kentucky", slug: "kentucky", emoji: "🐎" },
+  { name: "Louisiana", slug: "louisiana", emoji: "🎷" },
+  { name: "Maine", slug: "maine", emoji: "🦞" },
+  { name: "Maryland", slug: "maryland", emoji: "🦀" },
+  { name: "Massachusetts", slug: "massachusetts", emoji: "🦃" },
+  { name: "Michigan", slug: "michigan", emoji: "🚗" },
+  { name: "Minnesota", slug: "minnesota", emoji: "❄️" },
+  { name: "Mississippi", slug: "mississippi", emoji: "🎶" },
+  { name: "Missouri", slug: "missouri", emoji: "🌉" },
+  { name: "Montana", slug: "montana", emoji: "🦌" },
+  { name: "Nebraska", slug: "nebraska", emoji: "🌽" },
+  { name: "Nevada", slug: "nevada", emoji: "🎰" },
+  { name: "New Hampshire", slug: "new-hampshire", emoji: "🍂" },
+  { name: "New Jersey", slug: "new-jersey", emoji: "🏙️" },
+  { name: "New Mexico", slug: "new-mexico", emoji: "🌶️" },
+  { name: "New York", slug: "new-york", emoji: "🗽" },
+  { name: "North Carolina", slug: "north-carolina", emoji: "🌲" },
+  { name: "North Dakota", slug: "north-dakota", emoji: "🌾" },
+  { name: "Ohio", slug: "ohio", emoji: "🎆" },
+  { name: "Oklahoma", slug: "oklahoma", emoji: "🌪️" },
+  { name: "Oregon", slug: "oregon", emoji: "🌿" },
+  { name: "Pennsylvania", slug: "pennsylvania", emoji: "🔔" },
+  { name: "Rhode Island", slug: "rhode-island", emoji: "⚓" },
+  { name: "South Carolina", slug: "south-carolina", emoji: "🌴" },
+  { name: "South Dakota", slug: "south-dakota", emoji: "🗿" },
+  { name: "Tennessee", slug: "tennessee", emoji: "🎵" },
+  { name: "Texas", slug: "texas", emoji: "🌵" },
+  { name: "Utah", slug: "utah", emoji: "🏜️" },
+  { name: "Vermont", slug: "vermont", emoji: "🍁" },
+  { name: "Virginia", slug: "virginia", emoji: "🏛️" },
+  { name: "Washington", slug: "washington", emoji: "🌲" },
+  { name: "West Virginia", slug: "west-virginia", emoji: "⛏️" },
+  { name: "Wisconsin", slug: "wisconsin", emoji: "🧀" },
+  { name: "Wyoming", slug: "wyoming", emoji: "🦬" },
+];
+
+const CO_CITIES = [
+  { name: "Denver", slug: "colorado/denver", emoji: "🏔️", note: "Denver Water rates · Front Range market" },
+  { name: "Colorado Springs", slug: "colorado/colorado-springs", emoji: "⛰️", note: "CS Utilities · Front Range drought" },
+  { name: "Aurora", slug: "colorado/aurora", emoji: "🌅", note: "Aurora Water · multi-source portfolio" },
+  { name: "Fort Collins", slug: "colorado/fort-collins", emoji: "🎓", note: "Poudre River drought stress" },
+  { name: "Lakewood", slug: "colorado/lakewood", emoji: "🌲", note: "Denver metro market" },
+];
+
+const INTERNATIONAL = [
+  { name: "Europe", slug: "europe", emoji: "🇪🇺", note: "UK · Ireland · Continental Europe · CWS Partner Network" },
+  { name: "Asia-Pacific", slug: "asia", emoji: "🌏", note: "Singapore · Australia · Japan · Data Center Markets" },
 ];
 
 const INDUSTRIES = [
@@ -37,6 +97,7 @@ const INDUSTRIES = [
 export default function USA() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <StickyAssessmentCTA />
       <Navbar onScrollTo={() => {}} />
 
       {/* HERO */}
@@ -46,46 +107,45 @@ export default function USA() {
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-white backdrop-blur-sm mb-8">
-              <span>🇺🇸</span> USA + Worldwide Coverage
+              <Globe className="w-4 h-4" /> All 50 States + International Coverage
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-              Smart Valve™ Commercial Water Savings —{" "}
+              Smart Valve™ Water Savings —{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">
-                Every US State + Worldwide
+                Everywhere You Operate
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Perfect Water Valve deploys through AWS (American Water Savings) and CWS (Canadian Water Savings) nationwide. Every installation includes a written guarantee of ≥15% water bill reduction. Select your state below to see local rate data, rebates, and market analysis.
+              Perfect Water Valve deploys through AWS (American Water Savings) and CWS (Canadian Water Savings) across all 50 US states, Canada, Europe, and Asia-Pacific. Every installation includes a written guarantee of ≥15% water bill reduction. Select your location below.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto pt-8 border-t border-white/10">
+              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">50</div><div className="text-xs text-white/75 uppercase tracking-wider">States Served</div></div>
               <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">58.69%</div><div className="text-xs text-white/75 uppercase tracking-wider">Peak Savings</div></div>
               <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">≥15%</div><div className="text-xs text-white/75 uppercase tracking-wider">Guaranteed Min</div></div>
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">17</div><div className="text-xs text-white/75 uppercase tracking-wider">State Pages</div></div>
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">5</div><div className="text-xs text-white/75 uppercase tracking-wider">Industries Served</div></div>
+              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">21</div><div className="text-xs text-white/75 uppercase tracking-wider">Published Case Studies</div></div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* STATE GRID */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-background">
+      {/* FEATURED STATES */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-background">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-3" style={{ color: '#0374A7' }}>Service Areas</p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0374A7' }}>States With Significant Water Issues</h2>
-            <p className="max-w-2xl mx-auto mb-3" style={{ color: '#0A1F3A' }}>These states face the most severe water costs, rate increases, and conservation mandates in the country. Click your state to see local rates, rebates, and real savings data for Smart Valve™ installations.</p>
-            <p className="max-w-2xl mx-auto text-sm" style={{ color: '#2E4A5A' }}>Each page includes current utility rate data, available rebates, and verified M&V savings from real commercial installations in that market.</p>
+          <div className="text-center mb-12">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-3" style={{ color: '#0374A7' }}>Priority Markets</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">Top States by Water Cost Pressure</h2>
+            <p className="max-w-2xl mx-auto text-gray-400">These states have the most severe water costs, rate increases, and conservation mandates. Each page includes current utility data, available rebates, and verified M&V case study results.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {STATES.map((state, i) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            {FEATURED_STATES.map((state, i) => (
               <motion.a key={i} href={state.path}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 6) * 0.05 }}
-                className="bg-[#121B2E] border border-white/10 rounded-xl p-6 hover:border-primary/50 hover:bg-[#1A2540] transition-all group flex gap-4 items-start">
+                className="bg-[#121B2E] border border-white/10 rounded-xl p-6 hover:border-primary/50 hover:bg-[#1A2540] transition-all group flex gap-4 items-start no-underline">
                 <div className="text-3xl">{state.emoji}</div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">{state.name}</h3>
-                    <ArrowRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 duration-200" />
+                    <ArrowRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   </div>
                   <p className="text-xs text-gray-400">{state.badge}</p>
                 </div>
@@ -95,19 +155,112 @@ export default function USA() {
         </div>
       </section>
 
-      {/* INDUSTRY GRID */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/5" style={{ background: "linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)" }}>
+      {/* ALL 50 STATES */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: '#F4F8FC', borderColor: '#C5D8E8' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mb-3">Industry-Specific Pages</p>
+          <div className="text-center mb-12">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-3" style={{ color: '#0374A7' }}>Complete US Coverage</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3" style={{ color: '#0A1F3A' }}>All 50 States</h2>
+            <p className="max-w-2xl mx-auto" style={{ color: '#4A7085' }}>
+              Smart Valve™ is available nationwide. Every commercial facility spending $5,000+/month on water qualifies for a free assessment.
+            </p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+          >
+            {ALL_STATES.map((s) => (
+              <a
+                key={s.slug}
+                href={`/locations/${s.slug}`}
+                className="flex items-center gap-2.5 p-3 rounded-xl border bg-white transition-all hover:-translate-y-0.5 hover:shadow-md group no-underline"
+                style={{ borderColor: '#C5D8E8' }}
+              >
+                <span className="text-xl flex-shrink-0">{s.emoji}</span>
+                <span className="text-sm font-medium group-hover:text-[#0374A7] transition-colors" style={{ color: '#2E4A5A' }}>{s.name}</span>
+                <ArrowRight className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-all text-[#0374A7] flex-shrink-0" />
+              </a>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* COLORADO CITIES */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-3" style={{ color: '#0374A7' }}>Colorado City Pages</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3" style={{ color: '#0A1F3A' }}>Colorado Front Range Markets</h2>
+            <p className="max-w-2xl mx-auto" style={{ color: '#4A7085' }}>
+              Colorado is a priority market — Denver Water, Aurora Water, and Colorado Springs Utilities all face drought-driven rate increases. City-specific data for each Front Range market.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {CO_CITIES.map((city, i) => (
+              <motion.a
+                key={city.slug}
+                href={`/locations/${city.slug}`}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                className="bg-white rounded-2xl p-6 border transition-all hover:-translate-y-1 hover:shadow-lg group no-underline"
+                style={{ borderColor: '#C5D8E8' }}
+              >
+                <div className="text-3xl mb-3">{city.emoji}</div>
+                <h3 className="text-base font-bold mb-1 group-hover:text-[#0374A7] transition-colors" style={{ color: '#0A1F3A' }}>{city.name}</h3>
+                <p className="text-xs" style={{ color: '#6A8A9A' }}>{city.note}</p>
+                <div className="flex items-center gap-1 mt-3 text-xs font-semibold" style={{ color: '#0374A7' }}>
+                  View page <ArrowRight className="w-3 h-3" />
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNATIONAL */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-3" style={{ color: '#0374A7' }}>International Markets</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">Global Coverage via CWS Partner Network</h2>
+            <p className="max-w-2xl mx-auto text-gray-400">
+              Smart Valve™ installations are operating across Europe and Asia-Pacific through the Canadian Water Savings partner network. Contact us for international project qualification.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {INTERNATIONAL.map((region, i) => (
+              <motion.a
+                key={region.slug}
+                href={`/locations/${region.slug}`}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-primary/40 hover:bg-[#1A2540] transition-all group flex gap-5 items-start no-underline"
+              >
+                <div className="text-4xl">{region.emoji}</div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">{region.name}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{region.note}</p>
+                  <div className="flex items-center gap-1 mt-4 text-sm font-semibold text-primary">
+                    View regional page <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRY GRID */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5" style={{ background: "linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)" }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mb-3">Industry Pages</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Browse by Industry</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">Each industry page includes sector-specific case studies, ROI analysis, and installation considerations.</p>
+            <p className="text-white/80 max-w-2xl mx-auto">Each industry page includes sector-specific case studies, ROI analysis, and installation benchmarks.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {INDUSTRIES.map((ind, i) => (
               <motion.a key={i} href={ind.path}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="bg-white/15 backdrop-blur-sm border border-white/25 rounded-xl p-6 hover:bg-white/25 hover:border-white/50 transition-all group text-center">
+                className="bg-white/15 backdrop-blur-sm border border-white/25 rounded-xl p-6 hover:bg-white/25 hover:border-white/50 transition-all group text-center no-underline">
                 <div className="text-4xl mb-3">{ind.emoji}</div>
                 <h3 className="text-base font-bold text-white group-hover:text-white/90">{ind.name}</h3>
                 <ArrowRight className="w-4 h-4 text-white/70 mx-auto mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -117,43 +270,20 @@ export default function USA() {
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Verified Results Across Every Market</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { stat: "58.69%", label: "Peak savings recorded", sub: "Amazon YYZ3, 6 consecutive quarters" },
-              { stat: "≥15%", label: "Guaranteed minimum", sub: "Written guarantee every installation" },
-              { stat: "$50K/yr", label: "Verified FL savings", sub: "Grand Central at Kennedy, Tampa" },
-              { stat: "NSF 61", label: "& NSF 372 Certified", sub: "Gold standard drinking water components" },
-            ].map((item, i) => (
-              <div key={i} className="bg-[#121B2E] border border-white/10 rounded-2xl p-8 text-center">
-                <div className="text-4xl font-black text-primary mb-2">{item.stat}</div>
-                <div className="text-lg font-bold text-white mb-1">{item.label}</div>
-                <div className="text-sm text-gray-400">{item.sub}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CONTACT CTA */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0374A7' }}>Ready to Get Your Free Assessment?</h2>
-          <p className="mb-8" style={{ color: '#2E4A5A' }}>Not sure which state page to start with? Contact us directly. We serve all US markets and worldwide through our AWS and CWS partner network.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Ready for Your Free Assessment?</h2>
+          <p className="mb-8 text-gray-400">Not sure which page to start with? Contact us directly — we serve all US markets and worldwide through our AWS and CWS partner network.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a href={`tel:${CONTACT.phone.replace(/-/g, "")}`} className="px-8 py-4 rounded-full font-bold text-lg text-white transition-all hover:-translate-y-1 flex items-center justify-center gap-2" style={{ background: "#0374A7", boxShadow: "0 4px 20px rgba(3,116,167,0.35)" }}>
               Call {CONTACT.phone}
             </a>
-            <a href={`mailto:${CONTACT.email}`} className="border-2 px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5" style={{ borderColor: '#0374A7', color: '#0374A7' }}>
-              {CONTACT.email}
+            <a href="/#contact" className="border-2 px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 text-white" style={{ borderColor: '#0374A7' }}>
+              Request Assessment Online
             </a>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm" style={{ color: '#2E4A5A' }}>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
             <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary" /> Zero Obligation</div>
             <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> 15% Guaranteed in Writing</div>
             <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" /> All US Markets + Worldwide</div>

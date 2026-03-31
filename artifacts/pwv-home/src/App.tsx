@@ -114,6 +114,8 @@ function Router() {
       <Route path="/savings/" component={Savings} />
 
       {/* Location pages — existing */}
+      <Route path="/locations" component={USAPage} />
+      <Route path="/locations/" component={USAPage} />
       <Route path="/locations/usa" component={USAPage} />
       <Route path="/locations/usa/" component={USAPage} />
       <Route path="/locations/colorado" component={ColoradoPage} />
