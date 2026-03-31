@@ -73,13 +73,6 @@ const ALL_STATES = [
   { name: "Wyoming", slug: "wyoming", emoji: "🦬" },
 ];
 
-const CO_CITIES = [
-  { name: "Denver", slug: "colorado/denver", emoji: "🏔️", note: "Denver Water rates · Front Range market" },
-  { name: "Colorado Springs", slug: "colorado/colorado-springs", emoji: "⛰️", note: "CS Utilities · Front Range drought" },
-  { name: "Aurora", slug: "colorado/aurora", emoji: "🌅", note: "Aurora Water · multi-source portfolio" },
-  { name: "Fort Collins", slug: "colorado/fort-collins", emoji: "🎓", note: "Poudre River drought stress" },
-  { name: "Lakewood", slug: "colorado/lakewood", emoji: "🌲", note: "Denver metro market" },
-];
 
 const INTERNATIONAL = [
   { name: "Europe", slug: "europe", emoji: "🇪🇺", note: "UK · Ireland · Continental Europe · CWS Partner Network" },
@@ -189,37 +182,6 @@ export default function USA() {
               </a>
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* COLORADO CITIES */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-3" style={{ color: '#0374A7' }}>Colorado City Pages</p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-3" style={{ color: '#0A1F3A' }}>Colorado Front Range Markets</h2>
-            <p className="max-w-2xl mx-auto" style={{ color: '#4A7085' }}>
-              Colorado is a priority market — Denver Water, Aurora Water, and Colorado Springs Utilities all face drought-driven rate increases. City-specific data for each Front Range market.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-            {CO_CITIES.map((city, i) => (
-              <motion.a
-                key={city.slug}
-                href={`/locations/${city.slug}`}
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-2xl p-6 border transition-all hover:-translate-y-1 hover:shadow-lg group no-underline"
-                style={{ borderColor: '#C5D8E8' }}
-              >
-                <div className="text-3xl mb-3">{city.emoji}</div>
-                <h3 className="text-base font-bold mb-1 group-hover:text-[#0374A7] transition-colors" style={{ color: '#0A1F3A' }}>{city.name}</h3>
-                <p className="text-xs" style={{ color: '#6A8A9A' }}>{city.note}</p>
-                <div className="flex items-center gap-1 mt-3 text-xs font-semibold" style={{ color: '#0374A7' }}>
-                  View page <ArrowRight className="w-3 h-3" />
-                </div>
-              </motion.a>
-            ))}
-          </div>
         </div>
       </section>
 

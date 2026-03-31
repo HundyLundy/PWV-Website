@@ -393,7 +393,31 @@ export default function ColoradoPage() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* COLORADO CITY PAGES */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: '#E8EFF7', borderColor: '#C5D8E8' }}>
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] mb-6" style={{ color: '#0374A7' }}>Colorado City Pages</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { name: "Denver", slug: "colorado/denver", emoji: "🏔️" },
+              { name: "Colorado Springs", slug: "colorado/colorado-springs", emoji: "⛰️" },
+              { name: "Aurora", slug: "colorado/aurora", emoji: "🌅" },
+              { name: "Fort Collins", slug: "colorado/fort-collins", emoji: "🎓" },
+              { name: "Lakewood", slug: "colorado/lakewood", emoji: "🌲" },
+            ].map((city) => (
+              <a
+                key={city.slug}
+                href={`/locations/${city.slug}`}
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl border bg-white font-medium text-sm transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-[#0374A7]"
+                style={{ borderColor: '#C5D8E8', color: '#2E4A5A' }}
+              >
+                <span>{city.emoji}</span> {city.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <footer className="bg-[#05080F] border-t border-white/10 pt-16 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
