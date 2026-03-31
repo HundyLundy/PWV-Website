@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
 import { CheckCircle2, XCircle, Phone, Mail, ArrowDown, ShieldCheck, Droplet, Building2, Factory, Hotel, Car, ChevronRight, Server, Droplets, Heart, MapPin, TrendingUp, DollarSign } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -6,6 +7,25 @@ import { Footer } from "@/components/Footer";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
+
+const HOME_FAQ_ITEMS = [
+  { q: "How much can Smart Valve™ reduce my commercial water bill?", a: "Smart Valve™ reduces metered water consumption by 15–58%, guaranteed in writing. The minimum guaranteed savings is 15%. The highest verified result is 58.69% peak savings at Amazon YYZ3 over 6 consecutive quarters." },
+  { q: "How does Smart Valve™ work?", a: "Smart Valve™ is a passive hydrodynamic device that installs on your main water supply line between two ball valves, after the water meter. It reduces turbulence and water hammer in the line, which optimizes flow characteristics and reduces the volume of water that passes through the meter. It requires no electricity, has no moving parts, and needs no maintenance." },
+  { q: "How long does installation take?", a: "Installation takes under 4 hours with zero downtime. A licensed plumber installs Smart Valve™ on the main supply line. There is no disruption to operations, no pressure loss, and no impact on water quality." },
+  { q: "Is Smart Valve™ certified for potable water systems?", a: "Yes. Smart Valve™ is NSF 61 and NSF 372 certified, meaning it is safe for use in potable (drinking) water systems. It is also certified by AWS (American Water Savings) and CWS (Commercial Water Savings)." },
+  { q: "What types of commercial properties does Perfect Water Valve serve?", a: "Perfect Water Valve serves hotels and resorts, data centers, hospitals and healthcare facilities, multifamily residential buildings, car washes, golf courses, industrial facilities, and commercial office buildings across all 50 states." },
+  { q: "Is there a guarantee?", a: "Yes. Perfect Water Valve provides a written guarantee of a minimum 15% reduction in metered water consumption. If the savings do not meet the guaranteed minimum, we make it right." },
+];
+
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": HOME_FAQ_ITEMS.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -153,6 +173,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen font-sans">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(homeFaqSchema)}</script>
+      </Helmet>
       <StickyAssessmentCTA />
       <Navbar />
 
@@ -182,7 +205,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-lg text-white/90 leading-relaxed mb-8 max-w-xl" style={{ fontWeight: 300 }}>
-              Municipal water lines trap air bubbles that register as volume on your meter. The Smart Valve™ purges that air before it reaches your meter — reducing your bill 15–58%, guaranteed in writing.
+              Smart Valve™ cuts commercial water bills 15–58%, guaranteed in writing — installed in under 4 hours with no electricity, no moving parts, and no maintenance.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-10">
@@ -742,36 +765,7 @@ function AnimatedCounter({ to, suffix = "", prefix = "", decimals = 0, duration 
 function HomeFAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
-  const faqs = [
-    {
-      q: "What is air entrapment in commercial water systems?",
-      a: "Air entrapment occurs when pressurized municipal water pushes trapped air pockets through supply lines into a building's plumbing. Standard water meters cannot distinguish air from water — those air pockets are billed as metered volume. Studies indicate that 15%–40% of a typical commercial water bill may represent air rather than actual water consumed.",
-    },
-    {
-      q: "How does the Smart Valve™ reduce a commercial water bill?",
-      a: "The Smart Valve™ installs between the municipal main and your water meter. It passively releases entrapped air from the pressurized supply line before that air reaches the meter. Only actual water volume is then counted — resulting in 15% to 58% lower metered readings with no change in actual water availability.",
-    },
-    {
-      q: "Is the 15% minimum savings really guaranteed in writing?",
-      a: "Yes. Every installation includes a written contract guaranteeing a minimum 15% reduction in metered water consumption. If the facility does not achieve 15% savings after a full measurement cycle, Perfect Water Valve makes it right at no additional cost.",
-    },
-    {
-      q: "What is Measurement and Verification (M&V) in water savings?",
-      a: "M&V is a structured, independent process that compares a facility's water billing before and after a conservation measure, controlling for occupancy, season, and other variables. It is the industry standard for confirming that reported savings are real and attributable to the installed device — not coincidental. All published Perfect Water Valve case study results are independently M&V-verified.",
-    },
-    {
-      q: "Is the Smart Valve™ the same as a check valve or pressure reducer?",
-      a: "No. Check valves prevent backflow; pressure reducers lower line pressure. Neither addresses air entrapment or reduces metered billing. The Smart Valve™ is a purpose-built air elimination device that targets the specific mechanism — entrapped air registering as volume on your meter — that inflates commercial water bills.",
-    },
-    {
-      q: "Does the Smart Valve™ require electricity or ongoing maintenance?",
-      a: "No. The Smart Valve™ is entirely passive. It has no moving parts, requires no electricity, no software, and no service contracts. It is NSF 61 and NSF 372 certified for drinking water system components.",
-    },
-    {
-      q: "What types of commercial facilities benefit most?",
-      a: "Any commercial or industrial facility billed on metered municipal water can benefit. Verified results span luxury hospitality (Four Seasons Fort Lauderdale 26%, St. Regis Toronto $49,889 CAD), logistics and fulfillment (Amazon YYZ3 & YYZ4 — 16.5% avg / 58.69% YOY peak), multifamily and condominiums (Forest & Charlton Toronto 17–20% IPMVP verified, Grand Central at Kennedy $50K/yr), and automotive (Caliber Car Wash 23% across 5 sites). Commercial office buildings in Texas saw 33%–39% bill reductions. Higher monthly water bills produce larger absolute dollar savings.",
-    },
-  ];
+  const faqs = HOME_FAQ_ITEMS;
 
   return (
     <section id="faq" className="py-24 px-6" style={{ backgroundColor: '#F4F8FC' }}>
@@ -781,10 +775,10 @@ function HomeFAQ() {
             Common Questions
           </span>
           <h2 className="text-3xl md:text-4xl font-headline font-bold leading-tight" style={{ color: '#0A1F3A' }}>
-            Everything You Need to Know
+            Common Questions About Commercial Water Savings
           </h2>
           <p className="mt-4 text-base leading-relaxed" style={{ color: '#4A7085' }}>
-            Clear, factual answers about how the Smart Valve™ works, what to expect, and why it's different.
+            Clear, factual answers about how Smart Valve™ works, what to expect, and what the guarantee actually covers.
           </p>
         </div>
 

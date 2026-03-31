@@ -1,8 +1,26 @@
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, Calendar, User, Tag } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
+
+const RATES_FAQ_ITEMS = [
+  { q: "Why are commercial water rates rising in 2025?", a: "Commercial water rates are rising in every state due to aging infrastructure requiring $1 trillion in investment, drought reducing available supply, EPA compliance mandates, and climate-related costs. The American Water Works Association projects these increases to continue through 2030." },
+  { q: "Which states have the highest water rate increases in 2025?", a: "The highest confirmed increases include Delaware (+42.8%), Indiana (up to +85.5% in some jurisdictions), and Hawaii (up to +59%). Most US states are seeing 5–20% increases, with drought-affected western states adding surcharges on top of base increases." },
+  { q: "How can a commercial property reduce its water bill despite rate increases?", a: "Smart Valve™ cuts metered water consumption 15–58% by installing on the main supply line in under 4 hours. The reduction in metered volume offsets rate increases — and compounds each year as rates continue to rise." },
+  { q: "How do I find out how much I can save on my commercial water bill?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com for a free assessment. We review your current billing, model your savings at current and projected rates, and provide a written guarantee before installation." },
+];
+
+const ratesFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": RATES_FAQ_ITEMS.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -26,6 +44,7 @@ export default function WaterRates2025() {
         <meta property="og:description" content="Water rates are rising 5–50% across all 50 states in 2025. See which states are hit hardest and how Smart Valve™ cuts commercial water bills 15–58%, guaranteed." />
         <meta property="og:url" content="https://www.perfectwatervalve.com/blog/commercial-water-rates-rising-2025" />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(ratesFaqSchema)}</script>
       </Helmet>
 
       <StickyAssessmentCTA />
@@ -46,7 +65,7 @@ export default function WaterRates2025() {
             Commercial Water Rates Are Rising Across Every State in 2025 — Here's What to Do About It
           </h1>
           <p className="text-xl text-white/85 leading-relaxed">
-            Water utilities across all 50 states are implementing rate increases in 2025, with some markets seeing 35–50% hikes. Here's a state-by-state breakdown and what commercial property managers can do right now.
+            Commercial water rates are rising in every state in 2025 — with some markets like Delaware (42.8%), Indiana (up to 85.5%), and Hawaii (up to 59%) seeing dramatic increases. Here's a state-by-state breakdown and what commercial property managers can do right now.
           </p>
         </div>
       </section>
@@ -149,7 +168,37 @@ export default function WaterRates2025() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F4F8FC" }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-3 block" style={{ color: "#0374A7" }}>Common Questions</span>
+            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Frequently Asked Questions — Commercial Water Rates 2025</h2>
+          </div>
+          <RatesBlogFAQ />
+        </div>
+      </section>
+
       <Footer />
+    </div>
+  );
+}
+
+function RatesBlogFAQ() {
+  const [open, setOpen] = React.useState<number | null>(null);
+  return (
+    <div className="divide-y" style={{ borderColor: "#D5E3EE" }}>
+      {RATES_FAQ_ITEMS.map((faq, i) => (
+        <div key={i}>
+          <button className="w-full flex items-start justify-between gap-4 py-5 text-left" onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i}>
+            <span className="font-semibold text-base leading-snug" style={{ color: open === i ? "#0374A7" : "#0A1F3A" }}>{faq.q}</span>
+            <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center border transition-colors" style={{ borderColor: open === i ? "#0374A7" : "#B0C8D8", background: open === i ? "#0374A7" : "transparent", color: open === i ? "#fff" : "#4A7085" }}>
+              {open === i ? "−" : "+"}
+            </span>
+          </button>
+          {open === i && <div className="pb-6 text-sm leading-relaxed" style={{ color: "#2E4A5A", fontWeight: 300 }}>{faq.a}</div>}
+        </div>
+      ))}
     </div>
   );
 }

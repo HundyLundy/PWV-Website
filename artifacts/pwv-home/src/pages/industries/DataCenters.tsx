@@ -1,3 +1,4 @@
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ShieldCheck, ZapOff, Activity, Building2, Server, Thermometer, DollarSign } from "lucide-react";
@@ -26,6 +27,25 @@ const serviceSchema = {
   }
 };
 
+const DC_FAQ_ITEMS = [
+  { q: "How much water does a hyperscale data center use?", a: "A hyperscale data center uses 1–5 million gallons of water per day for cooling tower makeup water. At commercial utility rates of $4–8 per 1,000 gallons, that translates to $4,000–$40,000 per day in water costs — before rate increases." },
+  { q: "How does Smart Valve™ work in a data center cooling water system?", a: "Smart Valve™ installs on the main water supply line feeding the cooling system. It reduces turbulence and optimizes flow so that less water passes through the meter to deliver the same cooling performance. Cooling tower operation, chiller performance, and system pressure are completely unaffected." },
+  { q: "What is the Amazon YYZ3 result and how was it verified?", a: "Amazon's YYZ3 hyperscale facility in Toronto achieved 58.69% peak year-over-year water savings over 6 consecutive quarters of third-party Measurement and Verification (M&V). The average across YYZ3 and YYZ4 was 16.5% over the same period." },
+  { q: "Will Smart Valve™ affect cooling performance or uptime?", a: "No. Smart Valve™ has no moving parts and requires no electricity. It installs in 2–4 hours with zero disruption to operations. Cooling performance, system pressure, and uptime are unaffected." },
+  { q: "Is the 15% minimum savings guaranteed in writing?", a: "Yes. Every installation includes a written contract guaranteeing a minimum 15% reduction in metered water consumption. If results fall short, Perfect Water Valve makes it right at no additional cost." },
+  { q: "How do I get a data center water assessment?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com. We review your cooling water billing, calculate projected savings, and provide a written guarantee before installation." },
+];
+
+const dcFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": DC_FAQ_ITEMS.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
+
 const colorMap: Record<string, string> = {
   red: "bg-red-500/10 text-red-500 border-red-500/20",
   orange: "bg-orange-500/10 text-orange-500 border-orange-500/20",
@@ -34,6 +54,25 @@ const colorMap: Record<string, string> = {
   teal: "bg-teal-500/10 text-teal-600 border-teal-500/20",
   green: "bg-green-500/10 text-green-600 border-green-500/20",
 };
+
+function DataCenterFAQ() {
+  const [open, setOpen] = React.useState<number | null>(null);
+  return (
+    <div className="divide-y" style={{ borderColor: "#D5E3EE" }}>
+      {DC_FAQ_ITEMS.map((faq, i) => (
+        <div key={i}>
+          <button className="w-full flex items-start justify-between gap-4 py-5 text-left" onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i}>
+            <span className="font-semibold text-base leading-snug" style={{ color: open === i ? "#0374A7" : "#0A1F3A" }}>{faq.q}</span>
+            <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center border transition-colors" style={{ borderColor: open === i ? "#0374A7" : "#B0C8D8", background: open === i ? "#0374A7" : "transparent", color: open === i ? "#fff" : "#4A7085" }}>
+              {open === i ? "−" : "+"}
+            </span>
+          </button>
+          {open === i && <div className="pb-6 text-sm leading-relaxed" style={{ color: "#2E4A5A", fontWeight: 300 }}>{faq.a}</div>}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function DataCenters() {
   const scrollTo = (id: string) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }); };
@@ -48,6 +87,7 @@ export default function DataCenters() {
         <meta property="og:description" content="Data centers use 1–5M gallons/day for cooling. Smart Valve™ cuts that bill 15–58%, guaranteed. Amazon YYZ3 hit 58.69% peak savings. No electricity, no maintenance, NSF certified." />
         <meta property="og:url" content="https://www.perfectwatervalve.com/industries/data-centers" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(dcFaqSchema)}</script>
       </Helmet>
 
       <StickyAssessmentCTA />
@@ -268,6 +308,17 @@ export default function DataCenters() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F4F8FC" }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-3 block" style={{ color: "#0374A7" }}>Common Questions</span>
+            <h2 className="text-3xl font-bold mb-4" style={{ color: "#0A1F3A" }}>Data Center Water Savings — Frequently Asked Questions</h2>
+          </div>
+          <DataCenterFAQ />
         </div>
       </section>
 

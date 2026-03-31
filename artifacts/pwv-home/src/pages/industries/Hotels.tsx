@@ -1,17 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ShieldCheck, ZapOff, Activity, Hotel, Star, DollarSign, Users } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
+const HOTELS_FAQ_ITEMS = [
+  { q: "How much water does a typical hotel use per month?", a: "A full-service hotel uses 100–300 gallons per occupied room per day. For a 200-room hotel running at 70% occupancy, that's 14,000–42,000 gallons per day — or $8,000–$25,000+ per month depending on local rates and tiered pricing." },
+  { q: "How does Smart Valve™ work in a hotel water system?", a: "Smart Valve™ installs on the main water supply line serving the hotel. It reduces turbulence and optimizes flow characteristics so that less water passes through the meter to deliver the same service. Guest water pressure, temperature, and quality are completely unaffected." },
+  { q: "Will Smart Valve™ affect guest experience — pressure, hot water, or flow rates?", a: "No. Smart Valve™ does not affect water pressure, flow rate, or temperature in any way. Guests experience identical service. The only change is what the meter records — and therefore what you pay." },
+  { q: "How do I get a hotel water savings assessment?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com. We review your hotel's current water billing, calculate projected savings based on your property size and market rates, and provide a written savings guarantee before any installation." },
+];
+
+const hotelsFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": HOTELS_FAQ_ITEMS.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
+
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
+
+function HotelsFAQ() {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <div className="divide-y" style={{ borderColor: "#D5E3EE" }}>
+      {HOTELS_FAQ_ITEMS.map((faq, i) => (
+        <div key={i}>
+          <button className="w-full flex items-start justify-between gap-4 py-5 text-left" onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i}>
+            <span className="font-semibold text-base leading-snug" style={{ color: open === i ? "#0374A7" : "#0A1F3A" }}>{faq.q}</span>
+            <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center border transition-colors" style={{ borderColor: open === i ? "#0374A7" : "#B0C8D8", background: open === i ? "#0374A7" : "transparent", color: open === i ? "#fff" : "#4A7085" }}>
+              {open === i ? "−" : "+"}
+            </span>
+          </button>
+          {open === i && <div className="pb-6 text-sm leading-relaxed" style={{ color: "#2E4A5A", fontWeight: 300 }}>{faq.a}</div>}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function Hotels() {
   const scrollTo = (id: string) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }); };
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(hotelsFaqSchema)}</script>
+      </Helmet>
       <Navbar onScrollTo={scrollTo} />
 
       <section className="relative pt-40 pb-24 lg:pt-56 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -32,7 +72,7 @@ export default function Hotels() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Cuts Bills 15–58% Without Touching Guest Experience</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-              The Four Seasons Fort Lauderdale saved $27,000/year with a 26% reduction. Zero guest impact. No operational changes. Just lower bills. Guaranteed minimum 15% — in writing, every installation.
+              Hotels cut water bills 15–58% with Smart Valve™ — installed on the main supply line in under 4 hours with zero impact on guest water pressure or experience. The Four Seasons Fort Lauderdale saved $27,000/year with a 26% reduction. Guaranteed minimum 15% — in writing, every installation.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <button onClick={() => scrollTo("contact")} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary/25 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
@@ -129,6 +169,17 @@ export default function Hotels() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F4F8FC" }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-3 block" style={{ color: "#0374A7" }}>Common Questions</span>
+            <h2 className="text-3xl font-bold" style={{ color: "#0A1F3A" }}>Hotel Water Savings — Frequently Asked Questions</h2>
+          </div>
+          <HotelsFAQ />
+        </div>
+      </section>
+
       {/* CONTACT CTA */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/10" style={{ background: "linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)" }}>
         <div className="max-w-3xl mx-auto text-center">
@@ -143,6 +194,7 @@ export default function Hotels() {
       </section>
 
       <footer className="bg-[#05080F] border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8">
+
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <div className="flex items-center gap-3"><img src={logo} alt="PWV" className="w-8 h-8" /><span>© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</span></div>
           <div className="flex items-center gap-4">

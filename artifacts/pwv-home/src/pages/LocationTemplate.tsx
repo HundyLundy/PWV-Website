@@ -108,6 +108,9 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
     let jsonLd = document.getElementById("page-jsonld");
     if (!jsonLd) { jsonLd = document.createElement("script"); jsonLd.setAttribute("type", "application/ld+json"); jsonLd.id = "page-jsonld"; document.head.appendChild(jsonLd); }
     jsonLd.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "Service", "name": `Smart Valve™ — ${config.state} Commercial Water Savings`, "url": canonical, "description": desc, "provider": { "@type": "Organization", "name": "Perfect Water Valve", "url": "https://www.perfectwatervalve.com", "telephone": "+17209373004", "email": "info@perfectwatervalve.com" }, "areaServed": config.state, "serviceType": "Commercial Water Savings" });
+    let faqJsonLd = document.getElementById("page-faq-jsonld");
+    if (!faqJsonLd) { faqJsonLd = document.createElement("script"); faqJsonLd.setAttribute("type", "application/ld+json"); faqJsonLd.id = "page-faq-jsonld"; document.head.appendChild(faqJsonLd); }
+    faqJsonLd.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": config.faqItems.map(item => ({ "@type": "Question", "name": item.q, "acceptedAnswer": { "@type": "Answer", "text": item.a } })) });
     return () => { document.title = prevTitle; };
   }, [config.seoTitle, config.seoDescription, config.seoCanonical, config.state]);
 

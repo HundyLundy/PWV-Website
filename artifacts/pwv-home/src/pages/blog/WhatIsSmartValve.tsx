@@ -1,8 +1,26 @@
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, Calendar, User, Tag } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
+
+const SMART_VALVE_FAQ_ITEMS = [
+  { q: "What is Smart Valve™?", a: "Smart Valve™ is a passive hydrodynamic device that installs on your main commercial water supply line in under 4 hours. It reduces turbulence and optimizes flow so that less water passes through the meter to deliver the same service — cutting your metered bill 15–58%, guaranteed in writing." },
+  { q: "Does Smart Valve™ require electricity or maintenance?", a: "No. Smart Valve™ requires no electricity, has no moving parts, and needs no maintenance — ever. It is NSF 61 and NSF 372 certified for use in potable water systems." },
+  { q: "What is the highest verified savings result?", a: "The highest verified result in the portfolio is 58.69% peak savings at Amazon YYZ3 (hyperscale data center, Toronto) over 6 consecutive quarters of third-party M&V verification." },
+  { q: "How do I get a Smart Valve™ assessment for my facility?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com. We review your current water billing, calculate projected savings, and provide a written guarantee before any installation begins." },
+];
+
+const smartValveFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": SMART_VALVE_FAQ_ITEMS.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -26,6 +44,7 @@ export default function WhatIsSmartValve() {
         <meta property="og:description" content="Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15–58%, guaranteed. No electricity, no maintenance, no moving parts." />
         <meta property="og:url" content="https://www.perfectwatervalve.com/blog/what-is-smart-valve" />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(smartValveFaqSchema)}</script>
       </Helmet>
 
       <StickyAssessmentCTA />
@@ -46,7 +65,7 @@ export default function WhatIsSmartValve() {
             What Is the Smart Valve™ and How Does It Actually Cut Your Water Bill?
           </h1>
           <p className="text-xl text-white/85 leading-relaxed">
-            No electricity. No moving parts. No maintenance. Smart Valve™ installs on your main water supply line and cuts your metered bill 15–58%, guaranteed in writing. Here's the science behind it.
+            Smart Valve™ is a passive hydrodynamic device that installs on your main commercial water supply line in under 4 hours and reduces your metered water bill by 15–58%, guaranteed in writing. It requires no electricity, has no moving parts, and needs no maintenance — ever.
           </p>
         </div>
       </section>
@@ -169,7 +188,37 @@ export default function WhatIsSmartValve() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F4F8FC" }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-3 block" style={{ color: "#0374A7" }}>Common Questions</span>
+            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Frequently Asked Questions About Smart Valve™</h2>
+          </div>
+          <SmartValveBlogFAQ />
+        </div>
+      </section>
+
       <Footer />
+    </div>
+  );
+}
+
+function SmartValveBlogFAQ() {
+  const [open, setOpen] = React.useState<number | null>(null);
+  return (
+    <div className="divide-y" style={{ borderColor: "#D5E3EE" }}>
+      {SMART_VALVE_FAQ_ITEMS.map((faq, i) => (
+        <div key={i}>
+          <button className="w-full flex items-start justify-between gap-4 py-5 text-left" onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i}>
+            <span className="font-semibold text-base leading-snug" style={{ color: open === i ? "#0374A7" : "#0A1F3A" }}>{faq.q}</span>
+            <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center border transition-colors" style={{ borderColor: open === i ? "#0374A7" : "#B0C8D8", background: open === i ? "#0374A7" : "transparent", color: open === i ? "#fff" : "#4A7085" }}>
+              {open === i ? "−" : "+"}
+            </span>
+          </button>
+          {open === i && <div className="pb-6 text-sm leading-relaxed" style={{ color: "#2E4A5A", fontWeight: 300 }}>{faq.a}</div>}
+        </div>
+      ))}
     </div>
   );
 }
