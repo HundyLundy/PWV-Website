@@ -6,3 +6,9 @@ id = "-0lEsaavEbiLjTJsy1vQo"
 uri = "file://.agents/outputs/pwv-smart-valve-analysis.md"
 type = "text"
 title = "Smart Valve Performance Analysis Report"
+
+[[outputs]]
+id = "OG7hA994Tmpr5peMFeR2b"
+uri = "file://artifacts/pwv-home/public/sitemap.xml"
+type = "unspecified"
+title = "sitemap.xml — PerfectWaterValve.com"
