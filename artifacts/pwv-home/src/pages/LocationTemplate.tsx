@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Building2, Home, Hotel, Cross, Droplets, Utensils, Flag,
-  CheckCircle2, ChevronDown, ArrowRight, ShieldCheck, ZapOff, Activity
+  CheckCircle2, ChevronDown, ArrowRight, ShieldCheck, ZapOff, Activity,
+  TrendingUp, AlertTriangle, DollarSign, Zap, Globe, Thermometer,
+  MapPin, BarChart2, Leaf, Factory, Server
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 import valveDiagram from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
+import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 
 const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/pwv-contact";
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
@@ -46,13 +49,24 @@ const COLOR_MAP: Record<string, string> = {
 };
 
 const ICON_MAP: Record<string, React.ElementType> = {
-  TrendingUp: Activity,
-  AlertTriangle: Activity,
-  DollarSign: Activity,
+  TrendingUp: TrendingUp,
+  AlertTriangle: AlertTriangle,
+  DollarSign: DollarSign,
   Droplets: Droplets,
   Building2: Building2,
   Activity: Activity,
   ShieldCheck: ShieldCheck,
+  Zap: Zap,
+  Globe: Globe,
+  Thermometer: Thermometer,
+  MapPin: MapPin,
+  BarChart2: BarChart2,
+  Leaf: Leaf,
+  Factory: Factory,
+  Server: Server,
+  Hotel: Hotel,
+  Home: Home,
+  Flag: Flag,
 };
 
 const DEFAULT_CASE_STUDIES = [
@@ -96,8 +110,22 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
     return () => { document.title = prevTitle; };
   }, [config.seoTitle, config.seoDescription, config.seoCanonical, config.state]);
 
+  const NEARBY_STATES = [
+    { name: "California", slug: "california" }, { name: "Texas", slug: "texas" },
+    { name: "Florida", slug: "florida" }, { name: "New York", slug: "new-york" },
+    { name: "Illinois", slug: "illinois" }, { name: "Pennsylvania", slug: "pennsylvania" },
+    { name: "Ohio", slug: "ohio" }, { name: "Georgia", slug: "georgia" },
+    { name: "North Carolina", slug: "north-carolina" }, { name: "Michigan", slug: "michigan" },
+    { name: "New Jersey", slug: "new-jersey" }, { name: "Virginia", slug: "virginia" },
+    { name: "Washington", slug: "washington" }, { name: "Arizona", slug: "arizona" },
+    { name: "Colorado", slug: "colorado" }, { name: "Tennessee", slug: "tennessee" },
+    { name: "Indiana", slug: "indiana" }, { name: "Maryland", slug: "maryland" },
+    { name: "Minnesota", slug: "minnesota" }, { name: "Massachusetts", slug: "massachusetts" },
+  ].filter(s => s.name !== config.state).slice(0, 18);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <StickyAssessmentCTA />
       <Navbar onScrollTo={scrollTo} />
 
       {/* HERO */}
@@ -163,16 +191,19 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
             <p className="max-w-2xl mx-auto text-lg" style={{ color: "#4A7085" }}>{config.whyIntro}</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {config.whyPoints.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-8 border border-[#C5D8E8] shadow-sm hover:border-[#0374A7]/40 transition-colors">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-5 border ${COLOR_MAP[item.color] || COLOR_MAP.blue}`}>
-                  <Activity className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-bold mb-3" style={{ color: "#0A1F3A" }}>{item.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#4A7085" }}>{item.body}</p>
-              </motion.div>
-            ))}
+            {config.whyPoints.map((item, i) => {
+              const Icon = ICON_MAP[item.icon] || Activity;
+              return (
+                <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                  className="bg-white rounded-2xl p-8 border border-[#C5D8E8] shadow-sm hover:border-[#0374A7]/40 transition-colors">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-5 border ${COLOR_MAP[item.color] || COLOR_MAP.blue}`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-3" style={{ color: "#0A1F3A" }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#4A7085" }}>{item.body}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -293,6 +324,31 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">{config.state} FAQ</h2></div>
           <FAQAccordion items={config.faqItems} />
+        </div>
+      </section>
+
+      {/* RELATED LOCATIONS */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: '#F4F8FC', borderColor: '#C5D8E8' }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0374A7' }}>Also Serving</p>
+            <h3 className="text-xl font-bold" style={{ color: '#0A1F3A' }}>Smart Valve™ Installations Near {config.state}</h3>
+          </div>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {NEARBY_STATES.map((s) => (
+              <a
+                key={s.slug}
+                href={`/locations/${s.slug}`}
+                className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm"
+                style={{ backgroundColor: 'white', borderColor: '#C5D8E8', color: '#2E4A5A' }}
+              >
+                {s.name}
+              </a>
+            ))}
+            <a href="/locations/denver-co" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Denver CO</a>
+            <a href="/locations/europe" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(60,110,127,0.05)', borderColor: '#3C6E7F', color: '#3C6E7F' }}>Europe</a>
+            <a href="/" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>View All 50 States →</a>
+          </div>
         </div>
       </section>
 

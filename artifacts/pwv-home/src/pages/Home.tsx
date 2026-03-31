@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { CheckCircle2, XCircle, Phone, Mail, ArrowDown, ShieldCheck, Droplet, Building2, Factory, Hotel, Car, ChevronRight } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import { CheckCircle2, XCircle, Phone, Mail, ArrowDown, ShieldCheck, Droplet, Building2, Factory, Hotel, Car, ChevronRight, Server, Droplets, Heart, MapPin, TrendingUp, DollarSign } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
+import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 
 const fadeUp = {
@@ -60,6 +61,48 @@ const CLIENTS = [
   },
 ];
 
+const PROOF_TICKER = [
+  { client: "Amazon YYZ3", result: "58.69% peak savings", industry: "Fulfillment Center" },
+  { client: "Four Seasons Fort Lauderdale", result: "$27,000/yr · 26% avg", industry: "Luxury Hospitality" },
+  { client: "The St. Regis Toronto", result: "$49,889 CAD/yr · 20%+", industry: "Marriott Portfolio" },
+  { client: "Grand Central at Kennedy", result: "$50,000/yr · 23% avg", industry: "Tampa FL Real Estate" },
+  { client: "Caliber Car Wash", result: "23% avg · 5 sites", industry: "Automotive" },
+  { client: "Forest & Charlton", result: "17–20% IPMVP verified", industry: "Multi-Residential Toronto" },
+  { client: "Houstonian Estates", result: "16% · ~6,000 gal/day", industry: "Multifamily Real Estate" },
+  { client: "RWJ Barnabas Health", result: "19% verified savings", industry: "Healthcare" },
+  { client: "Texas Office Portfolio", result: "33–39% bill reduction", industry: "Commercial Office" },
+  { client: "Amazon YYZ4", result: "16.5% sustained avg", industry: "Fulfillment Center" },
+];
+
+const INDUSTRY_CARDS = [
+  { icon: Server, title: "Data Centers", href: "/industries/data-centers", stat: "Up to 58.69%", color: "#3182CE", bg: "rgba(49,130,206,0.08)", note: "Amazon YYZ3 verified · Cooling water OpEx" },
+  { icon: Hotel, title: "Hotels & Hospitality", href: "/industries/hotels", stat: "20–26%", color: "#38A169", bg: "rgba(56,161,105,0.08)", note: "Four Seasons 26% · St. Regis 20%+" },
+  { icon: Car, title: "Car Washes", href: "/industries/car-washes", stat: "23% avg", color: "#E53E3E", bg: "rgba(229,62,62,0.08)", note: "Caliber Car Wash · 5 sites M&V verified" },
+  { icon: Building2, title: "Multifamily", href: "/industries/multifamily", stat: "15–30%", color: "#D69E2E", bg: "rgba(214,158,46,0.08)", note: "Grand Central at Kennedy · Toronto portfolio" },
+  { icon: Heart, title: "Hospitals", href: "/industries/hospitals", stat: "19%+", color: "#805AD5", bg: "rgba(128,90,213,0.08)", note: "RWJ Barnabas Health · NSF 61 certified" },
+  { icon: Factory, title: "Industrial", href: "/industries", stat: "15–39%", color: "#319795", bg: "rgba(49,151,149,0.08)", note: "Texas commercial office 33–39%" },
+];
+
+const US_STATES = [
+  { name: "Alabama", slug: "alabama" }, { name: "Alaska", slug: "alaska" }, { name: "Arizona", slug: "arizona" },
+  { name: "Arkansas", slug: "arkansas" }, { name: "California", slug: "california" }, { name: "Colorado", slug: "colorado" },
+  { name: "Connecticut", slug: "connecticut" }, { name: "Delaware", slug: "delaware" }, { name: "Florida", slug: "florida" },
+  { name: "Georgia", slug: "georgia" }, { name: "Hawaii", slug: "hawaii" }, { name: "Idaho", slug: "idaho" },
+  { name: "Illinois", slug: "illinois" }, { name: "Indiana", slug: "indiana" }, { name: "Iowa", slug: "iowa" },
+  { name: "Kansas", slug: "kansas" }, { name: "Kentucky", slug: "kentucky" }, { name: "Louisiana", slug: "louisiana" },
+  { name: "Maine", slug: "maine" }, { name: "Maryland", slug: "maryland" }, { name: "Massachusetts", slug: "massachusetts" },
+  { name: "Michigan", slug: "michigan" }, { name: "Minnesota", slug: "minnesota" }, { name: "Mississippi", slug: "mississippi" },
+  { name: "Missouri", slug: "missouri" }, { name: "Montana", slug: "montana" }, { name: "Nebraska", slug: "nebraska" },
+  { name: "Nevada", slug: "nevada" }, { name: "New Hampshire", slug: "new-hampshire" }, { name: "New Jersey", slug: "new-jersey" },
+  { name: "New Mexico", slug: "new-mexico" }, { name: "New York", slug: "new-york" }, { name: "North Carolina", slug: "north-carolina" },
+  { name: "North Dakota", slug: "north-dakota" }, { name: "Ohio", slug: "ohio" }, { name: "Oklahoma", slug: "oklahoma" },
+  { name: "Oregon", slug: "oregon" }, { name: "Pennsylvania", slug: "pennsylvania" }, { name: "Rhode Island", slug: "rhode-island" },
+  { name: "South Carolina", slug: "south-carolina" }, { name: "South Dakota", slug: "south-dakota" }, { name: "Tennessee", slug: "tennessee" },
+  { name: "Texas", slug: "texas" }, { name: "Utah", slug: "utah" }, { name: "Vermont", slug: "vermont" },
+  { name: "Virginia", slug: "virginia" }, { name: "Washington", slug: "washington" }, { name: "West Virginia", slug: "west-virginia" },
+  { name: "Wisconsin", slug: "wisconsin" }, { name: "Wyoming", slug: "wyoming" },
+];
+
 const COMPARISON = [
   { feature: "Reduces water meter reading", pwv: true, other: false },
   { feature: "Eliminates air from billing", pwv: true, other: false },
@@ -110,6 +153,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen font-sans">
+      <StickyAssessmentCTA />
       <Navbar />
 
       {/* ─── HERO ─────────────────────────────────────────── */}
@@ -229,10 +273,94 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── PROOF TICKER ───────────────────────────────────── */}
+      <div className="overflow-hidden py-4 border-b" style={{ backgroundColor: '#0A1F3A', borderColor: '#1A3550' }}>
+        <div className="flex w-max animate-[ticker_40s_linear_infinite]">
+          {[...PROOF_TICKER, ...PROOF_TICKER].map((item, i) => (
+            <div key={i} className="flex items-center gap-3 mx-8 whitespace-nowrap">
+              <span className="text-xs font-bold uppercase tracking-wider" style={{ color: '#0374A7' }}>✓</span>
+              <span className="text-sm font-semibold text-white">{item.client}</span>
+              <span className="text-sm" style={{ color: '#DEC600' }}>{item.result}</span>
+              <span className="text-xs text-white/30 font-medium">{item.industry}</span>
+              <span className="w-px h-4 mx-2" style={{ background: 'rgba(255,255,255,0.1)' }} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ─── IMPACT NUMBERS ─────────────────────────────────── */}
+      <section style={{ background: 'linear-gradient(160deg, #0A1F3A 0%, #0374A7 100%)' }} className="py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {[
+              { to: 32000, suffix: "+", label: "Verified Installations", decimals: 0 },
+              { to: 15, suffix: "%", label: "Minimum Guaranteed Savings", decimals: 0 },
+              { to: 58.69, suffix: "%", label: "Peak Savings Recorded", decimals: 2 },
+              { to: 21, suffix: "", label: "Published Case Studies", decimals: 0 },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="text-4xl md:text-5xl font-black font-headline mb-2 text-white">
+                  <AnimatedCounter to={stat.to} suffix={stat.suffix} decimals={stat.decimals} />
+                </div>
+                <div className="text-sm text-white/50 uppercase tracking-wider font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── HOW IT WORKS ───────────────────────────────────── */}
       <div id="how-it-works">
         <BubbleValveSection />
       </div>
+
+      {/* ─── WHO WE SERVE ────────────────────────────────────── */}
+      <section className="py-20 px-6" style={{ backgroundColor: '#F4F8FC' }}>
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-3" style={{ color: '#0374A7' }}>Who We Serve</span>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-3" style={{ color: '#0A1F3A' }}>
+              Verified Results Across Every Industry
+            </h2>
+            <p className="text-base max-w-2xl mx-auto" style={{ color: '#4A7085', fontWeight: 300 }}>
+              Any commercial facility spending $5,000+/month on water qualifies. 
+              Real savings, independently verified.
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {INDUSTRY_CARDS.map((card, i) => (
+              <motion.a
+                key={card.title}
+                href={card.href}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07 }}
+                className="group rounded-2xl p-6 border transition-all hover:-translate-y-1 hover:shadow-lg no-underline"
+                style={{ backgroundColor: 'white', borderColor: '#C5D8E8' }}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center"
+                    style={{ background: card.bg, border: `1px solid ${card.color}30` }}
+                  >
+                    <card.icon className="w-5 h-5" style={{ color: card.color }} />
+                  </div>
+                  <span className="text-lg font-black" style={{ color: card.color }}>{card.stat}</span>
+                </div>
+                <h3 className="text-base font-bold mb-1 group-hover:text-[#0374A7] transition-colors" style={{ color: '#0A1F3A' }}>{card.title}</h3>
+                <p className="text-xs" style={{ color: '#6A8A9A' }}>{card.note}</p>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ─── INDUSTRIES ─────────────────────────────────────── */}
       <section id="industries" className="py-24 px-6" style={{ backgroundColor: '#E8EFF7' }}>
@@ -331,6 +459,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── 50 STATES COVERAGE ─────────────────────────────── */}
+      <section className="py-20 px-6" style={{ backgroundColor: '#F4F8FC' }}>
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-3" style={{ color: '#0374A7' }}>National Coverage</span>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-3" style={{ color: '#0A1F3A' }}>
+              Serving All 50 States
+            </h2>
+            <p className="text-base max-w-xl mx-auto" style={{ color: '#4A7085', fontWeight: 300 }}>
+              Find your state below. Each page shows local water rates, case studies, and savings benchmarks for your market.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-wrap gap-2 justify-center"
+          >
+            {US_STATES.map((s) => (
+              <a
+                key={s.slug}
+                href={`/locations/${s.slug}`}
+                className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm"
+                style={{ backgroundColor: 'white', borderColor: '#C5D8E8', color: '#2E4A5A' }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = '#0374A7';
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#0374A7';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = '#C5D8E8';
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#2E4A5A';
+                }}
+              >
+                {s.name}
+              </a>
+            ))}
+            <a href="/locations/denver-co" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Denver CO</a>
+            <a href="/locations/aurora-co" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Aurora CO</a>
+            <a href="/locations/colorado-springs-co" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(3,116,167,0.05)', borderColor: '#0374A7', color: '#0374A7' }}>Colorado Springs CO</a>
+            <a href="/locations/europe" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(60,110,127,0.05)', borderColor: '#3C6E7F', color: '#3C6E7F' }}>Europe</a>
+            <a href="/locations/asia" className="px-3 py-1.5 rounded-lg text-sm font-medium border transition-all hover:-translate-y-0.5 hover:shadow-sm" style={{ backgroundColor: 'rgba(60,110,127,0.05)', borderColor: '#3C6E7F', color: '#3C6E7F' }}>Asia-Pacific</a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ─── NOT A CHECK VALVE ──────────────────────────────── */}
       <section className="py-24 px-6" style={{ backgroundColor: '#E8EFF7' }}>
         <div className="max-w-4xl mx-auto">
@@ -401,12 +575,12 @@ export default function Home() {
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-8 mb-12">
               {[
-                { n: "15%", label: "Guaranteed minimum savings" },
-                { n: "58%", label: "Peak recorded reduction" },
-                { n: "$0", label: "Cost if guarantee not met" },
-              ].map((s) => (
-                <div key={s.n} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold font-headline" style={{ color: '#0374A7' }}>{s.n}</div>
+                { counter: <AnimatedCounter to={15} suffix="%" />, label: "Guaranteed minimum savings" },
+                { counter: <AnimatedCounter to={58.69} suffix="%" decimals={2} />, label: "Peak recorded reduction" },
+                { counter: <AnimatedCounter to={0} prefix="$" />, label: "Cost if guarantee not met" },
+              ].map((s, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold font-headline" style={{ color: '#0374A7' }}>{s.counter}</div>
                   <div className="text-sm text-white/40 mt-1">{s.label}</div>
                 </div>
               ))}
@@ -548,6 +722,21 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+function AnimatedCounter({ to, suffix = "", prefix = "", decimals = 0, duration = 2 }: {
+  to: number; suffix?: string; prefix?: string; decimals?: number; duration?: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const spring = useSpring(0, { duration: duration * 1000, bounce: 0 });
+  const display = useTransform(spring, (v) => `${prefix}${v.toFixed(decimals)}${suffix}`);
+
+  useEffect(() => {
+    if (inView) spring.set(to);
+  }, [inView, to, spring]);
+
+  return <motion.span ref={ref}>{display}</motion.span>;
 }
 
 function HomeFAQ() {
