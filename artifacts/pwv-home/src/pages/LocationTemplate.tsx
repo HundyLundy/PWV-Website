@@ -160,11 +160,6 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
                 Calculate My Savings
               </button>
             </div>
-            <div className={`grid grid-cols-2 ${config.heroStats.length > 2 ? "sm:grid-cols-4" : ""} gap-6 max-w-3xl mx-auto pt-8 border-t border-white/10`}>
-              {config.heroStats.map((s, i) => (
-                <div key={i}><div className="text-4xl sm:text-5xl font-bold text-white mb-1">{s.value}</div><div className="text-xs text-white/75 uppercase tracking-wider font-semibold">{s.label}</div></div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>

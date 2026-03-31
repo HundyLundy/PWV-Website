@@ -71,12 +71,6 @@ export default function ColoradoPage() {
               </button>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto pt-8 border-t border-white/10">
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">58.69%</div><div className="text-xs text-white/75 uppercase tracking-wider font-semibold">Peak Savings</div></div>
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">≥15%</div><div className="text-xs text-white/75 uppercase tracking-wider font-semibold">Guaranteed Minimum</div></div>
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">50%</div><div className="text-xs text-white/75 uppercase tracking-wider font-semibold">Rebate Available</div></div>
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">#1</div><div className="text-xs text-white/75 uppercase tracking-wider font-semibold">First-Mover Market</div></div>
-            </div>
           </motion.div>
         </div>
       </section>
