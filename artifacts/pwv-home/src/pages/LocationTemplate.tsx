@@ -10,7 +10,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 import valveDiagram from "@assets/PWV_-_how_valve_works_image_1774323165404.png";
-import { BubbleValveSection } from "@/components/BubbleValveSection";
+
 import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 
 const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/ZF2Qjd4J1GmT9w5XbinN/webhook-trigger/pwv-contact";
@@ -288,8 +288,6 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
           </div>
         </div>
       </section>
-
-      <BubbleValveSection />
 
       {/* CASE STUDIES */}
       <section id="case-studies" className="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">

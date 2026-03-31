@@ -398,50 +398,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── INDUSTRIES ─────────────────────────────────────── */}
-      <section id="industries" className="py-24 px-6" style={{ backgroundColor: '#E8EFF7' }}>
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-          >
-            <motion.div variants={fadeUp} className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-3" style={{ color: '#0A1F3A' }}>
-                Consistent Results Across Every Industry
-              </h2>
-              <p className="text-base" style={{ color: '#4A7085', fontWeight: 300 }}>
-                Different water profiles, same outcome. Verified across 1-year sample sets.
-              </p>
-              <p className="text-xs mt-2 uppercase tracking-widest" style={{ color: '#C5D8E8' }}>
-                1-year sample · 32,000+ installs
-              </p>
-            </motion.div>
-
-            <div className="space-y-8">
-              {INDUSTRIES.map((ind, i) => (
-                <motion.div key={ind.name} variants={fadeUp} className="space-y-2">
-                  <div className="flex justify-between items-start gap-4">
-                    <div>
-                      <span className="text-base font-semibold" style={{ color: '#0A1F3A' }}>{ind.name}</span>
-                      {ind.note && <span className="block text-xs mt-0.5" style={{ color: '#6A8A9A' }}>{ind.note}</span>}
-                    </div>
-                    <span className="text-base font-bold whitespace-nowrap" style={{ color: '#0374A7' }}>{ind.range}</span>
-                  </div>
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${(ind.value / INDUSTRY_MAX) * 100}%` }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 1.5, ease: "easeOut", delay: i * 0.08 }}
-                    className="h-3 rounded-full"
-                    style={{ background: 'linear-gradient(90deg, #025888, #0374A7, #3C6E7F)' }}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ─── CLIENT WINS ────────────────────────────────────── */}
       <section id="clients" className="py-28 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)' }}>
         <div className="max-w-7xl mx-auto">
