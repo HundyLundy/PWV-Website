@@ -206,7 +206,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
       <section className="bg-primary border-y border-blue-400/30">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 text-white font-semibold text-sm sm:text-base">
-            <div className="flex items-center gap-2"><ArrowRight className="w-5 h-5 opacity-80" /> 58.69% Peak Savings Recorded</div>
+            <a href="/results" className="flex items-center gap-2 hover:text-white/80 transition-colors underline-offset-2 hover:underline"><ArrowRight className="w-5 h-5 opacity-80" /> 58.69% Peak Savings Recorded</a>
             <a href="/results" className="flex items-center gap-2 hover:text-white/80 transition-colors underline-offset-2 hover:underline"><ShieldCheck className="w-5 h-5 opacity-80" /> 15% Savings Guaranteed in Writing</a>
             <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 opacity-80" /> NSF 61 &amp; 372 Certified</div>
             <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> No Power Required</div>
@@ -276,7 +276,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
                 { label: "Power Required", value: "None — fully passive" },
                 { label: "Meter Compatibility", value: "99% of commercial meters" },
                 { label: "Install Time", value: "2–4 hours, zero downtime" },
-                { label: "Guaranteed Minimum", value: "≥15% bill reduction" },
+                { label: "Guaranteed Minimum", value: <a href="/results" className="underline underline-offset-2 hover:text-white/70 transition-colors">≥15% bill reduction</a> },
                 { label: "Maintenance", value: "None — no moving parts" },
               ].map((spec) => (
                 <div key={spec.label} className="flex justify-between items-center border-b border-white/10 pb-4 last:border-0 last:pb-0">
@@ -510,9 +510,13 @@ function StateSavingsCalc({ scrollTo, state }: { scrollTo: (id: string) => void;
               <div className="text-3xl font-bold text-white">~{fmt(annualAvg)}</div>
             </div>
           </div>
-          <div className="text-center mb-10">
+          <div className="text-center mb-6">
             <div className="inline-block bg-green-500/10 border border-green-500/20 text-green-400 px-4 py-2 rounded-full font-medium">Payback Period: Typically within 2–4 billing cycles</div>
           </div>
+          <p className="text-center text-xs text-gray-500 mb-8">
+            Estimates based on 21 M&V-verified installations (range 15%–58.69%). &nbsp;
+            <a href="/results" className="text-primary/70 hover:text-primary underline underline-offset-2 transition-colors">View all documented case studies →</a>
+          </p>
           <div className="text-center flex flex-col items-center">
             <button onClick={() => scrollTo("contact")} className="bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary/25 transition-transform hover:-translate-y-1">
               Get Your Free Assessment &rarr;

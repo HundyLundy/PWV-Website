@@ -448,7 +448,8 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">21 Documented Installations. Real Results.</h2>
             <p className="text-white/60 text-base" style={{ fontWeight: 300 }}>
-              19 of 21 sites include formal M&V (Measurement & Verification) data. Range: 15%–58.69%.
+              19 of 21 sites include formal M&V (Measurement & Verification) data. Range: 15%–58.69%. &nbsp;
+              <a href="/results" className="text-white/40 underline underline-offset-2 hover:text-white/70 transition-colors text-sm">View all →</a>
             </p>
           </motion.div>
 
@@ -576,6 +577,8 @@ export default function Home() {
                 <div className="px-6 py-4 flex items-center justify-center">
                   {row.pwv === true ? (
                     <CheckCircle2 className="w-5 h-5" style={{ color: '#0374A7' }} />
+                  ) : row.feature === "Written savings guarantee" ? (
+                    <a href="/results" className="text-xs font-semibold underline underline-offset-2 hover:opacity-70 transition-opacity" style={{ color: '#0374A7' }}>{row.pwv}</a>
                   ) : (
                     <span className="text-xs font-semibold" style={{ color: '#0374A7' }}>{row.pwv}</span>
                   )}
@@ -608,8 +611,8 @@ export default function Home() {
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-8 mb-12">
               {[
-                { counter: <AnimatedCounter to={15} suffix="%" />, label: "Guaranteed minimum savings", sub: "(all customers)" },
-                { counter: <AnimatedCounter to={58.69} suffix="%" decimals={2} />, label: "Peak recorded reduction", sub: "(Amazon YYZ3 fulfillment center)" },
+                { counter: <AnimatedCounter to={15} suffix="%" />, label: "Guaranteed minimum savings", sub: <a href="/results" className="underline underline-offset-2 hover:text-white/50 transition-colors">(view guarantee terms)</a> },
+                { counter: <AnimatedCounter to={58.69} suffix="%" decimals={2} />, label: "Peak recorded reduction", sub: <a href="/results" className="underline underline-offset-2 hover:text-white/50 transition-colors">(Amazon YYZ3 — Case Studies)</a> },
                 { counter: <AnimatedCounter to={0} prefix="$" />, label: "Cost if guarantee not met", sub: "(guarantee terms apply)" },
               ].map((s, i) => (
                 <div key={i} className="text-center">
