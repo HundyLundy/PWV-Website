@@ -47,11 +47,6 @@ export default function DataCenters() {
                 See Amazon Case Study
               </button>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto pt-8 border-t border-white/10">
-              {[{ v: "58.69%", l: "Amazon YYZ3 Peak" }, { v: "17%", l: "Sustained Avg" }, { v: "6 Qtrs", l: "Consecutive Verified" }, { v: "≥15%", l: "Guaranteed Minimum" }].map((s, i) => (
-                <div key={i}><div className="text-3xl sm:text-4xl font-bold text-white mb-1">{s.v}</div><div className="text-xs text-white/75 uppercase tracking-wider">{s.l}</div></div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>

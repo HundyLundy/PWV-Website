@@ -39,11 +39,6 @@ export default function Multifamily() {
                 Get a Free Property Assessment <ArrowRight className="w-5 h-5" />
               </button>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto pt-8 border-t border-white/10">
-              {[{ v: "$50K/yr", l: "Grand Central Savings" }, { v: "23%", l: "Verified Reduction" }, { v: "≥15%", l: "Guaranteed Min" }, { v: "$0", l: "Monthly Fees" }].map((s, i) => (
-                <div key={i}><div className="text-3xl sm:text-4xl font-bold text-white mb-1">{s.v}</div><div className="text-xs text-white/75 uppercase tracking-wider">{s.l}</div></div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>

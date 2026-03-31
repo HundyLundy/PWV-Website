@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import { TrendingUp, Droplets, Building2, Server, CheckCircle } from "lucide-react";
+import { TrendingUp, Droplets, Building2, Server, CheckCircle, ArrowRight, ShieldCheck, CheckCircle2, ZapOff, Activity } from "lucide-react";
 
 const ASIAN_MARKETS = [
   { city: "Tokyo", country: "Japan", flag: "🇯🇵", context: "Tokyo's commercial water rates are managed by the Tokyo Metropolitan Government. Infrastructure maintenance and aging pipe replacement are driving rate increases for commercial customers across the capital." },
@@ -52,20 +52,20 @@ export default function Asia() {
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
               Smart Valve™ is expanding across Asia-Pacific. From Tokyo's aging infrastructure to Singapore's water security mandates, from Seoul's semiconductor cooling demand to Australia's recurring drought cycles — Smart Valve™ delivers the same verified savings in every market.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
-              {[
-                { value: "58.69%", label: "Peak Savings — Amazon YYZ3" },
-                { value: "≥15%", label: "Guaranteed Minimum" },
-                { value: "NSF", label: "Certified Water Treatment" },
-                { value: "6 Qtrs", label: "Amazon Verification Period" },
-              ].map((stat, i) => (
-                <div key={i} className="bg-white/10 rounded-xl p-4 border border-white/20">
-                  <div className="text-2xl font-bold text-[#DEC600]">{stat.value}</div>
-                  <div className="text-sm text-white/70 mt-1">{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section className="bg-primary border-y border-blue-400/30">
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 text-white font-semibold text-sm sm:text-base">
+            <div className="flex items-center gap-2"><ArrowRight className="w-5 h-5 opacity-80" /> 58.69% Peak Savings Recorded</div>
+            <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 opacity-80" /> 15% Savings Guaranteed in Writing</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 opacity-80" /> NSF 61 &amp; 372 Certified</div>
+            <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> No Power Required</div>
+            <div className="flex items-center gap-2"><Activity className="w-5 h-5 opacity-80" /> 99% Meter Compatible</div>
+          </div>
         </div>
       </section>
 

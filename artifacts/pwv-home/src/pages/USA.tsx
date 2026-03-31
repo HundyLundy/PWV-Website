@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, ShieldCheck, MapPin, Globe } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, MapPin, Globe, ZapOff, Activity } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
@@ -118,13 +118,20 @@ export default function USA() {
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
               Perfect Water Valve deploys through AWS (American Water Savings) and CWS (Canadian Water Savings) across all 50 US states, Canada, Europe, and Asia-Pacific. Every installation includes a written guarantee of ≥15% water bill reduction. Select your location below.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto pt-8 border-t border-white/10">
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">50</div><div className="text-xs text-white/75 uppercase tracking-wider">States Served</div></div>
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">58.69%</div><div className="text-xs text-white/75 uppercase tracking-wider">Peak Savings</div></div>
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">≥15%</div><div className="text-xs text-white/75 uppercase tracking-wider">Guaranteed Min</div></div>
-              <div><div className="text-4xl sm:text-5xl font-bold text-white mb-1">21</div><div className="text-xs text-white/75 uppercase tracking-wider">Published Case Studies</div></div>
-            </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section className="bg-primary border-y border-blue-400/30">
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 text-white font-semibold text-sm sm:text-base">
+            <div className="flex items-center gap-2"><ArrowRight className="w-5 h-5 opacity-80" /> 58.69% Peak Savings Recorded</div>
+            <div className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 opacity-80" /> 15% Savings Guaranteed in Writing</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 opacity-80" /> NSF 61 &amp; 372 Certified</div>
+            <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> No Power Required</div>
+            <div className="flex items-center gap-2"><Activity className="w-5 h-5 opacity-80" /> 99% Meter Compatible</div>
+          </div>
         </div>
       </section>
 
