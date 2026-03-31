@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2 } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck } from "lucide-react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const NAV_LINKS = [
@@ -176,13 +176,19 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center p-1.5 border border-white/20 bg-white/10">
-            <img src={logoSrc} alt="Perfect Water Valve" className="w-full h-full object-contain drop-shadow-sm" />
+        <a href="/"
+          className="flex items-center gap-3 hover:opacity-95 transition-opacity rounded-xl px-2.5 py-1.5"
+          style={{ background: 'rgba(3,116,167,0.18)', border: '1px solid rgba(91,191,224,0.25)' }}
+        >
+          <div className="w-11 h-11 rounded-xl flex items-center justify-center p-1.5 border border-white/25 bg-white/15 shadow-sm">
+            <img src={logoSrc} alt="Perfect Water Valve" className="w-full h-full object-contain drop-shadow" />
           </div>
           <div>
-            <div className="font-headline font-semibold text-[15px] leading-none tracking-tight text-white">Perfect Water Valve</div>
-            <div className="text-[11px] font-medium mt-0.5" style={{ color: '#5BBFE0' }}>Guaranteed 15% Savings</div>
+            <div className="font-headline font-bold text-[17px] leading-none tracking-tight text-white">Perfect Water Valve</div>
+            <div className="flex items-center gap-1 mt-1">
+              <ShieldCheck className="w-3 h-3 shrink-0" style={{ color: '#DEC600' }} />
+              <span className="text-[11px] font-semibold" style={{ color: '#DEC600' }}>Guaranteed 15% Savings</span>
+            </div>
           </div>
         </a>
 
