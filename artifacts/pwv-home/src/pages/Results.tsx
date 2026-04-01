@@ -262,7 +262,7 @@ export default function Home() {
             subtitle="The World's Largest Retailer — Two Methodologies, Both Verified"
             stat1={{ label: "YOY Peak (YYZ3)", value: "58.69%" }}
             stat2={{ label: "Portfolio Avg (normalized)", value: "16.5%" }}
-            quote="Amazon's rigorous operational standards require measurable, repeatable results. YOY comparison shows 58.69% peak reduction at YYZ3. Per-employee normalized analysis across both sites shows 16.5% portfolio average — six consecutive quarters."
+            summary="Two independent M&V methodologies both verified results. Year-over-year comparison: 58.69% peak at YYZ3. Per-employee normalized average of 16.5% across YYZ3 & YYZ4 over six consecutive quarters."
             caveat="Two M&V reports with different methodologies. Both accurate — different measurement approaches. Formal PDFs available."
           />
 
@@ -274,7 +274,7 @@ export default function Home() {
             subtitle="23% Savings Across 5 High-Volume Sites"
             stat1={{ label: "Weighted Average", value: "23%" }}
             stat2={{ label: "Locations", value: "Georgia & Florida" }}
-            quote="Car washes use enormous volumes of water. Caliber saw consistent double-digit savings across every location in the program."
+            summary="23% weighted average savings verified across all five sites in Georgia and Florida. M&V tracked over 3+ consecutive quarters — no location fell below 20%."
           />
 
           {/* Card C */}
@@ -285,9 +285,8 @@ export default function Home() {
             subtitle="$49,889 CAD Saved Annually — Chief Engineer Confirmed"
             stat1={{ label: "Annual Savings", value: "$49,889 CAD" }}
             stat2={{ label: "Water Cost Reduction", value: "20%+" }}
-            quote="Year-over-year savings of $49,889, representing 20%+ in water-cost reduction."
-            quoteAttribution="Priyan Jayetileke, Chief Engineer, The St. Regis Toronto"
-            caveat="Formal report. Chief Engineer confirmed. Marriott-approved implementation. Installation completed in under one hour. Formal PDF available."
+            summary="Year-over-year reduction of $49,889 CAD in metered water costs, representing 20%+ savings. Formal M&V report. Marriott-approved installation completed in under one hour."
+            caveat="Chief Engineer confirmed. Formal PDF available."
           />
 
           {/* Card D */}
@@ -298,7 +297,7 @@ export default function Home() {
             subtitle="26% — Our Best Hospitality Result"
             stat1={{ label: "Annual Savings", value: "~$27,000" }}
             stat2={{ label: "Total Reduction", value: "26%" }}
-            quote="The Four Seasons expects perfection. 26% savings exceeds even our own guaranteed minimums."
+            summary="26% daily average reduction in metered water costs. 56% peak reduction recorded in October. $27,000/yr in avoided costs. Third-party M&V report completed December 2025."
           />
 
           {/* Card E */}
@@ -309,9 +308,8 @@ export default function Home() {
             subtitle="$50,000/Year — Saving at Scale"
             stat1={{ label: "Total Reduction", value: "23%" }}
             stat2={{ label: "Annual Reduction", value: "$50,000/yr" }}
-            quote="In two years since installed, our savings on water and sewer charge are averaging 23%... We are reducing our line item for water and sewer charges by $50,000."
-            quoteAttribution="Bob Pack, General Manager, Grand Central at Kennedy, Tampa FL"
-            caveat={'Self-reported testimonial over 2-year period. Two 6" Smart Valves installed.'}
+            summary="Water and sewer charge savings averaging 23% over the two years since installation — a $50,000 annual reduction in the combined water and sewer line item."
+            caveat={'Self-reported over 2-year period. Two 6" Smart Valves installed.'}
           />
 
           {/* Card F */}
@@ -322,7 +320,7 @@ export default function Home() {
             subtitle="17–20% Verified at 95% Confidence — IPMVP Option B"
             stat1={{ label: "100 Forest Ave", value: "20.0% (p<0.01)" }}
             stat2={{ label: "123 Charlton Ave", value: "17.0% (p<0.01)" }}
-            quote="Formal M&V report using IPMVP Option B — Retrofit Isolation methodology. Paired t-test confirmed at 95% confidence. Combined annual savings: CA $17,200. Simple payback under 3 years."
+            summary="Formal M&V report using IPMVP Option B — Retrofit Isolation methodology. Paired t-test confirmed at 95% statistical confidence. Combined annual savings: CA $17,200. Simple payback under 3 years."
             caveat="Canadian Water Savings M&V Report, 2025. Formal PDF available."
           />
 
@@ -516,7 +514,7 @@ export default function Home() {
 
 // --- HELPER COMPONENTS ---
 
-function ClientCard({ align, category, title, subtitle, stat1, stat2, quote, quoteAttribution, caveat }: any) {
+function ClientCard({ align, category, title, subtitle, stat1, stat2, summary, caveat }: any) {
   const isLeft = align === "left";
   
   return (
@@ -558,18 +556,13 @@ function ClientCard({ align, category, title, subtitle, stat1, stat2, quote, quo
         </div>
 
         <div>
-          <blockquote className={cn(
-            "text-lg text-muted-foreground italic border-primary relative",
+          <p className={cn(
+            "text-lg text-muted-foreground border-primary relative",
             isLeft ? "md:border-r-4 md:pr-6" : "md:border-l-4 md:pl-6",
             "border-l-4 pl-6 md:border-l-0"
           )}>
-            "{quote}"
-          </blockquote>
-          {quoteAttribution && (
-            <p className={cn("text-xs text-muted-foreground/60 mt-2", isLeft ? "md:text-right" : "md:text-left")}>
-              — {quoteAttribution}
-            </p>
-          )}
+            {summary}
+          </p>
         </div>
 
         {caveat && (

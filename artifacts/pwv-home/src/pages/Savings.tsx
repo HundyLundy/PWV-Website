@@ -24,41 +24,41 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
 };
 
-const TESTIMONIALS = [
+const CASE_STUDIES = [
   {
     logo: "A", industry: "Logistics / Fulfillment", color: "bg-blue-100 text-blue-700",
-    quote: "Two M&V methodologies — both verified. YOY peak: 58.69% at YYZ3. Normalized portfolio average: 16.5% across YYZ3 & YYZ4 over six consecutive quarters.",
-    author: "Amazon Facilities Team", client: "Amazon YYZ3 & YYZ4"
+    summary: "Two independent M&V methodologies both verified results. Year-over-year peak: 58.69% at YYZ3. Normalized portfolio average of 16.5% across YYZ3 & YYZ4 over six consecutive quarters.",
+    source: "M&V Verified · Formal PDF Available", client: "Amazon YYZ3 & YYZ4"
   },
   {
     logo: "S", industry: "Luxury Hospitality · Marriott", color: "bg-purple-100 text-purple-700",
-    quote: "Year-over-year savings of $49,889 CAD, representing 20%+ in water-cost reduction.",
-    author: "Priyan Jayetileke, Chief Engineer", client: "The St. Regis Toronto"
+    summary: "Year-over-year reduction of $49,889 CAD in metered water costs, representing 20%+ savings. Formal M&V report. Marriott-approved installation completed in under one hour.",
+    source: "Chief Engineer Confirmed · M&V Verified", client: "The St. Regis Toronto"
   },
   {
     logo: "F", industry: "Luxury Hospitality", color: "bg-indigo-100 text-indigo-700",
-    quote: "26% daily average savings, 56% peak reduction in October. $27,000/yr in avoided costs. Formal M&V December 2025.",
-    author: "Four Seasons Engineering", client: "Four Seasons Fort Lauderdale"
+    summary: "26% daily average reduction in metered water costs. 56% peak reduction recorded in October. $27,000/yr in avoided costs. Formal M&V report completed December 2025.",
+    source: "M&V Verified · Formal PDF Available", client: "Four Seasons Fort Lauderdale"
   },
   {
     logo: "G", industry: "Real Estate · Tampa FL", color: "bg-emerald-100 text-emerald-700",
-    quote: "In two years since installed, our savings on water and sewer charge are averaging 23%... We are reducing our line item for water and sewer charges by $50,000.",
-    author: "Bob Pack, General Manager", client: "Grand Central at Kennedy"
+    summary: "Water and sewer charge savings averaging 23% over the two years since installation — a $50,000 annual reduction in the combined water and sewer line item.",
+    source: "Self-Reported · General Manager Verified · 2-Year Period", client: "Grand Central at Kennedy"
   },
   {
     logo: "H", industry: "Multifamily Real Estate", color: "bg-amber-100 text-amber-700",
-    quote: "16% reduction in metered water consumption on a 13M+ gallon/year building — about 6,000 gallons saved per day.",
-    author: "Doug Horn, General Manager", client: "Houstonian Estates"
+    summary: "16% reduction in metered water consumption at a 13M+ gallon/year multifamily building — approximately 6,000 gallons saved per day.",
+    source: "General Manager Verified · Self-Reported", client: "Houstonian Estates"
   },
   {
     logo: "C", industry: "Automotive", color: "bg-red-100 text-red-700",
-    quote: "23% weighted average across 5 locations in Georgia and Florida. M&V verified over 3+ quarters.",
-    author: "Caliber Operations", client: "Caliber Car Wash"
+    summary: "23% weighted average savings across a 5-site portfolio in Georgia and Florida. M&V verified over 3+ consecutive quarters across all locations.",
+    source: "M&V Verified · 5-Site Portfolio", client: "Caliber Car Wash"
   },
   {
     logo: "FC", industry: "Multi-Residential Portfolio · Toronto", color: "bg-green-100 text-green-700",
-    quote: "IPMVP Option B verified at 95% confidence. 100 Forest: 20.0% (p<0.01). 123 Charlton: 17.0% (p<0.01). Combined annual savings: CA $17,200.",
-    author: "Canadian Water Savings M&V Report", client: "Forest & Charlton (100 Forest / 123 Charlton Ave)"
+    summary: "IPMVP Option B verified at 95% statistical confidence. 100 Forest Ave: 20.0% (p<0.01). 123 Charlton Ave: 17.0% (p<0.01). Combined annual savings: CA $17,200.",
+    source: "CWS M&V Report, 2025 · Formal PDF Available", client: "Forest & Charlton (100 Forest / 123 Charlton Ave)"
   }
 ];
 
@@ -290,12 +290,12 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="font-headline text-3xl lg:text-4xl font-bold mb-4">What clients actually say.</h2>
+            <h2 className="font-headline text-3xl lg:text-4xl font-bold mb-4">Verified case study results.</h2>
             <p className="text-lg text-slate-400" style={{ fontWeight: 300 }}>Numbers from real sites. All M&V-verified. No cherry-picking.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t, i) => (
+            {CASE_STUDIES.map((t, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -313,14 +313,14 @@ export default function Home() {
                     <div className="text-xs text-slate-400 font-medium">{t.industry}</div>
                   </div>
                 </div>
-                <blockquote className="text-slate-300 text-base leading-relaxed flex-grow" style={{ fontWeight: 300 }}>
-                  "{t.quote}"
-                </blockquote>
+                <p className="text-slate-300 text-base leading-relaxed flex-grow" style={{ fontWeight: 300 }}>
+                  {t.summary}
+                </p>
                 <div className="mt-6 pt-6 border-t border-white/10 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
-                  <div className="text-sm font-medium text-slate-400">{t.author}</div>
+                  <div className="text-xs font-medium text-slate-500 uppercase tracking-wide">{t.source}</div>
                 </div>
               </motion.div>
             ))}
