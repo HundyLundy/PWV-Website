@@ -4,7 +4,7 @@ const config = {
   state: "Arizona",
   emoji: "🌵",
   headline: "Phoenix Is the Fastest-Growing City in America — in the Middle of a 25-Year Drought. Water Efficiency Isn't Optional.",
-  subheadline: "Arizona is in a two-decade megadrought. The Colorado River hit Tier 2 shortage status in 2023. Tucson approved 3.5% annual rate increases through 2029. SRP offers commercial rebates up to $450,000. Smart Valve™ guarantees 15–58% savings.",
+  subheadline: "Arizona is in a two-decade megadrought. The Colorado River hit Tier 2 shortage status in 2023. Tucson approved 3.5% annual rate increases through 2029. SRP offers commercial rebates up to $450,000. Smart Valve™ guarantees 15%–35% annually savings.",
   urgencyBadge: "Colorado River Tier 2 Shortage · Tucson +3.5%/yr through 2029",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },

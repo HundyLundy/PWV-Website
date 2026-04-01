@@ -31,7 +31,7 @@ const POSTS = [
   },
   {
     slug: "hotel-water-savings-guide",
-    title: "How Hotels Cut Water Bills 15–58% Without Touching Guest Experience",
+    title: "How Hotels Cut Water Bills 15%–35% annually Without Touching Guest Experience",
     category: "Industry News",
     date: "March 10, 2026",
     excerpt: "Hotels are one of the highest water-use commercial property types. Smart Valve™ installs on the main supply line in under 4 hours — guests never notice, but the water bill does.",
@@ -41,7 +41,7 @@ const POSTS = [
     title: "What Is the Smart Valve™ and How Does It Actually Cut Your Water Bill?",
     category: "How It Works",
     date: "March 5, 2026",
-    excerpt: "No electricity. No moving parts. No maintenance. Smart Valve™ installs on your main water supply line and cuts your metered bill 15–58%, guaranteed in writing. Here's the science behind it.",
+    excerpt: "No electricity. No moving parts. No maintenance. Smart Valve™ installs on your main water supply line and cuts your metered bill 15%–35% annually, guaranteed in writing. Here's the science behind it.",
   },
 ];
 

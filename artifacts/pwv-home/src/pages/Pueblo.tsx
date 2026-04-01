@@ -16,7 +16,7 @@ const config = {
   state: "Pueblo",
   emoji: "🏭",
   headline: "Pueblo Board of Water Works Raised Rates 4.8% in 2024 — Arkansas River Drought Stress Ongoing",
-  subheadline: "Pueblo Board of Water Works raised commercial rates 4.8% in 2024 as Pueblo Reservoir and the Arkansas River face intensifying drought stress. Pueblo's industrial and commercial base depends on reliable, affordable water — and Smart Valve™ cuts your metered bill 15–58%, guaranteed.",
+  subheadline: "Pueblo Board of Water Works raised commercial rates 4.8% in 2024 as Pueblo Reservoir and the Arkansas River face intensifying drought stress. Pueblo's industrial and commercial base depends on reliable, affordable water — and Smart Valve™ cuts your metered bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Pueblo Board of Water Works: 4.8% Rate Increase 2024 — Arkansas River Under Drought Stress",
   heroStats: [
     { value: "4.8%", label: "Pueblo Water Rise 2024" },
@@ -38,7 +38,7 @@ const config = {
     { q: "Does Pueblo have any rebate programs for commercial water savings?", a: "Contact Perfect Water Valve for current Pueblo Board of Water Works conservation incentive availability. Note: Denver Water rebates do not apply in Pueblo — Pueblo is served exclusively by Pueblo Board of Water Works." },
     { q: "Why is Pueblo Water particularly vulnerable to supply issues?", a: "Pueblo's water supply depends heavily on Pueblo Reservoir and the Arkansas River. Both are directly affected by drought and reduced snowpack. As climate patterns shift, Pueblo Water faces increasing supply uncertainty that drives infrastructure investment and rate increases." },
     { q: "What commercial property types in Pueblo benefit most from Smart Valve™?", a: "Industrial facilities, multifamily residential, hotels, and commercial retail properties throughout the Pueblo metro area. Any property spending $5,000+/month on water qualifies for a free assessment." },
-    { q: "How quickly does Smart Valve™ pay for itself in Pueblo?", a: "At current Pueblo Board of Water Works rates with a 15–58% consumption reduction, most commercial properties see full cost recovery within 12–24 months. Industrial facilities and high-volume users typically see payback in 6–18 months." },
+    { q: "How quickly does Smart Valve™ pay for itself in Pueblo?", a: "At current Pueblo Board of Water Works rates with a 15–35% annual consumption reduction, most commercial properties see full cost recovery within 12–24 months. Industrial facilities and high-volume users typically see payback in 6–18 months." },
   ],
   contactHeading: "Get a Free Pueblo Water Assessment",
   contactBody: "Pueblo Board of Water Works raised rates 4.8% in 2024 with Arkansas River drought pressure pointing to further increases. Smart Valve™ guarantees at least 15% off your metered bill.",
@@ -52,7 +52,7 @@ const config = {
   alsoServing: CO_OTHER_CITIES,
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Pueblo Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Pueblo, CO. Pueblo Board of Water Works up 4.8% in 2024. Arkansas River drought stress ongoing. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Pueblo, CO. Pueblo Board of Water Works up 4.8% in 2024. Arkansas River drought stress ongoing. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/pueblo",
 };
 

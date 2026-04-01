@@ -16,7 +16,7 @@ const config = {
   state: "Arvada",
   emoji: "🏘️",
   headline: "Arvada Water Rates Up 5.8–6% in 2025 — Dual Utility Market Requires Extra Diligence",
-  subheadline: "Arvada commercial properties may be billed by Denver Water (6% increase 2025) or North Table Mountain Water & Sanitation District (5.8% increase 2025) depending on location. Denver Water rebates apply to Denver Water-served properties. Smart Valve™ cuts your metered bill 15–58%, guaranteed — regardless of which utility serves you.",
+  subheadline: "Arvada commercial properties may be billed by Denver Water (6% increase 2025) or North Table Mountain Water & Sanitation District (5.8% increase 2025) depending on location. Denver Water rebates apply to Denver Water-served properties. Smart Valve™ cuts your metered bill 15%–35% annually, guaranteed — regardless of which utility serves you.",
   urgencyBadge: "Arvada: Denver Water +6% or North Table Mountain +5.8% in 2025 — Denver Water Rebate Available",
   heroStats: [
     { value: "5.8–6%", label: "Arvada Water Rise 2025" },
@@ -52,7 +52,7 @@ const config = {
   alsoServing: CO_OTHER_CITIES,
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Arvada Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Arvada, CO. Denver Water up 6% in 2025. North Table Mountain up 5.8%. Denver Water rebate available. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Arvada, CO. Denver Water up 6% in 2025. North Table Mountain up 5.8%. Denver Water rebate available. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/arvada",
 };
 

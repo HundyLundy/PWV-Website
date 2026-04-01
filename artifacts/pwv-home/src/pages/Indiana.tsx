@@ -4,7 +4,7 @@ const config = {
   state: "Indiana",
   emoji: "🌽",
   headline: "Indiana Businesses Face Up to 85.5% Water Rate Increases by 2027 — Act Now",
-  subheadline: "Bloomington is implementing a 46–50% water rate increase in 2025. Anderson faces an 85.5% increase by 2027, starting with 20.5% now. Multiple utilities across Indiana are proposing 30–49% increases. Indiana commercial properties face the most aggressive rate schedule in the Midwest. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Bloomington is implementing a 46–50% water rate increase in 2025. Anderson faces an 85.5% increase by 2027, starting with 20.5% now. Multiple utilities across Indiana are proposing 30–49% increases. Indiana commercial properties face the most aggressive rate schedule in the Midwest. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Anderson, IN: 85.5% Rate Increase by 2027 | Bloomington: 46–50% in 2025",
   heroStats: [
     { value: "85.5%", label: "Anderson Rate Hike by 2027" },
@@ -22,7 +22,7 @@ const config = {
   ],
   markets: ["Indianapolis", "Fort Wayne", "Evansville", "South Bend", "Carmel", "Bloomington", "Hammond", "Anderson"],
   faqItems: [
-    { q: "Does Smart Valve™ offset the impact of Indiana's massive rate increases?", a: "Yes. Smart Valve™ reduces your metered water consumption 15–58%, guaranteed. Even against an 85.5% increase, reducing your consumption by 15–30% significantly offsets your net bill increase. The savings compound every year rates rise." },
+    { q: "Does Smart Valve™ offset the impact of Indiana's massive rate increases?", a: "Yes. Smart Valve™ reduces your metered water consumption 15%–35% annually, guaranteed. Even against an 85.5% increase, reducing your consumption by 15–30% significantly offsets your net bill increase. The savings compound every year rates rise." },
     { q: "Does Smart Valve™ work with Bloomington utilities?", a: "Yes. Smart Valve™ is compatible with 99% of commercial water meters, including all meter types used by Bloomington utilities, Indiana American Water, and all Indiana municipal systems." },
     { q: "Is the 15% savings guarantee real and in writing?", a: "Yes. Every installation includes a written guarantee of at least 15% reduction in metered water consumption. If your Indiana property doesn't reach 15%, we resolve it at no cost." },
     { q: "Which Indiana commercial properties should act soonest?", a: "Properties in Bloomington and Anderson should act immediately — their rate increases are already in motion. Indianapolis, Fort Wayne, and South Bend properties should also assess now before their utilities implement similar schedules." },
@@ -38,7 +38,7 @@ const config = {
   source: "perfectwatervalve.com/locations/indiana",
   showDataCenterSection: true,
   seoTitle: "Indiana Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Indiana. Bloomington up 46–50% in 2025. Anderson facing 85.5% by 2027. Guaranteed savings in writing. Free assessment available.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Indiana. Bloomington up 46–50% in 2025. Anderson facing 85.5% by 2027. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/indiana",
 };
 

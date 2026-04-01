@@ -4,7 +4,7 @@ const config = {
   state: "Georgia",
   emoji: "🍑",
   headline: "Atlanta Commercial Water Rates Rising — Data Center Demand Straining Supply",
-  subheadline: "Gwinnett County raised commercial rates approximately $1.25/month in January 2025. The City of Winder increased its base rate to $20.44 in 2025. Explosive data center growth in the Atlanta metro is straining water supply and driving regulatory pressure on commercial users. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Gwinnett County raised commercial rates approximately $1.25/month in January 2025. The City of Winder increased its base rate to $20.44 in 2025. Explosive data center growth in the Atlanta metro is straining water supply and driving regulatory pressure on commercial users. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Data Center Demand Straining Atlanta-Area Water Supply in 2025",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -38,7 +38,7 @@ const config = {
   source: "perfectwatervalve.com/locations/georgia",
   showDataCenterSection: true,
   seoTitle: "Georgia Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Georgia. Atlanta data center demand straining water supply. Gwinnett County rates rising. Amazon YYZ3 benchmark verified. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Georgia. Atlanta data center demand straining water supply. Gwinnett County rates rising. Amazon YYZ3 benchmark verified. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/georgia",
 };
 

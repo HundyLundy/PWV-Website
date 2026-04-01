@@ -4,7 +4,7 @@ const config = {
   state: "Maryland",
   emoji: "🦀",
   headline: "Maryland Water Rates Rising — Drought and Population Growth Straining Supply, Conservation Mandated",
-  subheadline: "Baltimore City raised water rates 3% and sewer rates 15%+ in 2025. WSSC is at $9.72/1,000 gallons effective July 2025. Maryland Water Service is at $10.58/1,000 gallons effective July 2025. Persistent drought and population growth are straining supply across the state. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Baltimore City raised water rates 3% and sewer rates 15%+ in 2025. WSSC is at $9.72/1,000 gallons effective July 2025. Maryland Water Service is at $10.58/1,000 gallons effective July 2025. Persistent drought and population growth are straining supply across the state. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Baltimore Sewer Up 15%+ | WSSC at $9.72/1,000 Gal | MWS at $10.58/1,000 Gal",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -23,7 +23,7 @@ const config = {
   markets: ["Baltimore", "Rockville", "Gaithersburg", "Annapolis", "Frederick", "Bethesda", "Silver Spring", "Columbia"],
   faqItems: [
     { q: "Does Smart Valve™ work with WSSC and Maryland Water Service meters?", a: "Yes. Smart Valve™ is compatible with 99% of commercial water meters, including all meter types used by WSSC, Maryland Water Service, Baltimore City, and all Maryland utility systems." },
-    { q: "How does Smart Valve™ help with Maryland conservation mandates?", a: "Maryland's commercial conservation mandates impose usage thresholds. Smart Valve™ reduces your metered water consumption 15–58%, keeping you well below any mandated thresholds and protecting you from usage penalties." },
+    { q: "How does Smart Valve™ help with Maryland conservation mandates?", a: "Maryland's commercial conservation mandates impose usage thresholds. Smart Valve™ reduces your metered water consumption 15%–35% annually, keeping you well below any mandated thresholds and protecting you from usage penalties." },
     { q: "Is the 15% savings guarantee in writing?", a: "Yes. Every installation guarantees at least 15% reduction in metered water consumption, contractually. If your Maryland property doesn't reach 15%, we resolve it at no cost." },
     { q: "Which Maryland commercial properties benefit most?", a: "Office buildings, healthcare facilities, multifamily complexes, and hospitality properties in Baltimore, Montgomery County, and Prince George's County have the strongest ROI. Any property spending $5,000+/month on water qualifies." },
   ],
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/maryland",
   seoTitle: "Maryland Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Maryland. Baltimore sewer up 15%+. WSSC $9.72, MWS $10.58 per 1,000 gal effective July 2025. Conservation mandates active. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Maryland. Baltimore sewer up 15%+. WSSC $9.72, MWS $10.58 per 1,000 gal effective July 2025. Conservation mandates active. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/maryland",
 };
 

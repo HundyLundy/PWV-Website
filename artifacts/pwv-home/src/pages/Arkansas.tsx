@@ -4,7 +4,7 @@ const config = {
   state: "Arkansas",
   emoji: "🌲",
   headline: "Arkansas Water Rates Rising Statewide — Groundwater Levels in Decline",
-  subheadline: "Little Rock is implementing approximately 7.25% annual rate increases. Fort Smith has locked in 3.5% annual sewer increases from 2025 through 2030. Declining groundwater levels and aging infrastructure are accelerating rate pressure across the state. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Little Rock is implementing approximately 7.25% annual rate increases. Fort Smith has locked in 3.5% annual sewer increases from 2025 through 2030. Declining groundwater levels and aging infrastructure are accelerating rate pressure across the state. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Little Rock: ~7.25% Annual Increases Underway",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/arkansas",
   seoTitle: "Arkansas Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Arkansas. Little Rock raising rates ~7.25% annually. Fort Smith locked in through 2030. Guaranteed in writing. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Arkansas. Little Rock raising rates ~7.25% annually. Fort Smith locked in through 2030. Guaranteed in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/arkansas",
 };
 

@@ -4,7 +4,7 @@ const config = {
   state: "Alabama",
   emoji: "🌾",
   headline: "Alabama Commercial Water Rates Up 4.9% in 2025 — Drought Conditions Ongoing",
-  subheadline: "Birmingham Water Works raised commercial rates 4.9% in 2025. Persistent drought conditions are reducing aquifer levels across Alabama. Smart Valve™ cuts your metered water bill 15–58%, guaranteed in writing.",
+  subheadline: "Birmingham Water Works raised commercial rates 4.9% in 2025. Persistent drought conditions are reducing aquifer levels across Alabama. Smart Valve™ cuts your metered water bill 15%–35% annually, guaranteed in writing.",
   urgencyBadge: "Birmingham Water Works: 4.9% Increase Active in 2025",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/alabama",
   seoTitle: "Alabama Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% across Alabama. Birmingham Water Works up 4.9% in 2025. Drought conditions active. Guaranteed savings in writing. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually across Alabama. Birmingham Water Works up 4.9% in 2025. Drought conditions active. Guaranteed savings in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/alabama",
 };
 

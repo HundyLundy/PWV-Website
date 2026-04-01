@@ -4,7 +4,7 @@ const config = {
   state: "Alaska",
   emoji: "❄️",
   headline: "Anchorage Commercial Water Rates Rising 5.13% in 2025 — Infrastructure Costs Compounding",
-  subheadline: "Anchorage Water & Wastewater Utility raised commercial rates 5.13% effective February 2025. Juneau is locked into 5% annual increases through FY26–FY30. Infrastructure investment and extreme climate conditions are compounding costs statewide. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Anchorage Water & Wastewater Utility raised commercial rates 5.13% effective February 2025. Juneau is locked into 5% annual increases through FY26–FY30. Infrastructure investment and extreme climate conditions are compounding costs statewide. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "AWWU: 5.13% Rate Increase Effective February 2025",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -36,7 +36,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/alaska",
   seoTitle: "Alaska Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Alaska. AWWU up 5.13% in 2025. Juneau locked into 5%/yr increases. Guaranteed savings in writing. Free assessment available.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Alaska. AWWU up 5.13% in 2025. Juneau locked into 5%/yr increases. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/alaska",
 };
 

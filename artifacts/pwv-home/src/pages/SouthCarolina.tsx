@@ -4,7 +4,7 @@ const config = {
   state: "South Carolina",
   emoji: "🌴",
   headline: "South Carolina Water Rates Rising — Columbia Up 8%, Major Cities All Implementing Increases",
-  subheadline: "Columbia, SC raised commercial water rates 8% in 2025. Rock Hill implemented a 5% increase in FY2025. Spartanburg is raising both water and sewer rates. Data center growth in the Charlotte-SC corridor and drought conditions are placing additional pressure on supply. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Columbia, SC raised commercial water rates 8% in 2025. Rock Hill implemented a 5% increase in FY2025. Spartanburg is raising both water and sewer rates. Data center growth in the Charlotte-SC corridor and drought conditions are placing additional pressure on supply. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Columbia SC: 8% Rate Increase 2025 | Rock Hill: 5% FY2025",
   heroStats: [
     { value: "8%", label: "Columbia SC Rate Rise 2025" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/south-carolina",
   seoTitle: "South Carolina Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in South Carolina. Columbia up 8% in 2025. Rock Hill up 5%. Data centers straining SC supply. Guaranteed savings in writing. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in South Carolina. Columbia up 8% in 2025. Rock Hill up 5%. Data centers straining SC supply. Guaranteed savings in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/south-carolina",
 };
 

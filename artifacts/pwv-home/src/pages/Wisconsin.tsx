@@ -4,7 +4,7 @@ const config = {
   state: "Wisconsin",
   emoji: "🧀",
   headline: "Wisconsin Water Rates Rising — Milwaukee Up 4.5% and Data Center Growth Straining Supply",
-  subheadline: "Milwaukee's water rates are up 4.5% in 2025. Madison Metropolitan Sewerage District is raising sewer costs. Wisconsin data center growth is creating water supply pressure in the Fox Valley and Milwaukee metro regions. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Milwaukee's water rates are up 4.5% in 2025. Madison Metropolitan Sewerage District is raising sewer costs. Wisconsin data center growth is creating water supply pressure in the Fox Valley and Milwaukee metro regions. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Milwaukee: 4.5% Water Rate Increase 2025 | Data Center Growth Active Statewide",
   heroStats: [
     { value: "4.5%", label: "Milwaukee Rate Rise 2025" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/wisconsin",
   seoTitle: "Wisconsin Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Wisconsin. Milwaukee up 4.5% in 2025. Data center growth straining supply. Guaranteed savings in writing. Free assessment available.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Wisconsin. Milwaukee up 4.5% in 2025. Data center growth straining supply. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/wisconsin",
 };
 

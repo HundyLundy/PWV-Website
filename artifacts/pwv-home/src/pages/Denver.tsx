@@ -4,7 +4,7 @@ const config = {
   state: "Denver",
   emoji: "🏔️",
   headline: "Denver Water Rates Up 6% in 2025 — Drought Makes Every Drop Count",
-  subheadline: "Denver Water raised commercial rates 6% in 2025 and has signaled continued annual increases through 2027. Colorado's severe drought conditions are placing unprecedented pressure on Denver's water supply, driving conservation mandates and tiered rate structures that penalize high-volume commercial users. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Denver Water raised commercial rates 6% in 2025 and has signaled continued annual increases through 2027. Colorado's severe drought conditions are placing unprecedented pressure on Denver's water supply, driving conservation mandates and tiered rate structures that penalize high-volume commercial users. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Denver Water: 6% Rate Increase Active 2025 — More Increases Signaled Through 2027",
   heroStats: [
     { value: "6%", label: "Denver Water Rise 2025" },
@@ -17,14 +17,14 @@ const config = {
   whyPoints: [
     { icon: "TrendingUp", color: "red", title: "Denver Water: 6% in 2025, Increases Signaled Through 2027", body: "Denver Water implemented a 6% commercial rate increase for 2025 and has signaled continued annual increases through at least 2027. This committed trajectory gives commercial properties a clear view of upcoming cost pressure — and a strong incentive to lock in consumption savings before each increase takes effect." },
     { icon: "AlertTriangle", color: "orange", title: "Colorado Drought — Severe Conditions Affecting Denver's Supply", body: "Colorado is experiencing severe drought conditions that are reducing snowpack, inflows to Dillon and other reservoirs, and the overall reliability of Denver's water supply. Denver Water has responded with tiered rate structures and conservation mandates that directly impact commercial water users." },
-    { icon: "Droplets", color: "blue", title: "Tiered Rates and Conservation Mandates Hit Commercial Users Hardest", body: "Denver Water's tiered commercial rate structure means that high-volume users pay escalating rates for consumption above threshold levels. Smart Valve™ reduces your metered consumption 15–58%, keeping you in the lowest possible rate tier and avoiding the penalty rates that apply to high-volume commercial users." },
+    { icon: "Droplets", color: "blue", title: "Tiered Rates and Conservation Mandates Hit Commercial Users Hardest", body: "Denver Water's tiered commercial rate structure means that high-volume users pay escalating rates for consumption above threshold levels. Smart Valve™ reduces your metered consumption 15%–35% annually on average, keeping you in the lowest possible rate tier and avoiding the penalty rates that apply to high-volume commercial users." },
     { icon: "Building2", color: "teal", title: "Denver Metro's Highest-ROI Applications", body: "Denver's hotel and hospitality corridor, LoDo office towers, Cherry Creek retail, and tech campuses in RiNo and DTC are prime Smart Valve™ applications. Any Denver metro commercial property spending $5,000+/month on water qualifies." },
   ],
   markets: ["LoDo", "Cherry Creek", "DTC", "RiNo", "Highlands", "Aurora", "Lakewood", "Westminster"],
   faqItems: [
     { q: "What are current commercial water rates in Denver?", a: "Denver Water raised commercial rates 10% in 2025. Additional increases are projected as the Colorado River shortage continues to constrain Front Range water supply." },
     { q: "How do I apply for Denver Water's commercial rebate?", a: "Denver Water's commercial conservation rebate covers up to 50% of Smart Valve™ installation costs. Perfect Water Valve handles the pre-approval process — contact us to start the application before the annual budget runs out." },
-    { q: "What is the ROI timeline for Smart Valve™ in Denver?", a: "At Denver Water's current rates with a 15–58% reduction in consumption, most commercial properties recover their full installation cost within 12–24 months. Properties with higher water usage (hotels, multifamily, car washes) typically see payback in 6–18 months." },
+    { q: "What is the ROI timeline for Smart Valve™ in Denver?", a: "At Denver Water's current rates with a 15%–35% annual reduction in consumption, most commercial properties recover their full installation cost within 12–24 months. Properties with higher water usage (hotels, multifamily, car washes) typically see payback in 6–18 months." },
     { q: "Does Smart Valve™ work with Denver Water's metering system?", a: "Yes. Smart Valve™ installs on the main supply line before the distribution system and works with all standard water meters used by Denver Water." },
   ],
   contactHeading: "Get a Free Denver Water Assessment",
@@ -50,7 +50,7 @@ const config = {
   ],
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Denver Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Denver. Denver Water up 6% in 2025 with more increases through 2027. Drought driving conservation mandates. Guaranteed in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Denver. Denver Water up 6% in 2025 with more increases through 2027. Drought driving conservation mandates. Guaranteed in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/denver",
 };
 

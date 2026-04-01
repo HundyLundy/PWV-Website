@@ -3,7 +3,7 @@ import LocationPage from "./LocationTemplate";
 const config = {
   state: "Washington",
   emoji: "🌲",
-  headline: "Seattle's Water Rates Are Up 5.7% in 2026 and Rising — Smart Valve™ Guarantees 15–58% in Savings",
+  headline: "Seattle's Water Rates Are Up 5.7% in 2026 and Rising — Smart Valve™ Guarantees 15%–35% annually in Savings",
   subheadline: "Seattle Public Utilities raised water rates 5.7% for 2026. Washington State has mandatory water conservation targets for commercial properties. Tacoma increased rates 6.1% in 2025. Smart Valve™ is your fastest path to compliance and cost control.",
   urgencyBadge: "Seattle SPU +5.7% 2026 · Tacoma +6.1% 2025 — WA State Mandatory Commercial Conservation Targets Active",
   heroStats: [

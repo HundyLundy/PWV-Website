@@ -4,7 +4,7 @@ const config = {
   state: "Hawaii",
   emoji: "🌺",
   headline: "Hawaii Water Rates Surging Up to 59% — Tourism and Military Demand Straining Island Supply",
-  subheadline: "Hawaii Water Service is raising rates up to 59% for West Maui and 47.89% for other non-residential customers. The Board of Water Supply implemented $20.15/unit pricing effective July 2025. Island water supply is structurally constrained — there is no grid to import from. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Hawaii Water Service is raising rates up to 59% for West Maui and 47.89% for other non-residential customers. The Board of Water Supply implemented $20.15/unit pricing effective July 2025. Island water supply is structurally constrained — there is no grid to import from. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Hawaii Water Service: Up to 59% Rate Increase for Non-Residential",
   heroStats: [
     { value: "59%", label: "Hawaii Water Service Hike" },
@@ -17,7 +17,7 @@ const config = {
   whyPoints: [
     { icon: "TrendingUp", color: "red", title: "Hawaii Water Service: Up to 59% for West Maui Non-Residential", body: "Hawaii Water Service is implementing rate increases of up to 59% for non-residential customers in West Maui, and 47.89% for other non-residential customers across its service area. These are driven by infrastructure investment, drought resilience programs, and the uniquely high cost of water delivery in island environments." },
     { icon: "AlertTriangle", color: "orange", title: "Board of Water Supply: $20.15/Unit Effective July 2025", body: "The Honolulu Board of Water Supply increased commercial rates to $20.15 per unit effective July 2025. For high-volume commercial properties on Oahu — hotels, resorts, hospitals, office complexes — this translates directly to thousands of dollars per month in increased costs." },
-    { icon: "Droplets", color: "blue", title: "Island Supply Is Fixed — Every Drop Saved Is Money Kept", body: "Unlike mainland states, Hawaii cannot draw from neighboring states' water systems when supply is stressed. Water conservation in Hawaii is not optional — it is structural. Smart Valve™ reduces your metered consumption 15–58%, immediately cutting your bill while also reducing your draw on the island's limited supply." },
+    { icon: "Droplets", color: "blue", title: "Island Supply Is Fixed — Every Drop Saved Is Money Kept", body: "Unlike mainland states, Hawaii cannot draw from neighboring states' water systems when supply is stressed. Water conservation in Hawaii is not optional — it is structural. Smart Valve™ reduces your metered consumption 15%–35% annually on average, immediately cutting your bill while also reducing your draw on the island's limited supply." },
     { icon: "Hotel", color: "teal", title: "Hospitality — Hawaii's Highest-ROI Application", body: "Hawaii's tourism economy means hotels and resorts are the dominant commercial water users on every island. The Four Seasons Fort Lauderdale case study (26% savings, $27,000/yr) is directly applicable to Hawaii's luxury hospitality market. With Hawaii water rates 2–4x mainland rates, the dollar savings per percentage point are dramatically higher." },
   ],
   markets: ["Honolulu", "Kailua", "Pearl City", "Hilo", "Kailua-Kona", "Kahului", "Lahaina", "Kihei"],
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/hawaii",
   seoTitle: "Hawaii Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Hawaii. Hawaii Water Service raising rates up to 59%. Island supply structurally constrained. Guaranteed savings in writing. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Hawaii. Hawaii Water Service raising rates up to 59%. Island supply structurally constrained. Guaranteed savings in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/hawaii",
 };
 

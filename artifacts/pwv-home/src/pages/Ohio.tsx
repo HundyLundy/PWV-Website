@@ -4,7 +4,7 @@ const config = {
   state: "Ohio",
   emoji: "🌕",
   headline: "Ohio Water Rates Soaring — Columbus Up 7%, Tallmadge Up 10% in 2025 Then 15% Annually",
-  subheadline: "Tallmadge is raising commercial water rates 10% in 2025, then 15% annually from 2026 through 2028. Columbus raised commercial rates 7% in 2025. Aqua Ohio has proposed 10–12% increases. Ohio commercial properties face some of the most aggressively scheduled rate increases in the Midwest. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Tallmadge is raising commercial water rates 10% in 2025, then 15% annually from 2026 through 2028. Columbus raised commercial rates 7% in 2025. Aqua Ohio has proposed 10–12% increases. Ohio commercial properties face some of the most aggressively scheduled rate increases in the Midwest. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Tallmadge OH: 10% in 2025 Then 15%/yr 2026–2028 | Columbus: 7% in 2025",
   heroStats: [
     { value: "15%/yr", label: "Tallmadge 2026–2028 Annual Rise" },
@@ -22,7 +22,7 @@ const config = {
   ],
   markets: ["Columbus", "Cleveland", "Cincinnati", "Toledo", "Akron", "Dayton", "Canton", "Youngstown"],
   faqItems: [
-    { q: "How much will Tallmadge's rate schedule cost my business over 4 years?", a: "A property paying $10,000/month in 2024 will pay approximately $16,000/month by 2028 if the Tallmadge schedule is fully implemented — a 60% cumulative increase. Smart Valve™'s 15–58% consumption reduction compresses each year's impact, protecting your budget throughout the cycle." },
+    { q: "How much will Tallmadge's rate schedule cost my business over 4 years?", a: "A property paying $10,000/month in 2024 will pay approximately $16,000/month by 2028 if the Tallmadge schedule is fully implemented — a 60% cumulative increase. Smart Valve™'s 15–35% annual consumption reduction compresses each year's impact, protecting your budget throughout the cycle." },
     { q: "Does Smart Valve™ work with Columbus and Ohio utility meters?", a: "Yes. Smart Valve™ is compatible with 99% of commercial water meters, including all meter types used by Columbus Division of Water, Cleveland Water, Aqua Ohio, and all Ohio municipal utility systems." },
     { q: "Is the 15% savings guarantee in writing?", a: "Yes. Every installation guarantees at least 15% reduction in metered water consumption, contractually. If your Ohio property doesn't reach 15%, we resolve it at no cost." },
     { q: "Which Ohio commercial properties should act soonest?", a: "Tallmadge properties should act immediately given the aggressive multi-year schedule. Columbus, Cleveland, Cincinnati, and Akron properties should also act now before their utilities implement similar commitments." },
@@ -38,7 +38,7 @@ const config = {
   source: "perfectwatervalve.com/locations/ohio",
   showDataCenterSection: true,
   seoTitle: "Ohio Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Ohio. Tallmadge up 10% then 15%/yr through 2028. Columbus up 7%. Aqua Ohio 10–12% proposed. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Ohio. Tallmadge up 10% then 15%/yr through 2028. Columbus up 7%. Aqua Ohio 10–12% proposed. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/ohio",
 };
 

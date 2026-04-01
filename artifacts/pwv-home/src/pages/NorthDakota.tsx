@@ -4,7 +4,7 @@ const config = {
   state: "North Dakota",
   emoji: "🌾",
   headline: "North Dakota Drought Drives Infrastructure Investment — Commercial Rates Rising in 2025",
-  subheadline: "Jamestown is raising commercial water rates by $0.40/month in 2025. West Fargo is implementing rate increases in 2025 and 2026. Historical and recent droughts are necessitating major infrastructure projects and supply improvements across the state. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Jamestown is raising commercial water rates by $0.40/month in 2025. West Fargo is implementing rate increases in 2025 and 2026. Historical and recent droughts are necessitating major infrastructure projects and supply improvements across the state. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "West Fargo: Rate Increases in 2025 and 2026 | Drought Infrastructure Investment Ongoing",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/north-dakota",
   seoTitle: "North Dakota Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in North Dakota. West Fargo raising rates in 2025 and 2026. Drought driving infrastructure investment. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in North Dakota. West Fargo raising rates in 2025 and 2026. Drought driving infrastructure investment. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/north-dakota",
 };
 

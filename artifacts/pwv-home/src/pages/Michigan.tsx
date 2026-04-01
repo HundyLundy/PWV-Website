@@ -4,7 +4,7 @@ const config = {
   state: "Michigan",
   emoji: "🚗",
   headline: "Michigan Commercial Water Rates Surging — BWL Up 9.16%, Birmingham Up 20%",
-  subheadline: "Lansing's Board of Water & Light raised commercial rates 9.16% in 2025. Birmingham raised rates 20%. Great Lakes Water Authority (GLWA) implemented a 5.9% increase in 2025. Michigan commercial properties are seeing some of the steepest rate increases in the Midwest. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Lansing's Board of Water & Light raised commercial rates 9.16% in 2025. Birmingham raised rates 20%. Great Lakes Water Authority (GLWA) implemented a 5.9% increase in 2025. Michigan commercial properties are seeing some of the steepest rate increases in the Midwest. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Birmingham, MI: 20% Rate Increase | BWL: 9.16% | GLWA: 5.9%",
   heroStats: [
     { value: "20%", label: "Birmingham Rate Increase" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/michigan",
   seoTitle: "Michigan Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Michigan. Birmingham up 20%, BWL 9.16%, GLWA 5.9% in 2025. PFAS remediation driving rates higher. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Michigan. Birmingham up 20%, BWL 9.16%, GLWA 5.9% in 2025. PFAS remediation driving rates higher. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/michigan",
 };
 

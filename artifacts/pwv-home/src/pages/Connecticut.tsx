@@ -4,7 +4,7 @@ const config = {
   state: "Connecticut",
   emoji: "🏛️",
   headline: "Connecticut Water Rates Up 5.45% Now — 19% Hike Proposed for 2027",
-  subheadline: "Connecticut Water Company implemented a 5.45% commercial rate increase in 2024, with a 19% rate hike proposed for 2027. South Central Connecticut Regional Water Authority is up 3.4% for July 2026. PFAS contamination remediation is driving massive infrastructure investment across the state. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Connecticut Water Company implemented a 5.45% commercial rate increase in 2024, with a 19% rate hike proposed for 2027. South Central Connecticut Regional Water Authority is up 3.4% for July 2026. PFAS contamination remediation is driving massive infrastructure investment across the state. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "19% Rate Hike Proposed for CT Water Company in 2027",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -23,7 +23,7 @@ const config = {
   markets: ["Hartford", "New Haven", "Bridgeport", "Stamford", "Waterbury", "Norwalk", "Danbury", "New Britain"],
   faqItems: [
     { q: "Does Smart Valve™ work with Connecticut Water Company meters?", a: "Yes. Smart Valve™ is compatible with 99% of commercial water meters, including all meter types used by CT Water, South Central CT RWA, Aquarion, and all Connecticut utilities." },
-    { q: "How will the proposed 19% CT Water increase affect my business?", a: "A 19% increase on top of existing base rates represents a compounding cost shock. For a property spending $20,000/month on water, that could mean $3,800 more per month — or $45,600 more per year. Smart Valve™ cuts your consumption 15–58%, offsetting a large portion or all of that increase." },
+    { q: "How will the proposed 19% CT Water increase affect my business?", a: "A 19% increase on top of existing base rates represents a compounding cost shock. For a property spending $20,000/month on water, that could mean $3,800 more per month — or $45,600 more per year. Smart Valve™ cuts your consumption 15%–35% annually on average, offsetting a large portion or all of that increase." },
     { q: "Is the 15% savings guarantee in writing?", a: "Yes. Every Smart Valve™ installation includes a written guarantee of at least 15% reduction in metered water consumption. If your Connecticut property doesn't reach 15%, we resolve it at no cost." },
     { q: "Which Connecticut industries benefit most?", a: "Healthcare, office buildings, multifamily residential, and hospitality in Hartford, Stamford, and New Haven have the strongest ROI profile. Facilities spending $5,000+/month on water are ideal candidates." },
   ],
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/connecticut",
   seoTitle: "Connecticut Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Connecticut. CT Water up 5.45%, 19% hike proposed for 2027. PFAS remediation driving rates higher. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Connecticut. CT Water up 5.45%, 19% hike proposed for 2027. PFAS remediation driving rates higher. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/connecticut",
 };
 

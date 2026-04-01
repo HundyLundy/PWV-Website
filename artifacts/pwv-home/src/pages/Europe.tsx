@@ -29,9 +29,9 @@ export default function Europe() {
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
       el.setAttribute("content", content);
     };
-    setMeta("description", "Smart Valve™ delivers 15–58% commercial water savings across Europe. London, Frankfurt, Dublin, Amsterdam and beyond. Guaranteed in writing. NSF certified. Free commercial assessment.");
+    setMeta("description", "Smart Valve™ delivers 15%–35% annually commercial water savings across Europe. London, Frankfurt, Dublin, Amsterdam and beyond. Guaranteed in writing. NSF certified. Free commercial assessment.");
     setMeta("og:title", "European Commercial Water Savings | Smart Valve™", "property");
-    setMeta("og:description", "Smart Valve™ cuts commercial water bills 15–58% across Europe. Guaranteed in writing. Amazon YYZ3 benchmark verified.", "property");
+    setMeta("og:description", "Smart Valve™ cuts commercial water bills 15%–35% annually across Europe. Guaranteed in writing. Amazon YYZ3 benchmark verified.", "property");
     setMeta("og:url", "https://www.perfectwatervalve.com/locations/europe", "property");
     return () => { document.title = prevTitle; };
   }, []);

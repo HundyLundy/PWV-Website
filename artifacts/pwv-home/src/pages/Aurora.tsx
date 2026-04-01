@@ -4,7 +4,7 @@ const config = {
   state: "Aurora",
   emoji: "🌅",
   headline: "Aurora Water Rates Rising — Colorado Drought Straining Reservoir Supply",
-  subheadline: "Aurora Water is implementing commercial rate increases driven by Colorado's ongoing drought conditions. Aurora's complex water portfolio — spanning multiple river systems and reservoir storage — is under stress, requiring infrastructure investment and conservation programs that are funded through commercial rate increases. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Aurora Water is implementing commercial rate increases driven by Colorado's ongoing drought conditions. Aurora's complex water portfolio — spanning multiple river systems and reservoir storage — is under stress, requiring infrastructure investment and conservation programs that are funded through commercial rate increases. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Aurora Water: Rate Increases Active 2025 | Colorado Drought Reservoir Levels Below Average",
   heroStats: [
     { value: "Active", label: "Aurora Rate Increases 2025" },
@@ -49,7 +49,7 @@ const config = {
   ],
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Aurora CO Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Aurora, CO. Aurora Water raising rates. Colorado drought reducing reservoir levels. Conservation mandates active. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Aurora, CO. Aurora Water raising rates. Colorado drought reducing reservoir levels. Conservation mandates active. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/aurora",
 };
 

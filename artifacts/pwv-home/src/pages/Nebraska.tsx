@@ -3,7 +3,7 @@ import LocationPage from "./LocationTemplate";
 const config = {
   state: "Nebraska",
   emoji: "🌽",
-  headline: "Omaha's Water Rates Are Up 9% Over 2 Years — Smart Valve™ Cuts Commercial Bills 15–58%",
+  headline: "Omaha's Water Rates Are Up 9% Over 2 Years — Smart Valve™ Cuts Commercial Bills 15%–35% annually",
   subheadline: "Metropolitan Utilities District raised Omaha commercial water rates significantly over the last two years. Nebraska faces Ogallala Aquifer depletion that's becoming a regulatory priority. Lincoln increased rates 7.5% in 2025. Smart Valve™ delivers guaranteed savings.",
   urgencyBadge: "Lincoln +7.5% in 2025 · Omaha MUD Rates Rising — Ogallala Aquifer Depletion a Growing Regulatory Priority",
   heroStats: [

@@ -4,7 +4,7 @@ const config = {
   state: "Minnesota",
   emoji: "🌊",
   headline: "Minnesota Water Rates Rising 4% — Data Centers and Agriculture Straining Supply",
-  subheadline: "Minnesota is implementing an overall 4% commercial water rate increase for 2025. Industrial and data center growth is straining water resources, prompting legislative efforts for stricter commercial permits. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Minnesota is implementing an overall 4% commercial water rate increase for 2025. Industrial and data center growth is straining water resources, prompting legislative efforts for stricter commercial permits. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Minnesota: 4% Commercial Rate Increase for 2025 — Data Centers Under New Permit Pressure",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -38,7 +38,7 @@ const config = {
   source: "perfectwatervalve.com/locations/minnesota",
   showDataCenterSection: true,
   seoTitle: "Minnesota Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Minnesota. 4% commercial rate increase 2025. Data center demand driving permit pressure. Guaranteed savings in writing. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Minnesota. 4% commercial rate increase 2025. Data center demand driving permit pressure. Guaranteed savings in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/minnesota",
 };
 

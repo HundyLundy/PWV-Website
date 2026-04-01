@@ -29,7 +29,7 @@ export default function Multifamily() {
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
               Rising Water Rates Are Destroying Multifamily NOI —{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Protects Your NOI with Guaranteed 15–58% Savings</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Protects Your NOI with Guaranteed 15%–35% annually Savings</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
               Grand Central at Kennedy in Tampa achieved $50,000/year in verified savings — a 23% water reduction. For multifamily operators, water is a non-revenue expense that flows directly to NOI. Smart Valve™ converts a cost center into a competitive advantage.

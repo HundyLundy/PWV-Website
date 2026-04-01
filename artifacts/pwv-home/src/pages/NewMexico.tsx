@@ -4,7 +4,7 @@ const config = {
   state: "New Mexico",
   emoji: "🌶️",
   headline: "Albuquerque Is One of the Driest Major Cities in America — Commercial Water Rates Up 9% in 2025",
-  subheadline: "Albuquerque's commercial water rates increased 9% in 2025. New Mexico's Rio Grande water allocation is under severe stress from drought. Santa Fe raised rates 8.5%. Smart Valve™ cuts your bill 15–58% and helps you meet conservation mandates — guaranteed.",
+  subheadline: "Albuquerque's commercial water rates increased 9% in 2025. New Mexico's Rio Grande water allocation is under severe stress from drought. Santa Fe raised rates 8.5%. Smart Valve™ cuts your bill 15%–35% annually and helps you meet conservation mandates — guaranteed.",
   urgencyBadge: "Rio Grande Drought — Critical Supply Levels · ABQ +9% 2025",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },

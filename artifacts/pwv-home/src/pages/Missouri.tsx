@@ -4,7 +4,7 @@ const config = {
   state: "Missouri",
   emoji: "🌉",
   headline: "Missouri American Water Proposed 34.4% Rate Increase for 2025 — Some Cities Up 94%",
-  subheadline: "Missouri American Water has proposed a 34.4% commercial rate increase for 2025. Neosho implemented 25% in 2024 with 10% more in 2025. Republic, Missouri raised base rates up to 94%. Missouri commercial properties face rate increases from dramatic to historic across the state. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Missouri American Water has proposed a 34.4% commercial rate increase for 2025. Neosho implemented 25% in 2024 with 10% more in 2025. Republic, Missouri raised base rates up to 94%. Missouri commercial properties face rate increases from dramatic to historic across the state. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Missouri American Water: 34.4% Rate Increase Proposed for 2025",
   heroStats: [
     { value: "34.4%", label: "Missouri American Proposed Rise" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/missouri",
   seoTitle: "Missouri Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Missouri. Missouri American Water proposed 34.4% for 2025. Republic up 94%. Guaranteed savings in writing. Free assessment available.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Missouri. Missouri American Water proposed 34.4% for 2025. Republic up 94%. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/missouri",
 };
 

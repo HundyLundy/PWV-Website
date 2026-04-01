@@ -9,7 +9,7 @@ const INDUSTRIES = [
     name: "Data Centers",
     path: "/industries/data-centers",
     emoji: "🖥️",
-    teaser: "Data centers use up to 5M gallons/day — Smart Valve™ cuts that by 15–58%",
+    teaser: "Data centers use up to 5M gallons/day — Smart Valve™ cuts that by 15%–35% annually",
     color: "#0374A7",
   },
   {

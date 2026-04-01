@@ -69,10 +69,10 @@ export default function Hotels() {
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
               Hotels Use More Water Than Almost Any Commercial Property —{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Cuts Bills 15–58% Without Touching Guest Experience</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Cuts Bills 15%–35% annually Without Touching Guest Experience</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Hotels cut water bills 15–58% with Smart Valve™ — installed on the main supply line in under 4 hours with zero impact on guest water pressure or experience. The Four Seasons Fort Lauderdale saved $27,000/year with a 26% reduction. Guaranteed minimum 15% — in writing, every installation.
+              Hotels cut water bills 15%–35% annually on average with Smart Valve™ — installed on the main supply line in under 4 hours with zero impact on guest water pressure or experience. The Four Seasons Fort Lauderdale saved $27,000/year with a 26% reduction. Guaranteed minimum 15% — in writing, every installation.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <button onClick={() => scrollTo("contact")} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary/25 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">

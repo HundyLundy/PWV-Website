@@ -4,7 +4,7 @@ const config = {
   state: "Nevada",
   emoji: "🎰",
   headline: "Las Vegas Has a Mandatory 30% Water Reduction Target by 2035 — Smart Valve™ Gets You There Without Disrupting Operations",
-  subheadline: "Lake Mead is at historically low levels. SNWA has set binding conservation goals. The Las Vegas Valley Water District uses a four-tier rate system where higher consumption triggers progressively higher rates. Smart Valve™ cuts 15–58% — guaranteed.",
+  subheadline: "Lake Mead is at historically low levels. SNWA has set binding conservation goals. The Las Vegas Valley Water District uses a four-tier rate system where higher consumption triggers progressively higher rates. Smart Valve™ cuts 15%–35% annually — guaranteed.",
   urgencyBadge: "SNWA Binding 30% Reduction Target by 2035 · Lake Mead Critical Levels",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },

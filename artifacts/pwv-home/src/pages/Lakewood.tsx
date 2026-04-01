@@ -4,7 +4,7 @@ const config = {
   state: "Lakewood",
   emoji: "🌲",
   headline: "Lakewood Denver Water Service Raising Rates — Drought Pressure Active Across Jefferson County",
-  subheadline: "Lakewood is served by Denver Water and Consolidated Mutual Water Company, both implementing commercial rate increases in 2025. As Jefferson County's largest city and a major commercial corridor along 6th Avenue, Lakewood commercial properties face the same drought-driven rate pressure as Denver. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Lakewood is served by Denver Water and Consolidated Mutual Water Company, both implementing commercial rate increases in 2025. As Jefferson County's largest city and a major commercial corridor along 6th Avenue, Lakewood commercial properties face the same drought-driven rate pressure as Denver. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Denver Water +6% and Consolidated Mutual Rate Increases Active in Lakewood",
   heroStats: [
     { value: "6%", label: "Denver Water Increase (Lakewood)" },
@@ -49,7 +49,7 @@ const config = {
   ],
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Lakewood CO Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Lakewood, CO. Denver Water up 6%. Colorado drought conservation mandates active. Jefferson County commercial properties. Guaranteed in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Lakewood, CO. Denver Water up 6%. Colorado drought conservation mandates active. Jefferson County commercial properties. Guaranteed in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/lakewood",
 };
 

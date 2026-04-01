@@ -4,7 +4,7 @@ const config = {
   state: "Utah",
   emoji: "🏜️",
   headline: "Utah Is the Second-Driest State in America — And Salt Lake City Is Running Out of Water",
-  subheadline: "Great Salt Lake has reached historic lows, threatening air quality and municipal water supply. Salt Lake City raised commercial rates 8% in 2025. Utah has the highest per-capita water consumption in the US — commercial properties are under regulatory and cost pressure from both directions. Smart Valve™ delivers 15–58% savings.",
+  subheadline: "Great Salt Lake has reached historic lows, threatening air quality and municipal water supply. Salt Lake City raised commercial rates 8% in 2025. Utah has the highest per-capita water consumption in the US — commercial properties are under regulatory and cost pressure from both directions. Smart Valve™ delivers 15%–35% annually savings.",
   urgencyBadge: "Great Salt Lake at Historic Lows · SLC +8% 2025",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },

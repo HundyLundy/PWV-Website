@@ -4,7 +4,7 @@ const config = {
   state: "South Dakota",
   emoji: "🗿",
   headline: "South Dakota Water Rates Rising — Drought Conditions and Infrastructure Investment Drive Increases",
-  subheadline: "Sioux Falls is raising commercial water rates 3.5% in 2026. Rapid City raised sewer rates 10% for 2025. South Dakota is experiencing drought conditions that are straining groundwater availability and requiring infrastructure investment. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Sioux Falls is raising commercial water rates 3.5% in 2026. Rapid City raised sewer rates 10% for 2025. South Dakota is experiencing drought conditions that are straining groundwater availability and requiring infrastructure investment. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Rapid City Sewer: 10% Increase 2025 | Sioux Falls Water: 3.5% in 2026",
   heroStats: [
     { value: "10%", label: "Rapid City Sewer 2025" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/south-dakota",
   seoTitle: "South Dakota Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in South Dakota. Rapid City sewer up 10% in 2025. Sioux Falls water up 3.5% in 2026. Drought driving rate increases. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in South Dakota. Rapid City sewer up 10% in 2025. Sioux Falls water up 3.5% in 2026. Drought driving rate increases. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/south-dakota",
 };
 

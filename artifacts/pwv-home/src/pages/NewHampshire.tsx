@@ -4,7 +4,7 @@ const config = {
   state: "New Hampshire",
   emoji: "🍂",
   headline: "New Hampshire Faces Rising Rates and Drought — Newport Sewer Up 25% in 2024",
-  subheadline: "Newport, NH raised sewer rates 25% in November 2024. Salem water rates are increasing in January 2025. Wolfeboro is raising water 2% and sewer 7%. Drought conditions and aging infrastructure are affecting supply reliability across New Hampshire. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Newport, NH raised sewer rates 25% in November 2024. Salem water rates are increasing in January 2025. Wolfeboro is raising water 2% and sewer 7%. Drought conditions and aging infrastructure are affecting supply reliability across New Hampshire. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Newport NH Sewer: 25% Increase November 2024 | Salem Water Rising Jan 2025",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/new-hampshire",
   seoTitle: "New Hampshire Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in New Hampshire. Newport sewer up 25% in 2024. Drought conditions active statewide. Guaranteed savings in writing. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in New Hampshire. Newport sewer up 25% in 2024. Drought conditions active statewide. Guaranteed savings in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/new-hampshire",
 };
 

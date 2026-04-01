@@ -4,7 +4,7 @@ const config = {
   state: "Delaware",
   emoji: "🏦",
   headline: "Delaware Water Rates Surging — Veolia Filed for 42.8% Increase Effective August 2025",
-  subheadline: "Veolia has filed for a 42.8% commercial water rate increase effective August 2025. Wilmington is up 5.8% in 2025. Tidewater received a 13% approved increase. Artesian Water requested 12.88%. Delaware commercial properties face rate increases across every major provider. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Veolia has filed for a 42.8% commercial water rate increase effective August 2025. Wilmington is up 5.8% in 2025. Tidewater received a 13% approved increase. Artesian Water requested 12.88%. Delaware commercial properties face rate increases across every major provider. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Veolia Filed 42.8% Increase — Effective August 2025",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -22,7 +22,7 @@ const config = {
   ],
   markets: ["Wilmington", "Dover", "Newark", "Middletown", "Smyrna", "Milford", "Seaford", "Georgetown"],
   faqItems: [
-    { q: "If Veolia's 42.8% increase is approved, what does that mean for my Delaware business?", a: "A 42.8% increase on a $15,000/month commercial water bill means $6,420 more per month — or $77,040 more per year. Smart Valve™'s guaranteed 15–58% reduction in metered consumption can offset a substantial portion of this increase from day one." },
+    { q: "If Veolia's 42.8% increase is approved, what does that mean for my Delaware business?", a: "A 42.8% increase on a $15,000/month commercial water bill means $6,420 more per month — or $77,040 more per year. Smart Valve™'s guaranteed 15%–35% annual reduction in metered consumption can offset a substantial portion of this increase from day one." },
     { q: "Does Smart Valve™ work with Veolia and Artesian Water meters in Delaware?", a: "Yes. Smart Valve™ is compatible with 99% of commercial water meters, including all meter types used by Veolia, Artesian, Tidewater, and City of Wilmington utilities in Delaware." },
     { q: "Is the 15% savings guarantee real and in writing?", a: "Yes. It is contractually guaranteed in writing for every installation. If your Delaware property does not achieve at least 15% reduction in metered water consumption, we resolve it at no cost to you." },
     { q: "Which Delaware commercial properties benefit most?", a: "Any commercial property spending $5,000+/month on water qualifies. Office buildings, multifamily complexes, healthcare facilities, and hospitality properties in Wilmington and Dover have the strongest ROI profile." },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/delaware",
   seoTitle: "Delaware Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Delaware. Veolia filed 42.8% increase for August 2025. Wilmington, Tidewater, Artesian all raising rates. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Delaware. Veolia filed 42.8% increase for August 2025. Wilmington, Tidewater, Artesian all raising rates. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/delaware",
 };
 

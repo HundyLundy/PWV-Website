@@ -4,7 +4,7 @@ const config = {
   state: "Vermont",
   emoji: "🍁",
   headline: "Vermont Water Rates Rising — Burlington Sewer Up 17%, Drought Straining Supply",
-  subheadline: "Burlington raised sewer rates 17% in 2025. Vermont utilities are implementing rate increases to fund aging infrastructure replacement across the state. Drought conditions are affecting Vermont's water supply reliability and driving conservation mandates. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Burlington raised sewer rates 17% in 2025. Vermont utilities are implementing rate increases to fund aging infrastructure replacement across the state. Drought conditions are affecting Vermont's water supply reliability and driving conservation mandates. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Burlington VT Sewer: 17% Rate Increase 2025 | Drought Active Statewide",
   heroStats: [
     { value: "17%", label: "Burlington Sewer Rise 2025" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/vermont",
   seoTitle: "Vermont Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Vermont. Burlington sewer up 17% in 2025. Drought conditions active statewide. Guaranteed savings in writing. Free assessment available.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Vermont. Burlington sewer up 17% in 2025. Drought conditions active statewide. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/vermont",
 };
 

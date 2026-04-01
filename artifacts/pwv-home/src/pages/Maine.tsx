@@ -4,7 +4,7 @@ const config = {
   state: "Maine",
   emoji: "🦞",
   headline: "Maine Water Rates Rising 8–9% for Infrastructure Upgrades — Portland District Leading Increases",
-  subheadline: "Portland Water District is implementing 8.4% and 9.6% increases in 2026. Old Town has already implemented 2% increases. Maine's aging water infrastructure requires substantial investment across the state. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Portland Water District is implementing 8.4% and 9.6% increases in 2026. Old Town has already implemented 2% increases. Maine's aging water infrastructure requires substantial investment across the state. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Portland Water District: 8.4% and 9.6% Increases in 2026",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/maine",
   seoTitle: "Maine Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Maine. Portland Water District up 8.4% then 9.6% in 2026. Infrastructure investment driving rates higher. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Maine. Portland Water District up 8.4% then 9.6% in 2026. Infrastructure investment driving rates higher. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/maine",
 };
 

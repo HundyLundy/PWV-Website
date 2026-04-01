@@ -4,7 +4,7 @@ const config = {
   state: "Massachusetts",
   emoji: "⚓",
   headline: "Massachusetts Commercial Water Rates Up to 8% in 2025 — Drought Conditions Active Statewide",
-  subheadline: "Pittsfield raised commercial rates 8% in FY2025. Saugus implemented a 6% increase. Greenfield is at $4.35 per 100 cubic feet in 2025. Active drought conditions are affecting water supply across Massachusetts. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Pittsfield raised commercial rates 8% in FY2025. Saugus implemented a 6% increase. Greenfield is at $4.35 per 100 cubic feet in 2025. Active drought conditions are affecting water supply across Massachusetts. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Pittsfield: 8% Rate Increase FY2025 | Drought Conditions Active Statewide",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -17,7 +17,7 @@ const config = {
   whyPoints: [
     { icon: "TrendingUp", color: "red", title: "Pittsfield 8%, Saugus 6%, Greenfield $4.35/100 CCF in 2025", body: "Commercial rate increases are hitting Massachusetts across every region. Pittsfield implemented 8% in FY2025. Saugus is up 6%. Greenfield is at $4.35 per 100 cubic feet — all in the same rate cycle. This statewide pattern reflects aging infrastructure investment requirements that span every municipality." },
     { icon: "AlertTriangle", color: "orange", title: "Active Drought Conditions Across Massachusetts", body: "Massachusetts is experiencing drought conditions that are reducing surface water and groundwater availability across the state. Drought compounds rate pressure: utilities managing reduced supplies must invest in alternative sources and conservation programs, passing costs to commercial customers." },
-    { icon: "DollarSign", color: "blue", title: "Boston-Area Commercial Properties — High Bill, High ROI", body: "Boston's commercial property market features some of the highest commercial water rates in New England. For office towers, hotels, hospitals, and multifamily complexes in Greater Boston, Smart Valve™'s 15–58% consumption reduction translates to significant absolute dollar savings on already-high monthly bills." },
+    { icon: "DollarSign", color: "blue", title: "Boston-Area Commercial Properties — High Bill, High ROI", body: "Boston's commercial property market features some of the highest commercial water rates in New England. For office towers, hotels, hospitals, and multifamily complexes in Greater Boston, Smart Valve™'s 15–35% annual consumption reduction translates to significant absolute dollar savings on already-high monthly bills." },
     { icon: "Building2", color: "teal", title: "All Massachusetts Commercial Markets Served", body: "Smart Valve™ serves commercial properties across Boston, Worcester, Springfield, Lowell, Cambridge, New Bedford, Brockton, Quincy, Pittsfield, and all Massachusetts commercial corridors." },
   ],
   markets: ["Boston", "Worcester", "Springfield", "Lowell", "Cambridge", "New Bedford", "Brockton", "Quincy"],
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/massachusetts",
   seoTitle: "Massachusetts Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Massachusetts. Pittsfield up 8% FY2025. Active drought conditions statewide. Guaranteed savings in writing. Free assessment available.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Massachusetts. Pittsfield up 8% FY2025. Active drought conditions statewide. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/massachusetts",
 };
 

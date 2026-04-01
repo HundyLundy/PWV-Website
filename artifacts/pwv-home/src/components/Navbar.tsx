@@ -187,7 +187,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
             <div className="font-headline font-bold text-[17px] leading-none tracking-tight text-white">Perfect Water Valve</div>
             <div className="flex items-center gap-1 mt-1">
               <ShieldCheck className="w-3 h-3 shrink-0" style={{ color: '#DEC600' }} />
-              <span className="text-[11px] font-semibold" style={{ color: '#DEC600' }}>Guaranteed 15% Savings</span>
+              <span className="text-[11px] font-semibold" style={{ color: '#DEC600' }}>Guaranteed 15%–35% Annual Savings</span>
             </div>
           </div>
         </a>

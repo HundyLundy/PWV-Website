@@ -4,7 +4,7 @@ const config = {
   state: "North Carolina",
   emoji: "⛰️",
   headline: "North Carolina Faces Drought and Rising Rates — Commercial Conservation Mandates Active",
-  subheadline: "Fayetteville Public Works Commission raised its basic facility charge by $1.25 in May 2025, with another $1.25 increase in May 2026. Ongoing drought conditions in North Carolina are triggering commercial water use restrictions. Smart Valve™ cuts your bill 15–58%, guaranteed — and keeps you compliant with conservation mandates.",
+  subheadline: "Fayetteville Public Works Commission raised its basic facility charge by $1.25 in May 2025, with another $1.25 increase in May 2026. Ongoing drought conditions in North Carolina are triggering commercial water use restrictions. Smart Valve™ cuts your bill 15%–35% annually, guaranteed — and keeps you compliant with conservation mandates.",
   urgencyBadge: "NC Drought Active | Fayetteville PWC: $1.25 Facility Charge Increase May 2025",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -22,7 +22,7 @@ const config = {
   ],
   markets: ["Charlotte", "Raleigh", "Greensboro", "Durham", "Winston-Salem", "Fayetteville", "Cary", "High Point"],
   faqItems: [
-    { q: "Does Smart Valve™ help with North Carolina conservation mandates?", a: "Yes. Smart Valve™ reduces your metered water consumption 15–58%, helping you stay well below any mandated conservation thresholds and avoiding usage penalties in drought-affected jurisdictions." },
+    { q: "Does Smart Valve™ help with North Carolina conservation mandates?", a: "Yes. Smart Valve™ reduces your metered water consumption 15–35% annually on average, helping you stay well below any mandated conservation thresholds and avoiding usage penalties in drought-affected jurisdictions." },
     { q: "Does Smart Valve™ work with North Carolina utility meters?", a: "Yes. Smart Valve™ is compatible with 99% of commercial water meters, including all meter types used by Fayetteville PWC, Charlotte Water, Raleigh Water, and all North Carolina municipal utility systems." },
     { q: "Is the 15% savings guarantee in writing?", a: "Yes. Every installation guarantees at least 15% reduction in metered water consumption, contractually. If your North Carolina property doesn't reach 15%, we resolve it at no cost." },
     { q: "Which North Carolina commercial properties benefit most?", a: "Office complexes, healthcare facilities, hotels, and multifamily properties in Charlotte, the Research Triangle, and Greensboro have the strongest ROI profile. Any property with a $5,000+/month water bill qualifies." },
@@ -38,7 +38,7 @@ const config = {
   source: "perfectwatervalve.com/locations/north-carolina",
   showDataCenterSection: true,
   seoTitle: "North Carolina Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in North Carolina. Active drought with conservation mandates. Fayetteville PWC raising rates. Guaranteed savings in writing. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in North Carolina. Active drought with conservation mandates. Fayetteville PWC raising rates. Guaranteed savings in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/north-carolina",
 };
 

@@ -16,7 +16,7 @@ const config = {
   state: "Boulder",
   emoji: "🌿",
   headline: "City of Boulder Water Up 5.5% in 2025 — Colorado River Allocation Pressure Is Accelerating",
-  subheadline: "City of Boulder Water raised commercial rates 5.5% in 2025 as one of Colorado's most water-conscious cities faces severe Colorado River allocation pressure. Boulder's forward-thinking water policy means commercial properties are already paying for drought resilience — and Smart Valve™ cuts your metered bill 15–58%, guaranteed.",
+  subheadline: "City of Boulder Water raised commercial rates 5.5% in 2025 as one of Colorado's most water-conscious cities faces severe Colorado River allocation pressure. Boulder's forward-thinking water policy means commercial properties are already paying for drought resilience — and Smart Valve™ cuts your metered bill 15%–35% annually, guaranteed.",
   urgencyBadge: "City of Boulder Water: 5.5% Rate Increase Active 2025 — Colorado River Allocation Pressure Ongoing",
   heroStats: [
     { value: "5.5%", label: "Boulder Water Rise 2025" },
@@ -52,7 +52,7 @@ const config = {
   alsoServing: CO_OTHER_CITIES,
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Boulder Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Boulder, CO. City of Boulder Water up 5.5% in 2025. Colorado River allocation pressure ongoing. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Boulder, CO. City of Boulder Water up 5.5% in 2025. Colorado River allocation pressure ongoing. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/boulder",
 };
 

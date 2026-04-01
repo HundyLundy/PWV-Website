@@ -3,7 +3,7 @@ import LocationPage from "./LocationTemplate";
 const config = {
   state: "Kansas",
   emoji: "🌾",
-  headline: "Wichita's Water Rates Are Up 8% in 2025 — Smart Valve™ Cuts Commercial Bills 15–58%",
+  headline: "Wichita's Water Rates Are Up 8% in 2025 — Smart Valve™ Cuts Commercial Bills 15%–35% annually",
   subheadline: "Wichita increased commercial water rates 8% in 2025. Kansas faces Ogallala Aquifer depletion in its western counties with regulatory action on the horizon. Kansas City, KS increased 7%. Smart Valve™ delivers guaranteed savings with no monthly fees.",
   urgencyBadge: "Wichita +8% · Kansas City KS +7% in 2025 — Ogallala Aquifer Depletion Regulatory Action Imminent",
   heroStats: [

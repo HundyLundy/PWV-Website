@@ -4,7 +4,7 @@ const config = {
   state: "Fort Collins",
   emoji: "🎓",
   headline: "Fort Collins Water Raising Rates — University and Tech Sector Growth Adding Demand",
-  subheadline: "Fort Collins Utilities is raising commercial water rates to fund infrastructure investment and drought resilience. Fort Collins hosts Colorado State University and a growing tech and biotech sector — creating high commercial water demand against a constrained supply from Poudre River and Horsetooth Reservoir. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Fort Collins Utilities is raising commercial water rates to fund infrastructure investment and drought resilience. Fort Collins hosts Colorado State University and a growing tech and biotech sector — creating high commercial water demand against a constrained supply from Poudre River and Horsetooth Reservoir. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Fort Collins Utilities: Rate Increases Active | Poudre River Drought Stress",
   heroStats: [
     { value: "Active", label: "Rate Increases 2025" },
@@ -17,7 +17,7 @@ const config = {
   whyPoints: [
     { icon: "TrendingUp", color: "red", title: "Fort Collins Utilities Implementing Commercial Rate Increases", body: "Fort Collins Utilities is raising commercial water rates to fund drought resilience infrastructure and maintain reliable supply from the Poudre River system and Horsetooth Reservoir. Rate increases reflect both infrastructure investment needs and the rising cost of water treatment and conservation programs." },
     { icon: "AlertTriangle", color: "orange", title: "Poudre River Drought Stress — Fort Collins' Primary Source", body: "The Cache la Poudre River is Fort Collins' primary water source and is experiencing significant stress from Colorado drought conditions. Reduced snowpack in the upstream Rocky Mountain watershed means lower river flows and reduced Horsetooth Reservoir levels, driving conservation mandates for commercial customers." },
-    { icon: "Droplets", color: "blue", title: "CSU Research and Biotech — High-Volume Water Users", body: "Colorado State University and Fort Collins' growing biotech and research sector are significant commercial water users. For these facilities, water consumption is integral to operations — making Smart Valve™'s guaranteed 15–58% reduction both a cost saving and an operational efficiency improvement." },
+    { icon: "Droplets", color: "blue", title: "CSU Research and Biotech — High-Volume Water Users", body: "Colorado State University and Fort Collins' growing biotech and research sector are significant commercial water users. For these facilities, water consumption is integral to operations — making Smart Valve™'s guaranteed 15%–35% annual reduction both a cost saving and an operational efficiency improvement." },
     { icon: "Building2", color: "teal", title: "All Fort Collins Commercial Markets Served", body: "Smart Valve™ serves commercial properties across Old Town Fort Collins, Midtown, the Foothills Mall corridor, CSU Research campus, and the broader Larimer County commercial market." },
   ],
   markets: ["Old Town", "Midtown", "CSU Campus", "Foothills Mall", "East Mulberry", "Harmony Corridor", "South College", "Lemay"],
@@ -49,7 +49,7 @@ const config = {
   ],
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Fort Collins Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Fort Collins, CO. Poudre River drought stress. Fort Collins Utilities raising rates. CSU and tech sector high-volume users. Guaranteed in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Fort Collins, CO. Poudre River drought stress. Fort Collins Utilities raising rates. CSU and tech sector high-volume users. Guaranteed in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/fort-collins",
 };
 

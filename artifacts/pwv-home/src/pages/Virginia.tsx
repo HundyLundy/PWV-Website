@@ -4,7 +4,7 @@ const config = {
   state: "Virginia",
   emoji: "🏛️",
   headline: "Virginia Is the Data Center Capital of the World — Water Supply Now at Capacity in Key Markets",
-  subheadline: "Northern Virginia hosts more data centers than any region on Earth, consuming 1.7 billion gallons of water per day. Virginia American Water raised commercial rates 3.72% in 2025. Fairfax and Loudoun Counties are implementing new water permit restrictions for commercial customers. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Northern Virginia hosts more data centers than any region on Earth, consuming 1.7 billion gallons of water per day. Virginia American Water raised commercial rates 3.72% in 2025. Fairfax and Loudoun Counties are implementing new water permit restrictions for commercial customers. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Northern Virginia Data Centers: 1.7 Billion Gallons/Day | VA American Water: +3.72% in 2025",
   heroStats: [
     { value: "1.7B", label: "Gal/Day — VA Data Center Demand" },
@@ -38,7 +38,7 @@ const config = {
   source: "perfectwatervalve.com/locations/virginia",
   showDataCenterSection: true,
   seoTitle: "Virginia Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Virginia. Northern Virginia data centers use 1.7B gal/day. VA American Water up 3.72%. Permit restrictions growing. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Virginia. Northern Virginia data centers use 1.7B gal/day. VA American Water up 3.72%. Permit restrictions growing. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/virginia",
 };
 

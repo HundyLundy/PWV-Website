@@ -4,7 +4,7 @@ const config = {
   state: "Iowa",
   emoji: "🌾",
   headline: "Iowa Data Centers Are Straining Water Supply — Rates and Restrictions Rising",
-  subheadline: "Iowa-American Water is raising commercial rates from $2.76 to $4.01 per 1,000 gallons. Rapid data center growth and drought conditions are driving new usage restrictions and commercial rate increases across the state. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Iowa-American Water is raising commercial rates from $2.76 to $4.01 per 1,000 gallons. Rapid data center growth and drought conditions are driving new usage restrictions and commercial rate increases across the state. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Iowa-American Water: Rate Rising from $2.76 to $4.01/1,000 Gallons",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -38,7 +38,7 @@ const config = {
   source: "perfectwatervalve.com/locations/iowa",
   showDataCenterSection: true,
   seoTitle: "Iowa Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Iowa. Iowa-American Water up 45%. Data center boom straining supply. Guaranteed savings in writing. Free assessment available.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Iowa. Iowa-American Water up 45%. Data center boom straining supply. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/iowa",
 };
 

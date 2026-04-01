@@ -4,7 +4,7 @@ const config = {
   state: "Oklahoma",
   emoji: "🌪️",
   headline: "Oklahoma Cities Implementing Major Water Rate Increases — Some Base Rates More Than Doubling",
-  subheadline: "Midwest City raised commercial water rates to $18.19 in 2025 and $21.20 in 2026. Pauls Valley's base rate jumped from $20 to $41.25 — more than doubling. Oklahoma commercial properties face dramatic rate increases in cities across the state. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Midwest City raised commercial water rates to $18.19 in 2025 and $21.20 in 2026. Pauls Valley's base rate jumped from $20 to $41.25 — more than doubling. Oklahoma commercial properties face dramatic rate increases in cities across the state. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Pauls Valley OK: Base Rate Doubled From $20 to $41.25 | Midwest City: Rising in 2025 and 2026",
   heroStats: [
     { value: "106%", label: "Pauls Valley Base Rate Rise" },
@@ -23,7 +23,7 @@ const config = {
   markets: ["Oklahoma City", "Tulsa", "Norman", "Broken Arrow", "Edmond", "Midwest City", "Lawton", "Pauls Valley"],
   faqItems: [
     { q: "Does Smart Valve™ work with Oklahoma utility meters?", a: "Yes. Smart Valve™ is compatible with 99% of commercial water meters, including all meter types used by Oklahoma City Utilities, Tulsa Metropolitan Utility Authority, Midwest City, and all Oklahoma municipal utility systems." },
-    { q: "If my Oklahoma base rate doubled, does Smart Valve™ still help?", a: "Yes. Smart Valve™ reduces your metered consumption 15–58%, which directly cuts the volume-based portion of your bill. Fixed base rate increases cannot be offset by consumption reduction, but a 15–58% reduction in the consumption component provides meaningful savings even against doubled base rates." },
+    { q: "If my Oklahoma base rate doubled, does Smart Valve™ still help?", a: "Yes. Smart Valve™ reduces your metered consumption 15–35% annually on average, which directly cuts the volume-based portion of your bill. Fixed base rate increases cannot be offset by consumption reduction, but a 15–35% annual reduction in the consumption component provides meaningful savings even against doubled base rates." },
     { q: "Is the 15% savings guarantee in writing?", a: "Yes. Every installation guarantees at least 15% reduction in metered water consumption, contractually. If your Oklahoma property doesn't reach 15%, we resolve it at no cost." },
     { q: "Which Oklahoma commercial properties benefit most?", a: "Office buildings, healthcare facilities, hotels, and multifamily complexes in Oklahoma City, Tulsa, and Edmond have the highest ROI profile. Any property with a $5,000+/month water bill qualifies." },
   ],
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/oklahoma",
   seoTitle: "Oklahoma Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Oklahoma. Pauls Valley base rate doubled. Midwest City raising rates in 2025 and 2026. Guaranteed savings in writing. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Oklahoma. Pauls Valley base rate doubled. Midwest City raising rates in 2025 and 2026. Guaranteed savings in writing. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/oklahoma",
 };
 

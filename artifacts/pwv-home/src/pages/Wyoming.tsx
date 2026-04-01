@@ -4,7 +4,7 @@ const config = {
   state: "Wyoming",
   emoji: "🦬",
   headline: "Wyoming Water Rates Rising — Cheyenne Up 7.8%, Casper Implementing Increases in 2025",
-  subheadline: "Cheyenne Board of Public Utilities is raising commercial water rates 7.8% in 2025. Casper is implementing commercial water and sewer rate increases in 2025. Wyoming's arid climate and limited water resources mean rate increases are structural, not cyclical. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Cheyenne Board of Public Utilities is raising commercial water rates 7.8% in 2025. Casper is implementing commercial water and sewer rate increases in 2025. Wyoming's arid climate and limited water resources mean rate increases are structural, not cyclical. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Cheyenne BOPU: 7.8% Rate Increase 2025 | Casper: Rate Increases Active",
   heroStats: [
     { value: "7.8%", label: "Cheyenne BOPU 2025 Rise" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/wyoming",
   seoTitle: "Wyoming Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Wyoming. Cheyenne BOPU up 7.8% in 2025. Casper raising rates. Arid climate drives structural water costs. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Wyoming. Cheyenne BOPU up 7.8% in 2025. Casper raising rates. Arid climate drives structural water costs. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/wyoming",
 };
 

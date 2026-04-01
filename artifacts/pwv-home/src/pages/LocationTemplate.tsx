@@ -88,7 +88,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
   useEffect(() => {
     const prevTitle = document.title;
     const title = config.seoTitle || `${config.state} Commercial Water Savings | Smart Valve™ | Perfect Water Valve`;
-    const desc = config.seoDescription || `Smart Valve™ cuts commercial water bills 15–58% in ${config.state}. Guaranteed in writing. NSF certified. No power, no moving parts. Free assessment available.`;
+    const desc = config.seoDescription || `Smart Valve™ cuts commercial water bills 15%–35% annually in ${config.state}. Guaranteed in writing. NSF certified. No power, no moving parts. Free assessment available.`;
     const canonical = config.seoCanonical || `https://www.perfectwatervalve.com/locations/${config.state.toLowerCase().replace(/\s+/g, "-")}`;
     document.title = title;
     const setMeta = (name: string, content: string, attr = "name") => {

@@ -8,7 +8,7 @@ import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 const RATES_FAQ_ITEMS = [
   { q: "Why are commercial water rates rising in 2025?", a: "Commercial water rates are rising in every state due to aging infrastructure requiring $1 trillion in investment, drought reducing available supply, EPA compliance mandates, and climate-related costs. The American Water Works Association projects these increases to continue through 2030." },
   { q: "Which states have the highest water rate increases in 2025?", a: "The highest confirmed increases include Delaware (+42.8%), Indiana (up to +85.5% in some jurisdictions), and Hawaii (up to +59%). Most US states are seeing 5–20% increases, with drought-affected western states adding surcharges on top of base increases." },
-  { q: "How can a commercial property reduce its water bill despite rate increases?", a: "Smart Valve™ cuts metered water consumption 15–58% by installing on the main supply line in under 4 hours. The reduction in metered volume offsets rate increases — and compounds each year as rates continue to rise." },
+  { q: "How can a commercial property reduce its water bill despite rate increases?", a: "Smart Valve™ cuts metered water consumption 15–35% annually on average by installing on the main supply line in under 4 hours. The reduction in metered volume offsets rate increases — and compounds each year as rates continue to rise. Peak quarter results have reached 58.69% at high-volume sites like Amazon YYZ3." },
   { q: "How do I find out how much I can save on my commercial water bill?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com for a free assessment. We review your current billing, model your savings at current and projected rates, and provide a written guarantee before installation." },
 ];
 
@@ -29,7 +29,7 @@ const articleSchema = {
   "author": { "@type": "Organization", "name": "Perfect Water Valve Team" },
   "publisher": { "@type": "Organization", "name": "Perfect Water Valve", "url": "https://www.perfectwatervalve.com" },
   "datePublished": "2026-03-28",
-  "description": "Water rates are rising 5–50% across all 50 states in 2025. See which states are hit hardest and how Smart Valve™ cuts commercial water bills 15–58%, guaranteed.",
+  "description": "Water rates are rising 5–50% across all 50 states in 2025. See which states are hit hardest and how Smart Valve™ cuts commercial water bills 15%–35% annually, guaranteed.",
   "url": "https://www.perfectwatervalve.com/blog/commercial-water-rates-rising-2025",
 };
 
@@ -38,10 +38,10 @@ export default function WaterRates2025() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Commercial Water Rates Rising in 2025 — State-by-State Guide | Perfect Water Valve</title>
-        <meta name="description" content="Water rates are rising 5–50% across all 50 states in 2025. See which states are hit hardest and how Smart Valve™ cuts commercial water bills 15–58%, guaranteed." />
+        <meta name="description" content="Water rates are rising 5–50% across all 50 states in 2025. See which states are hit hardest and how Smart Valve™ cuts commercial water bills 15%–35% annually, guaranteed." />
         <link rel="canonical" href="https://www.perfectwatervalve.com/blog/commercial-water-rates-rising-2025" />
         <meta property="og:title" content="Commercial Water Rates Rising in 2025 — State-by-State Guide | Perfect Water Valve" />
-        <meta property="og:description" content="Water rates are rising 5–50% across all 50 states in 2025. See which states are hit hardest and how Smart Valve™ cuts commercial water bills 15–58%, guaranteed." />
+        <meta property="og:description" content="Water rates are rising 5–50% across all 50 states in 2025. See which states are hit hardest and how Smart Valve™ cuts commercial water bills 15%–35% annually, guaranteed." />
         <meta property="og:url" content="https://www.perfectwatervalve.com/blog/commercial-water-rates-rising-2025" />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(ratesFaqSchema)}</script>

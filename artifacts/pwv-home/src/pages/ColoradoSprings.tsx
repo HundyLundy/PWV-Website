@@ -4,7 +4,7 @@ const config = {
   state: "Colorado Springs",
   emoji: "⛰️",
   headline: "Colorado Springs Utilities Raising Water Rates — Drought Conditions Severe in 2025",
-  subheadline: "Colorado Springs Utilities is implementing commercial water rate increases driven by severe drought conditions and significant infrastructure investment requirements. Colorado Springs is the second-largest city in Colorado and a major commercial market facing the same drought-driven rate pressure as Denver. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Colorado Springs Utilities is implementing commercial water rate increases driven by severe drought conditions and significant infrastructure investment requirements. Colorado Springs is the second-largest city in Colorado and a major commercial market facing the same drought-driven rate pressure as Denver. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Colorado Springs Utilities: Commercial Rate Increases Active 2025 — Drought Emergency Conditions",
   heroStats: [
     { value: "Severe", label: "Drought Conditions 2025" },
@@ -49,7 +49,7 @@ const config = {
   ],
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Colorado Springs Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Colorado Springs. Severe drought conditions in 2025. Colorado Springs Utilities raising rates. Conservation mandates active. Guaranteed in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Colorado Springs. Severe drought conditions in 2025. Colorado Springs Utilities raising rates. Conservation mandates active. Guaranteed in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/colorado-springs",
 };
 

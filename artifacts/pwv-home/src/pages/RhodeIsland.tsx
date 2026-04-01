@@ -4,7 +4,7 @@ const config = {
   state: "Rhode Island",
   emoji: "⚓",
   headline: "Providence Water Rates Rising — Rhode Island Faces Drought and PFAS Remediation Costs",
-  subheadline: "Providence Water is raising commercial rates. Rhode Island Water Resources Board is implementing new conservation mandates. PFAS contamination remediation across the state is adding significant long-term cost pressure for all commercial water customers. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Providence Water is raising commercial rates. Rhode Island Water Resources Board is implementing new conservation mandates. PFAS contamination remediation across the state is adding significant long-term cost pressure for all commercial water customers. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Providence Water Rising | PFAS Remediation Cost Active Statewide",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/rhode-island",
   seoTitle: "Rhode Island Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Rhode Island. Providence Water raising rates. PFAS remediation ongoing. Conservation mandates active. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Rhode Island. Providence Water raising rates. PFAS remediation ongoing. Conservation mandates active. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/rhode-island",
 };
 

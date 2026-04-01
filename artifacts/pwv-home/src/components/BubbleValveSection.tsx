@@ -261,7 +261,7 @@ export function BubbleValveSection() {
             <DiagramNode
               icon="🏢"
               label="Your Facility"
-              sub="15–58% lower bill. Same pressure. Nothing changes for your operation."
+              sub="15–35% lower annually on average. Same pressure. Peak quarters have exceeded 58%."
               color="#10b981"
             />
           </div>

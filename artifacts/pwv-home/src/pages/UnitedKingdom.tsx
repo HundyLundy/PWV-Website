@@ -4,7 +4,7 @@ const config = {
   state: "United Kingdom",
   emoji: "🇬🇧",
   headline: "UK Commercial Water Bills Rising 10%+ — Ofwat's 2025–2030 Price Review Locks In Compounding Increases",
-  subheadline: "Ofwat's PR24 Final Determination approved average bill increases of 21–47% over 5 years for major UK water companies. Thames Water, Severn Trent, United Utilities, and Southern Water are all raising commercial rates significantly. Smart Valve™ and CWS deliver guaranteed 15–58% savings.",
+  subheadline: "Ofwat's PR24 Final Determination approved average bill increases of 21–47% over 5 years for major UK water companies. Thames Water, Severn Trent, United Utilities, and Southern Water are all raising commercial rates significantly. Smart Valve™ and CWS deliver guaranteed 15%–35% annually savings.",
   urgencyBadge: "Ofwat PR24 — Thames Water +31% · United Utilities +47% by 2030",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },

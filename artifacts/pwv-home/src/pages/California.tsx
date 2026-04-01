@@ -4,7 +4,7 @@ const config = {
   state: "California",
   emoji: "☀️",
   headline: "California Has the Highest Commercial Water Rates in the Nation — and They're Still Rising",
-  subheadline: "Cal Water received approval for an 11.1% rate increase for 2026. California American Water filed for a 30.3% cumulative hike by 2029. Assembly Bill 1572 restricts potable water for commercial irrigation. The Smart Valve™ cuts your metered bill 15–58% — guaranteed in writing.",
+  subheadline: "Cal Water received approval for an 11.1% rate increase for 2026. California American Water filed for a 30.3% cumulative hike by 2029. Assembly Bill 1572 restricts potable water for commercial irrigation. The Smart Valve™ cuts your metered bill 15%–35% annually — guaranteed in writing.",
   urgencyBadge: "Cal Water +11.1% in 2026 · CA American Water +30.3% by 2029",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },

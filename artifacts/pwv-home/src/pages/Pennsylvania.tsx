@@ -4,7 +4,7 @@ const config = {
   state: "Pennsylvania",
   emoji: "🔔",
   headline: "PA Water Rates Soaring — Aqua PA Up 50%, Supply Strained by Data Centers and Drought",
-  subheadline: "Aqua Pennsylvania raised commercial rates 50% effective January 2025. Pennsylvania American Water has proposed a 14.6% increase for 2025. Data centers are straining public water supplies across the state, and mandatory conservation orders are active in some regions. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Aqua Pennsylvania raised commercial rates 50% effective January 2025. Pennsylvania American Water has proposed a 14.6% increase for 2025. Data centers are straining public water supplies across the state, and mandatory conservation orders are active in some regions. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Aqua Pennsylvania: 50% Rate Increase January 2025 | PA American Water: 14.6% Proposed",
   heroStats: [
     { value: "50%", label: "Aqua PA Rate Increase Jan 2025" },
@@ -38,7 +38,7 @@ const config = {
   source: "perfectwatervalve.com/locations/pennsylvania",
   showDataCenterSection: true,
   seoTitle: "Pennsylvania Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Pennsylvania. Aqua PA up 50% January 2025. PA American Water proposing 14.6%. Data centers straining supply. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Pennsylvania. Aqua PA up 50% January 2025. PA American Water proposing 14.6%. Data centers straining supply. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/pennsylvania",
 };
 

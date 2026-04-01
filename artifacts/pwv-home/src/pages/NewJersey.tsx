@@ -4,7 +4,7 @@ const config = {
   state: "New Jersey",
   emoji: "🏙️",
   headline: "NJ Water Rates Surging — Veolia Proposes 9.82% Annual Revenue Increase",
-  subheadline: "Veolia has proposed a 9.82% annual revenue increase for New Jersey. New Jersey American Water implemented increases in September 2024 with further hikes proposed. Aging infrastructure and water quality concerns are driving significant long-term investment and rate pressure. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "Veolia has proposed a 9.82% annual revenue increase for New Jersey. New Jersey American Water implemented increases in September 2024 with further hikes proposed. Aging infrastructure and water quality concerns are driving significant long-term investment and rate pressure. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Veolia NJ: 9.82% Annual Revenue Increase Proposed | NJ American Water: Multiple Hikes",
   heroStats: [
     { value: "58.69%", label: "Peak Savings Verified" },
@@ -38,7 +38,7 @@ const config = {
   source: "perfectwatervalve.com/locations/new-jersey",
   showDataCenterSection: true,
   seoTitle: "New Jersey Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in New Jersey. Veolia proposing 9.82% annual increase. NJ American Water multiple hikes. $50K/yr verified NJ case study. Free assessment.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in New Jersey. Veolia proposing 9.82% annual increase. NJ American Water multiple hikes. $50K/yr verified NJ case study. Free assessment.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/new-jersey",
 };
 

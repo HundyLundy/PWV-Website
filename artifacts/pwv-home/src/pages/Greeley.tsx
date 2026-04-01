@@ -16,7 +16,7 @@ const config = {
   state: "Greeley",
   emoji: "🌾",
   headline: "Greeley Water Up 7.1% in 2025 — Highest Front Range Increase. Cache la Poudre Under Severe Drought.",
-  subheadline: "Greeley Water raised commercial rates 7.1% in 2025 — the highest rate increase on the Front Range. The Cache la Poudre River, Greeley's primary water source, is under severe drought and agricultural demand pressure. Smart Valve™ cuts your metered bill 15–58%, guaranteed.",
+  subheadline: "Greeley Water raised commercial rates 7.1% in 2025 — the highest rate increase on the Front Range. The Cache la Poudre River, Greeley's primary water source, is under severe drought and agricultural demand pressure. Smart Valve™ cuts your metered bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Greeley Water: 7.1% Rate Increase 2025 — Highest on Front Range. Cache la Poudre Drought Declared.",
   heroStats: [
     { value: "7.1%", label: "Greeley Water Rise 2025" },
@@ -38,7 +38,7 @@ const config = {
     { q: "Why is Greeley's rate increase so much higher than other Colorado cities?", a: "Greeley's 7.1% increase reflects the severity of Cache la Poudre River drought combined with heavy agricultural competition for water. Greeley Water must invest heavily in alternative supply sources and drought resilience infrastructure, and those costs are passed to commercial rate payers." },
     { q: "Does Greeley have rebate programs for water savings equipment?", a: "Contact Perfect Water Valve for current Greeley Water conservation incentive availability. Note: Denver Water rebates do not apply in Greeley — Greeley is served exclusively by Greeley Water." },
     { q: "What commercial property types in Greeley benefit most from Smart Valve™?", a: "Agricultural processing and food manufacturing facilities are among the highest ROI applications due to their water intensity. Hotels, multifamily residential, office buildings, and industrial facilities throughout the Greeley metro also qualify." },
-    { q: "How quickly can Smart Valve™ pay for itself at Greeley Water's current rates?", a: "At Greeley Water's current rates — the highest on the Front Range — with a 15–58% consumption reduction, most commercial properties recover installation costs within 12–18 months. High-volume industrial and processing facilities typically see payback in 6–12 months." },
+    { q: "How quickly can Smart Valve™ pay for itself at Greeley Water's current rates?", a: "At Greeley Water's current rates — the highest on the Front Range — with a 15%–35% annual consumption reduction, most commercial properties recover installation costs within 12–18 months. High-volume industrial and processing facilities typically see payback in 6–12 months." },
   ],
   contactHeading: "Get a Free Greeley Water Assessment",
   contactBody: "Greeley Water is up 7.1% in 2025 — the highest on the Front Range — with Cache la Poudre drought pointing to more increases. Smart Valve™ guarantees at least 15% off your metered bill.",
@@ -52,7 +52,7 @@ const config = {
   alsoServing: CO_OTHER_CITIES,
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Greeley Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Greeley, CO. Greeley Water up 7.1% in 2025 — highest on Front Range. Cache la Poudre severe drought. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Greeley, CO. Greeley Water up 7.1% in 2025 — highest on Front Range. Cache la Poudre severe drought. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/greeley",
 };
 

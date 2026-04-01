@@ -4,7 +4,7 @@ const config = {
   state: "Illinois",
   emoji: "🏙️",
   headline: "Chicago's Water Rates Increased 16% Over 3 Years — And That's Before the EPA Pipe Replacement Mandate",
-  subheadline: "Chicago raised commercial water rates significantly over the last three years. Illinois mandates lead service line replacement that will cost billions — funded by rate hikes. Smart Valve™ guarantees 15–58% savings and pays for itself before the next rate cycle.",
+  subheadline: "Chicago raised commercial water rates significantly over the last three years. Illinois mandates lead service line replacement that will cost billions — funded by rate hikes. Smart Valve™ guarantees 15%–35% annually savings and pays for itself before the next rate cycle.",
   urgencyBadge: "Chicago Commercial Water Rates Rising — Lead Service Line Mandate Costing Billions, Funded by Rate Hikes",
   heroStats: [
     { value: "58.69%", label: "Peak Savings" },

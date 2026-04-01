@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 
 const SMART_VALVE_FAQ_ITEMS = [
-  { q: "What is Smart Valve™?", a: "Smart Valve™ is a passive hydrodynamic device that installs on your main commercial water supply line in under 4 hours. It reduces turbulence and optimizes flow so that less water passes through the meter to deliver the same service — cutting your metered bill 15–58%, guaranteed in writing." },
+  { q: "What is Smart Valve™?", a: "Smart Valve™ is a passive hydrodynamic device that installs on your main commercial water supply line in under 4 hours. It reduces turbulence and optimizes flow so that less water passes through the meter to deliver the same service — cutting your metered bill 15%–35% annually, guaranteed in writing." },
   { q: "Does Smart Valve™ require electricity or maintenance?", a: "No. Smart Valve™ requires no electricity, has no moving parts, and needs no maintenance — ever. It is NSF 61 and NSF 372 certified for use in potable water systems." },
   { q: "What is the highest verified savings result?", a: "The highest verified result in the portfolio is 58.69% peak savings at Amazon YYZ3 (hyperscale data center, Toronto) over 6 consecutive quarters of third-party M&V verification." },
   { q: "How do I get a Smart Valve™ assessment for my facility?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com. We review your current water billing, calculate projected savings, and provide a written guarantee before any installation begins." },
@@ -29,7 +29,7 @@ const articleSchema = {
   "author": { "@type": "Organization", "name": "Perfect Water Valve Team" },
   "publisher": { "@type": "Organization", "name": "Perfect Water Valve", "url": "https://www.perfectwatervalve.com" },
   "datePublished": "2026-03-05",
-  "description": "Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15–58%, guaranteed. No electricity, no maintenance, no moving parts.",
+  "description": "Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15%–35% annually, guaranteed. No electricity, no maintenance, no moving parts.",
   "url": "https://www.perfectwatervalve.com/blog/what-is-smart-valve",
 };
 
@@ -37,11 +37,11 @@ export default function WhatIsSmartValve() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
-        <title>What Is the Smart Valve™? How It Cuts Commercial Water Bills 15–58% | Perfect Water Valve</title>
-        <meta name="description" content="Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15–58%, guaranteed. No electricity, no maintenance, no moving parts." />
+        <title>What Is the Smart Valve™? How It Cuts Commercial Water Bills 15%–35% annually | Perfect Water Valve</title>
+        <meta name="description" content="Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15%–35% annually, guaranteed. No electricity, no maintenance, no moving parts." />
         <link rel="canonical" href="https://www.perfectwatervalve.com/blog/what-is-smart-valve" />
-        <meta property="og:title" content="What Is the Smart Valve™? How It Cuts Commercial Water Bills 15–58% | Perfect Water Valve" />
-        <meta property="og:description" content="Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15–58%, guaranteed. No electricity, no maintenance, no moving parts." />
+        <meta property="og:title" content="What Is the Smart Valve™? How It Cuts Commercial Water Bills 15%–35% annually | Perfect Water Valve" />
+        <meta property="og:description" content="Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15%–35% annually, guaranteed. No electricity, no maintenance, no moving parts." />
         <meta property="og:url" content="https://www.perfectwatervalve.com/blog/what-is-smart-valve" />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(smartValveFaqSchema)}</script>
@@ -65,7 +65,7 @@ export default function WhatIsSmartValve() {
             What Is the Smart Valve™ and How Does It Actually Cut Your Water Bill?
           </h1>
           <p className="text-xl text-white/85 leading-relaxed">
-            Smart Valve™ is a passive hydrodynamic device that installs on your main commercial water supply line in under 4 hours and reduces your metered water bill by 15–58%, guaranteed in writing. It requires no electricity, has no moving parts, and needs no maintenance — ever.
+            Smart Valve™ is a passive hydrodynamic device that installs on your main commercial water supply line in under 4 hours and reduces your metered water bill 15–35% annually on average, guaranteed in writing. Peak quarter results have reached 58.69% at high-volume installations. It requires no electricity, has no moving parts, and needs no maintenance — ever.
           </p>
         </div>
       </section>

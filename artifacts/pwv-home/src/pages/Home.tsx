@@ -9,7 +9,7 @@ import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 
 const HOME_FAQ_ITEMS = [
-  { q: "How much can Smart Valve™ reduce my commercial water bill?", a: "Smart Valve™ reduces metered water consumption by 15–58%, guaranteed in writing. The minimum guaranteed savings is 15%. The highest verified result is 58.69% peak savings at Amazon YYZ3 over 6 consecutive quarters." },
+  { q: "How much can Smart Valve™ reduce my commercial water bill?", a: "Smart Valve™ reduces metered water consumption 15–35% annually on average, guaranteed in writing. The minimum guaranteed savings is 15%. Peak quarter results have reached 58.69% at Amazon YYZ3 — high-volume and high-occupancy facilities tend to see the highest peaks." },
   { q: "How does Smart Valve™ work?", a: "Smart Valve™ is a passive hydrodynamic device that installs on your main water supply line between two ball valves, after the water meter. It reduces turbulence and water hammer in the line, which optimizes flow characteristics and reduces the volume of water that passes through the meter. It requires no electricity, has no moving parts, and needs no maintenance." },
   { q: "How long does installation take?", a: "Installation takes under 4 hours with zero downtime. A licensed plumber installs Smart Valve™ on the main supply line. There is no disruption to operations, no pressure loss, and no impact on water quality." },
   { q: "Is Smart Valve™ certified for potable water systems?", a: "Yes. Smart Valve™ is NSF 61 and NSF 372 certified, meaning it is safe for use in potable (drinking) water systems. It is also certified by AWS (American Water Savings) and CWS (Commercial Water Savings)." },
@@ -205,7 +205,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-lg text-white/90 leading-relaxed mb-8 max-w-xl" style={{ fontWeight: 300 }}>
-              Smart Valve™ cuts commercial water bills 15–58%, guaranteed in writing — installed in under 4 hours with no electricity, no moving parts, and no maintenance.
+              Smart Valve™ cuts commercial water bills 15%–35% annually on average, guaranteed in writing — installed in under 4 hours with no electricity, no moving parts, and no maintenance.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-10">

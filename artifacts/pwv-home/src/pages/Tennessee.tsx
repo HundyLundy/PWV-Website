@@ -4,7 +4,7 @@ const config = {
   state: "Tennessee",
   emoji: "🎸",
   headline: "Tennessee Water Rates Rising Across the State — Collierville Up 10% in 2025",
-  subheadline: "Collierville, TN raised commercial water rates 10% in 2025. Tennessee American Water has filed for rate increases, and multiple cities are implementing commercial water and sewer rate adjustments. Smart Valve™ cuts your commercial water bill 15–58%, guaranteed.",
+  subheadline: "Collierville, TN raised commercial water rates 10% in 2025. Tennessee American Water has filed for rate increases, and multiple cities are implementing commercial water and sewer rate adjustments. Smart Valve™ cuts your commercial water bill 15%–35% annually, guaranteed.",
   urgencyBadge: "Collierville TN: 10% Rate Increase 2025 | TN American Water Rate Filing Active",
   heroStats: [
     { value: "10%", label: "Collierville TN 2025 Rise" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/tennessee",
   seoTitle: "Tennessee Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Tennessee. Collierville up 10% in 2025. TN American Water rate filing active. Guaranteed savings in writing. Free assessment available.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Tennessee. Collierville up 10% in 2025. TN American Water rate filing active. Guaranteed savings in writing. Free assessment available.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/tennessee",
 };
 

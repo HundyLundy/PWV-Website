@@ -16,7 +16,7 @@ const config = {
   state: "Loveland",
   emoji: "🏔️",
   headline: "City of Loveland Water Up 6.2% in 2025 — Northern Colorado Water Constraints Intensifying",
-  subheadline: "City of Loveland Water & Power raised commercial rates 6.2% in 2025 as Northern Colorado faces some of the most acute water supply constraints in the state. Rapid population growth, drought, and infrastructure demands are driving rates up — and Smart Valve™ cuts your metered bill 15–58%, guaranteed.",
+  subheadline: "City of Loveland Water & Power raised commercial rates 6.2% in 2025 as Northern Colorado faces some of the most acute water supply constraints in the state. Rapid population growth, drought, and infrastructure demands are driving rates up — and Smart Valve™ cuts your metered bill 15%–35% annually, guaranteed.",
   urgencyBadge: "City of Loveland Water & Power: 6.2% Rate Increase Active 2025 — Northern CO Supply Constraints Acute",
   heroStats: [
     { value: "6.2%", label: "Loveland Water Rise 2025" },
@@ -29,7 +29,7 @@ const config = {
   whyPoints: [
     { icon: "TrendingUp", color: "red", title: "City of Loveland Water & Power: 6.2% Rate Increase in 2025", body: "Loveland Water & Power raised commercial rates 6.2% in 2025 — significantly above the Front Range average. This increase reflects the dual pressure of rapid population growth and drought-driven supply constraints that require substantial infrastructure investment." },
     { icon: "AlertTriangle", color: "orange", title: "Northern Colorado Growth + Drought — A Compounding Rate Problem", body: "Northern Colorado is one of the fastest-growing corridors in the Mountain West. Population growth drives demand; drought reduces supply. The combination forces utilities like Loveland to invest heavily in water supply augmentation — costs that flow directly to commercial rate payers." },
-    { icon: "Droplets", color: "blue", title: "Mountain Supply Systems Create Ideal Smart Valve™ Conditions", body: "Loveland's mountain-fed water system delivers water with natural air entrainment characteristics that create above-average Smart Valve™ performance. Loveland commercial installations consistently demonstrate results at the higher end of the 15–58% savings range." },
+    { icon: "Droplets", color: "blue", title: "Mountain Supply Systems Create Ideal Smart Valve™ Conditions", body: "Loveland's mountain-fed water system delivers water with natural air entrainment characteristics that create above-average Smart Valve™ performance. Loveland commercial installations consistently demonstrate results at the higher end of the 15%–35% annual savings range." },
     { icon: "Building2", color: "teal", title: "Loveland's Commercial and Light Industrial Markets", body: "Smart Valve™ serves commercial properties throughout Loveland — the US 34 commercial corridor, the expanding tech and manufacturing base near I-25, and the established retail and hospitality market along Eisenhower Boulevard." },
   ],
   markets: ["US 34 Corridor", "Eisenhower Boulevard", "I-25 Industrial", "Centerra", "Downtown Loveland", "Johnstown", "Berthoud", "Milliken"],
@@ -52,7 +52,7 @@ const config = {
   alsoServing: CO_OTHER_CITIES,
   alsoServingHeading: "Also Serving Across Colorado",
   seoTitle: "Loveland Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Loveland, CO. City of Loveland Water & Power up 6.2% in 2025. Northern Colorado supply constraints acute. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Loveland, CO. City of Loveland Water & Power up 6.2% in 2025. Northern Colorado supply constraints acute. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/colorado/loveland",
 };
 

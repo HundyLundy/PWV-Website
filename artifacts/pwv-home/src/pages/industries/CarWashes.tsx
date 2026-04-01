@@ -29,7 +29,7 @@ export default function CarWashes() {
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
               Car Washes Pay More for Water Per Square Foot Than Almost Any Business —{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Cuts Your Bill 15–58% Immediately</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Cuts Your Bill 15%–35% Annually — Starting on the First Bill</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
               Caliber Car Wash achieved 23% weighted average savings across 5 Georgia and Florida sites — $38,400/year in verified savings. Continuous high-volume water use means Smart Valve™ delivers its maximum ROI in car wash applications. Results are consistent across all locations.

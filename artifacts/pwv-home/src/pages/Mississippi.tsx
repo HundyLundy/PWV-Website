@@ -4,7 +4,7 @@ const config = {
   state: "Mississippi",
   emoji: "🎶",
   headline: "Mississippi Faces Back-to-Back Rate Hikes — 13% in 2024, 12% Approved in 2026",
-  subheadline: "JXN Water in Jackson implemented a 13% commercial rate increase in January 2024, with a 12% increase approved for February 2026. Mississippi's water infrastructure is in a state of crisis, with Jackson's water system having faced federal intervention. Smart Valve™ cuts your bill 15–58%, guaranteed.",
+  subheadline: "JXN Water in Jackson implemented a 13% commercial rate increase in January 2024, with a 12% increase approved for February 2026. Mississippi's water infrastructure is in a state of crisis, with Jackson's water system having faced federal intervention. Smart Valve™ cuts your bill 15%–35% annually, guaranteed.",
   urgencyBadge: "JXN Water Jackson: 13% in 2024, 12% Approved for 2026",
   heroStats: [
     { value: "13%", label: "JXN Water Hike Jan 2024" },
@@ -37,7 +37,7 @@ const config = {
   ],
   source: "perfectwatervalve.com/locations/mississippi",
   seoTitle: "Mississippi Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
-  seoDescription: "Smart Valve™ cuts commercial water bills 15–58% in Mississippi. JXN Water 13% in 2024, 12% approved for 2026. Federal infrastructure investment driving rates higher. Guaranteed savings in writing.",
+  seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Mississippi. JXN Water 13% in 2024, 12% approved for 2026. Federal infrastructure investment driving rates higher. Guaranteed savings in writing.",
   seoCanonical: "https://www.perfectwatervalve.com/locations/mississippi",
 };
 

@@ -43,7 +43,7 @@ export default function TexasNewPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
               Texas Commercial Water Bills Are Rising 32% by 2029 —{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">
-                Smart Valve™ Cuts Yours by 15–58% Guaranteed
+                Smart Valve™ Cuts Yours by 15%–35% annually Guaranteed
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">

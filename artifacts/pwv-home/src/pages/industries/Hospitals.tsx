@@ -29,7 +29,7 @@ export default function Hospitals() {
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
               Hospitals Are Among the Highest Water-Intensity Buildings on Earth —{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Delivers 15–58% Savings with Zero Clinical Risk</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Delivers 15%–35% annually Savings with Zero Clinical Risk</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
               Hospitals use 150–600+ gallons per bed per day. Central sterile processing, HVAC cooling, laundry, food service, and patient care each draw enormous volumes. Smart Valve™ is NSF 61 and 372 certified, reduces metered consumption by a guaranteed 15% minimum, and has zero impact on clinical operations.

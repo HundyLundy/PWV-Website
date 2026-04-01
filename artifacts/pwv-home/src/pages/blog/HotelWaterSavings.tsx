@@ -7,11 +7,11 @@ import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "How Hotels Cut Water Bills 15–58% Without Touching Guest Experience",
+  "headline": "How Hotels Cut Water Bills 15%–35% annually Without Touching Guest Experience",
   "author": { "@type": "Organization", "name": "Perfect Water Valve Team" },
   "publisher": { "@type": "Organization", "name": "Perfect Water Valve", "url": "https://www.perfectwatervalve.com" },
   "datePublished": "2026-03-10",
-  "description": "Hotels are among the highest water users in commercial real estate. Smart Valve™ cuts hotel water bills 15–58% with a 4-hour install and zero impact on guest experience.",
+  "description": "Hotels are among the highest water users in commercial real estate. Smart Valve™ cuts hotel water bills 15%–35% annually with a 4-hour install and zero impact on guest experience.",
   "url": "https://www.perfectwatervalve.com/blog/hotel-water-savings-guide",
 };
 
@@ -19,11 +19,11 @@ export default function HotelWaterSavings() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
-        <title>Hotel Water Savings Guide — Cut Bills 15–58% Without Affecting Guests | Perfect Water Valve</title>
-        <meta name="description" content="Hotels are among the highest water users in commercial real estate. Smart Valve™ cuts hotel water bills 15–58% with a 4-hour install and zero impact on guest experience." />
+        <title>Hotel Water Savings Guide — Cut Bills 15%–35% annually Without Affecting Guests | Perfect Water Valve</title>
+        <meta name="description" content="Hotels are among the highest water users in commercial real estate. Smart Valve™ cuts hotel water bills 15%–35% annually with a 4-hour install and zero impact on guest experience." />
         <link rel="canonical" href="https://www.perfectwatervalve.com/blog/hotel-water-savings-guide" />
-        <meta property="og:title" content="Hotel Water Savings Guide — Cut Bills 15–58% Without Affecting Guests | Perfect Water Valve" />
-        <meta property="og:description" content="Hotels are among the highest water users in commercial real estate. Smart Valve™ cuts hotel water bills 15–58% with a 4-hour install and zero impact on guest experience." />
+        <meta property="og:title" content="Hotel Water Savings Guide — Cut Bills 15%–35% annually Without Affecting Guests | Perfect Water Valve" />
+        <meta property="og:description" content="Hotels are among the highest water users in commercial real estate. Smart Valve™ cuts hotel water bills 15%–35% annually with a 4-hour install and zero impact on guest experience." />
         <meta property="og:url" content="https://www.perfectwatervalve.com/blog/hotel-water-savings-guide" />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>
@@ -43,7 +43,7 @@ export default function HotelWaterSavings() {
             <span className="flex items-center gap-1 text-sm text-white/60"><User className="w-4 h-4" /> Perfect Water Valve Team</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-[1.15]">
-            How Hotels Cut Water Bills 15–58% Without Touching Guest Experience
+            How Hotels Cut Water Bills 15%–35% annually Without Touching Guest Experience
           </h1>
           <p className="text-xl text-white/85 leading-relaxed">
             Hotels are one of the highest water-use commercial property types. Smart Valve™ installs on the main supply line in under 4 hours — guests never notice, but the water bill does.
