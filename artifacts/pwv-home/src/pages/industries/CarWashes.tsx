@@ -55,6 +55,40 @@ export default function CarWashes() {
         </div>
       </section>
 
+      {/* PREMIUM SUB-PAGE MODULES */}
+      <section className="py-14 px-4 sm:px-6 lg:px-8 bg-background border-b border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-primary/70 mb-8">Explore the Full Picture</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <motion.a href="/industries/car-washes/water-costs"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-primary/50 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-primary/8 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-green-500/10 text-green-400 border-green-500/20 shrink-0">
+                <DollarSign className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">Module 1</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors leading-snug">Car Wash Water Costs — Gallons, Rates & True Bill Anatomy</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">Water use by wash type, true cost with the sewer multiplier, rate increase compounding, and what Caliber's 23% saving means in dollars at your volume.</p>
+              <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">Explore Water Costs <ArrowRight className="w-4 h-4" /></span>
+            </motion.a>
+
+            <motion.a href="/industries/car-washes/hard-water-equipment"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-[#DEC600]/40 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-[#DEC600]/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-orange-500/10 text-orange-400 border-orange-500/20 shrink-0">
+                <ZapOff className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-[#DEC600]/70 mb-2">Module 2</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors leading-snug">Hard Water & Equipment Damage — Stopped Without Chemicals</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">How mineral scale destroys pumps, nozzles, and reclaim systems — and how Smart Valve™ eliminates scale buildup with no chemicals or softeners required.</p>
+              <span className="inline-flex items-center gap-2 text-[#DEC600] font-semibold text-sm group-hover:gap-3 transition-all">See the Equipment Guide <ArrowRight className="w-4 h-4" /></span>
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       {/* WHY CAR WASHES */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 border-t overflow-hidden" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
         <div className="max-w-7xl mx-auto">
@@ -113,27 +147,6 @@ export default function CarWashes() {
                 <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4 text-center"><div className="text-green-400 font-semibold">Scales linearly: 10-site chain = $76,800/year</div></div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sub-page links */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-2 block" style={{ color: "#0374A7" }}>Go Deeper</span>
-            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Car Wash Water Savings — Detailed Guides</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {[
-              { label: "Car Wash Water Costs", href: "/industries/car-washes/water-costs", desc: "Gallons by wash type, true cost with sewer, and rate increase compounding — by the numbers" },
-              { label: "Hard Water & Equipment", href: "/industries/car-washes/hard-water-equipment", desc: "How mineral scale destroys pumps, nozzles, and reclaim systems — stopped without chemicals" },
-            ].map((link, i) => (
-              <a key={i} href={link.href} className="bg-white rounded-xl p-5 border hover:shadow-md transition-all group" style={{ borderColor: "#D5E3EE" }}>
-                <div className="font-bold mb-1 group-hover:underline" style={{ color: "#0374A7" }}>{link.label}</div>
-                <div className="text-sm" style={{ color: "#4A7085" }}>{link.desc}</div>
-              </a>
-            ))}
           </div>
         </div>
       </section>

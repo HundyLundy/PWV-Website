@@ -13,11 +13,28 @@ const NAV_LINKS = [
 ];
 
 const INDUSTRIES = [
-  { label: "Data Centers", href: "/industries/data-centers", emoji: "🖥️", icon: Server, desc: "Amazon YYZ3: 58.69% peak — cooling tower & WUE" },
-  { label: "Hotels & Hospitality", href: "/industries/hotels", emoji: "🏨", icon: Hotel, desc: "Four Seasons 26% avg — laundry, cooling, LEED" },
-  { label: "Car Washes", href: "/industries/car-washes", emoji: "🚗", icon: Car, desc: "Caliber 23% avg across 5 sites — hard water scale" },
-  { label: "Multifamily", href: "/industries/multifamily", emoji: "🏢", icon: Home, desc: "Grand Central Tampa $50K/yr — master meter savings" },
-  { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥", icon: HeartPulse, desc: "NSF 61 & 372 certified — Legionella & water compliance" },
+  { label: "Data Centers", href: "/industries/data-centers", emoji: "🖥️", icon: Server, desc: "Amazon YYZ3: 58.69% peak — cooling tower & WUE", sub: [
+    { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
+    { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
+  ]},
+  { label: "Hotels & Hospitality", href: "/industries/hotels", emoji: "🏨", icon: Hotel, desc: "Four Seasons 26% avg — laundry, cooling, LEED", sub: [
+    { label: "Hotel Water Costs", href: "/industries/hotels/water-costs" },
+    { label: "Laundry & Cooling Towers", href: "/industries/hotels/laundry-cooling-towers" },
+    { label: "Green Certification", href: "/industries/hotels/green-certification" },
+  ]},
+  { label: "Car Washes", href: "/industries/car-washes", emoji: "🚗", icon: Car, desc: "Caliber 23% avg across 5 sites — hard water scale", sub: [
+    { label: "Water Costs", href: "/industries/car-washes/water-costs" },
+    { label: "Hard Water & Equipment", href: "/industries/car-washes/hard-water-equipment" },
+  ]},
+  { label: "Multifamily", href: "/industries/multifamily", emoji: "🏢", icon: Home, desc: "Grand Central Tampa $50K/yr — master meter savings", sub: [
+    { label: "Multifamily Water Costs", href: "/industries/multifamily/water-costs" },
+    { label: "Irrigation & Common Areas", href: "/industries/multifamily/irrigation-common-areas" },
+  ]},
+  { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥", icon: HeartPulse, desc: "NSF 61 & 372 certified — Legionella & water compliance", sub: [
+    { label: "Hospital Water Costs", href: "/industries/hospitals/water-costs" },
+    { label: "Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk" },
+    { label: "Sterile Water & Compliance", href: "/industries/hospitals/sterile-water-compliance" },
+  ]},
 ];
 
 const DC_LINKS_HUB = [
@@ -216,25 +233,34 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
               {/* Col 3 — Industries */}
               <div>
                 <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Industries</div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-0.5">
                   {INDUSTRIES.map((ind) => {
                     const Icon = ind.icon;
                     return (
-                      <a key={ind.href} href={ind.href} onClick={() => setExploreOpen(false)}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/6 transition-colors group">
-                        <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                          style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                          <Icon className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
-                        </div>
-                        <div>
+                      <div key={ind.href}>
+                        <a href={ind.href} onClick={() => setExploreOpen(false)}
+                          className="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-white/6 transition-colors group">
+                          <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                            <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
+                          </div>
                           <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{ind.label}</div>
-                          <div className="text-[10px] leading-snug" style={{ color: 'rgba(255,255,255,0.38)' }}>{ind.desc}</div>
-                        </div>
-                      </a>
+                        </a>
+                        {ind.sub && (
+                          <div className="pl-[38px] flex flex-col mb-1">
+                            {ind.sub.map((s) => (
+                              <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
+                                className="text-[11px] py-0.5 px-2 rounded-md text-white/40 hover:text-sky-300 hover:bg-white/5 transition-colors">
+                                {s.label}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     );
                   })}
                   <a href="/industries" onClick={() => setExploreOpen(false)}
-                    className="flex items-center gap-1 mt-2 px-3 py-1.5 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
+                    className="flex items-center gap-1 mt-1 px-3 py-1.5 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
                     style={{ color: 'rgba(91,191,224,0.7)' }}>
                     <Building2 className="w-3 h-3" /> All Industry Hubs
                   </a>
@@ -304,10 +330,22 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                 {mobileIndOpen && (
                   <div className="pl-4 py-2 flex flex-col gap-1">
                     {INDUSTRIES.map((ind) => (
-                      <a key={ind.href} href={ind.href} onClick={() => setMenuOpen(false)}
-                        className="flex items-center gap-2 py-1.5 text-white/60 hover:text-white text-sm">
-                        <span>{ind.emoji}</span>{ind.label}
-                      </a>
+                      <div key={ind.href}>
+                        <a href={ind.href} onClick={() => setMenuOpen(false)}
+                          className="flex items-center gap-2 py-1.5 text-white/70 hover:text-white text-sm font-medium">
+                          <span>{ind.emoji}</span>{ind.label}
+                        </a>
+                        {ind.sub && (
+                          <div className="pl-6 flex flex-col gap-0.5 mb-1">
+                            {ind.sub.map((s) => (
+                              <a key={s.href} href={s.href} onClick={() => setMenuOpen(false)}
+                                className="text-xs py-1 text-white/40 hover:text-sky-300 transition-colors">
+                                {s.label}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 )}

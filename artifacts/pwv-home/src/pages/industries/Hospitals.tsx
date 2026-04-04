@@ -55,6 +55,53 @@ export default function Hospitals() {
         </div>
       </section>
 
+      {/* PREMIUM SUB-PAGE MODULES */}
+      <section className="py-14 px-4 sm:px-6 lg:px-8 bg-background border-b border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-primary/70 mb-8">Explore the Full Picture</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <motion.a href="/industries/hospitals/water-costs"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-primary/50 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/8 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-blue-500/10 text-blue-400 border-blue-500/20 shrink-0">
+                <Droplets className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">Module 1</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors leading-snug">Hospital Water Costs — Full Facility Breakdown</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">Where healthcare facilities spend their water budget — central sterile, HVAC cooling, laundry, food service, and patient care — fully itemized with ROI by category.</p>
+              <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">Explore Water Costs <ArrowRight className="w-4 h-4" /></span>
+            </motion.a>
+
+            <motion.a href="/industries/hospitals/legionella-biofilm-risk"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-red-500/30 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-red-500/10 text-red-400 border-red-500/20 shrink-0">
+                <AlertTriangle className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-red-500/60 mb-2">Module 2</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors leading-snug">Legionella & Biofilm Risk — ASHRAE 188 & Joint Commission</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">How air pockets in hospital pipes create Legionella colonization conditions — and how Smart Valve™ eliminates the air entrapment that drives both billing inflation and infection risk.</p>
+              <span className="inline-flex items-center gap-2 text-red-400 font-semibold text-sm group-hover:gap-3 transition-all">See the Risk Guide <ArrowRight className="w-4 h-4" /></span>
+            </motion.a>
+
+            <motion.a href="/industries/hospitals/sterile-water-compliance"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-[#DEC600]/40 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#DEC600]/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-yellow-500/10 text-yellow-400 border-yellow-500/20 shrink-0">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-[#DEC600]/70 mb-2">Module 3</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors leading-snug">Sterile Water & Compliance — CSP, Dialysis & Lab Quality</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">NSF 61 & 372 certified for medical facilities. How Smart Valve™ reduces mineral scale in central sterile processing, dialysis supply, and laboratory water systems without chemicals.</p>
+              <span className="inline-flex items-center gap-2 text-[#DEC600] font-semibold text-sm group-hover:gap-3 transition-all">See Compliance Guide <ArrowRight className="w-4 h-4" /></span>
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 px-4 sm:px-6 lg:px-8 border-t overflow-hidden" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -108,28 +155,6 @@ export default function Hospitals() {
                 </div>
                 <p className="text-gray-600 text-xs mt-4">*15% guaranteed minimum. Actual results typically 17–26%.</p>
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sub-page links */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-2 block" style={{ color: "#0374A7" }}>Go Deeper</span>
-            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Hospital Water Savings — Detailed Guides</h2>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              { label: "Hospital Water Costs", href: "/industries/hospitals/water-costs", desc: "Where healthcare facilities spend their water budget — full breakdown by use category" },
-              { label: "Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "How air pockets in pipes create Legionella risk — ASHRAE 188/514 and Joint Commission compliance" },
-              { label: "Sterile Water & Compliance", href: "/industries/hospitals/sterile-water-compliance", desc: "CSP, dialysis, and lab water quality — mineral scale without chemicals, NSF certified" },
-            ].map((link, i) => (
-              <a key={i} href={link.href} className="bg-white rounded-xl p-5 border hover:shadow-md transition-all group" style={{ borderColor: "#D5E3EE" }}>
-                <div className="font-bold mb-1 group-hover:underline" style={{ color: "#0374A7" }}>{link.label}</div>
-                <div className="text-sm" style={{ color: "#4A7085" }}>{link.desc}</div>
-              </a>
             ))}
           </div>
         </div>

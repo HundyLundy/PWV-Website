@@ -95,6 +95,53 @@ export default function Hotels() {
         </div>
       </section>
 
+      {/* PREMIUM SUB-PAGE MODULES */}
+      <section className="py-14 px-4 sm:px-6 lg:px-8 bg-background border-b border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-primary/70 mb-8">Explore the Full Picture</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <motion.a href="/industries/hotels/water-costs"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-primary/50 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/8 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-green-500/10 text-green-400 border-green-500/20 shrink-0">
+                <DollarSign className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-primary/70 mb-2">Module 1</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors leading-snug">Hotel Water Costs — Full Budget Breakdown</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">Where hotel water budgets go — HVAC cooling towers, laundry, pools, and guestrooms — including the sewer multiplier most operators miss.</p>
+              <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">Explore Water Costs <ArrowRight className="w-4 h-4" /></span>
+            </motion.a>
+
+            <motion.a href="/industries/hotels/laundry-cooling-towers"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-teal-500/40 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-teal-500/10 text-teal-400 border-teal-500/20 shrink-0">
+                <Activity className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-teal-500/70 mb-2">Module 2</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-teal-300 transition-colors leading-snug">Laundry & Cooling Towers — 50–70% of Hotel Water Use</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">Laundry and cooling towers account for most hotel water consumption. One Smart Valve™ installation addresses both simultaneously from the main supply line.</p>
+              <span className="inline-flex items-center gap-2 text-teal-400 font-semibold text-sm group-hover:gap-3 transition-all">See the Breakdown <ArrowRight className="w-4 h-4" /></span>
+            </motion.a>
+
+            <motion.a href="/industries/hotels/green-certification"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-[#DEC600]/40 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#DEC600]/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-yellow-500/10 text-yellow-400 border-yellow-500/20 shrink-0">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-[#DEC600]/70 mb-2">Module 3</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors leading-snug">Green Certification — LEED, Green Key & Booking.com</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">Every Smart Valve™ installation generates auditable M&V documentation satisfying GRESB, LEED, Green Key, and Booking.com Travel Sustainable reporting requirements.</p>
+              <span className="inline-flex items-center gap-2 text-[#DEC600] font-semibold text-sm group-hover:gap-3 transition-all">See Certification Guide <ArrowRight className="w-4 h-4" /></span>
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       {/* WHY HOTELS */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 border-t overflow-hidden" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
         <div className="max-w-7xl mx-auto">
@@ -165,28 +212,6 @@ export default function Hotels() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sub-page links */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-2 block" style={{ color: "#0374A7" }}>Go Deeper</span>
-            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Hotel Water Savings — Detailed Guides</h2>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              { label: "Hotel Water Costs", href: "/industries/hotels/water-costs", desc: "Where hotel budgets go — full breakdown including the sewer multiplier" },
-              { label: "Laundry & Cooling Towers", href: "/industries/hotels/laundry-cooling-towers", desc: "50–70% of hotel water use — addressed simultaneously by one installation" },
-              { label: "Green Certification", href: "/industries/hotels/green-certification", desc: "LEED, Green Key, Booking.com Travel Sustainable — M&V documentation satisfies all" },
-            ].map((link, i) => (
-              <a key={i} href={link.href} className="bg-white rounded-xl p-5 border hover:shadow-md transition-all group" style={{ borderColor: "#D5E3EE" }}>
-                <div className="font-bold mb-1 group-hover:underline" style={{ color: "#0374A7" }}>{link.label}</div>
-                <div className="text-sm" style={{ color: "#4A7085" }}>{link.desc}</div>
-              </a>
-            ))}
           </div>
         </div>
       </section>

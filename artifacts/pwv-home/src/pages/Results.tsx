@@ -10,7 +10,7 @@ import {
 // ─── DATA ──────────────────────────────────────────────────────────────────
 
 const AGGREGATE_STATS = [
-  { val: "21", label: "Documented Installations" },
+  { val: "19", label: "M&V-Verified Installations" },
   { val: "58.69%", label: "Peak Reduction — Amazon YYZ3" },
   { val: "$50K/yr", label: "Max Annual Savings — Single Site" },
   { val: "≥15%", label: "Contractual Minimum Guaranteed" },
@@ -48,6 +48,38 @@ const RWJ_DATA = [
   { period: "After", cost: 57200 },
 ];
 
+const AMAZON_VOLUME = [
+  { period: "Q3 2024", before: 1107, after: 457 },
+  { period: "Q4 2024", before: 800, after: 566 },
+  { period: "Q1 2025", before: 650, after: 761 },
+  { period: "Q2 2025", before: 680, after: 796 },
+  { period: "Q3 2025", before: 1050, after: 998 },
+  { period: "Q4 2025", before: 820, after: 656 },
+];
+
+const FOUR_SEASONS_ANNUAL = [
+  { label: "Before Smart Valve™", cost: 103846 },
+  { label: "After Smart Valve™", cost: 76846 },
+];
+
+const CALIBER_DOLLAR = [
+  { site: "Site 1 (GA)", savings: 8200 },
+  { site: "Site 2 (GA)", savings: 7850 },
+  { site: "Site 3 (FL)", savings: 7850 },
+  { site: "Site 4 (FL)", savings: 7500 },
+  { site: "Site 5 (FL)", savings: 7000 },
+];
+
+const GRAND_CUMUL = [
+  { year: "Year 1", cumulative: 50000 },
+  { year: "Year 2", cumulative: 100000 },
+];
+
+const RWJ_DAILY = [
+  { period: "Before", gallons: 19625 },
+  { period: "After", gallons: 15425 },
+];
+
 // ─── TOOLTIP HELPERS ──────────────────────────────────────────────────────
 
 function PctTooltip({ active, payload, label }: any) {
@@ -74,6 +106,21 @@ function DollarTooltip({ active, payload, label }: any) {
         <div key={p.dataKey} className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full inline-block" style={{ background: p.fill || p.color }} />
           <span>{p.name}: <strong>${p.value?.toLocaleString()}</strong></span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function VolumeTooltip({ active, payload, label }: any) {
+  if (!active || !payload?.length) return null;
+  return (
+    <div className="rounded-xl p-3 text-sm shadow-xl" style={{ background: "#fff", border: "1px solid #e0e0e0", color: "#1a1a1a" }}>
+      <div className="font-bold mb-1">{label}</div>
+      {payload.map((p: any) => (
+        <div key={p.dataKey} className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full inline-block" style={{ background: p.fill || p.color }} />
+          <span>{p.name}: <strong>{p.value?.toLocaleString()} {p.unit || ""}</strong></span>
         </div>
       ))}
     </div>
@@ -131,7 +178,7 @@ export default function Results() {
             Smart Valve™ — Verified Field Results
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight" style={{ color: "#0A1F3A" }}>
-            21 Installations. 19 Verified.<br />
+            19 Verified Installations.<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">15%–58.69% Savings.</span>
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: "#2E4A5A" }}>
@@ -198,6 +245,25 @@ export default function Results() {
               </ul>
             </div>
           </div>
+
+          <div className="mt-6">
+            <ChartCard
+              title="Water Volume (m³) — Prior Year vs Post-Installation, by Quarter"
+              caption="YYZ3 measured water volume · Blue = post-installation · Grey = prior-year comparable period"
+            >
+              <ResponsiveContainer width="100%" height={240}>
+                <BarChart data={AMAZON_VOLUME} margin={{ top: 8, right: 24, left: 10, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="period" tick={{ fontSize: 11, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `${v}m³`} />
+                  <Tooltip content={<VolumeTooltip />} />
+                  <Legend wrapperStyle={{ fontSize: 11 }} />
+                  <Bar dataKey="before" name="Prior Year (m³)" fill="#94a3b8" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="after" name="Post-Installation (m³)" fill="#0374A7" radius={[4, 4, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
         </div>
       </section>
 
@@ -247,6 +313,25 @@ export default function Results() {
               </ul>
             </div>
           </div>
+
+          <div className="mt-6">
+            <ChartCard
+              title="Annual Water Cost — Before vs After (USD)"
+              caption="26% reduction on ~$103,846/yr baseline → ~$76,846/yr · saving $27,000/yr · Estimated from verified M&V"
+            >
+              <ResponsiveContainer width="100%" height={220}>
+                <BarChart data={FOUR_SEASONS_ANNUAL} margin={{ top: 8, right: 60, left: 30, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="label" tick={{ fontSize: 11, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `$${(v / 1000).toFixed(0)}K`} domain={[0, 130000]} />
+                  <Tooltip content={<DollarTooltip />} />
+                  <Bar dataKey="cost" name="Annual Water Cost ($)" radius={[6, 6, 0, 0]} label={{ position: "top", formatter: (v: number) => `$${(v / 1000).toFixed(0)}K`, fontSize: 13, fontWeight: 700, fill: "#0A1F3A" }}>
+                    {FOUR_SEASONS_ANNUAL.map((_, i) => <Cell key={i} fill={i === 0 ? "#94a3b8" : "#0374A7"} />)}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
         </div>
       </section>
 
@@ -292,6 +377,24 @@ export default function Results() {
                 <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>M&V tracked over 3+ consecutive billing quarters — no seasonal outliers</span></li>
               </ul>
             </div>
+          </div>
+
+          <div className="mt-6">
+            <ChartCard
+              title="Estimated Annual $ Savings per Location"
+              caption="Apportioned from $38,400/yr verified total · weighted by site savings % across all 5 locations"
+            >
+              <ResponsiveContainer width="100%" height={220}>
+                <BarChart data={CALIBER_DOLLAR} margin={{ top: 8, right: 40, left: 20, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="site" tick={{ fontSize: 10, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `$${(v / 1000).toFixed(1)}K`} domain={[0, 10000]} />
+                  <Tooltip content={<DollarTooltip />} />
+                  <Bar dataKey="savings" name="Est. Annual Savings ($)" fill="#0374A7" radius={[6, 6, 0, 0]}
+                    label={{ position: "top", formatter: (v: number) => `$${(v / 1000).toFixed(1)}K`, fontSize: 11, fill: "#0374A7", fontWeight: 700 }} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
           </div>
         </div>
       </section>
@@ -339,6 +442,24 @@ export default function Results() {
                 <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>Largest dollar-value savings of any single residential property on record</span></li>
               </ul>
             </div>
+          </div>
+
+          <div className="mt-6">
+            <ChartCard
+              title="Cumulative NOI Improvement — 2-Year Running Total"
+              caption="$50,000/yr savings × 2 years = $100,000 cumulative water + sewer cost reduction"
+            >
+              <ResponsiveContainer width="100%" height={200}>
+                <BarChart data={GRAND_CUMUL} margin={{ top: 8, right: 60, left: 30, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="year" tick={{ fontSize: 12, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `$${(v / 1000).toFixed(0)}K`} domain={[0, 120000]} />
+                  <Tooltip content={<DollarTooltip />} />
+                  <Bar dataKey="cumulative" name="Cumulative Savings ($)" fill="#0374A7" radius={[6, 6, 0, 0]}
+                    label={{ position: "top", formatter: (v: number) => `$${(v / 1000).toFixed(0)}K`, fontSize: 14, fill: "#0374A7", fontWeight: 700 }} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
           </div>
         </div>
       </section>
@@ -388,13 +509,33 @@ export default function Results() {
               </ul>
             </div>
           </div>
+
+          <div className="mt-6">
+            <ChartCard
+              title="Daily Water Volume — Before vs After Installation"
+              caption="19,625 gal/day → 15,425 gal/day · 4,200 gal saved daily · 1,533,000 gal/yr total reduction"
+            >
+              <ResponsiveContainer width="100%" height={200}>
+                <BarChart data={RWJ_DAILY} margin={{ top: 8, right: 60, left: 30, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="period" tick={{ fontSize: 12, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => v.toLocaleString()} domain={[0, 24000]} />
+                  <Tooltip content={<VolumeTooltip />} />
+                  <Bar dataKey="gallons" name="Daily Gallons" radius={[6, 6, 0, 0]}
+                    label={{ position: "top", formatter: (v: number) => v.toLocaleString(), fontSize: 12, fontWeight: 700, fill: "#0A1F3A" }}>
+                    {RWJ_DAILY.map((_, i) => <Cell key={i} fill={i === 0 ? "#94a3b8" : "#0374A7"} />)}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
         </div>
       </section>
 
       {/* CLIENT LOGO BAR */}
       <section className="py-10 px-6 border-b" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
         <p className="text-center text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4A7085" }}>Verified M&V Results</p>
-        <p className="text-center text-[10px] uppercase tracking-widest mb-6" style={{ color: "#A0B5C5" }}>19 of 21 documented installations include verified savings data</p>
+        <p className="text-center text-[10px] uppercase tracking-widest mb-6" style={{ color: "#A0B5C5" }}>All 19 M&V-verified installations include formal or customer-confirmed savings data</p>
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 max-w-5xl mx-auto mb-8">
           {[
             { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },
