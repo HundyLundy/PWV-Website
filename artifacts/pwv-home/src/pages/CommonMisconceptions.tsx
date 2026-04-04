@@ -110,7 +110,7 @@ export default function CommonMisconceptions() {
       </section>
 
       {/* MISCONCEPTION 1 — CHECK VALVE */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 border-b border-white/5 bg-background">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 border-b" style={{ backgroundColor: "#ffffff", borderColor: "#C5D8E8" }}>
         <div className="max-w-5xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-12">
             <div className="flex items-center gap-3 mb-6">
@@ -233,7 +233,7 @@ export default function CommonMisconceptions() {
       </section>
 
       {/* MISCONCEPTION 3 — PRESSURE REDUCING VALVES */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 border-b border-white/5 bg-background">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 border-b" style={{ backgroundColor: "#F4F8FC", borderColor: "#C5D8E8" }}>
         <div className="max-w-5xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-12">
             <div className="flex items-center gap-3 mb-6">

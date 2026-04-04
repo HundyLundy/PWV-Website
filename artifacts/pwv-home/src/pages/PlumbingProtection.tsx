@@ -87,7 +87,7 @@ export default function PlumbingProtection() {
       </section>
 
       {/* SECTION 1 — PRESSURE STABILIZATION */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: "#C5D8E8" }}>
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-b" style={{ backgroundColor: "#ffffff", borderColor: "#C5D8E8" }}>
         <div className="max-w-4xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ color: "#0A1F3A" }}>
@@ -155,7 +155,7 @@ export default function PlumbingProtection() {
       </section>
 
       {/* SECTION 3 — MINERAL SCALE PREVENTION */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: "#C5D8E8" }}>
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-b" style={{ backgroundColor: "#ffffff", borderColor: "#C5D8E8" }}>
         <div className="max-w-4xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ color: "#0A1F3A" }}>
@@ -240,7 +240,7 @@ export default function PlumbingProtection() {
       </section>
 
       {/* SECTION 5 — WHERE THESE BENEFITS APPLY */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: "#C5D8E8" }}>
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-b" style={{ backgroundColor: "#ffffff", borderColor: "#C5D8E8" }}>
         <div className="max-w-5xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ color: "#0A1F3A" }}>
@@ -303,7 +303,7 @@ export default function PlumbingProtection() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F4F8FC" }}>
         <div className="max-w-3xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ color: "#0A1F3A" }}>
