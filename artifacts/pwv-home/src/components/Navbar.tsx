@@ -39,26 +39,26 @@ const INDUSTRIES = [
   { label: "Golf Courses", href: "/industries/golf-courses", emoji: "⛳", icon: Leaf, desc: "15%–35% savings on irrigation, clubhouse, pool & drought compliance", sub: [] },
 ];
 
-const DC_LINKS_HUB = [
-  { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
-  { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
-  { label: "WUE & Regulatory Risk", href: "/industries/data-centers/wue-regulatory-risk" },
-];
-const DC_LINKS_COOLING = [
-  { label: "Data Centers", href: "/industries/data-centers" },
-  { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
-  { label: "WUE & Regulatory Risk", href: "/industries/data-centers/wue-regulatory-risk" },
-];
-const DC_LINKS_HYPERSCALE = [
-  { label: "Data Centers", href: "/industries/data-centers" },
-  { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
-  { label: "WUE & Regulatory Risk", href: "/industries/data-centers/wue-regulatory-risk" },
-];
-const DC_LINKS_WUE = [
-  { label: "Data Centers", href: "/industries/data-centers" },
-  { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
-  { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
-];
+function getIndustryContext(location: string): { label: string; links: { label: string; href: string }[] } | null {
+  for (const ind of INDUSTRIES) {
+    if (!ind.sub || ind.sub.length === 0) continue;
+    const isHub = location === ind.href || location === ind.href + "/";
+    const subMatch = ind.sub.find((s) => location.startsWith(s.href));
+    if (isHub) {
+      return { label: ind.label, links: ind.sub };
+    }
+    if (subMatch) {
+      return {
+        label: ind.label,
+        links: [
+          { label: ind.label, href: ind.href },
+          ...ind.sub.filter((s) => s.href !== subMatch.href),
+        ],
+      };
+    }
+  }
+  return null;
+}
 
 const dropdownBase = {
   background: "rgba(10,15,35,0.97)",
@@ -75,13 +75,8 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
   const [mobileIndOpen, setMobileIndOpen] = useState(false);
   const [mobileExploreOpen, setMobileExploreOpen] = useState(false);
 
-  const isDCHub = location === "/industries/data-centers" || location === "/industries/data-centers/";
-  const isDCCooling = location.startsWith("/industries/data-centers/cooling-water-costs");
-  const isDCHyperscale = location.startsWith("/industries/data-centers/hyperscale-roi");
-  const isDCWUE = location.startsWith("/industries/data-centers/wue-regulatory-risk");
-  const isDataCenterSection = isDCHub || isDCCooling || isDCHyperscale || isDCWUE;
-  const contextualLinks = isDCHub ? DC_LINKS_HUB : isDCCooling ? DC_LINKS_COOLING : isDCHyperscale ? DC_LINKS_HYPERSCALE : isDCWUE ? DC_LINKS_WUE : null;
-  const activeNavLinks = contextualLinks ?? NAV_LINKS;
+  const industryCtx = getIndustryContext(location);
+  const activeNavLinks = industryCtx ? industryCtx.links : NAV_LINKS;
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -131,8 +126,8 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1 text-sm font-medium text-gray-300">
-          {isDataCenterSection && (
-            <span className="text-xs font-bold uppercase tracking-widest text-primary/60 px-2 mr-1">Data Centers:</span>
+          {industryCtx && (
+            <span className="text-xs font-bold uppercase tracking-widest text-primary/60 px-2 mr-1">{industryCtx.label}:</span>
           )}
           {activeNavLinks.map((l) => (
             <a key={l.label} href={l.href}
@@ -322,8 +317,8 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
             className="md:hidden border-t border-white/10 overflow-hidden" style={{ background: "#0A0F1E" }}>
             <div className="p-4 flex flex-col gap-1 overflow-y-auto max-h-[80vh]">
-              {isDataCenterSection && (
-                <div className="text-xs font-bold uppercase tracking-widest text-primary/60 py-1 px-1 mb-1">Data Centers</div>
+              {industryCtx && (
+                <div className="text-xs font-bold uppercase tracking-widest text-primary/60 py-1 px-1 mb-1">{industryCtx.label}</div>
               )}
               {activeNavLinks.map((l) => (
                 <a key={l.label} href={l.href}
