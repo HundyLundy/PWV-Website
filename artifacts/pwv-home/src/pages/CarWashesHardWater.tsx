@@ -180,6 +180,7 @@ export default function CarWashesHardWater() {
               { label: "Car Washes Hub", href: "/industries/car-washes", desc: "Caliber Car Wash 5-site case study and full overview" },
               { label: "Car Wash Water Costs", href: "/industries/car-washes/water-costs", desc: "Gallons, rates, and where the money goes" },
               { label: "Multifamily Irrigation", href: "/industries/multifamily/irrigation-common-areas", desc: "Shared mechanism: mineral scale and water efficiency" },
+              { label: "Plumbing Protection Benefits", href: "/benefits/plumbing-protection", desc: "Full breakdown of scale, pressure, and flow protection" },
             ].map((link, i) => (
               <a key={i} href={link.href} className="bg-white rounded-xl p-5 border border-gray-200 hover:border-[#0374A7]/50 hover:shadow-md transition-all group">
                 <div className="text-[#0374A7] font-bold group-hover:underline mb-1">{link.label}</div>

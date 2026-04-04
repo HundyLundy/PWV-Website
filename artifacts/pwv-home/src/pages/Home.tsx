@@ -356,6 +356,16 @@ export default function Home() {
         <BubbleValveSection />
       </div>
 
+      {/* ─── PLUMBING PROTECTION CROSS-LINK ─────────────────── */}
+      <div className="px-6 py-5 border-b" style={{ backgroundColor: '#EEF5FB', borderColor: '#C5D8E8' }}>
+        <div className="max-w-4xl mx-auto text-center text-sm" style={{ color: '#4A7085' }}>
+          Smart Valve™ also protects commercial plumbing systems from pressure damage, scale buildup, and air entrainment.{' '}
+          <a href="/benefits/plumbing-protection" className="font-semibold underline underline-offset-2 hover:opacity-70 transition-opacity" style={{ color: '#0374A7' }}>
+            Learn about the secondary benefits →
+          </a>
+        </div>
+      </div>
+
       {/* ─── WHO WE SERVE ────────────────────────────────────── */}
       <section className="py-20 px-6" style={{ backgroundColor: '#F4F8FC' }}>
         <div className="max-w-6xl mx-auto">

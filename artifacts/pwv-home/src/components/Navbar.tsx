@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse, ArrowRight, Leaf } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse, ArrowRight, Leaf, Wrench } from "lucide-react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const NAV_LINKS = [
@@ -185,6 +185,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                   {[
                     { label: "Case Studies & Proof", href: "/results/", desc: "Amazon, Four Seasons, Caliber & more — M&V verified", icon: FileText },
                     { label: "Smart Valve™ Info Sheet", href: "/infosheet/", desc: "Industry-by-industry data, charts & verified performance", icon: BookOpen },
+                    { label: "Plumbing Protection", href: "/benefits/plumbing-protection", desc: "Pressure stabilization, scale prevention & air entrainment", icon: Wrench },
                   ].map((item) => {
                     const Icon = item.icon;
                     return (

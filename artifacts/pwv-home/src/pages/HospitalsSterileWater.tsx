@@ -177,6 +177,7 @@ export default function HospitalsSterileWater() {
               { label: "Hospitals Hub", href: "/industries/hospitals", desc: "NSF certification detail and bed-count ROI calculations" },
               { label: "Hospital Water Costs", href: "/industries/hospitals/water-costs", desc: "Where healthcare facilities spend their water budget" },
               { label: "Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "How air pockets in pipes create Legionella risk" },
+              { label: "Plumbing Protection Benefits", href: "/benefits/plumbing-protection", desc: "How Smart Valve™ affects pressure, scale, and pipe systems" },
             ].map((link, i) => (
               <a key={i} href={link.href} className="bg-white rounded-xl p-5 border border-gray-200 hover:border-[#0374A7]/50 hover:shadow-md transition-all group">
                 <div className="text-[#0374A7] font-bold group-hover:underline mb-1">{link.label}</div>

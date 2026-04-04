@@ -19,6 +19,7 @@ import Results from "@/pages/Results";
 import Impact from "@/pages/Impact";
 import Savings from "@/pages/Savings";
 import CommonMisconceptions from "@/pages/CommonMisconceptions";
+import PlumbingProtection from "@/pages/PlumbingProtection";
 
 // Info sheet
 import InfoSheet from "@/pages/InfoSheet";
@@ -144,6 +145,8 @@ function Router() {
       <Route path="/results/" component={Results} />
       <Route path="/common-misconceptions" component={CommonMisconceptions} />
       <Route path="/common-misconceptions/" component={CommonMisconceptions} />
+      <Route path="/benefits/plumbing-protection" component={PlumbingProtection} />
+      <Route path="/benefits/plumbing-protection/" component={PlumbingProtection} />
       <Route path="/impact" component={Impact} />
       <Route path="/impact/" component={Impact} />
       <Route path="/savings" component={Savings} />

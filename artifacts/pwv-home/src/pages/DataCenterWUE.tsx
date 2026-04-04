@@ -188,6 +188,7 @@ export default function DataCenterWUE() {
               { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs", desc: "Where data centers spend their water budget — cooling tower breakdown" },
               { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi", desc: "ROI at scale: $50K/mo, $250K/mo, $1M/mo spend tiers" },
               { label: "Hospitals & Legionella Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "Shared mechanism: air entrainment and waterborne pathogen risk" },
+              { label: "Plumbing Protection Benefits", href: "/benefits/plumbing-protection", desc: "Scale, pressure stabilization, and pipe protection details" },
             ].map((link, i) => (
               <a key={i} href={link.href} className="bg-white rounded-xl p-5 border border-gray-200 hover:border-[#0374A7]/50 hover:shadow-md transition-all group">
                 <div className="text-[#0374A7] font-bold group-hover:underline mb-1">{link.label}</div>
