@@ -16,6 +16,7 @@ const INDUSTRIES = [
   { label: "Data Centers", href: "/industries/data-centers", emoji: "🖥️", icon: Server, desc: "Amazon YYZ3: 58.69% peak — cooling tower & WUE", sub: [
     { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
     { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
+    { label: "WUE & Regulatory Risk", href: "/industries/data-centers/wue-regulatory-risk" },
   ]},
   { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥", icon: HeartPulse, desc: "NSF 61 & 372 certified — Legionella & water compliance", sub: [
     { label: "Hospital Water Costs", href: "/industries/hospitals/water-costs" },
@@ -41,14 +42,22 @@ const INDUSTRIES = [
 const DC_LINKS_HUB = [
   { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
   { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
+  { label: "WUE & Regulatory Risk", href: "/industries/data-centers/wue-regulatory-risk" },
 ];
 const DC_LINKS_COOLING = [
   { label: "Data Centers", href: "/industries/data-centers" },
   { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
+  { label: "WUE & Regulatory Risk", href: "/industries/data-centers/wue-regulatory-risk" },
 ];
 const DC_LINKS_HYPERSCALE = [
   { label: "Data Centers", href: "/industries/data-centers" },
   { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
+  { label: "WUE & Regulatory Risk", href: "/industries/data-centers/wue-regulatory-risk" },
+];
+const DC_LINKS_WUE = [
+  { label: "Data Centers", href: "/industries/data-centers" },
+  { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
+  { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
 ];
 
 const dropdownBase = {
@@ -69,8 +78,9 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
   const isDCHub = location === "/industries/data-centers" || location === "/industries/data-centers/";
   const isDCCooling = location.startsWith("/industries/data-centers/cooling-water-costs");
   const isDCHyperscale = location.startsWith("/industries/data-centers/hyperscale-roi");
-  const isDataCenterSection = isDCHub || isDCCooling || isDCHyperscale;
-  const contextualLinks = isDCHub ? DC_LINKS_HUB : isDCCooling ? DC_LINKS_COOLING : isDCHyperscale ? DC_LINKS_HYPERSCALE : null;
+  const isDCWUE = location.startsWith("/industries/data-centers/wue-regulatory-risk");
+  const isDataCenterSection = isDCHub || isDCCooling || isDCHyperscale || isDCWUE;
+  const contextualLinks = isDCHub ? DC_LINKS_HUB : isDCCooling ? DC_LINKS_COOLING : isDCHyperscale ? DC_LINKS_HYPERSCALE : isDCWUE ? DC_LINKS_WUE : null;
   const activeNavLinks = contextualLinks ?? NAV_LINKS;
 
   useEffect(() => {
