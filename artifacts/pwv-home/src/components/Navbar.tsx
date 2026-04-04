@@ -17,6 +17,11 @@ const INDUSTRIES = [
     { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
     { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi" },
   ]},
+  { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥", icon: HeartPulse, desc: "NSF 61 & 372 certified — Legionella & water compliance", sub: [
+    { label: "Hospital Water Costs", href: "/industries/hospitals/water-costs" },
+    { label: "Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk" },
+    { label: "Sterile Water & Compliance", href: "/industries/hospitals/sterile-water-compliance" },
+  ]},
   { label: "Hotels & Hospitality", href: "/industries/hotels", emoji: "🏨", icon: Hotel, desc: "Four Seasons 26% avg — laundry, cooling, LEED", sub: [
     { label: "Hotel Water Costs", href: "/industries/hotels/water-costs" },
     { label: "Laundry & Cooling Towers", href: "/industries/hotels/laundry-cooling-towers" },
@@ -29,11 +34,6 @@ const INDUSTRIES = [
   { label: "Multifamily", href: "/industries/multifamily", emoji: "🏢", icon: Home, desc: "Grand Central Tampa $50K/yr — master meter savings", sub: [
     { label: "Multifamily Water Costs", href: "/industries/multifamily/water-costs" },
     { label: "Irrigation & Common Areas", href: "/industries/multifamily/irrigation-common-areas" },
-  ]},
-  { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥", icon: HeartPulse, desc: "NSF 61 & 372 certified — Legionella & water compliance", sub: [
-    { label: "Hospital Water Costs", href: "/industries/hospitals/water-costs" },
-    { label: "Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk" },
-    { label: "Sterile Water & Compliance", href: "/industries/hospitals/sterile-water-compliance" },
   ]},
   { label: "Golf Courses", href: "/industries/golf-courses", emoji: "⛳", icon: Leaf, desc: "15%–35% savings on irrigation, clubhouse, pool & drought compliance", sub: [] },
 ];
