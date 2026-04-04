@@ -384,21 +384,20 @@ export default function ColoradoPage() {
       {/* SAVINGS CALCULATOR */}
       <ColoradoSavingsCalculator scrollTo={scrollTo} />
 
-      {/* INDUSTRY CROSS-LINKS */}
+      {/* IMPACTED INDUSTRIES */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-2 block" style={{ color: "#0374A7" }}>By Industry</span>
-            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Water Savings for Colorado Industries</h2>
+            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Impacted Industries in Colorado</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { label: "Car Washes — Water Cost Guide", href: "/industries/car-washes/water-costs", desc: "True cost per wash including sewer — and how to cut it 15%" },
-              { label: "Car Washes — Hard Water & Equipment", href: "/industries/car-washes/hard-water-equipment", desc: "Mineral scale destroys pumps and reclaim systems — stopped without chemicals" },
-              { label: "Multifamily — Water Cost Guide", href: "/industries/multifamily/water-costs", desc: "The master meter problem — why apartment owners pay for tenant behavior" },
-              { label: "Multifamily — Irrigation Savings", href: "/industries/multifamily/irrigation-common-areas", desc: "30–50% of multifamily water use — the biggest single savings opportunity" },
-              { label: "Hospitals — Water Cost Breakdown", href: "/industries/hospitals/water-costs", desc: "Where healthcare facility water budgets go — by use category" },
-              { label: "Hospitals — Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "ASHRAE 188/514 and Joint Commission compliance — air pockets eliminated" },
+              { label: "Data Centers", href: "/industries/data-centers", desc: "Cooling tower & WUE optimization — Amazon YYZ3: 58.69% peak reduction" },
+              { label: "Hotels & Hospitality", href: "/industries/hotels", desc: "Laundry, cooling towers & LEED certification — Four Seasons: 26% avg" },
+              { label: "Car Washes", href: "/industries/car-washes", desc: "Hard water scale & equipment protection — Caliber: 23% across 5 sites" },
+              { label: "Multifamily", href: "/industries/multifamily", desc: "Master meter savings & irrigation — Grand Central Tampa: $50K/yr" },
+              { label: "Hospitals & Healthcare", href: "/industries/hospitals", desc: "NSF 61 & 372 certified — Legionella risk & sterile water compliance" },
             ].map((link, i) => (
               <a key={i} href={link.href} className="bg-white rounded-xl p-5 border hover:shadow-md transition-all group" style={{ borderColor: "#D5E3EE" }}>
                 <div className="font-bold mb-1 group-hover:underline" style={{ color: "#0374A7" }}>{link.label}</div>

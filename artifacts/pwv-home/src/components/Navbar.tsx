@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse, ArrowRight } from "lucide-react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const NAV_LINKS = [
@@ -12,110 +12,13 @@ const NAV_LINKS = [
   { label: "Contact", href: "/#contact" },
 ];
 
-const LOCATIONS = [
-  { label: "All Locations (US & Worldwide)", href: "/locations/usa", emoji: "🌎" },
-  // — Colorado Cities —
-  { label: "Denver", href: "/locations/colorado/denver", emoji: "🏔️" },
-  { label: "Colorado Springs", href: "/locations/colorado/colorado-springs", emoji: "⛰️" },
-  { label: "Aurora", href: "/locations/colorado/aurora", emoji: "🌅" },
-  { label: "Fort Collins", href: "/locations/colorado/fort-collins", emoji: "🎓" },
-  { label: "Lakewood", href: "/locations/colorado/lakewood", emoji: "🌲" },
-  { label: "Boulder", href: "/locations/colorado/boulder", emoji: "🌿" },
-  { label: "Pueblo", href: "/locations/colorado/pueblo", emoji: "🏭" },
-  { label: "Loveland", href: "/locations/colorado/loveland", emoji: "🏔️" },
-  { label: "Greeley", href: "/locations/colorado/greeley", emoji: "🌾" },
-  { label: "Arvada", href: "/locations/colorado/arvada", emoji: "🏘️" },
-  // — US States —
-  { label: "Alabama", href: "/locations/alabama", emoji: "🌾" },
-  { label: "Alaska", href: "/locations/alaska", emoji: "❄️" },
-  { label: "Arizona", href: "/locations/arizona", emoji: "🌄" },
-  { label: "Arkansas", href: "/locations/arkansas", emoji: "🌲" },
-  { label: "California", href: "/locations/california", emoji: "☀️" },
-  { label: "Colorado", href: "/locations/colorado", emoji: "🏔️" },
-  { label: "Connecticut", href: "/locations/connecticut", emoji: "🏛️" },
-  { label: "Delaware", href: "/locations/delaware", emoji: "🏦" },
-  { label: "Florida", href: "/locations/florida", emoji: "🌴" },
-  { label: "Georgia", href: "/locations/georgia", emoji: "🍑" },
-  { label: "Hawaii", href: "/locations/hawaii", emoji: "🌺" },
-  { label: "Idaho", href: "/locations/idaho", emoji: "🥔" },
-  { label: "Illinois", href: "/locations/illinois", emoji: "🏙️" },
-  { label: "Indiana", href: "/locations/indiana", emoji: "🌽" },
-  { label: "Iowa", href: "/locations/iowa", emoji: "🌾" },
-  { label: "Kansas", href: "/locations/kansas", emoji: "🌾" },
-  { label: "Kentucky", href: "/locations/kentucky", emoji: "🐎" },
-  { label: "Louisiana", href: "/locations/louisiana", emoji: "🎷" },
-  { label: "Maine", href: "/locations/maine", emoji: "🦞" },
-  { label: "Maryland", href: "/locations/maryland", emoji: "🦀" },
-  { label: "Massachusetts", href: "/locations/massachusetts", emoji: "⚓" },
-  { label: "Michigan", href: "/locations/michigan", emoji: "🚗" },
-  { label: "Minnesota", href: "/locations/minnesota", emoji: "🌊" },
-  { label: "Mississippi", href: "/locations/mississippi", emoji: "🎶" },
-  { label: "Missouri", href: "/locations/missouri", emoji: "🌉" },
-  { label: "Montana", href: "/locations/montana", emoji: "🦌" },
-  { label: "Nebraska", href: "/locations/nebraska", emoji: "🌽" },
-  { label: "Nevada", href: "/locations/nevada", emoji: "🎰" },
-  { label: "New Hampshire", href: "/locations/new-hampshire", emoji: "🍂" },
-  { label: "New Jersey", href: "/locations/new-jersey", emoji: "🏙️" },
-  { label: "New Mexico", href: "/locations/new-mexico", emoji: "🌶️" },
-  { label: "New York", href: "/locations/new-york", emoji: "🗽" },
-  { label: "North Carolina", href: "/locations/north-carolina", emoji: "⛰️" },
-  { label: "North Dakota", href: "/locations/north-dakota", emoji: "🌾" },
-  { label: "Ohio", href: "/locations/ohio", emoji: "🌕" },
-  { label: "Oklahoma", href: "/locations/oklahoma", emoji: "🌪️" },
-  { label: "Oregon", href: "/locations/oregon", emoji: "🌿" },
-  { label: "Pennsylvania", href: "/locations/pennsylvania", emoji: "🔔" },
-  { label: "Rhode Island", href: "/locations/rhode-island", emoji: "⚓" },
-  { label: "South Carolina", href: "/locations/south-carolina", emoji: "🌴" },
-  { label: "South Dakota", href: "/locations/south-dakota", emoji: "🗿" },
-  { label: "Tennessee", href: "/locations/tennessee", emoji: "🎸" },
-  { label: "Texas", href: "/locations/texas", emoji: "🌵" },
-  { label: "Utah", href: "/locations/utah", emoji: "🏜️" },
-  { label: "Vermont", href: "/locations/vermont", emoji: "🍁" },
-  { label: "Virginia", href: "/locations/virginia", emoji: "🏛️" },
-  { label: "Washington", href: "/locations/washington", emoji: "🌲" },
-  { label: "West Virginia", href: "/locations/west-virginia", emoji: "⛰️" },
-  { label: "Wisconsin", href: "/locations/wisconsin", emoji: "🧀" },
-  { label: "Wyoming", href: "/locations/wyoming", emoji: "🦬" },
-  // — International —
-  { label: "Europe", href: "/locations/europe", emoji: "🌍" },
-  { label: "Asia-Pacific", href: "/locations/asia", emoji: "🌏" },
-  { label: "United Kingdom", href: "/locations/uk", emoji: "🇬🇧" },
-];
-
 const INDUSTRIES = [
   { label: "Data Centers", href: "/industries/data-centers", emoji: "🖥️", icon: Server, desc: "Amazon YYZ3: 58.69% peak — cooling tower & WUE" },
-  { label: "Hotels & Hospitality", href: "/industries/hotels", emoji: "🏨", icon: Hotel, desc: "Four Seasons $27K/yr — laundry, cooling, LEED" },
+  { label: "Hotels & Hospitality", href: "/industries/hotels", emoji: "🏨", icon: Hotel, desc: "Four Seasons 26% avg — laundry, cooling, LEED" },
   { label: "Car Washes", href: "/industries/car-washes", emoji: "🚗", icon: Car, desc: "Caliber 23% avg across 5 sites — hard water scale" },
   { label: "Multifamily", href: "/industries/multifamily", emoji: "🏢", icon: Home, desc: "Grand Central Tampa $50K/yr — master meter savings" },
   { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥", icon: HeartPulse, desc: "NSF 61 & 372 certified — Legionella & water compliance" },
 ];
-
-const EXPLORE_SECTIONS = [
-  {
-    heading: "Data & Proof",
-    links: [
-      { label: "Case Studies & Proof", href: "/results/", desc: "M&V-verified results from Amazon, Four Seasons & more", icon: FileText },
-      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", desc: "Full product specs, charts & verified performance data", icon: BookOpen },
-    ],
-  },
-  {
-    heading: "Explore",
-    links: [
-      { label: "Locations", href: "/locations/usa", desc: ["US State Coverage", "Installed Worldwide"], icon: MapPin },
-      { label: "Industries", href: "/industries", desc: "Data Centers · Hotels · Hospitals · Car Wash · Multifamily", icon: Building2 },
-      { label: "Live Savings Counter", href: "/impact/", desc: "Real-time cumulative water savings", icon: Zap },
-      { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
-    ],
-  },
-];
-
-const EXPLORE_LINKS = EXPLORE_SECTIONS.flatMap(s => s.links);
-
-const dropdownBase = {
-  background: "rgba(10,15,35,0.97)",
-  border: "1px solid rgba(255,255,255,0.1)",
-  backdropFilter: "blur(20px)",
-};
 
 const DC_LINKS_HUB = [
   { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
@@ -130,16 +33,20 @@ const DC_LINKS_HYPERSCALE = [
   { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs" },
 ];
 
+const dropdownBase = {
+  background: "rgba(10,15,35,0.97)",
+  border: "1px solid rgba(255,255,255,0.1)",
+  backdropFilter: "blur(20px)",
+};
+
 export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {}) {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
-  const exploreRef = useRef<HTMLDivElement>(null);
-  const industriesRef = useRef<HTMLDivElement>(null);
   const [mobileLocOpen, setMobileLocOpen] = useState(false);
   const [mobileIndOpen, setMobileIndOpen] = useState(false);
+  const [mobileExploreOpen, setMobileExploreOpen] = useState(false);
 
   const isDCHub = location === "/industries/data-centers" || location === "/industries/data-centers/";
   const isDCCooling = location.startsWith("/industries/data-centers/cooling-water-costs");
@@ -156,11 +63,9 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (exploreRef.current && !exploreRef.current.contains(e.target as Node)) {
+      const header = document.querySelector("header[data-navbar]");
+      if (header && !header.contains(e.target as Node)) {
         setExploreOpen(false);
-      }
-      if (industriesRef.current && !industriesRef.current.contains(e.target as Node)) {
-        setIndustriesOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
@@ -169,6 +74,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
 
   return (
     <header
+      data-navbar
       className="fixed top-0 w-full z-50 transition-all duration-300"
       style={{
         background: scrolled ? "rgba(6,10,26,0.97)" : "rgba(28,52,66,0.93)",
@@ -207,100 +113,18 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
             </a>
           ))}
 
-          {/* Industries dropdown */}
-          <div className="relative" ref={industriesRef}
-            onMouseEnter={() => setIndustriesOpen(true)}
-            onMouseLeave={() => setIndustriesOpen(false)}>
-            <a href="/industries"
-              className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors">
-              Industries
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${industriesOpen ? "rotate-180" : ""}`} />
-            </a>
-            <AnimatePresence>
-              {industriesOpen && (
-                <motion.div initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6, scale: 0.97 }} transition={{ duration: 0.15 }}
-                  className="absolute left-0 top-full mt-1 rounded-2xl shadow-2xl overflow-hidden" style={{ ...dropdownBase, width: '340px' }}>
-                  <div className="p-3">
-                    <div className="text-[9px] font-bold uppercase tracking-[0.22em] px-1 mb-2" style={{ color: 'rgba(91,191,224,0.55)' }}>Industry Hubs</div>
-                    {INDUSTRIES.map((ind) => {
-                      const Icon = ind.icon;
-                      return (
-                        <a key={ind.href} href={ind.href} onClick={() => setIndustriesOpen(false)}
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
-                          <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                            <Icon className="w-4 h-4" style={{ color: '#5BBFE0' }} />
-                          </div>
-                          <div>
-                            <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{ind.label}</div>
-                            <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{ind.desc}</div>
-                          </div>
-                        </a>
-                      );
-                    })}
-                    <a href="/industries" onClick={() => setIndustriesOpen(false)}
-                      className="flex items-center justify-center gap-1 mt-1 py-2 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
-                      style={{ color: 'rgba(91,191,224,0.7)' }}>
-                      All Industries <ChevronDown className="w-3 h-3 rotate-[-90deg]" />
-                    </a>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Explore dropdown */}
-          <div className="relative" ref={exploreRef}>
-            <button
-              onClick={() => setExploreOpen(!exploreOpen)}
-              className="flex items-center gap-1.5 text-sm font-bold transition-all px-4 py-1.5 rounded-full border"
-              style={{
-                color: '#5BBFE0',
-                borderColor: exploreOpen ? 'rgba(91,191,224,0.7)' : 'rgba(91,191,224,0.45)',
-                background: exploreOpen ? 'rgba(91,191,224,0.16)' : 'rgba(91,191,224,0.08)',
-              }}>
-              Explore
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${exploreOpen ? "rotate-180" : ""}`} />
-            </button>
-            <AnimatePresence>
-              {exploreOpen && (
-                <motion.div initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6, scale: 0.97 }} transition={{ duration: 0.15 }}
-                  className="absolute right-0 top-full mt-3 rounded-2xl shadow-2xl overflow-hidden" style={{ ...dropdownBase, width: '520px' }}
-                  onMouseLeave={() => setExploreOpen(false)}>
-                  <div className="p-4 space-y-3">
-                    {EXPLORE_SECTIONS.map((section) => (
-                      <div key={section.heading}>
-                        <div className="text-[9px] font-bold uppercase tracking-[0.22em] px-1 mb-2" style={{ color: 'rgba(91,191,224,0.55)' }}>
-                          {section.heading}
-                        </div>
-                        <div className="grid grid-cols-2 gap-1">
-                          {section.links.map((link) => {
-                            const Icon = link.icon;
-                            return (
-                              <a key={link.href} href={link.href} onClick={() => setExploreOpen(false)}
-                                className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
-                                <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                                  style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                                  <Icon className="w-4 h-4" style={{ color: '#5BBFE0' }} />
-                                </div>
-                                <div>
-                                  <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{link.label}</div>
-                                  {Array.isArray(link.desc)
-                                    ? <div className="mt-0.5">{link.desc.map((line, li) => <div key={li} className="text-[11px] leading-snug" style={{ color: 'rgba(255,255,255,0.45)' }}>{line}</div>)}</div>
-                                    : <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{link.desc}</div>
-                                  }
-                                </div>
-                              </a>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+          {/* Explore mega-menu trigger */}
+          <button
+            onClick={() => setExploreOpen(!exploreOpen)}
+            className="flex items-center gap-1.5 text-sm font-bold transition-all px-4 py-1.5 rounded-full border"
+            style={{
+              color: '#5BBFE0',
+              borderColor: exploreOpen ? 'rgba(91,191,224,0.7)' : 'rgba(91,191,224,0.45)',
+              background: exploreOpen ? 'rgba(91,191,224,0.16)' : 'rgba(91,191,224,0.08)',
+            }}>
+            Explore
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${exploreOpen ? "rotate-180" : ""}`} />
+          </button>
         </nav>
 
         {/* Desktop right */}
@@ -323,6 +147,136 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
         </button>
       </div>
 
+      {/* FULL-WIDTH MEGA-MENU */}
+      <AnimatePresence>
+        {exploreOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+            className="absolute left-0 right-0 top-full shadow-2xl border-t"
+            style={{ ...dropdownBase, borderColor: 'rgba(255,255,255,0.08)' }}
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-4 gap-8">
+
+              {/* Col 1 — Resources */}
+              <div>
+                <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Resources</div>
+                <div className="flex flex-col gap-2">
+                  {[
+                    { label: "Case Studies & Proof", href: "/results/", desc: "Amazon, Four Seasons, Caliber & more — M&V verified", icon: FileText },
+                    { label: "Smart Valve™ Info Sheet", href: "/infosheet/", desc: "Industry-by-industry data, charts & verified performance", icon: BookOpen },
+                  ].map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <a key={item.href} href={item.href} onClick={() => setExploreOpen(false)}
+                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                          style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                          <Icon className="w-4 h-4" style={{ color: '#5BBFE0' }} />
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{item.label}</div>
+                          <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{item.desc}</div>
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Col 2 — Locations */}
+              <div>
+                <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Locations</div>
+                <div className="flex flex-col gap-1">
+                  {[
+                    { label: "US States", note: "All 50 states" },
+                    { label: "Major Cities", note: "Denver, Miami, Phoenix & more" },
+                    { label: "Canada", note: "Ontario, BC, Alberta & more" },
+                    { label: "International", note: "UK, Europe, Asia-Pacific" },
+                  ].map((item) => (
+                    <a key={item.label} href="/locations/usa" onClick={() => setExploreOpen(false)}
+                      className="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/6 transition-colors group">
+                      <div>
+                        <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{item.label}</div>
+                        <div className="text-[11px]" style={{ color: 'rgba(255,255,255,0.35)' }}>{item.note}</div>
+                      </div>
+                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity" style={{ color: '#5BBFE0' }} />
+                    </a>
+                  ))}
+                  <a href="/locations/usa" onClick={() => setExploreOpen(false)}
+                    className="flex items-center gap-1 mt-2 px-3 py-1.5 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
+                    style={{ color: 'rgba(91,191,224,0.7)' }}>
+                    <MapPin className="w-3 h-3" /> Browse All Locations
+                  </a>
+                </div>
+              </div>
+
+              {/* Col 3 — Industries */}
+              <div>
+                <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Industries</div>
+                <div className="flex flex-col gap-1">
+                  {INDUSTRIES.map((ind) => {
+                    const Icon = ind.icon;
+                    return (
+                      <a key={ind.href} href={ind.href} onClick={() => setExploreOpen(false)}
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/6 transition-colors group">
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                          style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                          <Icon className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{ind.label}</div>
+                          <div className="text-[10px] leading-snug" style={{ color: 'rgba(255,255,255,0.38)' }}>{ind.desc}</div>
+                        </div>
+                      </a>
+                    );
+                  })}
+                  <a href="/industries" onClick={() => setExploreOpen(false)}
+                    className="flex items-center gap-1 mt-2 px-3 py-1.5 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
+                    style={{ color: 'rgba(91,191,224,0.7)' }}>
+                    <Building2 className="w-3 h-3" /> All Industry Hubs
+                  </a>
+                </div>
+              </div>
+
+              {/* Col 4 — Get Started */}
+              <div>
+                <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Get Started</div>
+                <div className="flex flex-col gap-2">
+                  {[
+                    { label: "Live Savings Counter", href: "/impact/", desc: "Real-time cumulative water savings across all sites", icon: Zap },
+                    { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
+                  ].map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <a key={item.href} href={item.href} onClick={() => setExploreOpen(false)}
+                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                          style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                          <Icon className="w-4 h-4" style={{ color: '#5BBFE0' }} />
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{item.label}</div>
+                          <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{item.desc}</div>
+                        </div>
+                      </a>
+                    );
+                  })}
+                  <div className="mt-4 p-3 rounded-xl" style={{ background: 'rgba(3,116,167,0.15)', border: '1px solid rgba(3,116,167,0.3)' }}>
+                    <div className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: 'rgba(91,191,224,0.7)' }}>Speak Directly</div>
+                    <a href="tel:7209373004" className="text-sm font-bold text-white hover:text-sky-300 transition-colors">(720) 937-3004</a>
+                    <div className="text-[10px] mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>info@perfectwatervalve.com</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
@@ -339,25 +293,6 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                   {l.label}
                 </a>
               ))}
-
-              {/* Locations accordion */}
-              <div>
-                <button onClick={() => setMobileLocOpen(!mobileLocOpen)}
-                  className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
-                  <span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Locations</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileLocOpen ? "rotate-180" : ""}`} />
-                </button>
-                {mobileLocOpen && (
-                  <div className="pl-4 py-2 flex flex-col gap-1">
-                    {LOCATIONS.map((loc) => (
-                      <a key={loc.href} href={loc.href} onClick={() => setMenuOpen(false)}
-                        className="flex items-center gap-2 py-1.5 text-white/60 hover:text-white text-sm">
-                        <span>{loc.emoji}</span>{loc.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
 
               {/* Industries accordion */}
               <div>
@@ -378,19 +313,57 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                 )}
               </div>
 
-              {/* Explore links */}
-              <div className="pt-3 pb-1">
-                <div className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-3">Explore</div>
-                {EXPLORE_LINKS.map((link) => {
-                  const Icon = link.icon;
-                  return (
-                    <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-3 py-2.5 text-white/70 hover:text-white transition-colors">
-                      <Icon className="w-4 h-4 shrink-0" style={{ color: '#5BBFE0' }} />
-                      <span className="text-base font-medium">{link.label}</span>
-                    </a>
-                  );
-                })}
+              {/* Locations accordion */}
+              <div>
+                <button onClick={() => setMobileLocOpen(!mobileLocOpen)}
+                  className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
+                  <span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Locations</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileLocOpen ? "rotate-180" : ""}`} />
+                </button>
+                {mobileLocOpen && (
+                  <div className="pl-4 py-2 flex flex-col gap-1">
+                    {[
+                      { label: "US States", note: "All 50 states" },
+                      { label: "Major Cities", note: "Denver, Miami, Phoenix & more" },
+                      { label: "Canada", note: "Ontario, BC, Alberta" },
+                      { label: "International", note: "UK, Europe, Asia-Pacific" },
+                    ].map((item) => (
+                      <a key={item.label} href="/locations/usa" onClick={() => setMenuOpen(false)}
+                        className="flex flex-col py-1.5 text-white/60 hover:text-white text-sm">
+                        <span className="font-medium">{item.label}</span>
+                        <span className="text-xs text-white/35">{item.note}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Explore accordion */}
+              <div>
+                <button onClick={() => setMobileExploreOpen(!mobileExploreOpen)}
+                  className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
+                  <span>Explore</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileExploreOpen ? "rotate-180" : ""}`} />
+                </button>
+                {mobileExploreOpen && (
+                  <div className="pl-4 py-2 flex flex-col gap-1">
+                    {[
+                      { label: "Case Studies & Proof", href: "/results/", icon: FileText },
+                      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: BookOpen },
+                      { label: "Live Savings Counter", href: "/impact/", icon: Zap },
+                      { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}
+                          className="flex items-center gap-2 py-1.5 text-white/60 hover:text-white text-sm">
+                          <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: '#5BBFE0' }} />
+                          {item.label}
+                        </a>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
 
               <a href="/#contact"

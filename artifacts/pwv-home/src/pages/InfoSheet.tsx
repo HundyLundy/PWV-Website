@@ -1,84 +1,76 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Zap, Wrench, CheckCircle2, Phone, Mail, ArrowRight } from "lucide-react";
+import { CheckCircle2, Phone, Mail, ArrowRight, ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  ResponsiveContainer, ReferenceLine, Cell,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer, ReferenceLine, Cell, Legend,
 } from "recharts";
 
-const STATS = [
-  { val: "≥15%", label: "Guaranteed Minimum Savings", desc: "In writing. In your contract." },
-  { val: "58.69%", label: "Peak Verified Savings", desc: "Amazon YYZ3 — independently measured" },
-  { val: "19.2%", label: "Portfolio Average", desc: "Across 32,000+ installations" },
-  { val: "$50K+", label: "Max Annual Savings", desc: "Per location, per year" },
+// ─── DATA ──────────────────────────────────────────────────────────────────
+
+const TOP_STATS = [
+  { val: "≥15%", label: "Guaranteed Minimum", sub: "In writing — in your contract" },
+  { val: "58.69%", label: "Peak Verified Savings", sub: "Amazon YYZ3 — independently measured" },
+  { val: "19.2%", label: "Portfolio Average", sub: "Across documented installations" },
+  { val: "$50K+", label: "Max Annual Savings", sub: "Per location, per year (Grand Central Tampa)" },
 ];
 
-const SPECS = [
-  { label: "Technology Type", value: "Passive hydro-mechanical pressure device" },
-  { label: "Mechanism", value: "Air purge upstream of water meter" },
-  { label: "Electricity Required", value: "None — fully passive" },
-  { label: "Moving Parts", value: "None" },
-  { label: "Maintenance", value: "Zero — no service intervals" },
-  { label: "Installation Time", value: "2–4 hours, no downtime" },
-  { label: "Certifications", value: "NSF 61 · NSF 372 (drinking water safe)" },
-  { label: "Compatible Meters", value: "99% of commercial water meters" },
-  { label: "Guarantee", value: "≥15% metered water reduction in writing" },
-  { label: "M&V Standard", value: "IPMVP Option B (independent)" },
+const AMAZON_QUARTERLY = [
+  { period: "Q3 2024", YYZ3: 58.69, YYZ4: 17.36 },
+  { period: "Q4 2024", YYZ3: 29.27, YYZ4: -14.44 },
+  { period: "Q1 2025", YYZ3: -17, YYZ4: -4 },
+  { period: "Q2 2025", YYZ3: -17, YYZ4: 17 },
+  { period: "Q3 2025", YYZ3: 5, YYZ4: 23 },
+  { period: "Q4 2025", YYZ3: 20, YYZ4: 13 },
 ];
 
-const CLIENTS = [
-  { name: "Amazon YYZ3 & YYZ4", result: "16.5% avg / 58.69% peak", industry: "Logistics" },
-  { name: "Four Seasons Fort Lauderdale", result: "26% avg / 56% peak", industry: "Hospitality" },
-  { name: "St. Regis Toronto", result: "$49,889 CAD / year", industry: "Hospitality" },
-  { name: "Grand Central at Kennedy", result: "23% avg · ~$50K/yr", industry: "Real Estate" },
-  { name: "Houstonian Estates", result: "16% · 6,000 gal/day", industry: "Multifamily" },
-  { name: "Caliber Car Wash (5 sites)", result: "23% weighted avg", industry: "Automotive" },
-  { name: "Forest & Charlton Toronto", result: "17–20% · CA $17,200/yr", industry: "Multifamily" },
+const HOTEL_DATA = [
+  { name: "Four Seasons\nFt Lauderdale\nDaily Avg", pct: 26 },
+  { name: "Four Seasons\nOct Peak", pct: 56 },
+  { name: "St. Regis\nToronto Avg", pct: 20 },
 ];
 
-const QUARTERLY_DATA = [
-  { period: "Q3 2024", yzz3: 50, yzz4: 17 },
-  { period: "Q4 2024", yzz3: 27, yzz4: 18 },
-  { period: "Q1 2025", yzz3: -17, yzz4: -4 },
-  { period: "Q2 2025", yzz3: -17, yzz4: 17 },
-  { period: "Q3 2025", yzz3: 5, yzz4: 23 },
-  { period: "Q4 2025", yzz3: 20, yzz4: 13 },
+const MULTIFAMILY_DATA = [
+  { name: "Grand Central\nTampa", pct: 23 },
+  { name: "Houstonian\nEstates", pct: 16 },
+  { name: "100 Forest Ave\nToronto", pct: 20 },
+  { name: "123 Charlton\nToronto", pct: 17 },
 ];
 
-const INDUSTRY_DATA = [
-  { industry: "Car Wash", avg: 23, icon: "🚗" },
-  { industry: "Hospitality", avg: 22, icon: "🏨" },
-  { industry: "Real Estate", avg: 21, icon: "🏢" },
-  { industry: "Food & Bev", avg: 17, icon: "🍺" },
-  { industry: "Industrial", avg: 17, icon: "🏭" },
-  { industry: "Logistics", avg: 16.5, icon: "📦" },
+const CARWASH_DATA = [
+  { site: "Site 1 (GA)", savings: 24 },
+  { site: "Site 2 (GA)", savings: 23 },
+  { site: "Site 3 (FL)", savings: 23 },
+  { site: "Site 4 (FL)", savings: 22 },
+  { site: "Site 5 (FL)", savings: 21 },
 ];
 
-const COST_MODEL = [
-  { type: "Small Office / Retail", m3: "200 m³/mo", annualMin: "$1,080", annualAvg: "$1,188", payback: "6 mo" },
-  { type: "Hotel / Industrial", m3: "800 m³/mo", annualMin: "$4,320", annualAvg: "$4,752", payback: "5 mo" },
-  { type: "Fulfillment / Warehouse", m3: "3,000 m³/mo", annualMin: "$16,200", annualAvg: "$17,820", payback: "4 mo" },
+const HOSPITAL_DATA = [
+  { period: "Before", cost: 72700 },
+  { period: "After", cost: 57200 },
 ];
 
-const WATER_USAGE = [
-  { period: "Q3 2024", before: 1107, after: 457.3 },
-  { period: "Q4 2024", before: 800, after: 565.6 },
-  { period: "Q1 2025", before: 650, after: 760.5 },
-  { period: "Q2 2025", before: 680, after: 795.6 },
-  { period: "Q3 2025", before: 1050, after: 997.5 },
-  { period: "Q4 2025", before: 820, after: 656 },
+const INDUSTRY_COMPARISON = [
+  { industry: "Car Washes", avg: 23 },
+  { industry: "Hospitality", avg: 22 },
+  { industry: "Multifamily", avg: 21 },
+  { industry: "Food & Bev", avg: 17 },
+  { industry: "Industrial", avg: 17 },
+  { industry: "Logistics / DC", avg: 16.5 },
 ];
 
-function ChartTooltip({ active, payload, label }: any) {
+// ─── SHARED COMPONENTS ─────────────────────────────────────────────────────
+
+function PctTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="rounded-xl p-3 text-sm shadow-xl" style={{ background: '#fff', border: '1px solid #e0e0e0', color: '#1a1a1a' }}>
+    <div className="rounded-xl p-3 text-sm shadow-xl" style={{ background: "#fff", border: "1px solid #e0e0e0", color: "#1a1a1a" }}>
       <div className="font-bold mb-1">{label}</div>
       {payload.map((p: any) => (
         <div key={p.dataKey} className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full" style={{ background: p.fill || p.color }} />
+          <span className="w-2 h-2 rounded-full inline-block" style={{ background: p.fill || p.color }} />
           <span>{p.name}: <strong>{p.value}%</strong></span>
         </div>
       ))}
@@ -86,32 +78,81 @@ function ChartTooltip({ active, payload, label }: any) {
   );
 }
 
+function StatCard({ value, label, sub }: { value: string; label: string; sub: string }) {
+  return (
+    <div className="rounded-2xl p-6 text-center border border-slate-100 shadow-sm bg-white">
+      <div className="text-4xl font-bold mb-1" style={{ color: "#0374A7" }}>{value}</div>
+      <div className="font-semibold text-sm mb-1" style={{ color: "#0A1F3A" }}>{label}</div>
+      <div className="text-xs" style={{ color: "#4A7085" }}>{sub}</div>
+    </div>
+  );
+}
+
+function IndustrySectionHeader({ label, href, subtitle }: { label: string; href: string; subtitle: string }) {
+  return (
+    <div className="flex flex-col sm:flex-row sm:items-end gap-3 mb-8">
+      <div>
+        <a href={href}
+          className="inline-flex items-center gap-2 text-2xl sm:text-3xl font-bold hover:underline underline-offset-4 transition-colors group"
+          style={{ color: "#0374A7" }}>
+          {label}
+          <ExternalLink className="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
+        </a>
+        <p className="text-sm mt-1" style={{ color: "#4A7085" }}>{subtitle}</p>
+      </div>
+    </div>
+  );
+}
+
+function DataRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-center gap-2 py-2 border-b border-slate-100 last:border-0">
+      <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: "#059669" }} />
+      <span className="text-sm font-semibold w-48 shrink-0" style={{ color: "#0374A7" }}>{label}</span>
+      <span className="text-sm font-bold" style={{ color: "#0A1F3A" }}>{value}</span>
+    </div>
+  );
+}
+
+function ChartCard({ title, caption, children }: { title: string; caption?: string; children: React.ReactNode }) {
+  return (
+    <div className="rounded-2xl p-5 border border-slate-200 bg-white shadow-sm">
+      <div className="text-sm font-bold mb-4" style={{ color: "#0A1F3A" }}>{title}</div>
+      {children}
+      {caption && (
+        <p className="text-[10px] text-center mt-3 uppercase tracking-widest" style={{ color: "#4A7085" }}>{caption}</p>
+      )}
+    </div>
+  );
+}
+
+// ─── MAIN ──────────────────────────────────────────────────────────────────
+
 export default function InfoSheet() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <Navbar />
 
       {/* HERO */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 text-center" style={{ background: '#E8EFF7' }}>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-4xl mx-auto">
-          <div className="flex justify-center mb-6">
-            <img src={logoSrc} alt="Perfect Water Valve" className="w-16 h-16 object-contain" />
+      <section className="pt-32 pb-14 px-4 sm:px-6 lg:px-8 text-center" style={{ background: "#E8EFF7" }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto">
+          <div className="flex justify-center mb-5">
+            <img src={logoSrc} alt="Perfect Water Valve" className="w-12 h-12 object-contain" />
           </div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/30 text-xs font-bold uppercase tracking-widest mb-6" style={{ color: '#0374A7' }}>
-            Smart Valve™ Product Information Sheet
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/30 text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#0374A7" }}>
+            Smart Valve™ Industry Performance Data
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight" style={{ color: '#0A1F3A' }}>
-            Perfect Water Valve<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">Smart Valve™</span>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-3 leading-tight" style={{ color: "#0A1F3A" }}>
+            Industry-by-Industry Results
           </h1>
-          <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: '#2E4A5A' }}>
-            A passive commercial water pressure device that eliminates air entrapment in municipal supply lines — reducing metered water billing by 15% to 58%, guaranteed in writing.
+          <p className="text-base max-w-xl mx-auto mb-7" style={{ color: "#2E4A5A" }}>
+            Verified field data organized by sector. Click any industry heading to view the full hub page.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="tel:7209373004" className="flex items-center gap-2 px-6 py-3 rounded-full text-white font-bold text-sm shadow" style={{ background: '#0374A7' }}>
+            <a href="tel:7209373004" className="flex items-center gap-2 px-5 py-2.5 rounded-full text-white font-bold text-sm shadow" style={{ background: "#0374A7" }}>
               <Phone className="w-4 h-4" /> (720) 937-3004
             </a>
-            <a href="mailto:info@perfectwatervalve.com" className="flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm border-2" style={{ borderColor: '#0374A7', color: '#0374A7' }}>
+            <a href="mailto:info@perfectwatervalve.com" className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm border-2" style={{ borderColor: "#0374A7", color: "#0374A7" }}>
               <Mail className="w-4 h-4" /> info@perfectwatervalve.com
             </a>
           </div>
@@ -119,254 +160,372 @@ export default function InfoSheet() {
       </section>
 
       {/* KEY STATS */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+      <section className="py-14 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: '#0A1F3A' }}>Verified Performance Numbers</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {STATS.map((s, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                className="rounded-2xl p-6 text-center border border-slate-100 shadow-sm">
-                <div className="text-4xl font-bold mb-1" style={{ color: '#0374A7' }}>{s.val}</div>
-                <div className="font-semibold text-sm mb-1" style={{ color: '#0A1F3A' }}>{s.label}</div>
-                <div className="text-xs" style={{ color: '#4A7085' }}>{s.desc}</div>
+          <h2 className="text-xl font-bold text-center mb-8" style={{ color: "#0A1F3A" }}>Portfolio-Wide Performance Numbers</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {TOP_STATS.map((s, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}>
+                <StatCard value={s.val} label={s.label} sub={s.sub} />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100" style={{ background: '#E8EFF7' }}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: '#0A1F3A' }}>How It Works</h2>
-          <p className="text-center mb-10 max-w-2xl mx-auto" style={{ color: '#2E4A5A' }}>
-            Air bubbles dissolved in pressurized municipal supply lines travel through your pipes and register as volume on your water meter. You pay for every cubic foot — including the ones that were never liquid. The Smart Valve™ installs upstream of your meter and mechanically purges that air before it's counted.
-          </p>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { icon: Zap, title: "No Electricity", desc: "Fully passive — no power source, no wiring, no control system" },
-              { icon: Wrench, title: "No Moving Parts", desc: "Nothing to wear out, replace, or maintain — ever" },
-              { icon: ShieldCheck, title: "NSF 61 & 372 Certified", desc: "Drinking water safe. Approved for all commercial and healthcare use" },
-            ].map((item, i) => (
-              <div key={i} className="rounded-2xl p-6 border border-slate-200 bg-white">
-                <item.icon className="w-8 h-8 mb-3" style={{ color: '#0374A7' }} />
-                <h3 className="font-bold mb-2" style={{ color: '#0A1F3A' }}>{item.title}</h3>
-                <p className="text-sm" style={{ color: '#2E4A5A' }}>{item.desc}</p>
-              </div>
-            ))}
+      {/* ── DATA CENTERS ─────────────────────────────────────────────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100" style={{ background: "#F7FAFD" }}>
+        <div className="max-w-6xl mx-auto">
+          <IndustrySectionHeader
+            label="Data Centers"
+            href="/industries/data-centers"
+            subtitle="Amazon YYZ3 & YYZ4 · Brampton, Ontario · Installed June 2024 · IPMVP Option B"
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>58.69%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>YYZ3 Peak (Q3 2024 YOY)</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>16.5%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Normalized Portfolio Avg</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>6</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Consecutive M&V Quarters</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>2</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Independent M&V Methodologies</div>
+            </div>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-6">
+            <ChartCard
+              title="Quarterly Savings % — YYZ3 vs YYZ4"
+              caption="Blue = YYZ3 · Teal = YYZ4 · Red = below-baseline quarters · Green dashed = ≥15% guarantee"
+            >
+              <ResponsiveContainer width="100%" height={250}>
+                <BarChart data={AMAZON_QUARTERLY} margin={{ top: 8, right: 20, left: 0, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="period" tick={{ fontSize: 10, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 10, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[-25, 65]} />
+                  <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" label={{ value: "≥15%", position: "insideTopRight", fontSize: 9, fill: "#059669" }} />
+                  <ReferenceLine y={0} stroke="#cbd5e1" />
+                  <Tooltip content={<PctTooltip />} />
+                  <Legend wrapperStyle={{ fontSize: 10 }} />
+                  <Bar dataKey="YYZ3" name="YYZ3" radius={[3, 3, 0, 0]}>
+                    {AMAZON_QUARTERLY.map((e, i) => <Cell key={i} fill={e.YYZ3 >= 0 ? "#0374A7" : "#ef4444"} />)}
+                  </Bar>
+                  <Bar dataKey="YYZ4" name="YYZ4" radius={[3, 3, 0, 0]}>
+                    {AMAZON_QUARTERLY.map((e, i) => <Cell key={i} fill={e.YYZ4 >= 0 ? "#3C6E7F" : "#fca5a5"} />)}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+            <div className="rounded-2xl p-5 bg-white border border-slate-200">
+              <div className="text-sm font-bold mb-3" style={{ color: "#0A1F3A" }}>Verified Data Points</div>
+              <DataRow label="Peak reduction" value="58.69% — YYZ3, Q3 2024 (YOY)" />
+              <DataRow label="Avg all quarters" value="16.5% per-employee normalized" />
+              <DataRow label="M&V standard" value="IPMVP Option B (Retrofit Isolation)" />
+              <DataRow label="Monitoring period" value="Q3 2024 — Q4 2025 (6 quarters)" />
+              <DataRow label="Negative quarters" value="Seasonal baseline shift — not valve failure" />
+              <DataRow label="PDF available" value="Yes — formal report on request" />
+              <a href="/industries/data-centers" className="inline-flex items-center gap-1 mt-4 text-sm font-bold hover:underline" style={{ color: "#0374A7" }}>
+                Data Centers hub page <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* TECHNICAL SPECS */}
+      {/* ── HOTELS & HOSPITALITY ─────────────────────────────────────────── */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: '#0A1F3A' }}>Technical Specifications</h2>
-          <div className="rounded-2xl overflow-hidden border border-slate-200">
-            {SPECS.map((s, i) => (
-              <div key={i} className={`flex gap-4 px-6 py-4 ${i % 2 === 0 ? 'bg-white' : 'bg-slate-50/60'} border-b border-slate-100 last:border-0`}>
-                <span className="text-sm font-semibold w-44 shrink-0" style={{ color: '#0374A7' }}>{s.label}</span>
-                <span className="text-sm" style={{ color: '#0A1F3A' }}>{s.value}</span>
-              </div>
-            ))}
+        <div className="max-w-6xl mx-auto">
+          <IndustrySectionHeader
+            label="Hotels & Hospitality"
+            href="/industries/hotels"
+            subtitle="Four Seasons Fort Lauderdale · St. Regis Toronto · Marriott-approved installation"
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>26%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Four Seasons Daily Avg</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>56%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Four Seasons Oct Peak</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>$49,889</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>St. Regis Annual (CAD)</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>20%+</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>St. Regis Reduction</div>
+            </div>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-6">
+            <ChartCard
+              title="Reduction % — Four Seasons Ft Lauderdale & St. Regis Toronto"
+              caption="Four Seasons: third-party M&V Dec 2025 · St. Regis: chief engineer confirmed"
+            >
+              <ResponsiveContainer width="100%" height={220}>
+                <BarChart data={HOTEL_DATA} margin={{ top: 8, right: 40, left: 0, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="name" tick={{ fontSize: 10, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 10, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[0, 65]} />
+                  <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" />
+                  <Tooltip content={<PctTooltip />} />
+                  <Bar dataKey="pct" name="Reduction %" radius={[5, 5, 0, 0]} label={{ position: "top", formatter: (v: number) => `${v}%`, fontSize: 12, fill: "#0374A7", fontWeight: 700 }}>
+                    {HOTEL_DATA.map((_, i) => <Cell key={i} fill={["#0374A7", "#3C6E7F", "#5BBFE0"][i % 3]} />)}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+            <div className="rounded-2xl p-5 bg-white border border-slate-200">
+              <div className="text-sm font-bold mb-3" style={{ color: "#0A1F3A" }}>Verified Data Points</div>
+              <DataRow label="Four Seasons avg" value="26% daily reduction" />
+              <DataRow label="Four Seasons peak" value="56% (October 2025)" />
+              <DataRow label="Four Seasons savings" value="~$27,000/yr (USD)" />
+              <DataRow label="St. Regis annual" value="$49,889 CAD saved" />
+              <DataRow label="St. Regis reduction" value="20%+ YOY" />
+              <DataRow label="Installation time" value="Under 1 hour (Marriott-approved)" />
+              <a href="/industries/hotels" className="inline-flex items-center gap-1 mt-4 text-sm font-bold hover:underline" style={{ color: "#0374A7" }}>
+                Hotels & Hospitality hub <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* AMAZON QUARTERLY SAVINGS CHART */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100" style={{ background: '#E8EFF7' }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0374A7' }}>Amazon Case Study — 6 Quarters of Data</p>
-            <h2 className="text-2xl font-bold mb-3" style={{ color: '#0A1F3A' }}>Quarterly Water Savings (%)</h2>
-            <p className="text-sm max-w-xl mx-auto" style={{ color: '#2E4A5A' }}>
-              Independent M&V data collected at Amazon YYZ3 and YYZ4 fulfillment centers in Brampton, Ontario. Smart Valve™ installed June 2024. Negative quarters reflect seasonal baseline shifts in Amazon's operations.
-            </p>
+      {/* ── MULTIFAMILY ──────────────────────────────────────────────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100" style={{ background: "#F7FAFD" }}>
+        <div className="max-w-6xl mx-auto">
+          <IndustrySectionHeader
+            label="Multifamily"
+            href="/industries/multifamily"
+            subtitle="Grand Central Tampa · Houstonian Estates · Forest & Charlton (Toronto) · IPMVP Option B"
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>$50K/yr</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Grand Central Tampa</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>17–20%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Forest & Charlton (Toronto)</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>CA $17,200</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Forest & Charlton Annual</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>p&lt;0.01</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Statistical Significance</div>
+            </div>
           </div>
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={QUARTERLY_DATA} margin={{ top: 8, right: 24, left: 0, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis dataKey="period" tick={{ fontSize: 11, fill: '#4A7085' }} />
-                <YAxis tick={{ fontSize: 11, fill: '#4A7085' }} tickFormatter={(v) => `${v}%`} domain={[-25, 60]} />
-                <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" label={{ value: "≥15% guarantee", position: "right", fontSize: 10, fill: '#059669' }} />
-                <ReferenceLine y={0} stroke="#cbd5e1" />
-                <Tooltip content={<ChartTooltip />} />
-                <Legend wrapperStyle={{ fontSize: 12 }} />
-                <Bar dataKey="yzz3" name="YYZ3" radius={[4, 4, 0, 0]}>
-                  {QUARTERLY_DATA.map((entry, index) => (
-                    <Cell key={index} fill={entry.yzz3 >= 0 ? '#0374A7' : '#ef4444'} />
-                  ))}
-                </Bar>
-                <Bar dataKey="yzz4" name="YYZ4" radius={[4, 4, 0, 0]}>
-                  {QUARTERLY_DATA.map((entry, index) => (
-                    <Cell key={index} fill={entry.yzz4 >= 0 ? '#3C6E7F' : '#fca5a5'} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-            <p className="text-[10px] text-center mt-3 uppercase tracking-widest" style={{ color: '#4A7085' }}>
-              Source: Independent IPMVP Option B measurement &amp; verification · Blue = YYZ3 savings · Teal = YYZ4 savings · Red = below baseline quarter
-            </p>
+          <div className="grid lg:grid-cols-2 gap-6">
+            <ChartCard
+              title="Savings % by Property"
+              caption="Grand Central & Houstonian: self-reported · Forest & Charlton: IPMVP Option B, 95% confidence"
+            >
+              <ResponsiveContainer width="100%" height={230}>
+                <BarChart data={MULTIFAMILY_DATA} margin={{ top: 8, right: 40, left: 0, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="name" tick={{ fontSize: 9, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 10, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[0, 30]} />
+                  <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" />
+                  <Tooltip content={<PctTooltip />} />
+                  <Bar dataKey="pct" name="Reduction %" fill="#0374A7" radius={[5, 5, 0, 0]} label={{ position: "top", formatter: (v: number) => `${v}%`, fontSize: 12, fill: "#0374A7", fontWeight: 700 }} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+            <div className="rounded-2xl p-5 bg-white border border-slate-200">
+              <div className="text-sm font-bold mb-3" style={{ color: "#0A1F3A" }}>Verified Data Points</div>
+              <DataRow label="Grand Central Tampa" value="23% avg · $50K/yr · 2 yrs" />
+              <DataRow label="Houstonian Estates" value="16% · 6,000 gal/day saved" />
+              <DataRow label="100 Forest Ave (TO)" value="20.0% · p&lt;0.01 · IPMVP" />
+              <DataRow label="123 Charlton Ave (TO)" value="17.0% · p&lt;0.01 · IPMVP" />
+              <DataRow label="Combined annual" value="CA $17,200 (Forest & Charlton)" />
+              <DataRow label="Simple payback" value="Under 3 years (Forest & Charlton)" />
+              <a href="/industries/multifamily" className="inline-flex items-center gap-1 mt-4 text-sm font-bold hover:underline" style={{ color: "#0374A7" }}>
+                Multifamily hub <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* WATER VOLUME CHART */}
+      {/* ── CAR WASHES ───────────────────────────────────────────────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+        <div className="max-w-6xl mx-auto">
+          <IndustrySectionHeader
+            label="Car Washes"
+            href="/industries/car-washes"
+            subtitle="Caliber Car Wash — 5 sites in Georgia & Florida · Independent M&V · 3+ quarters"
+          />
+          <div className="grid sm:grid-cols-3 gap-3 mb-8">
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>23%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Weighted Average (5 sites)</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>5</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Independently Verified Sites</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>&gt;20%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Minimum at Any Single Site</div>
+            </div>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-6">
+            <ChartCard
+              title="Savings % per Site — Caliber Car Wash Portfolio"
+              caption="Independent M&V at each location · Georgia (Sites 1–2) · Florida (Sites 3–5)"
+            >
+              <ResponsiveContainer width="100%" height={220}>
+                <BarChart data={CARWASH_DATA} margin={{ top: 8, right: 40, left: 0, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="site" tick={{ fontSize: 10, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 10, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[0, 30]} />
+                  <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" />
+                  <Tooltip content={<PctTooltip />} />
+                  <Bar dataKey="savings" name="Savings %" fill="#0374A7" radius={[5, 5, 0, 0]} label={{ position: "top", formatter: (v: number) => `${v}%`, fontSize: 12, fill: "#0374A7", fontWeight: 700 }} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+            <div className="rounded-2xl p-5 bg-white border border-slate-200">
+              <div className="text-sm font-bold mb-3" style={{ color: "#0A1F3A" }}>Verified Data Points</div>
+              <DataRow label="Weighted avg" value="23% across all 5 sites" />
+              <DataRow label="Monitoring period" value="3+ consecutive quarters" />
+              <DataRow label="Range" value="21%–24% (no site below 20%)" />
+              <DataRow label="Site geography" value="2 Georgia · 3 Florida" />
+              <DataRow label="Secondary benefit" value="Hard water scale reduction at all sites" />
+              <DataRow label="M&V PDF" value="Available on request" />
+              <a href="/industries/car-washes" className="inline-flex items-center gap-1 mt-4 text-sm font-bold hover:underline" style={{ color: "#0374A7" }}>
+                Car Washes hub <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOSPITALS & HEALTHCARE ───────────────────────────────────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100" style={{ background: "#F7FAFD" }}>
+        <div className="max-w-6xl mx-auto">
+          <IndustrySectionHeader
+            label="Hospitals & Healthcare"
+            href="/industries/hospitals"
+            subtitle="RWJ Barnabas Ambulatory Care · Livingston, NJ · Installed December 2016 · NSF 61 & 372"
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>$15,500</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Annual Cost Savings</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>19%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Total Metered Reduction</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>1.53M</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Gallons Saved Per Year</div>
+            </div>
+            <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>&lt;6 mo</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Simple Payback Period</div>
+            </div>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-6">
+            <ChartCard
+              title="Annual Water Cost — Before vs After (RWJ Barnabas)"
+              caption="$72,700 → $57,200 per year · Confirmed by Facility Engineer J. Flanagan"
+            >
+              <ResponsiveContainer width="100%" height={200}>
+                <BarChart data={HOSPITAL_DATA} margin={{ top: 8, right: 40, left: 20, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="period" tick={{ fontSize: 12, fill: "#4A7085" }} />
+                  <YAxis tick={{ fontSize: 10, fill: "#4A7085" }} tickFormatter={(v) => `$${(v / 1000).toFixed(0)}K`} domain={[0, 90000]} />
+                  <Tooltip content={({ active, payload, label }: any) => {
+                    if (!active || !payload?.length) return null;
+                    return (
+                      <div className="rounded-xl p-3 text-sm shadow-xl" style={{ background: "#fff", border: "1px solid #e0e0e0" }}>
+                        <div className="font-bold mb-1">{label}</div>
+                        <div style={{ color: "#0374A7" }}>Annual cost: <strong>${payload[0].value?.toLocaleString()}</strong></div>
+                      </div>
+                    );
+                  }} />
+                  <Bar dataKey="cost" name="Annual Cost ($)" radius={[6, 6, 0, 0]} label={{ position: "top", formatter: (v: number) => `$${(v / 1000).toFixed(1)}K`, fontSize: 13, fontWeight: 700, fill: "#0A1F3A" }}>
+                    {HOSPITAL_DATA.map((_, i) => <Cell key={i} fill={i === 0 ? "#94a3b8" : "#0374A7"} />)}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+            <div className="rounded-2xl p-5 bg-white border border-slate-200">
+              <div className="text-sm font-bold mb-3" style={{ color: "#0A1F3A" }}>Verified Data Points</div>
+              <DataRow label="Annual cost before" value="$72,700" />
+              <DataRow label="Annual cost after" value="$57,200 (-$15,500)" />
+              <DataRow label="Volume reduction" value="19% metered" />
+              <DataRow label="Gallons saved" value="1,533,000 per year" />
+              <DataRow label="Payback period" value="Under 6 months" />
+              <DataRow label="Certifications" value="NSF 61 · NSF 372 (drinking water safe)" />
+              <DataRow label="Compliance" value="ASHRAE 188/514 · Joint Commission ready" />
+              <a href="/industries/hospitals" className="inline-flex items-center gap-1 mt-4 text-sm font-bold hover:underline" style={{ color: "#0374A7" }}>
+                Hospitals & Healthcare hub <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CROSS-INDUSTRY COMPARISON CHART */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0374A7' }}>Amazon YYZ3 — Water Volume</p>
-            <h2 className="text-2xl font-bold mb-3" style={{ color: '#0A1F3A' }}>Monthly Water Consumption (m³) — Before vs After</h2>
-            <p className="text-sm max-w-xl mx-auto" style={{ color: '#2E4A5A' }}>
-              Peak performance in Q3 2024: 1,107 m³ before installation vs 457 m³ after — a 58.69% reduction in a single quarter.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={WATER_USAGE} margin={{ top: 8, right: 24, left: 0, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis dataKey="period" tick={{ fontSize: 11, fill: '#4A7085' }} />
-                <YAxis tick={{ fontSize: 11, fill: '#4A7085' }} tickFormatter={(v) => `${v}m³`} />
-                <Tooltip content={({ active, payload, label }) => {
-                  if (!active || !payload?.length) return null;
-                  const b = payload.find((p: any) => p.dataKey === 'before')?.value ?? 0;
-                  const a = payload.find((p: any) => p.dataKey === 'after')?.value ?? 0;
-                  const pct = b > 0 ? (((b - a) / b) * 100).toFixed(1) : '0';
-                  return (
-                    <div className="rounded-xl p-3 text-sm shadow-xl" style={{ background: '#fff', border: '1px solid #e0e0e0', color: '#1a1a1a' }}>
-                      <div className="font-bold mb-1">{label}</div>
-                      <div>Before: <strong>{b} m³</strong></div>
-                      <div>After: <strong>{a} m³</strong></div>
-                      <div style={{ color: Number(pct) >= 0 ? '#059669' : '#ef4444' }}>Savings: <strong>{pct}%</strong></div>
-                    </div>
-                  );
-                }} />
-                <Legend wrapperStyle={{ fontSize: 12 }} />
-                <Bar dataKey="before" name="Before Smart Valve™" fill="#94a3b8" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="after" name="After Smart Valve™" fill="#0374A7" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </section>
-
-      {/* INDUSTRY COMPARISON */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100" style={{ background: '#E8EFF7' }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0374A7' }}>Cross-Industry Portfolio Analysis</p>
-            <h2 className="text-2xl font-bold mb-3" style={{ color: '#0A1F3A' }}>Average Savings by Industry (%)</h2>
-            <p className="text-sm max-w-xl mx-auto" style={{ color: '#2E4A5A' }}>
-              All figures represent independently measured and verified savings rates across 32,000+ Smart Valve™ installations globally.
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#0374A7" }}>Cross-Industry Portfolio</p>
+            <h2 className="text-2xl font-bold mb-2" style={{ color: "#0A1F3A" }}>Average Savings by Industry (%)</h2>
+            <p className="text-sm max-w-xl mx-auto" style={{ color: "#2E4A5A" }}>
+              Average independently verified savings rates across all documented Smart Valve™ installations.
             </p>
           </div>
           <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
             <ResponsiveContainer width="100%" height={280}>
-              <BarChart data={INDUSTRY_DATA} layout="vertical" margin={{ top: 0, right: 60, left: 20, bottom: 0 }}>
+              <BarChart data={INDUSTRY_COMPARISON} layout="vertical" margin={{ top: 0, right: 70, left: 20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" horizontal={false} />
-                <XAxis type="number" tick={{ fontSize: 11, fill: '#4A7085' }} tickFormatter={(v) => `${v}%`} domain={[0, 30]} />
-                <YAxis type="category" dataKey="industry" tick={{ fontSize: 12, fill: '#0A1F3A', fontWeight: 600 }} width={120} />
-                <ReferenceLine x={15} stroke="#059669" strokeDasharray="4 4" label={{ value: "≥15%", position: "top", fontSize: 9, fill: '#059669' }} />
-                <Tooltip content={({ active, payload, label }) => {
+                <XAxis type="number" tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[0, 30]} />
+                <YAxis type="category" dataKey="industry" tick={{ fontSize: 12, fill: "#0A1F3A", fontWeight: 600 }} width={130} />
+                <ReferenceLine x={15} stroke="#059669" strokeDasharray="4 4" label={{ value: "≥15%", position: "top", fontSize: 9, fill: "#059669" }} />
+                <Tooltip content={({ active, payload, label }: any) => {
                   if (!active || !payload?.length) return null;
                   return (
-                    <div className="rounded-xl p-3 text-sm shadow-xl" style={{ background: '#fff', border: '1px solid #e0e0e0' }}>
+                    <div className="rounded-xl p-3 text-sm shadow-xl" style={{ background: "#fff", border: "1px solid #e0e0e0" }}>
                       <div className="font-bold mb-1">{label}</div>
-                      <div style={{ color: '#0374A7' }}>Avg savings: <strong>{payload[0].value}%</strong></div>
+                      <div style={{ color: "#0374A7" }}>Avg savings: <strong>{payload[0].value}%</strong></div>
                     </div>
                   );
                 }} />
-                <Bar dataKey="avg" name="Avg Savings %" fill="#0374A7" radius={[0, 4, 4, 0]} label={{ position: 'right', formatter: (v: number) => `${v}%`, fontSize: 12, fill: '#0374A7', fontWeight: 700 }} />
+                <Bar dataKey="avg" name="Avg Savings %" fill="#0374A7" radius={[0, 5, 5, 0]} label={{ position: "right", formatter: (v: number) => `${v}%`, fontSize: 12, fill: "#0374A7", fontWeight: 700 }} />
               </BarChart>
             </ResponsiveContainer>
           </div>
-        </div>
-      </section>
-
-      {/* COST SAVINGS MODEL */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0374A7' }}>ROI Model</p>
-            <h2 className="text-2xl font-bold mb-3" style={{ color: '#0A1F3A' }}>Projected Annual Savings by Facility Type</h2>
-            <p className="text-sm max-w-xl mx-auto" style={{ color: '#2E4A5A' }}>
-              Based on $3.00/m³ blended water rate (USD). Actual savings depend on local utility rates. Payback period is typically 4–6 months.
-            </p>
-          </div>
-          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
-            <div className="grid grid-cols-5 px-6 py-3 text-xs font-bold uppercase tracking-wider" style={{ background: '#0374A7', color: '#fff' }}>
-              <div className="col-span-2">Facility Type</div>
-              <div className="text-right">Monthly Volume</div>
-              <div className="text-right">At ≥15% (min)</div>
-              <div className="text-right">At 19.2% (avg)</div>
-            </div>
-            {COST_MODEL.map((row, i) => (
-              <div key={i} className={`grid grid-cols-5 px-6 py-4 border-b border-slate-100 last:border-0 ${i % 2 === 0 ? 'bg-white' : 'bg-slate-50/60'}`}>
-                <div className="col-span-2 font-semibold text-sm" style={{ color: '#0A1F3A' }}>
-                  {row.type}
-                  <span className="ml-2 text-xs font-normal px-1.5 py-0.5 rounded" style={{ background: '#D1FAE5', color: '#065F46' }}>{row.payback} payback</span>
-                </div>
-                <div className="text-right text-sm" style={{ color: '#4A7085' }}>{row.m3}</div>
-                <div className="text-right text-sm font-semibold" style={{ color: '#0374A7' }}>{row.annualMin}/yr</div>
-                <div className="text-right text-sm font-bold" style={{ color: '#059669' }}>{row.annualAvg}/yr</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* VERIFIED CLIENT RESULTS */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100" style={{ background: '#E8EFF7' }}>
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-3" style={{ color: '#0A1F3A' }}>Verified Client Results</h2>
-          <p className="text-center text-sm mb-10" style={{ color: '#4A7085' }}>All results independently verified via IPMVP Option B measurement & verification</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {CLIENTS.map((c, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-                className="rounded-xl p-5 border border-slate-200 shadow-sm bg-white">
-                <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#0374A7' }}>{c.industry}</div>
-                <div className="font-bold text-sm mb-2" style={{ color: '#0A1F3A' }}>{c.name}</div>
-                <div className="flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: '#059669' }} />
-                  <span className="text-sm font-semibold" style={{ color: '#059669' }}>{c.result}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* THE GUARANTEE */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 text-white text-center" style={{ background: 'linear-gradient(135deg, #0A1F3A, #0374A7)' }}>
-        <div className="max-w-3xl mx-auto">
-          <ShieldCheck className="w-16 h-16 mx-auto mb-6 opacity-90" />
-          <h2 className="text-3xl font-bold mb-4">≥15% — In Writing. In Your Contract.</h2>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Every Smart Valve™ installation includes a legally binding guarantee: if your facility does not achieve at least 15% reduction in metered water consumption, we remove the valve at no cost to you. No fine print. No conditions. No risk.
+          <p className="text-[10px] text-center mt-3 uppercase tracking-widest" style={{ color: "#4A7085" }}>
+            Figures represent verified averages across documented installations · ≥15% is the contractual floor for all installations
           </p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-14 px-6 text-center" style={{ background: "linear-gradient(135deg, #0A1F3A, #0374A7)" }}>
+        <div className="max-w-2xl mx-auto text-white">
+          <h2 className="text-2xl font-bold mb-3">Get a Site-Specific Proposal</h2>
+          <p className="text-white/80 mb-7 text-sm">ROI calculator + projected savings by facility type. No commitment required.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="/savings/" className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-slate-900 bg-white hover:-translate-y-0.5 transition-all">
+            <a href="/savings/" className="flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-slate-900 bg-white hover:-translate-y-0.5 transition-all text-sm">
               Get a Full Proposal <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="tel:7209373004" className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white border-2 border-white/40 hover:border-white transition-all">
-              <Phone className="w-4 h-4" /> (720) 937-3004
+            <a href="/results/" className="flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-white border-2 border-white/40 hover:border-white transition-all text-sm">
+              View All Case Studies
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* PARTNERS */}
-      <section className="py-10 px-4 border-b border-slate-100 text-center" style={{ background: '#E8EFF7' }}>
-        <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#4A7085' }}>Distributed Through</p>
-        <div className="flex flex-wrap gap-8 justify-center">
-          <div>
-            <div className="font-bold text-base" style={{ color: '#0A1F3A' }}>AWS</div>
-            <div className="text-xs" style={{ color: '#4A7085' }}>American Water Savings</div>
-          </div>
-          <div>
-            <div className="font-bold text-base" style={{ color: '#0A1F3A' }}>CWS</div>
-            <div className="text-xs" style={{ color: '#4A7085' }}>Canadian Water Savings</div>
           </div>
         </div>
       </section>

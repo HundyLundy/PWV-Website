@@ -404,25 +404,29 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
         </div>
       </section>
 
-      {/* INDUSTRY CROSS-LINKS */}
-      {config.industryLinks && config.industryLinks.length > 0 && (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-8">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-2 block" style={{ color: "#0374A7" }}>By Industry</span>
-              <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Water Savings for {config.state} Industries</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {config.industryLinks.map((link, i) => (
-                <a key={i} href={link.href} className="bg-white rounded-xl p-5 border hover:shadow-md transition-all group" style={{ borderColor: "#D5E3EE" }}>
-                  <div className="font-bold mb-1 group-hover:underline" style={{ color: "#0374A7" }}>{link.label}</div>
-                  <div className="text-sm" style={{ color: "#4A7085" }}>{link.desc}</div>
-                </a>
-              ))}
-            </div>
+      {/* IMPACTED INDUSTRIES */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-2 block" style={{ color: "#0374A7" }}>By Industry</span>
+            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Impacted Industries in {config.state}</h2>
           </div>
-        </section>
-      )}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { label: "Data Centers", href: "/industries/data-centers", desc: "Cooling tower & WUE optimization — Amazon YYZ3: 58.69% peak reduction" },
+              { label: "Hotels & Hospitality", href: "/industries/hotels", desc: "Laundry, cooling towers & LEED certification — Four Seasons: 26% avg" },
+              { label: "Car Washes", href: "/industries/car-washes", desc: "Hard water scale & equipment protection — Caliber: 23% across 5 sites" },
+              { label: "Multifamily", href: "/industries/multifamily", desc: "Master meter savings & irrigation — Grand Central Tampa: $50K/yr" },
+              { label: "Hospitals & Healthcare", href: "/industries/hospitals", desc: "NSF 61 & 372 certified — Legionella risk & sterile water compliance" },
+            ].map((link, i) => (
+              <a key={i} href={link.href} className="bg-white rounded-xl p-5 border hover:shadow-md transition-all group" style={{ borderColor: "#D5E3EE" }}>
+                <div className="font-bold mb-1 group-hover:underline" style={{ color: "#0374A7" }}>{link.label}</div>
+                <div className="text-sm" style={{ color: "#4A7085" }}>{link.desc}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* RELATED LOCATIONS
            Rule: Only render this section when config.alsoServing is defined.
