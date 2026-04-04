@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ShieldCheck, ZapOff, Activity, Droplets, DollarSign, TrendingUp } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
+import { SavingsCalcModule } from "@/components/SavingsCalcModule";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
@@ -88,6 +89,8 @@ export default function CarWashes() {
           </div>
         </div>
       </section>
+
+      <SavingsCalcModule defaultBill={20000} />
 
       {/* WHY CAR WASHES */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 border-t overflow-hidden" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
