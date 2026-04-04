@@ -40,6 +40,13 @@ const INDUSTRIES = [
     teaser: "Healthcare facilities face strict compliance and rising costs — NSF 61 & 372 certified, guaranteed results",
     color: "#0374A7",
   },
+  {
+    name: "Golf Courses",
+    path: "/industries/golf-courses",
+    emoji: "⛳",
+    teaser: "Golf courses on city water save 15%–35% on irrigation, clubhouse, pool, and facilities — guaranteed in writing",
+    color: "#3C6E7F",
+  },
 ];
 
 export default function IndustriesHub() {

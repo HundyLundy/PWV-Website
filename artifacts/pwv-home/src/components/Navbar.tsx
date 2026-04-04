@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse, ArrowRight } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse, ArrowRight, Leaf } from "lucide-react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const NAV_LINKS = [
@@ -35,6 +35,7 @@ const INDUSTRIES = [
     { label: "Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk" },
     { label: "Sterile Water & Compliance", href: "/industries/hospitals/sterile-water-compliance" },
   ]},
+  { label: "Golf Courses", href: "/industries/golf-courses", emoji: "⛳", icon: Leaf, desc: "15%–35% savings on irrigation, clubhouse, pool & drought compliance", sub: [] },
 ];
 
 const DC_LINKS_HUB = [

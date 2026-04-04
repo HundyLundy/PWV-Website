@@ -101,6 +101,7 @@ import HotelsPage from "@/pages/industries/Hotels";
 import CarWashesPage from "@/pages/industries/CarWashes";
 import MultifamilyPage from "@/pages/industries/Multifamily";
 import HospitalsPage from "@/pages/industries/Hospitals";
+import GolfCoursesPage from "@/pages/industries/GolfCourses";
 
 // Data center sub-pages
 import DataCenterCoolingCostsPage from "@/pages/DataCenterCoolingCosts";
@@ -298,6 +299,8 @@ function Router() {
       <Route path="/industries/multifamily/" component={MultifamilyPage} />
       <Route path="/industries/hospitals" component={HospitalsPage} />
       <Route path="/industries/hospitals/" component={HospitalsPage} />
+      <Route path="/industries/golf-courses" component={GolfCoursesPage} />
+      <Route path="/industries/golf-courses/" component={GolfCoursesPage} />
 
       {/* Data center sub-pages */}
       <Route path="/industries/data-centers/cooling-water-costs" component={DataCenterCoolingCostsPage} />
