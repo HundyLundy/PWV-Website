@@ -36,6 +36,13 @@ const config = {
     { title: "Data Center Expertise", desc: "Amazon YYZ3 — 58.69% peak verified" },
   ],
   source: "perfectwatervalve.com/locations/virginia",
+  industryLinks: [
+    { label: "Data Centers — WUE & Cooling Water", href: "/industries/data-centers/wue-regulatory-risk", desc: "How data center cooling towers and WUE become water-efficiency levers" },
+    { label: "Multifamily — Water Cost Guide", href: "/industries/multifamily/water-costs", desc: "The master meter problem — why apartment owners pay for tenant behavior" },
+    { label: "Multifamily — Irrigation Savings", href: "/industries/multifamily/irrigation-common-areas", desc: "30–50% of multifamily water use — the biggest single savings opportunity" },
+    { label: "Hospitals — Water Cost Breakdown", href: "/industries/hospitals/water-costs", desc: "Where healthcare facility water budgets go — by use category" },
+    { label: "Hospitals — Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "ASHRAE 188/514 and Joint Commission compliance — air pockets eliminated" },
+  ],
   showDataCenterSection: true,
   seoTitle: "Virginia Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in Virginia. Northern Virginia data centers use 1.7B gal/day. VA American Water up 3.72%. Permit restrictions growing. Guaranteed savings in writing.",

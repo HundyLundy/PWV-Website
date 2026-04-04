@@ -38,6 +38,17 @@ const config = {
     { title: "Proven Florida Results", desc: "Grand Central Tampa — $50K/yr verified" },
   ],
   source: "perfectwatervalve.com/locations/florida",
+  industryLinks: [
+    { label: "Data Centers — WUE & Cooling Water", href: "/industries/data-centers/wue-regulatory-risk", desc: "How data center cooling towers and WUE become water-efficiency levers" },
+    { label: "Hotels — Water Cost Breakdown", href: "/industries/hotels/water-costs", desc: "Where hotel water budgets go — laundry, cooling towers, pools" },
+    { label: "Hotels — Laundry & Cooling Towers", href: "/industries/hotels/laundry-cooling-towers", desc: "50–70% of hotel water use — addressed by one installation" },
+    { label: "Car Washes — Water Cost Guide", href: "/industries/car-washes/water-costs", desc: "True cost per wash including sewer — and how to cut it 15%" },
+    { label: "Car Washes — Hard Water & Equipment", href: "/industries/car-washes/hard-water-equipment", desc: "Mineral scale destroys pumps and reclaim systems — stopped without chemicals" },
+    { label: "Multifamily — Water Cost Guide", href: "/industries/multifamily/water-costs", desc: "The master meter problem — why apartment owners pay for tenant behavior" },
+    { label: "Multifamily — Irrigation Savings", href: "/industries/multifamily/irrigation-common-areas", desc: "30–50% of multifamily water use — the biggest single savings opportunity" },
+    { label: "Hospitals — Water Cost Breakdown", href: "/industries/hospitals/water-costs", desc: "Where healthcare facility water budgets go — by use category" },
+    { label: "Hospitals — Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "ASHRAE 188/514 and Joint Commission compliance — air pockets eliminated" },
+  ],
 };
 
 export default function Florida() {

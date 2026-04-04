@@ -169,6 +169,28 @@ export default function Hotels() {
         </div>
       </section>
 
+      {/* Sub-page links */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-2 block" style={{ color: "#0374A7" }}>Go Deeper</span>
+            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Hotel Water Savings — Detailed Guides</h2>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { label: "Hotel Water Costs", href: "/industries/hotels/water-costs", desc: "Where hotel budgets go — full breakdown including the sewer multiplier" },
+              { label: "Laundry & Cooling Towers", href: "/industries/hotels/laundry-cooling-towers", desc: "50–70% of hotel water use — addressed simultaneously by one installation" },
+              { label: "Green Certification", href: "/industries/hotels/green-certification", desc: "LEED, Green Key, Booking.com Travel Sustainable — M&V documentation satisfies all" },
+            ].map((link, i) => (
+              <a key={i} href={link.href} className="bg-white rounded-xl p-5 border hover:shadow-md transition-all group" style={{ borderColor: "#D5E3EE" }}>
+                <div className="font-bold mb-1 group-hover:underline" style={{ color: "#0374A7" }}>{link.label}</div>
+                <div className="text-sm" style={{ color: "#4A7085" }}>{link.desc}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F4F8FC" }}>
         <div className="max-w-3xl mx-auto">

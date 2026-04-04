@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse } from "lucide-react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const NAV_LINKS = [
@@ -83,13 +83,11 @@ const LOCATIONS = [
 ];
 
 const INDUSTRIES = [
-  { label: "Data Centers", href: "/industries/data-centers", emoji: "🖥️" },
-  { label: "Cooling Water Costs", href: "/industries/data-centers/cooling-water-costs", emoji: "💧" },
-  { label: "Hyperscale ROI", href: "/industries/data-centers/hyperscale-roi", emoji: "📊" },
-  { label: "Hotels & Hospitality", href: "/industries/hotels", emoji: "🏨" },
-  { label: "Car Washes", href: "/industries/car-washes", emoji: "🚗" },
-  { label: "Multifamily", href: "/industries/multifamily", emoji: "🏢" },
-  { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥" },
+  { label: "Data Centers", href: "/industries/data-centers", emoji: "🖥️", icon: Server, desc: "Amazon YYZ3: 58.69% peak — cooling tower & WUE" },
+  { label: "Hotels & Hospitality", href: "/industries/hotels", emoji: "🏨", icon: Hotel, desc: "Four Seasons $27K/yr — laundry, cooling, LEED" },
+  { label: "Car Washes", href: "/industries/car-washes", emoji: "🚗", icon: Car, desc: "Caliber 23% avg across 5 sites — hard water scale" },
+  { label: "Multifamily", href: "/industries/multifamily", emoji: "🏢", icon: Home, desc: "Grand Central Tampa $50K/yr — master meter savings" },
+  { label: "Hospitals & Healthcare", href: "/industries/hospitals", emoji: "🏥", icon: HeartPulse, desc: "NSF 61 & 372 certified — Legionella & water compliance" },
 ];
 
 const EXPLORE_SECTIONS = [
@@ -137,7 +135,9 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
   const exploreRef = useRef<HTMLDivElement>(null);
+  const industriesRef = useRef<HTMLDivElement>(null);
   const [mobileLocOpen, setMobileLocOpen] = useState(false);
   const [mobileIndOpen, setMobileIndOpen] = useState(false);
 
@@ -158,6 +158,9 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
     const handler = (e: MouseEvent) => {
       if (exploreRef.current && !exploreRef.current.contains(e.target as Node)) {
         setExploreOpen(false);
+      }
+      if (industriesRef.current && !industriesRef.current.contains(e.target as Node)) {
+        setIndustriesOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
@@ -203,6 +206,48 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
               {l.label}
             </a>
           ))}
+
+          {/* Industries dropdown */}
+          <div className="relative" ref={industriesRef}
+            onMouseEnter={() => setIndustriesOpen(true)}
+            onMouseLeave={() => setIndustriesOpen(false)}>
+            <a href="/industries"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors">
+              Industries
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${industriesOpen ? "rotate-180" : ""}`} />
+            </a>
+            <AnimatePresence>
+              {industriesOpen && (
+                <motion.div initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6, scale: 0.97 }} transition={{ duration: 0.15 }}
+                  className="absolute left-0 top-full mt-1 rounded-2xl shadow-2xl overflow-hidden" style={{ ...dropdownBase, width: '340px' }}>
+                  <div className="p-3">
+                    <div className="text-[9px] font-bold uppercase tracking-[0.22em] px-1 mb-2" style={{ color: 'rgba(91,191,224,0.55)' }}>Industry Hubs</div>
+                    {INDUSTRIES.map((ind) => {
+                      const Icon = ind.icon;
+                      return (
+                        <a key={ind.href} href={ind.href} onClick={() => setIndustriesOpen(false)}
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                            <Icon className="w-4 h-4" style={{ color: '#5BBFE0' }} />
+                          </div>
+                          <div>
+                            <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{ind.label}</div>
+                            <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{ind.desc}</div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                    <a href="/industries" onClick={() => setIndustriesOpen(false)}
+                      className="flex items-center justify-center gap-1 mt-1 py-2 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
+                      style={{ color: 'rgba(91,191,224,0.7)' }}>
+                      All Industries <ChevronDown className="w-3 h-3 rotate-[-90deg]" />
+                    </a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* Explore dropdown */}
           <div className="relative" ref={exploreRef}>

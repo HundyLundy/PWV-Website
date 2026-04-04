@@ -113,6 +113,28 @@ export default function Hospitals() {
         </div>
       </section>
 
+      {/* Sub-page links */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-2 block" style={{ color: "#0374A7" }}>Go Deeper</span>
+            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Hospital Water Savings — Detailed Guides</h2>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { label: "Hospital Water Costs", href: "/industries/hospitals/water-costs", desc: "Where healthcare facilities spend their water budget — full breakdown by use category" },
+              { label: "Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "How air pockets in pipes create Legionella risk — ASHRAE 188/514 and Joint Commission compliance" },
+              { label: "Sterile Water & Compliance", href: "/industries/hospitals/sterile-water-compliance", desc: "CSP, dialysis, and lab water quality — mineral scale without chemicals, NSF certified" },
+            ].map((link, i) => (
+              <a key={i} href={link.href} className="bg-white rounded-xl p-5 border hover:shadow-md transition-all group" style={{ borderColor: "#D5E3EE" }}>
+                <div className="font-bold mb-1 group-hover:underline" style={{ color: "#0374A7" }}>{link.label}</div>
+                <div className="text-sm" style={{ color: "#4A7085" }}>{link.desc}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/10" style={{ background: "linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Get a Free Hospital Water Assessment</h2>

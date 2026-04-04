@@ -36,6 +36,12 @@ const config = {
     { title: "Conservation Compliance", desc: "Helps meet active drought mandate thresholds" },
   ],
   source: "perfectwatervalve.com/locations/north-carolina",
+  industryLinks: [
+    { label: "Multifamily — Water Cost Guide", href: "/industries/multifamily/water-costs", desc: "The master meter problem — why apartment owners pay for tenant behavior" },
+    { label: "Multifamily — Irrigation Savings", href: "/industries/multifamily/irrigation-common-areas", desc: "30–50% of multifamily water use — the biggest single savings opportunity" },
+    { label: "Hospitals — Water Cost Breakdown", href: "/industries/hospitals/water-costs", desc: "Where healthcare facility water budgets go — by use category" },
+    { label: "Hospitals — Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "ASHRAE 188/514 and Joint Commission compliance — air pockets eliminated" },
+  ],
   showDataCenterSection: true,
   seoTitle: "North Carolina Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in North Carolina. Active drought with conservation mandates. Fayetteville PWC raising rates. Guaranteed savings in writing. Free assessment.",

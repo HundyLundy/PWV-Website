@@ -36,6 +36,12 @@ const config = {
     { title: "Proven NJ Results", desc: "Grand Central at Kennedy — $50K/yr verified" },
   ],
   source: "perfectwatervalve.com/locations/new-jersey",
+  industryLinks: [
+    { label: "Multifamily — Water Cost Guide", href: "/industries/multifamily/water-costs", desc: "The master meter problem — why apartment owners pay for tenant behavior" },
+    { label: "Multifamily — Irrigation Savings", href: "/industries/multifamily/irrigation-common-areas", desc: "30–50% of multifamily water use — the biggest single savings opportunity" },
+    { label: "Hospitals — Water Cost Breakdown", href: "/industries/hospitals/water-costs", desc: "Where healthcare facility water budgets go — by use category" },
+    { label: "Hospitals — Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "ASHRAE 188/514 and Joint Commission compliance — air pockets eliminated" },
+  ],
   showDataCenterSection: true,
   seoTitle: "New Jersey Commercial Water Savings | Smart Valve™ | Perfect Water Valve",
   seoDescription: "Smart Valve™ cuts commercial water bills 15%–35% annually in New Jersey. Veolia proposing 9.82% annual increase. NJ American Water multiple hikes. $50K/yr verified NJ case study. Free assessment.",

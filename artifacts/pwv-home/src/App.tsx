@@ -105,6 +105,25 @@ import HospitalsPage from "@/pages/industries/Hospitals";
 // Data center sub-pages
 import DataCenterCoolingCostsPage from "@/pages/DataCenterCoolingCosts";
 import HyperscaleROIPage from "@/pages/HyperscaleROI";
+import DataCenterWUEPage from "@/pages/DataCenterWUE";
+
+// Hotels sub-pages
+import HotelsWaterCostsPage from "@/pages/HotelsWaterCosts";
+import HotelsLaundryCoolingPage from "@/pages/HotelsLaundryCooling";
+import HotelsGreenCertificationPage from "@/pages/HotelsGreenCertification";
+
+// Hospitals sub-pages
+import HospitalsWaterCostsPage from "@/pages/HospitalsWaterCosts";
+import HospitalsLegionellaPage from "@/pages/HospitalsLegionella";
+import HospitalsSterileWaterPage from "@/pages/HospitalsSterileWater";
+
+// Car washes sub-pages
+import CarWashesWaterCostsPage from "@/pages/CarWashesWaterCosts";
+import CarWashesHardWaterPage from "@/pages/CarWashesHardWater";
+
+// Multifamily sub-pages
+import MultifamilyWaterCostsPage from "@/pages/MultifamilyWaterCosts";
+import MultifamilyIrrigationPage from "@/pages/MultifamilyIrrigation";
 
 const queryClient = new QueryClient();
 
@@ -285,6 +304,36 @@ function Router() {
       <Route path="/industries/data-centers/cooling-water-costs/" component={DataCenterCoolingCostsPage} />
       <Route path="/industries/data-centers/hyperscale-roi" component={HyperscaleROIPage} />
       <Route path="/industries/data-centers/hyperscale-roi/" component={HyperscaleROIPage} />
+      <Route path="/industries/data-centers/wue-regulatory-risk" component={DataCenterWUEPage} />
+      <Route path="/industries/data-centers/wue-regulatory-risk/" component={DataCenterWUEPage} />
+
+      {/* Hotels sub-pages */}
+      <Route path="/industries/hotels/water-costs" component={HotelsWaterCostsPage} />
+      <Route path="/industries/hotels/water-costs/" component={HotelsWaterCostsPage} />
+      <Route path="/industries/hotels/laundry-cooling-towers" component={HotelsLaundryCoolingPage} />
+      <Route path="/industries/hotels/laundry-cooling-towers/" component={HotelsLaundryCoolingPage} />
+      <Route path="/industries/hotels/green-certification" component={HotelsGreenCertificationPage} />
+      <Route path="/industries/hotels/green-certification/" component={HotelsGreenCertificationPage} />
+
+      {/* Hospitals sub-pages */}
+      <Route path="/industries/hospitals/water-costs" component={HospitalsWaterCostsPage} />
+      <Route path="/industries/hospitals/water-costs/" component={HospitalsWaterCostsPage} />
+      <Route path="/industries/hospitals/legionella-biofilm-risk" component={HospitalsLegionellaPage} />
+      <Route path="/industries/hospitals/legionella-biofilm-risk/" component={HospitalsLegionellaPage} />
+      <Route path="/industries/hospitals/sterile-water-compliance" component={HospitalsSterileWaterPage} />
+      <Route path="/industries/hospitals/sterile-water-compliance/" component={HospitalsSterileWaterPage} />
+
+      {/* Car washes sub-pages */}
+      <Route path="/industries/car-washes/water-costs" component={CarWashesWaterCostsPage} />
+      <Route path="/industries/car-washes/water-costs/" component={CarWashesWaterCostsPage} />
+      <Route path="/industries/car-washes/hard-water-equipment" component={CarWashesHardWaterPage} />
+      <Route path="/industries/car-washes/hard-water-equipment/" component={CarWashesHardWaterPage} />
+
+      {/* Multifamily sub-pages */}
+      <Route path="/industries/multifamily/water-costs" component={MultifamilyWaterCostsPage} />
+      <Route path="/industries/multifamily/water-costs/" component={MultifamilyWaterCostsPage} />
+      <Route path="/industries/multifamily/irrigation-common-areas" component={MultifamilyIrrigationPage} />
+      <Route path="/industries/multifamily/irrigation-common-areas/" component={MultifamilyIrrigationPage} />
 
       {/* Blog */}
       <Route path="/blog" component={BlogPage} />

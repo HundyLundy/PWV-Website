@@ -114,6 +114,27 @@ export default function Multifamily() {
         </div>
       </section>
 
+      {/* Sub-page links */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] mb-2 block" style={{ color: "#0374A7" }}>Go Deeper</span>
+            <h2 className="text-2xl font-bold" style={{ color: "#0A1F3A" }}>Multifamily Water Savings — Detailed Guides</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { label: "Multifamily Water Costs", href: "/industries/multifamily/water-costs", desc: "The master meter problem — why apartment owners pay for tenant behavior, and how to fix it" },
+              { label: "Irrigation & Common Areas", href: "/industries/multifamily/irrigation-common-areas", desc: "30–50% of multifamily water use — the biggest single opportunity for savings" },
+            ].map((link, i) => (
+              <a key={i} href={link.href} className="bg-white rounded-xl p-5 border hover:shadow-md transition-all group" style={{ borderColor: "#D5E3EE" }}>
+                <div className="font-bold mb-1 group-hover:underline" style={{ color: "#0374A7" }}>{link.label}</div>
+                <div className="text-sm" style={{ color: "#4A7085" }}>{link.desc}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-white/10" style={{ background: "linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Get a Free Multifamily Assessment</h2>

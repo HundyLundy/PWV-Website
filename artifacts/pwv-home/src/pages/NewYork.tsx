@@ -38,6 +38,14 @@ const config = {
     { title: "Dual Savings", desc: "Reduces both water AND sewer charges in NYC" },
   ],
   source: "perfectwatervalve.com/locations/new-york",
+  industryLinks: [
+    { label: "Hotels — Water Cost Breakdown", href: "/industries/hotels/water-costs", desc: "Where hotel water budgets go — laundry, cooling towers, pools" },
+    { label: "Hotels — Laundry & Cooling Towers", href: "/industries/hotels/laundry-cooling-towers", desc: "50–70% of hotel water use — addressed by one installation" },
+    { label: "Multifamily — Water Cost Guide", href: "/industries/multifamily/water-costs", desc: "The master meter problem — why apartment owners pay for tenant behavior" },
+    { label: "Multifamily — Irrigation Savings", href: "/industries/multifamily/irrigation-common-areas", desc: "30–50% of multifamily water use — the biggest single savings opportunity" },
+    { label: "Hospitals — Water Cost Breakdown", href: "/industries/hospitals/water-costs", desc: "Where healthcare facility water budgets go — by use category" },
+    { label: "Hospitals — Legionella & Biofilm Risk", href: "/industries/hospitals/legionella-biofilm-risk", desc: "ASHRAE 188/514 and Joint Commission compliance — air pockets eliminated" },
+  ],
 };
 
 export default function NewYork() {
