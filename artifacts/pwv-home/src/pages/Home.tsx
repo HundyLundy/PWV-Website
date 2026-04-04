@@ -329,8 +329,8 @@ export default function Home() {
                 sub: <span>(Amazon YYZ3 Fulfillment Center — <a href="/results" className="underline underline-offset-2 hover:text-white/60 transition-colors">Case Studies</a>)</span>,
               },
               {
-                to: 21, suffix: "", label: "Published Case Studies", decimals: 0,
-                sub: <span>(M&V verified — <a href="/results" className="underline underline-offset-2 hover:text-white/60 transition-colors">Case Studies</a>)</span>,
+                to: 19, suffix: "", label: "M&V-Verified Case Studies", decimals: 0,
+                sub: <span>(independent verification — <a href="/results" className="underline underline-offset-2 hover:text-white/60 transition-colors">View All</a>)</span>,
               },
             ] as const).map((stat, i) => (
               <motion.div
@@ -402,10 +402,10 @@ export default function Home() {
       <section id="clients" className="py-28 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">21 Documented Installations. Real Results.</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">32,000+ Installations. 19 Verified Studies. Real Results.</h2>
             <p className="text-white/60 text-base" style={{ fontWeight: 300 }}>
-              19 of 21 sites include formal M&V (Measurement & Verification) data. Range: 15%–58.69%. &nbsp;
-              <a href="/results" className="text-white/40 underline underline-offset-2 hover:text-white/70 transition-colors text-sm">View all →</a>
+              Deployed at scale across North America — with 19 independently M&V-verified case studies proving 15%–58.69% savings. &nbsp;
+              <a href="/results" className="text-white/40 underline underline-offset-2 hover:text-white/70 transition-colors text-sm">View all case studies →</a>
             </p>
           </motion.div>
 
