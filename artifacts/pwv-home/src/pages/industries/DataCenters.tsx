@@ -145,7 +145,7 @@ export default function DataCenters() {
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background border-b border-white/5">
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-primary/70 mb-8">Explore the Full Picture</p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Module 1 */}
             <motion.a
               href="/industries/data-centers/cooling-water-costs"
@@ -187,6 +187,28 @@ export default function DataCenters() {
               </p>
               <span className="inline-flex items-center gap-2 text-[#DEC600] font-semibold text-sm group-hover:gap-3 transition-all">
                 See the ROI Model <ArrowRight className="w-4 h-4" />
+              </span>
+            </motion.a>
+
+            {/* Module 3 */}
+            <motion.a
+              href="/industries/data-centers/wue-regulatory-risk"
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+              className="group relative bg-[#121B2E] border border-white/10 rounded-2xl p-8 hover:border-red-400/40 hover:bg-[#1A2540] transition-all flex flex-col overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/5 rounded-bl-full pointer-events-none" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border bg-red-500/10 text-red-400 border-red-500/20 shrink-0">
+                <Activity className="w-6 h-6" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-red-400/70 mb-2">Module 3</div>
+              <h2 className="text-xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors leading-snug">
+                WUE, ESG Reporting & Regulatory Risk
+              </h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">
+                WUE benchmarks, Loudoun County permit changes, Phoenix water ordinances, and M&V documentation for ESG and regulatory compliance.
+              </p>
+              <span className="inline-flex items-center gap-2 text-red-400 font-semibold text-sm group-hover:gap-3 transition-all">
+                Explore WUE & Regulatory Risk <ArrowRight className="w-4 h-4" />
               </span>
             </motion.a>
           </div>
