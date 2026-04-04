@@ -18,6 +18,7 @@ import WhatIsSmartValve from "@/pages/blog/WhatIsSmartValve";
 import Results from "@/pages/Results";
 import Impact from "@/pages/Impact";
 import Savings from "@/pages/Savings";
+import CommonMisconceptions from "@/pages/CommonMisconceptions";
 
 // Info sheet
 import InfoSheet from "@/pages/InfoSheet";
@@ -141,6 +142,8 @@ function Router() {
       {/* Core pages */}
       <Route path="/results" component={Results} />
       <Route path="/results/" component={Results} />
+      <Route path="/common-misconceptions" component={CommonMisconceptions} />
+      <Route path="/common-misconceptions/" component={CommonMisconceptions} />
       <Route path="/impact" component={Impact} />
       <Route path="/impact/" component={Impact} />
       <Route path="/savings" component={Savings} />
