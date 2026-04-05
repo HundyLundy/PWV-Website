@@ -141,9 +141,9 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
             onClick={() => setExploreOpen(!exploreOpen)}
             className="flex items-center gap-1.5 text-sm font-bold transition-all px-4 py-1.5 rounded-full border"
             style={{
-              color: '#5BBFE0',
-              borderColor: exploreOpen ? 'rgba(91,191,224,0.7)' : 'rgba(91,191,224,0.45)',
-              background: exploreOpen ? 'rgba(91,191,224,0.16)' : 'rgba(91,191,224,0.08)',
+              color: '#DEC600',
+              borderColor: exploreOpen ? 'rgba(222,198,0,0.7)' : 'rgba(222,198,0,0.45)',
+              background: exploreOpen ? 'rgba(222,198,0,0.14)' : 'rgba(222,198,0,0.07)',
             }}>
             Explore
             <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${exploreOpen ? "rotate-180" : ""}`} />
