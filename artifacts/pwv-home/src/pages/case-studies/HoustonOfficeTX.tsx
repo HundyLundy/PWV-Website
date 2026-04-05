@@ -119,7 +119,7 @@ export default function HoustonOfficeTX() {
           <div className="grid lg:grid-cols-2 gap-6">
 
             <ChartCard
-              title="Monthly Water Bill — 2017 vs 2018 (4\" Main Meter)"
+              title="Monthly Water Bill — 2017 vs 2018 (4-inch Main Meter)"
               caption="Oct–Dec 2017 (before) vs Oct–Dec 2018 (after) · Main meter only"
               note={`Average monthly bill dropped from ${HOUSTON_OFFICE_LABELS.avgBeforeCost} to ${HOUSTON_OFFICE_LABELS.avgAfterCost} — a 39% reduction. Oct savings alone: $2,014/month.`}
             >
@@ -137,7 +137,7 @@ export default function HoustonOfficeTX() {
             </ChartCard>
 
             <ChartCard
-              title="Daily Water Usage — 2017 vs 2018 (4\" Main Meter)"
+              title="Daily Water Usage — 2017 vs 2018 (4-inch Main Meter)"
               caption="Oct–Dec 2017 (before) vs Oct–Dec 2018 (after) · Gallons per day"
               note={`Average daily usage dropped from ${HOUSTON_OFFICE_LABELS.avgBeforeGPD} to ${HOUSTON_OFFICE_LABELS.avgAfterGPD} gal/day — a 37% reduction.`}
             >
@@ -187,7 +187,7 @@ export default function HoustonOfficeTX() {
           <h2 className="text-2xl font-bold mb-8" style={{ color: "#0A1F3A" }}>Key Findings</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { title: "39% bill reduction on a 4\" commercial meter", body: `The three-month year-over-year comparison (Oct–Dec 2018 vs 2017) showed average monthly bills drop from ${HOUSTON_OFFICE_LABELS.avgBeforeCost} to ${HOUSTON_OFFICE_LABELS.avgAfterCost} — a 39% reduction in water and sewer cost across all three months.` },
+              { title: "39% bill reduction on a 4-inch commercial meter", body: `The three-month year-over-year comparison (Oct–Dec 2018 vs 2017) showed average monthly bills drop from ${HOUSTON_OFFICE_LABELS.avgBeforeCost} to ${HOUSTON_OFFICE_LABELS.avgAfterCost} — a 39% reduction in water and sewer cost across all three months.` },
               { title: "Office buildings provide exceptionally clean measurement", body: "The report notes that office building tenants have more consistent water consumption patterns than irrigation meters. This makes the 37%/39% result highly reliable — occupancy-driven variation is minimal in a commercial multi-tenant setting." },
               { title: "$0.10/SF/year — a metric CFOs understand", body: `For a 180,000 SF building, ${HOUSTON_OFFICE_LABELS.costPerSF} reduction in water and sewer cost represents $18,000/year in recovered operating expense — making this a compelling line item for NNN lease and asset management discussions.` },
               { title: "Irrigation meter also achieved 40% bill reduction", body: `A separate ${HOUSTON_OFFICE.irrigation.valveSize} valve on the irrigation meter achieved a ${HOUSTON_OFFICE_LABELS.irrigBill} bill reduction and ${HOUSTON_OFFICE_LABELS.irrigGPD} daily usage reduction — also with a payback under 12 months.` },
