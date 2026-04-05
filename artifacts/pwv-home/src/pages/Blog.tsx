@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -62,6 +63,9 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <title>Commercial Water Savings Blog | Smart Valve™ News &amp; Guides | Perfect Water Valve</title>
+      </Helmet>
       <StickyAssessmentCTA />
       <Navbar onScrollTo={() => {}} />
 

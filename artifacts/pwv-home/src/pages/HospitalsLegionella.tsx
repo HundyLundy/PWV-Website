@@ -8,7 +8,7 @@ import { AlertTriangle, ShieldCheck, CheckCircle, FileText, Droplets } from "luc
 export default function HospitalsLegionella() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Air Pockets in Hospital Water Pipes Create Legionella Risk | Smart Valve™ | Perfect Water Valve";
+    document.title = "Legionella & Biofilm Risk in Hospital Water Systems | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

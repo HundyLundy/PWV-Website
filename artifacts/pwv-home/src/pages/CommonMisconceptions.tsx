@@ -83,7 +83,7 @@ export default function CommonMisconceptions() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
-        <title>Common Water Savings Misconceptions | Smart Valve™ vs Check Valves, Low-Flow Fixtures & PRVs</title>
+        <title>Common Water Savings Misconceptions | Smart Valve™ vs Check Valves, Low-Flow Fixtures & PRVs | Perfect Water Valve</title>
         <meta name="description" content="Three common misconceptions about commercial water savings — check valves, low-flow fixtures, and pressure reducing valves — and why none of them reduce your meter reading or utility bill." />
         <link rel="canonical" href="https://perfectwatervalve.com/common-misconceptions" />
       </Helmet>

@@ -51,6 +51,7 @@ export default function Hotels() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
+        <title>Hotel Water Savings | Smart Valve™ — 26% Verified at Four Seasons | Perfect Water Valve</title>
         <script type="application/ld+json">{JSON.stringify(hotelsFaqSchema)}</script>
       </Helmet>
       <Navbar onScrollTo={scrollTo} />

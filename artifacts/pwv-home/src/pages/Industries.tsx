@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -52,6 +53,9 @@ const INDUSTRIES = [
 export default function IndustriesHub() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <title>Commercial Water Savings by Industry | Hotels, Hospitals, Data Centers | Perfect Water Valve</title>
+      </Helmet>
       <Navbar />
 
       {/* HERO + INDUSTRY CARDS (unified) */}

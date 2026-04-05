@@ -8,7 +8,7 @@ import { Droplets, TrendingUp, DollarSign, ShieldCheck, CheckCircle } from "luci
 export default function HospitalsWaterCosts() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Hospital Water Costs | Smart Valve™ | Perfect Water Valve";
+    document.title = "Hospital Water Costs — Full Facility Breakdown | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

@@ -8,7 +8,7 @@ import { BarChart2, ShieldCheck, CheckCircle, AlertTriangle, FileText, Globe } f
 export default function DataCenterWUE() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Data Center WUE & Regulatory Risk | Smart Valve™ | Perfect Water Valve";
+    document.title = "Data Center WUE & Water Regulatory Compliance | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

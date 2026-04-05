@@ -8,7 +8,7 @@ import { Droplets, TrendingUp, DollarSign, ShieldCheck, CheckCircle } from "luci
 export default function HotelsWaterCosts() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Hotel Water Costs | Smart Valve™ | Perfect Water Valve";
+    document.title = "Hotel Water Budget Breakdown — HVAC, Laundry & Pools | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

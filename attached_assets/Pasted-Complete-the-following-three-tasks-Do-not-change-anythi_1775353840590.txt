@@ -1,0 +1,73 @@
+Complete the following three tasks. Do not change anything else on the site.
+TASK 1 — Add missing title tags
+Add the following <title> tags to the pages that are currently missing them. Use the exact text listed:
+/ → Commercial Water Bill Savings — 15% Guaranteed in Writing | Perfect Water Valve
+/industries → Commercial Water Savings by Industry | Hotels, Hospitals, Data Centers | Perfect Water Valve
+/industries/hotels → Hotel Water Savings | Smart Valve™ — 26% Verified at Four Seasons | Perfect Water Valve
+/industries/hospitals → Hospital & Healthcare Water Savings | NSF 61 Certified | Perfect Water Valve
+/industries/car-washes → Car Wash Water Bill Savings | 23% Avg — Caliber Car Wash Verified | Perfect Water Valve
+/industries/multifamily → Multifamily Water Savings | $50K/yr — Grand Central Tampa | Perfect Water Valve
+/results → Verified Water Savings Results | Amazon, Four Seasons, Caliber Car Wash | Perfect Water Valve
+/savings → Calculate Your Commercial Water Savings | Smart Valve™ ROI | Perfect Water Valve
+/impact → Smart Valve™ Environmental & Financial Water Impact | Perfect Water Valve
+/blog → Commercial Water Savings Blog | Smart Valve™ News & Guides | Perfect Water Valve
+/industries/data-centers/cooling-water-costs → Data Center Cooling Water Costs — Where the Waste Happens | Perfect Water Valve
+/industries/data-centers/hyperscale-roi → Hyperscale Data Center Water ROI | Amazon YYZ3 Case Study | Perfect Water Valve
+/industries/data-centers/wue-regulatory-risk → Data Center WUE & Water Regulatory Compliance | Perfect Water Valve
+/industries/hotels/water-costs → Hotel Water Budget Breakdown — HVAC, Laundry & Pools | Perfect Water Valve
+/industries/hotels/laundry-cooling-towers → Hotel Laundry & Cooling Tower Water Costs | Smart Valve™ | Perfect Water Valve
+/industries/hotels/green-certification → Hotel Green Certification — LEED, Green Key & Booking.com | Perfect Water Valve
+/industries/hospitals/water-costs → Hospital Water Costs — Full Facility Breakdown | Perfect Water Valve
+/industries/hospitals/legionella-biofilm-risk → Legionella & Biofilm Risk in Hospital Water Systems | Perfect Water Valve
+/industries/hospitals/sterile-water-compliance → Sterile Water Compliance — CSP, Dialysis & Lab Systems | Perfect Water Valve
+/industries/car-washes/water-costs → Car Wash Water Costs — Gallons, Rates & True Bill Anatomy | Perfect Water Valve
+/industries/car-washes/hard-water-equipment → Hard Water & Equipment Damage at Car Washes | Smart Valve™ | Perfect Water Valve
+/industries/multifamily/water-costs → Multifamily Master Meter Problem — Water Costs & Savings | Perfect Water Valve
+/industries/multifamily/irrigation-common-areas → Multifamily Common Area Irrigation Water Waste & Savings | Perfect Water Valve
+Also fix /common-misconceptions — its current title is missing | Perfect Water Valve at the end. Append it.
+TASK 2 — Fix the /common-misconceptions title tag
+Current: "Common Water Savings Misconceptions | Smart Valve™ vs Check Valves, Low-Flow Fixtures & PRVs"
+Corrected: "Common Water Savings Misconceptions | Smart Valve™ vs Check Valves, Low-Flow Fixtures & PRVs | Perfect Water Valve"
+TASK 3 — Add schema markup to the homepage
+The homepage already has a FAQPage JSON-LD schema — do not touch it. Add two new JSON-LD schemas to the homepage <head>:
+Schema 1 — LocalBusiness:
+JSON
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Perfect Water Valve",
+  "url": "https://perfectwatervalve.com",
+  "telephone": "+17209373004",
+  "email": "info@perfectwatervalve.com",
+  "description": "Commercial water bill reduction — 15% minimum guaranteed in writing. Smart Valve™ installed at main supply line. NSF 61 & 372 certified.",
+  "areaServed": "US",
+  "sameAs": [
+    "https://www.facebook.com/perfectwatervalve",
+    "https://www.linkedin.com/company/perfectwatervalve"
+  ]
+}
+Schema 2 — Service:
+JSON
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Smart Valve™ Commercial Water Savings Installation",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Perfect Water Valve"
+  },
+  "description": "Passive electrochemical device installed at the main commercial water supply line. Reduces metered water consumption 15%–35% annually. Guaranteed in writing on every installation. No electricity, no moving parts, no maintenance.",
+  "areaServed": "US",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Smart Valve™ Installation",
+    "itemListElement": [{
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Smart Valve™ Installation — 15% Guaranteed Water Bill Reduction"
+      }
+    }]
+  }
+}
+DO NOT change any H1 tags, any page content, or any other elements. Title tags and schema only.

@@ -8,7 +8,7 @@ import { ShieldCheck, FileText, Globe, CheckCircle, BarChart2 } from "lucide-rea
 export default function HotelsGreenCertification() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Hotel Green Certification & Water Reporting | Smart Valve™ | Perfect Water Valve";
+    document.title = "Hotel Green Certification — LEED, Green Key & Booking.com | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

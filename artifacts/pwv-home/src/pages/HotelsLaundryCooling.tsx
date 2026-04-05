@@ -8,7 +8,7 @@ import { Droplets, TrendingDown, DollarSign, CheckCircle, Server } from "lucide-
 export default function HotelsLaundryCooling() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Hotel Laundry & Cooling Tower Water Waste | Smart Valve™ | Perfect Water Valve";
+    document.title = "Hotel Laundry & Cooling Tower Water Costs | Smart Valve™ | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

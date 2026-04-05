@@ -8,7 +8,7 @@ import { Droplets, AlertTriangle, CheckCircle, ShieldCheck, TrendingDown } from 
 export default function MultifamilyIrrigation() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Common Area Irrigation Is the Biggest Water Waste in Multifamily Properties | Smart Valve™ | Perfect Water Valve";
+    document.title = "Multifamily Common Area Irrigation Water Waste & Savings | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

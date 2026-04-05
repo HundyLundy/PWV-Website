@@ -15,7 +15,7 @@ const COST_BREAKDOWN = [
 export default function DataCenterCoolingCosts() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Data Center Cooling Water Costs | Smart Valve™ | Perfect Water Valve";
+    document.title = "Data Center Cooling Water Costs — Where the Waste Happens | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

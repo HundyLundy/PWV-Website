@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -169,6 +170,9 @@ function ChartCard({ title, caption, children }: { title: string; caption?: stri
 export default function Results() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
+      <Helmet>
+        <title>Verified Water Savings Results | Amazon, Four Seasons, Caliber Car Wash | Perfect Water Valve</title>
+      </Helmet>
       <Navbar />
 
       {/* HERO */}

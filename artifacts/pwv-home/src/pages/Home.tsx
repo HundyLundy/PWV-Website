@@ -27,6 +27,44 @@ const homeFaqSchema = {
   }))
 };
 
+const homeLocalBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Perfect Water Valve",
+  "url": "https://perfectwatervalve.com",
+  "telephone": "+17209373004",
+  "email": "info@perfectwatervalve.com",
+  "description": "Commercial water bill reduction — 15% minimum guaranteed in writing. Smart Valve™ installed at main supply line. NSF 61 & 372 certified.",
+  "areaServed": "US",
+  "sameAs": [
+    "https://www.facebook.com/perfectwatervalve",
+    "https://www.linkedin.com/company/perfectwatervalve"
+  ]
+};
+
+const homeServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Smart Valve™ Commercial Water Savings Installation",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Perfect Water Valve"
+  },
+  "description": "Passive electrochemical device installed at the main commercial water supply line. Reduces metered water consumption 15%–35% annually. Guaranteed in writing on every installation. No electricity, no moving parts, no maintenance.",
+  "areaServed": "US",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Smart Valve™ Installation",
+    "itemListElement": [{
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Smart Valve™ Installation — 15% Guaranteed Water Bill Reduction"
+      }
+    }]
+  }
+};
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
@@ -174,7 +212,10 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans">
       <Helmet>
+        <title>Commercial Water Bill Savings — 15% Guaranteed in Writing | Perfect Water Valve</title>
         <script type="application/ld+json">{JSON.stringify(homeFaqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(homeLocalBusinessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(homeServiceSchema)}</script>
       </Helmet>
       <StickyAssessmentCTA />
       <Navbar />

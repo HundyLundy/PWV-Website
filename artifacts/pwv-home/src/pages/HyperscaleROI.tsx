@@ -38,7 +38,7 @@ const ROI_SCENARIOS = [
 export default function HyperscaleROI() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Hyperscale Data Center Water ROI | Smart Valve™ | Perfect Water Valve";
+    document.title = "Hyperscale Data Center Water ROI | Amazon YYZ3 Case Study | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

@@ -8,7 +8,7 @@ import { Droplets, TrendingUp, DollarSign, CheckCircle, Building2 } from "lucide
 export default function MultifamilyWaterCosts() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Multifamily Water Costs | Smart Valve™ | Perfect Water Valve";
+    document.title = "Multifamily Master Meter Problem — Water Costs & Savings | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

@@ -8,7 +8,7 @@ import { ShieldCheck, CheckCircle, Droplets, Activity, DollarSign } from "lucide
 export default function HospitalsSterileWater() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Hospital Sterile Water & Medical Equipment Water Quality | Smart Valve™ | Perfect Water Valve";
+    document.title = "Sterile Water Compliance — CSP, Dialysis & Lab Systems | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

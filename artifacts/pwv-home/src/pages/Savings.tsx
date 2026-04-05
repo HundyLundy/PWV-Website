@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/Navbar";
@@ -75,6 +76,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20 selection:text-primary">
+      <Helmet>
+        <title>Calculate Your Commercial Water Savings | Smart Valve™ ROI | Perfect Water Valve</title>
+      </Helmet>
       <Navbar />
 
       {/* 1. HERO — EDITORIAL STAT-LEAD */}

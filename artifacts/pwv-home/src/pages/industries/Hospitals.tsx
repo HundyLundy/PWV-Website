@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ShieldCheck, ZapOff, Activity, Cross, Building2, Droplets, AlertTriangle } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -13,6 +14,9 @@ export default function Hospitals() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <title>Hospital &amp; Healthcare Water Savings | NSF 61 Certified | Perfect Water Valve</title>
+      </Helmet>
       <Navbar onScrollTo={scrollTo} />
 
       <section className="relative pt-40 pb-24 lg:pt-56 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">

@@ -8,7 +8,7 @@ import { Droplets, TrendingUp, DollarSign, CheckCircle } from "lucide-react";
 export default function CarWashesWaterCosts() {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "Car Wash Water Costs | Smart Valve™ | Perfect Water Valve";
+    document.title = "Car Wash Water Costs — Gallons, Rates & True Bill Anatomy | Perfect Water Valve";
     const setMeta = (name: string, content: string, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }

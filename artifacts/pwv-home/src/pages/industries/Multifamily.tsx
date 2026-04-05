@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ShieldCheck, ZapOff, Activity, Home, DollarSign, TrendingUp, Building2 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -13,6 +14,9 @@ export default function Multifamily() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <title>Multifamily Water Savings | $50K/yr — Grand Central Tampa | Perfect Water Valve</title>
+      </Helmet>
       <Navbar onScrollTo={scrollTo} />
 
       <section className="relative pt-40 pb-24 lg:pt-56 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">

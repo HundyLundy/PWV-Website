@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Droplet, ShieldCheck, Mail, Phone, Factory, Building2, Hotel, Car, ArrowUpRight, ChevronDown } from "lucide-react";
@@ -34,6 +35,9 @@ const INDUSTRIES = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-hidden relative">
+      <Helmet>
+        <title>Smart Valve™ Environmental &amp; Financial Water Impact | Perfect Water Valve</title>
+      </Helmet>
       <Navbar />
 
       {/* Decorative ambient lights */}
