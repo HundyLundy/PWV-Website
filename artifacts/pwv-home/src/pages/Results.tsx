@@ -172,6 +172,7 @@ export default function Results() {
     <div className="min-h-screen bg-white text-slate-900">
       <Helmet>
         <title>Verified Water Savings Results | Amazon, Four Seasons, Caliber Car Wash | Perfect Water Valve</title>
+        <meta name="description" content="Verified water savings results: Amazon YYZ3 (58.69%), Four Seasons (26%), Grand Central Tampa (23%), Caliber Car Wash (23%). All M&amp;V-verified." />
       </Helmet>
       <Navbar />
 

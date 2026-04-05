@@ -65,6 +65,7 @@ export default function Blog() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Commercial Water Savings Blog | Smart Valve™ News &amp; Guides | Perfect Water Valve</title>
+        <meta name="description" content="Commercial water savings guides, case studies, and rate analysis. Smart Valve™ news and industry insights for facility managers and property owners." />
       </Helmet>
       <StickyAssessmentCTA />
       <Navbar onScrollTo={() => {}} />

@@ -16,6 +16,7 @@ export default function CarWashes() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Car Wash Water Bill Savings | 23% Avg — Caliber Car Wash Verified | Perfect Water Valve</title>
+        <meta name="description" content="High-volume car washes save 15%–30% on water bills with Smart Valve™. Verified 23% savings at Caliber Car Wash. No impact on wash quality or throughput." />
       </Helmet>
       <Navbar onScrollTo={scrollTo} />
 

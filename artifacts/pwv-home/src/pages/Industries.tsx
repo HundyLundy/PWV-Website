@@ -55,6 +55,7 @@ export default function IndustriesHub() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Commercial Water Savings by Industry | Hotels, Hospitals, Data Centers | Perfect Water Valve</title>
+        <meta name="description" content="Smart Valve™ delivers guaranteed water savings for hotels, data centers, hospitals, car washes, multifamily, and golf courses. 15% minimum, written guarantee." />
       </Helmet>
       <Navbar />
 

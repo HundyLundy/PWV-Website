@@ -82,7 +82,7 @@ export default function DataCenters() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Data Center Water Savings | Smart Valve™ Cuts Cooling Bills 15%–35% Annually | Perfect Water Valve</title>
-        <meta name="description" content="Data centers use 1–5M gallons/day for cooling. Smart Valve™ cuts that bill 15%–35% annually on average, guaranteed. Amazon YYZ3 hit 58.69% peak savings. No electricity, no maintenance, NSF certified." />
+        <meta name="description" content="Data centers use up to 5M gallons/day. Smart Valve™ cuts cooling water costs 15%–35% annually — verified 58.69% peak at Amazon YYZ3." />
         <link rel="canonical" href="https://www.perfectwatervalve.com/industries/data-centers" />
         <meta property="og:title" content="Data Center Water Savings | Smart Valve™ Cuts Cooling Bills 15%–35% Annually | Perfect Water Valve" />
         <meta property="og:description" content="Data centers use 1–5M gallons/day for cooling. Smart Valve™ cuts that bill 15%–35% annually on average, guaranteed. Amazon YYZ3 hit 58.69% peak savings. No electricity, no maintenance, NSF certified." />

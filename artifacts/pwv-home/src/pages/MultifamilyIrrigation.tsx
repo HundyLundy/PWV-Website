@@ -182,8 +182,7 @@ export default function MultifamilyIrrigation() {
           <div className="grid sm:grid-cols-3 gap-4">
             {[
               { label: "Multifamily Hub", href: "/industries/multifamily", desc: "Grand Central Tampa $50K/yr case study and cap rate analysis" },
-              { label: "Multifamily Water Costs", href: "/industries/multifamily/water-costs", desc: "The master meter problem — why owners overpay" },
-              { label: "Car Wash Hard Water", href: "/industries/car-washes/hard-water-equipment", desc: "Shared mechanism: mineral scale and water efficiency" },
+              { label: "Multifamily Water Costs", href: "/industries/multifamily/water-costs", desc: "Multifamily Water Costs — The master meter problem and why owners overpay." },
             ].map((link, i) => (
               <a key={i} href={link.href} className="bg-white rounded-xl p-5 border border-gray-200 hover:border-[#0374A7]/50 hover:shadow-md transition-all group">
                 <div className="text-[#0374A7] font-bold group-hover:underline mb-1">{link.label}</div>

@@ -16,6 +16,7 @@ export default function Multifamily() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Multifamily Water Savings | $50K/yr — Grand Central Tampa | Perfect Water Valve</title>
+        <meta name="description" content="Multifamily owners overpay on master-metered water. Smart Valve™ guarantees 15%–35% savings — verified $50K/yr at Grand Central Tampa." />
       </Helmet>
       <Navbar onScrollTo={scrollTo} />
 

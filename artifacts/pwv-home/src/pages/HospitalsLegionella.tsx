@@ -14,7 +14,7 @@ export default function HospitalsLegionella() {
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
       el.setAttribute("content", content);
     };
-    setMeta("description", "Air entrainment in hospital water pipes creates stagnant dead zones where Legionella colonizes. Smart Valve™ reduces air entrainment — supporting ASHRAE 188/514 and Joint Commission WMP compliance. NSF 61 & 372 certified.");
+    setMeta("description", "Air entrainment creates stagnant dead zones where Legionella colonizes. Smart Valve™ reduces air entrainment — supporting ASHRAE 514 and Joint Commission compliance.");
     setMeta("og:title", "Hospital Legionella Risk & Air Entrainment | Smart Valve™", "property");
     setMeta("og:url", "https://www.perfectwatervalve.com/industries/hospitals/legionella-biofilm-risk", "property");
     return () => { document.title = prevTitle; };

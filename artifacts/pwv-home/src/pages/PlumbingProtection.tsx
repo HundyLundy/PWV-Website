@@ -48,10 +48,7 @@ export default function PlumbingProtection() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Smart Valve™ Plumbing Protection Benefits | Pressure Stabilization, Scale Prevention &amp; Flow Optimization | Perfect Water Valve</title>
-        <meta
-          name="description"
-          content="Smart Valve™ stabilizes pressure, eliminates flow surges, prevents mineral scale, and reduces air entrainment — protecting commercial plumbing as a secondary benefit."
-        />
+        <meta name="description" content="Smart Valve™ stabilizes pressure, eliminates flow surges, and reduces mineral scale — protecting commercial plumbing as a secondary benefit to water savings." />
         <link rel="canonical" href="https://perfectwatervalve.com/benefits/plumbing-protection" />
       </Helmet>
       <Navbar />

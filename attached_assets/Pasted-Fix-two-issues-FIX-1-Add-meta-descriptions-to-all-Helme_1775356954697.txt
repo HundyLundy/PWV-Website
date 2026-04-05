@@ -1,0 +1,18 @@
+Fix two issues:
+FIX 1 — Add meta descriptions to all Helmet components
+Every page that has a <Helmet><title>…</title></Helmet> component needs a corresponding <meta name="description" content="…" /> inside that same Helmet. Add unique meta descriptions (150–160 characters) to each of the following pages. Use the exact text provided:
+/industries → Smart Valve™ delivers guaranteed water savings for hotels, data centers, hospitals, car washes, multifamily, and golf courses. 15% minimum, written guarantee.
+/industries/hotels → Hotels lose thousands monthly to undetected water waste. Smart Valve™ guarantees 15%–35% savings — verified 26% at Four Seasons Fort Lauderdale.
+/industries/hospitals → NSF 61 certified water savings for hospitals. Smart Valve™ reduces metered consumption 15%–35% and supports ASHRAE 188/514 Water Management Programs.
+/industries/car-washes → High-volume car washes save 15%–30% on water bills with Smart Valve™. Verified 23% savings at Caliber Car Wash. No impact on wash quality or throughput.
+/industries/multifamily → Multifamily owners overpay on master-metered water. Smart Valve™ guarantees 15%–35% savings — verified $50K/yr at Grand Central Tampa.
+/industries/data-centers → Data centers use up to 5M gallons/day. Smart Valve™ cuts cooling water costs 15%–35% annually — verified 58.69% peak at Amazon YYZ3.
+/industries/golf-courses → Golf courses on city water save 15%–35% on clubhouse, pool, and irrigation water bills. Smart Valve™ — NSF certified, guaranteed in writing.
+/results → Verified water savings results: Amazon YYZ3 (58.69%), Four Seasons (26%), Grand Central Tampa (23%), Caliber Car Wash (23%). All M&V-verified.
+/blog → Commercial water savings guides, case studies, and rate analysis. Smart Valve™ news and industry insights for facility managers and property owners.
+/benefits/plumbing-protection → Smart Valve™ stabilizes pressure, eliminates flow surges, and reduces mineral scale — protecting commercial plumbing as a secondary benefit to water savings.
+/industries/data-centers/cooling-water-costs → Cooling tower makeup water is 40–60% of data center water cost. Smart Valve™ reduces metered cooling water consumption 15%–58% — verified at Amazon YYZ3.
+/industries/data-centers/hyperscale-roi → At hyperscale water volumes, Smart Valve™ produces transformative ROI. Amazon YYZ3: 58.69% peak savings over 6 verified quarters. $7M+ peak scenario.
+/industries/hospitals/legionella-biofilm-risk → Air entrainment creates stagnant dead zones where Legionella colonizes. Smart Valve™ reduces air entrainment — supporting ASHRAE 514 and Joint Commission compliance.
+FIX 2 — Remove the Car Wash cross-link from the multifamily irrigation page
+On /industries/multifamily/irrigation-common-areas, the Related Pages section contains a link to the car wash hard water page. Remove that specific cross-link. Replace it with a link to the Multifamily Water Costs page (/industries/multifamily/water-costs) labeled "Multifamily Water Costs — The master meter problem and why owners overpay."

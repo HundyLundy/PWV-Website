@@ -44,7 +44,7 @@ export default function HyperscaleROI() {
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
       el.setAttribute("content", content);
     };
-    setMeta("description", "At hyperscale data center water volumes, Smart Valve™'s guaranteed 15% reduction produces millions in annual savings. Amazon YYZ3 verified at 58.69% peak. ROI analysis for data center operators.");
+    setMeta("description", "At hyperscale water volumes, Smart Valve™ produces transformative ROI. Amazon YYZ3: 58.69% peak savings over 6 verified quarters. $7M+ peak scenario.");
     setMeta("og:title", "Hyperscale Data Center Water ROI | Smart Valve™", "property");
     setMeta("og:url", "https://www.perfectwatervalve.com/industries/data-centers/hyperscale-roi", "property");
     return () => { document.title = prevTitle; };

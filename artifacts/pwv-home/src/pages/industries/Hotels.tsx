@@ -52,6 +52,7 @@ export default function Hotels() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Hotel Water Savings | Smart Valve™ — 26% Verified at Four Seasons | Perfect Water Valve</title>
+        <meta name="description" content="Hotels lose thousands monthly to undetected water waste. Smart Valve™ guarantees 15%–35% savings — verified 26% at Four Seasons Fort Lauderdale." />
         <script type="application/ld+json">{JSON.stringify(hotelsFaqSchema)}</script>
       </Helmet>
       <Navbar onScrollTo={scrollTo} />

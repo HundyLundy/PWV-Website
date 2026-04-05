@@ -21,7 +21,7 @@ export default function DataCenterCoolingCosts() {
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
       el.setAttribute("content", content);
     };
-    setMeta("description", "Data center cooling water costs are the fastest-growing OpEx line item in hyperscale infrastructure. Smart Valve™ cuts cooling water bills 15%–35% annually, guaranteed in writing. Amazon YYZ3 verified.");
+    setMeta("description", "Cooling tower makeup water is 40–60% of data center water cost. Smart Valve™ reduces metered cooling water consumption 15%–58% — verified at Amazon YYZ3.");
     setMeta("og:title", "Data Center Cooling Water Costs | Smart Valve™", "property");
     setMeta("og:url", "https://www.perfectwatervalve.com/industries/data-centers/cooling-water-costs", "property");
     return () => { document.title = prevTitle; };

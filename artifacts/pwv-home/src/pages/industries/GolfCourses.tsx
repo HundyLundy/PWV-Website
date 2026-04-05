@@ -68,7 +68,7 @@ export default function GolfCourses() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Golf Course Water Savings | Smart Valve™ Cuts Water Bills 15%–35% | Perfect Water Valve</title>
-        <meta name="description" content="Golf courses on city water save 15%–35% annually with Smart Valve™. Covers irrigation, clubhouse, pool, and drought compliance. Free assessment." />
+        <meta name="description" content="Golf courses on city water save 15%–35% on clubhouse, pool, and irrigation water bills. Smart Valve™ — NSF certified, guaranteed in writing." />
         <link rel="canonical" href="https://perfectwatervalve.com/industries/golf-courses" />
         <script type="application/ld+json">{JSON.stringify(golfFaqSchema)}</script>
       </Helmet>

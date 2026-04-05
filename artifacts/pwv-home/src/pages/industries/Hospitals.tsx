@@ -16,6 +16,7 @@ export default function Hospitals() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>Hospital &amp; Healthcare Water Savings | NSF 61 Certified | Perfect Water Valve</title>
+        <meta name="description" content="NSF 61 certified water savings for hospitals. Smart Valve™ reduces metered consumption 15%–35% and supports ASHRAE 188/514 Water Management Programs." />
       </Helmet>
       <Navbar onScrollTo={scrollTo} />
 
