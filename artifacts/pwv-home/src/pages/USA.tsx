@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, ShieldCheck, MapPin, Globe, ZapOff, Activity } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -90,6 +91,15 @@ const INDUSTRIES = [
 export default function USA() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <title>Commercial Water Savings Across the US | Smart Valve™ | Perfect Water Valve</title>
+        <meta name="description" content="Smart Valve™ cuts commercial water bills 15%–35% annually — guaranteed in writing — in all 50 states. Browse your state for local rate data, rebate programs, and verified savings results." />
+        <link rel="canonical" href="https://perfectwatervalve.com/locations/usa" />
+        <meta property="og:title" content="Commercial Water Savings Across the US | Smart Valve™ | Perfect Water Valve" />
+        <meta property="og:description" content="Smart Valve™ cuts commercial water bills 15%–35% annually — guaranteed in writing — in all 50 states. Browse your state for local rate data, rebate programs, and verified savings results." />
+        <meta property="og:url" content="https://perfectwatervalve.com/locations/usa" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
+      </Helmet>
       <StickyAssessmentCTA />
       <Navbar onScrollTo={() => {}} />
 

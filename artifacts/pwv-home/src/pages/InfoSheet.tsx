@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { CheckCircle2, Phone, Mail, ArrowRight, ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -131,6 +132,15 @@ function ChartCard({ title, caption, children }: { title: string; caption?: stri
 export default function InfoSheet() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
+      <Helmet>
+        <title>Smart Valve™ Info Sheet — Verified Savings Data & Specifications | Perfect Water Valve</title>
+        <meta name="description" content="Full Smart Valve™ data sheet: verified M&V results from Amazon, Four Seasons, RWJ Barnabas and more. Device specs, certifications, how it works, and the written guarantee explained." />
+        <link rel="canonical" href="https://perfectwatervalve.com/infosheet" />
+        <meta property="og:title" content="Smart Valve™ Info Sheet — Verified Savings Data & Specifications | Perfect Water Valve" />
+        <meta property="og:description" content="Full Smart Valve™ data sheet: verified M&V results from Amazon, Four Seasons, RWJ Barnabas and more. Device specs, certifications, how it works, and the written guarantee explained." />
+        <meta property="og:url" content="https://perfectwatervalve.com/infosheet" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
+      </Helmet>
       <Navbar />
 
       {/* HERO */}

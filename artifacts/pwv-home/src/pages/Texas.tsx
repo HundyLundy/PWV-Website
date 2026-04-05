@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Building2, Home, Hotel, Cross, Droplets, Utensils, Flag,
@@ -23,6 +24,15 @@ export default function TexasNewPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <title>Texas Commercial Water Savings | Smart Valve™ — SAWS, Dallas, Houston | Perfect Water Valve</title>
+        <meta name="description" content="Texas commercial water rates are rising fast — SAWS up 32.7% by 2029, Aqua Texas hiking March 2026. Smart Valve™ cuts your metered bill 15%–35% annually, guaranteed. Dallas rebates up to $100,000." />
+        <link rel="canonical" href="https://perfectwatervalve.com/locations/texas" />
+        <meta property="og:title" content="Texas Commercial Water Savings | Smart Valve™ — SAWS, Dallas, Houston | Perfect Water Valve" />
+        <meta property="og:description" content="Texas commercial water rates are rising fast — SAWS up 32.7% by 2029, Aqua Texas hiking March 2026. Smart Valve™ cuts your metered bill 15%–35% annually, guaranteed. Dallas rebates up to $100,000." />
+        <meta property="og:url" content="https://perfectwatervalve.com/locations/texas" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
+      </Helmet>
       <Navbar onScrollTo={scrollTo} page="texas" />
 
       {/* HERO */}
