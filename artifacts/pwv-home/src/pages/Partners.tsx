@@ -1,9 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ShieldCheck, CheckCircle2, Award, BarChart3, FileText, Wrench, Phone, Mail, Droplets, Gauge, Zap, RefreshCw, Users, ArrowRight } from "lucide-react";
+import { ShieldCheck, CheckCircle2, Award, BarChart3, FileText, Wrench, Phone, Mail, Droplets, Gauge, Zap, RefreshCw, ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import awsLogoSrc from "@assets/Screenshot_2026-04-04_at_11.11.03_PM_1775365869639.png";
 import cwsLogoSrc from "@assets/Screenshot_2026-04-04_at_11.11.54_PM_1775365918231.png";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
@@ -29,11 +28,11 @@ export default function Partners() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
-        <title>Partners & Process — AWS, Flow Dynamics & Perfect Water Valve</title>
-        <meta name="description" content="Perfect Water Valve is your single point of contact. AWS issues the written guarantee and handles all service behind the scenes. Flow Dynamics makes the valve. One call — we handle everything else." />
+        <title>Partners & Process — Perfect Water Valve & American Water Savings</title>
+        <meta name="description" content="Perfect Water Valve is your dedicated account manager for the life of the Smart Valve™ program — actively partnered with American Water Savings (AWS) at every stage, from your first proposal through every M&V cycle." />
         <link rel="canonical" href="https://perfectwatervalve.com/partners" />
-        <meta property="og:title" content="Partners & Process — AWS, Flow Dynamics & Perfect Water Valve" />
-        <meta property="og:description" content="Perfect Water Valve is your single point of contact. AWS issues the written guarantee and handles all service behind the scenes. Flow Dynamics makes the valve. One call — we handle everything else." />
+        <meta property="og:title" content="Partners & Process — Perfect Water Valve & American Water Savings" />
+        <meta property="og:description" content="Perfect Water Valve is your dedicated account manager for the life of the Smart Valve™ program — actively partnered with American Water Savings (AWS) at every stage, from your first proposal through every M&V cycle." />
         <meta property="og:url" content="https://perfectwatervalve.com/partners" />
         <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
         <script type="application/ld+json">{JSON.stringify(partnersSchema)}</script>
@@ -55,40 +54,41 @@ export default function Partners() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">We Handle Everything Else.</span>
             </h1>
             <p className="text-lg text-white/80 leading-relaxed max-w-2xl mx-auto" style={{ fontWeight: 300 }}>
-              Perfect Water Valve is your single point of contact — your account manager from first conversation through ongoing results. Behind us, American Water Savings Inc. (AWS) issues the written guarantee, conducts all measurement and verification, and provides 10 years of full service. Flow Dynamics LLC makes and patents the valve. You never have to manage any of that.
+              Perfect Water Valve is your dedicated account manager — involved from your first conversation through every M&V cycle. We work hand-in-hand with American Water Savings Inc. (AWS), who runs the program, issues the written guarantee, and provides 10 years of full service. You have two organizations working for you, with one primary contact: us.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* TWO-LAYER: YOUR ROLE vs. BEHIND THE SCENES */}
+      {/* HOW IT WORKS FOR YOU — PVW + AWS Partnership */}
       <section className="py-20 px-6" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-5xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
             <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-3" style={{ color: "#0374A7" }}>How It Works for You</span>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4" style={{ color: "#0A1F3A" }}>
-              You Deal With One Organization. That's Us.
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-5" style={{ color: "#0A1F3A" }}>
+              A Real Partnership — Start to Finish
             </h2>
             <p className="text-base max-w-2xl mx-auto" style={{ color: "#4A7085", fontWeight: 300 }}>
-              Our job is to make this effortless for you. You contact Perfect Water Valve — we coordinate everything with AWS and Flow Dynamics so you never have to.
+              Perfect Water Valve is your dedicated account manager for the life of the program. We are in active communication with AWS at every stage — from your first proposal through every M&V cycle — and you'll be kept in the loop throughout. This isn't a handoff. It's an ongoing three-way partnership between you, Perfect Water Valve, and AWS.
             </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 gap-6">
-            {/* What YOU do */}
+            {/* PVW — Account Manager */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               className="rounded-2xl p-8 border-2" style={{ borderColor: "#0374A7", backgroundColor: "#F4F8FC" }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-5" style={{ background: "#0374A7" }}>
-                <Users className="w-3.5 h-3.5" /> Your Role
+                <Phone className="w-3.5 h-3.5" /> Perfect Water Valve — Your Account Manager
               </div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: "#0A1F3A" }}>Contact Perfect Water Valve. That's it.</h3>
+              <h3 className="text-xl font-bold mb-2" style={{ color: "#0A1F3A" }}>We're involved throughout — not just at the start.</h3>
+              <p className="text-sm mb-5" style={{ color: "#4A7085", fontWeight: 300 }}>From the first call to your most recent M&V report, Perfect Water Valve is your relationship and your advocate. We stay in active communication with AWS on your behalf at every stage.</p>
               <ul className="space-y-3 text-sm" style={{ color: "#2E4A5A" }}>
                 {[
-                  "Reach out for a free, no-obligation assessment",
-                  "Share 12 months of water bills — we pull the projection",
-                  "Review your site-specific savings proposal",
-                  "Sign the agreement — the written guarantee is included",
-                  "We schedule and coordinate everything from there",
+                  "Your primary point of contact from day one through the life of the program",
+                  "Active partner with AWS — we're in the loop on your assessment, install, and every M&V cycle",
+                  "We walk you through your savings proposal and what to expect",
+                  "We walk you through every M&V report and what the numbers mean",
+                  "If anything comes up — you call us. We get it resolved with AWS.",
                 ].map((pt, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#0374A7" }} />
@@ -98,22 +98,22 @@ export default function Partners() {
               </ul>
             </motion.div>
 
-            {/* What happens behind the scenes */}
+            {/* AWS — Program Operator */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
               className="rounded-2xl p-8 border" style={{ borderColor: "#C5D8E8", backgroundColor: "#0A1F3A" }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5" style={{ background: "rgba(91,191,224,0.15)", color: "#5BBFE0", border: "1px solid rgba(91,191,224,0.3)" }}>
-                <ShieldCheck className="w-3.5 h-3.5" /> Behind the Scenes
+                <ShieldCheck className="w-3.5 h-3.5" /> American Water Savings — Program Operator
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white">We coordinate with AWS and Flow Dynamics.</h3>
+              <h3 className="text-xl font-bold mb-2 text-white">AWS runs the program and backs the guarantee.</h3>
+              <p className="text-sm mb-5" style={{ color: "rgba(255,255,255,0.55)", fontWeight: 300 }}>AWS is the licensed program operator behind every Smart Valve™ installation. They carry 65+ years of combined experience in commodity management and are in communication with both you and Perfect Water Valve throughout.</p>
               <ul className="space-y-3 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
                 {[
-                  "Perfect Water Valve manages your account and is your ongoing contact",
-                  "AWS conducts the no-cost site assessment and qualifies your property",
-                  "AWS installs the Smart Valve™ — one water shutdown, up to 3.5 hours",
-                  "AWS calibrates the valve 4 weeks later, in phases, at no cost to you",
-                  "AWS conducts M&V every 6–12 months and delivers formal PDF reports",
-                  "AWS handles all service, repair, and replacement for 10 years",
-                  "Flow Dynamics LLC manufactures and patents the device",
+                  "Conducts your no-cost site assessment and builds the savings projection",
+                  "Installs the Smart Valve™ — one water shutdown of up to 3.5 hours",
+                  "Calibrates the device 4 weeks later, in phases, at no additional cost",
+                  "Issues and stands behind the written minimum 15% savings guarantee",
+                  "Conducts M&V every 6–12 months and delivers formal PDF reports",
+                  "Provides 10 years of full service, repair, and replacement",
                 ].map((pt, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <ArrowRight className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#5BBFE0" }} />
@@ -136,26 +136,9 @@ export default function Partners() {
             </h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-3 gap-6">
-            {/* Flow Dynamics */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }}
-              className="rounded-2xl border overflow-hidden flex flex-col" style={{ borderColor: "#C5D8E8" }}>
-              <div className="flex items-center justify-center bg-gradient-to-br from-[#0A1F3A] to-[#0374A7] h-40 p-4">
-                <img src={smartValveSrc} alt="Smart Valve™ by Flow Dynamics LLC" className="h-32 w-auto object-contain drop-shadow-2xl" />
-              </div>
-              <div className="p-5 flex flex-col gap-2 flex-1">
-                <div className="inline-flex self-start items-center px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-1" style={{ background: "#0A1F3A" }}>
-                  Developer &amp; Patent Holder
-                </div>
-                <h3 className="text-base font-headline font-bold" style={{ color: "#0A1F3A" }}>Flow Dynamics LLC</h3>
-                <p className="text-xs leading-relaxed" style={{ color: "#4A7085" }}>
-                  Designed, developed, and patented the Smart Valve™. Holds US Patents 8,707,981 · 10,544,569 · 11,016,512. American Made and Operated — development started in 2008, first US patent awarded 2014.
-                </p>
-              </div>
-            </motion.div>
-
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {/* AWS */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }}
               className="rounded-2xl border overflow-hidden flex flex-col" style={{ borderColor: "#C5D8E8" }}>
               <div className="flex items-center justify-center bg-white h-40 p-6 border-b" style={{ borderColor: "#E8EFF7" }}>
                 <img src={awsLogoSrc} alt="American Water Savings Inc." className="max-h-20 w-auto object-contain" />
@@ -171,20 +154,17 @@ export default function Partners() {
               </div>
             </motion.div>
 
-            {/* CWS */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+            {/* CWS — logo only */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
               className="rounded-2xl border overflow-hidden flex flex-col" style={{ borderColor: "#C5D8E8" }}>
               <div className="flex items-center justify-center bg-white h-40 p-6 border-b" style={{ borderColor: "#E8EFF7" }}>
                 <img src={cwsLogoSrc} alt="Canadian Water Savings Inc." className="max-h-20 w-auto object-contain" />
               </div>
               <div className="p-5 flex flex-col gap-2 flex-1">
                 <div className="inline-flex self-start items-center px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-1" style={{ background: "#3C6E7F" }}>
-                  The Original Organization
+                  Canada Program Operator
                 </div>
                 <h3 className="text-base font-headline font-bold" style={{ color: "#0A1F3A" }}>Canadian Water Savings Inc.</h3>
-                <p className="text-xs leading-relaxed" style={{ color: "#4A7085" }}>
-                  The founding organization from which American Water Savings grew. CWS pioneered the Guaranteed Water Savings program model in Canada. Their legacy is the foundation that AWS was built on.
-                </p>
               </div>
             </motion.div>
           </div>
