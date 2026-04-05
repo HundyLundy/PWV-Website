@@ -256,7 +256,13 @@ export default function Results() {
             </div>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 flex justify-end">
+            <a href="/blog/amazon-yyz3-case-study" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5" style={{ background: "rgba(3,116,167,0.1)", color: "#0374A7", border: "1px solid rgba(3,116,167,0.25)" }}>
+              Full Case Study — All 5 Charts &amp; Data <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="mt-4">
             <ChartCard
               title="Water Volume (m³) — Prior Year vs Post-Installation, by Quarter"
               caption="YYZ3 measured water volume · Blue = post-installation · Grey = prior-year comparable period"
@@ -324,7 +330,13 @@ export default function Results() {
             </div>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 flex justify-end">
+            <a href="/blog/four-seasons-case-study" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5" style={{ background: "rgba(3,116,167,0.1)", color: "#0374A7", border: "1px solid rgba(3,116,167,0.25)" }}>
+              Full Case Study — 4 Charts &amp; Monthly Data <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="mt-4">
             <ChartCard
               title="Annual Water Cost — Before vs After (USD)"
               caption="26% reduction on ~$103,846/yr baseline → ~$76,846/yr · saving $27,000/yr · Estimated from verified M&V"
@@ -567,6 +579,25 @@ export default function Results() {
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 max-w-5xl mx-auto opacity-60">
             {["Linamar", "Labatt Brewing", "Guinness", "Commercial Bakeries", "Kerry Group (CA)", "Starlight Investments", "Akelius"].map((name) => (
               <span key={name} className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#4A7085" }}>{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DEEP DIVE LINKS */}
+      <section className="py-12 px-6" style={{ backgroundColor: "#F7FAFD" }}>
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#4A7085" }}>Full Case Study Pages — All Charts &amp; Data</p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { label: "Amazon YYZ3 & YYZ4", href: "/blog/amazon-yyz3-case-study", desc: "5 charts · 6 quarters · Per-head normalization · Flow rate data" },
+              { label: "Four Seasons Fort Lauderdale", href: "/blog/four-seasons-case-study", desc: "4 charts · Monthly breakdown · Daily + annual cost comparison" },
+              { label: "St. Regis Toronto", href: "/blog/st-regis-toronto-case-study", desc: "$49,889 CAD/yr · 20%+ · Marriott-approved · Chief Engineer quote" },
+            ].map((l) => (
+              <a key={l.href} href={l.href} className="block rounded-2xl p-5 border border-slate-200 bg-white hover:border-blue-300 hover:shadow-sm transition-all group">
+                <div className="font-bold text-sm mb-1 group-hover:text-blue-600 transition-colors" style={{ color: "#0374A7" }}>{l.label} →</div>
+                <div className="text-xs" style={{ color: "#4A7085" }}>{l.desc}</div>
+              </a>
             ))}
           </div>
         </div>

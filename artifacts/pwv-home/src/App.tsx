@@ -10,6 +10,8 @@ import NotFound from "@/pages/not-found";
 import BlogPage from "@/pages/Blog";
 import WaterRates2025 from "@/pages/blog/WaterRates2025";
 import AmazonYYZ3 from "@/pages/blog/AmazonYYZ3";
+import FourSeasons from "@/pages/blog/FourSeasons";
+import StRegis from "@/pages/blog/StRegis";
 import DenverRebate from "@/pages/blog/DenverRebate";
 import HotelWaterSavings from "@/pages/blog/HotelWaterSavings";
 import WhatIsSmartValve from "@/pages/blog/WhatIsSmartValve";
@@ -355,6 +357,8 @@ function Router() {
       <Route path="/blog/" component={BlogPage} />
       <Route path="/blog/commercial-water-rates-rising-2025" component={WaterRates2025} />
       <Route path="/blog/amazon-yyz3-case-study" component={AmazonYYZ3} />
+      <Route path="/blog/four-seasons-case-study" component={FourSeasons} />
+      <Route path="/blog/st-regis-toronto-case-study" component={StRegis} />
       <Route path="/blog/denver-water-rebate-guide" component={DenverRebate} />
       <Route path="/blog/hotel-water-savings-guide" component={HotelWaterSavings} />
       <Route path="/blog/what-is-smart-valve" component={WhatIsSmartValve} />

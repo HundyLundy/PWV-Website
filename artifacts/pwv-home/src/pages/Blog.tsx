@@ -18,10 +18,24 @@ const POSTS = [
   },
   {
     slug: "amazon-yyz3-case-study",
-    title: "Amazon YYZ3 Achieved 58.69% Water Savings Over 6 Consecutive Quarters — Here's How",
+    title: "Amazon YYZ3 & YYZ4: 6 Quarters of Verified M&V Results — Full Data & Charts",
     category: "Case Studies",
-    date: "March 20, 2026",
-    excerpt: "The Amazon YYZ3 data center is the highest-verified result in the Smart Valve™ portfolio. 58.69% peak savings. Six consecutive quarters. Zero maintenance. Here's the full breakdown.",
+    date: "April 5, 2026",
+    excerpt: "Real M&V data from two Amazon fulfillment centres in Brampton, ON. 58.69% peak. 17% per-head average for YYZ3. 16% for YYZ4. Six consecutive quarters, five charts.",
+  },
+  {
+    slug: "four-seasons-case-study",
+    title: "Four Seasons Fort Lauderdale: 26% Daily Water Reduction, $27,000/yr Saved",
+    category: "Case Studies",
+    date: "April 5, 2026",
+    excerpt: "Third-party M&V verified: 26% daily average, 34% occupancy-normalized, 56% October peak. Daily water & sewer cost dropped from $348.21 to $274.07. Full data and charts.",
+  },
+  {
+    slug: "st-regis-toronto-case-study",
+    title: "St. Regis Toronto: $49,889 CAD/yr Saved, 20%+ Water Cost Reduction — Marriott Approved",
+    category: "Case Studies",
+    date: "April 5, 2026",
+    excerpt: "Year-over-year savings of $49,889 CAD confirmed by Chief Engineer Priyan Jayetileke. Installed in under an hour. Marriott International approved. Canadian Water Savings M&V.",
   },
   {
     slug: "denver-water-rebate-guide",
