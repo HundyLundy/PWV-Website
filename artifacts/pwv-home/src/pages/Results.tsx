@@ -538,6 +538,7 @@ export default function Results() {
             { name: "Courtyard Apts", sub: "Hackensack, NJ · 18% · $4,549/yr" },
             { name: "451 Central Ave", sub: "Orange, NJ · 12.5% · $1,470/yr" },
             { name: "Jefferson Arms", sub: "Orange, NJ · 14.7% · $3,700/yr" },
+            { name: "Houston Office", sub: "Houston, TX · 39% bill reduction · 37% GPD" },
             { name: "500 Main St", sub: "Orange, NJ · 26% · $3,566/yr" },
             { name: "Park Gardens", sub: "East Orange, NJ · 21% · $8,166/yr" },
           ].map((c) => (
@@ -576,6 +577,7 @@ export default function Results() {
               { label: "Chateau Tower Condos, Tampa FL", href: "/results/chateau-tower-fl", desc: "Condo HOA · Tampa, FL · 16% reduction · $11,028/yr · 9.2-mo payback · $45,112 5-yr profit" },
               { label: "451 Central Ave, Orange NJ", href: "/results/central-ave-nj", desc: "13-unit apartment · Orange, NJ · 12.5% reduction · $1,470/yr · 19-mo payback" },
               { label: "Jefferson Arms, Orange NJ", href: "/results/jefferson-arms-nj", desc: "28-unit apartment · Orange, NJ · 14.7% reduction · $3,700/yr · 15-mo payback" },
+              { label: "Ten Story Office Building, Houston TX", href: "/results/houston-office-tx", desc: "180,000 SF multi-tenant office · Houston, TX · 39% bill reduction · 37% GPD reduction · <12-mo payback" },
               { label: "500 Main St, Orange NJ", href: "/results/orange-apartment-nj", desc: "16-unit apartment · Orange, NJ · 26% reduction · $3,566/yr · 8-mo payback" },
               { label: "Park Gardens, East Orange NJ", href: "/results/park-gardens-nj", desc: "48-unit apartment · East Orange, NJ · 21% reduction · $8,166/yr · 15-mo payback" },
             ].map((l) => (

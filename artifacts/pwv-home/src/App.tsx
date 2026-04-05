@@ -29,6 +29,7 @@ import CourtyardHackensack from "@/pages/case-studies/CourtyardHackensack";
 import JeffersonArmsNJ from "@/pages/case-studies/JeffersonArmsNJ";
 import OrangeApartmentNJ from "@/pages/case-studies/OrangeApartmentNJ";
 import ParkGardensNJ from "@/pages/case-studies/ParkGardensNJ";
+import HoustonOfficeTX from "@/pages/case-studies/HoustonOfficeTX";
 
 // Core pages
 import Results from "@/pages/Results";
@@ -405,6 +406,8 @@ function Router() {
       <Route path="/results/orange-apartment-nj/" component={OrangeApartmentNJ} />
       <Route path="/results/park-gardens-nj" component={ParkGardensNJ} />
       <Route path="/results/park-gardens-nj/" component={ParkGardensNJ} />
+      <Route path="/results/houston-office-tx" component={HoustonOfficeTX} />
+      <Route path="/results/houston-office-tx/" component={HoustonOfficeTX} />
 
       {/* Fallback */}
       <Route component={NotFound} />
