@@ -10,11 +10,11 @@ import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 
 const HOME_FAQ_ITEMS = [
   { q: "How much can Smart Valve™ reduce my commercial water bill?", a: "Smart Valve™ reduces metered water consumption 15–35% annually on average, guaranteed in writing. The minimum guaranteed savings is 15%. Peak quarter results have reached 58.69% at Amazon YYZ3 — high-volume and high-occupancy facilities tend to see the highest peaks." },
-  { q: "How does Smart Valve™ work?", a: "Smart Valve™ is a passive hydrodynamic device that installs on your main water supply line between two ball valves, after the water meter. It reduces turbulence and water hammer in the line, which optimizes flow characteristics and reduces the volume of water that passes through the meter. It requires no electricity, has no moving parts, and needs no maintenance." },
-  { q: "How long does installation take?", a: "Installation takes under 4 hours with zero downtime. A licensed plumber installs Smart Valve™ on the main supply line. There is no disruption to operations, no pressure loss, and no impact on water quality." },
-  { q: "Is Smart Valve™ certified for potable water systems?", a: "Yes. Smart Valve™ is NSF 61 and NSF 372 certified, meaning it is safe for use in potable (drinking) water systems. It is also certified by AWS (American Water Savings) and CWS (Commercial Water Savings)." },
+  { q: "How does Smart Valve™ work?", a: "Smart Valve™ uses hydrostatic back pressure to create a compression zone upstream of the water meter. City water travels at high pressure (≈250 psi) in the distribution main, keeping entrained air compressed. When pressure drops to 50–110 psi at your building, that air rapidly expands and inflates meter readings — billing you for air as if it were water. Smart Valve™ maintains upstream compression so the meter only registers actual water volume. It also stabilizes flow to eliminate pressure surges, and its back pressure reduces actual consumption in non-volumetric fixtures. No electricity required. No maintenance." },
+  { q: "How long does installation take?", a: "Installation requires a single water shutdown of up to 3.5 hours — the only interruption ever required. A licensed plumber installs Smart Valve™ on the client side of your water meter, before the pressure reducer or booster pump. Four weeks after installation, AWS calibrates the valve in phases to match your system's specific pressure profile — all without shutting off the water." },
+  { q: "Is Smart Valve™ certified for potable water systems?", a: "Yes. Smart Valve™ holds NSF/ANSI/CAN 61 (drinking water system components) and NSF/ANSI 372 (lead-free compliance) certifications, ensuring it meets regulatory requirements across North America. It is distributed exclusively by AWS (American Water Savings Inc.) for U.S. installations and CWS (Canadian Water Savings) for Canadian installations." },
   { q: "What types of commercial properties does Perfect Water Valve serve?", a: "Perfect Water Valve serves hotels and resorts, data centers, hospitals and healthcare facilities, multifamily residential buildings, car washes, golf courses, industrial facilities, and commercial office buildings across all 50 states." },
-  { q: "Is there a guarantee?", a: "Yes. Perfect Water Valve provides a written guarantee of a minimum 15% reduction in metered water consumption. If the savings do not meet the guaranteed minimum, we make it right." },
+  { q: "Is there a guarantee?", a: "Yes. AWS issues an iron-clad written guarantee of a minimum 15% reduction in metered water consumption. If verified savings fall short during the 6-month money-back guarantee period, AWS will uninstall the Smart Valve™ entirely at their expense — no penalties, no hidden fees. Alternatively, your monthly payment will be reduced to never exceed 50% of your actual verified savings. Full service, repair, replacement, analytics, and reporting are included for 10 years in the program fee." },
 ];
 
 const homeFaqSchema = {
@@ -50,7 +50,7 @@ const homeServiceSchema = {
     "@type": "LocalBusiness",
     "name": "Perfect Water Valve"
   },
-  "description": "Passive electrochemical device installed at the main commercial water supply line. Reduces metered water consumption 15%–35% annually. Guaranteed in writing on every installation. No electricity, no moving parts, no maintenance.",
+  "description": "US-patented passive mechanical device installed at the main commercial water supply line. Reduces metered water consumption 15%–35% annually by eliminating Phantom Volume — the air that inflates water meter readings. Guaranteed in writing on every installation. No electricity required. No maintenance.",
   "areaServed": "US",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",

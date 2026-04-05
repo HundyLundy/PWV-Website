@@ -3,6 +3,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, ExternalLink } from "lucide-reac
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
+import phantomVolumeSrc from "@assets/Screenshot_2026-04-04_at_11.06.35_PM_1775365598095.png";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, ReferenceLine, Cell, Legend,
@@ -166,6 +167,47 @@ export default function InfoSheet() {
             {TOP_STATS.map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}>
                 <StatCard value={s.val} label={s.label} sub={s.sub} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PHANTOM VOLUME EXPLAINED ─────────────────────────────────────── */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100" style={{ background: "#0A1F3A" }}>
+        <div className="max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4" style={{ background: "rgba(92,191,224,0.15)", color: "#5BBFE0" }}>
+              The Root Cause of Inflated Water Bills
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Phantom Volume — Why You Pay for Air</h2>
+            <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed" style={{ fontWeight: 300 }}>
+              City water travels at ≈250 psi in distribution mains, keeping dissolved air fully compressed.
+              At your building's PRV or pressure regulator, the line drops to 50–110 psi — creating an instant
+              decompression zone. Air expands 4–5× its compressed volume, forming millions of micro-bubbles
+              that displace water yet still spin the turbine or piston inside your meter. You're billed for air
+              as if it were water. Smart Valve™ maintains upstream compression to prevent this.
+            </p>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl mx-auto max-w-3xl">
+            <img
+              src={phantomVolumeSrc}
+              alt="Phantom Volume diagram showing how air expansion inflates water meter readings"
+              className="w-full h-auto"
+            />
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-4 mt-8">
+            {[
+              { label: "City Main Pressure", value: "≈250 psi", desc: "Air stays compressed — fully dissolved in water" },
+              { label: "Decompression Drop", value: "50–110 psi", desc: "At PRV/regulator — air expands 4–5× volume" },
+              { label: "Meter Inflation", value: "Phantom Volume", desc: "Bubbles spin meter without delivering real water" },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="rounded-xl p-5 border border-white/10 text-center" style={{ background: "rgba(255,255,255,0.05)" }}>
+                <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "#5BBFE0" }}>{item.label}</div>
+                <div className="text-xl font-bold text-white mb-1">{item.value}</div>
+                <div className="text-xs text-white/50">{item.desc}</div>
               </motion.div>
             ))}
           </div>

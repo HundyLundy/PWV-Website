@@ -50,7 +50,7 @@ export default function Partners() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">the Guarantee</span>
             </h1>
             <p className="text-lg text-white/80 leading-relaxed max-w-2xl mx-auto" style={{ fontWeight: 300 }}>
-              Every Smart Valve™ installation is backed by two independent certification organizations — American Water Savings (AWS) and Canadian Water Savings (CWS). They provide the valve, conduct measurement and verification, calculate the savings, and issue the written guarantee.
+              Smart Valve™ is exclusively distributed through American Water Savings (AWS) in the U.S. and Canadian Water Savings (CWS) in Canada — the organizations that conduct measurement and verification, issue the written performance guarantee, and include 10 years of service, repair, and replacement at no additional cost.
             </p>
           </motion.div>
         </div>
@@ -70,12 +70,12 @@ export default function Partners() {
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Wrench, title: "The Smart Valve™ Device", body: "AWS and CWS manufacture and supply the Smart Valve™ — a passive hydrodynamic device installed on commercial main supply lines. No electricity, no moving parts, no maintenance.", color: "#0374A7" },
+              { icon: Wrench, title: "The Smart Valve™ Device", body: "AWS exclusively distributes and supplies the Smart Valve™ — a US-patented mechanical device (US Patents 8,707,981 · 10,544,569 · 11,016,512) built from Acetron GP and food-grade stainless steel. Available in sizes 5/8\" to 12\". No electricity required. No maintenance.", color: "#0374A7" },
               { icon: BarChart3, title: "Pre-Installation Assessment", body: "Before every installation, AWS or CWS analyzes 12+ months of water billing data to project site-specific savings. The projection becomes the basis for the written guarantee.", color: "#3C6E7F" },
-              { icon: FileText, title: "Measurement & Verification", body: "AWS and CWS conduct independent M&V using IPMVP-compliant methodology. Savings are calculated against a baseline, reviewed at quarter intervals, and reported in a formal M&V document.", color: "#0A1F3A" },
-              { icon: ShieldCheck, title: "The Written Guarantee", body: "AWS and CWS issue the performance guarantee — a written contract specifying the minimum 15% savings. If the verified reduction falls short, they make it right at no cost to the facility.", color: "#0374A7" },
-              { icon: CheckCircle2, title: "NSF Certification Backing", body: "Smart Valve™ is certified under NSF 61 (drinking water system components) and NSF 372 (lead-free materials). These certifications are maintained and administered through the AWS/CWS quality program.", color: "#3C6E7F" },
-              { icon: Globe, title: "North American Coverage", body: "AWS covers all U.S. installations. CWS covers all Canadian installations. Both organizations apply the same M&V methodology and guarantee terms across their respective territories.", color: "#0A1F3A" },
+              { icon: FileText, title: "Measurement & Verification", body: "AWS and CWS conduct independent M&V every 6–12 months using IPMVP-compliant methodology. Savings are calculated against a verified baseline and delivered in a formal M&V PDF report per installation.", color: "#0A1F3A" },
+              { icon: ShieldCheck, title: "The Written Guarantee", body: "AWS guarantees a minimum 15% savings in writing. If results fall short, AWS will uninstall at their expense — no penalties, no hidden fees — or will reduce your monthly payment to never exceed 50% of your verified savings.", color: "#0374A7" },
+              { icon: CheckCircle2, title: "10-Year Service Coverage", body: "Backed by a 10-year manufacturer's warranty. Service, repair, and replacement are included at no cost for the life of the installation. NSF/ANSI/CAN 61 and NSF/ANSI 372 certified for all North American water systems.", color: "#3C6E7F" },
+              { icon: Globe, title: "North American Coverage", body: "AWS (American Water Savings Inc.) covers all U.S. installations — 42,000+ customers on Guaranteed Water Savings programs, 65+ years combined in Commodity Management, American Made and Operated. CWS (Canadian Water Savings) covers all Canadian installations.", color: "#0A1F3A" },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                 className="bg-white rounded-2xl p-7 border" style={{ borderColor: "#C5D8E8" }}>
@@ -101,13 +101,16 @@ export default function Partners() {
           <div className="grid sm:grid-cols-2 gap-8">
             {[
               {
-                org: "American Water Savings", abbr: "AWS", territory: "United States", color: "#0374A7",
+                org: "American Water Savings Inc.", abbr: "AWS", territory: "United States", color: "#0374A7",
                 points: [
-                  "All 50 U.S. states covered",
+                  "Exclusive distributor & partner of Smart Valve™",
+                  "42,000+ customers on Guaranteed Water Savings programs",
+                  "65+ years combined in Commodity Management",
+                  "American Made and Operated",
+                  "1800 Pembrook Drive, Suite 300, Orlando FL 32810",
                   "Denver Water rebate program approved supplier",
-                  "IPMVP-compliant M&V reporting",
-                  "Formal M&V PDF report per installation",
-                  "Written guarantee issued per site"
+                  "IPMVP-compliant M&V every 6–12 months",
+                  "Written guarantee issued per site — 6-month money-back period"
                 ]
               },
               {
@@ -157,8 +160,8 @@ export default function Partners() {
             {[
               { step: "01", title: "Free Assessment", body: "Perfect Water Valve analyzes your water bills and coordinates with AWS or CWS to project site-specific savings." },
               { step: "02", title: "Guarantee Issued", body: "AWS or CWS issues a formal written guarantee — minimum 15% savings — before installation begins." },
-              { step: "03", title: "Installation", body: "A licensed plumber installs Smart Valve™ on your main supply line. Under 4 hours. Zero downtime." },
-              { step: "04", title: "M&V Reporting", body: "AWS or CWS conducts independent measurement and verification quarterly, delivering formal PDF reports." },
+              { step: "03", title: "Site Assessment & Installation", body: "AWS conducts a site assessment at no cost (no water shutdown required). Installation by a licensed plumber takes up to 3.5 hours — the only time a water shutdown is needed. Calibration follows 4 weeks later." },
+              { step: "04", title: "M&V Reporting", body: "AWS or CWS conducts independent measurement and verification every 6–12 months, delivering formal PDF reports against a verified baseline." },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="rounded-2xl p-6 border border-white/10" style={{ background: "rgba(255,255,255,0.06)" }}>
