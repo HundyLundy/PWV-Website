@@ -188,7 +188,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                 {/* Col 1 — INDUSTRIES */}
                 <div>
                   <a href="/industries" onClick={() => setExploreOpen(false)}
-                    className="inline-block text-[9px] font-bold uppercase tracking-[0.22em] mb-3 hover:text-sky-200 transition-colors"
+                    className="block text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3 hover:text-sky-200 transition-colors"
                     style={{ color: '#5BBFE0' }}>Industries →</a>
                   <div className="grid grid-cols-2 gap-x-3">
                     {INDUSTRIES.map((ind) => {
@@ -223,7 +223,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
 
                 {/* Col 2 — RESULTS */}
                 <div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Results</div>
+                  <div className="text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Results</div>
                   <div className="flex flex-col gap-0.5">
                     {/* Case Studies with sub-links */}
                     <div>
@@ -278,7 +278,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
 
                 {/* Col 3 — ABOUT SMART VALVE */}
                 <div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>About Smart Valve™</div>
+                  <div className="text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>About Smart Valve™</div>
                   <div className="flex flex-col gap-0.5">
 
                     {/* Partners — featured highlight entry */}
