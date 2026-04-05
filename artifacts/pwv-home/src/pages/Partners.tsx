@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ShieldCheck, CheckCircle2, Award, BarChart3, FileText, Wrench, Phone, Mail, Droplets, Gauge, Zap, RefreshCw, ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
 import awsLogoSrc from "@assets/Screenshot_2026-04-04_at_11.11.03_PM_1775365869639.png";
 import cwsLogoSrc from "@assets/Screenshot_2026-04-04_at_11.11.54_PM_1775365918231.png";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
@@ -242,12 +243,21 @@ export default function Partners() {
       {/* DEVICE SPECS */}
       <section className="py-20 px-6" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-5xl mx-auto">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
             <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-3" style={{ color: "#0374A7" }}>Technical Specifications</span>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4" style={{ color: "#0A1F3A" }}>
               Smart Valve™ Device Details
             </h2>
           </motion.div>
+
+          {/* Valve image */}
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex justify-center mb-10">
+            <div className="rounded-2xl overflow-hidden flex items-center justify-center w-full max-w-sm h-64"
+              style={{ background: "linear-gradient(135deg, #0A1F3A 0%, #0374A7 100%)", border: "1px solid rgba(91,191,224,0.25)" }}>
+              <img src={smartValveSrc} alt="Smart Valve™ by Flow Dynamics LLC" className="h-52 w-auto object-contain drop-shadow-2xl" />
+            </div>
+          </motion.div>
+
           <div className="grid sm:grid-cols-2 gap-8">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl p-8 border" style={{ borderColor: "#C5D8E8", backgroundColor: "#F4F8FC" }}>
               <h3 className="text-lg font-bold mb-5" style={{ color: "#0A1F3A" }}>Construction &amp; Materials</h3>
