@@ -158,7 +158,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
             (720) 937-3004
           </a>
           <a href="/#contact"
-            className="px-5 py-2 rounded-full text-white text-sm font-semibold transition-all hover:-translate-y-0.5"
+            className="px-5 py-2 rounded-full text-white text-sm font-semibold transition-all hover:-translate-y-0.5 flex items-center justify-center"
             style={{ background: '#0374A7', boxShadow: '0 4px 16px rgba(3,116,167,0.35)' }}>
             Request Assessment
           </a>
@@ -184,14 +184,14 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-0">
 
               {/* TOP ROW — 3 content cols */}
-              <div className="grid gap-6 pb-6" style={{ gridTemplateColumns: '2fr 1.3fr 1.3fr' }}>
+              <div className="grid gap-6 pb-6" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
 
                 {/* Col 1 — INDUSTRIES */}
                 <div>
                   <a href="/industries" onClick={() => setExploreOpen(false)}
-                    className="inline-block text-[9px] font-bold uppercase tracking-[0.22em] mb-3 hover:text-sky-300 transition-colors"
-                    style={{ color: 'rgba(91,191,224,0.55)' }}>Industries →</a>
-                  <div className="flex flex-col gap-0.5">
+                    className="inline-block text-[9px] font-bold uppercase tracking-[0.22em] mb-3 hover:text-sky-200 transition-colors"
+                    style={{ color: '#5BBFE0' }}>Industries →</a>
+                  <div className="grid grid-cols-2 gap-x-3">
                     {INDUSTRIES.map((ind) => {
                       const Icon = ind.icon;
                       return (
