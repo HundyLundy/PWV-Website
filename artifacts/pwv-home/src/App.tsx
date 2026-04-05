@@ -23,6 +23,9 @@ import CaliberCarWash from "@/pages/case-studies/CaliberCarWash";
 import TorontoMultifamily from "@/pages/case-studies/TorontoMultifamily";
 import PalisadesNJ from "@/pages/case-studies/PalisadesNJ";
 import ParkAveNJ from "@/pages/case-studies/ParkAveNJ";
+import CentralAveNJ from "@/pages/case-studies/CentralAveNJ";
+import ChateauTowerFL from "@/pages/case-studies/ChateauTowerFL";
+import CourtyardHackensack from "@/pages/case-studies/CourtyardHackensack";
 
 // Core pages
 import Results from "@/pages/Results";
@@ -387,6 +390,12 @@ function Router() {
       <Route path="/results/palisades-nj/" component={PalisadesNJ} />
       <Route path="/results/park-ave-nj" component={ParkAveNJ} />
       <Route path="/results/park-ave-nj/" component={ParkAveNJ} />
+      <Route path="/results/central-ave-nj" component={CentralAveNJ} />
+      <Route path="/results/central-ave-nj/" component={CentralAveNJ} />
+      <Route path="/results/chateau-tower-fl" component={ChateauTowerFL} />
+      <Route path="/results/chateau-tower-fl/" component={ChateauTowerFL} />
+      <Route path="/results/courtyard-hackensack" component={CourtyardHackensack} />
+      <Route path="/results/courtyard-hackensack/" component={CourtyardHackensack} />
 
       {/* Fallback */}
       <Route component={NotFound} />
