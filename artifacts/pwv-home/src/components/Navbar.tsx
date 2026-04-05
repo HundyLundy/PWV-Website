@@ -186,9 +186,35 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
               {/* Col 1 — Resources */}
               <div>
                 <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Resources</div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-0.5">
+                  {/* Case Studies — with deep-dive sub-links */}
+                  <div>
+                    <a href="/results/" onClick={() => setExploreOpen(false)}
+                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                        style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                        <FileText className="w-4 h-4" style={{ color: '#5BBFE0' }} />
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">Case Studies & Proof</div>
+                        <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>Amazon, Four Seasons, Caliber & more — M&V verified</div>
+                      </div>
+                    </a>
+                    <div className="pl-[52px] flex flex-col mb-2">
+                      {[
+                        { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/blog/amazon-yyz3-case-study" },
+                        { label: "Four Seasons — 26% avg, $27K/yr", href: "/blog/four-seasons-case-study" },
+                        { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/blog/st-regis-toronto-case-study" },
+                      ].map((s) => (
+                        <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
+                          className="text-[11px] py-0.5 px-2 rounded-md text-white/40 hover:text-sky-300 hover:bg-white/5 transition-colors">
+                          {s.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Other resource links */}
                   {[
-                    { label: "Case Studies & Proof", href: "/results/", desc: "Amazon, Four Seasons, Caliber & more — M&V verified", icon: FileText },
                     { label: "Smart Valve™ Info Sheet", href: "/infosheet/", desc: "Industry-by-industry data, charts & verified performance", icon: BookOpen },
                     { label: "Plumbing Protection", href: "/benefits/plumbing-protection", desc: "Pressure stabilization, scale prevention & air entrainment", icon: Wrench },
                     { label: "Common Misconceptions", href: "/common-misconceptions", desc: "Check valves, low-flow fixtures & PRVs won't reduce your bill", icon: AlertTriangle },
@@ -393,8 +419,26 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                 </button>
                 {mobileExploreOpen && (
                   <div className="pl-4 py-2 flex flex-col gap-1">
+                    {/* Case Studies with sub-links */}
+                    <a href="/results/" onClick={() => setMenuOpen(false)}
+                      className="flex items-center gap-2 py-1.5 text-white/60 hover:text-white text-sm">
+                      <FileText className="w-3.5 h-3.5 shrink-0" style={{ color: '#5BBFE0' }} />
+                      Case Studies & Proof
+                    </a>
+                    <div className="pl-6 flex flex-col gap-0.5 mb-1">
+                      {[
+                        { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/blog/amazon-yyz3-case-study" },
+                        { label: "Four Seasons — 26% avg, $27K/yr", href: "/blog/four-seasons-case-study" },
+                        { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/blog/st-regis-toronto-case-study" },
+                      ].map((s) => (
+                        <a key={s.href} href={s.href} onClick={() => setMenuOpen(false)}
+                          className="text-xs py-1 text-white/40 hover:text-sky-300 transition-colors">
+                          {s.label}
+                        </a>
+                      ))}
+                    </div>
+                    {/* Other explore links */}
                     {[
-                      { label: "Case Studies & Proof", href: "/results/", icon: FileText },
                       { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: BookOpen },
                       { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
                       { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
