@@ -7,20 +7,16 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, ReferenceLine, Cell, Legend,
 } from "recharts";
+import { AMAZON_LABELS, AMAZON_QUARTERLY_CHART as AMAZON_QUARTERLY } from "@/data/amazonVerified";
+// All Amazon figures → edit @/data/amazonVerified.ts (not this file)
 
 // ─── DATA ──────────────────────────────────────────────────────────────────
 
 const AGGREGATE_STATS = [
   { val: "24", label: "M&V-Verified Case Studies" },
-  { val: "58.69%", label: "Peak Reduction — Amazon YYZ3" },
+  { val: AMAZON_LABELS.peak, label: "Peak Reduction — Amazon YYZ3" },
   { val: "$50K/yr", label: "Max Annual Savings — Single Site" },
-  { val: "≥15%", label: "Contractual Minimum Guaranteed" },
-];
-
-// Year-over-year M&V data (IPMVP Option B) — Q3/Q4 2024 vs Q3/Q4 2023 baseline
-const AMAZON_QUARTERLY = [
-  { period: "Q3 2024 (Jul–Sep)", YYZ3: 58.69, YYZ4: 17.36 },
-  { period: "Q4 2024 (Oct–Dec)", YYZ3: 29.27, YYZ4: -14.44 },
+  { val: AMAZON_LABELS.guarantee, label: "Contractual Minimum Guaranteed" },
 ];
 
 const FOUR_SEASONS_DATA = [
@@ -198,9 +194,9 @@ export default function Results() {
           <p className="text-sm mb-8" style={{ color: "#4A7085" }}>Smart Valve™ installed June 2024 · Independent IPMVP Option B M&V · Formal PDFs available</p>
 
           <div className="grid lg:grid-cols-3 gap-4 mb-8">
-            <StatPill value="58.69%" label="YYZ3 Peak — Q3 2024 Year-over-Year" />
-            <StatPill value="43.98%" label="YYZ3 Q3/Q4 2024 Average" />
-            <StatPill value="29.3%" label="Portfolio Avg — YYZ3 & YYZ4" />
+            <StatPill value={AMAZON_LABELS.peak}         label="YYZ3 Peak — Q3 2024 Year-over-Year" />
+            <StatPill value={AMAZON_LABELS.yyz3Avg}      label="YYZ3 Q3/Q4 2024 Average" />
+            <StatPill value={AMAZON_LABELS.portfolioAvg} label="Portfolio Avg — YYZ3 & YYZ4" />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6">

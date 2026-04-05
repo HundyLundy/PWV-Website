@@ -9,20 +9,16 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, ReferenceLine, Cell, Legend,
 } from "recharts";
+import { AMAZON_LABELS, AMAZON_QUARTERLY_CHART as AMAZON_QUARTERLY } from "@/data/amazonVerified";
+// All Amazon figures → edit @/data/amazonVerified.ts (not this file)
 
 // ─── DATA ──────────────────────────────────────────────────────────────────
 
 const TOP_STATS = [
-  { val: "≥15%", label: "Guaranteed Minimum", sub: "In writing — in your contract" },
-  { val: "58.69%", label: "Peak Verified Savings", sub: "Amazon YYZ3 — independently measured" },
+  { val: AMAZON_LABELS.guarantee, label: "Guaranteed Minimum", sub: "In writing — in your contract" },
+  { val: AMAZON_LABELS.peak, label: "Peak Verified Savings", sub: "Amazon YYZ3 — independently measured" },
   { val: "20%+", label: "Portfolio Average", sub: "Across 20+ documented installations" },
   { val: "$50K+", label: "Max Annual Savings", sub: "Per location, per year (Grand Central Tampa)" },
-];
-
-// Year-over-year M&V data (IPMVP Option B) — Q3/Q4 2024 vs Q3/Q4 2023 baseline
-const AMAZON_QUARTERLY = [
-  { period: "Q3 2024 (Jul–Sep)", YYZ3: 58.69, YYZ4: 17.36 },
-  { period: "Q4 2024 (Oct–Dec)", YYZ3: 29.27, YYZ4: -14.44 },
 ];
 
 const HOTEL_DATA = [
@@ -230,15 +226,15 @@ export default function InfoSheet() {
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
-              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>58.69%</div>
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>{AMAZON_LABELS.peak}</div>
               <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>YYZ3 Peak (Q3 2024 YOY)</div>
             </div>
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
-              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>43.98%</div>
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>{AMAZON_LABELS.yyz3Avg}</div>
               <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>YYZ3 Q3/Q4 2024 Average</div>
             </div>
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
-              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>29.3%</div>
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>{AMAZON_LABELS.portfolioAvg}</div>
               <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Portfolio Avg — YYZ3 & YYZ4</div>
             </div>
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
@@ -255,7 +251,7 @@ export default function InfoSheet() {
                 <BarChart data={AMAZON_QUARTERLY} margin={{ top: 8, right: 20, left: 0, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                   <XAxis dataKey="period" tick={{ fontSize: 10, fill: "#4A7085" }} />
-                  <YAxis tick={{ fontSize: 10, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[-25, 65]} />
+                  <YAxis tick={{ fontSize: 10, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[-20, 65]} />
                   <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" label={{ value: "≥15%", position: "insideTopRight", fontSize: 9, fill: "#059669" }} />
                   <ReferenceLine y={0} stroke="#cbd5e1" />
                   <Tooltip content={<PctTooltip />} />

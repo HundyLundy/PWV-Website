@@ -6,42 +6,29 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, ReferenceLine, Cell, Legend,
 } from "recharts";
+import {
+  AMAZON,
+  AMAZON_LABELS,
+  YYZ3_QUARTERLY_CHART as YYZ3_QUARTERLY,
+  YYZ4_QUARTERLY_CHART as YYZ4_QUARTERLY,
+  AMAZON_QUARTERLY_CHART as PORTFOLIO_COMPARISON,
+  PORTFOLIO_AVG_CHART as PORTFOLIO_AVG,
+} from "@/data/amazonVerified";
 
 // ─── DATA ──────────────────────────────────────────────────────────────────
-
-// Year-over-year quarterly comparison — Source: PWV Amazon Case Study 2025
-const YYZ3_QUARTERLY = [
-  { period: "Q3 2024 (Jul–Sep)", savings: 58.69 },
-  { period: "Q4 2024 (Oct–Dec)", savings: 29.27 },
-];
-
-const YYZ4_QUARTERLY = [
-  { period: "Q3 2024 (Jul–Sep)", savings: 17.36 },
-  { period: "Q4 2024 (Oct–Dec)", savings: -14.44 }, // valve removed Sept 5, reinstalled Oct 25
-];
-
-const PORTFOLIO_COMPARISON = [
-  { period: "Q3 2024 (Jul–Sep)", YYZ3: 58.69, YYZ4: 17.36 },
-  { period: "Q4 2024 (Oct–Dec)", YYZ3: 29.27, YYZ4: -14.44 },
-];
+// All Amazon figures come from @/data/amazonVerified.ts
+// Edit THAT file (with updated PDF in hand) — not this page.
 
 // Peak monthly usage — YYZ3 (m³). Source: Historical Usage Analysis section
 const YYZ3_VOLUME = [
-  { label: "Q3 2023\n(baseline)", period: "Q3 2023", value: 1107 },
-  { label: "Q3 2024\n(post-install)", period: "Q3 2024", value: 457.3 },
+  { label: "Q3 2023\n(baseline)", period: "Q3 2023", value: AMAZON.yyz3.peakVolumeBaseline_m3 },
+  { label: "Q3 2024\n(post-install)", period: "Q3 2024", value: AMAZON.yyz3.peakVolumeWithValve_m3 },
 ];
 
 // Flow rate in gallons per minute — YYZ3
 const GPM_DATA = [
-  { label: "Q3/Q4 2023 (Pre-Install)", gpm: 5.26 },
-  { label: "Q3/Q4 2024 (Post-Install)", gpm: 2.74 },
-];
-
-// Q3/Q4 2024 average savings % per site — Source: PWV Amazon Case Study 2025
-const PORTFOLIO_AVG = [
-  { site: "YYZ3", avg: 43.98 },
-  { site: "YYZ4", avg: 14.6 },
-  { site: "Portfolio", avg: 29.3 },
+  { label: "Q3/Q4 2023 (Pre-Install)", gpm: AMAZON.yyz3.flowBaseline_gpm },
+  { label: "Q3/Q4 2024 (Post-Install)", gpm: AMAZON.yyz3.flowWithValve_gpm },
 ];
 
 // ─── TOOLTIP HELPERS ──────────────────────────────────────────────────────
@@ -130,10 +117,10 @@ export default function AmazonYYZ3() {
             Two Amazon fulfillment centres. Q3 and Q4 2024 independent Measurement &amp; Verification. Year-over-year comparison against Q3/Q4 2023 baseline.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <StatPill value="58.69%" label="Peak — YYZ3 Q3 2024" sub="Year-over-year vs Q3 2023" />
-            <StatPill value="43.98%" label="YYZ3 Avg — Q3/Q4 2024" sub="Year-over-year average" />
-            <StatPill value="14.6%" label="YYZ4 Avg — Q3/Q4 2024" sub="Year-over-year average" />
-            <StatPill value="29.3%" label="Portfolio Average" sub="Both sites combined" />
+            <StatPill value={AMAZON_LABELS.peak}         label="Peak — YYZ3 Q3 2024"    sub="Year-over-year vs Q3 2023" />
+            <StatPill value={AMAZON_LABELS.yyz3Avg}      label="YYZ3 Avg — Q3/Q4 2024"  sub="Year-over-year average" />
+            <StatPill value={AMAZON_LABELS.yyz4Avg}      label="YYZ4 Avg — Q3/Q4 2024"  sub="Year-over-year average" />
+            <StatPill value={AMAZON_LABELS.portfolioAvg} label="Portfolio Average"        sub="Both sites combined" />
           </div>
         </div>
       </section>

@@ -3,6 +3,8 @@ import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Mail, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse, ArrowRight, Leaf, Wrench, AlertTriangle } from "lucide-react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
+import { AMAZON_LABELS } from "@/data/amazonVerified";
+// Amazon case study label → edit @/data/amazonVerified.ts (not this file)
 
 const NAV_LINKS = [
   { label: "How It Works", href: "/#how-it-works" },
@@ -237,7 +239,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                       </a>
                       <div className="flex flex-col mb-1" style={{ paddingLeft: '36px' }}>
                         {[
-                          { label: "Amazon YYZ3 — 43.98% avg, 58.69% peak", href: "/results/amazon-yyz3" },
+                          { label: AMAZON_LABELS.navLabel, href: "/results/amazon-yyz3" },
                           { label: "Four Seasons — 26% avg, $27K/yr", href: "/results/four-seasons" },
                           { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/results/st-regis-toronto" },
                           { label: "Caliber Car Wash — 23% across 5 sites", href: "/results/caliber-car-wash" },
@@ -430,7 +432,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     </a>
                     <div className="pl-6 flex flex-col gap-0.5 mb-1">
                       {[
-                        { label: "Amazon YYZ3 — 43.98% avg, 58.69% peak", href: "/results/amazon-yyz3" },
+                        { label: AMAZON_LABELS.navLabel, href: "/results/amazon-yyz3" },
                         { label: "Four Seasons — 26% avg, $27K/yr", href: "/results/four-seasons" },
                         { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/results/st-regis-toronto" },
                         { label: "Caliber Car Wash — 23% across 5 sites", href: "/results/caliber-car-wash" },
