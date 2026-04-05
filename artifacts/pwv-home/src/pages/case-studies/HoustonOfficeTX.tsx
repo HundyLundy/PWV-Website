@@ -270,8 +270,8 @@ export default function HoustonOfficeTX() {
           <div className="grid sm:grid-cols-3 gap-4">
             {[
               { label: "All Case Studies",              href: "/results",               desc: "Full M&V portfolio — Amazon, Four Seasons, Grand Central and more" },
-              { label: "Grand Central Tampa — 25%",     href: "/results/grand-central", desc: "Commercial 14-story · Tampa, FL · $50,000/yr savings" },
-              { label: "Commercial & Office Buildings", href: "/industries/commercial", desc: "Smart Valve™ for commercial real estate and office portfolios" },
+              { label: "Grand Central Tampa — 25%",     href: "/results/grand-central-tampa", desc: "Commercial 14-story · Tampa, FL · $50,000/yr savings" },
+              { label: "All Industries",               href: "/industries",                  desc: "Multifamily, hotels, car washes, hospitals, data centers and more" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all group">
                 <div className="font-bold text-sm mb-1 group-hover:text-blue-600 transition-colors" style={{ color: "#0374A7" }}>{l.label} →</div>
