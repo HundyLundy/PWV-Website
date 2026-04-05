@@ -571,7 +571,6 @@ export default function Results() {
               { label: "Grand Central Tampa", href: "/results/grand-central-tampa", desc: "$50K/yr · 23% reduction · 2-year GM-confirmed · Tampa FL" },
               { label: "RWJ Barnabas Health", href: "/results/rwj-barnabas", desc: "19% reduction · $15,500/yr · <6-mo payback · Ambulatory care" },
               { label: "Toronto Multi-Residential", href: "/results/toronto-multifamily", desc: "3 properties · 15–31% avg · IPMVP Option B · CWS verified" },
-              { label: "1625 Palisades Ave, NJ", href: "/results/palisades-nj", desc: "38-unit apartment · Union City, NJ · 14% reduction · $5,125/yr · 7-mo payback" },
               { label: "Park Ave Apartments, NJ", href: "/results/park-ave-nj", desc: "Mixed-use · West New York, NJ · 30% reduction · $3,100/yr · 7-mo payback" },
               { label: "Courtyard Apts, Hackensack NJ", href: "/results/courtyard-hackensack", desc: "80-unit mid-rise · Hackensack, NJ · 18% reduction · $4,549/yr · $45,490 over 10 yrs" },
               { label: "Chateau Tower Condos, Tampa FL", href: "/results/chateau-tower-fl", desc: "Condo HOA · Tampa, FL · 16% reduction · $11,028/yr · 9.2-mo payback · $45,112 5-yr profit" },
@@ -595,7 +594,7 @@ export default function Results() {
         <div className="max-w-4xl mx-auto">
           <p className="text-[11px] leading-relaxed" style={{ color: "#6A8A9A" }}>
             Results are based on verified M&V reports, third-party analyses, and customer testimonials. Individual savings vary based on property type, size, water pressure, usage patterns, and local utility rates.{" "}
-            <strong>Formal M&V reports available for:</strong> Amazon (YYZ3/YYZ4), St. Regis Toronto, Four Seasons Fort Lauderdale, Caliber Car Wash (5 sites), RWJ Barnabas Health, Toronto Multi-Residential Portfolio, 1625 Palisades Avenue (Union City, NJ), and Park Avenue Apartments (West New York, NJ).{" "}
+            <strong>Formal M&V reports available for:</strong> Amazon (YYZ3/YYZ4), St. Regis Toronto, Four Seasons Fort Lauderdale, Caliber Car Wash (5 sites), RWJ Barnabas Health, Toronto Multi-Residential Portfolio, and Park Avenue Apartments (West New York, NJ).{" "}
             Houstonian Estates and Grand Central at Kennedy results are self-reported customer testimonials confirmed by property management. Only installations reporting ≥14% savings are featured on this page.
           </p>
         </div>

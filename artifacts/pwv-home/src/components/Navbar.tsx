@@ -246,7 +246,6 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                           { label: "Grand Central Tampa — $50K/yr", href: "/results/grand-central-tampa" },
                           { label: "RWJ Barnabas — 19%, $15,500/yr", href: "/results/rwj-barnabas" },
                           { label: "Toronto Portfolio — 15–31%, 3 properties", href: "/results/toronto-multifamily" },
-                          { label: "1625 Palisades Ave — 14%, Union City NJ", href: "/results/palisades-nj" },
                           { label: "Park Ave Apartments — 30%, West New York NJ", href: "/results/park-ave-nj" },
                         ].map((s) => (
                           <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
@@ -441,7 +440,6 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                         { label: "Grand Central Tampa — $50K/yr", href: "/results/grand-central-tampa" },
                         { label: "RWJ Barnabas — 19%, $15,500/yr", href: "/results/rwj-barnabas" },
                         { label: "Toronto Portfolio — 15–31%, 3 properties", href: "/results/toronto-multifamily" },
-                        { label: "1625 Palisades Ave — 14%, Union City NJ", href: "/results/palisades-nj" },
                         { label: "Park Ave Apartments — 30%, West New York NJ", href: "/results/park-ave-nj" },
                       ].map((s) => (
                         <a key={s.href} href={s.href} onClick={() => setMenuOpen(false)}

@@ -236,7 +236,7 @@ export default function ParkAveNJ() {
           <div className="grid sm:grid-cols-3 gap-4">
             {[
               { label: "All Case Studies",         href: "/results",                    desc: "Full M&V portfolio — Amazon, Four Seasons, Grand Central and more" },
-              { label: "1625 Palisades Ave — 14%", href: "/results/palisades-nj",       desc: "Union City, NJ · 38-unit apartment · 14% reduction · 7-month payback" },
+              { label: "Jefferson Arms — 14.7%",   href: "/results/jefferson-arms-nj",   desc: "Orange, NJ · 28-unit apartment · $3,700/yr · 15-month payback" },
               { label: "Toronto Multifamily",      href: "/results/toronto-multifamily", desc: "3 CWS-verified properties · 15–31% avg · IPMVP Option B" },
               { label: "Multifamily Industry Hub", href: "/industries/multifamily",     desc: "Grand Central Tampa $50K/yr — master meter savings overview" },
             ].map((l) => (

@@ -244,7 +244,7 @@ export default function ParkGardensNJ() {
             {[
               { label: "All Case Studies",              href: "/results",                      desc: "Full M&V portfolio — Amazon, Four Seasons, Grand Central and more" },
               { label: "Courtyard Apts — 18%",          href: "/results/courtyard-hackensack", desc: "Hackensack, NJ · 80-unit mid-rise · $4,549/yr · $45,490 over 10 yrs" },
-              { label: "1625 Palisades Ave — 14%",      href: "/results/palisades-nj",         desc: "Union City, NJ · 38-unit apartment · $5,125/yr · 7-month payback" },
+              { label: "Jefferson Arms — 14.7%",         href: "/results/jefferson-arms-nj",    desc: "Orange, NJ · 28-unit apartment · $3,700/yr · 15-month payback" },
               { label: "Multifamily Industry Hub",      href: "/industries/multifamily",       desc: "Grand Central Tampa $50K/yr — master meter savings overview" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all group">

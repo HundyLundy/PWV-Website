@@ -275,7 +275,7 @@ export default function CourtyardHackensack() {
           <div className="grid sm:grid-cols-3 gap-4">
             {[
               { label: "All Case Studies",             href: "/results",                      desc: "Full M&V portfolio — Amazon, Four Seasons, Grand Central and more" },
-              { label: "1625 Palisades Ave — 14%",     href: "/results/palisades-nj",         desc: "Union City, NJ · 38-unit apartment · $5,125/yr · 7-month payback" },
+              { label: "Jefferson Arms — 14.7%",        href: "/results/jefferson-arms-nj",    desc: "Orange, NJ · 28-unit apartment · $3,700/yr · 15-month payback" },
               { label: "451 Central Ave — 12.5%",      href: "/results/central-ave-nj",       desc: "Orange, NJ · 13-unit apartment · $1,470/yr" },
               { label: "Multifamily Industry Hub",     href: "/industries/multifamily",       desc: "Grand Central Tampa $50K/yr — master meter savings overview" },
             ].map((l) => (
@@ -292,7 +292,7 @@ export default function CourtyardHackensack() {
       <section className="py-14 px-4 sm:px-6 lg:px-8" style={{ background: "#0A1F3A" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-white mb-3">Free Water Assessment for Your Multifamily Property</h2>
-          <p className="mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>Same program verified at Courtyard Apartments, 1625 Palisades, Grand Central Tampa, and Toronto's multi-residential portfolio. Minimum 15% savings guaranteed in writing.</p>
+          <p className="mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>Same program verified at Courtyard Apartments, Grand Central Tampa, and Toronto's multi-residential portfolio. Minimum 15% savings guaranteed in writing.</p>
           <a href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base transition-all hover:-translate-y-1" style={{ background: "#DEC600", color: "#0A1F3A", boxShadow: "0 4px 20px rgba(222,198,0,0.4)" }}>
             Request My Free Assessment <ArrowRight className="w-5 h-5" />
           </a>
