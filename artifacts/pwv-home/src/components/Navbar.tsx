@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse, ArrowRight, Leaf, Wrench, AlertTriangle } from "lucide-react";
+import { Phone, Mail, Menu, X, ChevronDown, BarChart2, Zap, FileText, MapPin, BookOpen, Building2, ShieldCheck, Server, Hotel, Car, Home, HeartPulse, ArrowRight, Leaf, Wrench, AlertTriangle } from "lucide-react";
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const NAV_LINKS = [
@@ -183,12 +183,14 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-0">
 
-              {/* TOP ROW — 3 content cols + contact strip */}
-              <div className="grid gap-6 pb-6" style={{ gridTemplateColumns: '2fr 1.3fr 1.3fr auto' }}>
+              {/* TOP ROW — 3 content cols */}
+              <div className="grid gap-6 pb-6" style={{ gridTemplateColumns: '2fr 1.3fr 1.3fr' }}>
 
                 {/* Col 1 — INDUSTRIES */}
                 <div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Industries</div>
+                  <a href="/industries" onClick={() => setExploreOpen(false)}
+                    className="inline-block text-[9px] font-bold uppercase tracking-[0.22em] mb-3 hover:text-sky-300 transition-colors"
+                    style={{ color: 'rgba(91,191,224,0.55)' }}>Industries →</a>
                   <div className="flex flex-col gap-0.5">
                     {INDUSTRIES.map((ind) => {
                       const Icon = ind.icon;
@@ -217,17 +219,12 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                         </div>
                       );
                     })}
-                    <a href="/industries" onClick={() => setExploreOpen(false)}
-                      className="flex items-center gap-1 mt-1 px-2 py-1.5 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
-                      style={{ color: 'rgba(91,191,224,0.7)' }}>
-                      <Building2 className="w-3 h-3" /> All Industry Hubs →
-                    </a>
                   </div>
                 </div>
 
-                {/* Col 2 — RESULTS & PROOF */}
+                {/* Col 2 — RESULTS */}
                 <div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Results &amp; Proof</div>
+                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Results</div>
                   <div className="flex flex-col gap-0.5">
                     {/* Case Studies with sub-links */}
                     <div>
@@ -275,9 +272,9 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                   </div>
                 </div>
 
-                {/* Col 3 — LEARN MORE */}
+                {/* Col 3 — ABOUT SMART VALVE */}
                 <div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Learn More</div>
+                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>About Smart Valve™</div>
                   <div className="flex flex-col gap-0.5">
                     {[
                       { label: "Our Partners — AWS & CWS", href: "/partners/", icon: ShieldCheck },
@@ -300,48 +297,24 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                   </div>
                 </div>
 
-                {/* Contact strip */}
-                <div className="flex flex-col justify-start">
-                  <div className="p-4 rounded-xl h-full" style={{ background: 'rgba(3,116,167,0.15)', border: '1px solid rgba(3,116,167,0.3)', minWidth: '180px' }}>
-                    <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(91,191,224,0.7)' }}>Speak Directly</div>
-                    <a href="tel:7209373004" className="block text-sm font-bold text-white hover:text-sky-300 transition-colors mb-1">(720) 937-3004</a>
-                    <a href="mailto:info@perfectwatervalve.com" className="block text-[11px] hover:text-sky-300 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }}>info@perfectwatervalve.com</a>
-                  </div>
-                </div>
 
               </div>
 
-              {/* BOTTOM STRIP — Locations */}
-              <div className="border-t flex items-center gap-3 py-3 flex-wrap" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
-                <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.22em] shrink-0" style={{ color: 'rgba(91,191,224,0.55)' }}>
-                  <MapPin className="w-3 h-3" /> Locations
-                </div>
-                <div className="flex items-center gap-0 flex-wrap">
-                  {[
-                    { label: "Colorado", href: "/locations/colorado" },
-                    { label: "Texas", href: "/locations/texas" },
-                    { label: "California", href: "/locations/california" },
-                    { label: "Virginia", href: "/locations/virginia" },
-                    { label: "Florida", href: "/locations/florida" },
-                    { label: "Arizona", href: "/locations/arizona" },
-                    { label: "New York", href: "/locations/new-york" },
-                  ].map((loc, i, arr) => (
-                    <span key={loc.href} className="flex items-center">
-                      <a href={loc.href} onClick={() => setExploreOpen(false)}
-                        className="text-[11px] px-2 py-0.5 rounded hover:bg-white/5 transition-colors hover:text-sky-300"
-                        style={{ color: 'rgba(255,255,255,0.4)' }}>
-                        {loc.label}
-                      </a>
-                      {i < arr.length - 1 && <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.15)' }}>·</span>}
-                    </span>
-                  ))}
-                  <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.15)' }}>·</span>
-                  <a href="/locations/usa" onClick={() => setExploreOpen(false)}
-                    className="text-[11px] px-2 py-0.5 rounded font-semibold hover:bg-white/5 transition-colors"
-                    style={{ color: 'rgba(91,191,224,0.7)' }}>
-                    All Locations →
-                  </a>
-                </div>
+              {/* BOTTOM STRIP — contact + locations */}
+              <div className="border-t flex items-center gap-8 py-3" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+                <a href="/locations/usa" onClick={() => setExploreOpen(false)}
+                  className="flex items-center gap-1.5 text-sm font-semibold hover:text-sky-300 transition-colors"
+                  style={{ color: 'rgba(91,191,224,0.7)' }}>
+                  <MapPin className="w-3.5 h-3.5" /> All Locations
+                </a>
+                <a href="tel:7209373004"
+                  className="flex items-center gap-1.5 text-sm font-semibold text-white/60 hover:text-white transition-colors">
+                  <Phone className="w-3.5 h-3.5" /> (720) 937-3004
+                </a>
+                <a href="mailto:info@perfectwatervalve.com"
+                  className="flex items-center gap-1.5 text-sm font-semibold text-white/60 hover:text-white transition-colors">
+                  <Mail className="w-3.5 h-3.5" /> info@perfectwatervalve.com
+                </a>
               </div>
 
             </div>
