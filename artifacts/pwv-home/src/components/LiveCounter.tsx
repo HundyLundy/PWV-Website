@@ -9,7 +9,7 @@ export function LiveCounter({ className = "" }: LiveCounterProps) {
 
   useEffect(() => {
     const start = Date.now();
-    // 36,800,000,000 gallons / year (est. across ~32,000 installations) = ~1,167 gallons per second
+    // 36,800,000,000 gallons / year (est. across ~20,000 installations) = ~1,167 gallons per second
     const ratePerMs = 1167 / 1000;
     let frameId: number;
 

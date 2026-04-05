@@ -37,10 +37,10 @@ export default function Home() {
     <div className="min-h-screen bg-background overflow-hidden relative">
       <Helmet>
         <title>Smart Valve™ Environmental &amp; Financial Water Impact | Perfect Water Valve</title>
-        <meta name="description" content="Smart Valve™ has conserved 36.8B+ gallons and saved $440M+ in water costs across 32,000+ installations. See the verified environmental and financial impact." />
+        <meta name="description" content="Smart Valve™ has conserved 36.8B+ gallons and saved $440M+ in water costs across 20,000+ installations. See the verified environmental and financial impact." />
         <link rel="canonical" href="https://perfectwatervalve.com/impact" />
         <meta property="og:title" content="Smart Valve™ Environmental &amp; Financial Water Impact | Perfect Water Valve" />
-        <meta property="og:description" content="Smart Valve™ has conserved 36.8B+ gallons and saved $440M+ in water costs across 32,000+ installations. See the verified environmental and financial impact." />
+        <meta property="og:description" content="Smart Valve™ has conserved 36.8B+ gallons and saved $440M+ in water costs across 20,000+ installations. See the verified environmental and financial impact." />
         <meta property="og:url" content="https://perfectwatervalve.com/impact" />
         <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
@@ -74,7 +74,7 @@ export default function Home() {
             Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">Air</span> in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">Water</span>.
           </h1>
           <p className="text-lg mb-16 max-w-2xl mx-auto" style={{ color: '#2E4A5A' }}>
-            Estimated savings across <strong style={{ color: '#0A1F3A' }}>~32,000 installations</strong> globally — based on a 1-year sample of a small percentage of those installs, with results ranging from 15% to 58%.
+            Estimated savings across <strong style={{ color: '#0A1F3A' }}>~20,000 installations</strong> globally — based on a 1-year sample of a small percentage of those installs, with results ranging from 15% to 58%.
           </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
@@ -243,7 +243,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center" style={{ color: '#0A1F3A' }}>Average Savings by Industry</h2>
           <p className="text-center text-xs mb-12 uppercase tracking-widest" style={{ color: '#4A7085' }}>
-            1-year sample · 32,000+ installs
+            1-year sample · 20,000+ installs
           </p>
           
           <div className="space-y-6">
@@ -443,7 +443,7 @@ function SavingsCalc() {
       </div>
 
       <p className="text-xs mt-3 uppercase tracking-widest" style={{ color: '#4A7085' }}>
-        Based on 20%+ avg savings rate · 15% guaranteed minimum · 32,000+ verified installs
+        Based on 20%+ avg savings rate · 15% guaranteed minimum · 20,000+ verified installs
       </p>
     </div>
   );
@@ -534,7 +534,7 @@ function LossCounter() {
         wasted this year — that's <span className="text-red-400 font-semibold">{perMonth}/month</span> going straight to the water authority
       </p>
       <p className="text-white/30 text-xs mt-3 uppercase tracking-widest">
-        Based on 20%+ avg savings rate · 32,000+ verified installs · 15% guaranteed minimum
+        Based on 20%+ avg savings rate · 20,000+ verified installs · 15% guaranteed minimum
       </p>
     </div>
   );
@@ -545,7 +545,7 @@ function ImpactFAQ() {
   const faqs = [
     { q: "What is the Smart Valve™ and how does it work?", a: "The Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines. Air bubbles in your pipes register as volume on your meter — you pay for every cubic foot, including the ones that were never liquid. The Smart Valve™ purges that air before it reaches the meter. Your meter reads only actual water." },
     { q: "Is this savings really guaranteed?", a: "Yes. Every installation comes with a written guarantee of at least 15% reduction in metered water consumption. If your site does not hit 15%, we make it right — at no cost to you." },
-    { q: "How accurate is the live counter on this page?", a: "The counter estimates real-time gallons saved across ~32,000 installations globally, based on a 1-year sample of a small percentage of those installs. Results range from 15% to 58% per site. It uses the pilot cohort average as a baseline." },
+    { q: "How accurate is the live counter on this page?", a: "The counter estimates real-time gallons saved across ~20,000 installations globally, based on a 1-year sample of a small percentage of those installs. Results range from 15% to 58% per site. It uses the pilot cohort average as a baseline." },
     { q: "Does it need electricity or maintenance?", a: "No. The Smart Valve™ is entirely passive — no power source, no electricity, no maintenance, no service visits or subscriptions. It works continuously from installation day onward." },
     { q: "What types of facilities use it?", a: "Hotels, resorts, Amazon fulfillment centers, car washes, multifamily buildings, breweries, food production facilities, industrial manufacturers, and municipal buildings. Any commercial property with a water meter can benefit." },
     { q: "What certifications does it have?", a: "NSF 61 and NSF 372 certified — the gold standard for drinking water system components in the United States and Canada. Compatible with 99% of commercial water meters." },
