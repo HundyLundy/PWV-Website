@@ -114,7 +114,7 @@ export default function TexasNewPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
-              { num: "1", title: "Professional Install", desc: "Licensed technician installs upstream of your meter. Minimal disruption — most Texas installs complete in 2–4 hours." },
+              { num: "1", title: "Professional Install", desc: "Licensed technician installs on the user side of your meter. Minimal disruption — most Texas installs complete in under 4 hours." },
               { num: "2", title: "Precision Calibration", desc: "Mechanically set to your facility's specific line pressure for maximum air elimination." },
               { num: "3", title: "Instant Savings", desc: "Air exits before the meter. Your meter reads only liquid volume. Savings appear on your very next bill." }
             ].map((step, i) => (

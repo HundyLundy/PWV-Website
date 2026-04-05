@@ -29,7 +29,7 @@ const articleSchema = {
   "author": { "@type": "Organization", "name": "Perfect Water Valve Team" },
   "publisher": { "@type": "Organization", "name": "Perfect Water Valve", "url": "https://www.perfectwatervalve.com" },
   "datePublished": "2026-03-05",
-  "description": "Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15%–35% annually, guaranteed. No electricity, no maintenance, no moving parts.",
+  "description": "Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15%–35% annually, guaranteed. No electricity required, no maintenance.",
   "url": "https://www.perfectwatervalve.com/blog/what-is-smart-valve",
 };
 
@@ -38,10 +38,10 @@ export default function WhatIsSmartValve() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Helmet>
         <title>What Is the Smart Valve™? How It Cuts Commercial Water Bills 15%–35% annually | Perfect Water Valve</title>
-        <meta name="description" content="Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15%–35% annually, guaranteed. No electricity, no maintenance, no moving parts." />
+        <meta name="description" content="Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15%–35% annually, guaranteed. No electricity required, no maintenance." />
         <link rel="canonical" href="https://www.perfectwatervalve.com/blog/what-is-smart-valve" />
         <meta property="og:title" content="What Is the Smart Valve™? How It Cuts Commercial Water Bills 15%–35% annually | Perfect Water Valve" />
-        <meta property="og:description" content="Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15%–35% annually, guaranteed. No electricity, no maintenance, no moving parts." />
+        <meta property="og:description" content="Smart Valve™ is a passive device that installs on your main water line in under 4 hours and cuts your metered bill 15%–35% annually, guaranteed. No electricity required, no maintenance." />
         <meta property="og:url" content="https://www.perfectwatervalve.com/blog/what-is-smart-valve" />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(smartValveFaqSchema)}</script>
@@ -102,7 +102,7 @@ export default function WhatIsSmartValve() {
 
             <h2 className="text-2xl font-bold text-white mt-10 mb-4">What Smart Valve™ Is</h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Smart Valve™ is a passive hydrodynamic device. "Passive" means it has no electricity, no software, no actuators, and no moving parts. "Hydrodynamic" means it works by modifying the behavior of water and air as they flow through the supply line.
+              Smart Valve™ is a passive hydrodynamic device. "Passive" means it requires no electricity, no software, and no ongoing maintenance. "Hydrodynamic" means it works by modifying the behavior of water and air as they flow through the supply line using spring-loaded mechanical pressure control.
             </p>
             <p className="text-gray-300 leading-relaxed mb-6">
               Specifically, Smart Valve™ creates a controlled flow environment that causes entrained air bubbles to separate from the water column before that water reaches your meter. The air is released back into the atmosphere through a passive venting mechanism. Only actual water volume passes to the meter and into the building.
@@ -130,7 +130,7 @@ export default function WhatIsSmartValve() {
 
             <h2 className="text-2xl font-bold text-white mt-10 mb-4">Where It Installs</h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Smart Valve™ installs at the main water supply line entry point of the facility — upstream of the water meter, between the meter and the first isolation (ball) valve. This position ensures that air is eliminated before it reaches the meter, regardless of how air is introduced (pressure fluctuations, main breaks, supply surges).
+              Smart Valve™ installs on the user side of the water meter — between the meter and the pressure regulator or first isolation valve. This position allows the device to maintain upstream compression so that air cannot expand through the meter, regardless of how it is introduced (pressure fluctuations, main breaks, supply surges).
             </p>
             <p className="text-gray-300 leading-relaxed mb-6">
               Because it installs on the main supply line, a single Smart Valve™ unit covers the entire facility — every fixture, every system, every process. There's no need for individual installations at different points in the building.

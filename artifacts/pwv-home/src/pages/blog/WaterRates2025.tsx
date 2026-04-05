@@ -130,7 +130,7 @@ export default function WaterRates2025() {
 
             <h2 className="text-2xl font-bold text-white mt-10 mb-4">Smart Valve™: The Only Guaranteed Solution</h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Smart Valve™ is a passive, NSF 61 and 372 certified device that installs at the main water supply line — upstream of the meter. It eliminates air entrapment before air reaches the meter, so only actual water volume is counted. The result: a metered consumption reduction of 15%–58%, guaranteed in writing on every installation.
+              Smart Valve™ is a passive, NSF 61 and 372 certified device that installs on the user side of the water meter — between the meter and the pressure regulator. It eliminates air entrapment before air reaches the meter, so only actual water volume is counted. The result: a metered consumption reduction of 15%–58%, guaranteed in writing on every installation.
             </p>
             <p className="text-gray-300 leading-relaxed mb-6">
               Unlike behavioral conservation, Smart Valve™ delivers savings with zero impact on operations. No pressure change. No flow restriction. No maintenance required. It works passively, 24/7, whether the facility team thinks about it or not.

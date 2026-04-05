@@ -21,7 +21,7 @@ const config = {
   ],
   markets: ["Anchorage", "Fairbanks", "Juneau", "Sitka", "Wasilla", "Kenai", "Kodiak", "Palmer"],
   faqItems: [
-    { q: "Does Smart Valve™ work in Alaska's cold climate?", a: "Yes. Smart Valve™ is a fully passive, mechanical device with no electrical components or moving parts. It operates reliably across all temperature ranges, including Alaska's extreme cold. It is installed on the interior supply line upstream of your commercial meter." },
+    { q: "Does Smart Valve™ work in Alaska's cold climate?", a: "Yes. Smart Valve™ is a fully passive, mechanical device — no electrical components, no external power required. It operates reliably across all temperature ranges, including Alaska's extreme cold. It is installed on the user side of your commercial meter, between the meter and the pressure regulator." },
     { q: "Which Alaska utilities are covered by Smart Valve™?", a: "Smart Valve™ works with any metered municipal or utility water supply. This includes Anchorage Water & Wastewater Utility (AWWU), City & Borough of Juneau utilities, Fairbanks utilities, and smaller Alaska water utilities." },
     { q: "What is the guaranteed minimum savings?", a: "Every Smart Valve™ installation guarantees at least 15% reduction in metered water consumption, in writing. If you do not reach 15%, we resolve it at no cost." },
     { q: "What types of commercial properties benefit most in Alaska?", a: "Hotels, healthcare facilities, office buildings, and industrial facilities in Anchorage and Juneau have the strongest ROI profile. Any property with a monthly water bill above $5,000 qualifies for assessment." },

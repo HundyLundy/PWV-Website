@@ -125,7 +125,7 @@ export default function HospitalsWaterCosts() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="text-[#DEC600] text-sm font-semibold mb-2">★ HEALTHCARE-CERTIFIED</div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Smart Valve™ on a Hospital Main Supply Line</h2>
-            <p className="text-xl text-white/80 mb-8">Installed upstream of the commercial meter — every gallon saved is a gallon not billed. Reduces metered consumption across all hospital uses simultaneously. NSF 61 and 372 certified safe for healthcare water supply systems.</p>
+            <p className="text-xl text-white/80 mb-8">Installed on the user side of the commercial meter — every gallon saved is a gallon not billed. Reduces metered consumption across all hospital uses simultaneously. NSF/ANSI/CAN 61 and NSF/ANSI 372 certified safe for healthcare water supply systems.</p>
             <div className="grid sm:grid-cols-3 gap-6 mb-8">
               {[
                 { value: "≥15%", label: "Guaranteed minimum savings" },

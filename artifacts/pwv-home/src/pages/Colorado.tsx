@@ -239,7 +239,7 @@ export default function ColoradoPage() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
-              { num: "1", title: "Professional Install", desc: "Licensed technician installs upstream of your meter. Fast process with minimal disruption to your operations." },
+              { num: "1", title: "Professional Install", desc: "Licensed technician installs on the user side of your meter. Fast process with minimal disruption to your operations." },
               { num: "2", title: "Precision Calibration", desc: "The valve is mechanically set to your facility's specific line pressure for maximum air elimination." },
               { num: "3", title: "Instant Savings", desc: "Air exits the line before the meter. Your meter reads true liquid volume only. Savings start immediately." }
             ].map((step, i) => (

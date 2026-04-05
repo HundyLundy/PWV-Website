@@ -271,7 +271,7 @@ export default function Home() {
               <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4 text-white font-headline" style={{ background: '#0374A7' }}>2</div>
               <h3 className="font-headline text-2xl font-bold text-slate-900">The Fix</h3>
               <p className="text-slate-500 text-lg leading-relaxed" style={{ fontWeight: 300 }}>
-                Smart Valve™ installs upstream of your meter and mechanically purges air before it's counted. Your meter reads true water volume. You pay for what you actually use.
+                Smart Valve™ installs on the user side of your meter and mechanically purges air before it's counted. Your meter reads true water volume. You pay for what you actually use.
               </p>
             </div>
           </div>
@@ -431,7 +431,7 @@ export default function Home() {
 function MicrositeFAQ() {
   const [open, setOpen] = useState<number | null>(null);
   const faqs = [
-    { q: "How does the Smart Valve™ reduce my water bill?", a: "Municipal water systems trap air bubbles that travel through your pipes and register as volume on your meter. You're billed for every cubic foot — including the ones that were never liquid. The Smart Valve™ installs upstream of your meter and purges that air before it's counted. Your meter reads only actual water." },
+    { q: "How does the Smart Valve™ reduce my water bill?", a: "Municipal water systems trap air bubbles that travel through your pipes and register as volume on your meter. You're billed for every cubic foot — including the ones that were never liquid. Smart Valve™ installs on the user side of your meter and purges that air before it's counted. Your meter reads only actual water." },
     { q: "Is the 15% reduction really guaranteed?", a: "Yes. It's in writing, in your contract. If your facility doesn't achieve at least 15% reduction in metered water consumption, we make it right. Every installation comes with this commitment." },
     { q: "How long does installation take?", a: "Typically 2–4 hours. No disruption to your operations, no fixtures touched, no permits required in most jurisdictions. Our licensed technicians work around your schedule." },
     { q: "Does it need electricity or ongoing maintenance?", a: "Neither. The Smart Valve™ is entirely passive — no power, no electricity, no maintenance, no subscriptions or service visits. It works continuously once installed." },
