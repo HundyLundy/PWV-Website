@@ -280,8 +280,22 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                 <div>
                   <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>About Smart Valve™</div>
                   <div className="flex flex-col gap-0.5">
+
+                    {/* Partners — featured highlight entry */}
+                    <a href="/partners/" onClick={() => setExploreOpen(false)}
+                      className="flex items-center gap-3 px-3 py-3 rounded-xl transition-colors group mb-1"
+                      style={{ background: "rgba(222,198,0,0.10)", border: "1px solid rgba(222,198,0,0.30)" }}>
+                      <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                        style={{ background: "rgba(222,198,0,0.2)", border: "1px solid rgba(222,198,0,0.4)" }}>
+                        <ShieldCheck className="w-3.5 h-3.5" style={{ color: '#DEC600' }} />
+                      </div>
+                      <div className="flex flex-col min-w-0">
+                        <span className="text-sm font-bold leading-tight group-hover:text-yellow-200 transition-colors" style={{ color: '#DEC600' }}>Partners &amp; Process</span>
+                        <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: 'rgba(222,198,0,0.6)' }}>AWS · CWS · Flow Dynamics</span>
+                      </div>
+                    </a>
+
                     {[
-                      { label: "Our Partners — AWS & CWS", href: "/partners/", icon: ShieldCheck },
                       { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
                       { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
                       { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
@@ -430,9 +444,18 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                         </a>
                       ))}
                     </div>
+                    {/* Partners — featured highlight entry */}
+                    <a href="/partners/" onClick={() => setMenuOpen(false)}
+                      className="flex items-center gap-2.5 py-2 px-2 rounded-xl mb-1"
+                      style={{ background: "rgba(222,198,0,0.10)", border: "1px solid rgba(222,198,0,0.28)" }}>
+                      <ShieldCheck className="w-4 h-4 shrink-0" style={{ color: '#DEC600' }} />
+                      <div className="flex flex-col">
+                        <span className="text-sm font-bold leading-tight" style={{ color: '#DEC600' }}>Partners &amp; Process</span>
+                        <span className="text-[10px] leading-tight" style={{ color: 'rgba(222,198,0,0.6)' }}>AWS · CWS · Flow Dynamics</span>
+                      </div>
+                    </a>
                     {/* Other explore links */}
                     {[
-                      { label: "Our Partners — AWS & CWS", href: "/partners/", icon: ShieldCheck },
                       { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
                       { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: BookOpen },
                       { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
