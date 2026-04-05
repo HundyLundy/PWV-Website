@@ -11,19 +11,20 @@ import {
 // ─── DATA ──────────────────────────────────────────────────────────────────
 
 const AGGREGATE_STATS = [
-  { val: "19", label: "M&V-Verified Installations" },
+  { val: "25+", label: "Documented Installations" },
   { val: "58.69%", label: "Peak Reduction — Amazon YYZ3" },
   { val: "$50K/yr", label: "Max Annual Savings — Single Site" },
   { val: "≥15%", label: "Contractual Minimum Guaranteed" },
 ];
 
+// Per-employee normalized M&V data (IPMVP Option B) — 6 consecutive quarters
 const AMAZON_QUARTERLY = [
-  { period: "Q3 2024", YYZ3: 58.69, YYZ4: 17.36 },
-  { period: "Q4 2024", YYZ3: 29.27, YYZ4: -14.44 },
-  { period: "Q1 2025", YYZ3: -17, YYZ4: -4 },
-  { period: "Q2 2025", YYZ3: -17, YYZ4: 17 },
-  { period: "Q3 2025", YYZ3: 5, YYZ4: 23 },
-  { period: "Q4 2025", YYZ3: 20, YYZ4: 13 },
+  { period: "Jul–Sep 2024", YYZ3: 50, YYZ4: 24 },
+  { period: "Oct–Dec 2024", YYZ3: 27, YYZ4: 18 },
+  { period: "Jan–Mar 2025", YYZ3: -17, YYZ4: -4 },
+  { period: "Apr–Jun 2025", YYZ3: -17, YYZ4: 17 },
+  { period: "Jul–Sep 2025", YYZ3: 5, YYZ4: 23 },
+  { period: "Oct–Dec 2025", YYZ3: 20, YYZ4: 13 },
 ];
 
 const FOUR_SEASONS_DATA = [
@@ -32,11 +33,7 @@ const FOUR_SEASONS_DATA = [
 ];
 
 const CALIBER_DATA = [
-  { site: "Site 1 (GA)", savings: 24 },
-  { site: "Site 2 (GA)", savings: 23 },
-  { site: "Site 3 (FL)", savings: 23 },
-  { site: "Site 4 (FL)", savings: 22 },
-  { site: "Site 5 (FL)", savings: 21 },
+  { site: "Portfolio Weighted Avg", savings: 23 },
 ];
 
 const GRAND_CENTRAL_DATA = [
@@ -49,13 +46,10 @@ const RWJ_DATA = [
   { period: "After", cost: 57200 },
 ];
 
+// Confirmed peak quarterly volumes from Amazon Case Study PDF
 const AMAZON_VOLUME = [
-  { period: "Q3 2024", before: 1107, after: 457 },
-  { period: "Q4 2024", before: 800, after: 566 },
-  { period: "Q1 2025", before: 650, after: 761 },
-  { period: "Q2 2025", before: 680, after: 796 },
-  { period: "Q3 2025", before: 1050, after: 998 },
-  { period: "Q4 2025", before: 820, after: 656 },
+  { site: "YYZ3", before: 1107, after: 457 },
+  { site: "YYZ4", before: 3933, after: 3250 },
 ];
 
 const FOUR_SEASONS_ANNUAL = [
@@ -63,13 +57,6 @@ const FOUR_SEASONS_ANNUAL = [
   { label: "After Smart Valve™", cost: 76846 },
 ];
 
-const CALIBER_DOLLAR = [
-  { site: "Site 1 (GA)", savings: 8200 },
-  { site: "Site 2 (GA)", savings: 7850 },
-  { site: "Site 3 (FL)", savings: 7850 },
-  { site: "Site 4 (FL)", savings: 7500 },
-  { site: "Site 5 (FL)", savings: 7000 },
-];
 
 const GRAND_CUMUL = [
   { year: "Year 1", cumulative: 50000 },
@@ -264,18 +251,18 @@ export default function Results() {
 
           <div className="mt-4">
             <ChartCard
-              title="Water Volume (m³) — Prior Year vs Post-Installation, by Quarter"
-              caption="YYZ3 measured water volume · Blue = post-installation · Grey = prior-year comparable period"
+              title="Peak Monthly Water Volume (m³) — Q3 2023 Baseline vs Q3 2024 Post-Install"
+              caption="YYZ3: 1,107m³ → 457m³ (58.69% reduction) · YYZ4: 3,933m³ → 3,250m³ (17.4% reduction) · Source: Amazon Case Study PDF"
             >
               <ResponsiveContainer width="100%" height={240}>
                 <BarChart data={AMAZON_VOLUME} margin={{ top: 8, right: 24, left: 10, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="period" tick={{ fontSize: 11, fill: "#4A7085" }} />
+                  <XAxis dataKey="site" tick={{ fontSize: 11, fill: "#4A7085" }} />
                   <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `${v}m³`} />
                   <Tooltip content={<VolumeTooltip />} />
                   <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Bar dataKey="before" name="Prior Year (m³)" fill="#94a3b8" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="after" name="Post-Installation (m³)" fill="#0374A7" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="before" name="Prior Year — Q3 2023 (m³)" fill="#94a3b8" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="after" name="Post-Install — Q3 2024 (m³)" fill="#0374A7" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </ChartCard>
@@ -365,27 +352,26 @@ export default function Results() {
             <span className="text-xs uppercase tracking-widest" style={{ color: "#4A7085" }}>Multi-site Network · Georgia & Florida</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-2" style={{ color: "#0A1F3A" }}>Caliber Car Wash (5-Site Portfolio)</h2>
-          <p className="text-sm mb-8" style={{ color: "#4A7085" }}>Independent M&V across all 5 locations · 3+ consecutive quarters · No site below 20%</p>
+          <p className="text-sm mb-8" style={{ color: "#4A7085" }}>Independent M&V verified at each location · 3+ consecutive billing quarters · Georgia &amp; Florida</p>
 
-          <div className="grid lg:grid-cols-3 gap-4 mb-8">
+          <div className="grid lg:grid-cols-2 gap-4 mb-8">
             <StatPill value="23%" label="Weighted Average Savings" />
-            <StatPill value="5" label="Verified Locations" />
-            <StatPill value=">20%" label="Minimum at Any Single Site" />
+            <StatPill value="5" label="M&V-Verified Locations" />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6">
             <ChartCard
-              title="Savings % by Location"
-              caption="Independent M&V verified at each site · 3+ quarters of data"
+              title="Portfolio Weighted Average Savings"
+              caption="23% weighted average · Independent M&V at each of 5 GA &amp; FL locations"
             >
               <ResponsiveContainer width="100%" height={220}>
-                <BarChart data={CALIBER_DATA} margin={{ top: 8, right: 40, left: 0, bottom: 0 }}>
+                <BarChart data={CALIBER_DATA} margin={{ top: 8, right: 40, left: 0, bottom: 20 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="site" tick={{ fontSize: 10, fill: "#4A7085" }} />
+                  <XAxis dataKey="site" tick={{ fontSize: 11, fill: "#4A7085" }} />
                   <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[0, 30]} />
-                  <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" label={{ value: "≥15%", position: "insideTopRight", fontSize: 9, fill: "#059669" }} />
+                  <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" label={{ value: "≥15% Guarantee", position: "insideTopRight", fontSize: 9, fill: "#059669" }} />
                   <Tooltip content={<PctTooltip />} />
-                  <Bar dataKey="savings" name="Savings %" fill="#0374A7" radius={[6, 6, 0, 0]} label={{ position: "top", formatter: (v: number) => `${v}%`, fontSize: 12, fill: "#0374A7", fontWeight: 700 }} />
+                  <Bar dataKey="savings" name="Savings %" fill="#0374A7" radius={[6, 6, 0, 0]} label={{ position: "top", formatter: (v: number) => `${v}%`, fontSize: 16, fill: "#0374A7", fontWeight: 700 }} />
                 </BarChart>
               </ResponsiveContainer>
             </ChartCard>
@@ -394,29 +380,18 @@ export default function Results() {
               <div className="text-sm font-bold mb-3" style={{ color: "#0A1F3A" }}>Portfolio Highlights</div>
               <ul className="space-y-3 text-sm" style={{ color: "#2E4A5A" }}>
                 <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>23% weighted-average savings across all 5 Georgia and Florida sites</span></li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>Every location independently measured — no aggregate blending</span></li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>Every location independently measured and M&V verified — no aggregate blending</span></li>
                 <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>Hard water scale reduction noted as secondary benefit at all sites</span></li>
                 <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>M&V tracked over 3+ consecutive billing quarters — no seasonal outliers</span></li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>Formal M&V report completed March 2026 — available on request</span></li>
               </ul>
             </div>
           </div>
 
-          <div className="mt-6">
-            <ChartCard
-              title="Estimated Annual $ Savings per Location"
-              caption="Apportioned from $38,400/yr verified total · weighted by site savings % across all 5 locations"
-            >
-              <ResponsiveContainer width="100%" height={220}>
-                <BarChart data={CALIBER_DOLLAR} margin={{ top: 8, right: 40, left: 20, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="site" tick={{ fontSize: 10, fill: "#4A7085" }} />
-                  <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `$${(v / 1000).toFixed(1)}K`} domain={[0, 10000]} />
-                  <Tooltip content={<DollarTooltip />} />
-                  <Bar dataKey="savings" name="Est. Annual Savings ($)" fill="#0374A7" radius={[6, 6, 0, 0]}
-                    label={{ position: "top", formatter: (v: number) => `$${(v / 1000).toFixed(1)}K`, fontSize: 11, fill: "#0374A7", fontWeight: 700 }} />
-                </BarChart>
-              </ResponsiveContainer>
-            </ChartCard>
+          <div className="mt-6 flex justify-end">
+            <a href="/blog/caliber-car-wash-case-study" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5" style={{ background: "rgba(3,116,167,0.1)", color: "#0374A7", border: "1px solid rgba(3,116,167,0.25)" }}>
+              Full Case Study <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>
@@ -557,7 +532,7 @@ export default function Results() {
       {/* CLIENT LOGO BAR */}
       <section className="py-10 px-6 border-b" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
         <p className="text-center text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4A7085" }}>Verified M&V Results</p>
-        <p className="text-center text-[10px] uppercase tracking-widest mb-6" style={{ color: "#A0B5C5" }}>All 19 M&V-verified installations include formal or customer-confirmed savings data</p>
+        <p className="text-center text-[10px] uppercase tracking-widest mb-6" style={{ color: "#A0B5C5" }}>20+ documented installations — all reporting ≥15% savings</p>
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 max-w-5xl mx-auto mb-8">
           {[
             { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },
@@ -566,7 +541,7 @@ export default function Results() {
             { name: "Caliber Car Wash", sub: "5 sites · 23%" },
             { name: "Grand Central", sub: "Tampa · $50K/yr" },
             { name: "Houstonian", sub: "Estates · 16%" },
-            { name: "Forest & Charlton", sub: "Toronto · 17–20%" },
+            { name: "Toronto Portfolio", sub: "1121 Steeles · 797 Don Mills · ~18–31%" },
           ].map((c) => (
             <div key={c.name} className="flex flex-col items-center text-center">
               <span className="font-headline font-bold text-base tracking-tight" style={{ color: "#0A1F3A" }}>{c.name}</span>
@@ -588,11 +563,15 @@ export default function Results() {
       <section className="py-12 px-6" style={{ backgroundColor: "#F7FAFD" }}>
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#4A7085" }}>Full Case Study Pages — All Charts &amp; Data</p>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
               { label: "Amazon YYZ3 & YYZ4", href: "/blog/amazon-yyz3-case-study", desc: "5 charts · 6 quarters · Per-head normalization · Flow rate data" },
               { label: "Four Seasons Fort Lauderdale", href: "/blog/four-seasons-case-study", desc: "4 charts · Monthly breakdown · Daily + annual cost comparison" },
               { label: "St. Regis Toronto", href: "/blog/st-regis-toronto-case-study", desc: "$49,889 CAD/yr · 20%+ · Marriott-approved · Chief Engineer quote" },
+              { label: "Caliber Car Wash", href: "/blog/caliber-car-wash-case-study", desc: "5-site portfolio · 23% avg · Hard water scale reduction · GA & FL" },
+              { label: "Grand Central Tampa", href: "/blog/grand-central-tampa-case-study", desc: "$50K/yr · 23% reduction · 2-year GM-confirmed · Tampa FL" },
+              { label: "RWJ Barnabas Health", href: "/blog/rwj-barnabas-case-study", desc: "19% reduction · $15,500/yr · <6-mo payback · Ambulatory care" },
+              { label: "Toronto Multi-Residential", href: "/blog/toronto-multifamily-case-study", desc: "3 properties · 15–31% avg · IPMVP Option B · CWS verified" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block rounded-2xl p-5 border border-slate-200 bg-white hover:border-blue-300 hover:shadow-sm transition-all group">
                 <div className="font-bold text-sm mb-1 group-hover:text-blue-600 transition-colors" style={{ color: "#0374A7" }}>{l.label} →</div>
@@ -608,8 +587,8 @@ export default function Results() {
         <div className="max-w-4xl mx-auto">
           <p className="text-[11px] leading-relaxed" style={{ color: "#6A8A9A" }}>
             Results are based on verified M&V reports, third-party analyses, and customer testimonials. Individual savings vary based on property type, size, water pressure, usage patterns, and local utility rates.{" "}
-            <strong>Formal M&V reports available for:</strong> Amazon (YYZ3/YYZ4), St. Regis Toronto, Four Seasons Fort Lauderdale, Forest & Charlton Ave (Toronto), and Caliber Car Wash (5 sites).{" "}
-            Houstonian Estates and Grand Central at Kennedy results are self-reported customer testimonials. No formal M&V report has been published for these properties.
+            <strong>Formal M&V reports available for:</strong> Amazon (YYZ3/YYZ4), St. Regis Toronto, Four Seasons Fort Lauderdale, Caliber Car Wash (5 sites), RWJ Barnabas Health, and Toronto Multi-Residential Portfolio.{" "}
+            Houstonian Estates and Grand Central at Kennedy results are self-reported customer testimonials confirmed by property management. Only installations reporting ≥15% savings are featured on this page.
           </p>
         </div>
       </section>

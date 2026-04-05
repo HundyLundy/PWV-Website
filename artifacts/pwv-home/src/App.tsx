@@ -15,6 +15,10 @@ import StRegis from "@/pages/blog/StRegis";
 import DenverRebate from "@/pages/blog/DenverRebate";
 import HotelWaterSavings from "@/pages/blog/HotelWaterSavings";
 import WhatIsSmartValve from "@/pages/blog/WhatIsSmartValve";
+import RWJBarnabas from "@/pages/blog/RWJBarnabas";
+import GrandCentralTampa from "@/pages/blog/GrandCentralTampa";
+import CaliberCarWash from "@/pages/blog/CaliberCarWash";
+import TorontoMultifamily from "@/pages/blog/TorontoMultifamily";
 
 // Core pages
 import Results from "@/pages/Results";
@@ -362,6 +366,10 @@ function Router() {
       <Route path="/blog/denver-water-rebate-guide" component={DenverRebate} />
       <Route path="/blog/hotel-water-savings-guide" component={HotelWaterSavings} />
       <Route path="/blog/what-is-smart-valve" component={WhatIsSmartValve} />
+      <Route path="/blog/rwj-barnabas-case-study" component={RWJBarnabas} />
+      <Route path="/blog/grand-central-tampa-case-study" component={GrandCentralTampa} />
+      <Route path="/blog/caliber-car-wash-case-study" component={CaliberCarWash} />
+      <Route path="/blog/toronto-multifamily-case-study" component={TorontoMultifamily} />
 
       {/* Fallback */}
       <Route component={NotFound} />

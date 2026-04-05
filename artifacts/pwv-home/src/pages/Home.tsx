@@ -71,10 +71,10 @@ const fadeUp = {
 };
 
 const INDUSTRIES = [
-  { name: "Commercial Office", value: 36, range: "33%–39%", note: "Texas portfolio — 2 sites verified" },
+  { name: "Commercial Office", value: 38, range: "37%–39%", note: "Houston multi-tenant office building — M&V verified" },
   { name: "Automotive (Car Wash)", value: 23, range: "23%", note: "Caliber Car Wash — 5 sites, M&V verified" },
   { name: "Luxury Hospitality", value: 22, range: "20%–26%", note: "St. Regis 20%+, Four Seasons 26%" },
-  { name: "Multifamily / Apartments", value: 21, range: "15%–30%", note: "Forest & Charlton 17–20%, NJ portfolio range" },
+  { name: "Multifamily / Apartments", value: 21, range: "16%–31%", note: "Toronto portfolio 18–31%, NJ portfolio 18–30%" },
   { name: "Condominiums", value: 20, range: "16%–23%", note: "Multiple verified Canadian sites" },
   { name: "Logistics / Fulfillment", value: 17, range: "16.5% avg / 58.69% peak", note: "Amazon YYZ3 & YYZ4 — dual M&V methodology" },
   { name: "Healthcare / Medical", value: 19, range: "19%", note: "RWJ Barnabas — based on 1 study" },
@@ -113,9 +113,9 @@ const CLIENTS = [
     stat: "23% weighted avg · 5 sites", detail: "M&V verified across 5 GA & FL locations over 3+ quarters. Formal M&V March 2026."
   },
   {
-    initial: "F", name: "Forest & Charlton (100 Forest / 123 Charlton)", industry: "Multi-Residential Portfolio · Toronto",
+    initial: "T", name: "Toronto Multi-Residential Portfolio", industry: "Multi-Residential · Toronto, Ontario",
     color: "#1a2a1a", accent: "#38A169",
-    stat: "17–20% (IPMVP Option B)", detail: "CA $17,200 combined annual savings. Paired t-test at 95% confidence. Payback < 3 years."
+    stat: "18%–31% avg · 3 properties", detail: "1121 Steeles Ave: 31% avg over 6 months. 797 Don Mills: 18% avg. 21 & 23 Carlton: ~15%. IPMVP Option B verified. CWS formal reports."
   },
 ];
 
@@ -125,10 +125,10 @@ const PROOF_TICKER = [
   { client: "The St. Regis Toronto", result: "$49,889 CAD/yr · 20%+", industry: "Marriott Portfolio" },
   { client: "Grand Central at Kennedy", result: "$50,000/yr · 23% avg", industry: "Tampa FL Real Estate" },
   { client: "Caliber Car Wash", result: "23% avg · 5 sites", industry: "Automotive" },
-  { client: "Forest & Charlton", result: "17–20% IPMVP verified", industry: "Multi-Residential Toronto" },
+  { client: "Toronto Portfolio", result: "18–31% verified · 3 properties", industry: "Multi-Residential Toronto" },
   { client: "Houstonian Estates", result: "16% · ~6,000 gal/day", industry: "Multifamily Real Estate" },
-  { client: "RWJ Barnabas Health", result: "19% verified savings", industry: "Healthcare" },
-  { client: "Texas Office Portfolio", result: "33–39% bill reduction", industry: "Commercial Office" },
+  { client: "RWJ Barnabas Health", result: "19% verified · $15,500/yr", industry: "Healthcare" },
+  { client: "Houston Office Building", result: "37–39% bill reduction", industry: "Commercial Office" },
   { client: "Amazon YYZ4", result: "16.5% sustained avg", industry: "Fulfillment Center" },
 ];
 
@@ -138,7 +138,7 @@ const INDUSTRY_CARDS = [
   { icon: Car, title: "Car Washes", href: "/industries/car-washes", stat: "23% avg", color: "#E53E3E", bg: "rgba(229,62,62,0.08)", note: "Caliber Car Wash · 5 sites M&V verified" },
   { icon: Building2, title: "Multifamily", href: "/industries/multifamily", stat: "15–30%", color: "#D69E2E", bg: "rgba(214,158,46,0.08)", note: "Grand Central at Kennedy · Toronto portfolio" },
   { icon: Heart, title: "Hospitals", href: "/industries/hospitals", stat: "19%+", color: "#805AD5", bg: "rgba(128,90,213,0.08)", note: "RWJ Barnabas Health · NSF 61 certified" },
-  { icon: Factory, title: "Industrial", href: "/industries", stat: "15–39%", color: "#319795", bg: "rgba(49,151,149,0.08)", note: "Texas commercial office 33–39%" },
+  { icon: Factory, title: "Industrial", href: "/industries", stat: "15–39%", color: "#319795", bg: "rgba(49,151,149,0.08)", note: "Houston office building 37–39% verified" },
 ];
 
 const US_STATES = [

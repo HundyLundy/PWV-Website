@@ -13,17 +13,18 @@ import {
 const TOP_STATS = [
   { val: "≥15%", label: "Guaranteed Minimum", sub: "In writing — in your contract" },
   { val: "58.69%", label: "Peak Verified Savings", sub: "Amazon YYZ3 — independently measured" },
-  { val: "19.2%", label: "Portfolio Average", sub: "Across documented installations" },
+  { val: "20%+", label: "Portfolio Average", sub: "Across 20+ documented installations" },
   { val: "$50K+", label: "Max Annual Savings", sub: "Per location, per year (Grand Central Tampa)" },
 ];
 
+// Per-employee normalized M&V data (IPMVP Option B) — 6 consecutive quarters
 const AMAZON_QUARTERLY = [
-  { period: "Q3 2024", YYZ3: 58.69, YYZ4: 17.36 },
-  { period: "Q4 2024", YYZ3: 29.27, YYZ4: -14.44 },
-  { period: "Q1 2025", YYZ3: -17, YYZ4: -4 },
-  { period: "Q2 2025", YYZ3: -17, YYZ4: 17 },
-  { period: "Q3 2025", YYZ3: 5, YYZ4: 23 },
-  { period: "Q4 2025", YYZ3: 20, YYZ4: 13 },
+  { period: "Jul–Sep 2024", YYZ3: 50, YYZ4: 24 },
+  { period: "Oct–Dec 2024", YYZ3: 27, YYZ4: 18 },
+  { period: "Jan–Mar 2025", YYZ3: -17, YYZ4: -4 },
+  { period: "Apr–Jun 2025", YYZ3: -17, YYZ4: 17 },
+  { period: "Jul–Sep 2025", YYZ3: 5, YYZ4: 23 },
+  { period: "Oct–Dec 2025", YYZ3: 20, YYZ4: 13 },
 ];
 
 const HOTEL_DATA = [
@@ -33,18 +34,16 @@ const HOTEL_DATA = [
 ];
 
 const MULTIFAMILY_DATA = [
-  { name: "Grand Central\nTampa", pct: 23 },
-  { name: "Houstonian\nEstates", pct: 16 },
-  { name: "100 Forest Ave\nToronto", pct: 20 },
-  { name: "123 Charlton\nToronto", pct: 17 },
+  { name: "Grand Central\nTampa FL", pct: 23 },
+  { name: "Houstonian\nEstates TX", pct: 16 },
+  { name: "1121 Steeles Ave\nToronto ON", pct: 31 },
+  { name: "797 Don Mills\nToronto ON", pct: 18 },
+  { name: "Orange Apt Bldg\nOrange NJ", pct: 26 },
+  { name: "Park Gardens\nE. Orange NJ", pct: 21 },
 ];
 
 const CARWASH_DATA = [
-  { site: "Site 1 (GA)", savings: 24 },
-  { site: "Site 2 (GA)", savings: 23 },
-  { site: "Site 3 (FL)", savings: 23 },
-  { site: "Site 4 (FL)", savings: 22 },
-  { site: "Site 5 (FL)", savings: 21 },
+  { site: "Caliber Portfolio\nWeighted Avg", savings: 23 },
 ];
 
 const HOSPITAL_DATA = [
