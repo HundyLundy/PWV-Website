@@ -119,10 +119,10 @@ export default function FourSeasons() {
       <Helmet>
         <title>Four Seasons Fort Lauderdale: 26% Water Reduction, $27K/yr Saved | Smart Valve™ Case Study</title>
         <meta name="description" content="Third-party M&V verified: Four Seasons Fort Lauderdale achieved 26% daily water reduction, 34% occupancy-normalized, and $27,000/yr in avoided water and sewer costs." />
-        <link rel="canonical" href="https://www.perfectwatervalve.com/blog/four-seasons-case-study" />
+        <link rel="canonical" href="https://www.perfectwatervalve.com/results/four-seasons" />
         <meta property="og:title" content="Four Seasons Fort Lauderdale: 26% Water Reduction, $27K/yr Saved" />
         <meta property="og:description" content="Full M&V case study. 26% daily avg, 56% October peak, $348.21 → $274.07/day. Verified December 2025." />
-        <meta property="og:url" content="https://www.perfectwatervalve.com/blog/four-seasons-case-study" />
+        <meta property="og:url" content="https://www.perfectwatervalve.com/results/four-seasons" />
       </Helmet>
 
       <Navbar onScrollTo={() => {}} />
@@ -297,7 +297,7 @@ export default function FourSeasons() {
           <div className="grid sm:grid-cols-3 gap-4">
             {[
               { label: "All Case Studies", href: "/results", desc: "Full M&V portfolio — Amazon, St. Regis, Grand Central and more" },
-              { label: "St. Regis Toronto", href: "/blog/st-regis-toronto-case-study", desc: "$49,889 CAD/yr · 20%+ reduction · Marriott-approved" },
+              { label: "St. Regis Toronto", href: "/results/st-regis-toronto", desc: "$49,889 CAD/yr · 20%+ reduction · Marriott-approved" },
               { label: "Hotels & Hospitality", href: "/industries/hotels", desc: "Why luxury hotels are deploying Smart Valve™ portfolio-wide" },
               { label: "About AWS & CWS", href: "/partners", desc: "Who conducts M&V, issues the guarantee & supplies the valve" },
               { label: "Compare Alternatives", href: "/compare", desc: "Smart Valve™ vs. low-flow, leak detection, PRVs & more" },

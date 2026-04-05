@@ -17,49 +17,56 @@ const POSTS = [
     excerpt: "Water utilities across all 50 states are implementing rate increases in 2025, with some markets seeing 35–50% hikes. Here's a state-by-state breakdown and what commercial property managers can do right now.",
   },
   {
-    slug: "amazon-yyz3-case-study",
+    slug: "amazon-yyz3",
+    section: "results",
     title: "Amazon YYZ3 & YYZ4: 6 Quarters of Verified M&V Results — Full Data & Charts",
     category: "Case Studies",
     date: "April 5, 2026",
     excerpt: "Real M&V data from two Amazon fulfillment centres in Brampton, ON. 58.69% peak. 17% per-head average for YYZ3. 16% for YYZ4. Six consecutive quarters, five charts.",
   },
   {
-    slug: "four-seasons-case-study",
+    slug: "four-seasons",
+    section: "results",
     title: "Four Seasons Fort Lauderdale: 26% Daily Water Reduction, $27,000/yr Saved",
     category: "Case Studies",
     date: "April 5, 2026",
     excerpt: "Third-party M&V verified: 26% daily average, 34% occupancy-normalized, 56% October peak. Daily water & sewer cost dropped from $348.21 to $274.07. Full data and charts.",
   },
   {
-    slug: "st-regis-toronto-case-study",
+    slug: "st-regis-toronto",
+    section: "results",
     title: "St. Regis Toronto: $49,889 CAD/yr Saved, 20%+ Water Cost Reduction — Marriott Approved",
     category: "Case Studies",
     date: "April 5, 2026",
     excerpt: "Year-over-year savings of $49,889 CAD confirmed by Chief Engineer Priyan Jayetileke. Installed in under an hour. Marriott International approved. Canadian Water Savings M&V.",
   },
   {
-    slug: "caliber-car-wash-case-study",
+    slug: "caliber-car-wash",
+    section: "results",
     title: "Caliber Car Wash: 23% Water Savings Across 5 Locations — Independent M&V Verified",
     category: "Case Studies",
     date: "April 5, 2026",
     excerpt: "Five Georgia and Florida car wash locations achieved a 23% weighted-average water reduction. Each site independently measured over 3+ consecutive billing quarters. Hard water scale reduced at all sites.",
   },
   {
-    slug: "grand-central-tampa-case-study",
+    slug: "grand-central-tampa",
+    section: "results",
     title: "Grand Central at Kennedy: $50,000/yr Water & Sewer Savings — Tampa Luxury Multifamily",
     category: "Case Studies",
     date: "April 5, 2026",
     excerpt: "Tampa's Grand Central at Kennedy cut combined water and sewer charges by 23% — saving $50,000 per year over a 2-year verified period with two 6-inch Smart Valve™ units.",
   },
   {
-    slug: "rwj-barnabas-case-study",
+    slug: "rwj-barnabas",
+    section: "results",
     title: "RWJ Barnabas Health: 19% Water Reduction, $15,500/yr Saved — Payback Under 6 Months",
     category: "Case Studies",
     date: "April 5, 2026",
     excerpt: "An ambulatory care center in Livingston, NJ reduced daily water consumption from 19,625 to 15,425 gallons — saving $15,500 annually with no pressure loss or equipment disruption.",
   },
   {
-    slug: "toronto-multifamily-case-study",
+    slug: "toronto-multifamily",
+    section: "results",
     title: "Toronto Multi-Residential Portfolio: 15–31% Verified Savings Across 3 Properties",
     category: "Case Studies",
     date: "April 5, 2026",
@@ -201,7 +208,7 @@ export default function Blog() {
                 </p>
 
                 <a
-                  href={`/blog/${post.slug}`}
+                  href={(post as any).section === "results" ? `/results/${post.slug}` : `/blog/${post.slug}`}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-white transition-colors mt-auto"
                 >
                   Read More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

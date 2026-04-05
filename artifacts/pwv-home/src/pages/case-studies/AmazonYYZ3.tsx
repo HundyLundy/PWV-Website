@@ -119,10 +119,10 @@ export default function AmazonYYZ3() {
       <Helmet>
         <title>Amazon YYZ3 & YYZ4 Case Study: Real M&V Data — 6 Quarters of Verified Water Savings | Perfect Water Valve</title>
         <meta name="description" content="Full M&V data for Amazon YYZ3 and YYZ4 fulfillment centres in Brampton, ON. 58.69% peak reduction. 16.5% portfolio average. Six quarters verified." />
-        <link rel="canonical" href="https://www.perfectwatervalve.com/blog/amazon-yyz3-case-study" />
+        <link rel="canonical" href="https://www.perfectwatervalve.com/results/amazon-yyz3" />
         <meta property="og:title" content="Amazon YYZ3 & YYZ4: 6 Quarters of Verified Water Savings" />
         <meta property="og:description" content="Full M&V case study — Amazon YYZ3 Brampton. 58.69% peak. 17% per-head average. Verified across 6 consecutive quarters." />
-        <meta property="og:url" content="https://www.perfectwatervalve.com/blog/amazon-yyz3-case-study" />
+        <meta property="og:url" content="https://www.perfectwatervalve.com/results/amazon-yyz3" />
       </Helmet>
 
       <Navbar onScrollTo={() => {}} />
@@ -331,7 +331,7 @@ export default function AmazonYYZ3() {
           <div className="grid sm:grid-cols-3 gap-4">
             {[
               { label: "All Case Studies", href: "/results", desc: "Full M&V portfolio — Five case studies with charts" },
-              { label: "Four Seasons Fort Lauderdale", href: "/blog/four-seasons-case-study", desc: "26% daily avg · $27K/yr · October peak 56%" },
+              { label: "Four Seasons Fort Lauderdale", href: "/results/four-seasons", desc: "26% daily avg · $27K/yr · October peak 56%" },
               { label: "Data Centers Industry Page", href: "/industries/data-centers", desc: "Why data centers see the highest Smart Valve™ results" },
               { label: "About AWS & CWS", href: "/partners", desc: "Who conducts M&V, issues the guarantee & supplies the valve" },
               { label: "Compare Alternatives", href: "/compare", desc: "Smart Valve™ vs. low-flow, leak detection, PRVs & more" },

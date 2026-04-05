@@ -238,13 +238,13 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                       </a>
                       <div className="flex flex-col mb-1" style={{ paddingLeft: '36px' }}>
                         {[
-                          { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/blog/amazon-yyz3-case-study" },
-                          { label: "Four Seasons — 26% avg, $27K/yr", href: "/blog/four-seasons-case-study" },
-                          { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/blog/st-regis-toronto-case-study" },
-                          { label: "Caliber Car Wash — 23% across 5 sites", href: "/blog/caliber-car-wash-case-study" },
-                          { label: "Grand Central Tampa — $50K/yr", href: "/blog/grand-central-tampa-case-study" },
-                          { label: "RWJ Barnabas — 19%, $15,500/yr", href: "/blog/rwj-barnabas-case-study" },
-                          { label: "Toronto Portfolio — 15–31%, 3 properties", href: "/blog/toronto-multifamily-case-study" },
+                          { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/results/amazon-yyz3" },
+                          { label: "Four Seasons — 26% avg, $27K/yr", href: "/results/four-seasons" },
+                          { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/results/st-regis-toronto" },
+                          { label: "Caliber Car Wash — 23% across 5 sites", href: "/results/caliber-car-wash" },
+                          { label: "Grand Central Tampa — $50K/yr", href: "/results/grand-central-tampa" },
+                          { label: "RWJ Barnabas — 19%, $15,500/yr", href: "/results/rwj-barnabas" },
+                          { label: "Toronto Portfolio — 15–31%, 3 properties", href: "/results/toronto-multifamily" },
                         ].map((s) => (
                           <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
                             className="flex items-center gap-1 text-[11px] py-[3px] px-2 rounded-md font-medium hover:bg-white/5 transition-colors"
@@ -430,13 +430,13 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     </a>
                     <div className="pl-6 flex flex-col gap-0.5 mb-1">
                       {[
-                        { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/blog/amazon-yyz3-case-study" },
-                        { label: "Four Seasons — 26% avg, $27K/yr", href: "/blog/four-seasons-case-study" },
-                        { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/blog/st-regis-toronto-case-study" },
-                        { label: "Caliber Car Wash — 23% across 5 sites", href: "/blog/caliber-car-wash-case-study" },
-                        { label: "Grand Central Tampa — $50K/yr", href: "/blog/grand-central-tampa-case-study" },
-                        { label: "RWJ Barnabas — 19%, $15,500/yr", href: "/blog/rwj-barnabas-case-study" },
-                        { label: "Toronto Portfolio — 15–31%, 3 properties", href: "/blog/toronto-multifamily-case-study" },
+                        { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/results/amazon-yyz3" },
+                        { label: "Four Seasons — 26% avg, $27K/yr", href: "/results/four-seasons" },
+                        { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/results/st-regis-toronto" },
+                        { label: "Caliber Car Wash — 23% across 5 sites", href: "/results/caliber-car-wash" },
+                        { label: "Grand Central Tampa — $50K/yr", href: "/results/grand-central-tampa" },
+                        { label: "RWJ Barnabas — 19%, $15,500/yr", href: "/results/rwj-barnabas" },
+                        { label: "Toronto Portfolio — 15–31%, 3 properties", href: "/results/toronto-multifamily" },
                       ].map((s) => (
                         <a key={s.href} href={s.href} onClick={() => setMenuOpen(false)}
                           className="text-xs py-1 text-white/40 hover:text-sky-300 transition-colors">

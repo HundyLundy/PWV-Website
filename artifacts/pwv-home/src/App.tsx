@@ -9,16 +9,18 @@ import NotFound from "@/pages/not-found";
 // Blog
 import BlogPage from "@/pages/Blog";
 import WaterRates2025 from "@/pages/blog/WaterRates2025";
-import AmazonYYZ3 from "@/pages/blog/AmazonYYZ3";
-import FourSeasons from "@/pages/blog/FourSeasons";
-import StRegis from "@/pages/blog/StRegis";
 import DenverRebate from "@/pages/blog/DenverRebate";
 import HotelWaterSavings from "@/pages/blog/HotelWaterSavings";
 import WhatIsSmartValve from "@/pages/blog/WhatIsSmartValve";
-import RWJBarnabas from "@/pages/blog/RWJBarnabas";
-import GrandCentralTampa from "@/pages/blog/GrandCentralTampa";
-import CaliberCarWash from "@/pages/blog/CaliberCarWash";
-import TorontoMultifamily from "@/pages/blog/TorontoMultifamily";
+
+// Case Studies
+import AmazonYYZ3 from "@/pages/case-studies/AmazonYYZ3";
+import FourSeasons from "@/pages/case-studies/FourSeasons";
+import StRegis from "@/pages/case-studies/StRegis";
+import RWJBarnabas from "@/pages/case-studies/RWJBarnabas";
+import GrandCentralTampa from "@/pages/case-studies/GrandCentralTampa";
+import CaliberCarWash from "@/pages/case-studies/CaliberCarWash";
+import TorontoMultifamily from "@/pages/case-studies/TorontoMultifamily";
 
 // Core pages
 import Results from "@/pages/Results";
@@ -360,16 +362,25 @@ function Router() {
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/" component={BlogPage} />
       <Route path="/blog/commercial-water-rates-rising-2025" component={WaterRates2025} />
-      <Route path="/blog/amazon-yyz3-case-study" component={AmazonYYZ3} />
-      <Route path="/blog/four-seasons-case-study" component={FourSeasons} />
-      <Route path="/blog/st-regis-toronto-case-study" component={StRegis} />
       <Route path="/blog/denver-water-rebate-guide" component={DenverRebate} />
       <Route path="/blog/hotel-water-savings-guide" component={HotelWaterSavings} />
       <Route path="/blog/what-is-smart-valve" component={WhatIsSmartValve} />
-      <Route path="/blog/rwj-barnabas-case-study" component={RWJBarnabas} />
-      <Route path="/blog/grand-central-tampa-case-study" component={GrandCentralTampa} />
-      <Route path="/blog/caliber-car-wash-case-study" component={CaliberCarWash} />
-      <Route path="/blog/toronto-multifamily-case-study" component={TorontoMultifamily} />
+
+      {/* Case Studies — served under /results/ */}
+      <Route path="/results/amazon-yyz3" component={AmazonYYZ3} />
+      <Route path="/results/amazon-yyz3/" component={AmazonYYZ3} />
+      <Route path="/results/four-seasons" component={FourSeasons} />
+      <Route path="/results/four-seasons/" component={FourSeasons} />
+      <Route path="/results/st-regis-toronto" component={StRegis} />
+      <Route path="/results/st-regis-toronto/" component={StRegis} />
+      <Route path="/results/rwj-barnabas" component={RWJBarnabas} />
+      <Route path="/results/rwj-barnabas/" component={RWJBarnabas} />
+      <Route path="/results/grand-central-tampa" component={GrandCentralTampa} />
+      <Route path="/results/grand-central-tampa/" component={GrandCentralTampa} />
+      <Route path="/results/caliber-car-wash" component={CaliberCarWash} />
+      <Route path="/results/caliber-car-wash/" component={CaliberCarWash} />
+      <Route path="/results/toronto-multifamily" component={TorontoMultifamily} />
+      <Route path="/results/toronto-multifamily/" component={TorontoMultifamily} />
 
       {/* Fallback */}
       <Route component={NotFound} />

@@ -84,10 +84,10 @@ export default function StRegis() {
       <Helmet>
         <title>St. Regis Toronto: $49,889 CAD/yr Water Savings, 20%+ Reduction | Smart Valve™ Case Study</title>
         <meta name="description" content="Canadian Water Savings Smart Valve™ case study at The St. Regis Toronto. $49,889 CAD in year-over-year savings. 20%+ water cost reduction. Marriott-approved." />
-        <link rel="canonical" href="https://www.perfectwatervalve.com/blog/st-regis-toronto-case-study" />
+        <link rel="canonical" href="https://www.perfectwatervalve.com/results/st-regis-toronto" />
         <meta property="og:title" content="St. Regis Toronto: $49,889 CAD/yr Water Savings" />
         <meta property="og:description" content="20%+ water cost reduction. Installed in under an hour. Marriott-approved. Year-over-year verified savings of $49,889 CAD." />
-        <meta property="og:url" content="https://www.perfectwatervalve.com/blog/st-regis-toronto-case-study" />
+        <meta property="og:url" content="https://www.perfectwatervalve.com/results/st-regis-toronto" />
       </Helmet>
 
       <Navbar onScrollTo={() => {}} />
@@ -242,7 +242,7 @@ export default function StRegis() {
           <div className="grid sm:grid-cols-3 gap-4">
             {[
               { label: "All Case Studies", href: "/results", desc: "Full M&V portfolio — Amazon, Four Seasons, Grand Central and more" },
-              { label: "Four Seasons Fort Lauderdale", href: "/blog/four-seasons-case-study", desc: "26% daily avg · $27K/yr · 56% October peak" },
+              { label: "Four Seasons Fort Lauderdale", href: "/results/four-seasons", desc: "26% daily avg · $27K/yr · 56% October peak" },
               { label: "Hotels & Hospitality", href: "/industries/hotels", desc: "Smart Valve™ in luxury and full-service hotel operations" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all group">

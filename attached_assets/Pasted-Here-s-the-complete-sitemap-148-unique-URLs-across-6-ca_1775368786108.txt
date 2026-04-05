@@ -1,0 +1,57 @@
+Here's the complete sitemap — 148 unique URLs across 6 categories:
+
+Core Pages (8)
+
+/ — Home
+/infosheet — Smart Valve™ Info Sheet
+/results — Case Studies & Proof
+/impact — Live Savings Counter
+/savings — Get a Full Proposal
+/partners — Partners & Process
+/compare — Compare Alternatives
+/common-misconceptions — Common Misconceptions
+/benefits/plumbing-protection — Plumbing Protection
+Industries (15)
+
+/industries — Hub
+/industries/data-centers + 3 sub-pages (cooling costs, hyperscale ROI, WUE)
+/industries/hotels + 3 sub-pages (water costs, laundry/cooling, green certification)
+/industries/hospitals + 3 sub-pages (water costs, Legionella, sterile water)
+/industries/car-washes + 2 sub-pages (water costs, hard water)
+/industries/multifamily + 2 sub-pages (water costs, irrigation)
+/industries/golf-courses
+Blog (12)
+
+/blog — Index
+/blog/what-is-smart-valve
+/blog/commercial-water-rates-rising-2025
+/blog/amazon-yyz3-case-study
+/blog/four-seasons-case-study
+/blog/st-regis-toronto-case-study
+/blog/caliber-car-wash-case-study
+/blog/grand-central-tampa-case-study
+/blog/rwj-barnabas-case-study
+/blog/toronto-multifamily-case-study
+/blog/denver-water-rebate-guide
+/blog/hotel-water-savings-guide
+US State Pages (44 states)
+
+/locations/usa — Hub
+All 44 states: Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming
+Colorado City Pages (10)
+
+/locations/colorado/denver
+/locations/colorado/boulder
+/locations/colorado/colorado-springs
+/locations/colorado/aurora
+/locations/colorado/fort-collins
+/locations/colorado/lakewood
+/locations/colorado/pueblo
+/locations/colorado/loveland
+/locations/colorado/greeley
+/locations/colorado/arvada
+International (3)
+
+/locations/uk
+/locations/europe
+/locations/asia
