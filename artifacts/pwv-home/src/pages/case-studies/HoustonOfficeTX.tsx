@@ -83,7 +83,7 @@ export default function HoustonOfficeTX() {
         <meta name="description" content="Smart Valve case study: 10-story, 180,000 SF Houston TX office building. 4-inch main meter. 39% average bill reduction, 37% daily usage reduction. Less than 12-month payback." />
         <link rel="canonical" href="https://www.perfectwatervalve.com/results/houston-office-tx" />
         <meta property="og:title" content="Houston TX Office Building: 39% Water Bill Reduction, 37% Less Usage" />
-        <meta property="og:description" content="180,000 SF multi-tenant office. 4\" main meter. 39% bill reduction, 37% GPD reduction, under 12-month payback. Oct–Dec 2018 vs 2017 YOY." />
+        <meta property="og:description" content="180,000 SF multi-tenant office. 4-inch main meter. 39% bill reduction, 37% GPD reduction, under 12-month payback. Oct–Dec 2018 vs 2017 YOY." />
         <meta property="og:url" content="https://www.perfectwatervalve.com/results/houston-office-tx" />
       </Helmet>
 
