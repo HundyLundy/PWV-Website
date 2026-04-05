@@ -319,6 +319,9 @@ export default function CommonMisconceptions() {
             <a href="/results" className="bg-white text-primary font-bold px-8 py-4 rounded-full transition-all hover:-translate-y-1 text-lg text-center flex items-center justify-center gap-2">
               View All 19 Case Studies <ArrowRight className="w-5 h-5" />
             </a>
+            <a href="/compare" className="bg-transparent border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full transition-all hover:bg-white/10 text-lg text-center">
+              Compare All Alternatives
+            </a>
             <a href="mailto:info@perfectwatervalve.com" className="bg-transparent border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full transition-all hover:bg-white/10 text-lg text-center">
               Get a Free Assessment
             </a>

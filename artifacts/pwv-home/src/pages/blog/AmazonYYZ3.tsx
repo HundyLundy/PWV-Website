@@ -333,6 +333,8 @@ export default function AmazonYYZ3() {
               { label: "All Case Studies", href: "/results", desc: "Full M&V portfolio — Five case studies with charts" },
               { label: "Four Seasons Fort Lauderdale", href: "/blog/four-seasons-case-study", desc: "26% daily avg · $27K/yr · October peak 56%" },
               { label: "Data Centers Industry Page", href: "/industries/data-centers", desc: "Why data centers see the highest Smart Valve™ results" },
+              { label: "About AWS & CWS", href: "/partners", desc: "Who conducts M&V, issues the guarantee & supplies the valve" },
+              { label: "Compare Alternatives", href: "/compare", desc: "Smart Valve™ vs. low-flow, leak detection, PRVs & more" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all group">
                 <div className="font-bold text-sm mb-1 group-hover:text-blue-600 transition-colors" style={{ color: "#0374A7" }}>{l.label} →</div>

@@ -623,6 +623,12 @@ export default function Results() {
             <a href="/savings/" className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-slate-900 bg-white hover:-translate-y-0.5 transition-all">
               Get a Full Proposal <ArrowRight className="w-4 h-4" />
             </a>
+            <a href="/partners" className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white border-2 border-white/40 hover:border-white transition-all">
+              About AWS &amp; CWS
+            </a>
+            <a href="/compare" className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white border-2 border-white/40 hover:border-white transition-all">
+              Compare Alternatives
+            </a>
             <a href="tel:7209373004" className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white border-2 border-white/40 hover:border-white transition-all">
               (720) 937-3004
             </a>

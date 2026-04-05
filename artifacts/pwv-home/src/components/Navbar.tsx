@@ -215,6 +215,8 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                   </div>
                   {/* Other resource links */}
                   {[
+                    { label: "Our Partners — AWS & CWS", href: "/partners/", desc: "Who manufactures, certifies, M&Vs & guarantees every install", icon: ShieldCheck },
+                    { label: "Compare Alternatives", href: "/compare/", desc: "Smart Valve™ vs. low-flow, leak detection, PRVs & more", icon: BarChart2 },
                     { label: "Smart Valve™ Info Sheet", href: "/infosheet/", desc: "Industry-by-industry data, charts & verified performance", icon: BookOpen },
                     { label: "Plumbing Protection", href: "/benefits/plumbing-protection", desc: "Pressure stabilization, scale prevention & air entrainment", icon: Wrench },
                     { label: "Common Misconceptions", href: "/common-misconceptions", desc: "Check valves, low-flow fixtures & PRVs won't reduce your bill", icon: AlertTriangle },
@@ -439,6 +441,8 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     </div>
                     {/* Other explore links */}
                     {[
+                      { label: "Our Partners — AWS & CWS", href: "/partners/", icon: ShieldCheck },
+                      { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
                       { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: BookOpen },
                       { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
                       { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },

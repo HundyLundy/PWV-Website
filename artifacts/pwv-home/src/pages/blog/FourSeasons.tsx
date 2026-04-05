@@ -299,6 +299,8 @@ export default function FourSeasons() {
               { label: "All Case Studies", href: "/results", desc: "Full M&V portfolio — Amazon, St. Regis, Grand Central and more" },
               { label: "St. Regis Toronto", href: "/blog/st-regis-toronto-case-study", desc: "$49,889 CAD/yr · 20%+ reduction · Marriott-approved" },
               { label: "Hotels & Hospitality", href: "/industries/hotels", desc: "Why luxury hotels are deploying Smart Valve™ portfolio-wide" },
+              { label: "About AWS & CWS", href: "/partners", desc: "Who conducts M&V, issues the guarantee & supplies the valve" },
+              { label: "Compare Alternatives", href: "/compare", desc: "Smart Valve™ vs. low-flow, leak detection, PRVs & more" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all group">
                 <div className="font-bold text-sm mb-1 group-hover:text-blue-600 transition-colors" style={{ color: "#0374A7" }}>{l.label} →</div>

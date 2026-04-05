@@ -224,6 +224,9 @@ export default function Compare() {
               <a href="/results" className="flex items-center gap-2 px-7 py-3.5 rounded-full text-white/80 font-semibold text-base border border-white/15 hover:border-white/30 hover:text-white transition-all">
                 View Verified Results <ChevronRight className="w-4 h-4" />
               </a>
+              <a href="/partners" className="flex items-center gap-2 px-7 py-3.5 rounded-full text-white/80 font-semibold text-base border border-white/15 hover:border-white/30 hover:text-white transition-all">
+                About AWS &amp; CWS <ChevronRight className="w-4 h-4" />
+              </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-white/40">
               <a href="tel:7209373004" className="flex items-center gap-2 hover:text-white/70 transition-colors">

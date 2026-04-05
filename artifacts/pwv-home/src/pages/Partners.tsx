@@ -190,6 +190,10 @@ export default function Partners() {
                 style={{ borderColor: "#0374A7", color: "#0374A7" }}>
                 View Verified Results
               </a>
+              <a href="/compare" className="px-7 py-3.5 rounded-full font-semibold text-base border transition-all hover:-translate-y-0.5"
+                style={{ borderColor: "#3C6E7F", color: "#3C6E7F" }}>
+                Compare Alternatives
+              </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm" style={{ color: "#4A7085" }}>
               <a href="tel:7209373004" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
