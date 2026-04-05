@@ -6,40 +6,21 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, ReferenceLine, Cell, Legend,
 } from "recharts";
+import {
+  FOUR_SEASONS,
+  FOUR_SEASONS_LABELS,
+  FOUR_SEASONS_MONTHLY,
+  FOUR_SEASONS_SERVICE,
+  FOUR_SEASONS_DAILY_COST,
+  FOUR_SEASONS_ANNUAL_COST,
+} from "@/data/fourSeasonsVerified";
 
-// ─── DATA ──────────────────────────────────────────────────────────────────
+// ─── DATA (sourced from fourSeasonsVerified.ts — DO NOT hardcode here) ──────
 
-// Monthly occupancy-normalized reduction — 6" primary domestic service
-const MONTHLY_REDUCTION = [
-  { month: "August 2025", reduction: 35 },
-  { month: "September 2025", reduction: 10 },
-  { month: "October 2025", reduction: 56 },
-];
-
-// Summary metrics across service lines
-const SERVICE_COMPARISON = [
-  { metric: "6-inch Service — Daily Avg", reduction: 26 },
-  { metric: "6-inch Service — Occ. Normalized", reduction: 34 },
-  { metric: "Full System — Occ. Normalized", reduction: 17 },
-];
-
-// Daily cost before vs after
-const DAILY_COST = [
-  { label: "Pre-Install", cost: 348.21 },
-  { label: "Post-Install", cost: 274.07 },
-];
-
-// Annual cost projection
-const ANNUAL_COST = [
-  { label: "Before Smart Valve™", cost: 127097 },
-  { label: "After Smart Valve™", cost: 100073 },
-];
-
-// Cost saving breakdown — visualization
-const COST_SAVINGS_SUMMARY = [
-  { name: "Daily Cost Reduction", value: 21, fill: "#0374A7" },
-  { name: "Water Cost After Install", value: 79, fill: "#E8EFF7" },
-];
+const MONTHLY_REDUCTION  = FOUR_SEASONS_MONTHLY  as unknown as { month: string; reduction: number }[];
+const SERVICE_COMPARISON = FOUR_SEASONS_SERVICE   as unknown as { metric: string; reduction: number }[];
+const DAILY_COST         = FOUR_SEASONS_DAILY_COST  as unknown as { label: string; cost: number }[];
+const ANNUAL_COST        = FOUR_SEASONS_ANNUAL_COST as unknown as { label: string; cost: number }[];
 
 // ─── TOOLTIP HELPERS ──────────────────────────────────────────────────────
 
@@ -142,10 +123,10 @@ export default function FourSeasons() {
             Smart Valve™ pilot verified by independent third-party Measurement &amp; Verification. Water and sewer savings confirmed across the primary domestic 6-inch service and the full combined system.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <StatPill value="26%" label="Daily Water Reduction" sub="6″ primary service" />
-            <StatPill value="34%" label="Occupancy-Normalized" sub="6″ primary service" />
-            <StatPill value="21%" label="Cost Reduction/Day" sub="Water + sewer combined" />
-            <StatPill value="~$27K" label="Annual Avoided Cost" sub="USD · Current tariffs" />
+            <StatPill value={FOUR_SEASONS_LABELS.dailyReduction}   label="Daily Water Reduction"  sub="6″ primary service" />
+            <StatPill value={FOUR_SEASONS_LABELS.occNorm6in}        label="Occupancy-Normalized"   sub="6″ primary service" />
+            <StatPill value={FOUR_SEASONS_LABELS.costPerDay}        label="Cost Reduction/Day"     sub="Water + sewer combined" />
+            <StatPill value={FOUR_SEASONS_LABELS.annualAvoided}     label="Annual Avoided Cost"    sub="USD · Current tariffs" />
           </div>
         </div>
       </section>
@@ -247,17 +228,17 @@ export default function FourSeasons() {
         <div className="max-w-4xl mx-auto">
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="rounded-2xl p-6 bg-white border border-slate-200 text-center">
-              <div className="text-4xl font-black mb-2" style={{ color: "#0374A7" }}>$348.21</div>
+              <div className="text-4xl font-black mb-2" style={{ color: "#0374A7" }}>{FOUR_SEASONS_LABELS.preInstallDaily}</div>
               <div className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: "#0A1F3A" }}>Daily Cost — Pre-Install</div>
               <div className="text-xs" style={{ color: "#4A7085" }}>Water + sewer combined</div>
             </div>
             <div className="rounded-2xl p-6 bg-white border border-slate-200 text-center">
-              <div className="text-4xl font-black mb-2" style={{ color: "#059669" }}>$274.07</div>
+              <div className="text-4xl font-black mb-2" style={{ color: "#059669" }}>{FOUR_SEASONS_LABELS.postInstallDaily}</div>
               <div className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: "#0A1F3A" }}>Daily Cost — Post-Install</div>
-              <div className="text-xs" style={{ color: "#4A7085" }}>21% reduction per day</div>
+              <div className="text-xs" style={{ color: "#4A7085" }}>{FOUR_SEASONS_LABELS.costPerDay} reduction per day</div>
             </div>
             <div className="rounded-2xl p-6 text-center" style={{ background: "#0374A7" }}>
-              <div className="text-4xl font-black mb-2 text-white">~$27,000</div>
+              <div className="text-4xl font-black mb-2 text-white">{FOUR_SEASONS_LABELS["annualAvoided$"]}</div>
               <div className="text-xs font-bold uppercase tracking-wider mb-1 text-white">Annual Avoided Cost</div>
               <div className="text-xs" style={{ color: "rgba(255,255,255,0.75)" }}>At current tariffs · USD</div>
             </div>

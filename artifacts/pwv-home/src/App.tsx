@@ -21,6 +21,8 @@ import RWJBarnabas from "@/pages/case-studies/RWJBarnabas";
 import GrandCentralTampa from "@/pages/case-studies/GrandCentralTampa";
 import CaliberCarWash from "@/pages/case-studies/CaliberCarWash";
 import TorontoMultifamily from "@/pages/case-studies/TorontoMultifamily";
+import PalisadesNJ from "@/pages/case-studies/PalisadesNJ";
+import ParkAveNJ from "@/pages/case-studies/ParkAveNJ";
 
 // Core pages
 import Results from "@/pages/Results";
@@ -381,6 +383,10 @@ function Router() {
       <Route path="/results/caliber-car-wash/" component={CaliberCarWash} />
       <Route path="/results/toronto-multifamily" component={TorontoMultifamily} />
       <Route path="/results/toronto-multifamily/" component={TorontoMultifamily} />
+      <Route path="/results/palisades-nj" component={PalisadesNJ} />
+      <Route path="/results/palisades-nj/" component={PalisadesNJ} />
+      <Route path="/results/park-ave-nj" component={ParkAveNJ} />
+      <Route path="/results/park-ave-nj/" component={ParkAveNJ} />
 
       {/* Fallback */}
       <Route component={NotFound} />
