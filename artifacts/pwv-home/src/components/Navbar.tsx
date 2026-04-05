@@ -284,14 +284,14 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     {/* Partners — featured highlight entry */}
                     <a href="/partners/" onClick={() => setExploreOpen(false)}
                       className="flex items-center gap-3 px-3 py-3 rounded-xl transition-colors group mb-1"
-                      style={{ background: "rgba(222,198,0,0.10)", border: "1px solid rgba(222,198,0,0.30)" }}>
+                      style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
                       <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                        style={{ background: "rgba(222,198,0,0.2)", border: "1px solid rgba(222,198,0,0.4)" }}>
-                        <ShieldCheck className="w-3.5 h-3.5" style={{ color: '#DEC600' }} />
+                        style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
+                        <ShieldCheck className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
                       </div>
                       <div className="flex flex-col min-w-0">
-                        <span className="text-sm font-bold leading-tight group-hover:text-yellow-200 transition-colors" style={{ color: '#DEC600' }}>Partners &amp; Process</span>
-                        <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: 'rgba(222,198,0,0.6)' }}>AWS · CWS · Flow Dynamics</span>
+                        <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">Partners &amp; Process</span>
+                        <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: '#5BBFE0' }}>AWS · CWS · Flow Dynamics</span>
                       </div>
                     </a>
 
@@ -447,11 +447,11 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     {/* Partners — featured highlight entry */}
                     <a href="/partners/" onClick={() => setMenuOpen(false)}
                       className="flex items-center gap-2.5 py-2 px-2 rounded-xl mb-1"
-                      style={{ background: "rgba(222,198,0,0.10)", border: "1px solid rgba(222,198,0,0.28)" }}>
-                      <ShieldCheck className="w-4 h-4 shrink-0" style={{ color: '#DEC600' }} />
+                      style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
+                      <ShieldCheck className="w-4 h-4 shrink-0" style={{ color: '#5BBFE0' }} />
                       <div className="flex flex-col">
-                        <span className="text-sm font-bold leading-tight" style={{ color: '#DEC600' }}>Partners &amp; Process</span>
-                        <span className="text-[10px] leading-tight" style={{ color: 'rgba(222,198,0,0.6)' }}>AWS · CWS · Flow Dynamics</span>
+                        <span className="text-sm font-bold leading-tight text-white">Partners &amp; Process</span>
+                        <span className="text-[10px] leading-tight" style={{ color: '#5BBFE0' }}>AWS · CWS · Flow Dynamics</span>
                       </div>
                     </a>
                     {/* Other explore links */}
