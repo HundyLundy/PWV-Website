@@ -7,7 +7,6 @@ import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 const NAV_LINKS = [
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Clients", href: "/#clients" },
-  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -257,7 +256,8 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     </div>
                     {/* Other Results & Proof items */}
                     {[
-                      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: BookOpen },
+                      { label: "Blog & Insights", href: "/blog", icon: BookOpen },
+                      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: FileText },
                       { label: "Live Savings Counter", href: "/impact/", icon: Zap },
                       { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
                     ].map((item) => {
@@ -456,8 +456,9 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     </a>
                     {/* Other explore links */}
                     {[
+                      { label: "Blog & Insights", href: "/blog", icon: BookOpen },
                       { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
-                      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: BookOpen },
+                      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: FileText },
                       { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
                       { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
                       { label: "Live Savings Counter", href: "/impact/", icon: Zap },
