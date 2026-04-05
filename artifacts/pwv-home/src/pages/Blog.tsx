@@ -19,10 +19,10 @@ const POSTS = [
   {
     slug: "amazon-yyz3",
     section: "results",
-    title: "Amazon YYZ3 & YYZ4: 6 Quarters of Verified M&V Results — Full Data & Charts",
+    title: "Amazon YYZ3 & YYZ4: Q3/Q4 2024 Verified M&V Results — Full Data & Charts",
     category: "Case Studies",
     date: "April 5, 2026",
-    excerpt: "Real M&V data from two Amazon fulfillment centres in Brampton, ON. 58.69% peak. 17% per-head average for YYZ3. 16% for YYZ4. Six consecutive quarters, five charts.",
+    excerpt: "Real M&V data from two Amazon fulfillment centres in Brampton, ON. 58.69% peak Q3 2024. YYZ3 Q3/Q4 average 43.98%. YYZ4 average 14.6%. Five charts.",
   },
   {
     slug: "four-seasons",

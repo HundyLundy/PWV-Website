@@ -15,7 +15,7 @@ const ASIAN_MARKETS = [
 ];
 
 const CASE_STUDIES = [
-  { name: "Amazon YYZ3", location: "Toronto, Canada", result: "58.69% peak savings (single quarter) — 6 quarters of M&V verified", industry: "Data Center", highlight: true },
+  { name: "Amazon YYZ3", location: "Toronto, Canada", result: "58.69% peak Q3 2024 — 43.98% Q3/Q4 2024 average, M&V verified", industry: "Data Center", highlight: true },
   { name: "Four Seasons Fort Lauderdale", location: "Florida, USA", result: "26% metered reduction, $27,000/year savings", industry: "Luxury Hospitality" },
   { name: "Grand Central at Kennedy", location: "New Jersey, USA", result: "23% metered reduction, $50,000/year savings", industry: "Commercial Property" },
 ];
@@ -103,7 +103,7 @@ export default function Asia() {
           </div>
           <div className="grid sm:grid-cols-2 gap-8">
             {[
-              { icon: Server, title: "Amazon YYZ3 — The APAC Benchmark", body: "Amazon YYZ3 achieved 58.69% peak savings over 6 verified quarters — the highest documented result in the Smart Valve™ portfolio. This benchmark is directly applicable to every hyperscale data center in Asia-Pacific. At this level, a facility spending $500,000/month on cooling water saves over $3.5 million annually." },
+              { icon: Server, title: "Amazon YYZ3 — The APAC Benchmark", body: "Amazon YYZ3 achieved 58.69% peak savings in Q3 2024 with a Q3/Q4 2024 average of 43.98% — the highest documented result in the Smart Valve™ portfolio. This benchmark is directly applicable to every hyperscale data center in Asia-Pacific. At this level, a facility spending $500,000/month on cooling water saves over $3.5 million annually." },
               { icon: Droplets, title: "Korea's Semiconductor Sector — Maximum Water Intensity", body: "South Korea's semiconductor fabrication and data center sectors are among the world's most water-intensive commercial operations. Smart Valve™'s proven data center results — anchored by the Amazon YYZ3 benchmark — are directly applicable to Seoul's hyperscale and enterprise data center market." },
               { icon: TrendingUp, title: "Singapore Water Security Mandates", body: "Singapore's PUB framework actively incentivizes commercial water reduction. Properties that demonstrate measurable consumption reduction gain advantages in permit renewals and rate tier classification. Smart Valve™'s metered, documented results provide the exact verification Singapore's regulatory framework requires." },
               { icon: Building2, title: "Australia's Drought-Driven Commercial Market", body: "Australia's recurring drought cycles have made water efficiency a permanent commercial priority, not a seasonal concern. Sydney and Melbourne commercial properties face both high base rates and tiered structures that penalize high-volume users. Smart Valve™'s 15–35% annual reduction directly addresses both cost dimensions (peak quarters have reached 58.69% at high-volume sites)." },

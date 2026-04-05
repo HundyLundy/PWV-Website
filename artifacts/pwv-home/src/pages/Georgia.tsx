@@ -23,7 +23,7 @@ const config = {
   markets: ["Atlanta", "Gwinnett", "Alpharetta", "Marietta", "Columbus", "Augusta", "Savannah", "Macon"],
   faqItems: [
     { q: "Does Georgia's data center growth affect my commercial water bill?", a: "Yes. Rapid data center expansion in the Atlanta metro is driving infrastructure investment that utilities fund through commercial rate increases. All Georgia commercial customers pay for this growth through higher rates — whether or not they are in the data center industry." },
-    { q: "Is there a verified data center case study for Smart Valve™?", a: "Yes. Amazon YYZ3 achieved 58.69% peak savings over 6 verified quarters — the highest result in the Smart Valve™ portfolio. This benchmark is directly applicable to Georgia's data center market." },
+    { q: "Is there a verified data center case study for Smart Valve™?", a: "Yes. Amazon YYZ3 achieved 58.69% peak savings in Q3 2024 and 29.27% in Q4 2024 — a Q3/Q4 2024 average of 43.98%, the highest in the Smart Valve™ portfolio. This benchmark is directly applicable to Georgia's data center market." },
     { q: "Does Smart Valve™ work with Gwinnett County and Atlanta utilities?", a: "Yes. Smart Valve™ is compatible with 99% of commercial water meters, including all meter types used by Gwinnett County Water and Sewerage, City of Atlanta, and all Georgia municipal utilities." },
     { q: "What is the guaranteed minimum savings?", a: "Every Smart Valve™ installation guarantees at least 15% reduction in metered water consumption, in writing. If your Georgia property doesn't reach 15%, we resolve it at no cost." },
   ],

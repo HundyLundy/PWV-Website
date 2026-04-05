@@ -295,7 +295,7 @@ export default function Home() {
         <p className="text-center text-xs font-bold uppercase tracking-widest mb-8" style={{ color: '#4A7085' }}>Results verified at</p>
         <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5 max-w-4xl mx-auto">
           {[
-            { name: "Amazon", sub: "YYZ3 · 17% avg, 58.69% peak" },
+            { name: "Amazon", sub: "YYZ3 · 43.98% avg, 58.69% peak" },
             { name: "Four Seasons", sub: "Fort Lauderdale · 26%" },
             { name: "St. Regis", sub: "Toronto · $49K saved" },
             { name: "Caliber Car Wash", sub: "5 sites · 23%" },

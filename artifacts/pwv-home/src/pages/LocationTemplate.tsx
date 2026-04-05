@@ -74,7 +74,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 const DEFAULT_CASE_STUDIES = [
-  { label: "Data Center / Logistics", name: "Amazon YYZ3 Fulfillment Center", stat: "58.69% Peak", sub: "17% avg — 6 verified quarters", items: ["Peak reduction — M&V verified", "17% sustained average savings", "6 consecutive verified quarters", "Zero operational disruption"] },
+  { label: "Data Center / Logistics", name: "Amazon YYZ3 Fulfillment Center", stat: "58.69% Peak", sub: "43.98% avg — Q3/Q4 2024", items: ["Peak reduction — M&V verified Q3 2024", "43.98% YYZ3 average Q3/Q4 2024", "Year-over-year independent verification", "Zero operational disruption"] },
   { label: "Luxury Hospitality", name: "Four Seasons Fort Lauderdale", stat: "$27K/yr", sub: "26% average savings", items: ["26% water reduction", "$27,000 annual savings verified", "Zero guest impact", "No maintenance required"] },
   { label: "Car Wash Chain", name: "Caliber Car Wash (5 Sites)", stat: "23% Avg", sub: "M&V verified · GA & FL sites", items: ["23% weighted average savings", "5 verified sites", "High-volume continuous use", "Consistent results across all locations"] },
   { label: "Mixed-Use Complex", name: "Grand Central at Kennedy", stat: "$50K/yr", sub: "Tampa, FL — 23% reduction", items: ["23% metered reduction", "$50,000 annual savings", "Large multi-use property", "Exceeded guarantee by 8%"] },

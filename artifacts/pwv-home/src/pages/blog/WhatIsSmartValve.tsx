@@ -8,7 +8,7 @@ import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 const SMART_VALVE_FAQ_ITEMS = [
   { q: "What is Smart Valve™?", a: "Smart Valve™ is a passive hydrodynamic device that installs on your main commercial water supply line in under 4 hours. It reduces turbulence and optimizes flow so that less water passes through the meter to deliver the same service — cutting your metered bill 15%–35% annually, guaranteed in writing." },
   { q: "Does Smart Valve™ require electricity or maintenance?", a: "No. Smart Valve™ requires no electricity required, and needs no maintenance — ever. It is NSF 61 and NSF 372 certified for use in potable water systems." },
-  { q: "What is the highest verified savings result?", a: "The highest verified result in the portfolio is 58.69% peak savings at Amazon YYZ3 (hyperscale data center, Toronto), achieved in a single quarter (Jul–Sep 2024) and verified across 6 consecutive quarters of third-party M&V." },
+  { q: "What is the highest verified savings result?", a: "The highest verified result in the portfolio is 58.69% peak savings at Amazon YYZ3 (hyperscale data center, Toronto) in Q3 2024, with Q4 2024 showing 29.27% — a Q3/Q4 2024 average of 43.98%. Both quarters independently M&V verified year-over-year." },
   { q: "How do I get a Smart Valve™ assessment for my facility?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com. We review your current water billing, calculate projected savings, and provide a written guarantee before any installation begins." },
 ];
 
@@ -160,7 +160,7 @@ export default function WhatIsSmartValve() {
               Every Smart Valve™ installation comes with a written contract guaranteeing a minimum 15% reduction in metered water consumption. This is not a projection or an estimate — it is a contractual obligation. If results fall short, Perfect Water Valve makes it right at no additional cost.
             </p>
             <p className="text-gray-300 leading-relaxed mb-6">
-              The peak verified result in the portfolio is 58.69%, achieved at the Amazon YYZ3 hyperscale facility in a single quarter — with 6 consecutive quarters of third-party Measurement and Verification on record. The guarantee covers the floor. The technology often delivers well above it.
+              The peak verified result in the portfolio is 58.69%, achieved at the Amazon YYZ3 hyperscale facility in Q3 2024. Q4 2024 followed with 29.27% — a Q3/Q4 2024 average of 43.98%, independently M&V verified year-over-year. The guarantee covers the floor. The technology often delivers well above it.
             </p>
 
             <h2 className="text-2xl font-bold text-white mt-10 mb-4">Proven Across Industries and Geographies</h2>

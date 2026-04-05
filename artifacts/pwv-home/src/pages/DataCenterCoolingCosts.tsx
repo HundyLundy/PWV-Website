@@ -40,14 +40,14 @@ export default function DataCenterCoolingCosts() {
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Data Center Cooling Water Costs</h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              Cooling water is the fastest-growing operational expense in hyperscale data center infrastructure — and it is the one that Smart Valve™ is specifically proven to reduce. Amazon YYZ3 cut peak cooling water costs 58.69% over 6 verified quarters.
+              Cooling water is the fastest-growing operational expense in hyperscale data center infrastructure — and it is the one that Smart Valve™ is specifically proven to reduce. Amazon YYZ3 cut peak cooling water costs 58.69% in Q3 2024, with a Q3/Q4 2024 average of 43.98%.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
               {[
                 { value: "58.69%", label: "Peak Savings — Amazon YYZ3" },
                 { value: "40–60%", label: "Water as % of Cooling OpEx" },
                 { value: "≥15%", label: "Guaranteed Minimum" },
-                { value: "6 Qtrs", label: "Amazon Verification Period" },
+                { value: "Q3/Q4 2024", label: "Amazon M&V Period" },
               ].map((stat, i) => (
                 <div key={i} className="bg-white/10 rounded-xl p-4 border border-white/20">
                   <div className="text-2xl font-bold text-[#DEC600]">{stat.value}</div>
@@ -115,11 +115,11 @@ export default function DataCenterCoolingCosts() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="text-[#DEC600] text-sm font-semibold mb-2">★ HIGHEST VERIFIED RESULT IN PORTFOLIO</div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Amazon YYZ3 — The Industry Benchmark</h2>
-            <p className="text-xl text-white/80 mb-8">Amazon's YYZ3 data center achieved 58.69% peak savings on cooling water using Smart Valve™ in a single quarter — with 6 consecutive quarters of independent metered verification on record.</p>
+            <p className="text-xl text-white/80 mb-8">Amazon's YYZ3 data center achieved 58.69% peak savings in Q3 2024 — followed by 29.27% in Q4 2024 for a Q3/Q4 2024 average of 43.98%, independently M&V verified year-over-year.</p>
             <div className="grid sm:grid-cols-3 gap-6 mb-8">
               {[
                 { value: "58.69%", label: "Peak Savings Verified" },
-                { value: "6 Qtrs", label: "Verification Period" },
+                { value: "43.98%", label: "YYZ3 Q3/Q4 2024 Average" },
                 { value: "Amazon", label: "Customer Name" },
               ].map((stat, i) => (
                 <div key={i} className="bg-white/10 rounded-xl p-6 border border-white/20">

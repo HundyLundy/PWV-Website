@@ -44,7 +44,7 @@ export default function HyperscaleROI() {
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
       el.setAttribute("content", content);
     };
-    setMeta("description", "At hyperscale water volumes, Smart Valve™ produces transformative ROI. Amazon YYZ3: 58.69% peak savings over 6 verified quarters. $7M+ peak scenario.");
+    setMeta("description", "At hyperscale water volumes, Smart Valve™ produces transformative ROI. Amazon YYZ3: 58.69% peak Q3 2024, 43.98% Q3/Q4 2024 average. $7M+ peak scenario.");
     setMeta("og:title", "Hyperscale Data Center Water ROI | Smart Valve™", "property");
     setMeta("og:url", "https://www.perfectwatervalve.com/industries/data-centers/hyperscale-roi", "property");
     return () => { document.title = prevTitle; };
@@ -70,7 +70,7 @@ export default function HyperscaleROI() {
                 { value: "58.69%", label: "Amazon YYZ3 Peak" },
                 { value: "≥15%", label: "Guaranteed Minimum" },
                 { value: "$7M+", label: "Peak Savings — $1M/mo Scenario" },
-                { value: "6 Qtrs", label: "Amazon Verification" },
+                { value: "Q3/Q4 2024", label: "Amazon M&V Period" },
               ].map((stat, i) => (
                 <div key={i} className="bg-white/10 rounded-xl p-4 border border-white/20">
                   <div className="text-2xl font-bold text-[#DEC600]">{stat.value}</div>
@@ -159,7 +159,7 @@ export default function HyperscaleROI() {
             <div className="text-[#DEC600] text-sm font-semibold mb-2">★ THE ONLY VERIFIED HYPERSCALE BENCHMARK</div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Amazon YYZ3 — Setting the Standard</h2>
             <p className="text-lg text-white/80 mb-8">
-              Amazon's YYZ3 data center is the only publicly referenced hyperscale data center installation with verified Smart Valve™ savings data. The 58.69% peak result — achieved in a single quarter and verified across 6 consecutive quarters of metered measurement — establishes what is achievable at scale.
+              Amazon's YYZ3 data center is the only publicly referenced hyperscale data center installation with verified Smart Valve™ savings data. The 58.69% peak result in Q3 2024 — followed by 29.27% in Q4 2024 for a Q3/Q4 average of 43.98%, independently M&V verified year-over-year — establishes what is achievable at scale.
             </p>
             <div className="bg-white/10 rounded-xl p-8 border border-white/20 mb-6">
               <div className="grid sm:grid-cols-3 gap-6">

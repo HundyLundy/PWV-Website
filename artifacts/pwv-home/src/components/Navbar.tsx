@@ -237,7 +237,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                       </a>
                       <div className="flex flex-col mb-1" style={{ paddingLeft: '36px' }}>
                         {[
-                          { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/results/amazon-yyz3" },
+                          { label: "Amazon YYZ3 — 43.98% avg, 58.69% peak", href: "/results/amazon-yyz3" },
                           { label: "Four Seasons — 26% avg, $27K/yr", href: "/results/four-seasons" },
                           { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/results/st-regis-toronto" },
                           { label: "Caliber Car Wash — 23% across 5 sites", href: "/results/caliber-car-wash" },
@@ -430,7 +430,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     </a>
                     <div className="pl-6 flex flex-col gap-0.5 mb-1">
                       {[
-                        { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/results/amazon-yyz3" },
+                        { label: "Amazon YYZ3 — 43.98% avg, 58.69% peak", href: "/results/amazon-yyz3" },
                         { label: "Four Seasons — 26% avg, $27K/yr", href: "/results/four-seasons" },
                         { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/results/st-regis-toronto" },
                         { label: "Caliber Car Wash — 23% across 5 sites", href: "/results/caliber-car-wash" },

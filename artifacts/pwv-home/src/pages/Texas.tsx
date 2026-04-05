@@ -228,8 +228,8 @@ export default function TexasNewPage() {
               <div className="text-4xl font-black text-primary mb-6">Peak Savings: 58.69%</div>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 58.69% peak single-quarter reduction</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 17% sustained average savings</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 6 consecutive verified quarters</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 43.98% YYZ3 average Q3/Q4 2024</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Q3/Q4 2024 independently verified</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Zero operational disruption</li>
               </ul>
             </motion.div>
@@ -296,7 +296,7 @@ export default function TexasNewPage() {
               Texas Is a Major Data Center Market — Here's What Operators Need to Know
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
-              Data centers are among the highest-ROI Smart Valve™ applications. Amazon YYZ3 hit 58.69% peak savings over 6 quarters. Texas facilities have direct access to the same technology and the same guarantee.
+              Data centers are among the highest-ROI Smart Valve™ applications. Amazon YYZ3 hit 58.69% peak Q3 2024 with a Q3/Q4 2024 average of 43.98%. Texas facilities have direct access to the same technology and the same guarantee.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-5">

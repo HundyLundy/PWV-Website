@@ -31,7 +31,7 @@ const serviceSchema = {
 const DC_FAQ_ITEMS = [
   { q: "How much water does a hyperscale data center use?", a: "A hyperscale data center uses 1–5 million gallons of water per day for cooling tower makeup water. At commercial utility rates of $4–8 per 1,000 gallons, that translates to $4,000–$40,000 per day in water costs — before rate increases." },
   { q: "How does Smart Valve™ work in a data center cooling water system?", a: "Smart Valve™ installs on the main water supply line feeding the cooling system. It reduces turbulence and optimizes flow so that less water passes through the meter to deliver the same cooling performance. Cooling tower operation, chiller performance, and system pressure are completely unaffected." },
-  { q: "What is the Amazon YYZ3 result and how was it verified?", a: "Amazon's YYZ3 hyperscale facility in Toronto achieved 58.69% peak savings in a single quarter (Jul–Sep 2024), verified across 6 consecutive quarters of third-party Measurement and Verification (M&V). The average across YYZ3 and YYZ4 was 16.5% over the same period." },
+  { q: "What is the Amazon YYZ3 result and how was it verified?", a: "Amazon's YYZ3 hyperscale facility in Toronto achieved 58.69% peak savings in Q3 2024 and 29.27% in Q4 2024 — a Q3/Q4 average of 43.98%. YYZ4 averaged 14.6% across Q3/Q4 2024 (Q4 affected by a brief valve removal). Both verified by independent M&V against Q3/Q4 2023 baseline." },
   { q: "Will Smart Valve™ affect cooling performance or uptime?", a: "No. Smart Valve™ has requires no electricity. It installs in 2–4 hours with zero disruption to operations. Cooling performance, system pressure, and uptime are unaffected." },
   { q: "Is the 15% minimum savings guaranteed in writing?", a: "Yes. Every installation includes a written contract guaranteeing a minimum 15% reduction in metered water consumption. If results fall short, Perfect Water Valve makes it right at no additional cost." },
   { q: "How do I get a data center water assessment?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com. We review your cooling water billing, calculate projected savings, and provide a written guarantee before installation." },
@@ -260,11 +260,11 @@ export default function DataCenters() {
               <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-gray-300 mb-6">Logistics &amp; Fulfillment Data Center</span>
               <h3 className="text-2xl font-bold text-white mb-4">Amazon YYZ3 Fulfillment Center</h3>
               <div className="text-5xl font-black text-primary mb-6">58.69%</div>
-              <p className="text-gray-300 mb-6">Peak single-quarter savings — the highest verified Smart Valve™ result in our entire client portfolio. 6 consecutive quarters of independently verified data.</p>
+              <p className="text-gray-300 mb-6">Peak single-quarter savings — the highest verified Smart Valve™ result in our entire client portfolio. Q3/Q4 2024 independently verified year-over-year data.</p>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 58.69% peak single-quarter water bill reduction</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 17% sustained average savings across all quarters</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 6 consecutive quarters of M&amp;V verified data</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 43.98% YYZ3 average across Q3/Q4 2024</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Q3/Q4 2024 independently M&amp;V verified data</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Zero operational disruption to facility at any point</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Installation completed in under 4 hours</li>
               </ul>

@@ -19,14 +19,10 @@ const TOP_STATS = [
   { val: "$50K+", label: "Max Annual Savings", sub: "Per location, per year (Grand Central Tampa)" },
 ];
 
-// Per-employee normalized M&V data (IPMVP Option B) — 6 consecutive quarters
+// Year-over-year M&V data (IPMVP Option B) — Q3/Q4 2024 vs Q3/Q4 2023 baseline
 const AMAZON_QUARTERLY = [
-  { period: "Jul–Sep 2024", YYZ3: 50, YYZ4: 24 },
-  { period: "Oct–Dec 2024", YYZ3: 27, YYZ4: 18 },
-  { period: "Jan–Mar 2025", YYZ3: -17, YYZ4: -4 },
-  { period: "Apr–Jun 2025", YYZ3: -17, YYZ4: 17 },
-  { period: "Jul–Sep 2025", YYZ3: 5, YYZ4: 23 },
-  { period: "Oct–Dec 2025", YYZ3: 20, YYZ4: 13 },
+  { period: "Q3 2024 (Jul–Sep)", YYZ3: 58.69, YYZ4: 17.36 },
+  { period: "Q4 2024 (Oct–Dec)", YYZ3: 29.27, YYZ4: -14.44 },
 ];
 
 const HOTEL_DATA = [
@@ -59,7 +55,7 @@ const INDUSTRY_COMPARISON = [
   { industry: "Multifamily", avg: 21 },
   { industry: "Food & Bev", avg: 17 },
   { industry: "Industrial", avg: 17 },
-  { industry: "Logistics / DC", avg: 16.5 },
+  { industry: "Logistics / DC", avg: 29.3 },
 ];
 
 // ─── SHARED COMPONENTS ─────────────────────────────────────────────────────
@@ -238,12 +234,12 @@ export default function InfoSheet() {
               <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>YYZ3 Peak (Q3 2024 YOY)</div>
             </div>
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
-              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>16.5%</div>
-              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Normalized Portfolio Avg</div>
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>43.98%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>YYZ3 Q3/Q4 2024 Average</div>
             </div>
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
-              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>6</div>
-              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Consecutive M&V Quarters</div>
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>29.3%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Portfolio Avg — YYZ3 & YYZ4</div>
             </div>
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
               <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>2</div>
@@ -276,10 +272,11 @@ export default function InfoSheet() {
             <div className="rounded-2xl p-5 bg-white border border-slate-200">
               <div className="text-sm font-bold mb-3" style={{ color: "#0A1F3A" }}>Verified Data Points</div>
               <DataRow label="Peak reduction" value="58.69% — YYZ3, Q3 2024 (YOY)" />
-              <DataRow label="Avg all quarters" value="16.5% per-employee normalized" />
+              <DataRow label="YYZ3 Q3/Q4 avg" value="43.98% year-over-year" />
+              <DataRow label="YYZ4 Q3/Q4 avg" value="14.6% (Q4 impacted by valve removal)" />
               <DataRow label="M&V standard" value="IPMVP Option B (Retrofit Isolation)" />
-              <DataRow label="Monitoring period" value="Q3 2024 — Q4 2025 (6 quarters)" />
-              <DataRow label="Negative quarters" value="Seasonal baseline shift — not valve failure" />
+              <DataRow label="Monitoring period" value="Q3 2024 & Q4 2024 (year-over-year)" />
+              <DataRow label="YYZ4 Q4 note" value="Valve removed Sept 5, reinstalled Oct 25" />
               <DataRow label="PDF available" value="Yes — formal report on request" />
               <a href="/industries/data-centers" className="inline-flex items-center gap-1 mt-4 text-sm font-bold hover:underline" style={{ color: "#0374A7" }}>
                 Data Centers hub page <ArrowRight className="w-3.5 h-3.5" />

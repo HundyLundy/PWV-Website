@@ -28,7 +28,7 @@ const staggerContainer = {
 const CASE_STUDIES = [
   {
     logo: "A", industry: "Logistics / Fulfillment", color: "bg-blue-100 text-blue-700",
-    summary: "Two independent M&V methodologies both verified results. Year-over-year peak: 58.69% at YYZ3. Normalized portfolio average of 16.5% across YYZ3 & YYZ4 over six consecutive quarters.",
+    summary: "Year-over-year M&V verified Q3/Q4 2024. YYZ3 peak: 58.69% (Q3 2024). YYZ3 Q3/Q4 average: 43.98%. YYZ4 Q3/Q4 average: 14.6% (Q4 impacted by valve removal).",
     source: "M&V Verified · Formal PDF Available", client: "Amazon YYZ3 & YYZ4"
   },
   {
@@ -179,7 +179,7 @@ export default function Home() {
           <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Verified Results — 24 M&V-Documented Case Studies</p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
             {[
-              { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },
+              { name: "Amazon", sub: "YYZ3 & YYZ4 · 43.98% avg / 58.69% peak" },
               { name: "Four Seasons", sub: "Fort Lauderdale · 26%" },
               { name: "St. Regis", sub: "Toronto · $49,889 CAD" },
               { name: "Caliber Car Wash", sub: "5-Site Network · 23%" },

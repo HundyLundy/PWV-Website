@@ -298,9 +298,9 @@ export default function ColoradoPage() {
               <h3 className="text-2xl font-bold text-white mb-4">Amazon YYZ3 Fulfillment Center</h3>
               <div className="text-4xl font-black text-primary mb-6">Peak Savings: 58.69%</div>
               <ul className="space-y-3 text-gray-300">
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Peak reduction — M&V verified, 6 consecutive quarters</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 17% sustained average savings</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 6 consecutive quarters of verified data</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Peak reduction — M&V verified, Q3 2024 year-over-year</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 43.98% YYZ3 average across Q3/Q4 2024</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Q3/Q4 2024 independently verified data</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Zero operational disruption — directly applicable to Denver data centers</li>
               </ul>
             </motion.div>

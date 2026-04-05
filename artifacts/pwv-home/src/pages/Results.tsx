@@ -17,14 +17,10 @@ const AGGREGATE_STATS = [
   { val: "≥15%", label: "Contractual Minimum Guaranteed" },
 ];
 
-// Per-employee normalized M&V data (IPMVP Option B) — 6 consecutive quarters
+// Year-over-year M&V data (IPMVP Option B) — Q3/Q4 2024 vs Q3/Q4 2023 baseline
 const AMAZON_QUARTERLY = [
-  { period: "Jul–Sep 2024", YYZ3: 50, YYZ4: 24 },
-  { period: "Oct–Dec 2024", YYZ3: 27, YYZ4: 18 },
-  { period: "Jan–Mar 2025", YYZ3: -17, YYZ4: -4 },
-  { period: "Apr–Jun 2025", YYZ3: -17, YYZ4: 17 },
-  { period: "Jul–Sep 2025", YYZ3: 5, YYZ4: 23 },
-  { period: "Oct–Dec 2025", YYZ3: 20, YYZ4: 13 },
+  { period: "Q3 2024 (Jul–Sep)", YYZ3: 58.69, YYZ4: 17.36 },
+  { period: "Q4 2024 (Oct–Dec)", YYZ3: 29.27, YYZ4: -14.44 },
 ];
 
 const FOUR_SEASONS_DATA = [
@@ -202,21 +198,21 @@ export default function Results() {
           <p className="text-sm mb-8" style={{ color: "#4A7085" }}>Smart Valve™ installed June 2024 · Independent IPMVP Option B M&V · Formal PDFs available</p>
 
           <div className="grid lg:grid-cols-3 gap-4 mb-8">
-            <StatPill value="58.69%" label="YOY Peak Reduction — YYZ3" />
-            <StatPill value="16.5%" label="Portfolio Avg (normalized per employee)" />
-            <StatPill value="6 Qtrs" label="Consecutive M&V Quarters" />
+            <StatPill value="58.69%" label="YYZ3 Peak — Q3 2024 Year-over-Year" />
+            <StatPill value="43.98%" label="YYZ3 Q3/Q4 2024 Average" />
+            <StatPill value="29.3%" label="Portfolio Avg — YYZ3 & YYZ4" />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6">
             <ChartCard
               title="Quarterly Savings % — YYZ3 vs YYZ4"
-              caption="Blue = YYZ3 · Teal = YYZ4 · Red bars = below-baseline quarters · Green dashed line = ≥15% guarantee"
+              caption="Blue = YYZ3 · Teal = YYZ4 · Red bar = YYZ4 Q4 (valve removed Sept 5–Oct 25) · Green dashed = ≥15% guarantee"
             >
               <ResponsiveContainer width="100%" height={260}>
                 <BarChart data={AMAZON_QUARTERLY} margin={{ top: 8, right: 24, left: 0, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                   <XAxis dataKey="period" tick={{ fontSize: 11, fill: "#4A7085" }} />
-                  <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[-25, 65]} />
+                  <YAxis tick={{ fontSize: 11, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[-20, 65]} />
                   <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" label={{ value: "≥15%", position: "insideTopRight", fontSize: 9, fill: "#059669" }} />
                   <ReferenceLine y={0} stroke="#cbd5e1" />
                   <Tooltip content={<PctTooltip />} />
@@ -234,10 +230,10 @@ export default function Results() {
             <div className="rounded-2xl p-6 border border-slate-100" style={{ background: "#F7FAFD" }}>
               <div className="text-sm font-bold mb-3" style={{ color: "#0A1F3A" }}>Methodology Notes</div>
               <ul className="space-y-3 text-sm" style={{ color: "#2E4A5A" }}>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>Two independent M&V methodologies applied — both verified reduction</span></li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>58.69% = year-over-year comparison at YYZ3 for Q3 2024 (peak quarter)</span></li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>16.5% = per-employee normalized average across both sites, 6 quarters</span></li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>Negative quarters reflect seasonal baseline shifts in Amazon operations, not valve underperformance</span></li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>Year-over-year quarterly comparison vs Q3/Q4 2023 baseline</span></li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>58.69% = YYZ3 Q3 2024 peak · 29.27% = YYZ3 Q4 2024 · 43.98% = YYZ3 avg</span></li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>YYZ4 Q4 usage increase: valve removed Sept 5, reinstalled Oct 25 — not a performance issue</span></li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>YYZ4 Q3: 17.36% · YYZ4 Q3/Q4 avg: 14.6% (weighted by volume, impacted by removal)</span></li>
                 <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#059669" }} /><span>Both YYZ3 and YYZ4 formal PDF reports available on request</span></li>
               </ul>
             </div>
@@ -535,7 +531,7 @@ export default function Results() {
         <p className="text-center text-[10px] uppercase tracking-widest mb-6" style={{ color: "#A0B5C5" }}>24 M&V-verified case studies — all reporting ≥15% savings</p>
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 max-w-5xl mx-auto mb-8">
           {[
-            { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },
+            { name: "Amazon", sub: "YYZ3 & YYZ4 · 43.98% YYZ3 avg / 58.69% peak" },
             { name: "Four Seasons", sub: "Fort Lauderdale · 26% avg / 56% peak" },
             { name: "St. Regis", sub: "Toronto · $49,889 CAD/yr" },
             { name: "Caliber Car Wash", sub: "5 sites · 23%" },
@@ -565,7 +561,7 @@ export default function Results() {
           <p className="text-center text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#4A7085" }}>Full Case Study Pages — All Charts &amp; Data</p>
           <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              { label: "Amazon YYZ3 & YYZ4", href: "/results/amazon-yyz3", desc: "5 charts · 6 quarters · Per-head normalization · Flow rate data" },
+              { label: "Amazon YYZ3 & YYZ4", href: "/results/amazon-yyz3", desc: "5 charts · Q3/Q4 2024 · Year-over-year M&V · Flow rate data" },
               { label: "Four Seasons Fort Lauderdale", href: "/results/four-seasons", desc: "4 charts · Monthly breakdown · Daily + annual cost comparison" },
               { label: "St. Regis Toronto", href: "/results/st-regis-toronto", desc: "$49,889 CAD/yr · 20%+ · Marriott-approved · Chief Engineer quote" },
               { label: "Caliber Car Wash", href: "/results/caliber-car-wash", desc: "5-site portfolio · 23% avg · Hard water scale reduction · GA & FL" },

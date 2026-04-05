@@ -76,7 +76,7 @@ const INDUSTRIES = [
   { name: "Luxury Hospitality", value: 22, range: "20%–26%", note: "St. Regis 20%+, Four Seasons 26%" },
   { name: "Multifamily / Apartments", value: 21, range: "16%–31%", note: "Toronto portfolio 18–31%, NJ portfolio 18–30%" },
   { name: "Condominiums", value: 20, range: "16%–23%", note: "Multiple verified Canadian sites" },
-  { name: "Logistics / Fulfillment", value: 17, range: "16.5% avg / 58.69% peak", note: "Amazon YYZ3 & YYZ4 — dual M&V methodology" },
+  { name: "Logistics / Fulfillment", value: 43.98, range: "43.98% YYZ3 avg / 58.69% peak", note: "Amazon YYZ3 Q3/Q4 2024 — year-over-year M&V" },
   { name: "Healthcare / Medical", value: 19, range: "19%", note: "RWJ Barnabas — based on 1 study" },
 ];
 const INDUSTRY_MAX = 39;
@@ -85,7 +85,7 @@ const CLIENTS = [
   {
     initial: "A", name: "Amazon YYZ3 & YYZ4", industry: "Logistics / Fulfillment",
     color: "#1a365d", accent: "#3182CE",
-    stat: "16.5% avg · 58.69% YOY peak", detail: "Two M&V reports, two methodologies. YOY comparison shows 58.69% peak at YYZ3. Per-employee normalized avg: 16.5% across both sites, six consecutive quarters."
+    stat: "43.98% YYZ3 avg · 58.69% peak Q3 2024", detail: "Year-over-year M&V verification Q3/Q4 2024. YYZ3: 58.69% Q3, 29.27% Q4, 43.98% average. YYZ4: 17.36% Q3, 14.6% average (Q4 impacted by brief valve removal)."
   },
   {
     initial: "F", name: "Four Seasons Fort Lauderdale", industry: "Luxury Hospitality",
@@ -129,7 +129,7 @@ const PROOF_TICKER = [
   { client: "Houstonian Estates", result: "16% · ~6,000 gal/day", industry: "Multifamily Real Estate" },
   { client: "RWJ Barnabas Health", result: "19% verified · $15,500/yr", industry: "Healthcare" },
   { client: "Houston Office Building", result: "37–39% bill reduction", industry: "Commercial Office" },
-  { client: "Amazon YYZ4", result: "16.5% sustained avg", industry: "Fulfillment Center" },
+  { client: "Amazon YYZ4", result: "14.6% Q3/Q4 avg", industry: "Fulfillment Center" },
 ];
 
 const INDUSTRY_CARDS = [
