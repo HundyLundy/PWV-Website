@@ -303,7 +303,7 @@ export default function InfoSheet() {
           <IndustrySectionHeader
             label="Multifamily"
             href="/industries/multifamily"
-            subtitle="Grand Central Tampa · Houstonian Estates · Forest & Charlton (Toronto) · IPMVP Option B"
+            subtitle="Grand Central Tampa · Houstonian Estates · Toronto Multi-Residential Portfolio · IPMVP Option B"
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
@@ -311,12 +311,12 @@ export default function InfoSheet() {
               <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Grand Central Tampa</div>
             </div>
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
-              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>17–20%</div>
-              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Forest & Charlton (Toronto)</div>
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>15–31%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Toronto Portfolio Range</div>
             </div>
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
-              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>CA $17,200</div>
-              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>Forest & Charlton Annual</div>
+              <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>31%</div>
+              <div className="text-xs font-semibold mt-0.5" style={{ color: "#4A7085" }}>1121 Steeles Ave Peak</div>
             </div>
             <div className="rounded-xl p-4 text-center bg-white border border-slate-200">
               <div className="text-2xl font-bold" style={{ color: "#0374A7" }}>p&lt;0.01</div>
@@ -326,13 +326,13 @@ export default function InfoSheet() {
           <div className="grid lg:grid-cols-2 gap-6">
             <ChartCard
               title="Savings % by Property"
-              caption="Grand Central & Houstonian: self-reported · Forest & Charlton: IPMVP Option B, 95% confidence"
+              caption="Grand Central & Houstonian: self-reported GM testimonials · Toronto Portfolio: IPMVP Option B, 95% confidence"
             >
               <ResponsiveContainer width="100%" height={230}>
                 <BarChart data={MULTIFAMILY_DATA} margin={{ top: 8, right: 40, left: 0, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                   <XAxis dataKey="name" tick={{ fontSize: 9, fill: "#4A7085" }} />
-                  <YAxis tick={{ fontSize: 10, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[0, 30]} />
+                  <YAxis tick={{ fontSize: 10, fill: "#4A7085" }} tickFormatter={(v) => `${v}%`} domain={[0, 35]} />
                   <ReferenceLine y={15} stroke="#059669" strokeDasharray="4 4" />
                   <Tooltip content={<PctTooltip />} />
                   <Bar dataKey="pct" name="Reduction %" fill="#0374A7" radius={[5, 5, 0, 0]} label={{ position: "top", formatter: (v: number) => `${v}%`, fontSize: 12, fill: "#0374A7", fontWeight: 700 }} />
@@ -343,10 +343,10 @@ export default function InfoSheet() {
               <div className="text-sm font-bold mb-3" style={{ color: "#0A1F3A" }}>Verified Data Points</div>
               <DataRow label="Grand Central Tampa" value="23% avg · $50K/yr · 2 yrs" />
               <DataRow label="Houstonian Estates" value="16% · 6,000 gal/day saved" />
-              <DataRow label="100 Forest Ave (TO)" value="20.0% · p&lt;0.01 · IPMVP" />
-              <DataRow label="123 Charlton Ave (TO)" value="17.0% · p&lt;0.01 · IPMVP" />
-              <DataRow label="Combined annual" value="CA $17,200 (Forest & Charlton)" />
-              <DataRow label="Simple payback" value="Under 3 years (Forest & Charlton)" />
+              <DataRow label="1121 Steeles Ave (TO)" value="31% avg · 6 months · IPMVP" />
+              <DataRow label="797 Don Mills Rd (TO)" value="18% avg · 5 months · IPMVP" />
+              <DataRow label="21 & 23 Carlton St (TO)" value="15%+ trend reversal · IPMVP" />
+              <DataRow label="M&V methodology" value="IPMVP Option B · 95% confidence" />
               <a href="/industries/multifamily" className="inline-flex items-center gap-1 mt-4 text-sm font-bold hover:underline" style={{ color: "#0374A7" }}>
                 Multifamily hub <ArrowRight className="w-3.5 h-3.5" />
               </a>

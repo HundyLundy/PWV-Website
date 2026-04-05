@@ -202,10 +202,10 @@ export default function TexasNewPage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full" />
               <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-gray-300 mb-6">Car Wash — Texas Market Directly Applicable</span>
               <h3 className="text-2xl font-bold text-white mb-4">Caliber Car Wash (5 Sites)</h3>
-              <div className="text-4xl font-black text-primary mb-6">23% Average + $38,400/yr</div>
+              <div className="text-4xl font-black text-primary mb-6">23% Weighted Average — M&V Verified</div>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 23% weighted average savings across 5 sites</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> $38,400/year in verified savings</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Independently verified over 3+ consecutive quarters per site</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Results under Texas-comparable conditions</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Under SAWS-style rate pressure, savings compound annually</li>
               </ul>

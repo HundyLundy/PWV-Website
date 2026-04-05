@@ -55,7 +55,7 @@ export default function CarWashes() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">Smart Valve™ Cuts Your Bill 15%–35% Annually — Starting on the First Bill</span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Caliber Car Wash achieved 23% weighted average savings across 5 Georgia and Florida sites — $38,400/year in verified savings. Continuous high-volume water use means Smart Valve™ delivers its maximum ROI in car wash applications. Results are consistent across all locations.
+              Caliber Car Wash achieved 23% weighted average savings across 5 Georgia and Florida sites — independently M&V verified over 3+ consecutive quarters per location. Continuous high-volume water use means Smart Valve™ delivers its maximum ROI in car wash applications. Results are consistent across all locations.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <button onClick={() => scrollTo("contact")} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary/25 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
@@ -148,7 +148,7 @@ export default function CarWashes() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Droplets, color: "blue", title: "Continuous High-Volume Water Use", body: "Car washes are among the highest water-intensity commercial operations in existence. A tunnel wash uses 50–120 gallons per car. At 1,000 cars/day, that's 50,000–120,000 gallons per day — every gallon subject to air entrapment billing inflation." },
-              { icon: DollarSign, color: "green", title: "$38,400/Year at Caliber — Verified", body: "Caliber Car Wash's 23% weighted average across 5 sites equates to $38,400/year in verified water bill savings. For a 10-site chain, that's $76,800/year in operating cost reduction — from one passive device per location." },
+              { icon: DollarSign, color: "green", title: "23% Weighted Average — M&V Verified at Caliber", body: "Caliber Car Wash's 23% weighted average across 5 Georgia and Florida sites was independently M&V verified over 3+ consecutive quarters per location. For a high-volume car wash, a 23% reduction on a $15,000–$20,000/month water bill represents substantial operating cost improvement." },
               { icon: TrendingUp, color: "yellow", title: "Compound Savings as Rates Rise", body: "Car wash water bills grow with rate increases. A 23% reduction on a $20,000/month bill delivers $4,600/month in savings. As rates rise 6–8% annually, the same percentage cut delivers more dollars every year." },
               { icon: Activity, color: "teal", title: "Zero Process or Equipment Changes", body: "Smart Valve™ installs on your existing supply line. No changes to your tunnel equipment, reclaim system, chemistry, or processes. You wash exactly the same way. Your meter just reads what's actually being used." },
               { icon: CheckCircle2, color: "red", title: "Multi-Site Chain ROI", body: "For car wash chains, Smart Valve™ delivers consistent results across all locations. Caliber's results were consistent across 5 geographically dispersed sites. Chain operators see predictable, scalable savings." },
@@ -172,7 +172,7 @@ export default function CarWashes() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background border-t border-white/5">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Caliber Car Wash — 5 Sites, 23% Average, $38,400/Year</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Caliber Car Wash — 5 Sites, 23% Weighted Average</h2>
           </div>
           <div className="bg-[#121B2E] border border-white/10 rounded-2xl p-8 lg:p-12">
             <div className="grid md:grid-cols-2 gap-12">
@@ -182,7 +182,7 @@ export default function CarWashes() {
                 <div className="text-2xl text-white mb-6">Weighted Average Across 5 Sites</div>
                 <ul className="space-y-4 text-gray-300">
                   <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> 23% weighted average savings across all 5 locations</li>
-                  <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> $38,400/year in verified cost savings</li>
+                  <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> M&V verified over 3+ consecutive billing quarters per site</li>
                   <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Consistent results across all sites — no outliers</li>
                   <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> High-volume continuous water use environment</li>
                   <li className="flex gap-3"><CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> Zero changes to wash process or equipment</li>
@@ -192,8 +192,8 @@ export default function CarWashes() {
               <div className="space-y-4">
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6"><div className="text-gray-400 text-sm mb-1">Number of Sites</div><div className="text-white font-bold text-xl">5 Georgia &amp; Florida Locations</div></div>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6"><div className="text-gray-400 text-sm mb-1">Average Water Reduction</div><div className="text-primary font-bold text-2xl">23% Weighted Average</div></div>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-6"><div className="text-gray-400 text-sm mb-1">Annual Savings Verified</div><div className="text-primary font-bold text-2xl">$38,400/year</div></div>
-                <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4 text-center"><div className="text-green-400 font-semibold">Scales linearly: 10-site chain = $76,800/year</div></div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6"><div className="text-gray-400 text-sm mb-1">Verification Method</div><div className="text-primary font-bold text-2xl">Independent M&V</div></div>
+                <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4 text-center"><div className="text-green-400 font-semibold">Consistent results across all 5 geographically dispersed sites</div></div>
               </div>
             </div>
           </div>

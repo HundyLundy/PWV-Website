@@ -58,13 +58,13 @@ const CASE_STUDIES = [
   },
   {
     logo: "FC", industry: "Multi-Residential Portfolio · Toronto", color: "bg-green-100 text-green-700",
-    summary: "IPMVP Option B verified at 95% statistical confidence. 100 Forest Ave: 20.0% (p<0.01). 123 Charlton Ave: 17.0% (p<0.01). Combined annual savings: CA $17,200.",
-    source: "CWS M&V Report, 2025 · Formal PDF Available", client: "Forest & Charlton (100 Forest / 123 Charlton Ave)"
+    summary: "IPMVP Option B verified at 95% statistical confidence. 1121 Steeles Ave: 31% avg (6 months). 797 Don Mills Rd: 18% avg (5 months). 21 & 23 Carlton St: 15%+ (trend reversal documented).",
+    source: "CWS M&V Report, 2025 · Formal PDF Available", client: "Toronto Multi-Residential Portfolio (3 Properties)"
   }
 ];
 
 export default function Home() {
-  const summary = { totalGallonsSaved: 36800000000, totalSitesSaved: 32000, averageReduction: 19.2, portfolioAvgSavings: 23, guaranteedMinSavings: 15, activeSites: 32000 };
+  const summary = { totalGallonsSaved: 36800000000, totalSitesSaved: 32000, averageReduction: 20, portfolioAvgSavings: 23, guaranteedMinSavings: 15, activeSites: 32000 };
   const deployments = [
     { id: 1, logoLetter: "A", clientName: "Amazon", deploymentScope: "Logistics · YYZ3 & YYZ4" },
     { id: 2, logoLetter: "C", clientName: "Caliber Car Wash", deploymentScope: "Automotive · 5 GA/FL sites" },
@@ -186,7 +186,7 @@ export default function Home() {
               { name: "Caliber Car Wash", sub: "5-Site Network · 23%" },
               { name: "Grand Central", sub: "Kennedy · $50K/yr" },
               { name: "Houstonian", sub: "Estates · 16%" },
-              { name: "Forest & Charlton", sub: "Toronto · 17–20%" },
+              { name: "Toronto Portfolio", sub: "3 Properties · 15–31%" },
             ].map((c) => (
               <div key={c.name} className="flex flex-col items-center text-center opacity-70 hover:opacity-100 transition-opacity">
                 <span className="font-headline font-bold text-slate-700 text-base tracking-tight leading-tight">{c.name}</span>

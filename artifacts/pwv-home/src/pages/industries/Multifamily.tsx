@@ -14,7 +14,7 @@ const multifamilyFaqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "How does Smart Valve™ work with master-metered multifamily buildings?", "acceptedAnswer": { "@type": "Answer", "text": "Smart Valve™ installs directly on the main supply line where the master meter measures flow — exactly where air entrainment inflates multifamily water bills. The meter reduction is immediate and independently verified." } },
-    { "@type": "Question", "name": "What savings have multifamily properties documented?", "acceptedAnswer": { "@type": "Answer", "text": "Grand Central Tampa verified $50,000/year — a 23% reduction on metered consumption. Forest & Charlton (Toronto) saw 17%–20% savings. Properties typically see 15%–35% reduction." } },
+    { "@type": "Question", "name": "What savings have multifamily properties documented?", "acceptedAnswer": { "@type": "Answer", "text": "Grand Central Tampa verified $50,000/year — a 23% reduction on metered consumption. A Toronto multi-residential portfolio achieved 15%–31% verified savings across three high-rise properties. Properties typically see 15%–35% reduction." } },
     { "@type": "Question", "name": "How does water savings affect NOI and cap rate?", "acceptedAnswer": { "@type": "Answer", "text": "At a 5% cap rate, $50,000/year in reduced water expense adds approximately $1,000,000 in property value. Most installations pay back within 6–18 months." } },
     { "@type": "Question", "name": "Is there any impact on tenants or building systems?", "acceptedAnswer": { "@type": "Answer", "text": "No. Smart Valve™ is installed upstream on the main supply line. Tenants experience no change in water pressure, temperature, or quality. Zero disruption to building operations." } }
   ]

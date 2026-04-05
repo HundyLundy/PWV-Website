@@ -12,7 +12,7 @@ import { Navbar } from "@/components/Navbar";
 const HERO_STATS = [
   { value: 36.8, label: "Gallons Conserved Per Year", prefix: "", suffix: "B+", decimals: 1 },
   { value: 440, label: "Estimated Annual Savings", prefix: "$", suffix: "M+", decimals: 0 },
-  { value: 19.2, label: "Average Reduction", prefix: "", suffix: "%", decimals: 1 }
+  { value: 20, label: "Average Reduction", prefix: "", suffix: "%+", decimals: 0 }
 ];
 
 const CLIENTS = [
@@ -443,7 +443,7 @@ function SavingsCalc() {
       </div>
 
       <p className="text-xs mt-3 uppercase tracking-widest" style={{ color: '#4A7085' }}>
-        Based on 19.2% avg savings rate · 15% guaranteed minimum · 32,000+ verified installs
+        Based on 20%+ avg savings rate · 15% guaranteed minimum · 32,000+ verified installs
       </p>
     </div>
   );
@@ -534,7 +534,7 @@ function LossCounter() {
         wasted this year — that's <span className="text-red-400 font-semibold">{perMonth}/month</span> going straight to the water authority
       </p>
       <p className="text-white/30 text-xs mt-3 uppercase tracking-widest">
-        Based on 19.2% avg savings rate · 32,000+ verified installs · 15% guaranteed minimum
+        Based on 20%+ avg savings rate · 32,000+ verified installs · 15% guaranteed minimum
       </p>
     </div>
   );
