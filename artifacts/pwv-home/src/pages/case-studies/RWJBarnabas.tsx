@@ -71,6 +71,11 @@ export default function RWJBarnabas() {
       <Helmet>
         <title>RWJ Barnabas Health — 19% Water Savings | Smart Valve™ Case Study | Perfect Water Valve</title>
         <meta name="description" content="RWJ Barnabas Ambulatory Care Center achieved 19% water reduction and $15,500/year savings with Smart Valve™ — payback under 6 months. Formal M&V case study." />
+        <link rel="canonical" href="https://www.perfectwatervalve.com/results/rwj-barnabas" />
+        <meta property="og:title" content="RWJ Barnabas Health — 19% Water Savings, $15,500/yr | Smart Valve™ Case Study" />
+        <meta property="og:description" content="RWJ Barnabas Ambulatory Care Center achieved 19% water reduction and $15,500/year savings with Smart Valve™ — payback under 6 months. Formal M&V case study." />
+        <meta property="og:url" content="https://www.perfectwatervalve.com/results/rwj-barnabas" />
+        <meta property="og:image" content="https://www.perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
       <Navbar />
 

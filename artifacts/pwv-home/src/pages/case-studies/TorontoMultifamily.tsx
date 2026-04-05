@@ -72,6 +72,11 @@ export default function TorontoMultifamily() {
       <Helmet>
         <title>Toronto Multi-Residential Portfolio — 18–31% Water Savings | Smart Valve™ Case Study | Perfect Water Valve</title>
         <meta name="description" content="Three Toronto multi-residential properties achieved 15–31% verified water savings with Smart Valve™ — including 1121 Steeles Ave at 31% average over 6 months. IPMVP-verified by CWS." />
+        <link rel="canonical" href="https://www.perfectwatervalve.com/results/toronto-multifamily" />
+        <meta property="og:title" content="Toronto Multi-Residential Portfolio — 15–31% Water Savings | Smart Valve™ Case Study" />
+        <meta property="og:description" content="Three Toronto multi-residential properties achieved 15–31% verified water savings with Smart Valve™ — including 1121 Steeles Ave at 31% average over 6 months. IPMVP-verified by CWS." />
+        <meta property="og:url" content="https://www.perfectwatervalve.com/results/toronto-multifamily" />
+        <meta property="og:image" content="https://www.perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
       <Navbar />
 

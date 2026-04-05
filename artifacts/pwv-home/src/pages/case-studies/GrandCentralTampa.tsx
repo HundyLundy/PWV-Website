@@ -71,6 +71,11 @@ export default function GrandCentralTampa() {
       <Helmet>
         <title>Grand Central at Kennedy — $50,000/yr Water Savings | Smart Valve™ Case Study | Perfect Water Valve</title>
         <meta name="description" content="Grand Central at Kennedy in Tampa, FL cut water and sewer costs by 23% — saving $50,000 per year with two 6-inch Smart Valve™ units. Confirmed by General Manager Bob Pack." />
+        <link rel="canonical" href="https://www.perfectwatervalve.com/results/grand-central-tampa" />
+        <meta property="og:title" content="Grand Central at Kennedy — $50,000/yr Water Savings | Smart Valve™ Case Study" />
+        <meta property="og:description" content="Grand Central at Kennedy in Tampa, FL cut water and sewer costs by 23% — saving $50,000 per year with two 6-inch Smart Valve™ units. Confirmed by General Manager Bob Pack." />
+        <meta property="og:url" content="https://www.perfectwatervalve.com/results/grand-central-tampa" />
+        <meta property="og:image" content="https://www.perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
       <Navbar />
 

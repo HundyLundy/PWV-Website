@@ -50,6 +50,11 @@ export default function CaliberCarWash() {
       <Helmet>
         <title>Caliber Car Wash — 23% Water Savings Across 5 Locations | Smart Valve™ Case Study | Perfect Water Valve</title>
         <meta name="description" content="Caliber Car Wash achieved a 23% weighted-average water savings across 5 Georgia and Florida locations — independently verified with formal M&V reports. Hard water scale reduced at all sites." />
+        <link rel="canonical" href="https://www.perfectwatervalve.com/results/caliber-car-wash" />
+        <meta property="og:title" content="Caliber Car Wash — 23% Water Savings Across 5 Locations | Smart Valve™ Case Study" />
+        <meta property="og:description" content="Caliber Car Wash achieved a 23% weighted-average water savings across 5 Georgia and Florida locations — independently verified with formal M&V reports." />
+        <meta property="og:url" content="https://www.perfectwatervalve.com/results/caliber-car-wash" />
+        <meta property="og:image" content="https://www.perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
       <Navbar />
 
