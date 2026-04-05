@@ -31,7 +31,7 @@ const serviceSchema = {
 const DC_FAQ_ITEMS = [
   { q: "How much water does a hyperscale data center use?", a: "A hyperscale data center uses 1–5 million gallons of water per day for cooling tower makeup water. At commercial utility rates of $4–8 per 1,000 gallons, that translates to $4,000–$40,000 per day in water costs — before rate increases." },
   { q: "How does Smart Valve™ work in a data center cooling water system?", a: "Smart Valve™ installs on the main water supply line feeding the cooling system. It reduces turbulence and optimizes flow so that less water passes through the meter to deliver the same cooling performance. Cooling tower operation, chiller performance, and system pressure are completely unaffected." },
-  { q: "What is the Amazon YYZ3 result and how was it verified?", a: "Amazon's YYZ3 hyperscale facility in Toronto achieved 58.69% peak year-over-year water savings over 6 consecutive quarters of third-party Measurement and Verification (M&V). The average across YYZ3 and YYZ4 was 16.5% over the same period." },
+  { q: "What is the Amazon YYZ3 result and how was it verified?", a: "Amazon's YYZ3 hyperscale facility in Toronto achieved 58.69% peak savings in a single quarter (Jul–Sep 2024), verified across 6 consecutive quarters of third-party Measurement and Verification (M&V). The average across YYZ3 and YYZ4 was 16.5% over the same period." },
   { q: "Will Smart Valve™ affect cooling performance or uptime?", a: "No. Smart Valve™ has requires no electricity. It installs in 2–4 hours with zero disruption to operations. Cooling performance, system pressure, and uptime are unaffected." },
   { q: "Is the 15% minimum savings guaranteed in writing?", a: "Yes. Every installation includes a written contract guaranteeing a minimum 15% reduction in metered water consumption. If results fall short, Perfect Water Valve makes it right at no additional cost." },
   { q: "How do I get a data center water assessment?", a: "Contact Perfect Water Valve at (720) 937-3004 or info@perfectwatervalve.com. We review your cooling water billing, calculate projected savings, and provide a written guarantee before installation." },
@@ -115,7 +115,7 @@ export default function DataCenters() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-              The average hyperscale data center uses 1–5 million gallons of water per day for cooling. Smart Valve™ installs on the main supply line and cuts that bill 15%–35% annually on average, guaranteed. Amazon YYZ3 hit 58.69% peak savings over 6 consecutive quarters.
+              The average hyperscale data center uses 1–5 million gallons of water per day for cooling. Smart Valve™ installs on the main supply line and cuts that bill 15%–35% annually on average, guaranteed. Amazon YYZ3 hit 58.69% peak savings in a single quarter.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button onClick={() => scrollTo("contact")} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary/25 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">

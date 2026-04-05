@@ -176,8 +176,7 @@ export default function Home() {
       {/* 2. CLIENT LOGO BAR */}
       <section className="bg-white py-8 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Verified Results — 21 Documented Installations</p>
-          <p className="text-center text-[10px] text-slate-300 uppercase tracking-widest mb-6">19 include formal M&V data</p>
+          <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Verified Results — 24 M&V-Documented Case Studies</p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-6">
             {[
               { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },
@@ -212,12 +211,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="font-headline text-3xl lg:text-4xl font-bold text-slate-900 mb-4">The numbers don't need spin.</h2>
-            <p className="text-lg text-slate-500" style={{ fontWeight: 300 }}>21 documented installations. 19 include verified M&V data. Range: 15%–58.69%. Guaranteed floor of 15%.</p>
+            <p className="text-lg text-slate-500" style={{ fontWeight: 300 }}>24 documented installations with verified M&V data. Range: 15%–58.69%. Guaranteed floor of 15%.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: "Documented Installations", value: 21, suffix: "", desc: "19 include formal M&V data", icon: TrendingDown },
+              { label: "Documented Installations", value: 24, suffix: "", desc: "All include formal M&V data", icon: TrendingDown },
               { label: "Guaranteed Minimum", value: summary?.guaranteedMinSavings || 15, suffix: "%", desc: "In writing. In your contract.", icon: ShieldCheck },
               { label: "Active Deployments", value: summary?.activeSites || 20000, suffix: "+", desc: "Sites across North America", icon: Building2 },
               { label: "Top Annual Savings", value: 50, prefix: "Up to $", suffix: "K", desc: "Saved per year, per location", icon: CheckCircle2 },

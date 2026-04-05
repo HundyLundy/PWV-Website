@@ -15,7 +15,7 @@ const ASIAN_MARKETS = [
 ];
 
 const CASE_STUDIES = [
-  { name: "Amazon YYZ3", location: "Toronto, Canada", result: "58.69% peak savings — verified over 6 consecutive quarters", industry: "Data Center", highlight: true },
+  { name: "Amazon YYZ3", location: "Toronto, Canada", result: "58.69% peak savings (single quarter) — 6 quarters of M&V verified", industry: "Data Center", highlight: true },
   { name: "Four Seasons Fort Lauderdale", location: "Florida, USA", result: "26% metered reduction, $27,000/year savings", industry: "Luxury Hospitality" },
   { name: "Grand Central at Kennedy", location: "New Jersey, USA", result: "23% metered reduction, $50,000/year savings", industry: "Commercial Property" },
 ];

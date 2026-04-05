@@ -115,7 +115,7 @@ export default function DataCenterCoolingCosts() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="text-[#DEC600] text-sm font-semibold mb-2">★ HIGHEST VERIFIED RESULT IN PORTFOLIO</div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Amazon YYZ3 — The Industry Benchmark</h2>
-            <p className="text-xl text-white/80 mb-8">Amazon's YYZ3 data center achieved 58.69% peak savings on cooling water using Smart Valve™ — verified over 6 consecutive quarters of metered measurement.</p>
+            <p className="text-xl text-white/80 mb-8">Amazon's YYZ3 data center achieved 58.69% peak savings on cooling water using Smart Valve™ in a single quarter — with 6 consecutive quarters of independent metered verification on record.</p>
             <div className="grid sm:grid-cols-3 gap-6 mb-8">
               {[
                 { value: "58.69%", label: "Peak Savings Verified" },

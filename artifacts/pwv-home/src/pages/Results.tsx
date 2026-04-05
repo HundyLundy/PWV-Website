@@ -11,7 +11,7 @@ import {
 // ─── DATA ──────────────────────────────────────────────────────────────────
 
 const AGGREGATE_STATS = [
-  { val: "25+", label: "Documented Installations" },
+  { val: "24", label: "M&V-Verified Case Studies" },
   { val: "58.69%", label: "Peak Reduction — Amazon YYZ3" },
   { val: "$50K/yr", label: "Max Annual Savings — Single Site" },
   { val: "≥15%", label: "Contractual Minimum Guaranteed" },
@@ -175,7 +175,7 @@ export default function Results() {
             Smart Valve™ — Verified Field Results
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight" style={{ color: "#0A1F3A" }}>
-            19 Verified Installations.<br />
+            24 Verified Case Studies.<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">15%–58.69% Savings.</span>
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: "#2E4A5A" }}>
@@ -532,7 +532,7 @@ export default function Results() {
       {/* CLIENT LOGO BAR */}
       <section className="py-10 px-6 border-b" style={{ backgroundColor: "#E8EFF7", borderColor: "#C5D8E8" }}>
         <p className="text-center text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#4A7085" }}>Verified M&V Results</p>
-        <p className="text-center text-[10px] uppercase tracking-widest mb-6" style={{ color: "#A0B5C5" }}>20+ documented installations — all reporting ≥15% savings</p>
+        <p className="text-center text-[10px] uppercase tracking-widest mb-6" style={{ color: "#A0B5C5" }}>24 M&V-verified case studies — all reporting ≥15% savings</p>
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 max-w-5xl mx-auto mb-8">
           {[
             { name: "Amazon", sub: "YYZ3 & YYZ4 · 16.5% avg / 58.69% peak" },

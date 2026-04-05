@@ -159,7 +159,7 @@ export default function HyperscaleROI() {
             <div className="text-[#DEC600] text-sm font-semibold mb-2">★ THE ONLY VERIFIED HYPERSCALE BENCHMARK</div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Amazon YYZ3 — Setting the Standard</h2>
             <p className="text-lg text-white/80 mb-8">
-              Amazon's YYZ3 data center is the only publicly referenced hyperscale data center installation with verified Smart Valve™ savings data. The 58.69% peak result — achieved over 6 consecutive quarters of metered measurement — establishes what is achievable at scale.
+              Amazon's YYZ3 data center is the only publicly referenced hyperscale data center installation with verified Smart Valve™ savings data. The 58.69% peak result — achieved in a single quarter and verified across 6 consecutive quarters of metered measurement — establishes what is achievable at scale.
             </p>
             <div className="bg-white/10 rounded-xl p-8 border border-white/20 mb-6">
               <div className="grid sm:grid-cols-3 gap-6">

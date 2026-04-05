@@ -356,8 +356,8 @@ export default function Home() {
           </motion.div>
           <div className="grid sm:grid-cols-3 gap-6 mb-10">
             {[
-              { stat: '58.69%', label: 'Peak savings recorded', sub: 'Amazon YYZ3 — 6 consecutive quarters', color: '#0374A7' },
-              { stat: '19', label: 'M&V-verified case studies', sub: 'All independently certified', color: '#3C6E7F' },
+              { stat: '58.69%', label: 'Peak savings recorded', sub: 'Amazon YYZ3 — single quarter peak', color: '#0374A7' },
+              { stat: '24', label: 'M&V-verified case studies', sub: 'All independently certified', color: '#3C6E7F' },
               { stat: '15%', label: 'Minimum guaranteed in writing', sub: 'Every site. No exceptions.', color: '#0A1F3A' },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
@@ -442,9 +442,9 @@ export default function Home() {
       <section id="clients" className="py-28 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">20,000+ Installations. 19 Verified Studies. Real Results.</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">20,000+ Installations. 24 Verified Studies. Real Results.</h2>
             <p className="text-white/60 text-base" style={{ fontWeight: 300 }}>
-              Deployed at scale across North America — with 19 independently M&V-verified case studies proving 15%–58.69% savings. &nbsp;
+              Deployed at scale across North America — with 24 independently M&V-verified case studies proving 15%–58.69% savings. &nbsp;
               <a href="/results" className="text-white/40 underline underline-offset-2 hover:text-white/70 transition-colors text-sm">View all case studies →</a>
             </p>
           </motion.div>

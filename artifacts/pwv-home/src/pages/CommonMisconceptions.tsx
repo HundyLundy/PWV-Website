@@ -304,7 +304,7 @@ export default function CommonMisconceptions() {
           </div>
           <div className="grid sm:grid-cols-3 gap-6 mb-12">
             {[
-              { n: "19", label: "M&V-Verified Case Studies", sub: "Independently confirmed through utility billing" },
+              { n: "24", label: "M&V-Verified Case Studies", sub: "Independently confirmed through utility billing" },
               { n: "15%", label: "Guaranteed Minimum Reduction", sub: "In writing — every installation" },
               { n: "58.69%", label: "Peak Recorded Reduction", sub: "Amazon YYZ3 — formally verified" },
             ].map((s, i) => (
