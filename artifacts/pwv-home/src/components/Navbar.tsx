@@ -419,19 +419,26 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
               {/* Explore accordion */}
               <div>
                 <button onClick={() => setMobileExploreOpen(!mobileExploreOpen)}
-                  className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
-                  <span>Explore</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileExploreOpen ? "rotate-180" : ""}`} />
+                  className="w-full text-left flex justify-between items-center py-2.5 border-b border-white/5">
+                  <span className="flex items-center gap-2 text-base font-bold" style={{ color: '#DEC600' }}>
+                    Explore
+                  </span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileExploreOpen ? "rotate-180" : ""}`} style={{ color: '#DEC600' }} />
                 </button>
                 {mobileExploreOpen && (
-                  <div className="pl-4 py-2 flex flex-col gap-1">
-                    {/* Case Studies with sub-links */}
+                  <div className="py-3 flex flex-col gap-0.5">
+
+                    {/* Section: Results */}
+                    <div className="text-[9px] font-bold uppercase tracking-[0.2em] px-1 pb-1" style={{ color: 'rgba(91,191,224,0.55)' }}>Results</div>
                     <a href="/results/" onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-2 py-1.5 text-white/60 hover:text-white text-sm">
-                      <FileText className="w-3.5 h-3.5 shrink-0" style={{ color: '#5BBFE0' }} />
-                      Case Studies & Proof
+                      className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/5 transition-colors group">
+                      <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                        style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                        <FileText className="w-3 h-3" style={{ color: '#5BBFE0' }} />
+                      </div>
+                      <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">Case Studies &amp; Proof</span>
                     </a>
-                    <div className="pl-6 flex flex-col gap-0.5 mb-1">
+                    <div className="flex flex-col mb-2" style={{ paddingLeft: '36px' }}>
                       {[
                         { label: AMAZON_LABELS.navLabel, href: "/results/amazon-yyz3" },
                         { label: "Four Seasons — 26% avg, $27K/yr", href: "/results/four-seasons" },
@@ -443,40 +450,65 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                         { label: "Park Ave Apartments — 30%, West New York NJ", href: "/results/park-ave-nj" },
                       ].map((s) => (
                         <a key={s.href} href={s.href} onClick={() => setMenuOpen(false)}
-                          className="text-xs py-1 text-white/40 hover:text-sky-300 transition-colors">
-                          {s.label}
+                          className="flex items-center gap-1 text-[11px] py-[4px] px-2 rounded-md font-medium hover:bg-white/5 transition-colors"
+                          style={{ color: '#5BBFE0' }}>
+                          <span className="opacity-50 text-[10px]">→</span>
+                          <span className="hover:underline underline-offset-2">{s.label}</span>
                         </a>
                       ))}
                     </div>
-                    {/* Partners — featured highlight entry */}
+
+                    {[
+                      { label: "Blog & Insights", href: "/blog", icon: BookOpen },
+                      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: FileText },
+                      { label: "Live Savings Counter", href: "/impact/", icon: Zap },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}
+                          className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/5 transition-colors group">
+                          <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                            <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
+                          </div>
+                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{item.label}</span>
+                        </a>
+                      );
+                    })}
+
+                    {/* Section: About Smart Valve */}
+                    <div className="text-[9px] font-bold uppercase tracking-[0.2em] px-1 pt-3 pb-1" style={{ color: 'rgba(91,191,224,0.55)' }}>About Smart Valve™</div>
                     <a href="/partners/" onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-2.5 py-2 px-2 rounded-xl mb-1"
+                      className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl mb-1"
                       style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
-                      <ShieldCheck className="w-4 h-4 shrink-0" style={{ color: '#5BBFE0' }} />
-                      <div className="flex flex-col">
+                      <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                        style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
+                        <ShieldCheck className="w-3 h-3" style={{ color: '#5BBFE0' }} />
+                      </div>
+                      <div className="flex flex-col min-w-0">
                         <span className="text-sm font-bold leading-tight text-white">Partners &amp; Process</span>
                         <span className="text-[10px] leading-tight" style={{ color: '#5BBFE0' }}>AWS · CWS · Flow Dynamics</span>
                       </div>
                     </a>
-                    {/* Other explore links */}
                     {[
-                      { label: "Blog & Insights", href: "/blog", icon: BookOpen },
                       { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
-                      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: FileText },
-                      { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
                       { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
-                      { label: "Live Savings Counter", href: "/impact/", icon: Zap },
+                      { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
                       { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
                     ].map((item) => {
                       const Icon = item.icon;
                       return (
                         <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}
-                          className="flex items-center gap-2 py-1.5 text-white/60 hover:text-white text-sm">
-                          <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: '#5BBFE0' }} />
-                          {item.label}
+                          className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/5 transition-colors group">
+                          <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                            <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
+                          </div>
+                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{item.label}</span>
                         </a>
                       );
                     })}
+
                   </div>
                 )}
               </div>
