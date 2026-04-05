@@ -537,6 +537,9 @@ export default function Results() {
             { name: "Chateau Tower", sub: "Tampa, FL · 16% · $11,028/yr" },
             { name: "Courtyard Apts", sub: "Hackensack, NJ · 18% · $4,549/yr" },
             { name: "451 Central Ave", sub: "Orange, NJ · 12.5% · $1,470/yr" },
+            { name: "Jefferson Arms", sub: "Orange, NJ · 14.7% · $3,700/yr" },
+            { name: "500 Main St", sub: "Orange, NJ · 26% · $3,566/yr" },
+            { name: "Park Gardens", sub: "East Orange, NJ · 21% · $8,166/yr" },
           ].map((c) => (
             <div key={c.name} className="flex flex-col items-center text-center">
               <span className="font-headline font-bold text-base tracking-tight" style={{ color: "#0A1F3A" }}>{c.name}</span>
@@ -572,6 +575,9 @@ export default function Results() {
               { label: "Courtyard Apts, Hackensack NJ", href: "/results/courtyard-hackensack", desc: "80-unit mid-rise · Hackensack, NJ · 18% reduction · $4,549/yr · $45,490 over 10 yrs" },
               { label: "Chateau Tower Condos, Tampa FL", href: "/results/chateau-tower-fl", desc: "Condo HOA · Tampa, FL · 16% reduction · $11,028/yr · 9.2-mo payback · $45,112 5-yr profit" },
               { label: "451 Central Ave, Orange NJ", href: "/results/central-ave-nj", desc: "13-unit apartment · Orange, NJ · 12.5% reduction · $1,470/yr · 19-mo payback" },
+              { label: "Jefferson Arms, Orange NJ", href: "/results/jefferson-arms-nj", desc: "28-unit apartment · Orange, NJ · 14.7% reduction · $3,700/yr · 15-mo payback" },
+              { label: "500 Main St, Orange NJ", href: "/results/orange-apartment-nj", desc: "16-unit apartment · Orange, NJ · 26% reduction · $3,566/yr · 8-mo payback" },
+              { label: "Park Gardens, East Orange NJ", href: "/results/park-gardens-nj", desc: "48-unit apartment · East Orange, NJ · 21% reduction · $8,166/yr · 15-mo payback" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="block rounded-2xl p-5 border border-slate-200 bg-white hover:border-blue-300 hover:shadow-sm transition-all group">
                 <div className="font-bold text-sm mb-1 group-hover:text-blue-600 transition-colors" style={{ color: "#0374A7" }}>{l.label} →</div>

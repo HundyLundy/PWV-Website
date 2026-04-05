@@ -26,6 +26,9 @@ import ParkAveNJ from "@/pages/case-studies/ParkAveNJ";
 import CentralAveNJ from "@/pages/case-studies/CentralAveNJ";
 import ChateauTowerFL from "@/pages/case-studies/ChateauTowerFL";
 import CourtyardHackensack from "@/pages/case-studies/CourtyardHackensack";
+import JeffersonArmsNJ from "@/pages/case-studies/JeffersonArmsNJ";
+import OrangeApartmentNJ from "@/pages/case-studies/OrangeApartmentNJ";
+import ParkGardensNJ from "@/pages/case-studies/ParkGardensNJ";
 
 // Core pages
 import Results from "@/pages/Results";
@@ -396,6 +399,12 @@ function Router() {
       <Route path="/results/chateau-tower-fl/" component={ChateauTowerFL} />
       <Route path="/results/courtyard-hackensack" component={CourtyardHackensack} />
       <Route path="/results/courtyard-hackensack/" component={CourtyardHackensack} />
+      <Route path="/results/jefferson-arms-nj" component={JeffersonArmsNJ} />
+      <Route path="/results/jefferson-arms-nj/" component={JeffersonArmsNJ} />
+      <Route path="/results/orange-apartment-nj" component={OrangeApartmentNJ} />
+      <Route path="/results/orange-apartment-nj/" component={OrangeApartmentNJ} />
+      <Route path="/results/park-gardens-nj" component={ParkGardensNJ} />
+      <Route path="/results/park-gardens-nj/" component={ParkGardensNJ} />
 
       {/* Fallback */}
       <Route component={NotFound} />
