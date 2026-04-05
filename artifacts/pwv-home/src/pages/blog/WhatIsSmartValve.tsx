@@ -165,7 +165,7 @@ export default function WhatIsSmartValve() {
 
             <h2 className="text-2xl font-bold text-white mt-10 mb-4">Proven Across Industries and Geographies</h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Smart Valve™ has been installed at more than 20,000 commercial and industrial facilities across North America. Verified results span luxury hospitality (Four Seasons, St. Regis), hyperscale logistics (Amazon), automotive (Caliber Car Wash), and multifamily residential (Grand Central at Kennedy). For the full results portfolio, see <a href="/results/" className="text-primary hover:underline">Case Studies &amp; Proof</a>.
+              Smart Valve™ has been installed at more than 32,000 commercial and industrial facilities across North America. Verified results span luxury hospitality (Four Seasons, St. Regis), hyperscale logistics (Amazon), automotive (Caliber Car Wash), and multifamily residential (Grand Central at Kennedy). For the full results portfolio, see <a href="/results/" className="text-primary hover:underline">Case Studies &amp; Proof</a>.
             </p>
             <p className="text-gray-300 leading-relaxed mb-6">
               For real-time cumulative savings data, visit the <a href="/impact/" className="text-primary hover:underline">Live Savings Counter</a>. For detailed ROI analysis by property type, see <a href="/savings/" className="text-primary hover:underline">Get a Full Proposal</a>.

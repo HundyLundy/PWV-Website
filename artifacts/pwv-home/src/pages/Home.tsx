@@ -242,7 +242,7 @@ export default function Home() {
           >
             <motion.div variants={fadeUp} className="flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-green-300">20,000+ verified installations</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-green-300">32,000+ verified installations</span>
             </motion.div>
 
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl font-headline font-bold text-white leading-[1.05] mb-6">
@@ -331,7 +331,7 @@ export default function Home() {
             {[
               { label: "NSF 61 Certified", sub: "Drinking water system components" },
               { label: "NSF 372 Certified", sub: "Lead-free materials" },
-              { label: "20,000+ Installations", sub: "North America" },
+              { label: "32,000+ Installations", sub: "North America" },
               { label: "15% Minimum Guaranteed", sub: "In writing, every site" },
               { label: "AWS / CWS Partner", sub: "American Water Savings · Canadian Water Savings" },
             ].map((item) => (
@@ -442,7 +442,7 @@ export default function Home() {
       <section id="clients" className="py-28 px-6" style={{ background: 'linear-gradient(160deg, #0374A7 0%, #025888 50%, #3C6E7F 100%)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">20,000+ Installations. 24 Verified Studies. Real Results.</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-3">32,000+ Installations. 24 Verified Studies. Real Results.</h2>
             <p className="text-white/60 text-base" style={{ fontWeight: 300 }}>
               Deployed at scale across North America — with 24 independently M&V-verified case studies proving 15%–58.69% savings. &nbsp;
               <a href="/results" className="text-white/40 underline underline-offset-2 hover:text-white/70 transition-colors text-sm">View all case studies →</a>

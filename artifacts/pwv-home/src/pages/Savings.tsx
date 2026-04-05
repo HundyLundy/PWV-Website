@@ -150,7 +150,7 @@ export default function Home() {
                 {[
                   { val: "≥15%", label: "guaranteed minimum" },
                   { val: "58.69%", label: "peak savings recorded" },
-                  { val: "20,000+", label: "facilities served" },
+                  { val: "32,000+", label: "facilities served" },
                 ].map(c => (
                   <div key={c.label} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
                     <span className="font-headline font-bold text-[#0030B5] text-sm">{c.val}</span>
@@ -341,7 +341,7 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="font-headline text-3xl lg:text-4xl font-bold text-slate-900 mb-4">20,000+ facilities and counting.</h2>
+            <h2 className="font-headline text-3xl lg:text-4xl font-bold text-slate-900 mb-4">32,000+ facilities and counting.</h2>
             <p className="text-lg text-slate-500" style={{ fontWeight: 300 }}>From Amazon fulfillment centers to boutique hotels — Smart Valve™ works across every commercial water-consuming facility.</p>
           </div>
 

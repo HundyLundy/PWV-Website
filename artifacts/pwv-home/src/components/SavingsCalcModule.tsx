@@ -102,7 +102,7 @@ export function SavingsCalcModule({ defaultBill = 15000 }: SavingsCalcModuleProp
         </div>
 
         <p className="text-center text-xs font-semibold uppercase tracking-widest" style={{ color: "#6A8A9A" }}>
-          Based on 19.2% avg savings rate · 15% guaranteed minimum · 20,000+ verified installs
+          Based on 19.2% avg savings rate · 15% guaranteed minimum · 32,000+ verified installs
         </p>
       </div>
     </section>

@@ -74,7 +74,7 @@ export default function Home() {
             Stop Paying for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">Air</span> in Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">Water</span>.
           </h1>
           <p className="text-lg mb-16 max-w-2xl mx-auto" style={{ color: '#2E4A5A' }}>
-            Estimated savings across <strong style={{ color: '#0A1F3A' }}>~20,000 installations</strong> globally — based on a 1-year sample of a small percentage of those installs, with results ranging from 15% to 58%.
+            Estimated savings across <strong style={{ color: '#0A1F3A' }}>~32,000 installations</strong> globally — based on a 1-year sample of a small percentage of those installs, with results ranging from 15% to 58%.
           </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
@@ -243,7 +243,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center" style={{ color: '#0A1F3A' }}>Average Savings by Industry</h2>
           <p className="text-center text-xs mb-12 uppercase tracking-widest" style={{ color: '#4A7085' }}>
-            1-year sample · 20,000+ installs
+            1-year sample · 32,000+ installs
           </p>
           
           <div className="space-y-6">
@@ -443,7 +443,7 @@ function SavingsCalc() {
       </div>
 
       <p className="text-xs mt-3 uppercase tracking-widest" style={{ color: '#4A7085' }}>
-        Based on 20%+ avg savings rate · 15% guaranteed minimum · 20,000+ verified installs
+        Based on 20%+ avg savings rate · 15% guaranteed minimum · 32,000+ verified installs
       </p>
     </div>
   );
@@ -534,7 +534,7 @@ function LossCounter() {
         wasted this year — that's <span className="text-red-400 font-semibold">{perMonth}/month</span> going straight to the water authority
       </p>
       <p className="text-white/30 text-xs mt-3 uppercase tracking-widest">
-        Based on 20%+ avg savings rate · 20,000+ verified installs · 15% guaranteed minimum
+        Based on 20%+ avg savings rate · 32,000+ verified installs · 15% guaranteed minimum
       </p>
     </div>
   );

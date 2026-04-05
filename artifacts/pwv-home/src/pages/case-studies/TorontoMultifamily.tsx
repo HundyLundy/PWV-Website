@@ -6,34 +6,17 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, ReferenceLine, Cell,
 } from "recharts";
+import {
+  STEELES_MONTHLY as STEELES_MONTHLY_DATA,
+  DONMILLS_MONTHLY as DONMILLS_MONTHLY_DATA,
+  TORONTO_PORTFOLIO_COMPARISON,
+} from "@/data/torontoMultifamilyVerified";
 
-// ─── DATA ──────────────────────────────────────────────────────────────────
+// ─── DATA (sourced from torontoMultifamilyVerified.ts — DO NOT hardcode here) ──
 
-// 1121 Steeles Ave — 6-month post-install savings (benchmark 4,400 m³/month)
-const STEELES_MONTHLY = [
-  { month: "Sep 2018", pct: 10 },
-  { month: "Oct 2018", pct: 23 },
-  { month: "Nov 2018", pct: 29 },
-  { month: "Dec 2018", pct: 48.9 },
-  { month: "Jan 2019", pct: 48.77 },
-  { month: "Feb 2019", pct: 24.4 },
-];
-
-// 797 Don Mills — 5-month post-install savings (benchmark 2,802 m³/month)
-const DONMILLS_MONTHLY = [
-  { month: "Oct 2018", pct: 14 },
-  { month: "Nov 2018", pct: 14 },
-  { month: "Dec 2018", pct: 14 },
-  { month: "Jan 2019", pct: 28 },
-  { month: "Feb 2019", pct: 21.3 },
-];
-
-// Portfolio summary comparison
-const PORTFOLIO_COMPARISON = [
-  { property: "1121 Steeles Ave", avg: 31 },
-  { property: "797 Don Mills", avg: 18 },
-  { property: "21 & 23 Carlton", avg: 15 },
-];
+const STEELES_MONTHLY      = STEELES_MONTHLY_DATA      as unknown as { month: string; pct: number }[];
+const DONMILLS_MONTHLY     = DONMILLS_MONTHLY_DATA     as unknown as { month: string; pct: number }[];
+const PORTFOLIO_COMPARISON = TORONTO_PORTFOLIO_COMPARISON as unknown as { property: string; avg: number }[];
 
 // ─── TOOLTIP HELPERS ──────────────────────────────────────────────────────
 

@@ -6,18 +6,17 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, ReferenceLine, Cell,
 } from "recharts";
+import {
+  RWJ_BARNABAS,
+  RWJ_LABELS,
+  RWJ_DAILY_USAGE,
+  RWJ_ANNUAL_COST,
+} from "@/data/rwjBarnabasVerified";
 
-// ─── DATA ──────────────────────────────────────────────────────────────────
+// ─── DATA (sourced from rwjBarnabasVerified.ts — DO NOT hardcode here) ──────
 
-const DAILY_USAGE = [
-  { period: "Before (Nov 2015–Nov 2016)", gallons: 19625 },
-  { period: "After (Dec 2016–Mar 2017)", gallons: 15425 },
-];
-
-const ANNUAL_COST = [
-  { label: "Before Smart Valve™", cost: 72700 },
-  { label: "After Smart Valve™", cost: 57200 },
-];
+const DAILY_USAGE = RWJ_DAILY_USAGE as unknown as { period: string; gallons: number }[];
+const ANNUAL_COST = RWJ_ANNUAL_COST as unknown as { label: string; cost: number }[];
 
 // ─── TOOLTIP HELPERS ──────────────────────────────────────────────────────
 
@@ -96,9 +95,9 @@ export default function RWJBarnabas() {
           </p>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { val: "19%", label: "Water Reduction" },
-              { val: "$15,500", label: "Annual Savings (USD)" },
-              { val: "<6 Months", label: "Payback Period" },
+              { val: RWJ_LABELS.reduction,     label: "Water Reduction" },
+              { val: RWJ_LABELS.annualSavings, label: "Annual Savings (USD)" },
+              { val: RWJ_LABELS.payback,       label: "Payback Period" },
             ].map((s) => (
               <div key={s.label} className="rounded-2xl px-5 py-4 text-center" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)" }}>
                 <div className="text-3xl font-bold mb-1">{s.val}</div>
