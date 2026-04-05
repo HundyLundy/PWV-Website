@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { ShieldCheck, CheckCircle2, Award, BarChart3, FileText, Wrench, Globe, Phone, Mail } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
+import awsLogoSrc from "@assets/Screenshot_2026-04-04_at_11.11.03_PM_1775365869639.png";
+import cwsLogoSrc from "@assets/Screenshot_2026-04-04_at_11.11.54_PM_1775365918231.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -53,6 +56,70 @@ export default function Partners() {
               Smart Valve™ is exclusively distributed through American Water Savings (AWS) in the U.S. and Canadian Water Savings (CWS) in Canada — the organizations that conduct measurement and verification, issue the written performance guarantee, and include 10 years of service, repair, and replacement at no additional cost.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* THREE PARTNERS SHOWCASE */}
+      <section className="py-16 px-6" style={{ backgroundColor: "#ffffff" }}>
+        <div className="max-w-5xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-3" style={{ color: "#0374A7" }}>The Organizations Behind Smart Valve™</span>
+            <h2 className="text-2xl md:text-3xl font-headline font-bold" style={{ color: "#0A1F3A" }}>
+              Three Organizations. One Guarantee.
+            </h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {/* Flow Dynamics */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0 }}
+              className="rounded-2xl border overflow-hidden flex flex-col" style={{ borderColor: "#C5D8E8" }}>
+              <div className="flex items-center justify-center bg-gradient-to-br from-[#0A1F3A] to-[#0374A7] h-44 p-4">
+                <img src={smartValveSrc} alt="Smart Valve™ by Flow Dynamics LLC" className="h-36 w-auto object-contain drop-shadow-2xl" />
+              </div>
+              <div className="p-6 flex flex-col gap-2 flex-1">
+                <div className="inline-flex self-start items-center px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-1" style={{ background: "#0A1F3A" }}>
+                  Developer &amp; Patent Holder
+                </div>
+                <h3 className="text-base font-headline font-bold" style={{ color: "#0A1F3A" }}>Flow Dynamics LLC</h3>
+                <p className="text-xs leading-relaxed" style={{ color: "#4A7085" }}>
+                  Developed and patented the Smart Valve™ technology. Holds US Patents 8,707,981 · 10,544,569 · 11,016,512. American Made and Operated — production since 2008.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* AWS */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+              className="rounded-2xl border overflow-hidden flex flex-col" style={{ borderColor: "#C5D8E8" }}>
+              <div className="flex items-center justify-center bg-white h-44 p-6 border-b" style={{ borderColor: "#E8EFF7" }}>
+                <img src={awsLogoSrc} alt="American Water Savings Inc." className="max-h-24 w-auto object-contain" />
+              </div>
+              <div className="p-6 flex flex-col gap-2 flex-1">
+                <div className="inline-flex self-start items-center px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-1" style={{ background: "#0374A7" }}>
+                  U.S. Exclusive Distributor
+                </div>
+                <h3 className="text-base font-headline font-bold" style={{ color: "#0A1F3A" }}>American Water Savings Inc.</h3>
+                <p className="text-xs leading-relaxed" style={{ color: "#4A7085" }}>
+                  Exclusive distributor for all U.S. installations. Conducts M&V, issues written guarantees, and manages all service, repair, and replacement. 42,000+ customers. Orlando, FL.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* CWS */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+              className="rounded-2xl border overflow-hidden flex flex-col" style={{ borderColor: "#C5D8E8" }}>
+              <div className="flex items-center justify-center bg-white h-44 p-6 border-b" style={{ borderColor: "#E8EFF7" }}>
+                <img src={cwsLogoSrc} alt="Canadian Water Savings Inc." className="max-h-24 w-auto object-contain" />
+              </div>
+              <div className="p-6 flex flex-col gap-2 flex-1">
+                <div className="inline-flex self-start items-center px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-1" style={{ background: "#3C6E7F" }}>
+                  Canada Exclusive Distributor
+                </div>
+                <h3 className="text-base font-headline font-bold" style={{ color: "#0A1F3A" }}>Canadian Water Savings Inc.</h3>
+                <p className="text-xs leading-relaxed" style={{ color: "#4A7085" }}>
+                  Exclusive distributor for all Canadian installations. Applies the same IPMVP-compliant M&V methodology and written guarantee terms across all Canadian provinces.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
