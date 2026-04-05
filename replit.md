@@ -11,24 +11,27 @@
 - **CO cities (5)**: Denver, Colorado Springs, Aurora, Fort Collins, Lakewood — all use `LocationTemplate`
 - **International**: Europe (`/locations/europe`), Asia (`/locations/asia`) — custom full-page builds
 - **DC sub-pages**: `/industries/data-centers/cooling-water-costs`, `/industries/data-centers/hyperscale-roi`
-- **Sitemap**: `public/sitemap.xml` — fully updated with all 80+ URLs, lastmod 2026-03-31
+- **Sitemap**: `public/sitemap.xml` — fully updated with all 95+ URLs, lastmod 2026-04-05 (added /partners, /compare, hotel/hospital/car-wash/multifamily sub-pages)
+- **New pages**: `Partners.tsx` (/partners) — AWS/CWS certification partners; `Compare.tsx` (/compare) — Smart Valve vs alternatives feature table
+- **SEO**: All 10 main pages now have canonical tags + OG tags (og:title, og:description, og:url, og:image); 3 new pages + Home + Savings + Impact have meta descriptions
+- **FAQ schemas**: Now on all 6 hub pages (DataCenters, Hotels, GolfCourses, Hospitals, CarWashes, Multifamily)
+- **Hub pages (Hotels, Hospitals, CarWashes, Multifamily)**: Each now has a "3-step how it works" section (Free Assessment → Guarantee & Installation → Quarterly M&V Reports) between trust bar and sub-page modules
 - **No China anywhere** on the site
 
 ### Home Page Sections (in order):
 1. Hero (gradient, valve image, animated badges)
 2. Trust Bar
-3. Proof Ticker — auto-scrolling marquee of client names + results (dark bg)
-4. Impact Numbers — animated counters: 32,000+ installs, 15% min, 58.69% peak, 21 case studies
-5. How It Works (BubbleValveSection)
-6. Who We Serve — industry cards (Data Centers, Hotels, Car Washes, Multifamily, Hospitals, Industrial)
-7. Industries Chart — bar chart of savings by sector
-8. Client Wins — 7 verified client cards
-9. Enterprise Logo Wall — Linamar, Labatt, Guinness, etc.
-10. Serving All 50 States — clickable state chips + CO cities + International links
-11. Not a Check Valve — comparison table
-12. The Guarantee — animated counters (15%, 58.69%, $0)
-13. FAQ
-14. Contact Form
+3. **Proof Section** — 3 clean stat cards: "58.69% peak", "19 M&V case studies", "15% guaranteed" + CTAs to Results + Savings (replaced old Proof Ticker + dense Impact Numbers grid)
+4. How It Works (BubbleValveSection)
+5. Who We Serve — industry cards (Data Centers, Hotels, Car Washes, Multifamily, Hospitals, Industrial)
+6. Industries Chart — bar chart of savings by sector
+7. Client Wins — 7 verified client cards
+8. Enterprise Logo Wall — Linamar, Labatt, Guinness, etc.
+9. Serving All 50 States — clickable state chips + CO cities + International links
+10. Not a Check Valve — comparison table
+11. The Guarantee — animated counters (15%, 58.69%, $0)
+12. FAQ
+13. Contact Form
 
 ### AnimatedCounter:
 - `function AnimatedCounter({ to, suffix, prefix, decimals, duration })` — hoisted function, uses framer-motion `useSpring`, `useInView`, `useTransform`

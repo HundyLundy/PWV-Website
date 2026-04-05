@@ -11,6 +11,18 @@
 
   <!-- Core pages -->
   <url>
+    <loc>https://www.perfectwatervalve.com/partners</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/compare</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.perfectwatervalve.com/benefits/plumbing-protection</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -500,9 +512,77 @@
   </url>
   <url>
     <loc>https://www.perfectwatervalve.com/industries/hospitals</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Hotels sub-pages -->
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/hotels/water-costs</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/hotels/laundry-cooling-towers</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/hotels/green-certification</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Hospitals sub-pages -->
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/hospitals/water-costs</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/hospitals/legionella-biofilm-risk</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/hospitals/sterile-water-compliance</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Car wash sub-pages -->
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/car-washes/water-costs</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/car-washes/hard-water-equipment</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Multifamily sub-pages -->
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/multifamily/water-costs</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.perfectwatervalve.com/industries/multifamily/irrigation-common-areas</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Blog -->

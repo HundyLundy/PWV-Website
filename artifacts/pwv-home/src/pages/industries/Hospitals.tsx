@@ -9,6 +9,17 @@ import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
 
+const hospitalsFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Does Smart Valve™ affect sterile water systems or clinical water pressure?", "acceptedAnswer": { "@type": "Answer", "text": "No. Smart Valve™ installs on the building's main supply line upstream of all clinical systems. It does not alter water chemistry, pressure, or temperature in clinical areas. NSF 61 and NSF 372 certified." } },
+    { "@type": "Question", "name": "Is Smart Valve™ compliant with ASHRAE 188 and Joint Commission Water Management Programs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Smart Valve™ reduces air entrainment in water supply lines, which is a documented Legionella risk factor. It supports compliance with ASHRAE 514 and Joint Commission Water Management Program requirements." } },
+    { "@type": "Question", "name": "What water savings have hospitals documented?", "acceptedAnswer": { "@type": "Answer", "text": "RWJ Barnabas Health verified 19% savings. Hospitals typically see 15%–30% reduction in metered water consumption. Installation takes under 4 hours with no disruption to clinical operations." } },
+    { "@type": "Question", "name": "What is the minimum savings guarantee for hospitals?", "acceptedAnswer": { "@type": "Answer", "text": "Every installation includes a written guarantee of a minimum 15% reduction in metered water consumption. If your facility does not reach 15%, we make it right at no cost." } }
+  ]
+};
+
 export default function Hospitals() {
   const scrollTo = (id: string) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }); };
 
@@ -17,6 +28,12 @@ export default function Hospitals() {
       <Helmet>
         <title>Hospital &amp; Healthcare Water Savings | NSF 61 Certified | Perfect Water Valve</title>
         <meta name="description" content="NSF 61 certified water savings for hospitals. Smart Valve™ reduces metered consumption 15%–35% and supports ASHRAE 188/514 Water Management Programs." />
+        <link rel="canonical" href="https://perfectwatervalve.com/industries/hospitals" />
+        <meta property="og:title" content="Hospital &amp; Healthcare Water Savings | NSF 61 Certified | Perfect Water Valve" />
+        <meta property="og:description" content="NSF 61 certified water savings for hospitals. Smart Valve™ reduces metered consumption 15%–35% and supports ASHRAE 188/514 Water Management Programs." />
+        <meta property="og:url" content="https://perfectwatervalve.com/industries/hospitals" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
+        <script type="application/ld+json">{JSON.stringify(hospitalsFaqSchema)}</script>
       </Helmet>
       <Navbar onScrollTo={scrollTo} />
 
@@ -57,6 +74,30 @@ export default function Hospitals() {
             <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> No Power Required</div>
             <div className="flex items-center gap-2"><Activity className="w-5 h-5 opacity-80" /> Zero Operational Disruption</div>
             <div className="flex items-center gap-2"><ArrowRight className="w-5 h-5 opacity-80" /> Installed in 2–4 Hours</div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS — 3 STEPS */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#F4F8FC' }}>
+        <div className="max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-2" style={{ color: '#0374A7' }}>Simple Process</span>
+            <h2 className="text-2xl md:text-3xl font-headline font-bold" style={{ color: '#0A1F3A' }}>Up and running in 3 steps.</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              { step: '01', title: 'Free Hospital Assessment', body: 'We review 12 months of water billing data and coordinate with AWS to project your facility-specific savings — before any commitment. NSF 61 & 372 certified for clinical environments.' },
+              { step: '02', title: 'Guarantee Issued & Installation', body: 'Your written 15% savings guarantee is issued before work begins. A licensed plumber installs Smart Valve™ on the main supply line in under 4 hours. Zero disruption to clinical operations.' },
+              { step: '03', title: 'IPMVP-Compliant M&V Reports', body: 'AWS conducts independent measurement and verification quarterly, issued as formal PDF reports. ASHRAE 188 and Joint Commission compatible documentation available.' },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="rounded-2xl p-7 border bg-white" style={{ borderColor: '#C5D8E8' }}>
+                <div className="text-3xl font-black font-headline mb-3" style={{ color: '#DEC600' }}>{item.step}</div>
+                <h3 className="text-base font-bold mb-2" style={{ color: '#0A1F3A' }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#4A7085' }}>{item.body}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

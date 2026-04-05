@@ -9,6 +9,17 @@ import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
 
+const multifamilyFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does Smart Valve™ work with master-metered multifamily buildings?", "acceptedAnswer": { "@type": "Answer", "text": "Smart Valve™ installs directly on the main supply line where the master meter measures flow — exactly where air entrainment inflates multifamily water bills. The meter reduction is immediate and independently verified." } },
+    { "@type": "Question", "name": "What savings have multifamily properties documented?", "acceptedAnswer": { "@type": "Answer", "text": "Grand Central Tampa verified $50,000/year — a 23% reduction on metered consumption. Forest & Charlton (Toronto) saw 17%–20% savings. Properties typically see 15%–35% reduction." } },
+    { "@type": "Question", "name": "How does water savings affect NOI and cap rate?", "acceptedAnswer": { "@type": "Answer", "text": "At a 5% cap rate, $50,000/year in reduced water expense adds approximately $1,000,000 in property value. Most installations pay back within 6–18 months." } },
+    { "@type": "Question", "name": "Is there any impact on tenants or building systems?", "acceptedAnswer": { "@type": "Answer", "text": "No. Smart Valve™ is installed upstream on the main supply line. Tenants experience no change in water pressure, temperature, or quality. Zero disruption to building operations." } }
+  ]
+};
+
 export default function Multifamily() {
   const scrollTo = (id: string) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }); };
 
@@ -17,6 +28,12 @@ export default function Multifamily() {
       <Helmet>
         <title>Multifamily Water Savings | $50K/yr — Grand Central Tampa | Perfect Water Valve</title>
         <meta name="description" content="Multifamily owners overpay on master-metered water. Smart Valve™ guarantees 15%–35% savings — verified $50K/yr at Grand Central Tampa." />
+        <link rel="canonical" href="https://perfectwatervalve.com/industries/multifamily" />
+        <meta property="og:title" content="Multifamily Water Savings | $50K/yr — Grand Central Tampa | Perfect Water Valve" />
+        <meta property="og:description" content="Multifamily owners overpay on master-metered water. Smart Valve™ guarantees 15%–35% savings — verified $50K/yr at Grand Central Tampa." />
+        <meta property="og:url" content="https://perfectwatervalve.com/industries/multifamily" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
+        <script type="application/ld+json">{JSON.stringify(multifamilyFaqSchema)}</script>
       </Helmet>
       <Navbar onScrollTo={scrollTo} />
 
@@ -57,6 +74,30 @@ export default function Multifamily() {
             <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 opacity-80" /> NSF 61 &amp; 372 Certified</div>
             <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> No Resident Impact</div>
             <div className="flex items-center gap-2"><Activity className="w-5 h-5 opacity-80" /> Direct NOI Improvement</div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS — 3 STEPS */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#F4F8FC' }}>
+        <div className="max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-2" style={{ color: '#0374A7' }}>Simple Process</span>
+            <h2 className="text-2xl md:text-3xl font-headline font-bold" style={{ color: '#0A1F3A' }}>Up and running in 3 steps.</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              { step: '01', title: 'Free Property Assessment', body: 'We analyze 12 months of your master-meter billing data and project property-specific savings — before any commitment. Multifamily properties typically see 15%–35% reduction.' },
+              { step: '02', title: 'Guarantee Issued & Installation', body: 'Your written 15% savings guarantee is issued before work begins. A licensed plumber installs Smart Valve™ on the main supply line in under 4 hours. No tenant impact, no downtime.' },
+              { step: '03', title: 'Quarterly M&V Reports', body: 'AWS conducts independent measurement and verification quarterly, delivered as formal PDF reports. Savings verified against your pre-installation billing baseline — direct NOI documentation.' },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="rounded-2xl p-7 border bg-white" style={{ borderColor: '#C5D8E8' }}>
+                <div className="text-3xl font-black font-headline mb-3" style={{ color: '#DEC600' }}>{item.step}</div>
+                <h3 className="text-base font-bold mb-2" style={{ color: '#0A1F3A' }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#4A7085' }}>{item.body}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

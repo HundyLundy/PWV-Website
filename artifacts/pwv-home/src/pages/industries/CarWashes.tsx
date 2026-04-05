@@ -9,6 +9,17 @@ import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
 
+const carWashesFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Will Smart Valve™ reduce pressure or affect wash quality?", "acceptedAnswer": { "@type": "Answer", "text": "No. Smart Valve™ removes dissolved air from the water stream — it does not restrict flow or reduce pressure. Caliber Car Wash verified 23% savings across 5 locations with zero impact on wash quality or throughput." } },
+    { "@type": "Question", "name": "What savings do car washes typically see?", "acceptedAnswer": { "@type": "Answer", "text": "High-volume car washes typically see 15%–30% reduction in metered water consumption. Caliber Car Wash achieved a 23% weighted average across a 5-site portfolio in Georgia and Florida — all M&V verified." } },
+    { "@type": "Question", "name": "Does Smart Valve™ work with reclaim or water recycling systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Smart Valve™ installs on the building's main supply line. It is fully compatible with reclaim, recycling, or softening systems." } },
+    { "@type": "Question", "name": "What is the installation process for a car wash?", "acceptedAnswer": { "@type": "Answer", "text": "Installation takes under 4 hours with no interruption to operations. A licensed plumber fits Smart Valve™ between two ball valves on the main supply line. No electricity, no moving parts, no ongoing maintenance." } }
+  ]
+};
+
 export default function CarWashes() {
   const scrollTo = (id: string) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }); };
 
@@ -17,6 +28,12 @@ export default function CarWashes() {
       <Helmet>
         <title>Car Wash Water Bill Savings | 23% Avg — Caliber Car Wash Verified | Perfect Water Valve</title>
         <meta name="description" content="High-volume car washes save 15%–30% on water bills with Smart Valve™. Verified 23% savings at Caliber Car Wash. No impact on wash quality or throughput." />
+        <link rel="canonical" href="https://perfectwatervalve.com/industries/car-washes" />
+        <meta property="og:title" content="Car Wash Water Bill Savings | 23% Avg — Caliber Car Wash Verified | Perfect Water Valve" />
+        <meta property="og:description" content="High-volume car washes save 15%–30% on water bills with Smart Valve™. Verified 23% savings at Caliber Car Wash. No impact on wash quality or throughput." />
+        <meta property="og:url" content="https://perfectwatervalve.com/industries/car-washes" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
+        <script type="application/ld+json">{JSON.stringify(carWashesFaqSchema)}</script>
       </Helmet>
       <Navbar onScrollTo={scrollTo} />
 
@@ -57,6 +74,30 @@ export default function CarWashes() {
             <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 opacity-80" /> NSF 61 &amp; 372 Certified</div>
             <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> No Process Changes Required</div>
             <div className="flex items-center gap-2"><Activity className="w-5 h-5 opacity-80" /> Installed in 2–4 Hours</div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS — 3 STEPS */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#F4F8FC' }}>
+        <div className="max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-2" style={{ color: '#0374A7' }}>Simple Process</span>
+            <h2 className="text-2xl md:text-3xl font-headline font-bold" style={{ color: '#0A1F3A' }}>Up and running in 3 steps.</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              { step: '01', title: 'Free Car Wash Assessment', body: 'We analyze 12 months of your water billing data and project your site-specific savings — before any commitment. High-volume tunnel washes typically see 20%–30% reduction.' },
+              { step: '02', title: 'Guarantee Issued & Installation', body: 'Your written 15% savings guarantee is issued before work begins. A licensed plumber installs Smart Valve™ on the main supply line in under 4 hours. No process changes, no downtime.' },
+              { step: '03', title: 'Quarterly M&V Reports', body: 'AWS conducts independent measurement and verification quarterly, comparing metered consumption against your baseline. Formal PDF reports every quarter, compatible with reclaim systems.' },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="rounded-2xl p-7 border bg-white" style={{ borderColor: '#C5D8E8' }}>
+                <div className="text-3xl font-black font-headline mb-3" style={{ color: '#DEC600' }}>{item.step}</div>
+                <h3 className="text-base font-bold mb-2" style={{ color: '#0A1F3A' }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#4A7085' }}>{item.body}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

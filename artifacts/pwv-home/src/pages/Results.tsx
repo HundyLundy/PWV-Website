@@ -173,6 +173,11 @@ export default function Results() {
       <Helmet>
         <title>Verified Water Savings Results | Amazon, Four Seasons, Caliber Car Wash | Perfect Water Valve</title>
         <meta name="description" content="Verified water savings results: Amazon YYZ3 (58.69%), Four Seasons (26%), Grand Central Tampa (23%), Caliber Car Wash (23%). All M&amp;V-verified." />
+        <link rel="canonical" href="https://perfectwatervalve.com/results" />
+        <meta property="og:title" content="Verified Water Savings Results | Amazon, Four Seasons, Caliber Car Wash | Perfect Water Valve" />
+        <meta property="og:description" content="Verified water savings results: Amazon YYZ3 (58.69%), Four Seasons (26%), Grand Central Tampa (23%), Caliber Car Wash (23%). All M&V-verified." />
+        <meta property="og:url" content="https://perfectwatervalve.com/results" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
       <Navbar />
 

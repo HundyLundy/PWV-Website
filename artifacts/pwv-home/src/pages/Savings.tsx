@@ -78,6 +78,12 @@ export default function Home() {
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20 selection:text-primary">
       <Helmet>
         <title>Calculate Your Commercial Water Savings | Smart Valve™ ROI | Perfect Water Valve</title>
+        <meta name="description" content="Calculate your commercial water savings with Smart Valve™. Enter your monthly bill and see your guaranteed ROI — 15% minimum, verified case studies included." />
+        <link rel="canonical" href="https://perfectwatervalve.com/savings" />
+        <meta property="og:title" content="Calculate Your Commercial Water Savings | Smart Valve™ ROI | Perfect Water Valve" />
+        <meta property="og:description" content="Calculate your commercial water savings with Smart Valve™. Enter your monthly bill and see your guaranteed ROI — 15% minimum, verified case studies included." />
+        <meta property="og:url" content="https://perfectwatervalve.com/savings" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
       <Navbar />
 

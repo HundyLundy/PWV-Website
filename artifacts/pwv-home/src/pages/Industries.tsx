@@ -56,6 +56,11 @@ export default function IndustriesHub() {
       <Helmet>
         <title>Commercial Water Savings by Industry | Hotels, Hospitals, Data Centers | Perfect Water Valve</title>
         <meta name="description" content="Smart Valve™ delivers guaranteed water savings for hotels, data centers, hospitals, car washes, multifamily, and golf courses. 15% minimum, written guarantee." />
+        <link rel="canonical" href="https://perfectwatervalve.com/industries" />
+        <meta property="og:title" content="Commercial Water Savings by Industry | Hotels, Hospitals, Data Centers | Perfect Water Valve" />
+        <meta property="og:description" content="Smart Valve™ delivers guaranteed water savings for hotels, data centers, hospitals, car washes, multifamily, and golf courses. 15% minimum, written guarantee." />
+        <meta property="og:url" content="https://perfectwatervalve.com/industries" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
       <Navbar />
 

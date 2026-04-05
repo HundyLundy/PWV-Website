@@ -37,6 +37,12 @@ export default function Home() {
     <div className="min-h-screen bg-background overflow-hidden relative">
       <Helmet>
         <title>Smart Valve™ Environmental &amp; Financial Water Impact | Perfect Water Valve</title>
+        <meta name="description" content="Smart Valve™ has conserved 36.8B+ gallons and saved $440M+ in water costs across 32,000+ installations. See the verified environmental and financial impact." />
+        <link rel="canonical" href="https://perfectwatervalve.com/impact" />
+        <meta property="og:title" content="Smart Valve™ Environmental &amp; Financial Water Impact | Perfect Water Valve" />
+        <meta property="og:description" content="Smart Valve™ has conserved 36.8B+ gallons and saved $440M+ in water costs across 32,000+ installations. See the verified environmental and financial impact." />
+        <meta property="og:url" content="https://perfectwatervalve.com/impact" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
       <Navbar />
 

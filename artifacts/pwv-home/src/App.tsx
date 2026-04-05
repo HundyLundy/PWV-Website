@@ -20,6 +20,8 @@ import Impact from "@/pages/Impact";
 import Savings from "@/pages/Savings";
 import CommonMisconceptions from "@/pages/CommonMisconceptions";
 import PlumbingProtection from "@/pages/PlumbingProtection";
+import Partners from "@/pages/Partners";
+import Compare from "@/pages/Compare";
 
 // Info sheet
 import InfoSheet from "@/pages/InfoSheet";
@@ -147,6 +149,10 @@ function Router() {
       <Route path="/common-misconceptions/" component={CommonMisconceptions} />
       <Route path="/benefits/plumbing-protection" component={PlumbingProtection} />
       <Route path="/benefits/plumbing-protection/" component={PlumbingProtection} />
+      <Route path="/partners" component={Partners} />
+      <Route path="/partners/" component={Partners} />
+      <Route path="/compare" component={Compare} />
+      <Route path="/compare/" component={Compare} />
       <Route path="/impact" component={Impact} />
       <Route path="/impact/" component={Impact} />
       <Route path="/savings" component={Savings} />

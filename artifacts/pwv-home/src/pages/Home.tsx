@@ -213,6 +213,13 @@ export default function Home() {
     <div className="min-h-screen font-sans">
       <Helmet>
         <title>Commercial Water Bill Savings — 15% Guaranteed in Writing | Perfect Water Valve</title>
+        <meta name="description" content="Smart Valve™ cuts commercial water bills 15%–35% annually — guaranteed in writing. NSF 61 certified. Amazon YYZ3 58.69% peak savings. Free assessment." />
+        <link rel="canonical" href="https://perfectwatervalve.com/" />
+        <meta property="og:title" content="Commercial Water Bill Savings — 15% Guaranteed in Writing | Perfect Water Valve" />
+        <meta property="og:description" content="Smart Valve™ cuts commercial water bills 15%–35% annually — guaranteed in writing. NSF 61 certified. Amazon YYZ3 58.69% peak savings. Free assessment." />
+        <meta property="og:url" content="https://perfectwatervalve.com/" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(homeFaqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(homeLocalBusinessSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(homeServiceSchema)}</script>
@@ -337,57 +344,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── PROOF TICKER ───────────────────────────────────── */}
-      <div className="overflow-hidden py-4 border-b" style={{ backgroundColor: '#0A1F3A', borderColor: '#1A3550' }}>
-        <div className="flex w-max animate-[ticker_40s_linear_infinite]">
-          {[...PROOF_TICKER, ...PROOF_TICKER].map((item, i) => (
-            <div key={i} className="flex items-center gap-3 mx-8 whitespace-nowrap">
-              <span className="text-xs font-bold uppercase tracking-wider" style={{ color: '#0374A7' }}>✓</span>
-              <span className="text-sm font-semibold text-white">{item.client}</span>
-              <span className="text-sm" style={{ color: '#DEC600' }}>{item.result}</span>
-              <span className="text-xs text-white/30 font-medium">{item.industry}</span>
-              <span className="w-px h-4 mx-2" style={{ background: 'rgba(255,255,255,0.1)' }} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ─── IMPACT NUMBERS ─────────────────────────────────── */}
-      <section style={{ background: 'linear-gradient(160deg, #0A1F3A 0%, #0374A7 100%)' }} className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {([
-              {
-                to: 32000, suffix: "+", label: "Verified Installations", decimals: 0,
-                sub: null,
-              },
-              {
-                to: 15, suffix: "%", label: "Minimum Guaranteed Savings", decimals: 0,
-                sub: <span>(in writing — <a href="/results" className="underline underline-offset-2 hover:text-white/60 transition-colors">View Guarantee</a>)</span>,
-              },
-              {
-                to: 58.69, suffix: "%", label: "Peak Savings Recorded", decimals: 2,
-                sub: <span>(Amazon YYZ3 Fulfillment Center — <a href="/results" className="underline underline-offset-2 hover:text-white/60 transition-colors">Case Studies</a>)</span>,
-              },
-              {
-                to: 19, suffix: "", label: "M&V-Verified Case Studies", decimals: 0,
-                sub: <span>(independent verification — <a href="/results" className="underline underline-offset-2 hover:text-white/60 transition-colors">View All</a>)</span>,
-              },
-            ] as const).map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className="text-4xl md:text-5xl font-black font-headline mb-2 text-white">
-                  <AnimatedCounter to={stat.to} suffix={stat.suffix} decimals={stat.decimals} />
-                </div>
-                <div className="text-sm text-white/50 uppercase tracking-wider font-medium">{stat.label}</div>
-                {stat.sub && <div className="text-xs text-white/30 mt-1">{stat.sub}</div>}
+      {/* ─── PROOF ──────────────────────────────────────────── */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#F4F8FC' }}>
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-3" style={{ color: '#0374A7' }}>Independently Verified</span>
+            <h2 className="text-2xl md:text-3xl font-headline font-bold" style={{ color: '#0A1F3A' }}>The proof is in the numbers.</h2>
+            <p className="text-sm mt-2 max-w-xl mx-auto" style={{ color: '#4A7085' }}>
+              Every result below is measurement-and-verification (M&V) certified by an independent third party.
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-6 mb-10">
+            {[
+              { stat: '58.69%', label: 'Peak savings recorded', sub: 'Amazon YYZ3 — 6 consecutive quarters', color: '#0374A7' },
+              { stat: '19', label: 'M&V-verified case studies', sub: 'All independently certified', color: '#3C6E7F' },
+              { stat: '15%', label: 'Minimum guaranteed in writing', sub: 'Every site. No exceptions.', color: '#0A1F3A' },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="rounded-2xl p-7 text-center border" style={{ backgroundColor: 'white', borderColor: '#C5D8E8' }}>
+                <div className="text-5xl font-black font-headline mb-2" style={{ color: item.color }}>{item.stat}</div>
+                <div className="text-sm font-semibold mb-1" style={{ color: '#0A1F3A' }}>{item.label}</div>
+                <div className="text-xs" style={{ color: '#6A8A9A' }}>{item.sub}</div>
               </motion.div>
             ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="/results" className="flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm transition-all hover:-translate-y-0.5"
+              style={{ background: '#0374A7', boxShadow: '0 4px 16px rgba(3,116,167,0.3)' }}>
+              View All Case Studies <ChevronRight className="w-4 h-4" />
+            </a>
+            <a href="/savings" className="flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border transition-all hover:-translate-y-0.5"
+              style={{ borderColor: '#0374A7', color: '#0374A7' }}>
+              Calculate My Savings <ChevronRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>

@@ -66,6 +66,11 @@ export default function Blog() {
       <Helmet>
         <title>Commercial Water Savings Blog | Smart Valve™ News &amp; Guides | Perfect Water Valve</title>
         <meta name="description" content="Commercial water savings guides, case studies, and rate analysis. Smart Valve™ news and industry insights for facility managers and property owners." />
+        <link rel="canonical" href="https://perfectwatervalve.com/blog" />
+        <meta property="og:title" content="Commercial Water Savings Blog | Smart Valve™ News &amp; Guides | Perfect Water Valve" />
+        <meta property="og:description" content="Commercial water savings guides, case studies, and rate analysis. Smart Valve™ news and industry insights for facility managers and property owners." />
+        <meta property="og:url" content="https://perfectwatervalve.com/blog" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
       </Helmet>
       <StickyAssessmentCTA />
       <Navbar onScrollTo={() => {}} />

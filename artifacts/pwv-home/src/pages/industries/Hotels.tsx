@@ -53,6 +53,11 @@ export default function Hotels() {
       <Helmet>
         <title>Hotel Water Savings | Smart Valve™ — 26% Verified at Four Seasons | Perfect Water Valve</title>
         <meta name="description" content="Hotels lose thousands monthly to undetected water waste. Smart Valve™ guarantees 15%–35% savings — verified 26% at Four Seasons Fort Lauderdale." />
+        <link rel="canonical" href="https://perfectwatervalve.com/industries/hotels" />
+        <meta property="og:title" content="Hotel Water Savings | Smart Valve™ — 26% Verified at Four Seasons | Perfect Water Valve" />
+        <meta property="og:description" content="Hotels lose thousands monthly to undetected water waste. Smart Valve™ guarantees 15%–35% savings — verified 26% at Four Seasons Fort Lauderdale." />
+        <meta property="og:url" content="https://perfectwatervalve.com/industries/hotels" />
+        <meta property="og:image" content="https://perfectwatervalve.com/opengraph.jpg" />
         <script type="application/ld+json">{JSON.stringify(hotelsFaqSchema)}</script>
       </Helmet>
       <Navbar onScrollTo={scrollTo} />
@@ -94,6 +99,30 @@ export default function Hotels() {
             <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 opacity-80" /> NSF 61 &amp; 372 Certified</div>
             <div className="flex items-center gap-2"><ZapOff className="w-5 h-5 opacity-80" /> Zero Guest Impact</div>
             <div className="flex items-center gap-2"><Activity className="w-5 h-5 opacity-80" /> Installed in 2–4 Hours</div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS — 3 STEPS */}
+      <section className="py-16 px-6" style={{ backgroundColor: '#F4F8FC' }}>
+        <div className="max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] block mb-2" style={{ color: '#0374A7' }}>Simple Process</span>
+            <h2 className="text-2xl md:text-3xl font-headline font-bold" style={{ color: '#0A1F3A' }}>Up and running in 3 steps.</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              { step: '01', title: 'Free Hotel Assessment', body: 'We analyze 12 months of your water billing data and project your site-specific savings — before any commitment. Hotels typically see projections of 20%–35% reduction.' },
+              { step: '02', title: 'Guarantee Issued & Installation', body: 'Your written 15% savings guarantee is issued before work begins. A licensed plumber installs Smart Valve™ on the main supply line in under 4 hours. Zero guest impact.' },
+              { step: '03', title: 'Quarterly M&V Reports', body: 'AWS conducts independent measurement and verification quarterly, comparing metered consumption against your baseline. Formal PDF reports every quarter.' },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="rounded-2xl p-7 border bg-white" style={{ borderColor: '#C5D8E8' }}>
+                <div className="text-3xl font-black font-headline mb-3" style={{ color: '#DEC600' }}>{item.step}</div>
+                <h3 className="text-base font-bold mb-2" style={{ color: '#0A1F3A' }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#4A7085' }}>{item.body}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
