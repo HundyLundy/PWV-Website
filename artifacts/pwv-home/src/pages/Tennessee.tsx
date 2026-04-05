@@ -25,7 +25,7 @@ const config = {
     { q: "Does Smart Valve™ work with Tennessee utility meters?", a: "Yes. Smart Valve™ is compatible with 99% of commercial water meters, including all meter types used by Tennessee American Water, Nashville Metro Water Services, Memphis Light Gas and Water, and all Tennessee municipal utility systems." },
     { q: "What is the guaranteed minimum savings?", a: "Every Smart Valve™ installation guarantees at least 15% reduction in metered water consumption, in writing. If your Tennessee property doesn't reach 15%, we resolve it at no cost." },
     { q: "Which Tennessee commercial properties benefit most?", a: "Hotels and hospitality in Nashville, healthcare facilities, office buildings, and multifamily complexes in Memphis and Knoxville have the strongest ROI profile. Any property with a $5,000+/month water bill qualifies." },
-    { q: "How quickly can Smart Valve™ be installed in Tennessee?", a: "Installation is completed in 2–4 hours by a licensed technician with zero operational disruption. The device requires no power, no moving parts, and no ongoing maintenance. Savings appear on your next billing cycle." },
+    { q: "How quickly can Smart Valve™ be installed in Tennessee?", a: "Installation is completed in 2–4 hours by a licensed technician with zero operational disruption. The device requires no electricity required, and no ongoing maintenance. Savings appear on your next billing cycle." },
   ],
   contactHeading: "Get a Free Tennessee Water Assessment",
   contactBody: "Collierville is up 10% in 2025. Tennessee American Water has a rate filing active. Nashville and Memphis growth means infrastructure costs keep rising. Smart Valve™ guarantees at least 15% off your metered bill.",

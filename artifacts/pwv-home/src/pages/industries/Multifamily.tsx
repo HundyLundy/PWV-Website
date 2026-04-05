@@ -89,7 +89,7 @@ export default function Multifamily() {
             {[
               { step: '01', title: 'Free Property Assessment', body: 'We analyze 12 months of your master-meter billing data and project property-specific savings — before any commitment. Multifamily properties typically see 15%–35% reduction.' },
               { step: '02', title: 'Guarantee Issued & Installation', body: 'Your written 15% savings guarantee is issued before work begins. A licensed plumber installs Smart Valve™ on the main supply line in under 4 hours. No tenant impact, no downtime.' },
-              { step: '03', title: 'Quarterly M&V Reports', body: 'AWS conducts independent measurement and verification quarterly, delivered as formal PDF reports. Savings verified against your pre-installation billing baseline — direct NOI documentation.' },
+              { step: '03', title: 'M&V Every 6–12 Months', body: 'AWS conducts independent measurement and verification every 6–12 months, delivered as formal PDF reports. Savings verified against your pre-installation billing baseline — direct NOI documentation.' },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="rounded-2xl p-7 border bg-white" style={{ borderColor: '#C5D8E8' }}>

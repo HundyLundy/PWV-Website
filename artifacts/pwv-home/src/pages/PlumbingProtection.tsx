@@ -163,7 +163,7 @@ export default function PlumbingProtection() {
                 Hard water mineral scale (calcium carbonate, magnesium) accumulates on pipe walls, heat exchanger surfaces, boiler elements, cooling tower fill, and equipment water lines. Scale buildup does three things: it restricts flow by reducing pipe bore diameter, it reduces heat transfer efficiency in any thermal application, and it creates surface roughness that accelerates further scale and biofilm accumulation.
               </p>
               <p className="text-sm sm:text-base leading-relaxed" style={{ color: "#4A7085" }}>
-                Smart Valve™'s electrochemical process modifies the crystalline structure of calcium and magnesium minerals in the water supply. Treated minerals are less likely to adhere to pipe walls and equipment surfaces — they remain suspended in the water and are flushed out of the system rather than accumulating. This is a passive, chemical-free process. Nothing is added to the water.
+                Smart Valve™ maintains stable upstream pressure throughout the supply line using a patent-protected mechanical hydrodynamic mechanism. This stabilizes flow characteristics and reduces the pressure-driven turbulence that accelerates scale deposition on pipe walls and equipment surfaces. It also eliminates the air pockets that create stagnant dead zones where biofilm colonizes. Nothing is added to the water — no chemicals, no salt, no treatment agents.
               </p>
             </div>
             <div className="rounded-2xl border p-6 mb-5" style={{ backgroundColor: "#F4F8FC", borderColor: "#C5D8E8" }}>
@@ -293,7 +293,7 @@ export default function PlumbingProtection() {
               ))}
             </ul>
             <p className="text-sm sm:text-base leading-relaxed" style={{ color: "#4A7085" }}>
-              It is a passive, certified electrochemical device installed on the main supply line. Its primary function is reducing metered water consumption. Plumbing protection is a real, documented secondary benefit of that same mechanism.
+              It is a passive, US-patented mechanical device installed on the user side of the water meter. Its primary function is reducing metered water consumption by eliminating Phantom Volume. Plumbing protection — through pressure stabilization and reduced air entrainment — is a real secondary benefit of that same mechanism.
             </p>
           </motion.div>
         </div>

@@ -403,12 +403,12 @@ export default function GolfCourses() {
               {
                 n: "01",
                 title: "Installed on the Main Municipal Supply Line",
-                body: "Smart Valve™ installs upstream of the commercial water meter. Every gallon that passes through the meter — irrigation, pool, clubhouse, kitchen — is treated and metered reduction is captured at the billing point."
+                body: "Smart Valve™ installs on the user side of the water meter — between the meter and the pressure regulator. Every gallon that passes through the meter — irrigation, pool, clubhouse, kitchen — is affected by the Phantom Volume elimination, and the reduction is captured at the billing point."
               },
               {
                 n: "02",
-                title: "Electrochemical Treatment — No Chemicals, No Power",
-                body: "Smart Valve™ uses a passive, certified electrochemical process to modify the properties of incoming water. This reduces air entrainment, improves irrigation system pressure consistency, reduces mineral scaling in pool equipment and pipe systems, and allows cooling towers to run at higher cycles of concentration."
+                title: "Phantom Volume Elimination — No Chemicals, No Electricity",
+                body: "Smart Valve™ uses a patent-protected spring-loaded mechanical mechanism to maintain upstream pressure, preventing dissolved air from expanding through the meter. This eliminates Phantom Volume — the primary cause of inflated water bills — while stabilizing supply line pressure for more consistent irrigation performance. No chemicals. No electricity required."
               },
               {
                 n: "03",

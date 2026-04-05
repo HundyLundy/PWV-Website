@@ -82,7 +82,7 @@ export default function IndustriesHub() {
               Click your industry to see case studies, local rebates, and guaranteed savings data.
             </p>
             <p className="text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
-              NSF 61 & 372 certified — no electricity, no moving parts, and every installation carries a written guarantee of ≥15% water bill reduction.
+              NSF 61 & 372 certified — no electricity required, and every installation carries a written guarantee of ≥15% water bill reduction.
             </p>
           </motion.div>
 
@@ -139,7 +139,7 @@ export default function IndustriesHub() {
           <p className="text-white/80 max-w-2xl mx-auto mb-12">High-volume commercial water users face the same problem: mineral scale accumulation in pipes reduces flow efficiency and inflates bills by 15–40% above what the actual water usage requires. The Smart Valve™ eliminates that waste permanently.</p>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { icon: "⚡", title: "No Electricity", desc: "Passive technology — no power required, no moving parts, no maintenance cycles" },
+              { icon: "⚡", title: "No Electricity", desc: "Passive technology — no power required, no electricity required, no maintenance cycles" },
               { icon: "📋", title: "NSF 61 & 372 Certified", desc: "Drinking water safe. Approved for all commercial applications including healthcare" },
               { icon: "✍️", title: "Guaranteed in Writing", desc: "Every installation carries a legally binding ≥15% water bill reduction guarantee" },
             ].map((item, i) => (

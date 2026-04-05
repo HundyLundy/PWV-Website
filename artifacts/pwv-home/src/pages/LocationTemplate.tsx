@@ -89,7 +89,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
   useEffect(() => {
     const prevTitle = document.title;
     const title = config.seoTitle || `${config.state} Commercial Water Savings | Smart Valve™ | Perfect Water Valve`;
-    const desc = config.seoDescription || `Smart Valve™ cuts commercial water bills 15%–35% annually in ${config.state}. Guaranteed in writing. NSF certified. No power, no moving parts. Free assessment available.`;
+    const desc = config.seoDescription || `Smart Valve™ cuts commercial water bills 15%–35% annually in ${config.state}. Guaranteed in writing. NSF certified. No electricity required. Free assessment available.`;
     const canonical = config.seoCanonical || `https://www.perfectwatervalve.com/locations/${config.state.toLowerCase().replace(/\s+/g, "-")}`;
     document.title = title;
     const setMeta = (name: string, content: string, attr = "name") => {
@@ -278,7 +278,7 @@ export default function LocationPage({ config }: { config: LocationConfig }) {
                 { label: "Meter Compatibility", value: "99% of commercial meters" },
                 { label: "Install Time", value: "2–4 hours, zero downtime" },
                 { label: "Guaranteed Minimum", value: <a href="/results" className="underline underline-offset-2 hover:text-white/70 transition-colors">≥15% bill reduction</a> },
-                { label: "Maintenance", value: "None — no moving parts" },
+                { label: "Maintenance", value: "None required" },
               ].map((spec) => (
                 <div key={spec.label} className="flex justify-between items-center border-b border-white/10 pb-4 last:border-0 last:pb-0">
                   <span className="text-sm text-gray-400">{spec.label}</span>

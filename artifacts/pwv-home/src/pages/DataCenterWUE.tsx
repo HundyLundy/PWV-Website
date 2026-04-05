@@ -160,8 +160,8 @@ export default function DataCenterWUE() {
           </div>
           <div className="space-y-4">
             {[
-              { step: "1", title: "Installed Upstream of the Commercial Meter", body: "Smart Valve™ is installed on the main supply line upstream of the commercial water meter. All downstream water use — cooling towers, humidification, domestic — passes through the treated supply." },
-              { step: "2", title: "Electrochemical Treatment Reduces Metered Consumption", body: "Passive electrochemical process optimizes cooling tower chemistry, reduces mineral scaling, and allows higher cycles of concentration before blowdown — directly reducing makeup water consumption and the WUE numerator." },
+              { step: "1", title: "Installed on the User Side of the Meter", body: "Smart Valve™ is installed on the main supply line between the water meter and the pressure regulator. All downstream water use — cooling towers, humidification, domestic — is affected by the pressure stabilization and Phantom Volume elimination." },
+              { step: "2", title: "Phantom Volume Elimination Reduces Metered Consumption", body: "Smart Valve™ maintains upstream compression using a patent-protected spring-loaded mechanical mechanism, preventing dissolved air from expanding through the meter. The utility meter records only real water — reducing the numerator in your WUE calculation with no operational changes required." },
               { step: "3", title: "Utility Meter Records the Reduction", body: "Every reduction is measured by the utility's own commercial meter. No proprietary sensor. The same meter that determines your water bill is the meter that documents your WUE improvement." },
               { step: "4", title: "15% Guaranteed in Writing", body: "Every installation — including data center installations — carries a written guarantee of at least 15% reduction in metered water consumption. If the guarantee is not met, we resolve it at no cost." },
             ].map((step, i) => (

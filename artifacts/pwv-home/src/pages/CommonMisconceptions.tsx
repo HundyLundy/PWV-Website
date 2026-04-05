@@ -134,7 +134,7 @@ export default function CommonMisconceptions() {
                   A check valve installed on your supply line will have exactly zero impact on your water utility bill. Your meter will read the same volume before and after installation. This is not a design limitation — it is what the product is designed to do.
                 </p>
                 <p className="text-sm leading-relaxed" style={{ color: "#4A7085" }}>
-                  The confusion arises because Smart Valve™ is sometimes described as a "flow control valve" — which is accurate but incomplete. The critical difference is that Smart Valve™ uses an electrochemical process to reduce dissolved air in the water supply. Air entrained in commercial water systems is metered and billed as water. Eliminating it reduces what the meter reads. A check valve does none of this.
+                  The confusion arises because Smart Valve™ is sometimes described as a "flow control valve" — which is accurate but incomplete. The critical difference is that Smart Valve™ uses a patent-protected mechanical hydrodynamic mechanism to maintain upstream pressure, preventing dissolved air from expanding through the water meter. Air entrained in commercial water systems is metered and billed as water — a phenomenon called Phantom Volume. Eliminating Phantom Volume reduces what the meter reads. A check valve does none of this.
                 </p>
               </div>
               <div className="space-y-4">

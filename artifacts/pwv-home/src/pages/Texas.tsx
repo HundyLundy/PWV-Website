@@ -141,7 +141,7 @@ export default function TexasNewPage() {
                 { label: "Meter Compatibility", value: "99% of commercial meters" },
                 { label: "Install Time", value: "2–4 hours, zero downtime" },
                 { label: "Guaranteed Minimum", value: "≥15% bill reduction" },
-                { label: "Maintenance", value: "None — no moving parts" },
+                { label: "Maintenance", value: "None required" },
               ].map((spec) => (
                 <div key={spec.label} className="flex justify-between items-center border-b border-white/10 pb-4 last:border-0 last:pb-0">
                   <span className="text-sm text-gray-400">{spec.label}</span>

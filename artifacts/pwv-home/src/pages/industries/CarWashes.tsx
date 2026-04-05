@@ -16,7 +16,7 @@ const carWashesFaqSchema = {
     { "@type": "Question", "name": "Will Smart Valve™ reduce pressure or affect wash quality?", "acceptedAnswer": { "@type": "Answer", "text": "No. Smart Valve™ removes dissolved air from the water stream — it does not restrict flow or reduce pressure. Caliber Car Wash verified 23% savings across 5 locations with zero impact on wash quality or throughput." } },
     { "@type": "Question", "name": "What savings do car washes typically see?", "acceptedAnswer": { "@type": "Answer", "text": "High-volume car washes typically see 15%–30% reduction in metered water consumption. Caliber Car Wash achieved a 23% weighted average across a 5-site portfolio in Georgia and Florida — all M&V verified." } },
     { "@type": "Question", "name": "Does Smart Valve™ work with reclaim or water recycling systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Smart Valve™ installs on the building's main supply line. It is fully compatible with reclaim, recycling, or softening systems." } },
-    { "@type": "Question", "name": "What is the installation process for a car wash?", "acceptedAnswer": { "@type": "Answer", "text": "Installation takes under 4 hours with no interruption to operations. A licensed plumber fits Smart Valve™ between two ball valves on the main supply line. No electricity, no moving parts, no ongoing maintenance." } }
+    { "@type": "Question", "name": "What is the installation process for a car wash?", "acceptedAnswer": { "@type": "Answer", "text": "Installation requires a single water shutdown of up to 3.5 hours — the only interruption ever required. A licensed plumber fits Smart Valve™ on the user side of the water meter. No electricity required, no ongoing maintenance." } }
   ]
 };
 
@@ -89,7 +89,7 @@ export default function CarWashes() {
             {[
               { step: '01', title: 'Free Car Wash Assessment', body: 'We analyze 12 months of your water billing data and project your site-specific savings — before any commitment. High-volume tunnel washes typically see 20%–30% reduction.' },
               { step: '02', title: 'Guarantee Issued & Installation', body: 'Your written 15% savings guarantee is issued before work begins. A licensed plumber installs Smart Valve™ on the main supply line in under 4 hours. No process changes, no downtime.' },
-              { step: '03', title: 'Quarterly M&V Reports', body: 'AWS conducts independent measurement and verification quarterly, comparing metered consumption against your baseline. Formal PDF reports every quarter, compatible with reclaim systems.' },
+              { step: '03', title: 'M&V Every 6–12 Months', body: 'AWS conducts independent measurement and verification every 6–12 months, comparing metered consumption against your baseline. Formal PDF reports delivered per verification cycle. compatible with reclaim systems.' },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="rounded-2xl p-7 border bg-white" style={{ borderColor: '#C5D8E8' }}>

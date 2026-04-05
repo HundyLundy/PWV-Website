@@ -120,7 +120,7 @@ export default function HospitalsSterileWater() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="text-[#DEC600] text-sm font-semibold mb-2">★ NO CHEMICALS — NSF CERTIFIED</div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Smart Valve™ Reduces Mineral Scaling Without Chemicals</h2>
-            <p className="text-xl text-white/80 mb-8">Smart Valve™ electrochemical treatment modifies the crystalline structure of minerals in the water supply, reducing their tendency to adhere to pipe walls and equipment surfaces — without adding anything to the water.</p>
+            <p className="text-xl text-white/80 mb-8">Smart Valve™ maintains stable upstream pressure throughout the supply line — stabilizing flow characteristics, reducing pressure-driven turbulence that contributes to scale deposition, and eliminating the air entrainment that creates stagnant dead zones where biofilm forms. Nothing is added to the water.</p>
             <div className="grid sm:grid-cols-3 gap-6 mb-6">
               {[
                 { label: "Longer Equipment Life", desc: "Reduced scale means fewer maintenance cycles for CSP, dialysis, and cooling equipment" },

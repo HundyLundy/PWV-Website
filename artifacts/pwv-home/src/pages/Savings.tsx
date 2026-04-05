@@ -398,7 +398,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="font-headline text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Common Questions</h2>
             <p className="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto" style={{ fontWeight: 300 }}>
-              The Perfect Water Valve Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines, reducing metered water billing by 15% to 58%. It requires no electricity, no moving parts, and no ongoing maintenance.
+              The Perfect Water Valve Smart Valve™ is a commercial water pressure device that eliminates air entrapment in municipal supply lines, reducing metered water billing by 15% to 58%. It requires no electricity required, and no ongoing maintenance.
             </p>
           </div>
           <MicrositeFAQ />
@@ -434,7 +434,7 @@ function MicrositeFAQ() {
     { q: "How does the Smart Valve™ reduce my water bill?", a: "Municipal water systems trap air bubbles that travel through your pipes and register as volume on your meter. You're billed for every cubic foot — including the ones that were never liquid. The Smart Valve™ installs upstream of your meter and purges that air before it's counted. Your meter reads only actual water." },
     { q: "Is the 15% reduction really guaranteed?", a: "Yes. It's in writing, in your contract. If your facility doesn't achieve at least 15% reduction in metered water consumption, we make it right. Every installation comes with this commitment." },
     { q: "How long does installation take?", a: "Typically 2–4 hours. No disruption to your operations, no fixtures touched, no permits required in most jurisdictions. Our licensed technicians work around your schedule." },
-    { q: "Does it need electricity or ongoing maintenance?", a: "Neither. The Smart Valve™ is entirely passive — no power, no moving parts that wear out, no subscriptions or service visits. It works continuously once installed." },
+    { q: "Does it need electricity or ongoing maintenance?", a: "Neither. The Smart Valve™ is entirely passive — no power, no electricity, no maintenance, no subscriptions or service visits. It works continuously once installed." },
     { q: "What's the upfront cost?", a: "There's a one-time installation fee based on property size and line diameter. Most sites recover the full cost within 2–4 billing cycles through water savings alone. We'll show you the math before you commit." },
     { q: "Does it affect water pressure or quality?", a: "No. Pressure and water quality are completely unaffected. The Smart Valve™ only changes what your meter counts — it removes phantom air volume, not actual water flow." },
     { q: "What certifications does it have?", a: "NSF 61 and NSF 372 certified — the gold standard for drinking water system components in North America. Compatible with 99% of commercial water meters." },

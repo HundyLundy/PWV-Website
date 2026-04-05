@@ -159,7 +159,7 @@ export default function HospitalsWaterCosts() {
           <div className="space-y-4">
             {[
               { step: "1", title: "Passive Installation — 2 to 4 Hours, Zero Clinical Disruption", body: "Smart Valve™ is installed on the main supply line by a licensed technician. No service interruption. No changes to water pressure, flow rate, or quality in any clinical area. Zero impact on operations during or after installation." },
-              { step: "2", title: "No Moving Parts, No Power, No Maintenance", body: "Passive electrochemical device. No electricity required, no moving parts, no chemical inputs, and no maintenance schedule after installation. NSF 61 and 372 certified safe for all healthcare water supply systems including patient areas." },
+              { step: "2", title: "No Electricity, No Chemicals, No Maintenance", body: "US-patented mechanical device — no electricity required, no chemical inputs, and no maintenance schedule after installation. NSF/ANSI/CAN 61 and NSF/ANSI 372 certified safe for all healthcare water supply systems including patient areas." },
               { step: "3", title: "15% Guaranteed in Writing", body: "Every healthcare installation carries a written guarantee of at least 15% reduction in metered water consumption. On a hospital spending $60,000/month, that is $108,000/year in minimum guaranteed savings — applied to both water and sewer charges." },
             ].map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}

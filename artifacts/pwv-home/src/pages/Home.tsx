@@ -253,7 +253,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-lg text-white/90 leading-relaxed mb-8 max-w-xl" style={{ fontWeight: 300 }}>
-              Smart Valve™ cuts commercial water bills 15%–35% annually on average, guaranteed in writing — installed in under 4 hours with no electricity, no moving parts, and no maintenance.
+              Smart Valve™ cuts commercial water bills 15%–35% annually on average, guaranteed in writing — installed in under 4 hours with no electricity required, and no maintenance.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-10">
@@ -278,7 +278,7 @@ export default function Home() {
               {[
                 { icon: <ShieldCheck className="w-4 h-4 text-green-400" />, text: "15% minimum guaranteed" },
                 { icon: <Droplet className="w-4 h-4 text-blue-400" />, text: "NSF 61 & 372 certified" },
-                { icon: <Building2 className="w-4 h-4 text-white/70" />, text: "No electricity · no moving parts" },
+                { icon: <Building2 className="w-4 h-4 text-white/70" />, text: "No electricity required · no maintenance" },
                 { icon: <ShieldCheck className="w-4 h-4 text-sky-400" />, text: "Official AWS Partner" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2 text-sm text-white/80">

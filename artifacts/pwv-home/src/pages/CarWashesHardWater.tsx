@@ -95,14 +95,14 @@ export default function CarWashesHardWater() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0A1F3A] mb-4">The Chemistry: Why Smart Valve™ Stops Scale Without Chemicals</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0A1F3A] mb-4">How Smart Valve™ Reduces Car Wash Water Bills — And Maintenance Costs</h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-8">
             {[
-              { icon: Droplets, title: "Passive Electrochemical Process", body: "Smart Valve™ uses a passive electrochemical process to modify the crystalline structure of calcium and magnesium minerals in the water supply. Treated minerals are less likely to adhere to pipe walls, pump surfaces, and nozzle orifices — they stay suspended in the water and pass through the system." },
-              { icon: ShieldCheck, title: "No Salt, No Chemicals, No Regeneration", body: "Unlike water softeners, Smart Valve™ requires no salt, adds no chemicals, and has no regeneration cycles. There is nothing to maintain after installation. NSF 61 and 372 certified — safe for car wash systems that reclaim and recycle water." },
-              { icon: Wrench, title: "Scale Already Present Gradually Reduces", body: "The electrochemical treatment not only prevents new scale deposition but also gradually reduces existing scale accumulation in pipes and equipment — over time, systems that have been running on hard water see progressive improvement in flow characteristics." },
-              { icon: ShieldCheck, title: "Safe for Reclaim Systems", body: "Smart Valve™ treatment does not affect water chemistry in ways that interfere with reclaim system operation. NSF 61 and 372 certification covers all car wash water applications including reclaimed water makeup systems." },
+              { icon: Droplets, title: "Phantom Volume — The Primary Savings Mechanism", body: "City water travels at ≈250 psi in distribution mains, keeping dissolved air fully compressed. At your pressure regulator, the line drops to 50–110 psi and air expands 4–5×, inflating meter readings. Smart Valve™ maintains upstream compression so only real water registers — directly reducing your metered bill." },
+              { icon: ShieldCheck, title: "No Salt, No Chemicals, No Regeneration", body: "Unlike water softeners, Smart Valve™ requires no salt, adds no chemicals, and has no regeneration cycles. There is nothing to maintain after installation. NSF/ANSI/CAN 61 and NSF/ANSI 372 certified — safe for car wash systems that reclaim and recycle water." },
+              { icon: Wrench, title: "Pressure Stabilization Reduces Scale Deposition Rate", body: "Smart Valve™ stabilizes supply line pressure using a spring-loaded mechanism, reducing the pressure-driven turbulence that accelerates mineral scale deposition on nozzles, pump surfaces, and pipe walls. Lower turbulence means slower scale buildup — a secondary benefit of the same pressure stabilization mechanism." },
+              { icon: ShieldCheck, title: "Safe for Reclaim Systems", body: "Smart Valve™ does not add any substances to the water supply and does not alter water chemistry. NSF/ANSI/CAN 61 and NSF/ANSI 372 certification covers all car wash water applications including reclaimed water makeup systems." },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="flex gap-4 p-6 bg-[#E8EFF7] rounded-xl">

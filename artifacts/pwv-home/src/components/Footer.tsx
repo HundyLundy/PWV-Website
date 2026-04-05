@@ -13,7 +13,7 @@ export function Footer() {
               <span className="font-bold text-xl text-white tracking-tight">Perfect Water Valve</span>
             </div>
             <p className="text-slate-400 mb-5 leading-relaxed text-sm">
-              Serving 32,000+ commercial and industrial facilities across North America. The Smart Valve™ is NSF 61 & 372 certified — no electricity, no moving parts, guaranteed results.
+              Serving 32,000+ commercial and industrial facilities across North America. The Smart Valve™ is NSF 61 & 372 certified — no electricity required, guaranteed results.
             </p>
             <div className="text-xs text-slate-600 uppercase tracking-wider mb-6">
               Partner: American Water Savings (AWS) · Canadian Water Savings (CWS)
