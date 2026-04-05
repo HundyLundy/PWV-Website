@@ -181,156 +181,166 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
             className="absolute left-0 right-0 top-full shadow-2xl border-t"
             style={{ ...dropdownBase, borderColor: 'rgba(255,255,255,0.08)' }}
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-4 gap-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-0">
 
-              {/* Col 1 — Resources */}
-              <div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Resources</div>
-                <div className="flex flex-col gap-0.5">
-                  {/* Case Studies — with deep-dive sub-links */}
-                  <div>
-                    <a href="/results/" onClick={() => setExploreOpen(false)}
-                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                        style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                        <FileText className="w-4 h-4" style={{ color: '#5BBFE0' }} />
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">Case Studies & Proof</div>
-                        <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>Amazon, Four Seasons, Caliber & more — M&V verified</div>
-                      </div>
+              {/* TOP ROW — 3 content cols + contact strip */}
+              <div className="grid gap-6 pb-6" style={{ gridTemplateColumns: '2fr 1.3fr 1.3fr auto' }}>
+
+                {/* Col 1 — INDUSTRIES */}
+                <div>
+                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Industries</div>
+                  <div className="flex flex-col gap-0.5">
+                    {INDUSTRIES.map((ind) => {
+                      const Icon = ind.icon;
+                      return (
+                        <div key={ind.href}>
+                          <a href={ind.href} onClick={() => setExploreOpen(false)}
+                            className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/6 transition-colors group">
+                            <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                              style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                              <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
+                            </div>
+                            <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{ind.label}</span>
+                          </a>
+                          {ind.sub && ind.sub.length > 0 && (
+                            <div className="flex flex-col mb-1" style={{ paddingLeft: '36px' }}>
+                              {ind.sub.map((s) => (
+                                <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
+                                  className="flex items-center gap-1 text-[11px] py-[3px] px-2 rounded-md font-medium hover:bg-white/5 transition-colors"
+                                  style={{ color: '#5BBFE0' }}>
+                                  <span className="opacity-50 text-[10px]">→</span>
+                                  <span className="hover:underline underline-offset-2">{s.label}</span>
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                    <a href="/industries" onClick={() => setExploreOpen(false)}
+                      className="flex items-center gap-1 mt-1 px-2 py-1.5 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
+                      style={{ color: 'rgba(91,191,224,0.7)' }}>
+                      <Building2 className="w-3 h-3" /> All Industry Hubs →
                     </a>
-                    <div className="pl-[52px] flex flex-col mb-2">
-                      {[
-                        { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/blog/amazon-yyz3-case-study" },
-                        { label: "Four Seasons — 26% avg, $27K/yr", href: "/blog/four-seasons-case-study" },
-                        { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/blog/st-regis-toronto-case-study" },
-                      ].map((s) => (
-                        <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
-                          className="text-[11px] py-0.5 px-2 rounded-md text-white/40 hover:text-sky-300 hover:bg-white/5 transition-colors">
-                          {s.label}
-                        </a>
-                      ))}
-                    </div>
                   </div>
-                  {/* Other resource links */}
-                  {[
-                    { label: "Our Partners — AWS & CWS", href: "/partners/", desc: "Who manufactures, certifies, M&Vs & guarantees every install", icon: ShieldCheck },
-                    { label: "Compare Alternatives", href: "/compare/", desc: "Smart Valve™ vs. low-flow, leak detection, PRVs & more", icon: BarChart2 },
-                    { label: "Smart Valve™ Info Sheet", href: "/infosheet/", desc: "Industry-by-industry data, charts & verified performance", icon: BookOpen },
-                    { label: "Plumbing Protection", href: "/benefits/plumbing-protection", desc: "Pressure stabilization, scale prevention & air entrainment", icon: Wrench },
-                    { label: "Common Misconceptions", href: "/common-misconceptions", desc: "Check valves, low-flow fixtures & PRVs won't reduce your bill", icon: AlertTriangle },
-                  ].map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <a key={item.href} href={item.href} onClick={() => setExploreOpen(false)}
-                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
-                        <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                </div>
+
+                {/* Col 2 — RESULTS & PROOF */}
+                <div>
+                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Results &amp; Proof</div>
+                  <div className="flex flex-col gap-0.5">
+                    {/* Case Studies with sub-links */}
+                    <div>
+                      <a href="/results/" onClick={() => setExploreOpen(false)}
+                        className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/6 transition-colors group">
+                        <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
                           style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                          <Icon className="w-4 h-4" style={{ color: '#5BBFE0' }} />
+                          <FileText className="w-3 h-3" style={{ color: '#5BBFE0' }} />
                         </div>
-                        <div>
-                          <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{item.label}</div>
-                          <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{item.desc}</div>
-                        </div>
+                        <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">Case Studies &amp; Proof</span>
                       </a>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Col 2 — Locations */}
-              <div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Locations</div>
-                <div className="flex flex-col gap-1">
-                  {[
-                    { label: "US States", note: "All 50 states" },
-                    { label: "Major Cities", note: "Denver, Miami, Phoenix & more" },
-                    { label: "Canada", note: "Ontario, BC, Alberta & more" },
-                    { label: "International", note: "UK, Europe, Asia-Pacific" },
-                  ].map((item) => (
-                    <a key={item.label} href="/locations/usa" onClick={() => setExploreOpen(false)}
-                      className="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/6 transition-colors group">
-                      <div>
-                        <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{item.label}</div>
-                        <div className="text-[11px]" style={{ color: 'rgba(255,255,255,0.35)' }}>{item.note}</div>
+                      <div className="flex flex-col mb-1" style={{ paddingLeft: '36px' }}>
+                        {[
+                          { label: "Amazon YYZ3 — 17% avg, 58.69% peak", href: "/blog/amazon-yyz3-case-study" },
+                          { label: "Four Seasons — 26% avg, $27K/yr", href: "/blog/four-seasons-case-study" },
+                          { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/blog/st-regis-toronto-case-study" },
+                        ].map((s) => (
+                          <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
+                            className="flex items-center gap-1 text-[11px] py-[3px] px-2 rounded-md font-medium hover:bg-white/5 transition-colors"
+                            style={{ color: '#5BBFE0' }}>
+                            <span className="opacity-50 text-[10px]">→</span>
+                            <span className="hover:underline underline-offset-2">{s.label}</span>
+                          </a>
+                        ))}
                       </div>
-                      <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity" style={{ color: '#5BBFE0' }} />
-                    </a>
-                  ))}
-                  <a href="/locations/usa" onClick={() => setExploreOpen(false)}
-                    className="flex items-center gap-1 mt-2 px-3 py-1.5 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
-                    style={{ color: 'rgba(91,191,224,0.7)' }}>
-                    <MapPin className="w-3 h-3" /> Browse All Locations
-                  </a>
-                </div>
-              </div>
-
-              {/* Col 3 — Industries */}
-              <div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Industries</div>
-                <div className="flex flex-col gap-0.5">
-                  {INDUSTRIES.map((ind) => {
-                    const Icon = ind.icon;
-                    return (
-                      <div key={ind.href}>
-                        <a href={ind.href} onClick={() => setExploreOpen(false)}
-                          className="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-white/6 transition-colors group">
+                    </div>
+                    {/* Other Results & Proof items */}
+                    {[
+                      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: BookOpen },
+                      { label: "Live Savings Counter", href: "/impact/", icon: Zap },
+                      { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <a key={item.href} href={item.href} onClick={() => setExploreOpen(false)}
+                          className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/6 transition-colors group">
                           <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
                             style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
                             <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
                           </div>
-                          <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{ind.label}</div>
+                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{item.label}</span>
                         </a>
-                        {ind.sub && (
-                          <div className="pl-[38px] flex flex-col mb-1">
-                            {ind.sub.map((s) => (
-                              <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
-                                className="text-[11px] py-0.5 px-2 rounded-md text-white/40 hover:text-sky-300 hover:bg-white/5 transition-colors">
-                                {s.label}
-                              </a>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                  <a href="/industries" onClick={() => setExploreOpen(false)}
-                    className="flex items-center gap-1 mt-1 px-3 py-1.5 text-xs font-semibold rounded-xl hover:bg-white/6 transition-colors"
-                    style={{ color: 'rgba(91,191,224,0.7)' }}>
-                    <Building2 className="w-3 h-3" /> All Industry Hubs
-                  </a>
+                      );
+                    })}
+                  </div>
                 </div>
+
+                {/* Col 3 — LEARN MORE */}
+                <div>
+                  <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Learn More</div>
+                  <div className="flex flex-col gap-0.5">
+                    {[
+                      { label: "Our Partners — AWS & CWS", href: "/partners/", icon: ShieldCheck },
+                      { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
+                      { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
+                      { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <a key={item.href} href={item.href} onClick={() => setExploreOpen(false)}
+                          className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/6 transition-colors group">
+                          <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                            <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
+                          </div>
+                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{item.label}</span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Contact strip */}
+                <div className="flex flex-col justify-start">
+                  <div className="p-4 rounded-xl h-full" style={{ background: 'rgba(3,116,167,0.15)', border: '1px solid rgba(3,116,167,0.3)', minWidth: '180px' }}>
+                    <div className="text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(91,191,224,0.7)' }}>Speak Directly</div>
+                    <a href="tel:7209373004" className="block text-sm font-bold text-white hover:text-sky-300 transition-colors mb-1">(720) 937-3004</a>
+                    <a href="mailto:info@perfectwatervalve.com" className="block text-[11px] hover:text-sky-300 transition-colors" style={{ color: 'rgba(255,255,255,0.4)' }}>info@perfectwatervalve.com</a>
+                  </div>
+                </div>
+
               </div>
 
-              {/* Col 4 — Get Started */}
-              <div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.22em] mb-4" style={{ color: 'rgba(91,191,224,0.55)' }}>Get Started</div>
-                <div className="flex flex-col gap-2">
+              {/* BOTTOM STRIP — Locations */}
+              <div className="border-t flex items-center gap-3 py-3 flex-wrap" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+                <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.22em] shrink-0" style={{ color: 'rgba(91,191,224,0.55)' }}>
+                  <MapPin className="w-3 h-3" /> Locations
+                </div>
+                <div className="flex items-center gap-0 flex-wrap">
                   {[
-                    { label: "Live Savings Counter", href: "/impact/", desc: "Real-time cumulative water savings across all sites", icon: Zap },
-                    { label: "Get a Full Proposal", href: "/savings/", desc: "ROI calculator + detailed product overview", icon: BarChart2 },
-                  ].map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <a key={item.href} href={item.href} onClick={() => setExploreOpen(false)}
-                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/6 transition-colors group">
-                        <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                          style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                          <Icon className="w-4 h-4" style={{ color: '#5BBFE0' }} />
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{item.label}</div>
-                          <div className="text-[11px] leading-snug mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{item.desc}</div>
-                        </div>
+                    { label: "Colorado", href: "/locations/colorado" },
+                    { label: "Texas", href: "/locations/texas" },
+                    { label: "California", href: "/locations/california" },
+                    { label: "Virginia", href: "/locations/virginia" },
+                    { label: "Florida", href: "/locations/florida" },
+                    { label: "Arizona", href: "/locations/arizona" },
+                    { label: "New York", href: "/locations/new-york" },
+                  ].map((loc, i, arr) => (
+                    <span key={loc.href} className="flex items-center">
+                      <a href={loc.href} onClick={() => setExploreOpen(false)}
+                        className="text-[11px] px-2 py-0.5 rounded hover:bg-white/5 transition-colors hover:text-sky-300"
+                        style={{ color: 'rgba(255,255,255,0.4)' }}>
+                        {loc.label}
                       </a>
-                    );
-                  })}
-                  <div className="mt-4 p-3 rounded-xl" style={{ background: 'rgba(3,116,167,0.15)', border: '1px solid rgba(3,116,167,0.3)' }}>
-                    <div className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: 'rgba(91,191,224,0.7)' }}>Speak Directly</div>
-                    <a href="tel:7209373004" className="text-sm font-bold text-white hover:text-sky-300 transition-colors">(720) 937-3004</a>
-                    <div className="text-[10px] mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>info@perfectwatervalve.com</div>
-                  </div>
+                      {i < arr.length - 1 && <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.15)' }}>·</span>}
+                    </span>
+                  ))}
+                  <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.15)' }}>·</span>
+                  <a href="/locations/usa" onClick={() => setExploreOpen(false)}
+                    className="text-[11px] px-2 py-0.5 rounded font-semibold hover:bg-white/5 transition-colors"
+                    style={{ color: 'rgba(91,191,224,0.7)' }}>
+                    All Locations →
+                  </a>
                 </div>
               </div>
 

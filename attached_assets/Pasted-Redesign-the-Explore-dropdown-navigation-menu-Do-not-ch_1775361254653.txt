@@ -1,0 +1,44 @@
+Redesign the Explore dropdown navigation menu. Do not change any page content, routes, or any other part of the site — only the dropdown menu component.
+CURRENT PROBLEMS TO FIX:
+Resources column has too many items with descriptions — all look identical, no visual hierarchy
+Locations column has unnecessary sub-groupings (US States, Major Cities, Canada, International)
+Get Started column mixes two unrelated things (Live Savings Counter and Get a Full Proposal)
+Industry sub-page links are not visually distinct enough from hub names — visitors don't realize they're clickable until hover
+NEW DROPDOWN LAYOUT — implement exactly as described:
+Column 1: INDUSTRIES (keep existing structure, improve visual hierarchy only)
+Industry hub names (Data Centers, Hospitals & Healthcare, Hotels & Hospitality, Car Washes, Multifamily, Golf Courses): keep white bold font, keep existing icons
+Sub-page links beneath each hub (e.g., Cooling Water Costs, Hyperscale ROI, WUE & Regulatory Risk): make them visually distinct as clickable links — use a slightly lighter/accent color (e.g., the site's teal/cyan accent color), add a small right-arrow (→) or subtle underline on hover, and indent them slightly more than they currently are. The goal is that a visitor immediately recognizes these as clickable links without needing to hover.
+Keep "All Industry Hubs →" link at the bottom of this column
+Column 2: RESOURCES — Group A (rename column header to "RESULTS & PROOF")
+Items in this group (icon + name only, NO descriptions):
+Case Studies & Proof → /results
+Smart Valve™ Info Sheet → existing route
+Live Savings Counter → existing route (savings calculator)
+Plumbing Protection → /benefits/plumbing-protection
+Column 3: RESOURCES — Group B (rename column header to "LEARN MORE")
+Items in this group (icon + name only, NO descriptions):
+Our Partners — AWS & CWS → existing route
+Compare Alternatives → existing route
+Common Misconceptions → /common-misconceptions
+Get a Full Proposal → existing route
+Bottom strip: LOCATIONS (spans full width of dropdown, below all columns)
+Replace the entire current Locations column with a single horizontal strip at the bottom of the dropdown. It should contain:
+Left side: "Locations" label in the same column header style
+Then a horizontal row of quick-links: Colorado · Texas · California · Virginia · Florida · Arizona · New York · All Locations →
+These should be simple text links separated by dots or pipes, in the same grey sub-link style used in the Industries column
+No sub-groupings (remove US States, Major Cities, Canada, International groupings entirely)
+Right CTA strip: SPEAK DIRECTLY (keep exactly as-is)
+Phone number (720) 937-3004
+info@perfectwatervalve.com
+Keep the existing styling
+Remove entirely:
+The "GET STARTED" column header and its column structure — its items have been redistributed above
+Visual hierarchy rules for the entire dropdown:
+Column headers (INDUSTRIES, RESULTS & PROOF, LEARN MORE): all-caps, same style as current column headers
+Hub/item names: white, bold
+Sub-page links under industry hubs: teal/cyan accent color, slightly indented, → arrow prefix or visible on hover, so they are immediately recognizable as separate clickable links
+No descriptions on any Resources items — icon and name only
+Consistent spacing between all items
+Test that every single link in the new dropdown still navigates to the correct route before finishing.
+I confirmed all pages are live, fixed the Legionella link on the golf courses page, and organized the navigation dropdown into clear columns with visual hierarchy. Next, I will submit the sitemap to Google Search Console.
+
