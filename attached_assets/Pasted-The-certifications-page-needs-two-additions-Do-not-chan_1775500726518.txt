@@ -1,0 +1,86 @@
+The /certifications page needs two additions. Do not change anything else on the page — only add these two new sections.
+
+ADDITION 1 — Insert a new Section 2 between the current NSF/ANSI/CAN 61 section and the CE Declaration section:
+
+Section heading: NSF/ANSI/CAN 372-2024 — Lead-Free Compliance
+
+Use the same IapmoBadge size="large" component as Section 1. It links to the same IAPMO listing: https://myplc.iapmo.org/certificate#/18017
+
+Add this details table:
+
+Field
+Detail
+Certifying Body
+IAPMO Research and Testing, Inc.
+Standard
+NSF/ANSI/CAN 372-2024
+File Number
+8905
+Valid Through
+November 2029
+Legal Basis
+Federal Safe Drinking Water Act Section 1417(d ) + California Health & Safety Code Section 116875
+
+
+
+
+Add one link:
+
+•
+Download NSF 372 Certificate PDF → — opens new tab
+
+Add this paragraph:
+NSF/ANSI/CAN 372 establishes lead content requirements for drinking water system components under the Federal Safe Drinking Water Act. Compliance is required in all 50 U.S. states and is specifically enforced under California Health & Safety Code Section 116875. The Smart Valve™ is certified lead-free under this standard, making it compliant for installation in hospitals, schools, and any facility subject to lead-free mandates.
+
+
+
+
+ADDITION 2 — Add a new Section 4 at the bottom of the page, after the Certified Models table and before any footer:
+
+Section heading: U.S. Patents
+
+No logo needed. Text only.
+
+Add this paragraph:
+The Smart Valve™ technology is protected by multiple U.S. patents issued by the United States Patent and Trademark Office, including the patents listed below. Patent protection confirms that the underlying technology has been independently reviewed and found to be novel and non-obvious by federal patent examiners.
+
+Add this table:
+
+Patent Number
+Title
+Status
+Link
+US8707981B2
+System for Increasing the Efficiency of a Water Meter
+Granted
+https://patents.google.com/patent/US8707981B2
+US12486917B2
+Hydrostatically Adjustable Valve and Associated System
+Granted December 2025
+https://patents.google.com/patent/US12486917B2
+
+
+
+
+All patent links open in a new tab with target="_blank" rel="noopener noreferrer".
+
+Also update the JSON-LD schema on this page to add a second hasCertification entry for NSF 372:
+
+JSON
+
+
+{
+  "@type": "Certification",
+  "name": "NSF/ANSI/CAN 372-2024",
+  "certificationBody": {
+    "@type": "Organization",
+    "name": "IAPMO Research and Testing, Inc.",
+    "url": "https://www.iapmort.org"
+  },
+  "url": "https://myplc.iapmo.org/certificate#/18017"
+}
+
+
+
+Add this as a second item in the hasCertification array alongside the existing NSF 61 entry.
+
