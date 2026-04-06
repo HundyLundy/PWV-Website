@@ -246,18 +246,32 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     {INDUSTRIES.map((ind) => {
                       const Icon = ind.icon;
                       return (
-                        <a key={ind.href} href={ind.href} onClick={() => setExploreOpen(false)}
-                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors group"
-                          style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
-                          <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                            style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
-                            <Icon className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
-                          </div>
-                          <div className="flex flex-col min-w-0">
-                            <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">{ind.label}</span>
-                            <span className="text-[10px] font-medium leading-tight mt-0.5 truncate" style={{ color: '#5BBFE0' }}>{ind.desc}</span>
-                          </div>
-                        </a>
+                        <div key={ind.href}>
+                          <a href={ind.href} onClick={() => setExploreOpen(false)}
+                            className="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors group"
+                            style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
+                            <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                              style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
+                              <Icon className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
+                            </div>
+                            <div className="flex flex-col min-w-0">
+                              <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">{ind.label}</span>
+                              <span className="text-[10px] font-medium leading-tight mt-0.5 truncate" style={{ color: '#5BBFE0' }}>{ind.desc}</span>
+                            </div>
+                          </a>
+                          {ind.sub && ind.sub.length > 0 && (
+                            <div className="flex flex-col" style={{ paddingLeft: '36px' }}>
+                              {ind.sub.map((s) => (
+                                <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
+                                  className="flex items-center gap-1 text-[11px] py-[3px] px-2 rounded-md font-medium hover:bg-white/5 transition-colors"
+                                  style={{ color: '#5BBFE0' }}>
+                                  <span className="opacity-50 text-[10px]">→</span>
+                                  <span className="hover:underline underline-offset-2">{s.label}</span>
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       );
                     })}
                   </div>
