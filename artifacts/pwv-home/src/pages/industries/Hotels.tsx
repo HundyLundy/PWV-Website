@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { SavingsCalcModule } from "@/components/SavingsCalcModule";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
+import { IapmoBadge } from "@/components/IapmoBadge";
 
 const HOTELS_FAQ_ITEMS = [
   { q: "How much water does a typical hotel use per month?", a: "A full-service hotel uses 100–300 gallons per occupied room per day. For a 200-room hotel running at 70% occupancy, that's 14,000–42,000 gallons per day — or $8,000–$25,000+ per month depending on local rates and tiered pricing." },
@@ -274,6 +275,9 @@ export default function Hotels() {
         </div>
       </section>
 
+      <div className="bg-[#05080F] px-4 sm:px-6 lg:px-8 pt-4 flex justify-end">
+        <IapmoBadge size="small" />
+      </div>
       <footer className="bg-[#05080F] border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8">
 
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">

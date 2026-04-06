@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, ArrowRight, Mail, Phone, AlertCircle } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { IapmoBadge } from "@/components/IapmoBadge";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -80,6 +81,9 @@ export default function PlumbingProtection() {
               </p>
             </div>
           </motion.div>
+        </div>
+        <div className="flex justify-end pr-4 sm:pr-6 lg:pr-8 mt-4">
+          <IapmoBadge size="small" />
         </div>
       </section>
 

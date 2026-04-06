@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { SavingsCalcModule } from "@/components/SavingsCalcModule";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
+import { IapmoBadge } from "@/components/IapmoBadge";
 
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
 
@@ -221,6 +222,9 @@ export default function Hospitals() {
         </div>
       </section>
 
+      <div className="bg-[#05080F] px-4 sm:px-6 lg:px-8 pt-4 flex justify-end">
+        <IapmoBadge size="small" />
+      </div>
       <footer className="bg-[#05080F] border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <div className="flex items-center gap-3"><img src={logo} alt="PWV" className="w-8 h-8" /><span>© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</span></div>

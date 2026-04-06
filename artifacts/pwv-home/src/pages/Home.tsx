@@ -4,6 +4,7 @@ import { motion, useInView, useSpring, useTransform } from "framer-motion";
 import { CheckCircle2, XCircle, Phone, Mail, ArrowDown, ShieldCheck, Droplet, Building2, Factory, Hotel, Car, ChevronRight, Server, Droplets, Heart, MapPin, TrendingUp, DollarSign } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { IapmoBadge } from "@/components/IapmoBadge";
 import { BubbleValveSection } from "@/components/BubbleValveSection";
 import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 import smartValveSrc from "@assets/smart-valve1_1774325826879.avif";
@@ -62,6 +63,23 @@ const homeServiceSchema = {
         "name": "Smart Valve™ Installation — 15% Guaranteed Water Bill Reduction"
       }
     }]
+  }
+};
+
+const homeProductSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Smart Valve™",
+  "brand": { "@type": "Brand", "name": "Flow Dynamics" },
+  "hasCertification": {
+    "@type": "Certification",
+    "name": "NSF/ANSI/CAN 61-2023",
+    "certificationBody": {
+      "@type": "Organization",
+      "name": "IAPMO Research and Testing, Inc.",
+      "url": "https://www.iapmort.org"
+    },
+    "url": "https://myplc.iapmo.org/certificate#/18017"
   }
 };
 
@@ -223,6 +241,7 @@ export default function Home() {
         <script type="application/ld+json">{JSON.stringify(homeFaqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(homeLocalBusinessSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(homeServiceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(homeProductSchema)}</script>
       </Helmet>
       <StickyAssessmentCTA />
       <Navbar />
@@ -321,6 +340,9 @@ export default function Home() {
               />
             </div>
           </motion.div>
+        </div>
+        <div className="absolute bottom-4 right-4 z-10">
+          <IapmoBadge size="small" />
         </div>
       </section>
 
@@ -649,6 +671,9 @@ export default function Home() {
               </motion.form>
             )}
           </motion.div>
+        </div>
+        <div className="flex justify-end max-w-2xl mx-auto px-6 mt-4">
+          <IapmoBadge size="small" />
         </div>
       </section>
 

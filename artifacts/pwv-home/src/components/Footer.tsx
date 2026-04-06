@@ -1,6 +1,7 @@
 import logoSrc from "@assets/PWV_perfect_water_favicon_1774323165405.png";
 import { Mail, Phone } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { IapmoBadge } from "@/components/IapmoBadge";
 
 export function Footer() {
   return (
@@ -136,7 +137,27 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/5 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-700">
+        <div className="border-t border-white/5 mt-10 pt-8 mb-6">
+          <div className="text-xs text-slate-600 uppercase tracking-wider mb-4">Third-Party Certifications</div>
+          <div className="flex flex-wrap items-start gap-8">
+            <IapmoBadge size="medium" />
+            <div className="flex flex-col justify-center gap-2">
+              <a
+                href="https://thesmartvalve.com/technical-specs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-slate-500 hover:text-white transition-colors"
+              >
+                CE Declaration of Conformity →
+              </a>
+              <a href="/certifications" className="text-sm text-slate-500 hover:text-white transition-colors">
+                View All Certifications →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-white/5 mt-0 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-700">
           <span>© {new Date().getFullYear()} Perfect Water Valve. All rights reserved.</span>
           <div className="flex items-center gap-4">
             <span>NSF 61 · NSF 372 · 32,000+ Verified Installations</span>

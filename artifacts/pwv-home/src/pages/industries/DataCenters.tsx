@@ -8,6 +8,7 @@ import { StickyAssessmentCTA } from "@/components/StickyAssessmentCTA";
 import { SavingsCalcModule } from "@/components/SavingsCalcModule";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import logo from "@assets/PWV_perfect_water_favicon_1774323165405.png";
+import { IapmoBadge } from "@/components/IapmoBadge";
 
 const CONTACT = { phone: "720-937-3004", email: "info@perfectwatervalve.com" };
 
@@ -368,6 +369,9 @@ export default function DataCenters() {
         </div>
       </section>
 
+      <div className="bg-[#05080F] px-4 sm:px-6 lg:px-8 pt-4 flex justify-end">
+        <IapmoBadge size="small" />
+      </div>
       <Footer />
     </div>
   );
