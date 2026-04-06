@@ -140,7 +140,7 @@ export function Footer() {
         <div className="border-t border-white/5 mt-10 pt-8 mb-6">
           <div className="text-xs text-slate-600 uppercase tracking-wider mb-4">Third-Party Certifications</div>
           <div className="flex flex-wrap items-start gap-8">
-            <IapmoBadge size="medium" />
+            <IapmoBadge size="xl" />
             <div className="flex flex-col justify-center gap-2">
               <a
                 href="https://thesmartvalve.com/technical-specs/"
