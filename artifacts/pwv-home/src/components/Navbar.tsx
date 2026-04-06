@@ -72,9 +72,6 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
-  const [mobileLocOpen, setMobileLocOpen] = useState(false);
-  const [mobileIndOpen, setMobileIndOpen] = useState(false);
-  const [mobileExploreOpen, setMobileExploreOpen] = useState(false);
 
   const industryCtx = getIndustryContext(location);
   const activeNavLinks = industryCtx ? industryCtx.links : NAV_LINKS;
@@ -184,10 +181,63 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-0">
 
-              {/* TOP ROW — 3 content cols */}
+              {/* TOP ROW — 3 content cols: About Smart Valve | Industries | Results */}
               <div className="grid gap-6 pb-6" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
 
-                {/* Col 1 — INDUSTRIES */}
+                {/* Col 1 — ABOUT SMART VALVE */}
+                <div>
+                  <div className="text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>About Smart Valve™</div>
+                  <div className="flex flex-col gap-0.5">
+
+                    {/* Partners — featured highlight entry */}
+                    <a href="/partners/" onClick={() => setExploreOpen(false)}
+                      className="flex items-center gap-3 px-3 py-3 rounded-xl transition-colors group mb-1"
+                      style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
+                      <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                        style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
+                        <ShieldCheck className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
+                      </div>
+                      <div className="flex flex-col min-w-0">
+                        <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">Partners &amp; Process</span>
+                        <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: '#5BBFE0' }}>AWS · CWS · Flow Dynamics</span>
+                      </div>
+                    </a>
+
+                    {/* Certifications — featured highlight entry */}
+                    <a href="/certifications" onClick={() => setExploreOpen(false)}
+                      className="flex items-center gap-3 px-3 py-3 rounded-xl transition-colors group mb-1"
+                      style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
+                      <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                        style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
+                        <ShieldCheck className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
+                      </div>
+                      <div className="flex flex-col min-w-0">
+                        <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">Certifications</span>
+                        <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: '#5BBFE0' }}>NSF 61 · NSF 372 · CE Declaration</span>
+                      </div>
+                    </a>
+
+                    {[
+                      { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
+                      { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
+                      { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <a key={item.href} href={item.href} onClick={() => setExploreOpen(false)}
+                          className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/6 transition-colors group">
+                          <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
+                            <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
+                          </div>
+                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{item.label}</span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Col 2 — INDUSTRIES */}
                 <div>
                   <a href="/industries" onClick={() => setExploreOpen(false)}
                     className="block text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3 hover:text-sky-200 transition-colors"
@@ -223,7 +273,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                   </div>
                 </div>
 
-                {/* Col 2 — RESULTS */}
+                {/* Col 3 — RESULTS */}
                 <div>
                   <div className="text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Results</div>
                   <div className="flex flex-col gap-0.5">
@@ -283,60 +333,6 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                   </div>
                 </div>
 
-                {/* Col 3 — ABOUT SMART VALVE */}
-                <div>
-                  <div className="text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>About Smart Valve™</div>
-                  <div className="flex flex-col gap-0.5">
-
-                    {/* Partners — featured highlight entry */}
-                    <a href="/partners/" onClick={() => setExploreOpen(false)}
-                      className="flex items-center gap-3 px-3 py-3 rounded-xl transition-colors group mb-1"
-                      style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
-                      <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                        style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
-                        <ShieldCheck className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
-                      </div>
-                      <div className="flex flex-col min-w-0">
-                        <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">Partners &amp; Process</span>
-                        <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: '#5BBFE0' }}>AWS · CWS · Flow Dynamics</span>
-                      </div>
-                    </a>
-
-                    {/* Certifications — featured highlight entry */}
-                    <a href="/certifications" onClick={() => setExploreOpen(false)}
-                      className="flex items-center gap-3 px-3 py-3 rounded-xl transition-colors group mb-1"
-                      style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
-                      <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                        style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
-                        <ShieldCheck className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
-                      </div>
-                      <div className="flex flex-col min-w-0">
-                        <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">Certifications</span>
-                        <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: '#5BBFE0' }}>NSF 61 · NSF 372 · CE Declaration</span>
-                      </div>
-                    </a>
-
-                    {[
-                      { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
-                      { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
-                      { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
-                    ].map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <a key={item.href} href={item.href} onClick={() => setExploreOpen(false)}
-                          className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/6 transition-colors group">
-                          <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
-                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                            <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
-                          </div>
-                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{item.label}</span>
-                        </a>
-                      );
-                    })}
-                  </div>
-                </div>
-
-
               </div>
 
               {/* BOTTOM STRIP — contact + locations */}
@@ -367,169 +363,45 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
             className="md:hidden border-t border-white/10 overflow-hidden" style={{ background: "#0A0F1E" }}>
             <div className="p-4 flex flex-col gap-1 overflow-y-auto max-h-[80vh]">
-              {industryCtx && (
-                <div className="text-xs font-bold uppercase tracking-widest text-primary/60 py-1 px-1 mb-1">{industryCtx.label}</div>
-              )}
-              {activeNavLinks.map((l) => (
-                <a key={l.label} href={l.href}
-                  className="text-base font-medium text-white/70 hover:text-white transition-colors py-2.5 border-b border-white/5"
-                  onClick={() => setMenuOpen(false)}>
-                  {l.label}
+
+              {/* About Smart Valve — featured card */}
+              <a href="/partners/" onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 px-3 py-3 rounded-xl mb-1"
+                style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
+                <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                  style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
+                  <ShieldCheck className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
+                </div>
+                <span className="text-base font-bold text-white">About Smart Valve™</span>
+              </a>
+
+              {/* Main nav links */}
+              {[
+                { label: "Industries", href: "/industries", icon: Building2 },
+                { label: "Results", href: "/results/", icon: FileText },
+                { label: "How It Works", href: "/#how-it-works", icon: Zap },
+                { label: "Locations", href: "/locations/usa", icon: MapPin },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2.5 text-base font-medium text-white/70 hover:text-white transition-colors border-b border-white/5">
+                    <Icon className="w-4 h-4 shrink-0" style={{ color: '#5BBFE0' }} />
+                    {item.label}
+                  </a>
+                );
+              })}
+
+              {/* Bottom: FAQ + Contact */}
+              <div className="border-t border-white/10 mt-2 pt-2 flex flex-col gap-0.5">
+                <a href="/#faq" onClick={() => setMenuOpen(false)}
+                  className="px-3 py-2.5 text-base font-medium text-white/50 hover:text-white transition-colors">
+                  FAQ
                 </a>
-              ))}
-
-              {/* Industries accordion */}
-              <div>
-                <button onClick={() => setMobileIndOpen(!mobileIndOpen)}
-                  className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
-                  <span className="flex items-center gap-2"><Building2 className="w-4 h-4" /> Industries</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileIndOpen ? "rotate-180" : ""}`} />
-                </button>
-                {mobileIndOpen && (
-                  <div className="pl-4 py-2 flex flex-col gap-1">
-                    {INDUSTRIES.map((ind) => (
-                      <div key={ind.href}>
-                        <a href={ind.href} onClick={() => setMenuOpen(false)}
-                          className="flex items-center gap-2 py-1.5 text-white/70 hover:text-white text-sm font-medium">
-                          <span>{ind.emoji}</span>{ind.label}
-                        </a>
-                        {ind.sub && (
-                          <div className="pl-6 flex flex-col gap-0.5 mb-1">
-                            {ind.sub.map((s) => (
-                              <a key={s.href} href={s.href} onClick={() => setMenuOpen(false)}
-                                className="text-xs py-1 text-white/40 hover:text-sky-300 transition-colors">
-                                {s.label}
-                              </a>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Locations accordion */}
-              <div>
-                <button onClick={() => setMobileLocOpen(!mobileLocOpen)}
-                  className="w-full text-left flex justify-between items-center py-2.5 text-base font-medium text-white/70 hover:text-white border-b border-white/5">
-                  <span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Locations</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileLocOpen ? "rotate-180" : ""}`} />
-                </button>
-                {mobileLocOpen && (
-                  <div className="pl-4 py-2 flex flex-col gap-1">
-                    {[
-                      { label: "US States", note: "All 50 states" },
-                      { label: "Major Cities", note: "Denver, Miami, Phoenix & more" },
-                      { label: "Canada", note: "Ontario, BC, Alberta" },
-                      { label: "International", note: "UK, Europe, Asia-Pacific" },
-                    ].map((item) => (
-                      <a key={item.label} href="/locations/usa" onClick={() => setMenuOpen(false)}
-                        className="flex flex-col py-1.5 text-white/60 hover:text-white text-sm">
-                        <span className="font-medium">{item.label}</span>
-                        <span className="text-xs text-white/35">{item.note}</span>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Explore accordion */}
-              <div>
-                <button onClick={() => setMobileExploreOpen(!mobileExploreOpen)}
-                  className="w-full text-left flex justify-between items-center py-2.5 border-b border-white/5">
-                  <span className="flex items-center gap-2 text-base font-bold" style={{ color: '#DEC600' }}>
-                    Explore
-                  </span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileExploreOpen ? "rotate-180" : ""}`} style={{ color: '#DEC600' }} />
-                </button>
-                {mobileExploreOpen && (
-                  <div className="py-3 flex flex-col gap-0.5">
-
-                    {/* Section: Results */}
-                    <div className="text-[9px] font-bold uppercase tracking-[0.2em] px-1 pb-1" style={{ color: 'rgba(91,191,224,0.55)' }}>Results</div>
-                    <a href="/results/" onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/5 transition-colors group">
-                      <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
-                        style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                        <FileText className="w-3 h-3" style={{ color: '#5BBFE0' }} />
-                      </div>
-                      <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">Case Studies &amp; Proof</span>
-                    </a>
-                    <div className="flex flex-col mb-2" style={{ paddingLeft: '36px' }}>
-                      {[
-                        { label: AMAZON_LABELS.navLabel, href: "/results/amazon-yyz3" },
-                        { label: "Four Seasons — 26% avg, $27K/yr", href: "/results/four-seasons" },
-                        { label: "St. Regis Toronto — $49,889 CAD/yr", href: "/results/st-regis-toronto" },
-                        { label: "Caliber Car Wash — 23% across 5 sites", href: "/results/caliber-car-wash" },
-                        { label: "Grand Central Tampa — $50K/yr", href: "/results/grand-central-tampa" },
-                        { label: "RWJ Barnabas — 19%, $15,500/yr", href: "/results/rwj-barnabas" },
-                        { label: "Toronto Portfolio — 15–31%, 3 properties", href: "/results/toronto-multifamily" },
-                        { label: "Park Ave Apartments — 30%, West New York NJ", href: "/results/park-ave-nj" },
-                      ].map((s) => (
-                        <a key={s.href} href={s.href} onClick={() => setMenuOpen(false)}
-                          className="flex items-center gap-1 text-[11px] py-[4px] px-2 rounded-md font-medium hover:bg-white/5 transition-colors"
-                          style={{ color: '#5BBFE0' }}>
-                          <span className="opacity-50 text-[10px]">→</span>
-                          <span className="hover:underline underline-offset-2">{s.label}</span>
-                        </a>
-                      ))}
-                    </div>
-
-                    {[
-                      { label: "Blog & Insights", href: "/blog", icon: BookOpen },
-                      { label: "Smart Valve™ Info Sheet", href: "/infosheet/", icon: FileText },
-                      { label: "Live Savings Counter", href: "/impact/", icon: Zap },
-                    ].map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}
-                          className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/5 transition-colors group">
-                          <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
-                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                            <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
-                          </div>
-                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{item.label}</span>
-                        </a>
-                      );
-                    })}
-
-                    {/* Section: About Smart Valve */}
-                    <div className="text-[9px] font-bold uppercase tracking-[0.2em] px-1 pt-3 pb-1" style={{ color: 'rgba(91,191,224,0.55)' }}>About Smart Valve™</div>
-                    <a href="/partners/" onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl mb-1"
-                      style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
-                      <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
-                        style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
-                        <ShieldCheck className="w-3 h-3" style={{ color: '#5BBFE0' }} />
-                      </div>
-                      <div className="flex flex-col min-w-0">
-                        <span className="text-sm font-bold leading-tight text-white">Partners &amp; Process</span>
-                        <span className="text-[10px] leading-tight" style={{ color: '#5BBFE0' }}>AWS · CWS · Flow Dynamics</span>
-                      </div>
-                    </a>
-                    {[
-                      { label: "Certifications", href: "/certifications", icon: ShieldCheck },
-                      { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
-                      { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
-                      { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
-                      { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
-                    ].map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}
-                          className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/5 transition-colors group">
-                          <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
-                            style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                            <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
-                          </div>
-                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{item.label}</span>
-                        </a>
-                      );
-                    })}
-
-                  </div>
-                )}
+                <a href="/#contact" onClick={() => setMenuOpen(false)}
+                  className="px-3 py-2.5 text-base font-medium text-white/50 hover:text-white transition-colors">
+                  Contact
+                </a>
               </div>
 
               <a href="/#contact"
