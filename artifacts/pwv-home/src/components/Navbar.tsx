@@ -299,7 +299,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     </a>
 
                     {[
-                      { label: "Certifications", href: "/certifications", icon: ShieldCheck },
+                      { label: "Certifications", href: "/certifications", icon: ShieldCheck, desc: "NSF 61 · NSF 372 · CE Declaration" },
                       { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
                       { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
                       { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
@@ -312,7 +312,10 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                             style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
                             <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
                           </div>
-                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">{item.label}</span>
+                          <div className="flex flex-col min-w-0">
+                            <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{item.label}</span>
+                            {item.desc && <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: '#5BBFE0' }}>{item.desc}</span>}
+                          </div>
                         </a>
                       );
                     })}
