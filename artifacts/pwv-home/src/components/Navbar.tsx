@@ -186,7 +186,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
 
                 {/* Col 1 — ABOUT SMART VALVE */}
                 <div>
-                  <div className="text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>About Smart Valve™</div>
+                  <div className="text-center text-[11px] font-bold uppercase tracking-[0.18em] mb-3" style={{ color: '#5BBFE0' }}>About Smart Valve™</div>
                   <div className="flex flex-col gap-0.5">
 
                     {/* Partners — featured highlight entry */}
@@ -240,34 +240,24 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                 {/* Col 2 — INDUSTRIES */}
                 <div>
                   <a href="/industries" onClick={() => setExploreOpen(false)}
-                    className="block text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3 hover:text-sky-200 transition-colors"
+                    className="block text-center text-[11px] font-bold uppercase tracking-[0.18em] mb-3 hover:text-sky-200 transition-colors"
                     style={{ color: '#5BBFE0' }}>Industries →</a>
-                  <div className="grid grid-cols-2 gap-x-3">
+                  <div className="flex flex-col gap-1">
                     {INDUSTRIES.map((ind) => {
                       const Icon = ind.icon;
                       return (
-                        <div key={ind.href}>
-                          <a href={ind.href} onClick={() => setExploreOpen(false)}
-                            className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/6 transition-colors group">
-                            <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
-                              style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                              <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
-                            </div>
-                            <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{ind.label}</span>
-                          </a>
-                          {ind.sub && ind.sub.length > 0 && (
-                            <div className="flex flex-col mb-1" style={{ paddingLeft: '36px' }}>
-                              {ind.sub.map((s) => (
-                                <a key={s.href} href={s.href} onClick={() => setExploreOpen(false)}
-                                  className="flex items-center gap-1 text-[11px] py-[3px] px-2 rounded-md font-medium hover:bg-white/5 transition-colors"
-                                  style={{ color: '#5BBFE0' }}>
-                                  <span className="opacity-50 text-[10px]">→</span>
-                                  <span className="hover:underline underline-offset-2">{s.label}</span>
-                                </a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
+                        <a key={ind.href} href={ind.href} onClick={() => setExploreOpen(false)}
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors group"
+                          style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
+                          <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                            style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
+                            <Icon className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
+                          </div>
+                          <div className="flex flex-col min-w-0">
+                            <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">{ind.label}</span>
+                            <span className="text-[10px] font-medium leading-tight mt-0.5 truncate" style={{ color: '#5BBFE0' }}>{ind.desc}</span>
+                          </div>
+                        </a>
                       );
                     })}
                   </div>
@@ -275,7 +265,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
 
                 {/* Col 3 — RESULTS */}
                 <div>
-                  <div className="text-center text-[9px] font-bold uppercase tracking-[0.22em] mb-3" style={{ color: 'rgba(91,191,224,0.55)' }}>Results</div>
+                  <div className="text-center text-[11px] font-bold uppercase tracking-[0.18em] mb-3" style={{ color: '#5BBFE0' }}>Results</div>
                   <div className="flex flex-col gap-0.5">
                     {/* Case Studies with sub-links */}
                     <div>
