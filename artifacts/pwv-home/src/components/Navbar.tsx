@@ -230,12 +230,16 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     {/* Case Studies with sub-links */}
                     <div>
                       <a href="/results/" onClick={() => setExploreOpen(false)}
-                        className="flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/6 transition-colors group">
-                        <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
-                          style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
-                          <FileText className="w-3 h-3" style={{ color: '#5BBFE0' }} />
+                        className="flex items-center gap-3 px-3 py-3 rounded-xl transition-colors group mb-1"
+                        style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                          style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
+                          <FileText className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
                         </div>
-                        <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">Case Studies &amp; Proof</span>
+                        <div className="flex flex-col min-w-0">
+                          <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">Case Studies &amp; Proof</span>
+                          <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: '#5BBFE0' }}>15 verified results · 15%–58% savings</span>
+                        </div>
                       </a>
                       <div className="flex flex-col mb-1" style={{ paddingLeft: '36px' }}>
                         {[
@@ -298,8 +302,21 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                       </div>
                     </a>
 
+                    {/* Certifications — featured highlight entry */}
+                    <a href="/certifications" onClick={() => setExploreOpen(false)}
+                      className="flex items-center gap-3 px-3 py-3 rounded-xl transition-colors group mb-1"
+                      style={{ background: "rgba(60,110,127,0.35)", border: "1px solid rgba(91,191,224,0.35)" }}>
+                      <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                        style={{ background: "rgba(91,191,224,0.18)", border: "1px solid rgba(91,191,224,0.4)" }}>
+                        <ShieldCheck className="w-3.5 h-3.5" style={{ color: '#5BBFE0' }} />
+                      </div>
+                      <div className="flex flex-col min-w-0">
+                        <span className="text-sm font-bold leading-tight text-white group-hover:text-sky-100 transition-colors">Certifications</span>
+                        <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: '#5BBFE0' }}>NSF 61 · NSF 372 · CE Declaration</span>
+                      </div>
+                    </a>
+
                     {[
-                      { label: "Certifications", href: "/certifications", icon: ShieldCheck, desc: "NSF 61 · NSF 372 · CE Declaration" },
                       { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
                       { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
                       { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
@@ -312,10 +329,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                             style={{ background: "rgba(3,116,167,0.2)", border: "1px solid rgba(3,116,167,0.3)" }}>
                             <Icon className="w-3 h-3" style={{ color: '#5BBFE0' }} />
                           </div>
-                          <div className="flex flex-col min-w-0">
-                            <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{item.label}</span>
-                            {item.desc && <span className="text-[10px] font-medium leading-tight mt-0.5" style={{ color: '#5BBFE0' }}>{item.desc}</span>}
-                          </div>
+                          <span className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors leading-tight">{item.label}</span>
                         </a>
                       );
                     })}
