@@ -341,8 +341,8 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-        <div className="absolute bottom-4 right-4 z-10">
-          <IapmoBadge size="small" />
+        <div className="absolute bottom-6 right-6 z-10">
+          <IapmoBadge size="xl" />
         </div>
       </section>
 

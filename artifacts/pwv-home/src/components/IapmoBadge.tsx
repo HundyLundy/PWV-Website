@@ -2,7 +2,7 @@ import iapmoSrc from "@assets/Screenshot_2026-04-06_at_12.19.15_PM_1775499561043
 
 const CERT_URL = "https://myplc.iapmo.org/certificate#/18017";
 
-export function IapmoBadge({ size }: { size: "large" | "medium" | "small" }) {
+export function IapmoBadge({ size }: { size: "large" | "medium" | "small" | "xl" }) {
   if (size === "large") {
     return (
       <div className="flex items-start gap-6">
@@ -57,6 +57,29 @@ export function IapmoBadge({ size }: { size: "large" | "medium" | "small" }) {
         </a>
         <span className="text-xs text-center text-slate-500">
           NSF/ANSI/CAN 61 Certified | File No. N-8904
+        </span>
+      </div>
+    );
+  }
+
+  if (size === "xl") {
+    return (
+      <div className="flex flex-col items-center gap-2">
+        <a
+          href={CERT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="IAPMO R&T Certified — NSF/ANSI/CAN 61"
+          className="opacity-90 hover:opacity-100 transition-opacity"
+        >
+          <img
+            src={iapmoSrc}
+            alt="IAPMO R&T Certified"
+            style={{ width: 150, height: "auto", objectFit: "contain" }}
+          />
+        </a>
+        <span className="text-[11px] font-semibold text-center text-white/70 leading-tight">
+          NSF/ANSI/CAN 61 &amp; 372 Certified
         </span>
       </div>
     );
