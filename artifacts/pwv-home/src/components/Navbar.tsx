@@ -299,6 +299,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                     </a>
 
                     {[
+                      { label: "Certifications", href: "/certifications", icon: ShieldCheck },
                       { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
                       { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
                       { label: "Get a Full Proposal", href: "/savings/", icon: BarChart2 },
@@ -491,6 +492,7 @@ export function Navbar({ onScrollTo }: { onScrollTo?: (id: string) => void } = {
                       </div>
                     </a>
                     {[
+                      { label: "Certifications", href: "/certifications", icon: ShieldCheck },
                       { label: "Compare Alternatives", href: "/compare/", icon: BarChart2 },
                       { label: "Common Misconceptions", href: "/common-misconceptions", icon: AlertTriangle },
                       { label: "Plumbing Protection", href: "/benefits/plumbing-protection", icon: Wrench },
